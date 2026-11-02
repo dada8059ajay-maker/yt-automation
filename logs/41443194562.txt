@@ -1,0 +1,24 @@
+gemini gemini-3.8-flash 429 {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on t
+gemini gemini-3.7-flash TimeoutError('The read operation timed out')
+gemini ok gemini-3.6-flash
+story from Gemini (bank empty)
+title: उड़ते काठ के घोड़े और पाताल की गुप्त गुफा का रहस्य scenes: 65
+gtts 429 {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
+gtts 429 {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
+gtts 429 {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
+gtts 429 {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
