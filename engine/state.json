@@ -74,20 +74,18 @@
    "नन्हा मन्नू और जादुई चिड़िया रंगीली जंगल के गायब होते रंगों को वापस लाने के लिए प्राचीन मंदिर की साहसिक यात्रा पर निकलते हैं।",
    "जंगल के रंग बचाने के लिए मन्नू और रंगीली की प्राचीन मंदिर की रोमांचक यात्रा का ट्रेलर।",
    "एक नन्हा बालक और महल के गुप्त तहखाने में छुपे जादुई फव्वारे की रहस्यमयी खोज।",
-   "नन्हे चिंटू और उसकी दादी की पुरानी संदूक से निकलते जादुई बादलों की रोमांचक खोज"
+   "नन्हे चिंटू और उसकी दादी की पुरानी संदूक से निकलते जादुई बादलों की रोमांचक खोज",
+   "आसमान से गिरे चमकते पत्थर का रहस्य और नन्हे रोहन की समझदारी"
   ],
   "last_long": {
-   "job": "kahani_long_20261102_1200",
-   "title": "ग़ायब होते रंगों का राज़ और जादुई कमल | हिंदी कहानी",
-   "story": "नन्हा मन्नू और जादुई चिड़िया रंगीली जंगल के गायब होते रंगों को वापस लाने के लिए प्राचीन मंदिर की साहसिक यात्रा पर निकलते हैं।",
+   "job": "kahani_long_20261102_1327",
+   "title": "आसमान से गिरा जादुई उल्कापिंड",
+   "story": "आसमान से गिरे चमकते पत्थर का रहस्य और नन्हे रोहन की समझदारी",
    "characters": {
-    "Mannu": "7-year-old Indian boy, round cheerful face, big expressive brown eyes, short messy black hair, wearing a bright yellow cotton short-sleeved kurta and navy blue shorts.",
-    "Rangili": "A small magical hummingbird, iridescent glowing blue and emerald green feathers, tiny slender dark beak, glowing golden eyes, hovering with shimmering tiny wings.",
-    "Shadow Mist": "A soft shadowy dark blue cloud creature with big gentle glowing white eyes, non-scary ethereal smoke silhouette in an Indian fantasy temple background.",
-    "Wind Sage": "An ancient serene Indian sage, long flowing white beard, peaceful face, radiant golden skin, wearing a glowing white cotton dhoti, golden forehead tilak."
+    "Rohan": "English character sheet: age 6, round cheerful face, big curious black eyes, short messy black hair, average height and slim build, wearing a bright red cotton t-shirt with blue shorts, Indian look"
    },
    "vid": null,
-   "short_done": true,
+   "short_done": false,
    "trailer": null
   }
  },
@@ -306,6 +304,13 @@
    "mode": "short",
    "asset": "raat_short_20261102_1321.tar",
    "title": "100 साल पुराने संग्रहालय की कठपुतली और रात 2:45 का खौफनाक नियम #shorts"
+  },
+  {
+   "job": "kahani_long_20261102_1327",
+   "ch": "kahani",
+   "mode": "long",
+   "asset": "kahani_long_20261102_1327.tar",
+   "title": "आसमान से गिरा जादुई उल्कापिंड"
   }
  ],
  "_draft": null,
@@ -398,10 +403,17 @@
    "title": "कुहासा वेधशाला का खौफनाक अंत: 3:33 बजे का आख़िरी सच | भाग 3",
    "dur": 540,
    "used": false
+  },
+  {
+   "asset": "lib_kahani_long_20261102_1327.mp4",
+   "ch": "kahani",
+   "title": "आसमान से गिरा जादुई उल्कापिंड",
+   "dur": 164,
+   "used": false
   }
  ],
  "_minutes": {
-  "2026-11": 752
+  "2026-11": 761
  },
  "_bank": {
   "kahani_s_patang01": "2026-11-02",

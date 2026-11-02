@@ -1,0 +1,82 @@
+gemini gemini-3.8-flash 429 {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on t
+gemini gemini-3.7-flash 429 {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on t
+gemini gemini-3.6-flash 429 {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on t
+gemini gemini-3.5-flash 429 {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on t
+gemini gemini-flash-latest 429 {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on t
+gemini gemini-pro-latest 429 {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on t
+gemini ok gemini-3.5-flash-lite
+story from Gemini (bank empty)
+title: आसमान से गिरा जादुई उल्कापिंड scenes: 20
+voice engine: edge
+pollinations retry 0 <HTTPError 503: 'Service Unavailable'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+hf flux fail AppError('You have exceeded your free ZeroGPU quota (90s requested vs. 0s left). Try again in 0:00:00. Subscribe to Hugging Face PRO to get 
+turbo fail <HTTPError 402: 'Payment Required'>
+img 0 MISSING
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+img 1 pollinations
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+hf flux fail AppError('You have exceeded your free ZeroGPU quota (90s requested vs. 0s left). Try again in 0:00:00. Subscribe to Hugging Face PRO to get 
+turbo fail <HTTPError 402: 'Payment Required'>
+img 2 reused 1
+pollinations retry 0 <HTTPError 503: 'Service Unavailable'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+hf flux fail AppError('You have exceeded your free ZeroGPU quota (90s requested vs. 0s left). Try again in 0:00:00. Subscribe to Hugging Face PRO to get 
+turbo fail <HTTPError 402: 'Payment Required'>
+img 4 reused 3
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+img 6 pollinations
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+hf flux fail AppError('You have exceeded your free ZeroGPU quota (90s requested vs. 0s left). Try again in 0:00:00. Subscribe to Hugging Face PRO to get 
+turbo fail <HTTPError 402: 'Payment Required'>
+img 8 reused 7
+img 10 pollinations
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+hf flux fail AppError('You have exceeded your free ZeroGPU quota (90s requested vs. 0s left). Try again in 0:00:00. Subscribe to Hugging Face PRO to get 
+turbo fail <HTTPError 402: 'Payment Required'>
+img 12 reused 11
+pollinations retry 0 <HTTPError 503: 'Service Unavailable'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+hf flux fail AppError('You have exceeded your free ZeroGPU quota (90s requested vs. 0s left). Try again in 0:00:00. Subscribe to Hugging Face PRO to get 
+turbo fail <HTTPError 402: 'Payment Required'>
+img 14 reused 13
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+img 16 pollinations
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+hf flux fail AppError('You have exceeded your free ZeroGPU quota (90s requested vs. 0s left). Try again in 0:00:00. Subscribe to Hugging Face PRO to get 
+turbo fail <HTTPError 402: 'Payment Required'>
+img 18 reused 17
+rendered /home/runner/work/yt-automation/yt-automation/out/kahani_long_20261102_1327/kahani_long_20261102_1327.mp4 163.9 s
+slot 2026-11-07T12:30:00Z Sat 07 Nov 06:00 PM IST
+QUEUED kahani_long_20261102_1327.tar
