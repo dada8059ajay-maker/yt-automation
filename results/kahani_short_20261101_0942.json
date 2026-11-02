@@ -1,0 +1,19 @@
+{
+ "job": "kahani_short_20261101_0942",
+ "videos": [
+  {
+   "id": "XNV3pFTmOv8",
+   "status": {
+    "uploadStatus": "uploaded",
+    "privacyStatus": "private",
+    "publishAt": "2026-11-06T08:00:00Z",
+    "license": "youtube",
+    "embeddable": true,
+    "publicStatsViewable": true,
+    "selfDeclaredMadeForKids": true,
+    "containsSyntheticMedia": false
+   },
+   "playlist": "ok"
+  }
+ ]
+}

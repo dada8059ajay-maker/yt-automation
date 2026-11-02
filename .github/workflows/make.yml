@@ -1,0 +1,99 @@
+name: make-video
+on:
+  schedule:
+    - cron: "15 */3 * * *"
+  workflow_dispatch:
+    inputs:
+      channel: {description: "raat or kahani (blank = auto)", required: false, default: ""}
+      mode: {description: "short or long (blank = auto)", required: false, default: ""}
+permissions:
+  contents: write
+concurrency:
+  group: engine
+  cancel-in-progress: false
+jobs:
+  make:
+    runs-on: ubuntu-latest
+    timeout-minutes: 80
+    env:
+      GH_TOKEN: ${{ github.token }}
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      CID: ${{ secrets.YT_CLIENT_ID }}
+      CSEC: ${{ secrets.YT_CLIENT_SECRET }}
+      HF_TOKEN: ${{ secrets.HF_TOKEN }}
+      POLLINATIONS_TOKEN: ${{ secrets.POLLINATIONS_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+        with: {ref: main}   # always latest state.json (dispatch would pin an old commit)
+      - id: plan   # fast early exit: nothing heavy installs unless there is work
+        run: |
+          echo "T0=$(date +%s)" >> $GITHUB_ENV
+          export REPO_PRIVATE=$(gh api repos/${{ github.repository }} --jq .private 2>/dev/null || echo true)
+          cp engine/state.json /tmp/base_state.json
+          python3 engine/plan.py "${{ inputs.channel }}" "${{ inputs.mode }}" >> $GITHUB_OUTPUT; cat $GITHUB_OUTPUT
+          grep -q '^ch=.\+\|^drain=1\|^comp=.\+' $GITHUB_OUTPUT || echo "::notice::Skipped: $(grep reason $GITHUB_OUTPUT)"
+      - name: publish pre-rendered queue (quota open)
+        if: steps.plan.outputs.drain == '1'
+        run: pip install -q pillow; python3 engine/drain.py
+      - name: mega compilation (35-45 min, Wed + Sun)
+        if: steps.plan.outputs.comp != ''
+        continue-on-error: true
+        run: |
+          pip install -q pillow; sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg fonts-noto-core >/dev/null
+          gh release view library >/dev/null 2>&1 || gh release create library --title "story library" --notes "finished long videos for weekly compilations" --prerelease
+          python3 engine/compile.py ${{ steps.plan.outputs.comp }}
+      - if: steps.plan.outputs.ch != ''
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cache/huggingface
+            ~/.cache/pip
+          key: engine-v2-api
+          restore-keys: engine-v2
+      - if: steps.plan.outputs.ch != ''
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg fonts-noto-core >/dev/null
+          pip install -q edge-tts pillow gradio_client   # no CPU image model any more (API pictures only)
+          gh release view drafts >/dev/null 2>&1 || gh release create drafts --title "unfinished drafts" --notes "checkpointed unfinished videos" --prerelease
+          gh release view library >/dev/null 2>&1 || gh release create library --title "story library" --notes "finished long videos for weekly compilations" --prerelease
+          gh release view queue >/dev/null 2>&1 || gh release create queue --title "render queue" --notes "pre-rendered videos waiting for YouTube quota" --prerelease
+      - if: steps.plan.outputs.ch != ''
+        env:
+          N: ${{ steps.plan.outputs.ch }}
+          MODE: ${{ steps.plan.outputs.mode }}
+          PRE: ${{ steps.plan.outputs.pre }}
+        run: |
+          F=secrets/yt_refresh_$N.enc; [ "$N" = kahani ] && F=secrets/yt_refresh.enc
+          export RT=$(openssl enc -d -aes-256-cbc -pbkdf2 -in $F -pass env:CSEC)
+          python3 engine/make.py $N $MODE $PRE
+      - if: always() && steps.plan.outputs.ch != ''
+        uses: actions/upload-artifact@v4
+        with:
+          name: video-${{ github.run_id }}
+          path: out/
+          retention-days: 3
+      - if: always() && (steps.plan.outputs.ch != '' || steps.plan.outputs.drain == '1' || steps.plan.outputs.comp != '')
+        run: |
+          mkdir -p logs; cp out/*/log.txt logs/${{ github.run_id }}.txt 2>/dev/null || true; cp out/*/script.json logs/${{ github.run_id }}_script.json 2>/dev/null || true
+          git config user.name bot; git config user.email bot@users.noreply.github.com
+          # conflict-free save: never rebase state.json; merge our changes into the freshest copy
+          python3 - <<'PY'
+          import json, os, time, datetime as dt
+          p = "engine/state.json"; s = json.load(open(p)); m = dt.datetime.utcnow().strftime("%Y-%m")
+          s.setdefault("_minutes", {})[m] = s["_minutes"].get(m, 0) + int((time.time() - int(os.environ["T0"])) / 60) + 2
+          json.dump(s, open(p, "w"), ensure_ascii=False, indent=1)
+          PY
+          cp engine/state.json /tmp/new_state_update.json
+          mkdir -p /tmp/keep && cp -r results logs /tmp/keep/ 2>/dev/null || true
+          for try in 1 2 3 4 5; do
+            git fetch -q origin main && git reset -q --hard origin/main
+            git checkout origin/main -- engine/state.json
+            python3 engine/merge_state.py /tmp/base_state.json /tmp/new_state_update.json engine/state.json
+            mkdir -p results logs
+            for f in /tmp/keep/results/* /tmp/keep/logs/*; do [ -f "$f" ] || continue; d=${f#/tmp/keep/}
+              if [ "$d" = results/schedule_log.md ] && [ -f "$d" ]; then cat "$d" "$f" | awk '!seen[$0]++' > /tmp/sl && mv /tmp/sl "$d"; else cp "$f" "$d"; fi; done
+            git add engine/state.json results logs
+            git commit -q -m "update state ${{ github.run_id }} [skip ci]" || { echo nothing to commit; break; }
+            git push -q origin HEAD:main && break
+            sleep $((RANDOM % 10 + 5))
+          done

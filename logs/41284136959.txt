@@ -1,0 +1,162 @@
+gemini gemini-3.8-flash 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try a
+gemini gemini-3.7-flash 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try a
+gemini ok gemini-3.6-flash
+title: नन्हा मोर कीकू और जंगल के राक्षस का ढोल scenes: 40
+voice engine: edge
+pollinations retry 0 <HTTPError 503: 'Service Unavailable'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+hf flux fail TypeError("Client.__init__() got an unexpected keyword argument 'hf_token'")
+img 0 sdturbo
+img 1 pollinations
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+hf flux fail TypeError("Client.__init__() got an unexpected keyword argument 'hf_token'")
+img 2 sdturbo
+img 3 pollinations
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+hf flux fail TypeError("Client.__init__() got an unexpected keyword argument 'hf_token'")
+img 4 sdturbo
+pollinations retry 0 <HTTPError 503: 'Service Unavailable'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+hf flux fail TypeError("Client.__init__() got an unexpected keyword argument 'hf_token'")
+img 5 sdturbo
+img 6 pollinations
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+hf flux fail TypeError("Client.__init__() got an unexpected keyword argument 'hf_token'")
+img 7 sdturbo
+pollinations retry 0 <HTTPError 503: 'Service Unavailable'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+hf flux fail TypeError("Client.__init__() got an unexpected keyword argument 'hf_token'")
+img 8 sdturbo
+pollinations retry 0 <HTTPError 503: 'Service Unavailable'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+hf flux fail TypeError("Client.__init__() got an unexpected keyword argument 'hf_token'")
+img 9 sdturbo
+img 10 pollinations
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+hf flux fail TypeError("Client.__init__() got an unexpected keyword argument 'hf_token'")
+img 11 sdturbo
+img 12 pollinations
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+hf flux fail TypeError("Client.__init__() got an unexpected keyword argument 'hf_token'")
+img 13 sdturbo
+img 14 pollinations
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+hf flux fail TypeError("Client.__init__() got an unexpected keyword argument 'hf_token'")
+img 15 sdturbo
+pollinations retry 0 <HTTPError 503: 'Service Unavailable'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+hf flux fail TypeError("Client.__init__() got an unexpected keyword argument 'hf_token'")
+img 16 sdturbo
+pollinations retry 0 <HTTPError 503: 'Service Unavailable'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+hf flux fail TypeError("Client.__init__() got an unexpected keyword argument 'hf_token'")
+img 17 sdturbo
+pollinations retry 0 <HTTPError 503: 'Service Unavailable'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+hf flux fail TypeError("Client.__init__() got an unexpected keyword argument 'hf_token'")
+img 18 sdturbo
+img 19 pollinations
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+hf flux fail TypeError("Client.__init__() got an unexpected keyword argument 'hf_token'")
+img 20 sdturbo
+img 21 pollinations
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+hf flux fail TypeError("Client.__init__() got an unexpected keyword argument 'hf_token'")
+img 22 sdturbo
+pollinations retry 0 <HTTPError 503: 'Service Unavailable'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+hf flux fail TypeError("Client.__init__() got an unexpected keyword argument 'hf_token'")
+img 23 sdturbo
+pollinations retry 0 <HTTPError 503: 'Service Unavailable'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+hf flux fail TypeError("Client.__init__() got an unexpected keyword argument 'hf_token'")
+img 24 sdturbo
+pollinations retry 0 <HTTPError 503: 'Service Unavailable'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+hf flux fail TypeError("Client.__init__() got an unexpected keyword argument 'hf_token'")
+img 25 sdturbo
+pollinations retry 0 <HTTPError 503: 'Service Unavailable'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+hf flux fail TypeError("Client.__init__() got an unexpected keyword argument 'hf_token'")
+img 26 sdturbo
+img 27 pollinations
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+hf flux fail TypeError("Client.__init__() got an unexpected keyword argument 'hf_token'")
+img 28 sdturbo
+pollinations retry 0 <HTTPError 503: 'Service Unavailable'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+hf flux fail TypeError("Client.__init__() got an unexpected keyword argument 'hf_token'")
+img 29 sdturbo
+img 30 pollinations
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+hf flux fail TypeError("Client.__init__() got an unexpected keyword argument 'hf_token'")
+img 31 sdturbo
+pollinations retry 0 <HTTPError 503: 'Service Unavailable'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+hf flux fail TypeError("Client.__init__() got an unexpected keyword argument 'hf_token'")
+img 32 sdturbo
+pollinations retry 0 <HTTPError 503: 'Service Unavailable'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+hf flux fail TypeError("Client.__init__() got an unexpected keyword argument 'hf_token'")
+img 33 sdturbo
+pollinations retry 0 <HTTPError 503: 'Service Unavailable'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+hf flux fail TypeError("Client.__init__() got an unexpected keyword argument 'hf_token'")
+img 34 sdturbo
+img 35 pollinations
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+hf flux fail TypeError("Client.__init__() got an unexpected keyword argument 'hf_token'")
+img 36 sdturbo
+img 37 pollinations
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+hf flux fail TypeError("Client.__init__() got an unexpected keyword argument 'hf_token'")
+img 38 sdturbo
+img 39 pollinations
+rendered /home/runner/work/yt-automation/yt-automation/out/kahani_long_20261101_1249/kahani_long_20261101_1249.mp4 278.2 s
+slot 2026-11-07T04:30:00Z Sat 07 Nov 10:00 AM IST
+QUEUED kahani_long_20261101_1249.tar

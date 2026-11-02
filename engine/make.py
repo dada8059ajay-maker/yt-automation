@@ -1,0 +1,482 @@
+#!/usr/bin/env python3
+"""Fully automatic video engine (runs on GitHub Actions).
+usage: python engine/make.py <channel raat|kahani> <mode short|long> [--no-upload]
+Steps: Gemini script (+self edit) -> SD-Turbo CPU images -> edge-tts voices -> ffmpeg render -> YouTube schedule.
+"""
+import os, sys, json, re, subprocess, random, datetime as dt, urllib.request, urllib.error, asyncio, shutil, math
+
+CH, MODE = sys.argv[1], sys.argv[2]
+UPLOAD = "--no-upload" not in sys.argv
+PRE = "--prerender" in sys.argv   # quota full: render now, publish later from the queue
+ROOT = os.path.dirname(os.path.abspath(__file__))
+CFG = json.load(open(f"{ROOT}/channels.json"))[CH]
+STATE_P = f"{ROOT}/state.json"
+STATE = json.load(open(STATE_P))
+IST = dt.timezone(dt.timedelta(hours=5, minutes=30))
+NOW = dt.datetime.now(dt.timezone.utc)
+STAMP = NOW.astimezone(IST).strftime("%Y%m%d_%H%M")
+import time as _t, tarfile
+T0 = _t.time()
+BUDGET_MIN = float(os.environ.get("RENDER_BUDGET_MIN", "58"))   # stop & checkpoint before the job's 80-min hard limit
+_d = STATE.get("_draft") or {}
+DRAFT = _d if _d.get("ch") == CH and _d.get("mode") == MODE and _d.get("tries", 0) < 4 else None
+TRIES = (DRAFT or {}).get("tries", 0) + 1
+JOB = DRAFT["job"] if DRAFT else f"{CH}_{MODE}_{STAMP}"
+OUT = os.path.abspath(f"out/{JOB}"); os.makedirs(OUT, exist_ok=True)
+def _save_state(): json.dump(STATE, open(STATE_P, "w"), ensure_ascii=False, indent=1)
+def checkpoint(stage):
+    """Save the unfinished video (script, voices, images done so far) to release 'drafts' so the next run resumes it."""
+    asset = f"draft_{JOB}.tar"
+    with tarfile.open(asset, "w") as t:
+        for f in os.listdir(OUT):
+            if f.endswith((".json", ".mp3", ".jpg", ".txt")) and not f.startswith(("clips", "bg")): t.add(os.path.join(OUT, f), arcname=f"{JOB}/{f}")
+    r = subprocess.run(["gh", "release", "upload", "drafts", asset, "--clobber"])
+    STATE["_draft"] = {"job": JOB, "ch": CH, "mode": MODE, "asset": asset, "stage": stage,
+                       "tries": TRIES}
+    _save_state(); print("checkpoint", stage, "upload rc", r.returncode, flush=True)
+def out_of_time(): return (_t.time() - T0) / 60 > BUDGET_MIN
+def pause(stage):
+    checkpoint(stage); print("PAUSED at", stage, "- next run resumes this draft", flush=True); sys.exit(0)
+if DRAFT:
+    subprocess.run(["gh", "release", "download", "drafts", "-p", DRAFT["asset"], "-D", ".", "--clobber"], check=False)
+    if os.path.exists(DRAFT["asset"]):
+        with tarfile.open(DRAFT["asset"]) as t: t.extractall("out")
+    print("RESUMING draft", JOB, "from", DRAFT.get("stage"), flush=True)
+W, H = (1080, 1920) if MODE == "short" else (1920, 1080)
+LOG = open(f"{OUT}/log.txt", "a")
+def log(*a):
+    s = " ".join(str(x) for x in a); print(s, flush=True); LOG.write(s + "\n"); LOG.flush()
+
+# ---------------- 1. script ----------------
+MODELS = ["gemini-3.8-flash", "gemini-3.7-flash", "gemini-3.6-flash", "gemini-3.5-flash", "gemini-flash-latest", "gemini-pro-latest", "gemini-3.5-flash-lite", "gemini-flash-lite-latest"]
+def gemini(prompt, want_json=True):
+    body = {"contents": [{"parts": [{"text": prompt}]}], "generationConfig": {"temperature": 1.0}}
+    if want_json: body["generationConfig"]["responseMimeType"] = "application/json"
+    for attempt in range(3):
+        for m in MODELS:
+            req = urllib.request.Request(f"https://generativelanguage.googleapis.com/v1beta/models/{m}:generateContent",
+                json.dumps(body).encode(), {"Content-Type": "application/json", "x-goog-api-key": os.environ["GEMINI_API_KEY"]})
+            try:
+                r = json.load(urllib.request.urlopen(req, timeout=180))
+                t = "".join(p.get("text", "") for p in r["candidates"][0]["content"]["parts"])
+                log("gemini ok", m)
+                if not want_json: return t
+                t = t.strip(); t = re.sub(r"^```(json)?|```$", "", t, flags=re.M).strip()
+                o = json.loads(t)
+                if isinstance(o, list): o = o[0]
+                return o
+            except urllib.error.HTTPError as e:
+                log("gemini", m, e.code, e.read().decode()[:150])
+            except Exception as e:
+                log("gemini", m, repr(e)[:150])
+        import time; time.sleep(20)
+    raise SystemExit("Gemini failed")
+
+RAATLONG = CH == "raat" and MODE == "long"
+# Cliffhanger Shorts funnel: a Short is the trailer of the channel's latest long story
+LL = STATE[CH].get("last_long") if MODE == "short" else None
+if LL and LL.get("short_done"): LL = None
+TRAILER_TXT = ""
+if LL:
+    TRAILER_TXT = (f"\nयह Short नई कहानी नहीं, बल्कि लंबे वीडियो \"{LL['title']}\" का ट्रेलर है। कहानी: {LL.get('story','')}\n"
+                   f"वही किरदार (Character Sheets हूबहू): {json.dumps(LL.get('characters', {}), ensure_ascii=False)}\n"
+                   "सबसे रोमांचक हिस्सा दिखाओ, तनाव बढ़ाओ और क्लाइमेक्स से ठीक पहले रोक दो (राज़ मत खोलो)। आख़िरी दृश्य (speaker N) हूबहू: "
+                   "\"आगे क्या हुआ? पूरी कहानी देखने के लिए नीचे दिए गए वीडियो पर क्लिक करें!\" title भी उसी कहानी का हो (+ #shorts)।")
+n_scenes = "9-11" if MODE == "short" else "64-78"      # all long videos 8-12 min (31 Jan 2027 watch-hour mission)
+dur = "45-55 सेकंड" if MODE == "short" else "8-12 मिनट"
+# 'नियम वाली कहानी' series: every Raat long video is part 1, 2 or 3 of a rules-horror series
+SER = STATE[CH].get("series") if RAATLONG else None
+if RAATLONG and (not SER or SER.get("part", 0) >= 3): SER = None
+PART = (SER["part"] + 1) if SER else 1
+SERIES_TXT = ""
+if RAATLONG:
+    if SER:
+        SERIES_TXT = (f"\nयह सीरीज़ \"{SER['name']}\" का भाग {PART} (कुल 3 भाग) है। अब तक की कहानी: {SER['so_far']}\n"
+                      f"वही किरदार (Character Sheets हूबहू यही रखो): {json.dumps(SER.get('characters', {}), ensure_ascii=False)}\n"
+                      f"शुरुआत में 15 सेकंड का 'पिछले भाग में...' रीकैप, फिर नए नियम/नया खतरा।"
+                      + (" यह आख़िरी भाग है: रहस्य पूरा खोलो, बड़ा ट्विस्ट, संतोषजनक अंत।" if PART == 3 else " अंत में बड़ा क्लिफ़हैंगर, अगले भाग की झलक।"))
+    else:
+        SERIES_TXT = "\nयह एक नई 3-भाग 'नियम वाली' हॉरर सीरीज़ का भाग 1 है: कोई जगह, उसके अजीब नियम (3-5), नियम टूटने का डर। अंत में बड़ा क्लिफ़हैंगर, भाग 2 की झलक।"
+    SERIES_TXT += f" title में 'भाग {PART}' ज़रूर हो। JSON में \"series_name\" (सीरीज़ का छोटा हिंदी नाम) और \"so_far\" (भाग 1 से अब तक की पूरी कहानी 4-6 वाक्य में) भी दो।"
+hist = "; ".join(STATE[CH]["history"][-40:])
+PROMPT = f"""तुम YouTube चैनल "{CFG['name']}" के मुख्य लेखक हो। एक बिल्कुल नई, मौलिक (copyright-free, खुद की लिखी) कहानी लिखो जो आज YouTube पर {"Shorts" if MODE=="short" else "लंबे वीडियो"} में सबसे ज़्यादा देखी जाए।
+चैनल नियम: {CFG['brief']}
+पहले ही बन चुकी कहानियाँ (इनसे अलग विषय, जगह और ट्विस्ट): {hist}
+लंबाई: बोलने में लगभग {dur}। दृश्य: {n_scenes}।{SERIES_TXT}{TRAILER_TXT}
+पहले 10 सेकंड का नियम (सख्त): कहानी कभी धीमी शुरुआत ("एक गाँव था...", "बहुत समय पहले...") से शुरू न हो। पहला ही वाक्य खौफनाक/रोमांचक सवाल या सीधा रहस्य हो, ताकि दर्शक 30 सेकंड तक न जाए।
+{"Short: पहली लाइन में ही ज़बरदस्त हुक; अंत में क्लिफ़हैंगर या चौंकाने वाला मोड़।" if MODE=="short" else "लंबा वीडियो: पहले 20 सेकंड में ठंडा हुक (कहानी का सबसे रोमांचक पल), फिर कहानी; लगभग 35% पर एक हल्की 1 लाइन सब्सक्राइब अपील एक छोटे पेऑफ़ के बाद (पहले 60 सेकंड में नहीं); अंत में मुख्य अपील + अगली कहानी की झलक।"}
+हर लाइन पर असली अभिनय सोचो: डर में काँपती फुसफुसाहट, भागने में हाँफती साँसें, गुस्से में गरज; mood से सीन का संगीत तय होगा (शुरुआत/शांत=peaceful, डर/रहस्य=suspense, भागना=chase, अंत की सीख/जीत=victory)।
+लिखने के बाद खुद संपादित करो: फालतू शब्द और दोहराव हटाओ, छोटी लाइनें, स्वाभाविक बोलचाल की हिंदी, हर लाइन कहानी आगे बढ़ाए।
+पहले हर किरदार की पक्की Character Sheet बनाओ (अंग्रेज़ी में: उम्र, चेहरा, आँखें, बाल, कद-काठी, कपड़े और रंग, भारतीय परिवेश)। हर दृश्य के visual में उस दृश्य के किरदार की Character Sheet के शब्द हूबहू दोहराओ ताकि हर तस्वीर में वह एक जैसा दिखे।
+speaker कोड: N=कथावाचक, M=युवा पुरुष, F=युवा महिला, O=बूढ़ा आदमी, A=बूढ़ी औरत, C=बच्चा, G=रहस्यमयी/भूतिया आवाज़।
+सिर्फ़ यह JSON लौटाओ:
+{{"title": "हिंदी शीर्षक, जिज्ञासा जगाने वाला, 70 अक्षर से कम{' + #shorts' if MODE=='short' else ''}",
+ "topic": "एक लाइन में कहानी का सार",
+ "description": "2-4 लाइन हिंदी विवरण + 3-5 हैशटैग",
+ "tags": ["8-12 टैग"],
+ "hook": "स्क्रीन पर पहले 3 सेकंड दिखने वाला 3-5 शब्द का हुक",
+ "thumb_text": "थंबनेल पर 2-4 शब्द",
+ "characters": {{"नाम": "English character sheet: age, face, eyes, hair, build, exact clothes + colors, Indian look"}},
+ "scenes": [{{"speaker": "N", "text": "हिंदी लाइन (1-2 वाक्य); ज़रूरत हो तो '...' से रुकाव", "mood": "suspense|chase|peaceful|victory में से एक (BGM के लिए)", "style": "English voice-acting direction for this exact line, e.g. 'terrified, trembling, shaky low whisper' / 'out of breath, panting heavily as if just ran for life, gasping between words' / 'deep, booming, furious, terrifyingly loud' / 'warm, gentle storyteller'", "visual": "Precise English visual prompt, about 50 words: ONE main character in focus (exact character-sheet wording), action, Indian place, time of day, lighting, camera shot (medium/wide). No text, no hand close-ups."}}]}}"""
+if os.path.exists(f"{OUT}/script.json"):
+    S = json.load(open(f"{OUT}/script.json")); log("resume: script loaded")
+else:
+    S = gemini(PROMPT)
+    assert len(S.get("scenes", [])) >= 5, "too few scenes"
+    json.dump(S, open(f"{OUT}/script.json", "w"), ensure_ascii=False, indent=1)
+    checkpoint("script")
+log("title:", S["title"], "scenes:", len(S["scenes"]))
+
+# ---------------- 2. voices ----------------
+# ---------------- 2. voices: Gemini acting TTS (Shorts) -> emotional edge-tts backup ----------------
+import edge_tts, base64, time
+VOICE = {"N": ("hi-IN-MadhurNeural", 0, "+38%"), "M": ("hi-IN-MadhurNeural", 6, "+40%"),
+         "F": ("hi-IN-SwaraNeural", 0, "+38%"), "O": ("hi-IN-MadhurNeural", -14, "+28%"),
+         "A": ("hi-IN-SwaraNeural", -12, "+28%"), "C": ("hi-IN-SwaraNeural", 22, "+35%"),
+         "G": ("hi-IN-SwaraNeural", -18, "+20%")}
+GVOICE = {"N": "Charon", "M": "Puck", "F": "Kore", "O": "Fenrir", "A": "Gacrux", "C": "Leda", "G": "Enceladus"}
+TTS_MODELS = ["gemini-2.5-flash-tts", "gemini-2.5-flash-preview-tts", "gemini-2.5-pro-tts", "gemini-2.5-pro-preview-tts"]
+def emo(sc):
+    s = (sc.get("style", "") + " " + sc.get("mood", "")).lower()
+    if any(k in s for k in ("breath", "pant", "gasp", "running", "ran ")): return "run"
+    if any(k in s for k in ("furious", "angry", "boom", "roar", "shout", "loud")): return "angry"
+    if any(k in s for k in ("terrif", "whisper", "trembl", "scared", "fear", "shaky")): return "scared"
+    return ""
+def post(i, sc, src):
+    e = emo(sc); a = f"{OUT}/a{i:03d}.mp3"; fx = None
+    if e == "angry": fx = "aecho=0.8:0.6:35:0.22,bass=g=6,volume=1.2"
+    if e == "scared" and src == "edge": fx = "highpass=f=120,volume=0.9"
+    if e == "run" and src == "edge":  # layer real breathing noise under breathless lines
+        subprocess.run(["ffmpeg", "-y", "-v", "error", "-i", a, "-f", "lavfi", "-i",
+            "anoisesrc=c=pink:a=0.5,bandpass=f=1100:width_type=h:w=900,volume='pow(abs(sin(PI*1.6*t)),6)*0.35':eval=frame",
+            "-filter_complex", "[0:a][1:a]amix=2:duration=first:normalize=0", f"{OUT}/t.mp3"], check=True); os.replace(f"{OUT}/t.mp3", a)
+    if fx:
+        subprocess.run(["ffmpeg", "-y", "-v", "error", "-i", a, "-af", fx, f"{OUT}/t.mp3"], check=True); os.replace(f"{OUT}/t.mp3", a)
+async def edge(i, sc):
+    v, p0, rate = VOICE.get(sc.get("speaker", "N"), VOICE["N"]); e = emo(sc); vol = "+0%"; txt = sc["text"]
+    if e == "scared": rate, p0 = "-15%", p0 - 10
+    elif e == "run":
+        rate, p0 = "+22%", p0 + 10; w = txt.split(); txt = "... ".join(" ".join(w[k:k+3]) for k in range(0, len(w), 3))
+    elif e == "angry": rate, p0, vol = "-8%", p0 - 18, "+20%"
+    try: comm = edge_tts.Communicate(txt, v, rate=rate, pitch=f"{p0:+d}Hz", volume=vol, boundary="WordBoundary")
+    except TypeError: comm = edge_tts.Communicate(txt, v, rate=rate, pitch=f"{p0:+d}Hz", volume=vol)
+    audio, words = bytearray(), []
+    async for ch in comm.stream():
+        if ch["type"] == "audio": audio += ch["data"]
+        elif ch["type"] == "WordBoundary": words.append([ch["offset"] / 1e7, (ch["offset"] + ch["duration"]) / 1e7, ch["text"]])
+    open(f"{OUT}/a{i:03d}.mp3", "wb").write(bytes(audio))
+    json.dump(words, open(f"{OUT}/w{i:03d}.json", "w"), ensure_ascii=False)
+class RateLimited(Exception): pass
+GM = {"m": None}
+def gemini_tts(i, sc):
+    style = sc.get("style") or "natural expressive storyteller"
+    txt = (f"You are a top Hindi voice actor. Perform this line in natural Indian Hindi. Acting direction: {style}. "
+           f"Fully act the emotion: real breathing, trembling, gasps and pauses where it fits. Line:\n{sc['text']}")
+    for m in ([GM["m"]] if GM["m"] else TTS_MODELS):
+        body = {"contents": [{"parts": [{"text": txt}]}], "generationConfig": {"responseModalities": ["AUDIO"],
+                "speechConfig": {"voiceConfig": {"prebuiltVoiceConfig": {"voiceName": GVOICE.get(sc.get("speaker", "N"), "Charon")}}}}}
+        req = urllib.request.Request(f"https://generativelanguage.googleapis.com/v1beta/models/{m}:generateContent", json.dumps(body).encode(),
+            {"Content-Type": "application/json", "x-goog-api-key": os.environ["GEMINI_API_KEY"]})
+        try:
+            r = json.load(urllib.request.urlopen(req, timeout=120))
+            part = next(p for p in r["candidates"][0]["content"]["parts"] if "inlineData" in p)
+            open(f"{OUT}/g.pcm", "wb").write(base64.b64decode(part["inlineData"]["data"]))
+            subprocess.run(["ffmpeg", "-y", "-v", "error", "-f", "s16le", "-ar", "24000", "-ac", "1", "-i", f"{OUT}/g.pcm",
+                "-af", "silenceremove=start_periods=1:start_threshold=-45dB,areverse,silenceremove=start_periods=1:start_threshold=-45dB,areverse",
+                f"{OUT}/a{i:03d}.mp3"], check=True)
+            GM["m"] = m; return
+        except urllib.error.HTTPError as e:
+            log("gtts", m, e.code, e.read().decode()[:120])
+            if e.code == 429: raise RateLimited()
+        except Exception as e:
+            log("gtts", m, repr(e)[:120])
+    raise RateLimited()
+src = "edge"
+VOICE_DONE = os.path.exists(f"{OUT}/voices.done") and all(os.path.exists(f"{OUT}/a{i:03d}.mp3") for i in range(len(S["scenes"])))
+if VOICE_DONE: src = "resume"; log("resume: voices loaded")
+elif len(S["scenes"]) <= 12:   # free Gemini TTS quota is small: use it for Shorts, all-or-nothing for one consistent cast
+    try:
+        for i, sc in enumerate(S["scenes"]):
+            gemini_tts(i, sc); log("gtts ok", i, GM["m"]); time.sleep(21)
+        src = "gemini"
+    except RateLimited:
+        log("gemini tts unavailable -> emotional edge-tts for whole video")
+async def all_edge():
+    for i, sc in enumerate(S["scenes"]):
+        for k in range(3):
+            try: await edge(i, sc); break
+            except Exception as e: log("tts retry", i, e); await asyncio.sleep(3)
+if src == "edge": asyncio.run(all_edge())
+if not VOICE_DONE:
+    for i, sc in enumerate(S["scenes"]): post(i, sc, src)
+    open(f"{OUT}/voices.done", "w").write(src); checkpoint("voices")
+log("voice engine:", src)
+def dur_of(p):
+    return float(subprocess.check_output(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", p]).decode().strip())
+GAP = 0.35
+for i, sc in enumerate(S["scenes"]):
+    a = f"{OUT}/a{i:03d}.mp3"
+    sc["dur"] = dur_of(a) + GAP
+    if MODE == "long" and "?" in sc["text"] and CFG["madeForKids"]: sc["dur"] += 2.5  # pause after a question to kids
+
+# ---------------- 3. images (FLUX via Pollinations, SD-Turbo only as backup) ----------------
+import time, urllib.parse, io
+from PIL import Image, ImageFilter, ImageEnhance
+seed = random.randint(1, 10**6)
+CW, CH2 = int(W * 1.15), int(H * 1.15)
+SUFFIX = "single character focus, accurate anatomy, no extra limbs, no extra fingers, one face, high detail, sharp focus"
+def cover(img):
+    r = max(CW / img.width, CH2 / img.height)
+    img = img.resize((math.ceil(img.width * r), math.ceil(img.height * r)), Image.LANCZOS)
+    l, t = (img.width - CW) // 2, (img.height - CH2) // 2
+    return img.crop((l, t, l + CW, t + CH2))
+def _fit(img):
+    if img.width < 300: raise ValueError("tiny image")
+    return img
+def flux(prompt, sd):
+    """1) Pollinations FLUX  2) Hugging Face FLUX.1-schnell space  -> None means use SD-Turbo (last resort)."""
+    short = prompt[:245]
+    for k in range(3):
+        seed_k = random.randint(1, 2**31 - 1)
+        url = ("https://image.pollinations.ai/prompt/" + urllib.parse.quote(short) +
+               f"?model=flux&width={W}&height={H}&nologo=true&enhance=true&seed={seed_k}")
+        hdr = {"User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36"}
+        if os.environ.get("POLLINATIONS_TOKEN"): hdr["Authorization"] = "Bearer " + os.environ["POLLINATIONS_TOKEN"]
+        try:
+            data = urllib.request.urlopen(urllib.request.Request(url, headers=hdr), timeout=150).read()
+            img = _fit(Image.open(io.BytesIO(data)).convert("RGB"))
+            if not os.environ.get("POLLINATIONS_TOKEN"): img = img.crop((0, 0, img.width, int(img.height * 0.94)))  # free-tier watermark strip
+            return img, "pollinations"
+        except Exception as e:
+            log("pollinations retry", k, repr(e)[:100]); time.sleep(5 + 5 * k)
+    try:
+        from gradio_client import Client
+        global _hf
+        if "_hf" not in globals() or _hf is None:
+            _tk = os.environ.get("HF_TOKEN") or None
+            try:
+                _hf = Client("black-forest-labs/FLUX.1-schnell", token=_tk, verbose=False)
+            except TypeError:
+                _hf = Client("black-forest-labs/FLUX.1-schnell", hf_token=_tk, verbose=False)
+        hw, hh = (576, 1024) if MODE == "short" else (1024, 576)
+        r = _hf.predict(prompt=prompt[:600], seed=random.randint(1, 2**31 - 1), randomize_seed=False, width=hw, height=hh,
+                        num_inference_steps=4, api_name="/infer")
+        return _fit(Image.open(r[0] if isinstance(r, (list, tuple)) else r).convert("RGB")), "hf-flux"
+    except Exception as e:
+        log("hf flux fail", repr(e)[:140])
+    try:
+        url = "https://image.pollinations.ai/prompt/" + urllib.parse.quote(short) + f"?model=turbo&width={W}&height={H}&nologo=true&seed={random.randint(1, 2**31 - 1)}"
+        data = urllib.request.urlopen(urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"}), timeout=120).read()
+        return _fit(Image.open(io.BytesIO(data)).convert("RGB")), "pollinations-turbo"
+    except Exception as e:
+        log("turbo fail", repr(e)[:100])
+    return None, None
+_hf = None
+STEP = 2 if MODE == "long" else 1   # long: one picture per 2 scenes (different pan each) -> half the API calls
+for i, sc in enumerate(S["scenes"]):
+    if os.path.exists(f"{OUT}/i{i:03d}.jpg"): continue   # resumed draft
+    if i % STEP:
+        if os.path.exists(f"{OUT}/i{i-1:03d}.jpg"): shutil.copy(f"{OUT}/i{i-1:03d}.jpg", f"{OUT}/i{i:03d}.jpg"); continue
+    if out_of_time(): pause(f"images {i}/{len(S['scenes'])}")
+    if i and i % 6 == 0: checkpoint(f"images {i}/{len(S['scenes'])}")
+    p = f"{sc['visual']}, {CFG['style']}, {SUFFIX}"
+    img, src = flux(p, seed + i)
+    if i: time.sleep(5)
+    if img is None:   # no CPU model any more: reuse the nearest good picture (mirrored for variety)
+        prev = [k for k in range(i - 1, -1, -1) if os.path.exists(f"{OUT}/i{k:03d}.jpg") and not os.path.exists(f"{OUT}/r{k:03d}")]
+        if not prev: log("img", i, "MISSING"); continue
+        Image.open(f"{OUT}/i{prev[0]:03d}.jpg").transpose(Image.FLIP_LEFT_RIGHT).save(f"{OUT}/i{i:03d}.jpg", quality=93)
+        open(f"{OUT}/r{i:03d}", "w").write("reused"); log("img", i, "reused", prev[0]); continue
+    img = cover(img).filter(ImageFilter.UnsharpMask(2, 70, 2))
+    img = ImageEnhance.Contrast(img).enhance(1.05)
+    img.save(f"{OUT}/i{i:03d}.jpg", quality=93)
+    log("img", i, src)
+
+for i in range(len(S["scenes"])):   # pictures still missing at the start -> borrow the first good one after them
+    if not os.path.exists(f"{OUT}/i{i:03d}.jpg"):
+        nxt = [k for k in range(i + 1, len(S["scenes"])) if os.path.exists(f"{OUT}/i{k:03d}.jpg")]
+        if not nxt: pause("no pictures (all image APIs down)")
+        shutil.copy(f"{OUT}/i{nxt[0]:03d}.jpg", f"{OUT}/i{i:03d}.jpg")
+good = sum(1 for i in range(len(S["scenes"])) if not os.path.exists(f"{OUT}/r{i:03d}"))
+if good < max(3, len(S["scenes"]) // (STEP * 3)): pause(f"too few fresh pictures {good}")
+checkpoint("images done")
+RENDER_EST = 3 if MODE == "short" else 9   # minutes the final render needs
+if (_t.time() - T0) / 60 + RENDER_EST > BUDGET_MIN + 12: pause("before render")
+def finish_draft():
+    if STATE.get("_draft"):
+        subprocess.run(["gh", "release", "delete-asset", "drafts", STATE["_draft"]["asset"], "-y"]); STATE["_draft"] = None
+# ---------------- 4. subtitles + render ----------------
+FONT = "Noto Sans Devanagari"
+fs = 76 if MODE == "short" else 58
+def ts(s):
+    return "%d:%02d:%05.2f" % (s // 3600, (s % 3600) // 60, s % 60)
+def chunks(text, n=4):
+    w = text.split(); return [" ".join(w[k:k + n]) for k in range(0, len(w), n)] or [text]
+ass = [f"""[Script Info]
+PlayResX: {W}
+PlayResY: {H}
+WrapStyle: 0
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Sub,{FONT},{fs},&H00FFFFFF,&H00FFFFFF,&H00000000,&H64000000,-1,0,0,0,100,100,0,0,1,5,2,2,60,60,{int(H*0.2) if MODE=='short' else 70},1
+Style: Hook,{FONT},{int(fs*1.45)},&H00FFFFFF,&H00FFFFFF,&H00000000,&H00000000,-1,0,0,0,100,100,0,0,1,7,4,8,40,40,{int(H*0.12)},1
+Style: Disc,{FONT},{int(fs*0.5)},&H00D0D0D0,&H00FFFFFF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,2,1,8,40,40,30,1
+Style: End,{FONT},{int(fs*1.25)},&H00FFFFFF,&H00FFFFFF,&H00000000,&H00000000,-1,0,0,0,100,100,0,0,1,6,4,5,40,40,0,1
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text"""]
+t = 0.0
+def wb_chunks(i):
+    """subtitle chunks timed by edge-tts WordBoundary (exact), else None"""
+    try: w = json.load(open(f"{OUT}/w{i:03d}.json"))
+    except Exception: return None
+    if not w: return None
+    return [(w[k][0], w[min(k + 3, len(w) - 1)][1], " ".join(x[2] for x in w[k:k + 4])) for k in range(0, len(w), 4)]
+for i, sc in enumerate(S["scenes"]):
+    col = "" if sc.get("speaker", "N") == "N" else "{\\c&H0050D0FF}"
+    wb = wb_chunks(i)
+    if wb:
+        for k, (a0, a1, x) in enumerate(wb):
+            e1 = wb[k + 1][0] if k + 1 < len(wb) else max(a1, a0 + 0.3)
+            ass.append(f"Dialogue: 0,{ts(t + a0)},{ts(t + min(e1, sc['dur']))},Sub,,0,0,0,,{col}{x}")
+        sc["start"] = t; t += sc["dur"]; continue
+    parts = chunks(sc["text"]); spoken = sc["dur"] - GAP
+    tot = sum(len(x) for x in parts); st = t
+    for x in parts:
+        d = spoken * len(x) / tot
+        col = "" if sc.get("speaker", "N") == "N" else "{\\c&H0050D0FF}"
+        ass.append(f"Dialogue: 0,{ts(st)},{ts(st + d)},Sub,,0,0,0,,{col}{x}")
+        st += d
+    sc["start"] = t; t += sc["dur"]
+END = 3.5
+TOTAL = t + END
+ass.append(f"Dialogue: 1,0:00:00.00,{ts(min(3.2, t))},Hook,,0,0,0,,{{\\fad(150,300)}}{S.get('hook','')}")
+if CFG["disclaimer"]:
+    ass.append(f"Dialogue: 1,0:00:00.00,{ts(4)},Disc,,0,0,0,,{CFG['disclaimer']}")
+ass.append(f"Dialogue: 2,{ts(t)},{ts(TOTAL)},End,,0,0,0,,{{\\fad(300,0)}}{CFG['end']}")
+open(f"{OUT}/subs.ass", "w").write("\n".join(ass) + "\n")
+
+# per-scene motion clips: cheap crop-pan (no zoompan), 24 fps, ultrafast
+fps = 24
+pans = ["x='(iw-ow)*t/{D}':y='(ih-oh)/2'", "x='(iw-ow)*(1-t/{D})':y='(ih-oh)/2'",
+        "x='(iw-ow)/2':y='(ih-oh)*t/{D}'", "x='(iw-ow)/2':y='(ih-oh)*(1-t/{D})'"]
+clips = []
+for i, sc in enumerate(S["scenes"]):
+    d = sc["dur"] + (END if i == len(S["scenes"]) - 1 else 0)
+    c = f"{OUT}/c{i:03d}.mp4"
+    subprocess.run(["ffmpeg", "-y", "-v", "error", "-loop", "1", "-framerate", str(fps), "-t", f"{d:.3f}", "-i", f"{OUT}/i{i:03d}.jpg", "-vf",
+        f"scale={CW}:{CH2},crop={W}:{H}:{pans[i % 4].replace('{D}', f'{d:.3f}')},fade=t=in:st=0:d=0.25,format=yuv420p",
+        "-r", str(fps), "-c:v", "libx264", "-preset", "ultrafast", "-crf", "20", "-threads", "4", c], check=True)
+    clips.append(c)
+open(f"{OUT}/clips.txt", "w").write("".join(f"file '{c}'\n" for c in clips))
+# voice track with gaps
+vo = []
+for i, sc in enumerate(S["scenes"]):
+    vo.append(f"[{i}:a]apad=whole_dur={sc['dur']:.3f}[v{i}]")
+inputs = sum([["-i", f"{OUT}/a{i:03d}.mp3"] for i in range(len(S["scenes"]))], [])
+subprocess.run(["ffmpeg", "-y", "-v", "error", *inputs, "-filter_complex",
+    ";".join(vo) + ";" + "".join(f"[v{i}]" for i in range(len(S["scenes"]))) + f"concat=n={len(S['scenes'])}:v=0:a=1,apad=whole_dur={TOTAL:.2f}[a]",
+    "-map", "[a]", "-ar", "48000", "-ac", "2", f"{OUT}/vo.wav"], check=True)
+# mood-driven music bed (assets/bgm, synthesized copyright-free) changing per scene
+BGM = os.path.join(os.path.dirname(ROOT), "assets", "bgm")
+default = "peaceful" if CFG["madeForKids"] else "suspense"
+segs, offs = [], {}
+for i, sc in enumerate(S["scenes"]):
+    m = (sc.get("mood") or "").lower().split("|")[0].strip()
+    if m not in ("suspense", "chase", "peaceful", "victory"): m = default
+    if CFG["madeForKids"] and i == len(S["scenes"]) - 1 and m == "peaceful": m = "victory"
+    d = sc["dur"] + (END if i == len(S["scenes"]) - 1 else 0); o = offs.get(m, 0.0); offs[m] = o + d
+    sg = f"{OUT}/bg{i:03d}.wav"
+    subprocess.run(["ffmpeg", "-y", "-v", "error", "-stream_loop", "-1", "-i", f"{BGM}/{m}.m4a", "-ss", f"{o % 55:.2f}", "-t", f"{d:.3f}",
+        "-af", f"afade=t=in:d=0.4,afade=t=out:st={max(0, d-0.4):.3f}:d=0.4,aformat=channel_layouts=stereo:sample_rates=48000", sg], check=True)
+    segs.append(sg)
+open(f"{OUT}/bg.txt", "w").write("".join(f"file '{x}'\n" for x in segs))
+subprocess.run(["ffmpeg", "-y", "-v", "error", "-f", "concat", "-safe", "0", "-i", f"{OUT}/bg.txt", "-t", f"{TOTAL:.2f}", f"{OUT}/bed.wav"], check=True)
+BEDGAIN = "-5dB" if not CFG["madeForKids"] else "-7dB"   # ~-10 dB under voice in pauses; sidechain ducks ~8 dB more while speaking
+FINAL = f"{OUT}/{JOB}.mp4"
+subprocess.run(["ffmpeg", "-y", "-v", "error", "-f", "concat", "-safe", "0", "-i", f"{OUT}/clips.txt", "-i", f"{OUT}/vo.wav", "-i", f"{OUT}/bed.wav",
+    "-filter_complex", f"[0:v]ass={OUT}/subs.ass[v];[1:a]loudnorm=I=-15:TP=-1.5,aformat=channel_layouts=stereo:sample_rates=48000,asplit[vo][sc];[2:a]volume={BEDGAIN}[b];[b][sc]sidechaincompress=threshold=0.02:ratio=8:attack=15:release=350[bd];[vo][bd]amix=2:duration=first:normalize=0,alimiter=limit=0.95[a]",
+    "-map", "[v]", "-map", "[a]", "-t", f"{TOTAL:.2f}", "-c:v", "libx264", "-preset", "ultrafast", "-crf", "21", "-threads", "4", "-pix_fmt", "yuv420p",
+    "-c:a", "aac", "-b:a", "192k", "-movflags", "+faststart", FINAL], check=True)
+log("rendered", FINAL, round(TOTAL, 1), "s")
+
+# thumbnail (long only)
+thumb = None
+if MODE == "long":
+    thumb = f"{OUT}/thumb.jpg"
+    open(f"{OUT}/th.ass", "w").write(ass[0].replace(f"PlayResX: {W}", "PlayResX: 1280").replace(f"PlayResY: {H}", "PlayResY: 720") +
+        f"\nDialogue: 0,0:00:00.00,0:00:05.00,Hook,,0,0,0,,{{\\fs110\\an2\\pos(640,640)}}{S.get('thumb_text','')}\n")
+    best = max(range(len(S["scenes"])), key=lambda k: len(S["scenes"][k]["visual"]) if k < 6 else 0)
+    subprocess.run(["ffmpeg", "-y", "-v", "error", "-i", f"{OUT}/i{best:03d}.jpg", "-vf", f"scale=1280:720,eq=contrast=1.15:saturation=1.2,ass={OUT}/th.ass",
+        "-frames:v", "1", "-q:v", "2", thumb], check=True)
+
+# ---------------- library (for weekly compilations) + series state ----------------
+def after_success(vid=None):
+    if MODE == "long":
+        STATE[CH]["last_long"] = {"job": JOB, "title": S["title"][:90], "story": (S.get("so_far") or S.get("topic", ""))[:600],
+                                  "characters": S.get("characters", {}), "vid": vid, "short_done": False}
+    if MODE == "short" and LL: STATE[CH]["last_long"]["short_done"] = True
+    if RAATLONG:
+        STATE[CH]["series"] = {"name": S.get("series_name") or (SER or {}).get("name") or S["title"][:40], "part": PART,
+                               "so_far": S.get("so_far") or S.get("topic", ""), "characters": S.get("characters", {})}
+    if MODE == "long":
+        try:
+            dur_s = float(subprocess.check_output(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", FINAL]).decode().strip())
+            lib = f"lib_{JOB}.mp4"; shutil.copy(FINAL, lib)
+            r = subprocess.run(["gh", "release", "upload", "library", lib, "--clobber"])
+            if r.returncode == 0:
+                STATE.setdefault("_library", []).append({"asset": lib, "ch": CH, "title": S["title"][:90], "dur": round(dur_s), "used": False})
+            os.remove(lib)
+        except Exception as e: log("library add failed", repr(e)[:150])
+# ---------------- 5. schedule ----------------
+def next_slot(last_iso):
+    last = dt.datetime.fromisoformat(last_iso.replace("Z", "+00:00"))
+    base = max(last, NOW + dt.timedelta(hours=3))
+    d = base.astimezone(IST)
+    for k in range(0, 15):
+        day = (d + dt.timedelta(days=k)).date()
+        for wd, hm in sorted(CFG["slots"][MODE], key=lambda x: x[1]):
+            if day.weekday() != wd: continue
+            h, m = map(int, hm.split(":"))
+            cand = dt.datetime(day.year, day.month, day.day, h, m, tzinfo=IST)
+            if cand.astimezone(dt.timezone.utc) > base:
+                return cand.astimezone(dt.timezone.utc)
+    raise SystemExit("no slot")
+slot = next_slot(STATE[CH][MODE])
+pub = slot.strftime("%Y-%m-%dT%H:%M:%SZ")
+log("slot", pub, slot.astimezone(IST).strftime("%a %d %b %I:%M %p IST"))
+desc = (CFG["disclaimer"] + "\n" if CFG["disclaimer"] else "") + S.get("description", "")
+if LL: desc = f"▶ पूरी कहानी: {LL['title']}" + (f"\nhttps://youtu.be/{LL['vid']}" if LL.get("vid") else "") + "\n\n" + desc
+tags = list(dict.fromkeys((S.get("tags") or []) + CFG["base_tags"]))[:15]
+title = S["title"][:99]
+job = {"id": JOB, "videos": [{"file": os.path.basename(FINAL), "title": title, "description": desc, "tags": tags,
+       "publishAt": pub, "madeForKids": CFG["madeForKids"], "playlist": CFG["playlist"], **({"thumb": "thumb.jpg"} if thumb else {})}]}
+json.dump(job, open(f"{OUT}/job.json", "w"), ensure_ascii=False, indent=1)
+if PRE:
+    import tarfile
+    keep = {os.path.basename(FINAL), "thumb.jpg", "job.json", "script.json", "log.txt"}
+    for f in os.listdir(OUT):
+        if f not in keep: os.remove(os.path.join(OUT, f))
+    asset = f"{JOB}.tar"
+    with tarfile.open(asset, "w") as t: t.add(OUT, arcname=JOB)
+    subprocess.run(["gh", "release", "upload", "queue", asset, "--clobber"], check=True)
+    finish_draft(); after_success()
+    STATE.setdefault("_queue", []).append({"job": JOB, "ch": CH, "mode": MODE, "asset": asset, "title": title})
+    STATE[CH]["history"].append(S.get("topic", title))
+    json.dump(STATE, open(STATE_P, "w"), ensure_ascii=False, indent=1)
+    log("QUEUED", asset); sys.exit(0)
+if UPLOAD:
+    subprocess.run([sys.executable, os.path.join(os.path.dirname(ROOT), "yt_publish.py"), OUT], check=True)
+    res = json.load(open(f"results/{JOB}.json"))
+    vid = (res.get("videos") or [{}])[0].get("id")
+    if vid:
+        finish_draft(); after_success(vid)
+        STATE[CH][MODE] = pub
+        STATE.setdefault("_uploads", []).append(NOW.strftime("%Y-%m-%dT%H:%M:%SZ")); STATE["_uploads"] = STATE["_uploads"][-20:]
+        STATE[CH]["history"].append(S.get("topic", title))
+        json.dump(STATE, open(STATE_P, "w"), ensure_ascii=False, indent=1)
+        os.makedirs("results", exist_ok=True)
+        with open("results/schedule_log.md", "a") as f:
+            f.write(f"- {CFG['name']} | {MODE} | {title} | {slot.astimezone(IST).strftime('%a %d %b %Y %I:%M %p IST')} | https://studio.youtube.com/video/{vid}/edit\n")
+        log("UPLOADED", vid)
+    else:
+        log("UPLOAD FAILED", json.dumps(res, ensure_ascii=False)[:800]); sys.exit(1)

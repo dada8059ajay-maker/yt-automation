@@ -1,0 +1,31 @@
+name: yt-publish
+on:
+  workflow_dispatch:
+    inputs:
+      name: {description: "raat or kahani", required: true}
+      url: {description: "bundle tar url", required: true}
+permissions:
+  contents: write
+jobs:
+  p:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download bundle
+        env: {U: "${{ inputs.url }}"}
+        run: curl -sSfL "$U" -o b.tar && mkdir b && tar -xf b.tar -C b && rm b.tar && ls -la b
+      - name: Publish
+        env:
+          CID: ${{ secrets.YT_CLIENT_ID }}
+          CSEC: ${{ secrets.YT_CLIENT_SECRET }}
+          N: ${{ inputs.name }}
+        run: |
+          F=secrets/yt_refresh_$N.enc; [ "$N" = kahani ] && F=secrets/yt_refresh.enc
+          export RT=$(openssl enc -d -aes-256-cbc -pbkdf2 -in $F -pass env:CSEC)
+          python3 yt_publish.py b
+      - name: Save result
+        if: always()
+        run: |
+          git config user.name bot; git config user.email bot@users.noreply.github.com
+          git add results/ || true; git commit -m "publish result" || true; git pull --rebase; git push

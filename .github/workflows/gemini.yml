@@ -1,0 +1,41 @@
+name: gemini-script
+on:
+  workflow_dispatch:
+    inputs:
+      prompt:
+        description: "Prompt for Gemini"
+        required: true
+      model:
+        description: "Gemini model"
+        required: false
+        default: "gemini-3.8-flash"
+      out:
+        description: "output file name in scripts/"
+        required: true
+permissions:
+  contents: write
+jobs:
+  gen:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Ask Gemini
+        env:
+          KEY: ${{ secrets.GEMINI_API_KEY }}
+          PROMPT: ${{ inputs.prompt }}
+          OUT: ${{ inputs.out }}
+          MODEL: ${{ inputs.model }}
+        run: |
+          mkdir -p scripts
+          python3 - <<'PY'
+          import os,json,urllib.request
+          body=json.dumps({"contents":[{"parts":[{"text":os.environ["PROMPT"]}]}]}).encode()
+          req=urllib.request.Request("https://generativelanguage.googleapis.com/v1beta/models/"+os.environ.get("MODEL","gemini-3.8-flash")+":generateContent",body,{"Content-Type":"application/json","x-goog-api-key":os.environ["KEY"]})
+          try:
+            r=json.load(urllib.request.urlopen(req,timeout=120)); t=r["candidates"][0]["content"]["parts"][0]["text"]
+          except urllib.error.HTTPError as e:
+            t="ERROR "+str(e.code)+" "+e.read().decode()[:500]
+          open("scripts/"+os.environ["OUT"],"w").write(t)
+          PY
+          git config user.name bot; git config user.email bot@users.noreply.github.com
+          git add scripts; git commit -m "gemini output $OUT"; git pull --rebase; git push

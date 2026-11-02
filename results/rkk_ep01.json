@@ -1,0 +1,53 @@
+{
+ "job": "rkk_ep01",
+ "branding": {
+  "banner": {
+   "kind": "youtube#channelBannerResource",
+   "etag": "6e01E9mrmX9j4Ro21MLgKi4PzBk",
+   "url": "https://yt3.googleusercontent.com/P2sqS0vZErFEmnIHXrNTvB0FXdw7butJXMQoNJ540qaqyloZZPTSUezDkj-LOIIqzm18Mdc5"
+  },
+  "update": "ok"
+ },
+ "videos": [
+  {
+   "id": "Orqo5yFGk2s",
+   "status": {
+    "uploadStatus": "uploaded",
+    "privacyStatus": "private",
+    "publishAt": "2026-11-02T15:30:00Z",
+    "license": "youtube",
+    "embeddable": true,
+    "publicStatsViewable": true,
+    "selfDeclaredMadeForKids": false,
+    "containsSyntheticMedia": false
+   },
+   "thumb": {
+    "ERROR": 403,
+    "body": "{\n  \"error\": {\n    \"code\": 403,\n    \"message\": \"The authenticated user doesn't have permissions to upload and set custom video thumbnails.\",\n    \"errors\": [\n      {\n        \"message\": \"The authenticated user doesn't have permissions to upload and set custom video thumbnails.\",\n        \"domain\": \"youtube.thumbnail\",\n        \"reason\": \"forbidden\",\n        \"location\": \"Authorization\",\n        \"locationType\": \"header\"\n      }\n    ]\n  }\n}\n"
+   },
+   "captions": {
+    "ERROR": 403,
+    "body": "{\n  \"error\": {\n    \"code\": 403,\n    \"message\": \"Request had insufficient authentication scopes.\",\n    \"errors\": [\n      {\n        \"message\": \"Insufficient Permission\",\n        \"domain\": \"global\",\n        \"reason\": \"insufficientPermissions\"\n      }\n    ],\n    \"status\": \"PERMISSION_DENIED\",\n    \"details\": [\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.ErrorInfo\",\n        \"reason\": \"ACCESS_TOKEN_SCOPE_INSUFFICIENT\",\n        \"domain\": \"googleapis.com\",\n        \"metadata\": {\n          \"service\": \"youtube.googleapis.com\",\n          \"method\": \"youtube.api.v3.V3DataCaptionService.Insert\"\n        }\n      }\n    ]\n  }\n}\n"
+   },
+   "playlist_new": "PLWiG-Do-1yzs",
+   "playlist": {
+    "ERROR": 409,
+    "body": "{\n  \"error\": {\n    \"code\": 409,\n    \"message\": \"The operation was aborted.\",\n    \"errors\": [\n      {\n        \"domain\": \"youtube.CoreErrorDomain\",\n        \"reason\": \"SERVICE_UNAVAILABLE\"\n      }\n    ],\n    \"status\": \"ABORTED\"\n  }\n}\n"
+   }
+  },
+  {
+   "id": "-gLMAMMuGf4",
+   "status": {
+    "uploadStatus": "uploaded",
+    "privacyStatus": "private",
+    "publishAt": "2026-11-02T16:00:00Z",
+    "license": "youtube",
+    "embeddable": true,
+    "publicStatsViewable": true,
+    "selfDeclaredMadeForKids": false,
+    "containsSyntheticMedia": false
+   },
+   "playlist": "ok"
+  }
+ ]
+}

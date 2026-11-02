@@ -1,0 +1,57 @@
+gemini gemini-3.8-flash 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try a
+gemini gemini-3.7-flash 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try a
+gemini gemini-3.6-flash 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try a
+gemini gemini-3.5-flash 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try a
+gemini gemini-flash-latest 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try a
+gemini gemini-pro-latest 429 {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on t
+gemini ok gemini-3.5-flash-lite
+title: समोसे का रॉकेट! 🚀 #shorts scenes: 9
+img 0 flux
+flux retry 0 <HTTPError 402: 'Payment Required'>
+flux retry 1 <HTTPError 402: 'Payment Required'>
+flux retry 2 <HTTPError 402: 'Payment Required'>
+img 1 flux
+flux retry 0 <HTTPError 402: 'Payment Required'>
+flux retry 1 <HTTPError 402: 'Payment Required'>
+flux retry 2 <HTTPError 402: 'Payment Required'>
+flux retry 3 <HTTPError 503: 'Service Unavailable'>
+img 2 sdturbo
+img 3 flux
+flux retry 0 <HTTPError 402: 'Payment Required'>
+flux retry 1 <HTTPError 402: 'Payment Required'>
+flux retry 2 <HTTPError 402: 'Payment Required'>
+flux retry 3 <HTTPError 503: 'Service Unavailable'>
+img 4 sdturbo
+img 5 flux
+flux retry 0 <HTTPError 402: 'Payment Required'>
+flux retry 1 <HTTPError 402: 'Payment Required'>
+flux retry 2 <HTTPError 402: 'Payment Required'>
+flux retry 3 <HTTPError 503: 'Service Unavailable'>
+img 6 sdturbo
+img 7 flux
+flux retry 0 <HTTPError 402: 'Payment Required'>
+flux retry 1 <HTTPError 402: 'Payment Required'>
+flux retry 2 <HTTPError 402: 'Payment Required'>
+flux retry 3 <HTTPError 503: 'Service Unavailable'>
+img 8 sdturbo
+rendered /home/runner/work/yt-automation/yt-automation/out/kahani_short_20261101_0942/kahani_short_20261101_0942.mp4 47.3 s
+slot 2026-11-06T08:00:00Z Fri 06 Nov 01:30 PM IST
+QUEUED kahani_short_20261101_0942.tar

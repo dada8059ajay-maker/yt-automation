@@ -1,0 +1,15 @@
+gemini ok gemini-3.8-flash
+title: पेड़ पर लटका जादुई तरबूज़! 🍉🐻 #shorts scenes: 10
+img 0
+img 1
+img 2
+img 3
+img 4
+img 5
+img 6
+img 7
+img 8
+img 9
+rendered /home/runner/work/yt-automation/yt-automation/out/kahani_short_20261101_0030/kahani_short_20261101_0030.mp4 55.5 s
+slot 2026-11-04T08:00:00Z Wed 04 Nov 01:30 PM IST
+UPLOADED 8rcSlaM0wWc
