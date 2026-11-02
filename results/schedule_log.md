@@ -9,3 +9,4 @@
 - कहानी पतंग | long | नन्हा मोर कीकू और जंगल के राक्षस का ढोल | Sat 07 Nov 2026 10:00 AM IST | https://studio.youtube.com/video/ZgDggM9hQZA/edit
 - कहानी पतंग | short | जब नदी में गिरा जादुई सूरज! 🐢✨ #shorts | Fri 06 Nov 2026 06:30 PM IST | https://studio.youtube.com/video/OY0EXp-VYSY/edit
 - रात के किस्से | long | भैरव घाट की आखिरी कश्ती: 4 जानलेवा नियम | भाग 1 | Sat 07 Nov 2026 09:00 PM IST | https://studio.youtube.com/video/BpZ0p_t2qRA/edit
+- रात के किस्से | short | काल-घंटी के नियम: भाग 2 | कसौली का जानलेवा सच #shorts | Sun 08 Nov 2026 09:30 PM IST | https://studio.youtube.com/video/hylg8zUWphw/edit

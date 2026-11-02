@@ -1,0 +1,23 @@
+{
+ "job": "raat_short_20261102_1527",
+ "videos": [
+  {
+   "id": "hylg8zUWphw",
+   "status": {
+    "uploadStatus": "uploaded",
+    "privacyStatus": "private",
+    "publishAt": "2026-11-08T16:00:00Z",
+    "license": "youtube",
+    "embeddable": true,
+    "publicStatsViewable": true,
+    "selfDeclaredMadeForKids": false,
+    "containsSyntheticMedia": false
+   },
+   "playlist_new": "PLKD4CcOSLY0M",
+   "playlist": {
+    "ERROR": 409,
+    "body": "{\n  \"error\": {\n    \"code\": 409,\n    \"message\": \"The operation was aborted.\",\n    \"errors\": [\n      {\n        \"domain\": \"youtube.CoreErrorDomain\",\n        \"reason\": \"SERVICE_UNAVAILABLE\"\n      }\n    ],\n    \"status\": \"ABORTED\"\n  }\n}\n"
+   }
+  }
+ ]
+}
