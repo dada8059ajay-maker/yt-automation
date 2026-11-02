@@ -76,7 +76,8 @@
    "जंगल के रंग बचाने के लिए मन्नू और रंगीली की प्राचीन मंदिर की रोमांचक यात्रा का ट्रेलर।",
    "एक नन्हा बालक और महल के गुप्त तहखाने में छुपे जादुई फव्वारे की रहस्यमयी खोज।",
    "नन्हे चिंटू और उसकी दादी की पुरानी संदूक से निकलते जादुई बादलों की रोमांचक खोज",
-   "आसमान से गिरे चमकते पत्थर का रहस्य और नन्हे रोहन की समझदारी"
+   "आसमान से गिरे चमकते पत्थर का रहस्य और नन्हे रोहन की समझदारी",
+   "आसमान से गिरे चमकते उल्कापिंड का रहस्य सुलझाने निकला नन्हा रोहन।"
   ],
   "last_long": {
    "job": "kahani_long_20261102_1327",
@@ -86,7 +87,7 @@
     "Rohan": "English character sheet: age 6, round cheerful face, big curious black eyes, short messy black hair, average height and slim build, wearing a bright red cotton t-shirt with blue shorts, Indian look"
    },
    "vid": null,
-   "short_done": false,
+   "short_done": true,
    "trailer": null
   }
  },
@@ -319,6 +320,13 @@
    "mode": "long",
    "asset": "raat_long_20261102_1335.tar",
    "title": "श्रापित घंटाघर के 4 खौफनाक नियम | भाग 1"
+  },
+  {
+   "job": "kahani_short_20261102_1402",
+   "ch": "kahani",
+   "mode": "short",
+   "asset": "kahani_short_20261102_1402.tar",
+   "title": "आसमान से गिरा जादुई उल्कापिंड का अनोखा राज़! 🌌 #shorts"
   }
  ],
  "_draft": null,
@@ -428,7 +436,7 @@
   }
  ],
  "_minutes": {
-  "2026-11": 789
+  "2026-11": 800
  },
  "_bank": {
   "kahani_s_patang01": "2026-11-02",
