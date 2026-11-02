@@ -1,0 +1,3 @@
+probe app_id_secret: MISSING
+probe user_token_secret: MISSING (FB_USER_TOKEN not set)
+PROBE_RESULT=FAIL
