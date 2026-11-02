@@ -8,12 +8,13 @@
    "एक सुनसान पहाड़ी डाक बंगले के 3 खौफनाक नियम जिन्हें तोड़ना यानी खौफनाक मौत।",
    "जंगल के बीच बने एक पुराने रेलवे केबिन में रात की ड्यूटी के तीन जानलेवा नियम और एक भयानक सच।",
    "काली नदी के सुनसान घाट पर रात की रखवाली के 4 खौफनाक नियम और 3:15 बजे का जानलेवा सच।",
-   "भैरव घाट पर रात 3:15 बजे आई रहस्यमयी नाव, पुराने नाविक का भयानक राज़ और नदी से उठे काले साए।"
+   "भैरव घाट पर रात 3:15 बजे आई रहस्यमयी नाव, पुराने नाविक का भयानक राज़ और नदी से उठे काले साए।",
+   "भैरव घाट की शापित रात का खौफनाक अंत और रघु काका का भयानक काला सच।"
   ],
   "series": {
    "name": "भैरव घाट का रहस्य",
-   "part": 2,
-   "so_far": "विक्रम ने रुपयों की सख्त ज़रूरत के चलते काली नदी के शापित भैरव घाट पर रात की चौकीदारी स्वीकार की। पुराने नाविक रघु काका ने उसे रात बिताने के चार जानलेवा नियम सौंपे थे। आधी रात के बाद बिना परछाई वाले साए और खौफनाक घंटियों की आवाज़ें गूँजने लगीं। ठीक 3:15 बजे कोहरे को चीरती हुई एक नाव घाट की सीढ़ियों से आकर टकराई, जिसमें एक रहस्यमयी औरत खड़ी थी।",
+   "part": 3,
+   "so_far": "रुपयों की सख्त तंगी के कारण विक्रम ने काली नदी के कुख्यात भैरव घाट पर रात की चौकीदारी स्वीकार की थी। बूढ़े नाविक रघु काका ने उसे रात बिताने के चार सख्त नियम दिए थे। रात 3:15 बजे काली नदी के घने कोहरे को चीरते हुए एक रहस्यमयी नाव घाट से आ टकराई, और उसमें एक जलपरी जैसी नहीं बल्कि खौफनाक साए से घिरी औरत माया खड़ी थी।",
    "characters": {
     "Vikram": "Vikram, 24 years old, lean athletic build, square jaw, anxious brown eyes, messy short black hair, olive complexion, wearing faded navy blue denim jacket over grey t-shirt, dark cargo pants, dusty brown boots, Indian young man",
     "Raghu": "Raghu Kaka, 62 years old, weathered wrinkly face, grey stubble, cataract-clouded piercing eyes, thin wiry frame, stooped posture, wearing coarse beige khadi kurta, dark green wool shawl wrapped over shoulders, white dhoti, Indian elderly boatman",
@@ -22,9 +23,9 @@
    "bank": null
   },
   "last_long": {
-   "job": "raat_long_20261102_0751",
-   "title": "भैरव घाट का रहस्य - भाग 2: रात 3:15 बजे की खौफनाक सच्चाई",
-   "story": "विक्रम ने रुपयों की सख्त ज़रूरत के चलते काली नदी के शापित भैरव घाट पर रात की चौकीदारी स्वीकार की। पुराने नाविक रघु काका ने उसे रात बिताने के चार जानलेवा नियम सौंपे थे। आधी रात के बाद बिना परछाई वाले साए और खौफनाक घंटियों की आवाज़ें गूँजने लगीं। ठीक 3:15 बजे कोहरे को चीरती हुई एक नाव घाट की सीढ़ियों से आकर टकराई, जिसमें एक रहस्यमयी औरत खड़ी थी।",
+   "job": "raat_long_20261102_0853",
+   "title": "भैरव घाट का रहस्य: काली नदी का अंतिम सच | भाग 3",
+   "story": "रुपयों की सख्त तंगी के कारण विक्रम ने काली नदी के कुख्यात भैरव घाट पर रात की चौकीदारी स्वीकार की थी। बूढ़े नाविक रघु काका ने उसे रात बिताने के चार सख्त नियम दिए थे। रात 3:15 बजे काली नदी के घने कोहरे को चीरते हुए एक रहस्यमयी नाव घाट से आ टकराई, और उसमें एक जलपरी जैसी नहीं बल्कि खौफनाक साए से घिरी औरत माया खड़ी थी।",
    "characters": {
     "Vikram": "Vikram, 24 years old, lean athletic build, square jaw, anxious brown eyes, messy short black hair, olive complexion, wearing faded navy blue denim jacket over grey t-shirt, dark cargo pants, dusty brown boots, Indian young man",
     "Raghu": "Raghu Kaka, 62 years old, weathered wrinkly face, grey stubble, cataract-clouded piercing eyes, thin wiry frame, stooped posture, wearing coarse beige khadi kurta, dark green wool shawl wrapped over shoulders, white dhoti, Indian elderly boatman",
@@ -106,6 +107,13 @@
    "mode": "short",
    "asset": "kahani_short_20261102_0842.tar",
    "title": "सूखे कुएँ की नीली रोशनी | जादुई झरने का अनोखा राज़ #shorts"
+  },
+  {
+   "job": "raat_long_20261102_0853",
+   "ch": "raat",
+   "mode": "long",
+   "asset": "raat_long_20261102_0853.tar",
+   "title": "भैरव घाट का रहस्य: काली नदी का अंतिम सच | भाग 3"
   }
  ],
  "_draft": null,
@@ -149,10 +157,17 @@
    "title": "सूखे कुएँ की नीली रोशनी | जादुई झरने का अनोखा राज़",
    "dur": 494,
    "used": false
+  },
+  {
+   "asset": "lib_raat_long_20261102_0853.mp4",
+   "ch": "raat",
+   "title": "भैरव घाट का रहस्य: काली नदी का अंतिम सच | भाग 3",
+   "dur": 398,
+   "used": false
   }
  ],
  "_minutes": {
-  "2026-11": 448
+  "2026-11": 474
  },
  "_bank": {}
 }
