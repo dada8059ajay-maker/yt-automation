@@ -11,30 +11,31 @@
    "भैरव घाट पर रात 3:15 बजे आई रहस्यमयी नाव, पुराने नाविक का भयानक राज़ और नदी से उठे काले साए।",
    "भैरव घाट की शापित रात का खौफनाक अंत और रघु काका का भयानक काला सच।",
    "भैरव घाट पर रात 3:15 बजे नाव के टकराते ही सामने आई माया की रहस्यमयी और खौफनाक सच्चाई का ट्रेलर।",
-   "एक पुरानी बावड़ी की सातवीं सीढ़ी का शापित रहस्य जो इंसान की परछाईं छीन लेता है।"
+   "एक पुरानी बावड़ी की सातवीं सीढ़ी का शापित रहस्य जो इंसान की परछाईं छीन लेता है।",
+   "नीलगिरि की सुनसान चोटी पर स्थित 100 साल पुरानी मौसम वेधशाला की पहली रात और उसके जानलेवा नियम।"
   ],
   "series": {
-   "name": "भैरव घाट का रहस्य",
-   "part": 3,
-   "so_far": "रुपयों की सख्त तंगी के कारण विक्रम ने काली नदी के कुख्यात भैरव घाट पर रात की चौकीदारी स्वीकार की थी। बूढ़े नाविक रघु काका ने उसे रात बिताने के चार सख्त नियम दिए थे। रात 3:15 बजे काली नदी के घने कोहरे को चीरते हुए एक रहस्यमयी नाव घाट से आ टकराई, और उसमें एक जलपरी जैसी नहीं बल्कि खौफनाक साए से घिरी औरत माया खड़ी थी।",
+   "name": "कुहासा वेधशाला के खौफनाक नियम",
+   "part": 1,
+   "so_far": "मौसम वैज्ञानिक अर्जुन नीलगिरि की वीरान चोटी पर स्थित 100 साल पुरानी 'कुहासा वेधशाला' में रात की ड्यूटी के लिए पहुँचता है। वहाँ का पुराना केयरटेकर किशन चाचा उसे रात में बचने के लिए चार सख्त नियम बताता है और भाग जाता है। आधी रात को बैरोमीटर शून्य पर गिरता है और खिड़की पर उसकी मृत माँ की आवाज़ गूँजती है। रात के 3:33 बजते ही वेधशाला की सीढ़ियों पर भारी कदमों की आहट होती है और अर्जुन की अपनी ही परछाईं उसके काबू से बाहर हो जाती है।",
    "characters": {
-    "Vikram": "Vikram, 24 years old, lean athletic build, square jaw, anxious brown eyes, messy short black hair, olive complexion, wearing faded navy blue denim jacket over grey t-shirt, dark cargo pants, dusty brown boots, Indian young man",
-    "Raghu": "Raghu Kaka, 62 years old, weathered wrinkly face, grey stubble, cataract-clouded piercing eyes, thin wiry frame, stooped posture, wearing coarse beige khadi kurta, dark green wool shawl wrapped over shoulders, white dhoti, Indian elderly boatman",
-    "Maya": "Mysterious Woman Maya, 20s, pale gaunt face, sunken dark rimmed eyes, long raven black hair dripping wet, wearing faded maroon saree with tarnished silver border, barefoot, haunting Indian female spirit"
+    "Arjun": "26 years old Indian man, lean athletic build, sharp wheatish face, tired dark brown eyes, messy short black hair, wearing a dark navy-blue fleece jacket over a grey t-shirt, rugged brown cargo pants, sturdy trekking boots.",
+    "Kishan_Chacha": "62 years old Indian man, deeply wrinkled weather-beaten face, cloudy grey eyes, thin white stubble, stooped posture, wearing a faded olive-green woolen muffler, coarse grey Nehru vest over a soiled cream kurta, woolen brown trousers.",
+    "Mystery_Voice": "Disembodied supernatural presence, shadowy formless mist outside foggy glass panes."
    },
    "bank": null
   },
   "last_long": {
-   "job": "raat_long_20261102_0853",
-   "title": "भैरव घाट का रहस्य: काली नदी का अंतिम सच | भाग 3",
-   "story": "रुपयों की सख्त तंगी के कारण विक्रम ने काली नदी के कुख्यात भैरव घाट पर रात की चौकीदारी स्वीकार की थी। बूढ़े नाविक रघु काका ने उसे रात बिताने के चार सख्त नियम दिए थे। रात 3:15 बजे काली नदी के घने कोहरे को चीरते हुए एक रहस्यमयी नाव घाट से आ टकराई, और उसमें एक जलपरी जैसी नहीं बल्कि खौफनाक साए से घिरी औरत माया खड़ी थी।",
+   "job": "raat_long_20261102_1015",
+   "title": "कुहासा वेधशाला की रात के 4 खौफनाक नियम: भाग 1",
+   "story": "मौसम वैज्ञानिक अर्जुन नीलगिरि की वीरान चोटी पर स्थित 100 साल पुरानी 'कुहासा वेधशाला' में रात की ड्यूटी के लिए पहुँचता है। वहाँ का पुराना केयरटेकर किशन चाचा उसे रात में बचने के लिए चार सख्त नियम बताता है और भाग जाता है। आधी रात को बैरोमीटर शून्य पर गिरता है और खिड़की पर उसकी मृत माँ की आवाज़ गूँजती है। रात के 3:33 बजते ही वेधशाला की सीढ़ियों पर भारी कदमों की आहट होती है और अर्जुन की अपनी ही परछाईं उसके काबू से बाहर हो जाती है।",
    "characters": {
-    "Vikram": "Vikram, 24 years old, lean athletic build, square jaw, anxious brown eyes, messy short black hair, olive complexion, wearing faded navy blue denim jacket over grey t-shirt, dark cargo pants, dusty brown boots, Indian young man",
-    "Raghu": "Raghu Kaka, 62 years old, weathered wrinkly face, grey stubble, cataract-clouded piercing eyes, thin wiry frame, stooped posture, wearing coarse beige khadi kurta, dark green wool shawl wrapped over shoulders, white dhoti, Indian elderly boatman",
-    "Maya": "Mysterious Woman Maya, 20s, pale gaunt face, sunken dark rimmed eyes, long raven black hair dripping wet, wearing faded maroon saree with tarnished silver border, barefoot, haunting Indian female spirit"
+    "Arjun": "26 years old Indian man, lean athletic build, sharp wheatish face, tired dark brown eyes, messy short black hair, wearing a dark navy-blue fleece jacket over a grey t-shirt, rugged brown cargo pants, sturdy trekking boots.",
+    "Kishan_Chacha": "62 years old Indian man, deeply wrinkled weather-beaten face, cloudy grey eyes, thin white stubble, stooped posture, wearing a faded olive-green woolen muffler, coarse grey Nehru vest over a soiled cream kurta, woolen brown trousers.",
+    "Mystery_Voice": "Disembodied supernatural presence, shadowy formless mist outside foggy glass panes."
    },
    "vid": null,
-   "short_done": true,
+   "short_done": false,
    "trailer": null
   }
  },
@@ -153,6 +154,13 @@
    "mode": "long",
    "asset": "kahani_long_20261102_0952.tar",
    "title": "जादुई सोने की घंटी और खुशियों का रहस्य"
+  },
+  {
+   "job": "raat_long_20261102_1015",
+   "ch": "raat",
+   "mode": "long",
+   "asset": "raat_long_20261102_1015.tar",
+   "title": "कुहासा वेधशाला की रात के 4 खौफनाक नियम: भाग 1"
   }
  ],
  "_draft": null,
@@ -210,10 +218,17 @@
    "title": "जादुई सोने की घंटी और खुशियों का रहस्य",
    "dur": 447,
    "used": false
+  },
+  {
+   "asset": "lib_raat_long_20261102_1015.mp4",
+   "ch": "raat",
+   "title": "कुहासा वेधशाला की रात के 4 खौफनाक नियम: भाग 1",
+   "dur": 617,
+   "used": false
   }
  ],
  "_minutes": {
-  "2026-11": 537
+  "2026-11": 564
  },
  "_bank": {}
 }
