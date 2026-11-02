@@ -104,6 +104,7 @@ PROMPT = f"""तुम YouTube चैनल "{CFG['name']}" के मुख्�
 पहले ही बन चुकी कहानियाँ (इनसे अलग विषय, जगह और ट्विस्ट): {hist}
 लंबाई: बोलने में लगभग {dur}। दृश्य: {n_scenes}।{SERIES_TXT}{TRAILER_TXT}
 हर 60-90 सेकंड (लगभग हर 8-10 दृश्य) में एक नया सस्पेंस मोड़/खुलासा ज़रूर हो।
+Explainer Reel Style (सख्त): कथावाचक किताब नहीं पढ़ता, सीधे दर्शक से बात करता है ("सोचिए...", "क्या आप जानते हैं...", "अब ध्यान से सुनिए...", "आप होते तो क्या करते?"), बीच-बीच में सवाल पूछकर रहस्य समझाता है। वाक्य छोटे (8-14 शब्द), तेज़ रफ़्तार, हर दृश्य 2-3 वाक्य से ज़्यादा नहीं।
 पहले 10 सेकंड का नियम (सख्त): कहानी कभी धीमी शुरुआत ("एक गाँव था...", "बहुत समय पहले...") से शुरू न हो। पहला ही वाक्य खौफनाक/रोमांचक सवाल या सीधा रहस्य हो, ताकि दर्शक 30 सेकंड तक न जाए।
 {"Short: पहली लाइन में ही ज़बरदस्त हुक; अंत में क्लिफ़हैंगर या चौंकाने वाला मोड़।" if MODE=="short" else "लंबा वीडियो: पहले 20 सेकंड में ठंडा हुक (कहानी का सबसे रोमांचक पल), फिर कहानी; लगभग 35% पर एक हल्की 1 लाइन सब्सक्राइब अपील एक छोटे पेऑफ़ के बाद (पहले 60 सेकंड में नहीं); अंत में मुख्य अपील + अगली कहानी की झलक।"}
 हर लाइन पर असली अभिनय सोचो: डर में काँपती फुसफुसाहट, भागने में हाँफती साँसें, गुस्से में गरज; mood से सीन का संगीत तय होगा (शुरुआत/शांत=peaceful, डरावना=horror, रहस्य=suspense, भागना=chase, अंत की सीख/जीत=victory)।
@@ -168,7 +169,8 @@ log("title:", S["title"], "scenes:", len(S["scenes"]))
 
 # ---------------- 2. voices: 100% Gemini acting TTS, 5-6 scene-paragraph chunks (First-Pass Perfection Protocol) ----------------
 import base64, time
-TTS_MODEL = "gemini-2.5-flash-preview-tts"
+TTS_MODELS = ["gemini-2.5-flash-preview-tts", "gemini-2.5-pro-preview-tts", "gemini-2.5-flash-tts"]
+TTS_MODEL = TTS_MODELS[0]; DEAD = set()
 GV = {"N": "Charon", "M": "Puck", "F": "Kore", "O": "Fenrir", "A": "Gacrux", "C": "Leda", "G": "Enceladus"}
 NCHUNK = 6 if MODE == "long" else 2
 def wav_of(i): return f"{OUT}/scene_{i+1:02d}.wav"
@@ -178,14 +180,20 @@ def tts_call(text, spk):
            {"multiSpeakerVoiceConfig": {"speakerVoiceConfigs": [{"speaker": n, "voiceConfig": {"prebuiltVoiceConfig": {"voiceName": GV.get(c, "Puck")}}}
             for n, c in zip(("Narrator", "Character"), spk)]}})
     body = {"contents": [{"parts": [{"text": text}]}], "generationConfig": {"responseModalities": ["AUDIO"], "speechConfig": sc_}}
-    for k in range(4):
+    global TTS_MODEL
+    for k in range(6):
+        live = [m for m in TTS_MODELS if m not in DEAD]
+        if not live: return None
+        TTS_MODEL = live[0]
         req = urllib.request.Request(f"https://generativelanguage.googleapis.com/v1beta/models/{TTS_MODEL}:generateContent", json.dumps(body).encode(),
             {"Content-Type": "application/json", "x-goog-api-key": os.environ["GEMINI_API_KEY"]})
         try:
             r = json.load(urllib.request.urlopen(req, timeout=300))
             return b"".join(base64.b64decode(p["inlineData"]["data"]) for p in r["candidates"][0]["content"]["parts"] if "inlineData" in p)
         except urllib.error.HTTPError as e:
-            log("gtts", e.code, e.read().decode()[:160]); time.sleep(30 * (k + 1))
+            msg = e.read().decode(); log("gtts", TTS_MODEL, e.code, msg[:120])
+            if e.code in (404, 400) or (e.code == 429 and ("PerDay" in msg or "per day" in msg.lower() or "exceeded your current quota" in msg)): DEAD.add(TTS_MODEL); continue
+            time.sleep(30 * (k + 1))
         except Exception as e:
             log("gtts", repr(e)[:160]); time.sleep(15)
     return None
@@ -222,9 +230,11 @@ for g_i, idx in enumerate(groups):
     for i in idx:
         sc = S["scenes"][i]; who = "Narrator" if sc.get("speaker", "N") == "N" or len(spk) == 1 else "Character"
         lines.append(f"({sc.get('style') or 'natural expressive storyteller'}) {who}: {sc['text']}")
-    prompt = ("You are a top Hindi voice actor performing an audio drama in natural Indian Hindi. Read every line in order, fully acting the "
+    prompt = ("You are a top Hindi explainer-reel creator and voice actor, speaking natural conversational Indian Hindi. The Narrator never sounds "
+              "like reading a book: he talks straight to the viewer, eye to eye, building mystery, punchy and slightly fast, rising on questions, "
+              "dropping low on reveals. Characters fully act their lines. Read every line in order, fully acting the "
               "direction in brackets: when a character runs or is scared, the panting, breathing, gasps and trembling must be inside the "
-              "voice itself. Never read the bracket text aloud. Leave a clear silent pause of about 1.5 seconds between lines.\n\n" + "\n\n".join(lines))
+              "voice itself. Never read the bracket text aloud. Leave a clear silent pause of about 1.2 seconds between lines.\n\n" + "\n\n".join(lines))
     pcm = tts_call(prompt, spk)
     if not pcm: pause(f"gemini tts quota (chunk {g_i+1}/{len(groups)}) - retry next run")
     open(f"{OUT}/g.pcm", "wb").write(pcm)
@@ -327,7 +337,7 @@ def finish_draft():
         subprocess.run(["gh", "release", "delete-asset", "drafts", STATE["_draft"]["asset"], "-y"]); STATE["_draft"] = None
 # ---------------- 4. subtitles + render ----------------
 FONT = "Noto Sans Devanagari"
-fs = 76 if MODE == "short" else 58
+fs = 100 if MODE == "short" else 74
 def ts(s):
     return "%d:%02d:%05.2f" % (s // 3600, (s % 3600) // 60, s % 60)
 def chunks(text, n=4):
@@ -338,7 +348,7 @@ PlayResY: {H}
 WrapStyle: 0
 [V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
-Style: Sub,{FONT},{fs},&H00FFFFFF,&H00FFFFFF,&H00000000,&H64000000,-1,0,0,0,100,100,0,0,1,5,2,2,60,60,{int(H*0.2) if MODE=='short' else 70},1
+Style: Sub,{FONT},{fs},&H00FFFFFF,&H00FFFFFF,&H00000000,&H64000000,-1,0,0,0,100,100,0,0,1,8,3,5,70,70,0,1
 Style: Hook,{FONT},{int(fs*1.45)},&H00FFFFFF,&H00FFFFFF,&H00000000,&H00000000,-1,0,0,0,100,100,0,0,1,7,4,8,40,40,{int(H*0.12)},1
 Style: Disc,{FONT},{int(fs*0.5)},&H00D0D0D0,&H00FFFFFF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,2,1,8,40,40,30,1
 Style: End,{FONT},{int(fs*1.25)},&H00FFFFFF,&H00FFFFFF,&H00000000,&H00000000,-1,0,0,0,100,100,0,0,1,6,4,5,40,40,0,1
@@ -359,12 +369,12 @@ for i, sc in enumerate(S["scenes"]):
             e1 = wb[k + 1][0] if k + 1 < len(wb) else max(a1, a0 + 0.3)
             ass.append(f"Dialogue: 0,{ts(t + a0)},{ts(t + min(e1, sc['dur']))},Sub,,0,0,0,,{col}{x}")
         sc["start"] = t; t += sc["dur"]; continue
-    parts = chunks(sc["text"]); spoken = sc["dur"] - GAP
+    parts = chunks(sc["text"], 3); spoken = sc["dur"] - GAP
     tot = sum(len(x) for x in parts); st = t
-    for x in parts:
+    for k, x in enumerate(parts):
         d = spoken * len(x) / tot
-        col = "" if sc.get("speaker", "N") == "N" else "{\\c&H0050D0FF}"
-        ass.append(f"Dialogue: 0,{ts(st)},{ts(st + d)},Sub,,0,0,0,,{col}{x}")
+        col = "{\\c&H0000F0FF&}" if (k + i) % 2 == 0 else "{\\c&H00FFFFFF&}"
+        ass.append(f"Dialogue: 0,{ts(st)},{ts(st + d)},Sub,,0,0,0,,{{\\fscx118\\fscy118\\t(0,110,\\fscx100\\fscy100)}}{col}{x}")
         st += d
     sc["start"] = t; t += sc["dur"]
 END = 3.5
@@ -383,8 +393,13 @@ clips = []
 for i, sc in enumerate(S["scenes"]):   # (b) scene_XX = its own picture locked to exactly its own audio
     d = sc["dur"] + (END if i == len(S["scenes"]) - 1 else 0)
     c = f"{OUT}/scene_{i+1:02d}.mkv"
-    subprocess.run(["ffmpeg", "-y", "-v", "error", "-loop", "1", "-framerate", str(fps), "-i", f"{OUT}/i{i:03d}.jpg", "-i", wav_of(i), "-filter_complex",
-        f"[0:v]scale={CW}:{CH2},crop={W}:{H}:{pans[i % 4].replace('{D}', f'{d:.3f}')},fade=t=in:st=0:d=0.25,format=yuv420p[v];[1:a]apad=whole_dur={d:.3f}[a]",
+    nsub = max(1, math.ceil(d / 3.5)); dk = d / nsub; ins, fc = [], ""
+    for k in range(nsub):   # explainer rule: no framing holds > 3.5 s (pan / tilt / punch-in 1.3x)
+        z = 1.3 if k % 2 else 1.0; sw, sh = int(CW * z) // 2 * 2, int(CH2 * z) // 2 * 2
+        ins += ["-loop", "1", "-framerate", str(fps), "-t", f"{dk:.3f}", "-i", f"{OUT}/i{i:03d}.jpg"]
+        fc += f"[{k}:v]scale={sw}:{sh},crop={W}:{H}:{pans[(i + k) % 4].replace('{D}', f'{dk:.3f}')},setsar=1,fps={fps}[s{k}];"
+    fc += "".join(f"[s{k}]" for k in range(nsub)) + f"concat=n={nsub}:v=1:a=0,fade=t=in:st=0:d=0.2,format=yuv420p[v];[{nsub}:a]apad=whole_dur={d:.3f}[a]"
+    subprocess.run(["ffmpeg", "-y", "-v", "error", *ins, "-i", wav_of(i), "-filter_complex", fc,
         "-map", "[v]", "-map", "[a]", "-t", f"{d:.3f}", "-r", str(fps), "-c:v", "libx264", "-preset", "ultrafast", "-crf", "20", "-threads", "4",
         "-c:a", "pcm_s16le", "-ar", "48000", "-ac", "2", c], check=True)
     clips.append(c)
@@ -407,10 +422,24 @@ for i, sc in enumerate(S["scenes"]):
     segs.append(sg)
 open(f"{OUT}/bg.txt", "w").write("".join(f"file '{x}'\n" for x in segs))
 subprocess.run(["ffmpeg", "-y", "-v", "error", "-f", "concat", "-safe", "0", "-i", f"{OUT}/bg.txt", "-t", f"{TOTAL:.2f}", f"{OUT}/bed.wav"], check=True)
+# subtle whoosh / low thud on every scene change (synthesised, no extra asset)
+import array, random
+SR = 48000; sfx = array.array("h", bytes(2 * int((TOTAL + 1) * SR))); rnd = random.Random(7)
+def put_whoosh(t0):
+    n = int(0.55 * SR); a = int(t0 * SR) - int(0.25 * SR); lp = 0.0
+    for j in range(n):
+        x = j / n; env = math.sin(math.pi * x) ** 2; cut = 0.03 + 0.25 * x   # rising filtered noise
+        lp += cut * (rnd.uniform(-1, 1) - lp); thud = math.sin(2 * math.pi * 55 * j / SR) * math.exp(-j / (0.12 * SR)) if j < 0.3 * SR else 0
+        v = int(9000 * env * lp * 3 + 7000 * thud * (x > 0.4))
+        k = a + j
+        if 0 <= k < len(sfx): sfx[k] = max(-32000, min(32000, sfx[k] + v))
+for sc in S["scenes"][1:]: put_whoosh(sc["start"])
+import wave
+with wave.open(f"{OUT}/sfx.wav", "wb") as wf: wf.setnchannels(1); wf.setsampwidth(2); wf.setframerate(SR); wf.writeframes(sfx.tobytes())
 BEDGAIN = "0.28"   # about -11 dB: clearly audible on phone speakers
 FINAL = f"{OUT}/{JOB}.mp4"
-subprocess.run(["ffmpeg", "-y", "-v", "error", "-i", f"{OUT}/locked.mkv", "-i", f"{OUT}/bed.wav",
-    "-filter_complex", f"[0:v]ass={OUT}/subs.ass[v];[0:a]loudnorm=I=-15:TP=-1.5,aformat=channel_layouts=stereo:sample_rates=48000[vo];[1:a]volume={BEDGAIN}[bd];[vo][bd]amix=2:duration=first:normalize=0,afade=t=out:st={TOTAL-1.5:.2f}:d=1.5,loudnorm=I=-14:TP=-1.5:LRA=11,aresample=48000[a]",
+subprocess.run(["ffmpeg", "-y", "-v", "error", "-i", f"{OUT}/locked.mkv", "-i", f"{OUT}/bed.wav", "-i", f"{OUT}/sfx.wav",
+    "-filter_complex", f"[0:v]ass={OUT}/subs.ass[v];[0:a]loudnorm=I=-15:TP=-1.5,aformat=channel_layouts=stereo:sample_rates=48000[vo];[1:a]volume={BEDGAIN}[bd];[2:a]aformat=channel_layouts=stereo:sample_rates=48000,volume=0.35[sx];[vo][bd][sx]amix=3:duration=first:normalize=0,afade=t=out:st={TOTAL-1.5:.2f}:d=1.5,loudnorm=I=-14:TP=-1.5:LRA=11,aresample=48000[a]",
     "-map", "[v]", "-map", "[a]", "-t", f"{TOTAL:.2f}", "-c:v", "libx264", "-preset", "ultrafast", "-crf", "21", "-threads", "4", "-pix_fmt", "yuv420p",
     "-c:a", "aac", "-b:a", "192k", "-movflags", "+faststart", FINAL], check=True)
 log("rendered", FINAL, round(TOTAL, 1), "s")
@@ -496,7 +525,7 @@ def preview_publish(status):
         V = json.load(open(dp)) if os.path.exists(dp) else []
         V = [x for x in V if x["job"] != JOB]
         V.insert(0, {"job": JOB, "channel": CFG["name"], "mode": MODE, "title": title, "mp4": base + mp4, "poster": base + os.path.basename(poster),
-                     "publish": slot.astimezone(IST).strftime("%d %b %I:%M %p IST"), "status": status, "made": NOW.astimezone(IST).strftime("%d %b %I:%M %p")})
+                     "publish": slot.astimezone(IST).strftime("%d %b %I:%M %p IST"), "pub_iso": pub, "caption": S.get("description", "")[:600], "status": status, "made": NOW.astimezone(IST).strftime("%d %b %I:%M %p")})
         for old in V[30:]:
             subprocess.run(["gh", "release", "delete-asset", "ready-queue", old["mp4"].rsplit("/", 1)[1], "-y"]); subprocess.run(["gh", "release", "delete-asset", "ready-queue", old["poster"].rsplit("/", 1)[1], "-y"])
         json.dump(V[:30], open(dp, "w"), ensure_ascii=False, indent=1); log("preview", base + mp4)

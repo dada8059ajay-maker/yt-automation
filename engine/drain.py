@@ -50,7 +50,7 @@ while STATE.get("_queue") and len(recent()) < MAX:
     try:
         dp = "docs/videos.json"; V = json.load(open(dp))
         for x in V:
-            if x["job"] == job: x["status"] = "YouTube पर scheduled"; x["publish"] = slot.astimezone(IST).strftime("%d %b %I:%M %p IST"); x["yt"] = f"https://youtu.be/{vid}"
+            if x["job"] == job: x["status"] = "YouTube पर scheduled"; x["publish"] = slot.astimezone(IST).strftime("%d %b %I:%M %p IST"); x["yt"] = f"https://youtu.be/{vid}"; x["pub_iso"] = pub
         json.dump(V, open(dp, "w"), ensure_ascii=False, indent=1)
     except Exception as e: print("preview update skipped", e)
     print("PUBLISHED from queue", job, vid, pub)

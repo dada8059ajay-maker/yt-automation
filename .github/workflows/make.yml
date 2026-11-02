@@ -23,6 +23,10 @@ jobs:
       CSEC: ${{ secrets.YT_CLIENT_SECRET }}
       HF_TOKEN: ${{ secrets.HF_TOKEN }}
       POLLINATIONS_TOKEN: ${{ secrets.POLLINATIONS_TOKEN }}
+      IG_TOKEN: ${{ secrets.IG_TOKEN }}
+      IG_USER_ID: ${{ secrets.IG_USER_ID }}
+      FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
+      FB_PAGE_TOKEN: ${{ secrets.FB_PAGE_TOKEN }}
     steps:
       - uses: actions/checkout@v4
         with: {ref: main}   # always latest state.json (dispatch would pin an old commit)
@@ -33,6 +37,9 @@ jobs:
           cp engine/state.json /tmp/base_state.json
           python3 engine/plan.py "${{ inputs.channel }}" "${{ inputs.mode }}" >> $GITHUB_OUTPUT; cat $GITHUB_OUTPUT
           grep -q '^ch=.\+\|^drain=1\|^comp=.\+' $GITHUB_OUTPUT || echo "::notice::Skipped: $(grep reason $GITHUB_OUTPUT)"
+      - id: social   # Instagram Reels (+FB) auto-post when the YouTube Short goes public; skips without IG_TOKEN
+        continue-on-error: true
+        run: python3 engine/social_publish.py | tee /tmp/social.txt; grep -q "^social=1" /tmp/social.txt && echo "social=1" >> $GITHUB_OUTPUT || true
       - name: publish pre-rendered queue (quota open)
         if: steps.plan.outputs.drain == '1'
         run: pip install -q pillow; python3 engine/drain.py
@@ -73,7 +80,7 @@ jobs:
           name: video-${{ github.run_id }}
           path: out/
           retention-days: 3
-      - if: always() && (steps.plan.outputs.ch != '' || steps.plan.outputs.drain == '1' || steps.plan.outputs.comp != '')
+      - if: always() && (steps.plan.outputs.ch != '' || steps.plan.outputs.drain == '1' || steps.plan.outputs.comp != '' || steps.social.outputs.social == '1')
         run: |
           mkdir -p logs; cp out/*/log.txt logs/${{ github.run_id }}.txt 2>/dev/null || true; cp out/*/script.json logs/${{ github.run_id }}_script.json 2>/dev/null || true
           git config user.name bot; git config user.email bot@users.noreply.github.com
@@ -85,7 +92,7 @@ jobs:
           json.dump(s, open(p, "w"), ensure_ascii=False, indent=1)
           PY
           cp engine/state.json /tmp/new_state_update.json
-          mkdir -p /tmp/keep && cp -r results logs docs /tmp/keep/ 2>/dev/null || true
+          mkdir -p /tmp/keep && cp -r results logs docs /tmp/keep/; cp secrets/ig_token.enc /tmp/ig_token.enc 2>/dev/null 2>/dev/null || true
           for try in 1 2 3 4 5; do
             git fetch -q origin main && git reset -q --hard origin/main
             git checkout origin/main -- engine/state.json
@@ -93,7 +100,8 @@ jobs:
             mkdir -p results logs docs
             for f in /tmp/keep/results/* /tmp/keep/logs/* /tmp/keep/docs/*; do [ -f "$f" ] || continue; d=${f#/tmp/keep/}
               if [ "$d" = results/schedule_log.md ] && [ -f "$d" ]; then cat "$d" "$f" | awk '!seen[$0]++' > /tmp/sl && mv /tmp/sl "$d"; else cp "$f" "$d"; fi; done
-            git add engine/state.json results logs docs
+            [ -f /tmp/ig_token.enc ] && cp /tmp/ig_token.enc secrets/ig_token.enc
+            git add engine/state.json results logs docs secrets
             git commit -q -m "update state ${{ github.run_id }} [skip ci]" || { echo nothing to commit; break; }
             git push -q origin HEAD:main && break
             sleep $((RANDOM % 10 + 5))
