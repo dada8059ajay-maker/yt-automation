@@ -9,7 +9,8 @@
    "जंगल के बीच बने एक पुराने रेलवे केबिन में रात की ड्यूटी के तीन जानलेवा नियम और एक भयानक सच।",
    "काली नदी के सुनसान घाट पर रात की रखवाली के 4 खौफनाक नियम और 3:15 बजे का जानलेवा सच।",
    "भैरव घाट पर रात 3:15 बजे आई रहस्यमयी नाव, पुराने नाविक का भयानक राज़ और नदी से उठे काले साए।",
-   "भैरव घाट की शापित रात का खौफनाक अंत और रघु काका का भयानक काला सच।"
+   "भैरव घाट की शापित रात का खौफनाक अंत और रघु काका का भयानक काला सच।",
+   "भैरव घाट पर रात 3:15 बजे नाव के टकराते ही सामने आई माया की रहस्यमयी और खौफनाक सच्चाई का ट्रेलर।"
   ],
   "series": {
    "name": "भैरव घाट का रहस्य",
@@ -32,7 +33,7 @@
     "Maya": "Mysterious Woman Maya, 20s, pale gaunt face, sunken dark rimmed eyes, long raven black hair dripping wet, wearing faded maroon saree with tarnished silver border, barefoot, haunting Indian female spirit"
    },
    "vid": null,
-   "short_done": false,
+   "short_done": true,
    "trailer": null
   }
  },
@@ -122,6 +123,13 @@
    "mode": "short",
    "asset": "kahani_short_20261102_0918.tar",
    "title": "उड़ने वाली जादुई रोटी का रहस्य! 🫓✨ #shorts"
+  },
+  {
+   "job": "raat_short_20261102_0929",
+   "ch": "raat",
+   "mode": "short",
+   "asset": "raat_short_20261102_0929.tar",
+   "title": "भैरव घाट का रहस्य: काली नदी का अंतिम सच #shorts"
   }
  ],
  "_draft": null,
@@ -175,7 +183,7 @@
   }
  ],
  "_minutes": {
-  "2026-11": 486
+  "2026-11": 496
  },
  "_bank": {}
 }
