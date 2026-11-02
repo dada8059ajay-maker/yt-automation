@@ -54,7 +54,7 @@ jobs:
       - if: steps.plan.outputs.ch != ''
         run: |
           sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg fonts-noto-core >/dev/null
-          pip install -q edge-tts pillow gradio_client   # no CPU image model any more (API pictures only)
+          pip install -q pillow gradio_client   # no CPU image model any more (API pictures only)
           gh release view drafts >/dev/null 2>&1 || gh release create drafts --title "unfinished drafts" --notes "checkpointed unfinished videos" --prerelease
           gh release view library >/dev/null 2>&1 || gh release create library --title "story library" --notes "finished long videos for weekly compilations" --prerelease
           gh release view queue >/dev/null 2>&1 || gh release create queue --title "render queue" --notes "pre-rendered videos waiting for YouTube quota" --prerelease

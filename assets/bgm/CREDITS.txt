@@ -1,0 +1,6 @@
+All tracks by Kevin MacLeod (incompetech.com), Creative Commons: By Attribution 4.0 (http://creativecommons.org/licenses/by/4.0/)
+horror.mp3 = "Darkest Child" (dark horror piano & drone)
+chase.mp3 = "Volatile Reaction" (fast chase strings)
+peaceful.mp3 = "Eastern Thought" (peaceful eastern flute)
+suspense.mp3 = "Unseen Horrors" (suspense mystery)
+victory.mp3 = "Carefree"

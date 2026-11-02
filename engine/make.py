@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Fully automatic video engine (runs on GitHub Actions).
 usage: python engine/make.py <channel raat|kahani> <mode short|long> [--no-upload]
-Steps: Gemini script (+self edit) -> SD-Turbo CPU images -> edge-tts voices -> ffmpeg render -> YouTube schedule.
+Steps: Gemini script -> FLUX images -> Gemini acting TTS (chunked) -> atomic scene-locked render -> YouTube schedule.
 """
 import os, sys, json, re, subprocess, random, datetime as dt, urllib.request, urllib.error, asyncio, shutil, math
 
@@ -106,7 +106,7 @@ PROMPT = f"""तुम YouTube चैनल "{CFG['name']}" के मुख्�
 हर 60-90 सेकंड (लगभग हर 8-10 दृश्य) में एक नया सस्पेंस मोड़/खुलासा ज़रूर हो।
 पहले 10 सेकंड का नियम (सख्त): कहानी कभी धीमी शुरुआत ("एक गाँव था...", "बहुत समय पहले...") से शुरू न हो। पहला ही वाक्य खौफनाक/रोमांचक सवाल या सीधा रहस्य हो, ताकि दर्शक 30 सेकंड तक न जाए।
 {"Short: पहली लाइन में ही ज़बरदस्त हुक; अंत में क्लिफ़हैंगर या चौंकाने वाला मोड़।" if MODE=="short" else "लंबा वीडियो: पहले 20 सेकंड में ठंडा हुक (कहानी का सबसे रोमांचक पल), फिर कहानी; लगभग 35% पर एक हल्की 1 लाइन सब्सक्राइब अपील एक छोटे पेऑफ़ के बाद (पहले 60 सेकंड में नहीं); अंत में मुख्य अपील + अगली कहानी की झलक।"}
-हर लाइन पर असली अभिनय सोचो: डर में काँपती फुसफुसाहट, भागने में हाँफती साँसें, गुस्से में गरज; mood से सीन का संगीत तय होगा (शुरुआत/शांत=peaceful, डर/रहस्य=suspense, भागना=chase, अंत की सीख/जीत=victory)।
+हर लाइन पर असली अभिनय सोचो: डर में काँपती फुसफुसाहट, भागने में हाँफती साँसें, गुस्से में गरज; mood से सीन का संगीत तय होगा (शुरुआत/शांत=peaceful, डरावना=horror, रहस्य=suspense, भागना=chase, अंत की सीख/जीत=victory)।
 लिखने के बाद खुद संपादित करो: फालतू शब्द और दोहराव हटाओ, छोटी लाइनें, स्वाभाविक बोलचाल की हिंदी, हर लाइन कहानी आगे बढ़ाए।
 पहले हर किरदार की पक्की Character Sheet बनाओ (अंग्रेज़ी में: उम्र, चेहरा, आँखें, बाल, कद-काठी, कपड़े और रंग, भारतीय परिवेश)। हर दृश्य के visual में उस दृश्य के किरदार की Character Sheet के शब्द हूबहू दोहराओ ताकि हर तस्वीर में वह एक जैसा दिखे।
 speaker कोड: N=कथावाचक, M=युवा पुरुष, F=युवा महिला, O=बूढ़ा आदमी, A=बूढ़ी औरत, C=बच्चा, G=रहस्यमयी/भूतिया आवाज़।
@@ -118,7 +118,7 @@ speaker कोड: N=कथावाचक, M=युवा पुरुष, F=�
  "hook": "स्क्रीन पर पहले 3 सेकंड दिखने वाला 3-5 शब्द का हुक",
  "thumb_text": "थंबनेल पर 2-4 शब्द",
  "characters": {{"नाम": "English character sheet: age, face, eyes, hair, build, exact clothes + colors, Indian look"}},
- "scenes": [{{"speaker": "N", "text": "हिंदी लाइन (1-2 वाक्य); ज़रूरत हो तो '...' से रुकाव", "mood": "suspense|chase|peaceful|victory में से एक (BGM के लिए)", "style": "English voice-acting direction for this exact line, e.g. 'terrified, trembling, shaky low whisper' / 'out of breath, panting heavily as if just ran for life, gasping between words' / 'deep, booming, furious, terrifyingly loud' / 'warm, gentle storyteller'", "visual": "Precise English visual prompt, about 50 words: ONE main character in focus (exact character-sheet wording), action, Indian place, time of day, lighting, camera shot (medium/wide). No text, no hand close-ups."}}]}}"""
+ "scenes": [{{"speaker": "N", "text": "हिंदी लाइन (1-2 वाक्य); ज़रूरत हो तो '...' से रुकाव", "mood": "horror|suspense|chase|peaceful|victory में से एक (BGM के लिए)", "style": "English voice-acting direction for this exact line, e.g. 'terrified, trembling, shaky low whisper' / 'out of breath, panting heavily as if just ran for life, gasping between words' / 'deep, booming, furious, terrifyingly loud' / 'warm, gentle storyteller'", "visual": "Precise English visual prompt, about 50 words: ONE main character in focus (exact character-sheet wording), action, Indian place, time of day, lighting, camera shot (medium/wide). No text, no hand close-ups."}}]}}"""
 # ---- story_bank.json: stories written by Hark; Gemini only when the bank is empty ----
 BANKSER = (SER or {}).get("bank") if RAATLONG else None
 def expand(x):
@@ -164,99 +164,79 @@ else:
     checkpoint("script")
 log("title:", S["title"], "scenes:", len(S["scenes"]))
 
-# ---------------- 2. voices ----------------
-# ---------------- 2. voices: Gemini acting TTS (Shorts) -> emotional edge-tts backup ----------------
-import edge_tts, base64, time
-VOICE = {"N": ("hi-IN-MadhurNeural", 0, "+38%"), "M": ("hi-IN-MadhurNeural", 6, "+40%"),
-         "F": ("hi-IN-SwaraNeural", 0, "+38%"), "O": ("hi-IN-MadhurNeural", -14, "+28%"),
-         "A": ("hi-IN-SwaraNeural", -12, "+28%"), "C": ("hi-IN-SwaraNeural", 22, "+35%"),
-         "G": ("hi-IN-SwaraNeural", -18, "+20%")}
-GVOICE = {"N": "Charon", "M": "Puck", "F": "Kore", "O": "Fenrir", "A": "Gacrux", "C": "Leda", "G": "Enceladus"}
-TTS_MODELS = ["gemini-2.5-flash-tts", "gemini-2.5-flash-preview-tts", "gemini-2.5-pro-tts", "gemini-2.5-pro-preview-tts"]
-def emo(sc):
-    s = (sc.get("style", "") + " " + sc.get("mood", "")).lower()
-    if any(k in s for k in ("breath", "pant", "gasp", "running", "ran ")): return "run"
-    if any(k in s for k in ("furious", "angry", "boom", "roar", "shout", "loud")): return "angry"
-    if any(k in s for k in ("terrif", "whisper", "trembl", "scared", "fear", "shaky")): return "scared"
-    return ""
-def post(i, sc, src):
-    e = emo(sc); a = f"{OUT}/a{i:03d}.mp3"; fx = None
-    if e == "angry": fx = "aecho=0.8:0.6:35:0.22,bass=g=6,volume=1.2"
-    if e == "scared" and src == "edge": fx = "highpass=f=120,volume=0.9"
-    if e == "run" and src == "edge":  # layer real breathing noise under breathless lines
-        subprocess.run(["ffmpeg", "-y", "-v", "error", "-i", a, "-f", "lavfi", "-i",
-            "anoisesrc=c=pink:a=0.5,bandpass=f=1100:width_type=h:w=900,volume='pow(abs(sin(PI*1.6*t)),6)*0.35':eval=frame",
-            "-filter_complex", "[0:a][1:a]amix=2:duration=first:normalize=0", f"{OUT}/t.mp3"], check=True); os.replace(f"{OUT}/t.mp3", a)
-    if fx:
-        subprocess.run(["ffmpeg", "-y", "-v", "error", "-i", a, "-af", fx, f"{OUT}/t.mp3"], check=True); os.replace(f"{OUT}/t.mp3", a)
-async def edge(i, sc):
-    v, p0, rate = VOICE.get(sc.get("speaker", "N"), VOICE["N"]); e = emo(sc); vol = "+0%"; txt = sc["text"]
-    if e == "scared": rate, p0 = "-15%", p0 - 10
-    elif e == "run":
-        rate, p0 = "+22%", p0 + 10; w = txt.split(); txt = "... ".join(" ".join(w[k:k+3]) for k in range(0, len(w), 3))
-    elif e == "angry": rate, p0, vol = "-8%", p0 - 18, "+20%"
-    try: comm = edge_tts.Communicate(txt, v, rate=rate, pitch=f"{p0:+d}Hz", volume=vol, boundary="WordBoundary")
-    except TypeError: comm = edge_tts.Communicate(txt, v, rate=rate, pitch=f"{p0:+d}Hz", volume=vol)
-    audio, words = bytearray(), []
-    async for ch in comm.stream():
-        if ch["type"] == "audio": audio += ch["data"]
-        elif ch["type"] == "WordBoundary": words.append([ch["offset"] / 1e7, (ch["offset"] + ch["duration"]) / 1e7, ch["text"]])
-    open(f"{OUT}/a{i:03d}.mp3", "wb").write(bytes(audio))
-    json.dump(words, open(f"{OUT}/w{i:03d}.json", "w"), ensure_ascii=False)
-class RateLimited(Exception): pass
-GM = {"m": None}
-def gemini_tts(i, sc):
-    style = sc.get("style") or "natural expressive storyteller"
-    txt = (f"You are a top Hindi voice actor. Perform this line in natural Indian Hindi. Acting direction: {style}. "
-           f"Fully act the emotion: real breathing, trembling, gasps and pauses where it fits. Line:\n{sc['text']}")
-    for m in ([GM["m"]] if GM["m"] else TTS_MODELS):
-        body = {"contents": [{"parts": [{"text": txt}]}], "generationConfig": {"responseModalities": ["AUDIO"],
-                "speechConfig": {"voiceConfig": {"prebuiltVoiceConfig": {"voiceName": GVOICE.get(sc.get("speaker", "N"), "Charon")}}}}}
-        req = urllib.request.Request(f"https://generativelanguage.googleapis.com/v1beta/models/{m}:generateContent", json.dumps(body).encode(),
+# ---------------- 2. voices: 100% Gemini acting TTS, 5-6 scene-paragraph chunks (First-Pass Perfection Protocol) ----------------
+import base64, time
+TTS_MODEL = "gemini-2.5-flash-preview-tts"
+GV = {"N": "Charon", "M": "Puck", "F": "Kore", "O": "Fenrir", "A": "Gacrux", "C": "Leda", "G": "Enceladus"}
+NCHUNK = 6 if MODE == "long" else 2
+def wav_of(i): return f"{OUT}/scene_{i+1:02d}.wav"
+def tts_call(text, spk):
+    """one Gemini TTS call; spk = list of speaker codes (max 2 -> multi-speaker)"""
+    sc_ = ({"voiceConfig": {"prebuiltVoiceConfig": {"voiceName": GV.get(spk[0], "Charon")}}} if len(spk) == 1 else
+           {"multiSpeakerVoiceConfig": {"speakerVoiceConfigs": [{"speaker": n, "voiceConfig": {"prebuiltVoiceConfig": {"voiceName": GV.get(c, "Puck")}}}
+            for n, c in zip(("Narrator", "Character"), spk)]}})
+    body = {"contents": [{"parts": [{"text": text}]}], "generationConfig": {"responseModalities": ["AUDIO"], "speechConfig": sc_}}
+    for k in range(4):
+        req = urllib.request.Request(f"https://generativelanguage.googleapis.com/v1beta/models/{TTS_MODEL}:generateContent", json.dumps(body).encode(),
             {"Content-Type": "application/json", "x-goog-api-key": os.environ["GEMINI_API_KEY"]})
         try:
-            r = json.load(urllib.request.urlopen(req, timeout=120))
-            part = next(p for p in r["candidates"][0]["content"]["parts"] if "inlineData" in p)
-            open(f"{OUT}/g.pcm", "wb").write(base64.b64decode(part["inlineData"]["data"]))
-            subprocess.run(["ffmpeg", "-y", "-v", "error", "-f", "s16le", "-ar", "24000", "-ac", "1", "-i", f"{OUT}/g.pcm",
-                "-af", "silenceremove=start_periods=1:start_threshold=-45dB,areverse,silenceremove=start_periods=1:start_threshold=-45dB,areverse",
-                f"{OUT}/a{i:03d}.mp3"], check=True)
-            GM["m"] = m; return
+            r = json.load(urllib.request.urlopen(req, timeout=300))
+            return b"".join(base64.b64decode(p["inlineData"]["data"]) for p in r["candidates"][0]["content"]["parts"] if "inlineData" in p)
         except urllib.error.HTTPError as e:
-            log("gtts", m, e.code, e.read().decode()[:120])
-            if e.code == 429: raise RateLimited()
+            log("gtts", e.code, e.read().decode()[:160]); time.sleep(30 * (k + 1))
         except Exception as e:
-            log("gtts", m, repr(e)[:120])
-    raise RateLimited()
-src = "edge"
-VOICE_DONE = os.path.exists(f"{OUT}/voices.done") and all(os.path.exists(f"{OUT}/a{i:03d}.mp3") for i in range(len(S["scenes"])))
-if VOICE_DONE: src = "resume"; log("resume: voices loaded")
-elif len(S["scenes"]) <= 12:   # free Gemini TTS quota is small: use it for Shorts, all-or-nothing for one consistent cast
-    try:
-        for i, sc in enumerate(S["scenes"]):
-            gemini_tts(i, sc); log("gtts ok", i, GM["m"]); time.sleep(21)
-        src = "gemini"
-    except RateLimited:
-        log("gemini tts unavailable -> emotional edge-tts for whole video")
-async def all_edge():
-    for i, sc in enumerate(S["scenes"]):
-        for k in range(3):
-            try: await edge(i, sc); break
-            except Exception as e: log("tts retry", i, e); await asyncio.sleep(3)
-if src == "edge": asyncio.run(all_edge())
-if not VOICE_DONE:
-    for i, sc in enumerate(S["scenes"]): post(i, sc, src)
-    open(f"{OUT}/voices.done", "w").write(src); checkpoint("voices")
-log("voice engine:", src)
+            log("gtts", repr(e)[:160]); time.sleep(15)
+    return None
 def dur_of(p):
     return float(subprocess.check_output(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", p]).decode().strip())
+def split_chunk(cw, idx):
+    """cut one chunk wav into its scenes at the long pauses we asked for (fallback: by text length)"""
+    tot = dur_of(cw); n = len(idx); cuts = []
+    if n > 1:
+        o = subprocess.run(["ffmpeg", "-v", "info", "-i", cw, "-af", "silencedetect=n=-38dB:d=0.55", "-f", "null", "-"], capture_output=True, text=True).stderr
+        sil = [(float(a), float(b)) for a, b in re.findall(r"silence_start: ([\d.]+).*?silence_end: ([\d.]+)", o, re.S)]
+        w = [len(S["scenes"][i]["text"]) for i in idx]; acc, exp = 0, []
+        for x in w[:-1]: acc += x; exp.append(tot * acc / sum(w))
+        used = set()
+        for e in exp:   # nearest unused long pause to where the scene boundary is expected
+            cand = [k for k in range(len(sil)) if k not in used and abs((sil[k][0] + sil[k][1]) / 2 - e) < tot * 0.18]
+            if cand:
+                k = min(cand, key=lambda k: abs((sil[k][0] + sil[k][1]) / 2 - e)); used.add(k); cuts.append((sil[k][0] + sil[k][1]) / 2)
+            else: cuts.append(e)
+        cuts = sorted(cuts)
+    edges = [0.0] + cuts + [tot]
+    for j, i in enumerate(idx):
+        subprocess.run(["ffmpeg", "-y", "-v", "error", "-i", cw, "-ss", f"{edges[j]:.3f}", "-to", f"{edges[j+1]:.3f}", "-af",
+            "silenceremove=start_periods=1:start_threshold=-45dB,areverse,silenceremove=start_periods=1:start_threshold=-45dB,areverse,aformat=channel_layouts=stereo:sample_rates=48000",
+            wav_of(i)], check=True)
+n_sc = len(S["scenes"]); per = math.ceil(n_sc / NCHUNK)
+groups = [list(range(k, min(k + per, n_sc))) for k in range(0, n_sc, per)]
+for g_i, idx in enumerate(groups):
+    if all(os.path.exists(wav_of(i)) for i in idx): continue   # resumed draft
+    if out_of_time(): pause(f"voices chunk {g_i}")
+    others = [c for c in dict.fromkeys(S["scenes"][i].get("speaker", "N") for i in idx) if c != "N"]
+    spk = ["N"] + others[:1]      # Gemini allows 2 voices per call: narrator + main character of this chunk
+    lines = []
+    for i in idx:
+        sc = S["scenes"][i]; who = "Narrator" if sc.get("speaker", "N") == "N" or len(spk) == 1 else "Character"
+        lines.append(f"({sc.get('style') or 'natural expressive storyteller'}) {who}: {sc['text']}")
+    prompt = ("You are a top Hindi voice actor performing an audio drama in natural Indian Hindi. Read every line in order, fully acting the "
+              "direction in brackets: when a character runs or is scared, the panting, breathing, gasps and trembling must be inside the "
+              "voice itself. Never read the bracket text aloud. Leave a clear silent pause of about 1.5 seconds between lines.\n\n" + "\n\n".join(lines))
+    pcm = tts_call(prompt, spk)
+    if not pcm: pause(f"gemini tts quota (chunk {g_i+1}/{len(groups)}) - retry next run")
+    open(f"{OUT}/g.pcm", "wb").write(pcm)
+    subprocess.run(["ffmpeg", "-y", "-v", "error", "-f", "s16le", "-ar", "24000", "-ac", "1", "-i", f"{OUT}/g.pcm", f"{OUT}/chunk.wav"], check=True)
+    split_chunk(f"{OUT}/chunk.wav", idx); log("gtts chunk", g_i + 1, "/", len(groups), "scenes", idx[0], "-", idx[-1])
+    checkpoint(f"voices {g_i+1}/{len(groups)}")
+    if g_i + 1 < len(groups): time.sleep(22)   # free tier ~3 req/min
+log("voice engine: gemini", TTS_MODEL, len(groups), "calls")
 GAP = 0.35
 for i, sc in enumerate(S["scenes"]):
-    a = f"{OUT}/a{i:03d}.mp3"
-    sc["dur"] = dur_of(a) + GAP
+    sc["dur"] = dur_of(wav_of(i)) + GAP   # (a) exact scene audio length via ffprobe
     if MODE == "long" and "?" in sc["text"] and CFG["madeForKids"]: sc["dur"] += 2.5  # pause after a question to kids
 
-# ---------------- 3. images (FLUX via Pollinations, SD-Turbo only as backup) ----------------
+# ---------------- 3. images: 100% FLUX (no SD-Turbo / turbo models) ----------------
 import time, urllib.parse, io
 from PIL import Image, ImageFilter, ImageEnhance
 seed = random.randint(1, 10**6)
@@ -270,55 +250,56 @@ def cover(img):
 def _fit(img):
     if img.width < 300: raise ValueError("tiny image")
     return img
+def clean_prompt(visual):
+    """<=120 chars, plain English words only (Pollinations fails on special characters)"""
+    t = re.sub(r"[^A-Za-z0-9 ,]", " ", visual); t = re.sub(r"\s+", " ", t).strip()
+    tail = ", cinematic HD"; room = 120 - len(tail)
+    if len(t) > room: t = t[:room].rsplit(" ", 1)[0]
+    return (t + tail)[:120]
+def good_img(data):
+    if len(data) < 40_000: raise ValueError(f"small file {len(data)}")
+    img = Image.open(io.BytesIO(data)).convert("RGB")
+    if min(img.width, img.height) < 512 or (img.width > img.height) != (W > H): raise ValueError(f"bad size {img.size}")
+    return img
 def flux(prompt, sd):
-    """1) Pollinations FLUX  2) Hugging Face FLUX.1-schnell space  -> None means use SD-Turbo (last resort)."""
-    short = prompt[:245]
+    """100% FLUX: 1) Pollinations model=flux&enhance=true  2) Hugging Face FLUX.1-schnell. None -> reuse nearest FLUX picture."""
+    short = clean_prompt(prompt)
     for k in range(3):
-        seed_k = random.randint(1, 2**31 - 1)
         url = ("https://image.pollinations.ai/prompt/" + urllib.parse.quote(short) +
-               f"?model=flux&width={W}&height={H}&nologo=true&enhance=true&seed={seed_k}")
+               f"?model=flux&width={W}&height={H}&nologo=true&enhance=true&seed={random.randint(1, 2**31 - 1)}")
         hdr = {"User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36"}
         if os.environ.get("POLLINATIONS_TOKEN"): hdr["Authorization"] = "Bearer " + os.environ["POLLINATIONS_TOKEN"]
         try:
-            data = urllib.request.urlopen(urllib.request.Request(url, headers=hdr), timeout=150).read()
-            img = _fit(Image.open(io.BytesIO(data)).convert("RGB"))
-            if not os.environ.get("POLLINATIONS_TOKEN"): img = img.crop((0, 0, img.width, int(img.height * 0.94)))  # free-tier watermark strip
-            return img, "pollinations"
+            img = good_img(urllib.request.urlopen(urllib.request.Request(url, headers=hdr), timeout=150).read())
+            if not os.environ.get("POLLINATIONS_TOKEN"): img = img.crop((0, 0, img.width, int(img.height * 0.94)))
+            return img, "pollinations-flux"
         except Exception as e:
-            log("pollinations retry", k, repr(e)[:100]); time.sleep(5 + 5 * k)
+            log("pollinations retry", k, repr(e)[:100]); time.sleep(6 + 6 * k)
     try:
         from gradio_client import Client
         global _hf
-        if "_hf" not in globals() or _hf is None:
+        if _hf is None:
             _tk = os.environ.get("HF_TOKEN") or None
-            try:
-                _hf = Client("black-forest-labs/FLUX.1-schnell", token=_tk, verbose=False)
-            except TypeError:
-                _hf = Client("black-forest-labs/FLUX.1-schnell", hf_token=_tk, verbose=False)
+            try: _hf = Client("black-forest-labs/FLUX.1-schnell", token=_tk, verbose=False)
+            except TypeError: _hf = Client("black-forest-labs/FLUX.1-schnell", hf_token=_tk, verbose=False)
         hw, hh = (576, 1024) if MODE == "short" else (1024, 576)
-        r = _hf.predict(prompt=prompt[:600], seed=random.randint(1, 2**31 - 1), randomize_seed=False, width=hw, height=hh,
-                        num_inference_steps=4, api_name="/infer")
-        return _fit(Image.open(r[0] if isinstance(r, (list, tuple)) else r).convert("RGB")), "hf-flux"
+        r = _hf.predict(prompt=short, seed=random.randint(1, 2**31 - 1), randomize_seed=False, width=hw, height=hh, num_inference_steps=4, api_name="/infer")
+        f = r[0] if isinstance(r, (list, tuple)) else r
+        return good_img(open(f, "rb").read()), "hf-flux"
     except Exception as e:
         log("hf flux fail", repr(e)[:140])
-    try:
-        url = "https://image.pollinations.ai/prompt/" + urllib.parse.quote(short) + f"?model=turbo&width={W}&height={H}&nologo=true&seed={random.randint(1, 2**31 - 1)}"
-        data = urllib.request.urlopen(urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"}), timeout=120).read()
-        return _fit(Image.open(io.BytesIO(data)).convert("RGB")), "pollinations-turbo"
-    except Exception as e:
-        log("turbo fail", repr(e)[:100])
     return None, None
 _hf = None
-STEP = 2 if MODE == "long" else 1   # long: one picture per 2 scenes (different pan each) -> half the API calls
+STEP = 1   # atomic scene-lock: every scene gets its own picture of exactly its own line
 for i, sc in enumerate(S["scenes"]):
     if os.path.exists(f"{OUT}/i{i:03d}.jpg"): continue   # resumed draft
     if i % STEP:
         if os.path.exists(f"{OUT}/i{i-1:03d}.jpg"): shutil.copy(f"{OUT}/i{i-1:03d}.jpg", f"{OUT}/i{i:03d}.jpg"); continue
     if out_of_time(): pause(f"images {i}/{len(S['scenes'])}")
     if i and i % 6 == 0: checkpoint(f"images {i}/{len(S['scenes'])}")
-    p = f"{sc['visual']}, {CFG['style']}, {SUFFIX}"
+    p = sc["visual"]
     img, src = flux(p, seed + i)
-    if i: time.sleep(5)
+    time.sleep(6)   # 6 s between downloads
     if img is None:   # no CPU model any more: reuse the nearest good picture (mirrored for variety)
         prev = [k for k in range(i - 1, -1, -1) if os.path.exists(f"{OUT}/i{k:03d}.jpg") and not os.path.exists(f"{OUT}/r{k:03d}")]
         if not prev: log("img", i, "MISSING"); continue
@@ -370,7 +351,7 @@ def wb_chunks(i):
     return [(w[k][0], w[min(k + 3, len(w) - 1)][1], " ".join(x[2] for x in w[k:k + 4])) for k in range(0, len(w), 4)]
 for i, sc in enumerate(S["scenes"]):
     col = "" if sc.get("speaker", "N") == "N" else "{\\c&H0050D0FF}"
-    wb = wb_chunks(i)
+    wb = None   # Gemini TTS has no word timings: subtitles split by text length inside the scene
     if wb:
         for k, (a0, a1, x) in enumerate(wb):
             e1 = wb[k + 1][0] if k + 1 < len(wb) else max(a1, a0 + 0.3)
@@ -397,41 +378,37 @@ fps = 24
 pans = ["x='(iw-ow)*t/{D}':y='(ih-oh)/2'", "x='(iw-ow)*(1-t/{D})':y='(ih-oh)/2'",
         "x='(iw-ow)/2':y='(ih-oh)*t/{D}'", "x='(iw-ow)/2':y='(ih-oh)*(1-t/{D})'"]
 clips = []
-for i, sc in enumerate(S["scenes"]):
+for i, sc in enumerate(S["scenes"]):   # (b) scene_XX = its own picture locked to exactly its own audio
     d = sc["dur"] + (END if i == len(S["scenes"]) - 1 else 0)
-    c = f"{OUT}/c{i:03d}.mp4"
-    subprocess.run(["ffmpeg", "-y", "-v", "error", "-loop", "1", "-framerate", str(fps), "-t", f"{d:.3f}", "-i", f"{OUT}/i{i:03d}.jpg", "-vf",
-        f"scale={CW}:{CH2},crop={W}:{H}:{pans[i % 4].replace('{D}', f'{d:.3f}')},fade=t=in:st=0:d=0.25,format=yuv420p",
-        "-r", str(fps), "-c:v", "libx264", "-preset", "ultrafast", "-crf", "20", "-threads", "4", c], check=True)
+    c = f"{OUT}/scene_{i+1:02d}.mkv"
+    subprocess.run(["ffmpeg", "-y", "-v", "error", "-loop", "1", "-framerate", str(fps), "-i", f"{OUT}/i{i:03d}.jpg", "-i", wav_of(i), "-filter_complex",
+        f"[0:v]scale={CW}:{CH2},crop={W}:{H}:{pans[i % 4].replace('{D}', f'{d:.3f}')},fade=t=in:st=0:d=0.25,format=yuv420p[v];[1:a]apad=whole_dur={d:.3f}[a]",
+        "-map", "[v]", "-map", "[a]", "-t", f"{d:.3f}", "-r", str(fps), "-c:v", "libx264", "-preset", "ultrafast", "-crf", "20", "-threads", "4",
+        "-c:a", "pcm_s16le", "-ar", "48000", "-ac", "2", c], check=True)
     clips.append(c)
 open(f"{OUT}/clips.txt", "w").write("".join(f"file '{c}'\n" for c in clips))
-# voice track with gaps
-vo = []
-for i, sc in enumerate(S["scenes"]):
-    vo.append(f"[{i}:a]apad=whole_dur={sc['dur']:.3f}[v{i}]")
-inputs = sum([["-i", f"{OUT}/a{i:03d}.mp3"] for i in range(len(S["scenes"]))], [])
-subprocess.run(["ffmpeg", "-y", "-v", "error", *inputs, "-filter_complex",
-    ";".join(vo) + ";" + "".join(f"[v{i}]" for i in range(len(S["scenes"]))) + f"concat=n={len(S['scenes'])}:v=0:a=1,apad=whole_dur={TOTAL:.2f}[a]",
-    "-map", "[a]", "-ar", "48000", "-ac", "2", f"{OUT}/vo.wav"], check=True)
-# mood-driven music bed (assets/bgm, synthesized copyright-free) changing per scene
+# (c) join the locked scenes
+subprocess.run(["ffmpeg", "-y", "-v", "error", "-f", "concat", "-safe", "0", "-i", f"{OUT}/clips.txt", "-c", "copy", f"{OUT}/locked.mkv"], check=True)
+# real MP3 music bed (assets/bgm, Kevin MacLeod CC-BY 4.0), changing with each scene's mood
 BGM = os.path.join(os.path.dirname(ROOT), "assets", "bgm")
-default = "peaceful" if CFG["madeForKids"] else "suspense"
+default = "peaceful" if CFG["madeForKids"] else "horror"
 segs, offs = [], {}
 for i, sc in enumerate(S["scenes"]):
     m = (sc.get("mood") or "").lower().split("|")[0].strip()
-    if m not in ("suspense", "chase", "peaceful", "victory"): m = default
+    if m not in ("horror", "suspense", "chase", "peaceful", "victory"): m = default
+    if CFG["madeForKids"] and m == "horror": m = "suspense"
     if CFG["madeForKids"] and i == len(S["scenes"]) - 1 and m == "peaceful": m = "victory"
     d = sc["dur"] + (END if i == len(S["scenes"]) - 1 else 0); o = offs.get(m, 0.0); offs[m] = o + d
     sg = f"{OUT}/bg{i:03d}.wav"
-    subprocess.run(["ffmpeg", "-y", "-v", "error", "-stream_loop", "-1", "-i", f"{BGM}/{m}.m4a", "-ss", f"{o % 55:.2f}", "-t", f"{d:.3f}",
-        "-af", f"afade=t=in:d=0.4,afade=t=out:st={max(0, d-0.4):.3f}:d=0.4,aformat=channel_layouts=stereo:sample_rates=48000", sg], check=True)
+    subprocess.run(["ffmpeg", "-y", "-v", "error", "-stream_loop", "-1", "-i", f"{BGM}/{m}.mp3", "-ss", f"{o % 200:.2f}", "-t", f"{d:.3f}",
+        "-af", f"afade=t=in:d=0.6,afade=t=out:st={max(0, d-0.6):.3f}:d=0.6,aformat=channel_layouts=stereo:sample_rates=48000", sg], check=True)
     segs.append(sg)
 open(f"{OUT}/bg.txt", "w").write("".join(f"file '{x}'\n" for x in segs))
 subprocess.run(["ffmpeg", "-y", "-v", "error", "-f", "concat", "-safe", "0", "-i", f"{OUT}/bg.txt", "-t", f"{TOTAL:.2f}", f"{OUT}/bed.wav"], check=True)
-BEDGAIN = "-5dB" if not CFG["madeForKids"] else "-7dB"   # ~-10 dB under voice in pauses; sidechain ducks ~8 dB more while speaking
+BEDGAIN = "0.28"   # about -11 dB: clearly audible on phone speakers
 FINAL = f"{OUT}/{JOB}.mp4"
-subprocess.run(["ffmpeg", "-y", "-v", "error", "-f", "concat", "-safe", "0", "-i", f"{OUT}/clips.txt", "-i", f"{OUT}/vo.wav", "-i", f"{OUT}/bed.wav",
-    "-filter_complex", f"[0:v]ass={OUT}/subs.ass[v];[1:a]loudnorm=I=-15:TP=-1.5,aformat=channel_layouts=stereo:sample_rates=48000,asplit[vo][sc];[2:a]volume={BEDGAIN}[b];[b][sc]sidechaincompress=threshold=0.02:ratio=8:attack=15:release=350[bd];[vo][bd]amix=2:duration=first:normalize=0,alimiter=limit=0.95[a]",
+subprocess.run(["ffmpeg", "-y", "-v", "error", "-i", f"{OUT}/locked.mkv", "-i", f"{OUT}/bed.wav",
+    "-filter_complex", f"[0:v]ass={OUT}/subs.ass[v];[0:a]loudnorm=I=-15:TP=-1.5,aformat=channel_layouts=stereo:sample_rates=48000[vo];[1:a]volume={BEDGAIN}[bd];[vo][bd]amix=2:duration=first:normalize=0,alimiter=limit=0.95[a]",
     "-map", "[v]", "-map", "[a]", "-t", f"{TOTAL:.2f}", "-c:v", "libx264", "-preset", "ultrafast", "-crf", "21", "-threads", "4", "-pix_fmt", "yuv420p",
     "-c:a", "aac", "-b:a", "192k", "-movflags", "+faststart", FINAL], check=True)
 log("rendered", FINAL, round(TOTAL, 1), "s")
@@ -481,7 +458,7 @@ def next_slot(last_iso):
 slot = next_slot(STATE[CH][MODE])
 pub = slot.strftime("%Y-%m-%dT%H:%M:%SZ")
 log("slot", pub, slot.astimezone(IST).strftime("%a %d %b %I:%M %p IST"))
-desc = (CFG["disclaimer"] + "\n" if CFG["disclaimer"] else "") + S.get("description", "")
+desc = (CFG["disclaimer"] + "\n" if CFG["disclaimer"] else "") + S.get("description", "") + "\n\nMusic: Kevin MacLeod (incompetech.com), CC BY 4.0"
 if LL: desc = f"▶ पूरी कहानी: {LL['title']}" + (f"\nhttps://youtu.be/{LL['vid']}" if LL.get("vid") else "") + "\n\n" + desc
 tags = list(dict.fromkeys((S.get("tags") or []) + CFG["base_tags"]))[:15]
 title = S["title"][:99]
