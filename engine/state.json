@@ -60,19 +60,20 @@
    "आधी रात को कुम्हार के घर में काँपते मिट्टी के घड़े का रोमांचक और सीख भरा राज़।",
    "नन्हे काव्या की बिना छुए बजने वाली सोने की घंटी के पीछे की रहस्यमयी और सीख भरी यात्रा।",
    "जादुई रोमांच",
-   "नदी के उलटे बहाव में बहते जादुई दीये का पीछा करते नन्हे चिंटू की सच्चाई और ईमानदारी की सीख भरी जादुई खोज।"
+   "नदी के उलटे बहाव में बहते जादुई दीये का पीछा करते नन्हे चिंटू की सच्चाई और ईमानदारी की सीख भरी जादुई खोज।",
+   "सूखी नदी को फिर से बहाने के लिए नन्हे वीर और जादुई मोर की रोमांचक एवं शिक्षाप्रद यात्रा।"
   ],
   "last_long": {
-   "job": "kahani_long_20261102_0952",
-   "title": "जादुई सोने की घंटी और खुशियों का रहस्य",
-   "story": "नन्हे काव्या की बिना छुए बजने वाली सोने की घंटी के पीछे की रहस्यमयी और सीख भरी यात्रा।",
+   "job": "kahani_long_20261102_1105",
+   "title": "राजमहल के बंद कमरे का जादुई मोर और नन्हे वीर की रहस्यमयी खोज",
+   "story": "सूखी नदी को फिर से बहाने के लिए नन्हे वीर और जादुई मोर की रोमांचक एवं शिक्षाप्रद यात्रा।",
    "characters": {
-    "Kavya": "6-year-old Indian boy, round innocent face, big expressive black eyes, short messy black hair, small cute build, wearing a bright yellow cotton kurta and white pyjama.",
-    "Dadaji": "65-year-old Indian grandfather, wrinkled kind face, warm brown eyes, short white hair and white beard, lean build, wearing a light orange dhoti and kurta.",
-    "Golden Bell": "Glowing ancient golden royal bell with intricate carved Indian patterns, emitting soft sparkles."
+    "Veer": "8-year-old Indian boy, round curious face, bright brown eyes, short messy black hair, lean build, wearing a bright yellow cotton kurta and knee-length blue dhoti",
+    "Rajguru": "65-year-old Indian male, calm wrinkled face, kind dark eyes, long flowing white beard and hair, slim build, wearing an orange saffron robe with wooden bead necklace",
+    "Peacock": "An ancient carved wooden peacock figurine with glowing turquoise blue eyes, shimmering golden etched feathers, rustic Indian palace artifact look"
    },
    "vid": null,
-   "short_done": true,
+   "short_done": false,
    "trailer": null
   }
  },
@@ -193,6 +194,13 @@
    "mode": "short",
    "asset": "raat_short_20261102_1059.tar",
    "title": "तस्वीर में किसकी लाश है? 😱 #shorts"
+  },
+  {
+   "job": "kahani_long_20261102_1105",
+   "ch": "kahani",
+   "mode": "long",
+   "asset": "kahani_long_20261102_1105.tar",
+   "title": "राजमहल के बंद कमरे का जादुई मोर और नन्हे वीर की रहस्यमयी खोज"
   }
  ],
  "_draft": null,
@@ -257,10 +265,17 @@
    "title": "कुहासा वेधशाला की रात के 4 खौफनाक नियम: भाग 1",
    "dur": 617,
    "used": false
+  },
+  {
+   "asset": "lib_kahani_long_20261102_1105.mp4",
+   "ch": "kahani",
+   "title": "राजमहल के बंद कमरे का जादुई मोर और नन्हे वीर की रहस्यमयी खोज",
+   "dur": 378,
+   "used": false
   }
  ],
  "_minutes": {
-  "2026-11": 593
+  "2026-11": 611
  },
  "_bank": {
   "kahani_s_patang01": "2026-11-02",
