@@ -112,7 +112,14 @@
   "2026-11-02T10:03:32Z"
  ],
  "_queue": [],
- "_draft": null,
+ "_draft": {
+  "job": "kahani_long_20261102_1549",
+  "ch": "kahani",
+  "mode": "long",
+  "asset": "draft_kahani_long_20261102_1549.tar",
+  "stage": "gemini tts quota (chunk 2/6) - retry next run",
+  "tries": 1
+ },
  "_library": [
   {
    "asset": "lib_raat_long_20261101_0811.mp4",
@@ -250,7 +257,7 @@
   }
  ],
  "_minutes": {
-  "2026-11": 906
+  "2026-11": 915
  },
  "_bank": {
   "kahani_s_patang01": "2026-11-02",
