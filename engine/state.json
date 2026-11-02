@@ -21,7 +21,7 @@
   }
  },
  "kahani": {
-  "short": "2026-11-06T08:00:00Z",
+  "short": "2026-11-06T13:00:00Z",
   "long": "2026-11-07T04:30:00Z",
   "history": [
    "शेर और चतुर खरगोश",
@@ -31,8 +31,21 @@
    "चीकू चूहा जंगल में एक उड़ते हुए जादुई आम को पाने की कोशिश करता है, लेकिन उसका सच कुछ और ही निकलता है।",
    "एक छोटा बच्चा अपने खिलौना समोसे को रॉकेट बनाकर अंतरिक्ष की यात्रा पर निकलता है और एक अनोखा राज़ पाता है।",
    "नन्हा मोर कीकू जंगल में गूँजती डरावनी आवाज़ का सच पता लगाने निकलता है और एक अनोखा दोस्त पाता है।",
-   "नन्हा कछुआ गोगो नदी में गिरे चमकते गोले को सूरज समझकर पहाड़ पर चढ़ाने लगता है, जहाँ एक अनोखा जादुई राज़ खुलता है।"
-  ]
+   "नन्हा कछुआ गोगो नदी में गिरे चमकते गोले को सूरज समझकर पहाड़ पर चढ़ाने लगता है, जहाँ एक अनोखा जादुई राज़ खुलता है।",
+   "जल्दबाज़ी छोड़कर धैर्य और समझदारी से काम लेने की प्रेरणादायक कहानी"
+  ],
+  "last_long": {
+   "job": "kahani_long_20261102_0633",
+   "title": "जादुई नीली घंटी और नन्हे टिंकू की अनोखी सीख",
+   "story": "जल्दबाज़ी छोड़कर धैर्य और समझदारी से काम लेने की प्रेरणादायक कहानी",
+   "characters": {
+    "Tinku": "A cute 5-year-old Indian bonnet macaque monkey boy, round playful face, shiny dark brown eyes, short soft brown fur, wearing a bright yellow cloth vest with red border, small build, lively Indian jungle look.",
+    "Bholu": "A tiny 4-year-old Indian elephant calf, big floppy ears, large twinkling grey eyes, dark grey smooth skin, wearing a small orange woven neck-band, sturdy chubby build, cute Indian forest style.",
+    "Kaku": "An old 60-year-old Indian wise parrot, bright emerald green feathers, red curved beak, black intelligent eyes, wearing a tiny red beaded necklace, slender bird build."
+   },
+   "vid": null,
+   "short_done": false
+  }
  },
  "_uploads": [
   "2026-10-31T12:41:58Z",
@@ -42,22 +55,23 @@
   "2026-11-01T01:27:30Z",
   "2026-11-01T13:05:58Z",
   "2026-11-01T18:58:22Z",
-  "2026-11-01T21:49:35Z"
+  "2026-11-01T21:49:35Z",
+  "2026-11-02T01:01:37Z"
  ],
  "_queue": [
-  {
-   "job": "kahani_short_20261101_1838",
-   "ch": "kahani",
-   "mode": "short",
-   "asset": "kahani_short_20261101_1838.tar",
-   "title": "जब नदी में गिरा जादुई सूरज! 🐢✨ #shorts"
-  },
   {
    "job": "raat_long_20261102_0030",
    "ch": "raat",
    "mode": "long",
    "asset": "raat_long_20261102_0030.tar",
    "title": "भैरव घाट की आखिरी कश्ती: 4 जानलेवा नियम | भाग 1"
+  },
+  {
+   "job": "kahani_long_20261102_0633",
+   "ch": "kahani",
+   "mode": "long",
+   "asset": "kahani_long_20261102_0633.tar",
+   "title": "जादुई नीली घंटी और नन्हे टिंकू की अनोखी सीख"
   }
  ],
  "_draft": null,
@@ -80,9 +94,16 @@
    "title": "भैरव घाट की आखिरी कश्ती: 4 जानलेवा नियम | भाग 1",
    "dur": 669,
    "used": false
+  },
+  {
+   "asset": "lib_kahani_long_20261102_0633.mp4",
+   "ch": "kahani",
+   "title": "जादुई नीली घंटी और नन्हे टिंकू की अनोखी सीख",
+   "dur": 408,
+   "used": false
   }
  ],
  "_minutes": {
-  "2026-11": 360
+  "2026-11": 381
  }
 }

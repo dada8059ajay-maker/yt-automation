@@ -7,3 +7,4 @@
 - रात के किस्से | long | केबिन नंबर 4 के 3 खौफनाक नियम: सुनसान रेलवे फाटक की रात | Fri 06 Nov 2026 09:00 PM IST | https://studio.youtube.com/video/OSEIMkMZAiw/edit
 - कहानी पतंग | short | समोसे का रॉकेट! 🚀 #shorts | Fri 06 Nov 2026 01:30 PM IST | https://studio.youtube.com/video/XNV3pFTmOv8/edit
 - कहानी पतंग | long | नन्हा मोर कीकू और जंगल के राक्षस का ढोल | Sat 07 Nov 2026 10:00 AM IST | https://studio.youtube.com/video/ZgDggM9hQZA/edit
+- कहानी पतंग | short | जब नदी में गिरा जादुई सूरज! 🐢✨ #shorts | Fri 06 Nov 2026 06:30 PM IST | https://studio.youtube.com/video/OY0EXp-VYSY/edit
