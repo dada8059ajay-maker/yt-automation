@@ -5,7 +5,9 @@ MAX_UPLOADS_24H = 5   # YouTube API quota guard (both channels share one Cloud p
 MAX_QUEUE = 40        # warehouse of pre-rendered videos waiting for quota
 SPACING = {"short": 1.0, "long": 2.33}
 def iso(x): return dt.datetime.fromisoformat(x.replace("Z", "+00:00"))
-recent = len([u for u in S.get("_uploads", []) if (now - iso(u)).total_seconds() < 86400])
+from zoneinfo import ZoneInfo   # YouTube API quota resets at midnight Pacific (13:30 IST), not a rolling 24h
+pt0 = now.astimezone(ZoneInfo("America/Los_Angeles")).replace(hour=0, minute=0, second=0, microsecond=0)
+recent = len([u for u in S.get("_uploads", []) if iso(u) >= pt0])
 queue = S.get("_queue", [])
 avail = max(0, MAX_UPLOADS_24H - recent)
 drain = min(len(queue), avail)
