@@ -80,17 +80,18 @@
    "नन्हे चिंटू और उसकी दादी की पुरानी संदूक से निकलते जादुई बादलों की रोमांचक खोज",
    "आसमान से गिरे चमकते पत्थर का रहस्य और नन्हे रोहन की समझदारी",
    "आसमान से गिरे चमकते उल्कापिंड का रहस्य सुलझाने निकला नन्हा रोहन।",
-   "राजमहल के आँगन में मिले जादुई लट्टू को घुमाते ही पूरी दुनिया थम गई, और समय को वापस चलाने के लिए नन्हे चिंटू ने समझदारी दिखाई।"
+   "राजमहल के आँगन में मिले जादुई लट्टू को घुमाते ही पूरी दुनिया थम गई, और समय को वापस चलाने के लिए नन्हे चिंटू ने समझदारी दिखाई।",
+   "बेडरूम की दीवार पर अचानक चमके जादुई नक्शे का पीछा करते हुए नन्हे चिंटू की अंतरिक्ष जैसी जादुई दुनिया की रोमांचक खोज।"
   ],
   "last_long": {
-   "job": "kahani_long_20261102_1327",
-   "title": "आसमान से गिरा जादुई उल्कापिंड",
-   "story": "आसमान से गिरे चमकते पत्थर का रहस्य और नन्हे रोहन की समझदारी",
+   "job": "kahani_long_20261102_1441",
+   "title": "बेडरूम की दीवार पर बना जादुई नक्शा",
+   "story": "बेडरूम की दीवार पर अचानक चमके जादुई नक्शे का पीछा करते हुए नन्हे चिंटू की अंतरिक्ष जैसी जादुई दुनिया की रोमांचक खोज।",
    "characters": {
-    "Rohan": "English character sheet: age 6, round cheerful face, big curious black eyes, short messy black hair, average height and slim build, wearing a bright red cotton t-shirt with blue shorts, Indian look"
+    "Chintu": "A 6-year-old Indian boy, round cheerful face, big curious black eyes, short messy black hair, average height for age, wearing a bright yellow cotton t-shirt with blue shorts, indoor bedroom setting."
    },
    "vid": null,
-   "short_done": true,
+   "short_done": false,
    "trailer": null
   }
  },
@@ -351,6 +352,13 @@
    "mode": "short",
    "asset": "raat_short_20261102_1429.tar",
    "title": "शापित डाकघर की 1:11 बजे की खौफनाक चिट्ठी! #shorts"
+  },
+  {
+   "job": "kahani_long_20261102_1441",
+   "ch": "kahani",
+   "mode": "long",
+   "asset": "kahani_long_20261102_1441.tar",
+   "title": "बेडरूम की दीवार पर बना जादुई नक्शा"
   }
  ],
  "_draft": null,
@@ -457,10 +465,17 @@
    "title": "श्रापित घंटाघर के 4 खौफनाक नियम | भाग 1",
    "dur": 595,
    "used": false
+  },
+  {
+   "asset": "lib_kahani_long_20261102_1441.mp4",
+   "ch": "kahani",
+   "title": "बेडरूम की दीवार पर बना जादुई नक्शा",
+   "dur": 80,
+   "used": false
   }
  ],
  "_minutes": {
-  "2026-11": 833
+  "2026-11": 843
  },
  "_bank": {
   "kahani_s_patang01": "2026-11-02",
