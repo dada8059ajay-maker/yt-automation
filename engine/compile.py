@@ -56,7 +56,7 @@ subprocess.run(["ffmpeg", "-y", "-v", "error", "-ss", "20", "-i", pick[0][0]["as
 pub = key_slot.astimezone(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 job = {"id": f"comp_{CH}_{KEY}", "videos": [{"file": F, "title": title[:99], "description": desc[:4900],
        "tags": CFG["base_tags"][:12] + ["compilation", "कहानियाँ एक साथ"], "publishAt": pub, "madeForKids": CFG["madeForKids"],
-       "playlist": CFG["playlist"], **({"thumb": "thumb.jpg"} if os.path.exists("thumb.jpg") else {})}]}
+       "playlist": CFG.get("playlists", {}).get("compilation", CFG["playlist"]), "pl_top": True, **({"thumb": "thumb.jpg"} if os.path.exists("thumb.jpg") else {})}]}
 json.dump(job, open("job.json", "w"), ensure_ascii=False, indent=1)
 for x, _ in pick: os.remove(x["asset"])
 os.chdir("../..")

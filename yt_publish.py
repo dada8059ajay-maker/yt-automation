@@ -93,7 +93,7 @@ def upload(v):
             p, _ = call("POST", API + "playlists?part=snippet,status", {"snippet": {"title": v["playlist"], "defaultLanguage": "hi"}, "status": {"privacyStatus": "public"}})
             pid = p.get("id"); res["playlist_new"] = p if not pid else pid
         if pid:
-            a, _ = call("POST", API + "playlistItems?part=snippet", {"snippet": {"playlistId": pid, "resourceId": {"kind": "youtube#video", "videoId": res["id"]}}})
+            a, _ = call("POST", API + "playlistItems?part=snippet", {"snippet": {"playlistId": pid, "resourceId": {"kind": "youtube#video", "videoId": res["id"]}, **({"position": 0} if v.get("pl_top") else {})}})
             res["playlist"] = "ok" if "id" in a else a
     return res
 out["videos"] = []

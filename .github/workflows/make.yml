@@ -85,15 +85,15 @@ jobs:
           json.dump(s, open(p, "w"), ensure_ascii=False, indent=1)
           PY
           cp engine/state.json /tmp/new_state_update.json
-          mkdir -p /tmp/keep && cp -r results logs /tmp/keep/ 2>/dev/null || true
+          mkdir -p /tmp/keep && cp -r results logs docs /tmp/keep/ 2>/dev/null || true
           for try in 1 2 3 4 5; do
             git fetch -q origin main && git reset -q --hard origin/main
             git checkout origin/main -- engine/state.json
             python3 engine/merge_state.py /tmp/base_state.json /tmp/new_state_update.json engine/state.json
-            mkdir -p results logs
-            for f in /tmp/keep/results/* /tmp/keep/logs/*; do [ -f "$f" ] || continue; d=${f#/tmp/keep/}
+            mkdir -p results logs docs
+            for f in /tmp/keep/results/* /tmp/keep/logs/* /tmp/keep/docs/*; do [ -f "$f" ] || continue; d=${f#/tmp/keep/}
               if [ "$d" = results/schedule_log.md ] && [ -f "$d" ]; then cat "$d" "$f" | awk '!seen[$0]++' > /tmp/sl && mv /tmp/sl "$d"; else cp "$f" "$d"; fi; done
-            git add engine/state.json results logs
+            git add engine/state.json results logs docs
             git commit -q -m "update state ${{ github.run_id }} [skip ci]" || { echo nothing to commit; break; }
             git push -q origin HEAD:main && break
             sleep $((RANDOM % 10 + 5))

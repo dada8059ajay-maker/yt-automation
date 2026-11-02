@@ -116,7 +116,9 @@ speaker कोड: N=कथावाचक, M=युवा पुरुष, F=�
  "description": "2-4 लाइन हिंदी विवरण + 3-5 हैशटैग",
  "tags": ["8-12 टैग"],
  "hook": "स्क्रीन पर पहले 3 सेकंड दिखने वाला 3-5 शब्द का हुक",
- "thumb_text": "थंबनेल पर 2-4 शब्द",
+ "thumb_text": "थंबनेल पर सिर्फ 2-4 बड़े चौंकाने वाले शब्द",
+ "thumb_visual": "English: extreme close-up of the main character face with clear fear/shock (kids: wonder/surprise), cinematic lighting",
+ "category": "raat: rules|village ; kahani: jungle|magic",
  "characters": {{"नाम": "English character sheet: age, face, eyes, hair, build, exact clothes + colors, Indian look"}},
  "scenes": [{{"speaker": "N", "text": "हिंदी लाइन (1-2 वाक्य); ज़रूरत हो तो '...' से रुकाव", "mood": "horror|suspense|chase|peaceful|victory में से एक (BGM के लिए)", "style": "English voice-acting direction for this exact line, e.g. 'terrified, trembling, shaky low whisper' / 'out of breath, panting heavily as if just ran for life, gasping between words' / 'deep, booming, furious, terrifyingly loud' / 'warm, gentle storyteller'", "visual": "Precise English visual prompt, about 50 words: ONE main character in focus (exact character-sheet wording), action, Indian place, time of day, lighting, camera shot (medium/wide). No text, no hand close-ups."}}]}}"""
 # ---- story_bank.json: stories written by Hark; Gemini only when the bank is empty ----
@@ -238,7 +240,7 @@ for i, sc in enumerate(S["scenes"]):
 
 # ---------------- 3. images: 100% FLUX (no SD-Turbo / turbo models) ----------------
 import time, urllib.parse, io
-from PIL import Image, ImageFilter, ImageEnhance
+from PIL import Image, ImageFilter, ImageEnhance, ImageOps
 seed = random.randint(1, 10**6)
 CW, CH2 = int(W * 1.15), int(H * 1.15)
 SUFFIX = "single character focus, accurate anatomy, no extra limbs, no extra fingers, one face, high detail, sharp focus"
@@ -408,7 +410,7 @@ subprocess.run(["ffmpeg", "-y", "-v", "error", "-f", "concat", "-safe", "0", "-i
 BEDGAIN = "0.28"   # about -11 dB: clearly audible on phone speakers
 FINAL = f"{OUT}/{JOB}.mp4"
 subprocess.run(["ffmpeg", "-y", "-v", "error", "-i", f"{OUT}/locked.mkv", "-i", f"{OUT}/bed.wav",
-    "-filter_complex", f"[0:v]ass={OUT}/subs.ass[v];[0:a]loudnorm=I=-15:TP=-1.5,aformat=channel_layouts=stereo:sample_rates=48000[vo];[1:a]volume={BEDGAIN}[bd];[vo][bd]amix=2:duration=first:normalize=0,alimiter=limit=0.95[a]",
+    "-filter_complex", f"[0:v]ass={OUT}/subs.ass[v];[0:a]loudnorm=I=-15:TP=-1.5,aformat=channel_layouts=stereo:sample_rates=48000[vo];[1:a]volume={BEDGAIN}[bd];[vo][bd]amix=2:duration=first:normalize=0,afade=t=out:st={TOTAL-1.5:.2f}:d=1.5,loudnorm=I=-14:TP=-1.5:LRA=11,aresample=48000[a]",
     "-map", "[v]", "-map", "[a]", "-t", f"{TOTAL:.2f}", "-c:v", "libx264", "-preset", "ultrafast", "-crf", "21", "-threads", "4", "-pix_fmt", "yuv420p",
     "-c:a", "aac", "-b:a", "192k", "-movflags", "+faststart", FINAL], check=True)
 log("rendered", FINAL, round(TOTAL, 1), "s")
@@ -419,8 +421,22 @@ if MODE == "long":
     thumb = f"{OUT}/thumb.jpg"
     open(f"{OUT}/th.ass", "w").write(ass[0].replace(f"PlayResX: {W}", "PlayResX: 1280").replace(f"PlayResY: {H}", "PlayResY: 720") +
         f"\nDialogue: 0,0:00:00.00,0:00:05.00,Hook,,0,0,0,,{{\\fs110\\an2\\pos(640,640)}}{S.get('thumb_text','')}\n")
-    best = max(range(len(S["scenes"])), key=lambda k: len(S["scenes"][k]["visual"]) if k < 6 else 0)
-    subprocess.run(["ffmpeg", "-y", "-v", "error", "-i", f"{OUT}/i{best:03d}.jpg", "-vf", f"scale=1280:720,eq=contrast=1.15:saturation=1.2,ass={OUT}/th.ass",
+    words = (S.get("thumb_text") or S.get("hook") or S["title"]).replace("|", " ").split()[:4]
+    face = ("terrified shocked face, wide eyes, open mouth" if not CFG["madeForKids"] else "amazed surprised happy face, wide sparkling eyes")
+    tv = S.get("thumb_visual") or (S["scenes"][0]["visual"].split(".")[0] + ", extreme close up " + face)
+    W0, H0, ti = W, H, None
+    try:
+        W, H = 1280, 720; img, _ = flux(tv + ", " + face, 0)
+        if img is not None: ImageOps.fit(img, (1280, 720), Image.LANCZOS).save(f"{OUT}/thumb_src.jpg", quality=95); ti = f"{OUT}/thumb_src.jpg"
+    except Exception as e: log("thumb flux fail", repr(e)[:100])
+    W, H = W0, H0
+    if not ti:
+        kw = ("scared", "terrif", "shock", "fear", "surpris", "amaz", "face", "eyes")
+        ti = f"{OUT}/i{max(range(min(8, len(S['scenes']))), key=lambda k: sum(w in S['scenes'][k]['visual'].lower() for w in kw)):03d}.jpg"
+    open(f"{OUT}/th.ass", "w").write(ass[0].replace(f"PlayResX: {W}", "PlayResX: 1280").replace(f"PlayResY: {H}", "PlayResY: 720").replace(
+        "[Events]", "Style: TB,Noto Sans Devanagari,132,&H0000F0FF,&H00FFFFFF,&H00000000,&HA0000000,-1,0,0,0,100,100,0,0,1,10,5,8,40,40,40,1\n[Events]") +
+        f"\nDialogue: 0,0:00:00.00,0:00:05.00,TB,,0,0,0,,{' '.join(words[:2])}" + (f"\\N{{\\c&H00FFFFFF&}}{' '.join(words[2:])}" if len(words) > 2 else "") + "\n")
+    subprocess.run(["ffmpeg", "-y", "-v", "error", "-i", ti, "-vf", f"scale=1280:720,eq=contrast=1.2:saturation=1.25:brightness=0.02,vignette=angle=PI/3.2,ass={OUT}/th.ass",
         "-frames:v", "1", "-q:v", "2", thumb], check=True)
 
 # ---------------- library (for weekly compilations) + series state ----------------
@@ -462,11 +478,35 @@ desc = (CFG["disclaimer"] + "\n" if CFG["disclaimer"] else "") + S.get("descript
 if LL: desc = f"▶ पूरी कहानी: {LL['title']}" + (f"\nhttps://youtu.be/{LL['vid']}" if LL.get("vid") else "") + "\n\n" + desc
 tags = list(dict.fromkeys((S.get("tags") or []) + CFG["base_tags"]))[:15]
 title = S["title"][:99]
+PLS = CFG.get("playlists") or {}
+_txt = (S.get("category", "") + " " + title + " " + S.get("topic", "") + " " + (S.get("series_name") or "")).lower()
+if CH == "raat": PLAYLIST = PLS.get("rules") if (RAATLONG or "नियम" in _txt or "rule" in _txt) else PLS.get("village")
+else: PLAYLIST = PLS.get("jungle") if re.search(r"जंगल|पंचतंत्र|शेर|लोमड़|बंदर|हाथी|खरगोश|कछुआ|कौआ|jungle|animal", _txt) and not re.search(r"जादु|रहस्य|magic", _txt) else PLS.get("magic")
+PLAYLIST = PLAYLIST or CFG["playlist"]
+# ---- ready-queue preview page (docs/videos.json, GitHub Pages) ----
+def preview_publish(status):
+    try:
+        subprocess.run(["gh", "release", "view", "ready-queue"], capture_output=True).returncode == 0 or subprocess.run(
+            ["gh", "release", "create", "ready-queue", "--title", "ready videos (preview)", "--notes", "watch finished videos", "--prerelease"])
+        mp4 = f"{JOB}.mp4"; poster = f"{OUT}/{JOB}_poster.jpg"
+        subprocess.run(["ffmpeg", "-y", "-v", "error", "-i", thumb or f"{OUT}/i000.jpg", "-vf", "scale=640:-2", "-q:v", "4", poster], check=True)
+        if subprocess.run(["gh", "release", "upload", "ready-queue", FINAL, poster, "--clobber"]).returncode: return
+        repo = os.environ.get("GITHUB_REPOSITORY", "dada8059ajay-maker/yt-automation"); base = f"https://github.com/{repo}/releases/download/ready-queue/"
+        dp = os.path.join(os.path.dirname(ROOT), "docs", "videos.json"); os.makedirs(os.path.dirname(dp), exist_ok=True)
+        V = json.load(open(dp)) if os.path.exists(dp) else []
+        V = [x for x in V if x["job"] != JOB]
+        V.insert(0, {"job": JOB, "channel": CFG["name"], "mode": MODE, "title": title, "mp4": base + mp4, "poster": base + os.path.basename(poster),
+                     "publish": slot.astimezone(IST).strftime("%d %b %I:%M %p IST"), "status": status, "made": NOW.astimezone(IST).strftime("%d %b %I:%M %p")})
+        for old in V[30:]:
+            subprocess.run(["gh", "release", "delete-asset", "ready-queue", old["mp4"].rsplit("/", 1)[1], "-y"]); subprocess.run(["gh", "release", "delete-asset", "ready-queue", old["poster"].rsplit("/", 1)[1], "-y"])
+        json.dump(V[:30], open(dp, "w"), ensure_ascii=False, indent=1); log("preview", base + mp4)
+    except Exception as e: log("preview failed", repr(e)[:150])
 job = {"id": JOB, "videos": [{"file": os.path.basename(FINAL), "title": title, "description": desc, "tags": tags,
-       "publishAt": pub, "madeForKids": CFG["madeForKids"], "playlist": CFG["playlist"], **({"thumb": "thumb.jpg"} if thumb else {})}]}
+       "publishAt": pub, "madeForKids": CFG["madeForKids"], "playlist": PLAYLIST, "pl_top": bool(thumb), **({"thumb": "thumb.jpg"} if thumb else {})}]}
 json.dump(job, open(f"{OUT}/job.json", "w"), ensure_ascii=False, indent=1)
 if PRE:
     import tarfile
+    preview_publish("तैयार (YouTube quota का इंतज़ार)")
     keep = {os.path.basename(FINAL), "thumb.jpg", "job.json", "script.json", "log.txt"}
     for f in os.listdir(OUT):
         if f not in keep: os.remove(os.path.join(OUT, f))
@@ -491,6 +531,6 @@ if UPLOAD:
         os.makedirs("results", exist_ok=True)
         with open("results/schedule_log.md", "a") as f:
             f.write(f"- {CFG['name']} | {MODE} | {title} | {slot.astimezone(IST).strftime('%a %d %b %Y %I:%M %p IST')} | https://studio.youtube.com/video/{vid}/edit\n")
-        log("UPLOADED", vid)
+        log("UPLOADED", vid); preview_publish("YouTube पर scheduled")
     else:
         log("UPLOAD FAILED", json.dumps(res, ensure_ascii=False)[:800]); sys.exit(1)

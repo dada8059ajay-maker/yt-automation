@@ -1,0 +1,15 @@
+<!doctype html><html lang="hi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>तैयार वीडियो – रात के किस्से & कहानी पतंग</title>
+<style>body{margin:0;background:#0d0d12;color:#eee;font-family:system-ui,"Noto Sans Devanagari",sans-serif}
+h1{font-size:20px;padding:14px 16px;margin:0;background:#16161f;position:sticky;top:0}
+.c{max-width:720px;margin:auto;padding:10px}.v{background:#1a1a24;border-radius:14px;margin:12px 0;overflow:hidden}
+video{width:100%;max-height:80vh;background:#000;display:block}.m{padding:10px 14px}.t{font-weight:700;font-size:16px;margin-bottom:4px}
+.s{font-size:13px;color:#aaa}a{color:#ffd400}.e{text-align:center;color:#888;padding:40px}</style></head>
+<body><h1>🎬 तैयार वीडियो (नया प्रोटोकॉल)</h1><div class="c" id="l"><div class="e">लोड हो रहा है…</div></div>
+<script>
+fetch("https://raw.githubusercontent.com/dada8059ajay-maker/yt-automation/main/docs/videos.json?"+Date.now()).then(r=>r.json()).then(V=>{
+const l=document.getElementById("l");if(!V.length){l.innerHTML='<div class="e">नए प्रोटोकॉल का पहला वीडियो बन रहा है। बनते ही यहाँ दिखेगा।</div>';return}
+l.innerHTML=V.map(v=>`<div class="v"><video controls preload="none" playsinline poster="${v.poster}" src="${v.mp4}"></video>
+<div class="m"><div class="t">${v.title}</div><div class="s">${v.channel} · ${v.mode=="short"?"Short":"लंबा"} · बना ${v.made}<br>${v.status} · ${v.publish}
+${v.yt?` · <a href="${v.yt}">YouTube</a>`:""} · <a href="${v.mp4}">सीधा .mp4</a></div></div></div>`).join("")}).catch(()=>{document.getElementById("l").innerHTML='<div class="e">सूची लोड नहीं हुई, पेज रीफ़्रेश करें।</div>'});
+</script></body></html>
