@@ -54,20 +54,20 @@
    "सूखे कुएँ से आती रहस्यमयी रोशनी का पीछा करते हुए एक नन्हे बालक और उसकी बछिया की जादुई सीख भरी खोज।",
    "सूखे कुएँ से उठती जादुई नीली रोशनी और नन्हे चिंटू व बबली के रोमांचक सफर का ट्रेलर।",
    "थाली से उड़ती रोटी का पीछा करते चिंटू को मिला नन्हीं चींटियों और भूखे पक्षी का अनोखा सच।",
-   "आधी रात को कुम्हार के घर में काँपते मिट्टी के घड़े का रोमांचक और सीख भरा राज़।"
+   "आधी रात को कुम्हार के घर में काँपते मिट्टी के घड़े का रोमांचक और सीख भरा राज़।",
+   "नन्हे काव्या की बिना छुए बजने वाली सोने की घंटी के पीछे की रहस्यमयी और सीख भरी यात्रा।"
   ],
   "last_long": {
-   "job": "kahani_long_20261102_0818",
-   "title": "सूखे कुएँ की नीली रोशनी | जादुई झरने का अनोखा राज़",
-   "story": "सूखे कुएँ से आती रहस्यमयी रोशनी का पीछा करते हुए एक नन्हे बालक और उसकी बछिया की जादुई सीख भरी खोज।",
+   "job": "kahani_long_20261102_0952",
+   "title": "जादुई सोने की घंटी और खुशियों का रहस्य",
+   "story": "नन्हे काव्या की बिना छुए बजने वाली सोने की घंटी के पीछे की रहस्यमयी और सीख भरी यात्रा।",
    "characters": {
-    "Chintu": "7-year-old lively Indian boy, round curious face, sparkling big black eyes, messy curly black hair, lean energetic build, bright saffron-yellow cotton kurta and red dhoti pants with bare feet",
-    "Babli": "1-year-old playful baby calf, soft white coat with light brown patch over left eye, big innocent glossy eyes, tiny nub horns, colorful blue beaded collar with tiny brass bell",
-    "Dadi Ma": "65-year-old gentle Indian grandmother, silver hair tied in a neat bun, kind wrinkled face, round silver spectacles, soft sky-blue cotton saree with white floral print",
-    "Neelu": "tiny glowing rain-sprite, size of a mango, chubby soft translucent sky-blue body with glowing silver droplet antennae, cheerful smile, tiny harmless cloud wings"
+    "Kavya": "6-year-old Indian boy, round innocent face, big expressive black eyes, short messy black hair, small cute build, wearing a bright yellow cotton kurta and white pyjama.",
+    "Dadaji": "65-year-old Indian grandfather, wrinkled kind face, warm brown eyes, short white hair and white beard, lean build, wearing a light orange dhoti and kurta.",
+    "Golden Bell": "Glowing ancient golden royal bell with intricate carved Indian patterns, emitting soft sparkles."
    },
    "vid": null,
-   "short_done": true,
+   "short_done": false,
    "trailer": null
   }
  },
@@ -146,6 +146,13 @@
    "mode": "short",
    "asset": "raat_short_20261102_0945.tar",
    "title": "शापित बावड़ी की 7वीं सीढ़ी का खौफनाक राज़ #shorts"
+  },
+  {
+   "job": "kahani_long_20261102_0952",
+   "ch": "kahani",
+   "mode": "long",
+   "asset": "kahani_long_20261102_0952.tar",
+   "title": "जादुई सोने की घंटी और खुशियों का रहस्य"
   }
  ],
  "_draft": null,
@@ -196,10 +203,17 @@
    "title": "भैरव घाट का रहस्य: काली नदी का अंतिम सच | भाग 3",
    "dur": 398,
    "used": false
+  },
+  {
+   "asset": "lib_kahani_long_20261102_0952.mp4",
+   "ch": "kahani",
+   "title": "जादुई सोने की घंटी और खुशियों का रहस्य",
+   "dur": 447,
+   "used": false
   }
  ],
  "_minutes": {
-  "2026-11": 513
+  "2026-11": 537
  },
  "_bank": {}
 }
