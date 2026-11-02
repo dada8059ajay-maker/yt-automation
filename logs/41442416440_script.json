@@ -1,0 +1,474 @@
+{
+ "title": "नन्हे चिंटू और उल्टा बहने वाले जादुई झरने की रहस्यमयी खोज",
+ "topic": "चिंटू और उसकी दोस्त गिलहरी ने ढूंढा पहाड़ के ऊपर उल्टा बहने वाला जादुई झरना और खोला प्राचीन राजा का राज़।",
+ "description": "जानिए कैसे चिंटू और बंटी ने खोए हुए जादुई झरने का रहस्य सुलझाया! एक अनोखी और रोमांचक जादुई कहानी जो बच्चों को सच्चाई और एकता का पाठ सिखाती है।\n#HindiKahaniya #KahaniPatang #MagicalStory #MoralStories #KidsHindiStories",
+ "tags": [
+  "hindi kahaniya",
+  "kahani patang",
+  "जादुई कहानी",
+  "चिंटू की कहानी",
+  "kids stories in hindi",
+  "moral stories",
+  "bedtime stories",
+  "suspense story for kids"
+ ],
+ "hook": "झरना उल्टा क्यों बह रहा है?",
+ "thumb_text": "उल्टा बहता जादुई झरना!",
+ "thumb_visual": "Extreme close-up of an 8-year-old Indian boy named Chintu with wide open brown eyes filled with pure shock and amazement, colorful magical sparkling blue waterfall flowing upwards in background, dramatic glowing light, cinematic shot.",
+ "category": "kahani: magic",
+ "characters": {
+  "Chintu": "An 8-year-old Indian boy with messy black hair, bright expressive big brown eyes, wearing a sunny yellow cotton t-shirt, blue denim shorts, and brown canvas shoes.",
+  "Buntoo": "A tiny fluffly brown squirrel with bright black eyes, bushy tail, wearing a small red cloth band around its neck.",
+  "Jadui_Devi": "A sparkling ethereal water nymph made of shimmering blue glowing light, serene face, long flowing liquid hair, wearing a gown made of starlight."
+ },
+ "scenes": [
+  {
+   "speaker": "C",
+   "text": "अरे! ये पानी नीचे गिरने के बजाय आसमान की तरफ क्यों उड़ रहा है?!",
+   "mood": "suspense",
+   "style": "shocked, out of breath, high-pitched gasp of disbelief",
+   "visual": "An 8-year-old Indian boy named Chintu with messy black hair, sunny yellow cotton t-shirt, blue denim shorts standing near a high rocky cliff in an ancient Indian forest, gazing upwards in utter shock."
+  },
+  {
+   "speaker": "N",
+   "text": "गुफा के अंदर से नीली रोशनी तेज़ी से चमकने लगी... और ज़मीन कांपने लगी!",
+   "mood": "suspense",
+   "style": "tense, low mysterious whisper leading to dramatic pause",
+   "visual": "Wide view of a mysterious ancient stone cave entrance surrounded by glowing blue vines, heavy mist rising from ground in a ancient Indian forest."
+  },
+  {
+   "speaker": "N",
+   "text": "लेकिन इस खौफनाक रहस्य तक पहुँचने की कहानी शुरू हुई थी आज सुबह...",
+   "mood": "peaceful",
+   "style": "warm, friendly, smooth storyteller cadence",
+   "visual": "Medium shot of an 8-year-old Indian boy named Chintu with messy black hair, sunny yellow t-shirt walking happily along a green sunlit village path near lush trees."
+  },
+  {
+   "speaker": "N",
+   "text": "चिंटू अपने प्यारे दोस्त बंटी गिलहरी के साथ जंगल किनारे खेल रहा था।",
+   "mood": "peaceful",
+   "style": "cheerful, lighthearted and gentle",
+   "visual": "An 8-year-old Indian boy named Chintu with sunny yellow t-shirt laughing while a tiny fluffy brown squirrel with red neck band sits on his shoulder under warm morning sunlight."
+  },
+  {
+   "speaker": "C",
+   "text": "बंटी देख, आज जंगल से कितनी भीनी-भीनी खुशबू आ रही है!",
+   "mood": "peaceful",
+   "style": "excited, joyful kid voice with cheerful energy",
+   "visual": "An 8-year-old Indian boy named Chintu pointing towards dense green forest trees, sunny atmosphere, vibrant wild flowers blooming nearby."
+  },
+  {
+   "speaker": "N",
+   "text": "तभी... दूर पहाड़ियों से एक अजीव और सुरीली सी सीटी की आवाज़ गूँजी!",
+   "mood": "suspense",
+   "style": "curious, slightly hushed, intrigued voice",
+   "visual": "Cinematic shot of misty green mountain peaks rising high in background under soft sunlight, wind swirling gentle leaves."
+  },
+  {
+   "speaker": "C",
+   "text": "बंटी, सुना तुमने? ऐसी आवाज़ तो जंगल में पहले कभी नहीं आई!",
+   "mood": "suspense",
+   "style": "whispering with curiosity, eyes wide with wonder",
+   "visual": "An 8-year-old Indian boy named Chintu looking up towards the mountain cliffs, tiny brown squirrel with red neck band perching attentively on his shoulder."
+  },
+  {
+   "speaker": "N",
+   "text": "चिंटू के कदम अपने आप उस रहस्यमयी आवाज़ की तरफ बढ़ने लगे।",
+   "mood": "suspense",
+   "style": "building anticipation, steady mysterious tone",
+   "visual": "An 8-year-old Indian boy named Chintu stepping carefully into a dense ancient trail filled with tall banyan trees and hanging roots."
+  },
+  {
+   "speaker": "N",
+   "text": "जंगल का रास्ता धीरे-धीरे घना और संकरा होता जा रहा था।",
+   "mood": "suspense",
+   "style": "cautious whisper, slightly eerie undertone",
+   "visual": "Dense ancient forest with rays of light poking through thick canopy, rocky pathway curving upward into mystery."
+  },
+  {
+   "speaker": "C",
+   "text": "अरे बंटी, यहाँ तो सारे पेड़ नीले रंग से चमक रहे हैं!",
+   "mood": "suspense",
+   "style": "amazed tone, soft gasp of mystery",
+   "visual": "An 8-year-old Indian boy named Chintu touching a glowing mossy bark of a giant tree, blue sparkling particles floating in the air."
+  },
+  {
+   "speaker": "N",
+   "text": "अचानक, हवा थमी... और पेड़ों की पत्तियाँ अपने आप उड़ने लगीं!",
+   "mood": "chase",
+   "style": "rapid, dramatic, urgent narration",
+   "visual": "Swirling autumn leaves circling in mid-air around an ancient stone pathway, mystical wind effect in dark green woods."
+  },
+  {
+   "speaker": "C",
+   "text": "वाह! यह रास्ता तो पहाड़ के ऊपर बने गुप्त मंदिर की ओर जा रहा है!",
+   "mood": "suspense",
+   "style": "wonderous, adventurous kid tone",
+   "visual": "An 8-year-old Indian boy named Chintu looking up at ancient carved stone steps winding around a misty cliff side."
+  },
+  {
+   "speaker": "N",
+   "text": "जैसे ही चिंटू ने पहला कदम सीढ़ी पर रखा... एक बड़ा पत्थर खिसक गया!",
+   "mood": "horror",
+   "style": "startled pitch, quick intense delivery",
+   "visual": "Close shot of stone stairs crumbling slightly under foot, dust clouds rising near edge of high cliff."
+  },
+  {
+   "speaker": "C",
+   "text": "अरे बाप रे! बंटी संभाल कर पकड़ना मुझे!",
+   "mood": "chase",
+   "style": "scared gasp, fast-paced panicky voice",
+   "visual": "An 8-year-old Indian boy named Chintu clinging onto a sturdy wooden ivy branch on cliff face, squirrel holding tightly to his shirt collar."
+  },
+  {
+   "speaker": "N",
+   "text": "चिंटू ने हिम्मत जुटाई और मजबूती से लताओं को पकड़कर ऊपर चढ़ गया।",
+   "mood": "peaceful",
+   "style": "reassuring, inspiring, relieved tone",
+   "visual": "An 8-year-old Indian boy named Chintu pulling himself safely onto a flat wide stone platform top, wiping sweat from forehead."
+  },
+  {
+   "speaker": "N",
+   "text": "ऊपर पहुंचते ही... दोनों की आँखें फटी की फटी रह गईं!",
+   "mood": "suspense",
+   "style": "dramatic reveal, solemn deep whisper",
+   "visual": "Wide grand landscape showing a giant sparkling waterfall where bright blue water flows UPWARDS into the clouds from a golden stone basin."
+  },
+  {
+   "speaker": "C",
+   "text": "पानी सच में ज़मीन से ऊपर बादलों की तरफ जा रहा है!",
+   "mood": "suspense",
+   "style": "utterly amazed whisper, trembling slightly with awe",
+   "visual": "An 8-year-old Indian boy named Chintu standing at basin edge, looking up with awe as water drops splash upside down."
+  },
+  {
+   "speaker": "N",
+   "text": "झरने के बीचों-बीच एक प्राचीन नक्काशीदार चाबी तैर रही थी।",
+   "mood": "suspense",
+   "style": "intrigued, slow captivating narration",
+   "visual": "A shining brass key carved with sun symbol floating inside a crystal blue sphere of liquid mid-air."
+  },
+  {
+   "speaker": "C",
+   "text": "अगर यह चाबी मिल जाए, तो शायद इस अनोखे झरने का राज़ पता चल सके!",
+   "mood": "suspense",
+   "style": "determined, energetic kid tone",
+   "visual": "An 8-year-old Indian boy named Chintu pointing finger towards the floating golden key with resolve in his eyes."
+  },
+  {
+   "speaker": "N",
+   "text": "लेकिन चाबी तक पहुँचने के लिए उफनते उल्टे पानी पार करना था!",
+   "mood": "suspense",
+   "style": "challenging tone, dramatic anticipation",
+   "visual": "Swirling vortex of magical blue water creating stepping stones of floating smooth river stones."
+  },
+  {
+   "speaker": "C",
+   "text": "एक... दो... और यह छलांग!",
+   "mood": "chase",
+   "style": "brave shout, slightly breathless jump noise",
+   "visual": "An 8-year-old Indian boy named Chintu jumping gracefully across glowing floating stones over water vortex."
+  },
+  {
+   "speaker": "N",
+   "text": "चिंटू ने चाबी पकड़ ली! दोस्तों, अगर आपको चिंटू की हिम्मत पसंद आई तो चैनल सब्सक्राइब ज़रूर करना!",
+   "mood": "victory",
+   "style": "triumphant, warm upbeat friendly tone",
+   "visual": "An 8-year-old Indian boy named Chintu holding high a glowing brass key, smiling happily as golden light surrounds him."
+  },
+  {
+   "speaker": "N",
+   "text": "चाबी हाथ में आते ही... चट्टान के पीछे ढका प्राचीन गुप्त द्वार खुल गया!",
+   "mood": "suspense",
+   "style": "mysterious suspenseful drop tone",
+   "visual": "A massive carved stone doorway sliding open inside cliff wall, revealing shimmering underground chamber."
+  },
+  {
+   "speaker": "C",
+   "text": "आओ बंटी, अंदर चलकर देखते हैं!",
+   "mood": "suspense",
+   "style": "curious and eager whisper",
+   "visual": "An 8-year-old Indian boy named Chintu entering the glowing underground cave entrance with squirrel on shoulder."
+  },
+  {
+   "speaker": "N",
+   "text": "गुफा की दीवारें पुरानी प्राचीन कथाओं की तस्वीरों से भरी पड़ी थीं।",
+   "mood": "peaceful",
+   "style": "reverent, ancient lore tone",
+   "visual": "Detailed ancient wall paintings illuminated by glowing crystal mushrooms on dark cave wall."
+  },
+  {
+   "speaker": "C",
+   "text": "देखो बंटी! इस चित्र में राजा को इस जादुई पानी को सहेजते दिखाया गया है!",
+   "mood": "suspense",
+   "style": "intrigued discovery voice",
+   "visual": "An 8-year-old Indian boy named Chintu pointing to mural painting of an ancient Indian king holding a shining vessel."
+  },
+  {
+   "speaker": "N",
+   "text": "अचानक दीवारों पर बनी तस्वीरें हिलने लगीं और पानी की बूँदें हवा में तैरने लगीं!",
+   "mood": "suspense",
+   "style": "surprised, thrilling build up tone",
+   "visual": "Wall paintings glowing with animated blue light, droplets of water floating magically in cave hall."
+  },
+  {
+   "speaker": "G",
+   "text": "जो कोई भी यहाँ आया है... उसे तीन पहेलियों का सही उत्तर देना होगा!",
+   "mood": "horror",
+   "style": "deep echoing mysterious ancient voice, loud resonance",
+   "visual": "A massive spirit form made of glowing blue water appearing in mid-air in center of cave."
+  },
+  {
+   "speaker": "C",
+   "text": "आप कौन हैं देवी? और यह झरना उल्टा क्यों बहता है?",
+   "mood": "suspense",
+   "style": "polite but brave child voice, respectful stance",
+   "visual": "An 8-year-old Indian boy named Chintu folding hands in respect facing the floating glowing water nymph."
+  },
+  {
+   "speaker": "G",
+   "text": "मैं इस पवित्र जल की रक्षक हूँ। यह पानी धरती की प्यास बुझाने का जादुई सोता है!",
+   "mood": "peaceful",
+   "style": "majestic, calm, melodic ethereal voice",
+   "visual": "Shimmering ethereal water nymph Jadui Devi extending glowing hand softly, blue light warming cave room."
+  },
+  {
+   "speaker": "G",
+   "text": "बच्चों, क्या आप बता सकते हैं कि पानी बचाना हमारे जीवन के लिए क्यों ज़रूरी है?",
+   "mood": "peaceful",
+   "style": "gentle direct question tone for kids audience",
+   "visual": "Close-up of sparkling eyes of Jadui Devi looking out smoothly with smiling expression."
+  },
+  {
+   "speaker": "C",
+   "text": "क्योंकि पानी के बिना पेड़, पौधे, जानवर और हम सब जीवित नहीं रह सकते!",
+   "mood": "peaceful",
+   "style": "confident, clear, happy kid response",
+   "visual": "An 8-year-old Indian boy named Chintu smiling proudly while answering with hands outstretched."
+  },
+  {
+   "speaker": "G",
+   "text": "बिल्कुल सही! तुम्हारा दिल सच्चा और ज्ञान साफ़ है नन्हे बालक!",
+   "mood": "victory",
+   "style": "pleased, warm approving sound",
+   "visual": "Jadui Devi radiating brilliant golden-blue light harmony across cave wall."
+  },
+  {
+   "speaker": "N",
+   "text": "लेकिन तभी... गुफा के अंदर एक गहरी कांपती हुई आवाज़ गूँजी!",
+   "mood": "suspense",
+   "style": "sudden shift to high suspense, dark whisper",
+   "visual": "Dark shadow cast over glowing cave walls, floor rattling softly."
+  },
+  {
+   "speaker": "C",
+   "text": "ये क्या हुआ? गुफा का पानी लाल क्यों होने लगा?",
+   "mood": "horror",
+   "style": "scared gasp, high pitch fright",
+   "visual": "An 8-year-old Indian boy named Chintu stepping back as blue water pool shifts to deep crimson tint."
+  },
+  {
+   "speaker": "N",
+   "text": "वर्षों पुराना लाल पत्थर का दानव जादुई सोता चुराने जागा था!",
+   "mood": "horror",
+   "style": "thrilling dark narration, intense tremor pitch",
+   "visual": "A giant stone statue with red glowing eyes slowly rising from rocky ground inside deep cavern."
+  },
+  {
+   "speaker": "G",
+   "text": "सावधान चिंटू! अगर यह दानव जल कलश ले गया तो पूरा जंगल सूख जाएगा!",
+   "mood": "chase",
+   "style": "urgent high-pitched warning cry",
+   "visual": "Jadui Devi surrounding a golden urn with protective blue aura under threat."
+  },
+  {
+   "speaker": "C",
+   "text": "मैं जंगल को सूखने नहीं दूँगा! बंटी, चलो चाबी का इस्तेमाल करें!",
+   "mood": "chase",
+   "style": "determined shout, running breath sounds",
+   "visual": "An 8-year-old Indian boy named Chintu running forward courageously holding shining brass key high."
+  },
+  {
+   "speaker": "N",
+   "text": "दानव ने भारी पत्थर वाला हाथ चिंटू की तरफ बढ़ाया!",
+   "mood": "chase",
+   "style": "fast panicky narration, high speed flow",
+   "visual": "Giant stone hand reaching downward fast toward small yellow t-shirt kid."
+  },
+  {
+   "speaker": "C",
+   "text": "बंटी... झपट्टा मारो उसके चश्मे पर!",
+   "mood": "chase",
+   "style": "quick tactical shout",
+   "visual": "Tiny brown squirrel jumping from kid shoulder directly towards red glowing eyes of stone giant."
+  },
+  {
+   "speaker": "N",
+   "text": "नन्हे बंटी ने दानव की आँखों के आगे अपनी पूँछ घुमाकर उसका ध्यान भटका दिया!",
+   "mood": "chase",
+   "style": "excited fast story pace",
+   "visual": "Tiny squirrel perching atop stone giant head, swishing bushy tail dynamically."
+  },
+  {
+   "speaker": "C",
+   "text": "अब मेरी बारी! चाबी को इस स्तंभ की दरार में डालना होगा!",
+   "mood": "chase",
+   "style": "focused out of breath gasp, brave voice",
+   "visual": "An 8-year-old Indian boy named Chintu sprinting toward ancient carved central pillar."
+  },
+  {
+   "speaker": "N",
+   "text": "दानव पीछे घूमा और तेज़ गर्जना की!",
+   "mood": "horror",
+   "style": "loud menacing effect sound with dark narration",
+   "visual": "Stone giant turning back angrily, small rock debris falling down around cavern."
+  },
+  {
+   "speaker": "C",
+   "text": "बस एक सेकंड और... पहुँच गया!",
+   "mood": "chase",
+   "style": "heavy breathing, triumphant leap tone",
+   "visual": "An 8-year-old Indian boy named Chintu inserting floating brass key into keyhole slot on central pillar."
+  },
+  {
+   "speaker": "N",
+   "text": "जैसे ही चाबी घूमी, सुनहरी किरणों का धमाकेदार प्रकाश फूटा!",
+   "mood": "victory",
+   "style": "dramatic grand reveal pitch, soaring sound",
+   "visual": "Blinding golden explosion of light bursting from ancient central pillar across whole screen."
+  },
+  {
+   "speaker": "N",
+   "text": "लाल दानव पिघलकर वापस शांत पत्थर का हिस्सा बन गया!",
+   "mood": "peaceful",
+   "style": "calming, soft relieved tone",
+   "visual": "Stone giant turning into harmless moss-covered giant boulder inside soft lit cavern."
+  },
+  {
+   "speaker": "C",
+   "text": "उफ़! सच में एकता और समझदारी से हर मुश्किल दूर हो सकती है!",
+   "mood": "peaceful",
+   "style": "relieved sigh, happy kid voice",
+   "visual": "An 8-year-old Indian boy named Chintu wiping forehead smiling, squirrel cuddling his cheek."
+  },
+  {
+   "speaker": "G",
+   "text": "तुमने अपनी निस्वार्थ बहादुरी से जंगल की जीवनरेखा बचा ली नन्हे चिंटू!",
+   "mood": "victory",
+   "style": "warm loving ethereal blessing tone",
+   "visual": "Jadui Devi shining brightly, bestowing a sparkling blue water pendant onto Chintu."
+  },
+  {
+   "speaker": "N",
+   "text": "झरने का पानी फिर से पूरे जंगल में शुद्ध और मीठी धारा बनकर बहने लगा।",
+   "mood": "peaceful",
+   "style": "soothing melodic storytelling",
+   "visual": "Crystal clear water cascading down lush green mountain rocks under vibrant rainbow."
+  },
+  {
+   "speaker": "C",
+   "text": "देखो बंटी, पूरा जंगल फिर से कितना हरा-भरा और खुशहाल हो गया!",
+   "mood": "peaceful",
+   "style": "joyful kid voice, full of delight",
+   "visual": "An 8-year-old Indian boy named Chintu watching colorful birds fly around lush trees."
+  },
+  {
+   "speaker": "N",
+   "text": "जंगल के सभी जानवर चिंटू और बंटी का धन्यवाद करने जमा हो गए।",
+   "mood": "peaceful",
+   "style": "cheerful festive vibe",
+   "visual": "Cute deer, rabbits, and parrots surrounding Chintu near riverbank under sunshine."
+  },
+  {
+   "speaker": "C",
+   "text": "दोस्त वही जो मुसीबत में काम आए और प्रकृति की रक्षा करे!",
+   "mood": "victory",
+   "style": "proud moral delivery kid tone",
+   "visual": "An 8-year-old Indian boy named Chintu sitting with small animals smiling warmly."
+  },
+  {
+   "speaker": "N",
+   "text": "चिंटू को समझ आ गया था कि सच्चे इरादे और बहादुरी के आगे कोई दानव नहीं टिक सकता।",
+   "mood": "peaceful",
+   "style": "reflective moral statement tone",
+   "visual": "Golden sunset illuminating mountain top and sparkling clean waterfall."
+  },
+  {
+   "speaker": "N",
+   "text": "और इस तरह नन्हे चिंटू ने जादुई झरने का रहस्य भी सुलझाया और जंगल को नया जीवन दिया।",
+   "mood": "peaceful",
+   "style": "satisfied story resolution cadence",
+   "visual": "Wide panoramic shot of Indian forest village landscape bathed in warm twilight glow."
+  },
+  {
+   "speaker": "C",
+   "text": "बंटी, अब चलो घर चलें... दादी इंतज़ार कर रही होंगी!",
+   "mood": "peaceful",
+   "style": "playful cute kid farewell voice",
+   "visual": "An 8-year-old Indian boy named Chintu walking hand-in-hand with animal friends back along path."
+  },
+  {
+   "speaker": "N",
+   "text": "लेकिन रुकिए... क्या चिंटू को मिली वह नीली चाबी फिर से चमकने लगी थी?",
+   "mood": "suspense",
+   "style": "mysterious lingering hint tone",
+   "visual": "Close-up of sparkling blue pendant pocket key glowing softly in twilight darkness."
+  },
+  {
+   "speaker": "N",
+   "text": "अगली बार चिंटू ढूँढने वाला है - 'पाताल लोक का गुमशुदा चिराग'!",
+   "mood": "suspense",
+   "style": "exciting trailer teaser pitch",
+   "visual": "Teaser silhouette of ancient golden lantern glowing beneath dark cavern ground."
+  },
+  {
+   "speaker": "N",
+   "text": "अगर आपको यह जादुई रोमांच पसंद आया, तो वीडियो को लाइक करें, दोस्तों के साथ शेयर करें और हमारे चैनल 'कहानी पतंग' को सब्सक्राइब करना बिल्कुल न भूलें!",
+   "mood": "victory",
+   "style": "warm enthusiastic narrator sign-off",
+   "visual": "Kahani Patang animated logo illustration with bright colorful kites flying over sunny blue sky."
+  },
+  {
+   "speaker": "N",
+   "text": "मिलते हैं अगली जादुई कहानी में, तब तक सीखते रहिए और मुस्कुराते रहिए!",
+   "mood": "peaceful",
+   "style": "cheerful friendly final goodbye sound",
+   "visual": "An 8-year-old Indian boy named Chintu waving goodbye enthusiastically with happy smile on face."
+  },
+  {
+   "speaker": "C",
+   "text": "बाय बाय दोस्तों! फिर मिलेंगे अगली रोमांचक यात्रा पर!",
+   "mood": "peaceful",
+   "style": "cute high energy kid wave voice",
+   "visual": "An 8-year-old Indian boy named Chintu jumping up joyfully with squirrel on shoulder under sky."
+  },
+  {
+   "speaker": "N",
+   "text": "कहानी पतंग - हर कहानी में एक अनोखा राज़ और नया सबक!",
+   "mood": "victory",
+   "style": "brand slogan pitch clear and crisp",
+   "visual": "Golden text banner appearing over sunny village landscape with flying colorful kites."
+  },
+  {
+   "speaker": "N",
+   "text": "धन्यवाद और नमस्ते!",
+   "mood": "peaceful",
+   "style": "gentle closing tone",
+   "visual": "Fade to serene starry night sky with gentle shining lotus icon."
+  },
+  {
+   "speaker": "N",
+   "text": "अगला एपिसोड देखने के लिए स्क्रीन पर आ रहे वीडियो पर क्लिक करें!",
+   "mood": "peaceful",
+   "style": "inviting ending line",
+   "visual": "End screen layout with thumbnail template against magical starry background."
+  },
+  {
+   "speaker": "N",
+   "text": "जय हिंद, जय भारत!",
+   "mood": "peaceful",
+   "style": "patriotic warm conclusion sound",
+   "visual": "Beautiful sunset horizon with peaceful flying birds in sky."
+  }
+ ]
+}
