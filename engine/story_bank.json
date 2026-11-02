@@ -2,10 +2,214 @@
  "_format": "Hark-written stories. long: {id, script} (raat long: {id, series, parts:[3 scripts]}); short: {id, script}. scene compact: s speaker, t text, m mood, st style, v visual, w character name. long scripts may carry 'trailer' (short script).",
  "raat": {
   "long": [],
-  "short": []
+  "short": [
+   {
+    "id": "raat_s_dastak01",
+    "script": {
+     "title": "रात 3 बजे दरवाज़ा किसने खटखटाया? #shorts",
+     "topic": "हवेली का रहस्य",
+     "description": "काल्पनिक कहानी — केवल मनोरंजन के लिए। रात 3 बजे की डरावनी दस्तक।",
+     "tags": [
+      "horror",
+      "हिंदी हॉरर",
+      "रात के किस्से",
+      "shorts"
+     ],
+     "hook": "रात 3 बजे दस्तक",
+     "thumb_text": "3 बजे की दस्तक",
+     "characters": {
+      "Rohan": "Indian man, 28, short black hair, grey kurta, worried eyes"
+     },
+     "scenes": [
+      {
+       "s": "N",
+       "t": "रात के ठीक तीन बजे रोहन के दरवाज़े पर तीन बार दस्तक हुई।",
+       "m": "suspense",
+       "st": "whisper, tense",
+       "v": "Dark Indian village house at night, wooden door, dim lantern, Rohan staring",
+       "w": "Rohan"
+      },
+      {
+       "s": "M",
+       "t": "उसने पूछा, कौन है? बाहर से कोई जवाब नहीं आया।",
+       "m": "suspense",
+       "st": "low, nervous",
+       "v": "Rohan near door in dim corridor, shadows on walls",
+       "w": "Rohan"
+      },
+      {
+       "s": "N",
+       "t": "अगले दिन गाँव वालों ने बताया, उस घर में बीस साल पहले एक चौकीदार मरा था।",
+       "m": "suspense",
+       "st": "slow, ominous",
+       "v": "Villagers whispering under a banyan tree in daylight, worried faces",
+       "w": "Rohan"
+      },
+      {
+       "s": "N",
+       "t": "चौकीदार रोज़ रात तीन बजे मालिक को जगाने आता था।",
+       "m": "suspense",
+       "st": "hushed",
+       "v": "Old Indian watchman with lantern at a haveli gate at night",
+       "w": "Rohan"
+      },
+      {
+       "s": "M",
+       "t": "रोहन हँसा, पर अगली रात उसने कुंडी दो बार जाँची।",
+       "m": "suspense",
+       "st": "uneasy",
+       "v": "Rohan latching wooden door twice, oil lamp flicker",
+       "w": "Rohan"
+      },
+      {
+       "s": "N",
+       "t": "तीन बजे दस्तक फिर आई, इस बार खिड़की पर।",
+       "m": "chase",
+       "st": "fast, tense",
+       "v": "Window shutter shaking at night, pale moonlight, Rohan frozen",
+       "w": "Rohan"
+      },
+      {
+       "s": "M",
+       "t": "खिड़की के काँच पर एक धुँधला हाथ उभरा, लालटेन थामे हुए।",
+       "m": "chase",
+       "st": "breathless",
+       "v": "Misty glass with a faint hand holding a lantern outside",
+       "w": "Rohan"
+      },
+      {
+       "s": "M",
+       "t": "रोहन ने काँपते हुए दरवाज़ा खोला, बाहर कोई नहीं था, बस ज़मीन पर गीले पैरों के निशान।",
+       "m": "suspense",
+       "st": "trembling",
+       "v": "Open door, empty courtyard, wet footprints leading inside",
+       "w": "Rohan"
+      },
+      {
+       "s": "N",
+       "t": "निशान उसके बिस्तर तक जाते थे, और वहाँ तकिये पर रखी थी एक पुरानी चाबी।",
+       "m": "suspense",
+       "st": "whisper",
+       "v": "Old brass key on a pillow, lantern light",
+       "w": "Rohan"
+      },
+      {
+       "s": "N",
+       "t": "आगे क्या हुआ? पूरी कहानी देखने के लिए नीचे दिए गए वीडियो पर क्लिक करें!",
+       "m": "suspense",
+       "st": "slow, ominous",
+       "v": "Dark haveli at night with one lit window",
+       "w": "Rohan"
+      }
+     ]
+    }
+   }
+  ]
  },
  "kahani": {
   "long": [],
-  "short": []
+  "short": [
+   {
+    "id": "kahani_s_patang01",
+    "script": {
+     "title": "जादुई पतंग और छोटा राजकुमार #shorts",
+     "topic": "जादुई रोमांच",
+     "description": "जादुई पतंग की प्यारी कहानी: दयालुता सबसे बड़ा जादू है।",
+     "tags": [
+      "बच्चों की कहानी",
+      "हिंदी कहानी",
+      "कहानी पतंग",
+      "shorts"
+     ],
+     "hook": "जादुई पतंग उड़ी!",
+     "thumb_text": "जादुई पतंग",
+     "characters": {
+      "Veer": "Indian prince, 8, cheerful, yellow kurta, small golden crown"
+     },
+     "scenes": [
+      {
+       "s": "N",
+       "t": "क्या कोई पतंग तुम्हें बादलों के पार ले जा सकती है?",
+       "m": "peaceful",
+       "st": "cheerful, curious",
+       "v": "Colorful kite in bright blue sky above Indian palace, cartoon style",
+       "w": "Veer"
+      },
+      {
+       "s": "N",
+       "t": "राजकुमार वीर को एक दिन महल की छत पर सुनहरी पतंग मिली।",
+       "m": "peaceful",
+       "st": "warm",
+       "v": "Prince Veer finding golden kite on palace rooftop",
+       "w": "Veer"
+      },
+      {
+       "s": "M",
+       "t": "जैसे ही उसने डोर पकड़ी, पतंग उसे हवा में उड़ा ले गई!",
+       "m": "victory",
+       "st": "excited",
+       "v": "Prince flying holding kite string among white clouds",
+       "w": "Veer"
+      },
+      {
+       "s": "N",
+       "t": "बादलों के ऊपर एक छोटी चिड़िया रो रही थी, उसका घोंसला हवा में उड़ गया था।",
+       "m": "peaceful",
+       "st": "gentle, sad",
+       "v": "Little sparrow crying on a cloud, cartoon",
+       "w": "Veer"
+      },
+      {
+       "s": "M",
+       "t": "वीर ने कहा, रोना मत, मैं तुम्हारा घर ढूँढ दूँगा।",
+       "m": "peaceful",
+       "st": "kind",
+       "v": "Prince comforting sparrow on cloud",
+       "w": "Veer"
+      },
+      {
+       "s": "N",
+       "t": "पतंग तेज़ी से उड़ी और उन्होंने घोंसला एक पेड़ की डाल पर अटका पाया।",
+       "m": "chase",
+       "st": "playful",
+       "v": "Kite zooming toward tree with nest, Indian forest",
+       "w": "Veer"
+      },
+      {
+       "s": "M",
+       "t": "वीर ने सावधानी से घोंसला उठाकर चिड़िया को लौटा दिया।",
+       "m": "victory",
+       "st": "joyful",
+       "v": "Prince handing nest to happy sparrow",
+       "w": "Veer"
+      },
+      {
+       "s": "N",
+       "t": "चिड़िया ने गाना गाया और पतंग सोने की तरह चमक उठी।",
+       "m": "victory",
+       "st": "bright",
+       "v": "Glowing golden kite and singing sparrow",
+       "w": "Veer"
+      },
+      {
+       "s": "N",
+       "t": "पतंग बोली, जो दूसरों की मदद करता है, उसी के लिए मैं उड़ती हूँ।",
+       "m": "peaceful",
+       "st": "magical, soft",
+       "v": "Kite speaking with sparkles over palace at sunset",
+       "w": "Veer"
+      },
+      {
+       "s": "N",
+       "t": "सीख: दयालुता सबसे बड़ा जादू है। कहानी पसंद आई तो चैनल सब्सक्राइब करना न भूलें!",
+       "m": "peaceful",
+       "st": "warm",
+       "v": "Prince smiling waving from rooftop at sunset",
+       "w": "Veer"
+      }
+     ]
+    }
+   }
+  ]
  }
 }
