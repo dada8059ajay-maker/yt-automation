@@ -1,23 +1,38 @@
 {
  "raat": {
   "short": "2026-11-07T16:00:00Z",
-  "long": "2026-11-06T15:30:00Z",
+  "long": "2026-11-07T15:30:00Z",
   "history": [
    "नियम वाला ढाबा: राजस्थान हाईवे का ढाबा, चाय के तीन कप, नियम, पिछली सीट पर लाल दुपट्टे वाली औरत",
    "एक सुनसान पहाड़ी पेट्रोल पंप पर रात की शिफ्ट के भयानक नियम और एक रोंगटे खड़े कर देने वाला ट्विस्ट।",
    "एक सुनसान पहाड़ी डाक बंगले के 3 खौफनाक नियम जिन्हें तोड़ना यानी खौफनाक मौत।",
    "जंगल के बीच बने एक पुराने रेलवे केबिन में रात की ड्यूटी के तीन जानलेवा नियम और एक भयानक सच।",
-   "काली नदी के सुनसान घाट पर रात की रखवाली के 4 खौफनाक नियम और 3:15 बजे का जानलेवा सच।"
+   "काली नदी के सुनसान घाट पर रात की रखवाली के 4 खौफनाक नियम और 3:15 बजे का जानलेवा सच।",
+   "भैरव घाट पर रात 3:15 बजे आई रहस्यमयी नाव, पुराने नाविक का भयानक राज़ और नदी से उठे काले साए।"
   ],
   "series": {
    "name": "भैरव घाट का रहस्य",
-   "part": 1,
-   "so_far": "विक्रम पैसों की मजबूरी में काली नदी के सुनसान भैरव घाट पर रात की रखवाली की नौकरी लेता है। पुराने नाविक रघु काका उसे रात बिताने के चार सख्त और जानलेवा नियम सौंपते हैं। आधी रात बीतते ही नदी से परछाई-रहित मुसाफ़िर और रहस्यमयी घंटियों की आवाज़ें आने लगती हैं। रात 3:15 बजे एक ऐसी नाव घाट पर आती है, जो विक्रम के होश उड़ा देती है।",
+   "part": 2,
+   "so_far": "विक्रम ने रुपयों की सख्त ज़रूरत के चलते काली नदी के शापित भैरव घाट पर रात की चौकीदारी स्वीकार की। पुराने नाविक रघु काका ने उसे रात बिताने के चार जानलेवा नियम सौंपे थे। आधी रात के बाद बिना परछाई वाले साए और खौफनाक घंटियों की आवाज़ें गूँजने लगीं। ठीक 3:15 बजे कोहरे को चीरती हुई एक नाव घाट की सीढ़ियों से आकर टकराई, जिसमें एक रहस्यमयी औरत खड़ी थी।",
    "characters": {
     "Vikram": "Vikram, 24 years old, lean athletic build, square jaw, anxious brown eyes, messy short black hair, olive complexion, wearing faded navy blue denim jacket over grey t-shirt, dark cargo pants, dusty brown boots, Indian young man",
     "Raghu": "Raghu Kaka, 62 years old, weathered wrinkly face, grey stubble, cataract-clouded piercing eyes, thin wiry frame, stooped posture, wearing coarse beige khadi kurta, dark green wool shawl wrapped over shoulders, white dhoti, Indian elderly boatman",
     "Maya": "Mysterious Woman Maya, 20s, pale gaunt face, sunken dark rimmed eyes, long raven black hair dripping wet, wearing faded maroon saree with tarnished silver border, barefoot, haunting Indian female spirit"
-   }
+   },
+   "bank": null
+  },
+  "last_long": {
+   "job": "raat_long_20261102_0751",
+   "title": "भैरव घाट का रहस्य - भाग 2: रात 3:15 बजे की खौफनाक सच्चाई",
+   "story": "विक्रम ने रुपयों की सख्त ज़रूरत के चलते काली नदी के शापित भैरव घाट पर रात की चौकीदारी स्वीकार की। पुराने नाविक रघु काका ने उसे रात बिताने के चार जानलेवा नियम सौंपे थे। आधी रात के बाद बिना परछाई वाले साए और खौफनाक घंटियों की आवाज़ें गूँजने लगीं। ठीक 3:15 बजे कोहरे को चीरती हुई एक नाव घाट की सीढ़ियों से आकर टकराई, जिसमें एक रहस्यमयी औरत खड़ी थी।",
+   "characters": {
+    "Vikram": "Vikram, 24 years old, lean athletic build, square jaw, anxious brown eyes, messy short black hair, olive complexion, wearing faded navy blue denim jacket over grey t-shirt, dark cargo pants, dusty brown boots, Indian young man",
+    "Raghu": "Raghu Kaka, 62 years old, weathered wrinkly face, grey stubble, cataract-clouded piercing eyes, thin wiry frame, stooped posture, wearing coarse beige khadi kurta, dark green wool shawl wrapped over shoulders, white dhoti, Indian elderly boatman",
+    "Maya": "Mysterious Woman Maya, 20s, pale gaunt face, sunken dark rimmed eyes, long raven black hair dripping wet, wearing faded maroon saree with tarnished silver border, barefoot, haunting Indian female spirit"
+   },
+   "vid": null,
+   "short_done": false,
+   "trailer": null
   }
  },
  "kahani": {
@@ -56,22 +71,23 @@
   "2026-11-01T13:05:58Z",
   "2026-11-01T18:58:22Z",
   "2026-11-01T21:49:35Z",
-  "2026-11-02T01:01:37Z"
+  "2026-11-02T01:01:37Z",
+  "2026-11-02T02:21:08Z"
  ],
  "_queue": [
-  {
-   "job": "raat_long_20261102_0030",
-   "ch": "raat",
-   "mode": "long",
-   "asset": "raat_long_20261102_0030.tar",
-   "title": "भैरव घाट की आखिरी कश्ती: 4 जानलेवा नियम | भाग 1"
-  },
   {
    "job": "kahani_long_20261102_0633",
    "ch": "kahani",
    "mode": "long",
    "asset": "kahani_long_20261102_0633.tar",
    "title": "जादुई नीली घंटी और नन्हे टिंकू की अनोखी सीख"
+  },
+  {
+   "job": "raat_long_20261102_0751",
+   "ch": "raat",
+   "mode": "long",
+   "asset": "raat_long_20261102_0751.tar",
+   "title": "भैरव घाट का रहस्य - भाग 2: रात 3:15 बजे की खौफनाक सच्चाई"
   }
  ],
  "_draft": null,
@@ -101,9 +117,17 @@
    "title": "जादुई नीली घंटी और नन्हे टिंकू की अनोखी सीख",
    "dur": 408,
    "used": false
+  },
+  {
+   "asset": "lib_raat_long_20261102_0751.mp4",
+   "ch": "raat",
+   "title": "भैरव घाट का रहस्य - भाग 2: रात 3:15 बजे की खौफनाक सच्चाई",
+   "dur": 657,
+   "used": false
   }
  ],
  "_minutes": {
-  "2026-11": 381
- }
+  "2026-11": 410
+ },
+ "_bank": {}
 }
