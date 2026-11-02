@@ -1,0 +1,481 @@
+{
+ "title": "उड़ते काठ के घोड़े और पाताल की गुप्त गुफा का रहस्य",
+ "topic": "नन्हा रोहन और उसका जादुई काठ का घोड़ा गाँव के सूखे पवित्र उपवन को बचाने के लिए प्राचीन गुप्त गुफा का रहस्य सुलझाते हैं।",
+ "description": "नन्हे रोहन को पीपल के पेड़ के नीचे मिला एक पुराना काठ का घोड़ा, जो अचानक हवा में उड़ने लगा! क्या रोहन पाताल की गुप्त गुफा में छुपे पानी का राज़ खोल पाएगा? जानिए इस अद्भुत रोमांचक और सीख भरी कहानी में।\n\n#HindiKahaniya #KahaniPatang #KidsStories #MoralStories #MagicalTales",
+ "tags": [
+  "Hindi stories",
+  "Kahani Patang",
+  "Moral stories for kids",
+  "Magical toy horse",
+  "Indian folk tale",
+  "Children cartoon story",
+  "Bedtime stories Hindi",
+  "Adventure story for children"
+ ],
+ "hook": "काठ का घोड़ा उड़ने लगा!",
+ "thumb_text": "उड़ता घोड़ा! गुप्त गुफा का राज़",
+ "thumb_visual": "A 7-year-old Indian boy with big wide surprised brown eyes, short black hair, wearing a bright yellow cotton kurta, staring in utter wonder at a glowing small wooden toy horse hovering in the air inside a mysterious stone cavern, cinematic golden lighting, wide angle.",
+ "category": "kahani: magic|jungle",
+ "characters": {
+  "Rohan": "A cute 7-year-old Indian boy, round cheerful face, big expressive brown eyes, short messy black hair, slim build, wearing a bright yellow cotton kurta and dark blue pyjama.",
+  "Woody": "A small hand-carved wooden toy horse with glowing turquoise patterns on its wooden body, tiny polished brass wings, and soft painted brown eyes.",
+  "Panditji": "An elderly 70-year-old Indian priest, wrinkled kind face, long white beard, calm gray eyes, wearing a simple saffron robe and wooden beads necklace."
+ },
+ "scenes": [
+  {
+   "speaker": "N",
+   "text": "अरे नहीं! यह खिलौना अचानक ज़मीन छोड़कर हवा में कैसे तैरने लगा?!",
+   "mood": "suspense",
+   "style": "terrified, trembling, shaky low whisper",
+   "visual": "A cute 7-year-old Indian boy, round cheerful face, big expressive brown eyes, short messy black hair, slim build, wearing a bright yellow cotton kurta and dark blue pyjama, ducking down in shock inside a dark stone room as a small hand-carved wooden toy horse with glowing turquoise patterns hovers in the air, low angle shot, cinematic eerie light."
+  },
+  {
+   "speaker": "C",
+   "text": "पाताल की गुफा का दरवाज़ा बंद हो रहा है... पकड़ो मुझे वुडी!",
+   "mood": "chase",
+   "style": "out of breath, panting heavily as if just ran for life, gasping between words",
+   "visual": "A cute 7-year-old Indian boy, round cheerful face, big expressive brown eyes, short messy black hair, slim build, wearing a bright yellow cotton kurta and dark blue pyjama, riding on a magically giant-sized small hand-carved wooden toy horse with glowing turquoise patterns, flying fast through a stone tunnel, motion blur."
+  },
+  {
+   "speaker": "N",
+   "text": "मगर यह सब शुरू कैसे हुआ? आइए चलते हैं कुछ समय पीछे, उस शांत गाँव सुंदरपुर में...",
+   "mood": "peaceful",
+   "style": "warm, gentle storyteller",
+   "visual": "Beautiful traditional Indian village of Sundarpur, green lush fields, thatched mud houses, sunny morning sky, peaceful atmosphere, wide shot."
+  },
+  {
+   "speaker": "N",
+   "text": "सुंदरपुर का प्राचीन उपवन अचानक सूख रहा था। फूल मुरझा गए थे और पक्षी उड़ गए थे।",
+   "mood": "peaceful",
+   "style": "sad, soft tone",
+   "visual": "Dry ancient Indian temple garden with wilted brown flowers, cracked dry earth, empty water fountain, wide angle, dim sunlight."
+  },
+  {
+   "speaker": "N",
+   "text": "7 साल का नन्हा रोहन हर दिन उस उपवन के मंदिर में पूजा करने जाता था।",
+   "mood": "peaceful",
+   "style": "warm, gentle tone",
+   "visual": "A cute 7-year-old Indian boy, round cheerful face, big expressive brown eyes, short messy black hair, slim build, wearing a bright yellow cotton kurta and dark blue pyjama, walking slowly near an ancient stone temple, morning light."
+  },
+  {
+   "speaker": "N",
+   "text": "गाँव के बुजुर्ग पंडित जी अक्सर पीपल के पेड़ के नीचे बैठकर चिंतन करते थे।",
+   "mood": "peaceful",
+   "style": "calm, reflective voice",
+   "visual": "An elderly 70-year-old Indian priest, wrinkled kind face, long white beard, calm gray eyes, wearing a simple saffron robe and wooden beads necklace, sitting under a massive ancient banyan tree, medium shot."
+  },
+  {
+   "speaker": "O",
+   "text": "रोहन बेटा... जब तक इस उपवन की धरती के नीचे की गुप्त नदी नहीं बहेगी, हरियाली वापस नहीं आएगी।",
+   "mood": "suspense",
+   "style": "deep, wise, mysterious slow voice",
+   "visual": "An elderly 70-year-old Indian priest, wrinkled kind face, long white beard, calm gray eyes, wearing a simple saffron robe and wooden beads necklace, pointing gently toward a hollow trunk of the banyan tree, medium close-up."
+  },
+  {
+   "speaker": "C",
+   "text": "पंडित जी! क्या उस गुप्त नदी को जगाने का कोई रास्ता है?",
+   "mood": "peaceful",
+   "style": "curious, bright child voice",
+   "visual": "A cute 7-year-old Indian boy, round cheerful face, big expressive brown eyes, short messy black hair, slim build, wearing a bright yellow cotton kurta and dark blue pyjama, looking up with hopeful eyes, medium close-up."
+  },
+  {
+   "speaker": "N",
+   "text": "तभी पीपल के सूखे तने की एक गहरी खोखली दरार में रोहन की नज़र पड़ी...",
+   "mood": "suspense",
+   "style": "hushed, intrigued whisper",
+   "visual": "A cute 7-year-old Indian boy, round cheerful face, big expressive brown eyes, short messy black hair, slim build, wearing a bright yellow cotton kurta and dark blue pyjama, peeking closely into a hollow tree trunk, sunlight filtering through leaves."
+  },
+  {
+   "speaker": "N",
+   "text": "वहाँ मिटटी में दबा हुआ एक पुराना, तराशा हुआ लकड़ी का घोड़ा रखा था!",
+   "mood": "suspense",
+   "style": "surprised, amazed gasp",
+   "visual": "A small hand-carved wooden toy horse with glowing turquoise patterns on its wooden body, tiny polished brass wings, sitting inside dusty tree bark, close-up shot."
+  },
+  {
+   "speaker": "C",
+   "text": "वाह! कितना सुंदर काठ का घोड़ा है! मैं इसका नाम 'वुडी' रखूँगा!",
+   "mood": "peaceful",
+   "style": "joyful, cheerful child voice",
+   "visual": "A cute 7-year-old Indian boy, round cheerful face, big expressive brown eyes, short messy black hair, slim build, wearing a bright yellow cotton kurta and dark blue pyjama, holding a small hand-carved wooden toy horse with glowing turquoise patterns in his hands, smiling brightly."
+  },
+  {
+   "speaker": "N",
+   "text": "अचानक, जैसे ही रोहन ने घोड़े की पीतल की नन्हीं पंखुड़ियों को छुआ...",
+   "mood": "suspense",
+   "style": "tense, suspenseful building whisper",
+   "visual": "Extreme close up on a small hand-carved wooden toy horse with glowing turquoise patterns as its turquoise lines light up brightly under dusty blue glow."
+  },
+  {
+   "speaker": "N",
+   "text": "ज़मीन अचानक धमक से काँपने लगी! ढप्प... ढप्प!",
+   "mood": "suspense",
+   "style": "startled, low heavy whisper",
+   "visual": "Dust rising from ancient stone floor under the banyan tree as cracks form in ground, dramatic wide angle."
+  },
+  {
+   "speaker": "C",
+   "text": "अरे! यह ज़मीन क्यों हिल रही है?!",
+   "mood": "suspense",
+   "style": "scared, fast gasp",
+   "visual": "A cute 7-year-old Indian boy, round cheerful face, big expressive brown eyes, short messy black hair, slim build, wearing a bright yellow cotton kurta and dark blue pyjama, stepping back in surprise, wide shot."
+  },
+  {
+   "speaker": "N",
+   "text": "पीपल की जड़ों के ठीक नीचे से एक गुप्त पत्थर की सीढ़ी प्रकट हो गई!",
+   "mood": "suspense",
+   "style": "mysterious, awe-filled narrator voice",
+   "visual": "A hidden ancient stone staircase leading down into glowing blue underground darkness beneath giant banyan roots, wide angle."
+  },
+  {
+   "speaker": "N",
+   "text": "नीचे से ठंडी, जादुई हवा का एक झोंका ऊपर आया।",
+   "mood": "suspense",
+   "style": "soft suspenseful tone",
+   "visual": "Blue magical mist rising slowly from the ancient dark staircase entry near temple courtyard."
+  },
+  {
+   "speaker": "C",
+   "text": "वुडी... क्या तुम मुझे नीचे ले जाना चाहते हो?",
+   "mood": "peaceful",
+   "style": "gentle, inquisitive child whisper",
+   "visual": "A cute 7-year-old Indian boy, round cheerful face, big expressive brown eyes, short messy black hair, slim build, wearing a bright yellow cotton kurta and dark blue pyjama, looking down at his toy horse glowing brightly."
+  },
+  {
+   "speaker": "N",
+   "text": "काठ के घोड़े ने धीरे से अपना सिर हिलाया और सीढ़ियों की ओर इशारा किया!",
+   "mood": "suspense",
+   "style": "wonder-filled whisper",
+   "visual": "A small hand-carved wooden toy horse with glowing turquoise patterns softly glowing, pointing its carved head toward the dark staircase, close-up."
+  },
+  {
+   "speaker": "N",
+   "text": "रोहन ने हिम्मत जुटाई और एक-एक कदम संभालकर अंधेरी सीढ़ियों पर रखा...",
+   "mood": "suspense",
+   "style": "slow, cautious narration",
+   "visual": "A cute 7-year-old Indian boy, round cheerful face, big expressive brown eyes, short messy black hair, slim build, wearing a bright yellow cotton kurta and dark blue pyjama, stepping down stone stairs clutching his toy, medium shot."
+  },
+  {
+   "speaker": "N",
+   "text": "सीढ़ियाँ खत्म होते ही रोहन एक विशाल प्राचीन भूमिगत महल के दरवाज़े पर पहुँच गया।",
+   "mood": "suspense",
+   "style": "grand, mystical voice",
+   "visual": "Huge ancient carved stone hall under the earth, illuminated by faint turquoise glowing crystals on walls, majestic wide shot."
+  },
+  {
+   "speaker": "C",
+   "text": "यहाँ तो हर दीवार पर दीये बने हैं... लेकिन ये बुझे क्यों हैं?",
+   "mood": "suspense",
+   "style": "whispering, curious child voice",
+   "visual": "A cute 7-year-old Indian boy, round cheerful face, big expressive brown eyes, short messy black hair, slim build, wearing a bright yellow cotton kurta and dark blue pyjama, looking at carved stone oil lamps along hall walls."
+  },
+  {
+   "speaker": "N",
+   "text": "तभी काठ का घोड़ा रोहन के हाथ से छिटककर खुद-ब-खुद फर्श पर खड़ा हो गया!",
+   "mood": "suspense",
+   "style": "surprised, sudden high pitch",
+   "visual": "A small hand-carved wooden toy horse with glowing turquoise patterns standing upright on stone floor as bright blue circle lights up around its hooves."
+  },
+  {
+   "speaker": "N",
+   "text": "घोड़े के खुरों के छूते ही पूरी गुफा में हज़ार नीले दीये अपने-आप जल उठे!",
+   "mood": "victory",
+   "style": "excited, magical revelation tone",
+   "visual": "Hundreds of stone lamps along walls suddenly bursting into warm golden and blue magical light simultaneously, beautiful wide shot."
+  },
+  {
+   "speaker": "C",
+   "text": "वाह! कितना अद्भुत नज़ारा है! सब कुछ जगमगा उठा!",
+   "mood": "victory",
+   "style": "happy, delighted child voice",
+   "visual": "A cute 7-year-old Indian boy, round cheerful face, big expressive brown eyes, short messy black hair, slim build, wearing a bright yellow cotton kurta and dark blue pyjama, clapping hands in delight, glowing hall around him."
+  },
+  {
+   "speaker": "N",
+   "text": "दोस्तों, अगर आपको नन्हे रोहन का यह जादुई सफर पसंद आ रहा है, तो 'कहानी पतंग' को सब्सक्राइब ज़रूर करें!",
+   "mood": "peaceful",
+   "style": "warm, inviting friendly channel callout",
+   "visual": "A cute 7-year-old Indian boy, round cheerful face, big expressive brown eyes, short messy black hair, slim build, wearing a bright yellow cotton kurta and dark blue pyjama, smiling brightly toward camera with glowing wooden horse."
+  },
+  {
+   "speaker": "N",
+   "text": "दीयों की रोशनी में रोहन को गुफा के बीचों-बीच एक विशाल पत्थरों का पहिया दिखा।",
+   "mood": "suspense",
+   "style": "intriguing, serious voice",
+   "visual": "A giant ancient carved stone waterwheel trapped inside heavy dry vines in middle of subterranean hall, wide angle."
+  },
+  {
+   "speaker": "C",
+   "text": "यह पहिया रुका हुआ है... शायद इसी वजह से ऊपर पानी नहीं आ रहा!",
+   "mood": "suspense",
+   "style": "thoughtful, determined child voice",
+   "visual": "A cute 7-year-old Indian boy, round cheerful face, big expressive brown eyes, short messy black hair, slim build, wearing a bright yellow cotton kurta and dark blue pyjama, inspecting stone wheel covered in dry roots."
+  },
+  {
+   "speaker": "N",
+   "text": "लेकिन तभी... दीवार पर बनी एक प्राचीन नक्काशी से धीमी आवाज़ गूँजी!",
+   "mood": "suspense",
+   "style": "echoing, mysterious narrator tone",
+   "visual": "Ancient carved stone relief of a lion face on cave wall glowing faintly red, close-up."
+  },
+  {
+   "speaker": "G",
+   "text": "जो इस पहिये को चलाएगा... उसे पहले तीन जादुई शीशों का रहस्य सुलझाना होगा!",
+   "mood": "suspense",
+   "style": "deep booming ancient spirit voice, slow and calm",
+   "visual": "Three tall polished silver mirrors embedded in stone pillars surrounding the dry wheel, medium shot."
+  },
+  {
+   "speaker": "C",
+   "text": "शीशे? मगर यहाँ तो सूरज की कोई रोशनी ही नहीं है...",
+   "mood": "suspense",
+   "style": "puzzled child tone",
+   "visual": "A cute 7-year-old Indian boy, round cheerful face, big expressive brown eyes, short messy black hair, slim build, wearing a bright yellow cotton kurta and dark blue pyjama, scratching head near metallic mirrors."
+  },
+  {
+   "speaker": "N",
+   "text": "काठ का घोड़ा वुडी अचानक हवा में उठा और अपने पंख फैलाने लगा!",
+   "mood": "suspense",
+   "style": "gasping, amazed narration",
+   "visual": "A small hand-carved wooden toy horse with glowing turquoise patterns opening tiny brass wings and floating up, surrounded by golden sparkles."
+  },
+  {
+   "speaker": "N",
+   "text": "घोड़े के शरीर से एक सीधी नीली प्रकाश की किरण निकली और पहले शीशे पर पड़ी!",
+   "mood": "victory",
+   "style": "energetic, thrilling tone",
+   "visual": "A brilliant blue beam of light shooting from brass wings of wooden horse, striking first shiny metal mirror."
+  },
+  {
+   "speaker": "C",
+   "text": "रोशनी टकराकर दूसरे शीशे की तरफ मुड़ गई!",
+   "mood": "victory",
+   "style": "excited child shout",
+   "visual": "Blue light beam reflecting off first mirror to hit second mirror across stone cavern."
+  },
+  {
+   "speaker": "N",
+   "text": "मगर तीसरा शीशा गलत दिशा में मुड़ा हुआ था! रोशनी आगे नहीं बढ़ पा रही थी।",
+   "mood": "suspense",
+   "style": "tense, dramatic whisper",
+   "visual": "Light beam stopping at misaligned second mirror, third mirror pointing away toward dark corner."
+  },
+  {
+   "speaker": "C",
+   "text": "मुझे तीसरे शीशे को सही दिशा में घुमाना होगा!",
+   "mood": "suspense",
+   "style": "focused child voice",
+   "visual": "A cute 7-year-old Indian boy, round cheerful face, big expressive brown eyes, short messy black hair, slim build, wearing a bright yellow cotton kurta and dark blue pyjama, running toward misaligned pillar mirror."
+  },
+  {
+   "speaker": "N",
+   "text": "रोहन ने अपनी पूरी ताकत लगाकर पत्थर के भारी शीशे को घुमाया...",
+   "mood": "suspense",
+   "style": "straining, heavy breathing tone",
+   "visual": "A cute 7-year-old Indian boy, round cheerful face, big expressive brown eyes, short messy black hair, slim build, wearing a bright yellow cotton kurta and dark blue pyjama, pushing heavy carved stone pillar base."
+  },
+  {
+   "speaker": "N",
+   "text": "सररर... शीशा घूमते ही रोशनी सीधे पत्थरों के पहिये के केंद्र पर जा लगी!",
+   "mood": "victory",
+   "style": "exhilarating, dramatic payoff voice",
+   "visual": "Blue light beam hitting center gemstone of giant stone wheel, bright flash of turquoise light."
+  },
+  {
+   "speaker": "N",
+   "text": "सूखी जड़ें अचानक खुद-ब-खुद जलकर राख हो गईं!",
+   "mood": "victory",
+   "style": "fast, magical narration",
+   "visual": "Dry tree roots wrapping the wheel disintegrating into glowing harmless sparkles, revealing clean ancient machinery."
+  },
+  {
+   "speaker": "C",
+   "text": "अरे वाह! पहिया साफ़ हो गया!",
+   "mood": "victory",
+   "style": "joyful gasp",
+   "visual": "A cute 7-year-old Indian boy, round cheerful face, big expressive brown eyes, short messy black hair, slim build, wearing a bright yellow cotton kurta and dark blue pyjama, throwing hands up in delight."
+  },
+  {
+   "speaker": "N",
+   "text": "लेकिन पहिया फिर भी अपनी जगह से हिल नहीं रहा था...",
+   "mood": "suspense",
+   "style": "disappointed, sudden low suspense voice",
+   "visual": "Giant stone wheel remaining static despite being clear of vines, quiet hall."
+  },
+  {
+   "speaker": "N",
+   "text": "पहाड़ के नीचे एक पुराना ताला बंद था, जिसमें तीन अलग-अलग रंग के क्रिस्टल चाबियाँ लटक रही थीं!",
+   "mood": "suspense",
+   "style": "mysterious revelation tone",
+   "visual": "A heavy iron ancient lock with three crystal keys dangling: Red, Blue, and Green, close up."
+  },
+  {
+   "speaker": "G",
+   "text": "केवल वही क्रिस्टल ताला खोलेगा जो सच्चाई और ईमानदारी का प्रतीक है!",
+   "mood": "suspense",
+   "style": "deep booming voice echoing",
+   "visual": "Three glowing crystals: fiery Red, oceanic Blue, vibrant Green glowing softly on stone pediment."
+  },
+  {
+   "speaker": "N",
+   "text": "बच्चों, क्या आप रोहन की मदद करेंगे? बताइए, सच्चाई और ईमानदारी का रंग कौन-सा माना जाता है - नीला या लाल?",
+   "mood": "peaceful",
+   "style": "interactive, warm narrator tone directly to audience",
+   "visual": "A cute 7-year-old Indian boy, round cheerful face, big expressive brown eyes, short messy black hair, slim build, wearing a bright yellow cotton kurta and dark blue pyjama, looking curiously at red and blue glowing crystals."
+  },
+  {
+   "speaker": "C",
+   "text": "नीला क्रिस्टल शांत और सच्चा दिखता है... यही सही चाबी है!",
+   "mood": "peaceful",
+   "style": "confident child voice",
+   "visual": "A cute 7-year-old Indian boy, round cheerful face, big expressive brown eyes, short messy black hair, slim build, wearing a bright yellow cotton kurta and dark blue pyjama, reaching out hand toward glowing blue crystal."
+  },
+  {
+   "speaker": "N",
+   "text": "रोहन ने बिना किसी डर के नीले क्रिस्टल को ताले में घुमाया!",
+   "mood": "suspense",
+   "style": "suspenseful anticipation voice",
+   "visual": "Hands turning glowing blue crystal key into ancient iron mechanism, golden light leaking from keyhole."
+  },
+  {
+   "speaker": "N",
+   "text": "क्लिक! ताला खुल गया और गड़गड़ाहट के साथ पत्थर का पहिया घूमने लगा!",
+   "mood": "victory",
+   "style": "booming, triumphant narration",
+   "visual": "Giant stone waterwheel spinning smoothly, subterranean water gushing through stone channels around it."
+  },
+  {
+   "speaker": "N",
+   "text": "छक-छक! स्वच्छ, मीठे जल की भूमिगत नदी तेज़ बहाव के साथ बहने लगी!",
+   "mood": "victory",
+   "style": "rhythmic, joyful tone",
+   "visual": "Crystal clear water splashing rapidly down ancient stone aqueduct inside brightly lit cavern."
+  },
+  {
+   "speaker": "C",
+   "text": "पानी वापस आ गया! वुडी, हमने कर दिखाया!",
+   "mood": "victory",
+   "style": "cheering, delighted child voice",
+   "visual": "A cute 7-year-old Indian boy, round cheerful face, big expressive brown eyes, short messy black hair, slim build, wearing a bright yellow cotton kurta and dark blue pyjama, hugging floating wooden horse in delight."
+  },
+  {
+   "speaker": "N",
+   "text": "लेकिन तभी... तेज़ पानी के बहाव से गुफा की छत से कुछ छोटे पत्थर गिरने लगे!",
+   "mood": "chase",
+   "style": "urgent, alarmed warning voice",
+   "visual": "Small pebbles falling from cavern ceiling into rushing water, dust shaking down, fast camera movement."
+  },
+  {
+   "speaker": "C",
+   "text": "अरे नहीं! रास्ते का दरवाज़ा बंद हो रहा है!",
+   "mood": "chase",
+   "style": "panicked, urgent child shout",
+   "visual": "Ancient stone exit door slowly sliding down, narrowing the path out."
+  },
+  {
+   "speaker": "N",
+   "text": "काठ का घोड़ा वुडी अचानक आकार में बड़ा हो गया और रोहन के सामने झुक गया!",
+   "mood": "chase",
+   "style": "fast-paced, thrilling narration",
+   "visual": "A small hand-carved wooden toy horse growing into a full-sized magical wooden horse with wide brass wings, glowing turquoise lines."
+  },
+  {
+   "speaker": "C",
+   "text": "चलो वुडी, तेज़ी से उड़ाओ!",
+   "mood": "chase",
+   "style": "heroic, brave child voice",
+   "visual": "A cute 7-year-old Indian boy, round cheerful face, big expressive brown eyes, short messy black hair, slim build, wearing a bright yellow cotton kurta and dark blue pyjama, climbing onto giant magical wooden horse."
+  },
+  {
+   "speaker": "N",
+   "text": "फुर्रर्र! उड़ता काठ का घोड़ा हवा को चीरते हुए बंद होते दरवाज़े की तरफ लपका!",
+   "mood": "chase",
+   "style": "intense, racing against time voice",
+   "visual": "Giant wooden horse flying at high speed through closing stone gap under cavern ceiling, sparkling blue magic trail."
+  },
+  {
+   "speaker": "N",
+   "text": "ज़रा सा बचा था... और वे दरवाज़ा बंद होने से ठीक एक सेकंड पहले बाहर निकल आए!",
+   "mood": "victory",
+   "style": "relieved, triumphant gasp",
+   "visual": "Magical wooden horse bursting out from underground banyan root hole into bright morning sunlight above ground."
+  },
+  {
+   "speaker": "N",
+   "text": "धड़ाम! गुफा का दरवाज़ा हमेशा के लिए सुरक्षित बंद हो गया, लेकिन पवित्र नदी का पानी उपवन के फव्वारे से फूट पड़ा!",
+   "mood": "victory",
+   "style": "grand, majestic narrator voice",
+   "visual": "Fresh clear water jetting out high from dried ancient temple fountain into sunny sky, garden surroundings."
+  },
+  {
+   "speaker": "N",
+   "text": "देखते ही देखते, मुरझाए हुए पेड़-पौधे फिर से हरे-भरे हो गए और रंग-बिरंगे फूल खिल उठे!",
+   "mood": "peaceful",
+   "style": "sweet, harmonious narration",
+   "visual": "Time-lapse effect of dry flowers blooming into vivid red, yellow, pink blossoms, lush green leaves returning."
+  },
+  {
+   "speaker": "C",
+   "text": "देखो पंडित जी! हमारा बगीचा फिर से मुस्कुरा रहा है!",
+   "mood": "victory",
+   "style": "joyful, cheerful child voice",
+   "visual": "A cute 7-year-old Indian boy, round cheerful face, big expressive brown eyes, short messy black hair, slim build, wearing a bright yellow cotton kurta and dark blue pyjama, running toward old priest with wide smile."
+  },
+  {
+   "speaker": "O",
+   "text": "जीते रहो रोहन बेटा! तुम्हारी समझदारी और ईमानदारी ने पूरे गाँव को जीवन दे दिया!",
+   "mood": "peaceful",
+   "style": "blessing, warm old man tone",
+   "visual": "An elderly 70-year-old Indian priest, wrinkled kind face, long white beard, calm gray eyes, wearing a simple saffron robe and wooden beads necklace, gently patting Rohan's head."
+  },
+  {
+   "speaker": "N",
+   "text": "काठ का घोड़ा वुडी वापस अपने छोटे आकार में आ गया और रोहन के हाथ में आ बैठा।",
+   "mood": "peaceful",
+   "style": "soft, gentle narration",
+   "visual": "A small hand-carved wooden toy horse with glowing turquoise patterns resting peacefully in boy's palm, shining softly in sunlight."
+  },
+  {
+   "speaker": "N",
+   "text": "गाँव के सभी बच्चे उपवन में दौड़ आए और रोहन व वुडी के साथ खुशी से खेलने लगे।",
+   "mood": "victory",
+   "style": "happy, celebrating voice",
+   "visual": "Indian children playing happily around blooming garden fountain, laughing under bright blue sunny sky."
+  },
+  {
+   "speaker": "N",
+   "text": "रोहन ने सीखा कि हिम्मत, ईमानदारी और समझदारी से हर कठिन चुनौती को पार किया जा सकता है।",
+   "mood": "peaceful",
+   "style": "inspiring moral lesson tone",
+   "visual": "A cute 7-year-old Indian boy, round cheerful face, big expressive brown eyes, short messy black hair, slim build, wearing a bright yellow cotton kurta and dark blue pyjama, standing proudly in blooming garden holding toy horse."
+  },
+  {
+   "speaker": "N",
+   "text": "प्यारे बच्चों! क्या आपको नन्हे रोहन और उसके उड़ते काठ के घोड़े की यह जादुई कहानी पसंद आई?",
+   "mood": "peaceful",
+   "style": "warm direct audience question",
+   "visual": "A cute 7-year-old Indian boy, round cheerful face, big expressive brown eyes, short messy black hair, slim build, wearing a bright yellow cotton kurta and dark blue pyjama, waving cheerfully at camera."
+  },
+  {
+   "speaker": "N",
+   "text": "अगर कहानी अच्छी लगी तो वीडियो को लाइक करें और अपने दोस्तों के साथ शेयर करना न भूलें!",
+   "mood": "peaceful",
+   "style": "enthusiastic closing call to action",
+   "visual": "Bright animated scene of colorful kites flying in sky over lush Indian village."
+  },
+  {
+   "speaker": "N",
+   "text": "ऐसी ही ढेरों जादुई और सीख भरी कहानियों के लिए 'कहानी पतंग' चैनल को अभी सब्सक्राइब करें!",
+   "mood": "victory",
+   "style": "bright, encouraging tone",
+   "visual": "Channel banner artwork displaying magical stories background with bright 'Kahani Patang' style elements."
+  },
+  {
+   "speaker": "N",
+   "text": "अगली बार देखिए: बिना छुए बजने वाली सोने की घंटी का रहस्य! नन्हे रोहन का नया रोमांच जल्द आ रहा है!",
+   "mood": "suspense",
+   "style": "exciting preview teaser tone",
+   "visual": "Teaser visual: A mysterious ancient golden bell floating inside a sunlit temple corridor, shimmering sparkles, mysterious atmospheric shot."
+  }
+ ]
+}
