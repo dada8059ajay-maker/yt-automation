@@ -1,0 +1,11 @@
+{
+ "_format": "Hark-written stories. long: {id, script} (raat long: {id, series, parts:[3 scripts]}); short: {id, script}. scene compact: s speaker, t text, m mood, st style, v visual, w character name. long scripts may carry 'trailer' (short script).",
+ "raat": {
+  "long": [],
+  "short": []
+ },
+ "kahani": {
+  "long": [],
+  "short": []
+ }
+}

@@ -1,8 +1,8 @@
 import json, datetime as dt, sys
 S = json.load(open("engine/state.json")); now = dt.datetime.now(dt.timezone.utc)
-TARGET = {"short": 7, "long": 7}
+TARGET = {"short": 21, "long": 21}   # zero-rest: keep 3 weeks scheduled/pre-rendered
 MAX_UPLOADS_24H = 5   # YouTube API quota guard (both channels share one Cloud project)
-MAX_QUEUE = 3         # pre-rendered videos waiting for quota
+MAX_QUEUE = 40        # warehouse of pre-rendered videos waiting for quota
 SPACING = {"short": 1.0, "long": 2.33}
 def iso(x): return dt.datetime.fromisoformat(x.replace("Z", "+00:00"))
 recent = len([u for u in S.get("_uploads", []) if (now - iso(u)).total_seconds() < 86400])
@@ -44,5 +44,5 @@ pre = ""
 if ch and left_avail == 0:
     if left_q < MAX_QUEUE: pre = "--prerender"
     else: ch = mode = ""
-reason = "minutes_cap" if MIN_STOP and not ch else "fill" if ch and not pre else ("prerender_quota_full" if pre else ("queue_full_wait_quota" if best else "schedule_full_7_days"))
+reason = "minutes_cap" if MIN_STOP and not ch else "fill" if ch and not pre else ("prerender_quota_full" if pre else ("queue_full_wait_quota" if best else "schedule_full_21_days"))
 print(f"comp={comp}\nch={ch}\nmode={mode}\npre={pre}\ndrain={'1' if drain else ''}\nreason={reason}")

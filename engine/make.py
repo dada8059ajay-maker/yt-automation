@@ -103,6 +103,7 @@ PROMPT = f"""तुम YouTube चैनल "{CFG['name']}" के मुख्�
 चैनल नियम: {CFG['brief']}
 पहले ही बन चुकी कहानियाँ (इनसे अलग विषय, जगह और ट्विस्ट): {hist}
 लंबाई: बोलने में लगभग {dur}। दृश्य: {n_scenes}।{SERIES_TXT}{TRAILER_TXT}
+हर 60-90 सेकंड (लगभग हर 8-10 दृश्य) में एक नया सस्पेंस मोड़/खुलासा ज़रूर हो।
 पहले 10 सेकंड का नियम (सख्त): कहानी कभी धीमी शुरुआत ("एक गाँव था...", "बहुत समय पहले...") से शुरू न हो। पहला ही वाक्य खौफनाक/रोमांचक सवाल या सीधा रहस्य हो, ताकि दर्शक 30 सेकंड तक न जाए।
 {"Short: पहली लाइन में ही ज़बरदस्त हुक; अंत में क्लिफ़हैंगर या चौंकाने वाला मोड़।" if MODE=="short" else "लंबा वीडियो: पहले 20 सेकंड में ठंडा हुक (कहानी का सबसे रोमांचक पल), फिर कहानी; लगभग 35% पर एक हल्की 1 लाइन सब्सक्राइब अपील एक छोटे पेऑफ़ के बाद (पहले 60 सेकंड में नहीं); अंत में मुख्य अपील + अगली कहानी की झलक।"}
 हर लाइन पर असली अभिनय सोचो: डर में काँपती फुसफुसाहट, भागने में हाँफती साँसें, गुस्से में गरज; mood से सीन का संगीत तय होगा (शुरुआत/शांत=peaceful, डर/रहस्य=suspense, भागना=chase, अंत की सीख/जीत=victory)।
@@ -118,10 +119,46 @@ speaker कोड: N=कथावाचक, M=युवा पुरुष, F=�
  "thumb_text": "थंबनेल पर 2-4 शब्द",
  "characters": {{"नाम": "English character sheet: age, face, eyes, hair, build, exact clothes + colors, Indian look"}},
  "scenes": [{{"speaker": "N", "text": "हिंदी लाइन (1-2 वाक्य); ज़रूरत हो तो '...' से रुकाव", "mood": "suspense|chase|peaceful|victory में से एक (BGM के लिए)", "style": "English voice-acting direction for this exact line, e.g. 'terrified, trembling, shaky low whisper' / 'out of breath, panting heavily as if just ran for life, gasping between words' / 'deep, booming, furious, terrifyingly loud' / 'warm, gentle storyteller'", "visual": "Precise English visual prompt, about 50 words: ONE main character in focus (exact character-sheet wording), action, Indian place, time of day, lighting, camera shot (medium/wide). No text, no hand close-ups."}}]}}"""
+# ---- story_bank.json: stories written by Hark; Gemini only when the bank is empty ----
+BANKSER = (SER or {}).get("bank") if RAATLONG else None
+def expand(x):
+    x = json.loads(json.dumps(x)); chars = x.get("characters", {})
+    sc2 = []
+    for c in x["scenes"]:
+        if "t" in c:
+            v = c.get("v", ""); w = c.get("w")
+            c = {"speaker": c.get("s", "N"), "text": c["t"], "mood": c.get("m", "suspense"), "style": c.get("st", "warm storyteller"),
+                 "visual": (chars[w] + ", " if w in chars else "") + v}
+        sc2.append(c)
+    x["scenes"] = sc2
+    x.setdefault("hook", x["title"][:20]); x.setdefault("thumb_text", x.get("hook", "")); x.setdefault("tags", []); x.setdefault("description", x.get("topic", ""))
+    return x
+def bank_pick():
+    global BANKSER
+    if MODE == "short" and LL and LL.get("trailer"): return expand(LL["trailer"])
+    try: B = json.load(open("engine/story_bank.json"))
+    except Exception: return None
+    used = STATE.setdefault("_bank", {}); today = dt.date.today().isoformat()
+    lst = B.get(CH, {}).get(MODE, [])
+    if RAATLONG:
+        if SER and BANKSER:
+            e = next((e for e in lst if e["id"] == BANKSER), None)
+            return expand(e["parts"][PART - 1]) if e and len(e["parts"]) >= PART else None
+        if SER: return None   # series started by Gemini -> Gemini continues it
+        for e in lst:
+            if e["id"] not in used and e.get("parts"):
+                used[e["id"]] = today; BANKSER = e["id"]; return expand(e["parts"][0])
+        return None
+    for e in lst:
+        if e["id"] not in used and e.get("script"):
+            used[e["id"]] = today; return expand(e["script"])
+    return None
 if os.path.exists(f"{OUT}/script.json"):
     S = json.load(open(f"{OUT}/script.json")); log("resume: script loaded")
 else:
-    S = gemini(PROMPT)
+    S = bank_pick()
+    if S: log("story from story_bank (Hark-written)")
+    else: S = gemini(PROMPT); log("story from Gemini (bank empty)")
     assert len(S.get("scenes", [])) >= 5, "too few scenes"
     json.dump(S, open(f"{OUT}/script.json", "w"), ensure_ascii=False, indent=1)
     checkpoint("script")
@@ -413,11 +450,11 @@ if MODE == "long":
 def after_success(vid=None):
     if MODE == "long":
         STATE[CH]["last_long"] = {"job": JOB, "title": S["title"][:90], "story": (S.get("so_far") or S.get("topic", ""))[:600],
-                                  "characters": S.get("characters", {}), "vid": vid, "short_done": False}
+                                  "characters": S.get("characters", {}), "vid": vid, "short_done": False, "trailer": S.get("trailer")}
     if MODE == "short" and LL: STATE[CH]["last_long"]["short_done"] = True
     if RAATLONG:
         STATE[CH]["series"] = {"name": S.get("series_name") or (SER or {}).get("name") or S["title"][:40], "part": PART,
-                               "so_far": S.get("so_far") or S.get("topic", ""), "characters": S.get("characters", {})}
+                               "so_far": S.get("so_far") or S.get("topic", ""), "characters": S.get("characters", {}), "bank": BANKSER}
     if MODE == "long":
         try:
             dur_s = float(subprocess.check_output(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", FINAL]).decode().strip())

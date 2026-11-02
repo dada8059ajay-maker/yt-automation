@@ -1,13 +1,14 @@
 name: make-video
 on:
   schedule:
-    - cron: "15 */3 * * *"
+    - cron: "7 * * * *"
   workflow_dispatch:
     inputs:
       channel: {description: "raat or kahani (blank = auto)", required: false, default: ""}
       mode: {description: "short or long (blank = auto)", required: false, default: ""}
 permissions:
   contents: write
+  actions: write
 concurrency:
   group: engine
   cancel-in-progress: false
@@ -97,3 +98,8 @@ jobs:
             git push -q origin HEAD:main && break
             sleep $((RANDOM % 10 + 5))
           done
+      - name: zero-rest chain (start the next video right away)
+        if: success() && steps.plan.outputs.ch != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run make.yml --ref main || true
