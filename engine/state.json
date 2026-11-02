@@ -66,19 +66,21 @@
    "नदी के उलटे बहाव में बहते जादुई दीये का पीछा करते नन्हे चिंटू की सच्चाई और ईमानदारी की सीख भरी जादुई खोज।",
    "सूखी नदी को फिर से बहाने के लिए नन्हे वीर और जादुई मोर की रोमांचक एवं शिक्षाप्रद यात्रा।",
    "सूखी नदी को फिर से बहाने के लिए नन्हे वीर का राजमहल के बंद कमरे में जादुई मोर ढूँढने का रोमांचक ट्रेलर।",
-   "नन्हे चिंटू द्वारा मंदिर के पुराने पीपल के तने में छुपी जादुई चाबी से एक अनोखा सच जानने की रोमांचक कहानी।"
+   "नन्हे चिंटू द्वारा मंदिर के पुराने पीपल के तने में छुपी जादुई चाबी से एक अनोखा सच जानने की रोमांचक कहानी।",
+   "नन्हा मन्नू और जादुई चिड़िया रंगीली जंगल के गायब होते रंगों को वापस लाने के लिए प्राचीन मंदिर की साहसिक यात्रा पर निकलते हैं।"
   ],
   "last_long": {
-   "job": "kahani_long_20261102_1105",
-   "title": "राजमहल के बंद कमरे का जादुई मोर और नन्हे वीर की रहस्यमयी खोज",
-   "story": "सूखी नदी को फिर से बहाने के लिए नन्हे वीर और जादुई मोर की रोमांचक एवं शिक्षाप्रद यात्रा।",
+   "job": "kahani_long_20261102_1200",
+   "title": "ग़ायब होते रंगों का राज़ और जादुई कमल | हिंदी कहानी",
+   "story": "नन्हा मन्नू और जादुई चिड़िया रंगीली जंगल के गायब होते रंगों को वापस लाने के लिए प्राचीन मंदिर की साहसिक यात्रा पर निकलते हैं।",
    "characters": {
-    "Veer": "8-year-old Indian boy, round curious face, bright brown eyes, short messy black hair, lean build, wearing a bright yellow cotton kurta and knee-length blue dhoti",
-    "Rajguru": "65-year-old Indian male, calm wrinkled face, kind dark eyes, long flowing white beard and hair, slim build, wearing an orange saffron robe with wooden bead necklace",
-    "Peacock": "An ancient carved wooden peacock figurine with glowing turquoise blue eyes, shimmering golden etched feathers, rustic Indian palace artifact look"
+    "Mannu": "7-year-old Indian boy, round cheerful face, big expressive brown eyes, short messy black hair, wearing a bright yellow cotton short-sleeved kurta and navy blue shorts.",
+    "Rangili": "A small magical hummingbird, iridescent glowing blue and emerald green feathers, tiny slender dark beak, glowing golden eyes, hovering with shimmering tiny wings.",
+    "Shadow Mist": "A soft shadowy dark blue cloud creature with big gentle glowing white eyes, non-scary ethereal smoke silhouette in an Indian fantasy temple background.",
+    "Wind Sage": "An ancient serene Indian sage, long flowing white beard, peaceful face, radiant golden skin, wearing a glowing white cotton dhoti, golden forehead tilak."
    },
    "vid": null,
-   "short_done": true,
+   "short_done": false,
    "trailer": null
   }
  },
@@ -241,6 +243,13 @@
    "mode": "short",
    "asset": "raat_short_20261102_1152.tar",
    "title": "नमक की खान का खौफनाक सच #shorts"
+  },
+  {
+   "job": "kahani_long_20261102_1200",
+   "ch": "kahani",
+   "mode": "long",
+   "asset": "kahani_long_20261102_1200.tar",
+   "title": "ग़ायब होते रंगों का राज़ और जादुई कमल | हिंदी कहानी"
   }
  ],
  "_draft": null,
@@ -319,10 +328,17 @@
    "title": "कुहासा वेधशाला के खौफनाक नियम - भाग 2",
    "dur": 132,
    "used": false
+  },
+  {
+   "asset": "lib_kahani_long_20261102_1200.mp4",
+   "ch": "kahani",
+   "title": "ग़ायब होते रंगों का राज़ और जादुई कमल | हिंदी कहानी",
+   "dur": 464,
+   "used": false
   }
  ],
  "_minutes": {
-  "2026-11": 656
+  "2026-11": 676
  },
  "_bank": {
   "kahani_s_patang01": "2026-11-02",
