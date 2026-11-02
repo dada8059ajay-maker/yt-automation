@@ -1,0 +1,94 @@
+gemini gemini-3.8-flash 429 {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on t
+gemini gemini-3.7-flash 429 {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on t
+gemini gemini-3.6-flash 429 {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on t
+gemini gemini-3.5-flash 429 {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on t
+gemini gemini-flash-latest TimeoutError('The read operation timed out')
+gemini gemini-pro-latest 429 {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on t
+gemini ok gemini-3.5-flash-lite
+gemini gemini-3.5-flash-lite JSONDecodeError('Expecting property name enclosed in double quotes: line 16 column 7 (char 1068)')
+gemini ok gemini-flash-lite-latest
+gemini gemini-flash-lite-latest JSONDecodeError('Expecting property name enclosed in double quotes: line 29 column 7 (char 1226)')
+gemini gemini-3.8-flash 429 {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on t
+gemini gemini-3.7-flash 429 {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on t
+gemini gemini-3.6-flash 429 {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on t
+gemini gemini-3.5-flash 429 {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on t
+gemini gemini-flash-latest 429 {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on t
+gemini gemini-pro-latest 429 {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on t
+gemini ok gemini-3.5-flash-lite
+gemini gemini-3.5-flash-lite JSONDecodeError('Expecting property name enclosed in double quotes: line 27 column 7 (char 1179)')
+gemini ok gemini-flash-lite-latest
+story from Gemini (bank empty)
+title: परछाइयों का गाँव: जहाँ जमीन खुद बोलने लगी! scenes: 26
+gtts gemini-2.5-flash-preview-tts 429 {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing deta
+gtts gemini-2.5-pro-preview-tts 429 {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing deta
+gtts gemini-2.5-flash-tts 404 {
+  "error": {
+    "code": 404,
+    "message": "models/gemini-2.5-flash-tts is not found for API version v1beta, or is n
+resume: script loaded
+title: परछाइयों का गाँव: जहाँ जमीन खुद बोलने लगी! scenes: 26
+gtts gemini-2.5-flash-preview-tts 429 {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing deta
+gtts gemini-2.5-pro-preview-tts 429 {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing deta
+gtts gemini-2.5-flash-tts 404 {
+  "error": {
+    "code": 404,
+    "message": "models/gemini-2.5-flash-tts is not found for API version v1beta, or is n
+resume: script loaded
+title: परछाइयों का गाँव: जहाँ जमीन खुद बोलने लगी! scenes: 26
+gtts gemini-2.5-flash-preview-tts 429 {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing deta
+gtts gemini-2.5-pro-preview-tts 429 {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing deta
+gtts gemini-2.5-flash-tts 404 {
+  "error": {
+    "code": 404,
+    "message": "models/gemini-2.5-flash-tts is not found for API version v1beta, or is n
