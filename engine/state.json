@@ -14,12 +14,13 @@
    "एक पुरानी बावड़ी की सातवीं सीढ़ी का शापित रहस्य जो इंसान की परछाईं छीन लेता है।",
    "नीलगिरि की सुनसान चोटी पर स्थित 100 साल पुरानी मौसम वेधशाला की पहली रात और उसके जानलेवा नियम।",
    "हवेली का रहस्य",
-   "पहाड़ी कस्बे के 80 साल पुराने फोटो स्टूडियो के डार्क रूम में डेवलप होती खौफनाक तस्वीर और मौत का सच।"
+   "पहाड़ी कस्बे के 80 साल पुराने फोटो स्टूडियो के डार्क रूम में डेवलप होती खौफनाक तस्वीर और मौत का सच।",
+   "नीलगिरि की चोटी पर स्थित 100 साल पुरानी वेधशाला में रात के 3:33 बजे सीढ़ियों पर भारी कदमों की आहट और परछाईं के काबू से बाहर होने का रहस्य।"
   ],
   "series": {
-   "name": "कुहासा वेधशाला के खौफनाक नियम",
-   "part": 1,
-   "so_far": "मौसम वैज्ञानिक अर्जुन नीलगिरि की वीरान चोटी पर स्थित 100 साल पुरानी 'कुहासा वेधशाला' में रात की ड्यूटी के लिए पहुँचता है। वहाँ का पुराना केयरटेकर किशन चाचा उसे रात में बचने के लिए चार सख्त नियम बताता है और भाग जाता है। आधी रात को बैरोमीटर शून्य पर गिरता है और खिड़की पर उसकी मृत माँ की आवाज़ गूँजती है। रात के 3:33 बजते ही वेधशाला की सीढ़ियों पर भारी कदमों की आहट होती है और अर्जुन की अपनी ही परछाईं उसके काबू से बाहर हो जाती है।",
+   "name": "कुहासा वेधशाला",
+   "part": 2,
+   "so_far": "मौसम वैज्ञानिक अर्जुन नीलगिरि की वीरान चोटी पर स्थित 100 साल पुरानी 'कुहासा वेधशाला' में रात की ड्यूटी पर पहुँचा। केयरटेकर किशन चाचा ने उसे चार सख्त नियम बताए और भाग गए। आधी रात को बैरोमीटर शून्य पर गिरा और खिड़की पर उसकी मृत माँ की आवाज़ गूँजी। अब रात के 3:33 बज चुके हैं और सीढ़ियों पर भारी कदमों की आहट आ रही है।",
    "characters": {
     "Arjun": "26 years old Indian man, lean athletic build, sharp wheatish face, tired dark brown eyes, messy short black hair, wearing a dark navy-blue fleece jacket over a grey t-shirt, rugged brown cargo pants, sturdy trekking boots.",
     "Kishan_Chacha": "62 years old Indian man, deeply wrinkled weather-beaten face, cloudy grey eyes, thin white stubble, stooped posture, wearing a faded olive-green woolen muffler, coarse grey Nehru vest over a soiled cream kurta, woolen brown trousers.",
@@ -28,16 +29,16 @@
    "bank": null
   },
   "last_long": {
-   "job": "raat_long_20261102_1015",
-   "title": "कुहासा वेधशाला की रात के 4 खौफनाक नियम: भाग 1",
-   "story": "मौसम वैज्ञानिक अर्जुन नीलगिरि की वीरान चोटी पर स्थित 100 साल पुरानी 'कुहासा वेधशाला' में रात की ड्यूटी के लिए पहुँचता है। वहाँ का पुराना केयरटेकर किशन चाचा उसे रात में बचने के लिए चार सख्त नियम बताता है और भाग जाता है। आधी रात को बैरोमीटर शून्य पर गिरता है और खिड़की पर उसकी मृत माँ की आवाज़ गूँजती है। रात के 3:33 बजते ही वेधशाला की सीढ़ियों पर भारी कदमों की आहट होती है और अर्जुन की अपनी ही परछाईं उसके काबू से बाहर हो जाती है।",
+   "job": "raat_long_20261102_1128",
+   "title": "कुहासा वेधशाला के खौफनाक नियम - भाग 2",
+   "story": "मौसम वैज्ञानिक अर्जुन नीलगिरि की वीरान चोटी पर स्थित 100 साल पुरानी 'कुहासा वेधशाला' में रात की ड्यूटी पर पहुँचा। केयरटेकर किशन चाचा ने उसे चार सख्त नियम बताए और भाग गए। आधी रात को बैरोमीटर शून्य पर गिरा और खिड़की पर उसकी मृत माँ की आवाज़ गूँजी। अब रात के 3:33 बज चुके हैं और सीढ़ियों पर भारी कदमों की आहट आ रही है।",
    "characters": {
     "Arjun": "26 years old Indian man, lean athletic build, sharp wheatish face, tired dark brown eyes, messy short black hair, wearing a dark navy-blue fleece jacket over a grey t-shirt, rugged brown cargo pants, sturdy trekking boots.",
     "Kishan_Chacha": "62 years old Indian man, deeply wrinkled weather-beaten face, cloudy grey eyes, thin white stubble, stooped posture, wearing a faded olive-green woolen muffler, coarse grey Nehru vest over a soiled cream kurta, woolen brown trousers.",
     "Mystery_Voice": "Disembodied supernatural presence, shadowy formless mist outside foggy glass panes."
    },
    "vid": null,
-   "short_done": true,
+   "short_done": false,
    "trailer": null
   }
  },
@@ -209,6 +210,13 @@
    "mode": "short",
    "asset": "kahani_short_20261102_1122.tar",
    "title": "राजमहल का रहस्यमयी जादुई मोर! 🦚✨ #shorts"
+  },
+  {
+   "job": "raat_long_20261102_1128",
+   "ch": "raat",
+   "mode": "long",
+   "asset": "raat_long_20261102_1128.tar",
+   "title": "कुहासा वेधशाला के खौफनाक नियम - भाग 2"
   }
  ],
  "_draft": null,
@@ -280,10 +288,17 @@
    "title": "राजमहल के बंद कमरे का जादुई मोर और नन्हे वीर की रहस्यमयी खोज",
    "dur": 378,
    "used": false
+  },
+  {
+   "asset": "lib_raat_long_20261102_1128.mp4",
+   "ch": "raat",
+   "title": "कुहासा वेधशाला के खौफनाक नियम - भाग 2",
+   "dur": 132,
+   "used": false
   }
  ],
  "_minutes": {
-  "2026-11": 619
+  "2026-11": 631
  },
  "_bank": {
   "kahani_s_patang01": "2026-11-02",
