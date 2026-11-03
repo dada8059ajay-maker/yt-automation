@@ -364,6 +364,12 @@ def flux(prompt, sd):
         except Exception as e:
             if "402" in repr(e) and "Authorization" in hdr: globals()["_POLL_ANON"] = True; log("pollinations key out of credit -> free anonymous FLUX"); continue
             log("pollinations retry", k, repr(e)[:100]); time.sleep(6 + 6 * k)
+    if os.environ.get("HF_TOKEN"):   # backup 2: HF serverless FLUX.1-schnell (Inference Providers)
+        try:
+            rq = urllib.request.Request("https://router.huggingface.co/hf-inference/models/black-forest-labs/FLUX.1-schnell",
+                json.dumps({"inputs": short}).encode(), {"Authorization": "Bearer " + os.environ["HF_TOKEN"], "Content-Type": "application/json"})
+            return good_img(urllib.request.urlopen(rq, timeout=120).read()), "hf-serverless-flux"
+        except Exception as e: log("hf serverless fail", repr(e)[:120])
     try:
         from gradio_client import Client
         import gradio_client.utils as _gcu   # Gradio/Pydantic schema bug: additionalProperties=False -> bool schema crashes the client
@@ -474,10 +480,33 @@ open(f"{OUT}/subs.ass", "w").write("\n".join(ass) + "\n")
 fps = 24
 pans = ["x='(iw-ow)*t/{D}':y='(ih-oh)/2'", "x='(iw-ow)*(1-t/{D})':y='(ih-oh)/2'",
         "x='(iw-ow)/2':y='(ih-oh)*t/{D}'", "x='(iw-ow)/2':y='(ih-oh)*(1-t/{D})'"]
+# Hero Scene Video Engine: Pika-Labs/pika-h3-flex (HF ZeroGPU, 2-4 clips/day) animates ONE scene only:
+# long = opening hook (scene 0), short = climax. No speech from Pika (its audio is dropped); voice stays the locked engine.
+HERO = 0 if MODE == "long" else max(0, len(S["scenes"]) * 2 // 3)
+if not os.path.exists(f"{OUT}/v{HERO:03d}.mp4") and not os.path.exists(f"{OUT}/pika_skip") and os.environ.get("NO_PIKA") != "1":
+    try:
+        from gradio_client import Client, handle_file
+        _pk = Client("Pika-Labs/pika-h3-flex", token=os.environ.get("HF_TOKEN") or None, verbose=False)
+        _r = _pk.predict(prompt=clean_prompt(S["scenes"][HERO]["visual"]) + ", cinematic slow camera motion, atmospheric, no speech, no talking, no text",
+                         mode="Frames", first_image=handle_file(f"{OUT}/i{HERO:03d}.jpg"), last_image=None, reference_files=[],
+                         resolution="768p", aspect="16:9" if MODE == "long" else "9:16", seconds=10 if MODE == "long" else 5,
+                         seed=seed, randomize=False, api_name="/generate")
+        _f = _r[0] if isinstance(_r, (list, tuple)) else _r
+        _f = _f.get("video", _f) if isinstance(_f, dict) else _f
+        shutil.copy(_f, f"{OUT}/v{HERO:03d}.mp4"); log("pika hero clip OK scene", HERO)
+    except Exception as e:
+        open(f"{OUT}/pika_skip", "w").write(repr(e)[:300]); log("pika skipped -> HD photo", repr(e)[:160])
 clips = []
 for i, sc in enumerate(S["scenes"]):   # (b) scene_XX = its own picture locked to exactly its own audio
     d = sc["dur"] + (END if i == len(S["scenes"]) - 1 else 0)
     c = f"{OUT}/scene_{i+1:02d}.mkv"
+    if os.path.exists(f"{OUT}/v{i:03d}.mp4"):
+        r = subprocess.run(["ffmpeg", "-y", "-v", "error", "-stream_loop", "-1", "-i", f"{OUT}/v{i:03d}.mp4", "-i", wav_of(i), "-filter_complex",
+            f"[0:v]scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},setsar=1,fps={fps},fade=t=in:st=0:d=0.2,format=yuv420p[v];[1:a]apad=whole_dur={d:.3f}[a]",
+            "-map", "[v]", "-map", "[a]", "-t", f"{d:.3f}", "-r", str(fps), "-c:v", "libx264", "-preset", "ultrafast", "-crf", "20", "-threads", "4",
+            "-c:a", "pcm_s16le", "-ar", "48000", "-ac", "2", c])
+        if r.returncode == 0: clips.append(c); continue
+        log("pika clip render failed -> photo")
     nsub = max(1, math.ceil(d / 3.5)); dk = d / nsub; ins, fc = [], ""
     for k in range(nsub):   # explainer rule: no framing holds > 3.5 s (pan / tilt / punch-in 1.3x)
         z = 1.3 if k % 2 else 1.0; sw, sh = int(CW * z) // 2 * 2, int(CH2 * z) // 2 * 2
