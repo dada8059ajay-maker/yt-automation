@@ -1,10 +1,3 @@
-probe long_lived_user_token: OK (expires_in=never)
-social=1
-probe FB_USER_TOKEN info: type=USER app_match=True valid=True scopes=['pages_show_list', 'business_management', 'instagram_basic', 'instagram_content_publish', 'pages_read_engagement', 'pages_manage_posts', 'public_profile'] err=None
-probe FB_PAGE_ACCESS_TOKEN info: type=USER app_match=True valid=True scopes=['pages_show_list', 'business_management', 'instagram_basic', 'instagram_content_publish', 'pages_read_engagement', 'pages_manage_posts', 'public_profile'] err=None
-probe app_id_secret: OK
-probe user_token_secret: OK
-probe page: dada ji id=1438083699388542 token_expires=never
-probe instagram: @dada.8059ajay id=17841466106972533
-probe permissions: OK
-PROBE_RESULT=PASS
+probe app_id_secret: MISSING
+probe user_token_secret: MISSING (FB_USER_TOKEN not set)
+PROBE_RESULT=FAIL
