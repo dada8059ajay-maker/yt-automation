@@ -261,7 +261,16 @@
   "2026-11-03T08:45:45Z"
  ],
  "_queue": [],
- "_draft": null,
+ "_draft": {
+  "job": "raat_long_20261103_1127",
+  "ch": "raat",
+  "mode": "long",
+  "asset": "draft_raat_long_20261103_1127.tar",
+  "stage": "imgwait: image servers out of free credit at 3/15",
+  "tries": 0,
+  "fest": null,
+  "engine": "kokoro"
+ },
  "_library": [
   {
    "asset": "lib_raat_long_20261101_0811.mp4",
@@ -434,7 +443,7 @@
   }
  ],
  "_minutes": {
-  "2026-11": 2751
+  "2026-11": 2760
  },
  "_bank": {
   "kahani_s_patang01": "2026-11-02",
@@ -464,16 +473,5 @@
   "wait_until": "2026-11-04T08:05:00+00:00"
  },
  "_fm_dead": "2026-11-03",
- "_parked": [
-  {
-   "job": "raat_long_20261103_1127",
-   "ch": "raat",
-   "mode": "long",
-   "asset": "draft_raat_long_20261103_1127.tar",
-   "stage": "revoice in kokoro",
-   "tries": 0,
-   "fest": null,
-   "engine": "kokoro"
-  }
- ]
+ "_parked": []
 }
