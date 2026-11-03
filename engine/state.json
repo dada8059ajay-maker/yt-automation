@@ -448,19 +448,22 @@
  "_bank": {
   "kahani_s_patang01": "2026-11-02",
   "raat_s_dastak01": "2026-11-02",
-  "kahani_l_bargad01": "2026-11-03",
-  "kahani_l_diwali01": "2026-11-03",
   "kahani_l_dahaad01": "2026-11-03",
   "raat_l_yamdeep01": "2026-11-03"
  },
  "_gemini_wait": "2026-11-04T08:05:00+00:00",
  "_engine_b_dead": "2026-11-03",
- "_redo_delete": [],
+ "_redo_delete": [
+  "0f21gj4pVes",
+  "c10dlzb3Aq0"
+ ],
  "_redo_jobs": [
-  "raat_long_20261103_1023",
-  "raat_short_20261103_1054",
   "kahani_long_20261103_1101",
-  "kahani_long_20261103_1115"
+  "kahani_long_20261103_1115",
+  "kahani_long_20261103_1345",
+  "kahani_long_20261103_1415",
+  "raat_long_20261103_1023",
+  "raat_short_20261103_1054"
  ],
  "_waiting_gemini": {
   "job": "kahani_long_20261103_1433",
@@ -485,5 +488,30 @@
    "fest": null,
    "engine": "kokoro"
   }
+ ],
+ "_unschedule": [
+  "J8hLmymuOO8",
+  "Af0V5FKK59I",
+  "ZgDggM9hQZA",
+  "8rcSlaM0wWc",
+  "POXQlCP9PVM",
+  "XNV3pFTmOv8",
+  "OY0EXp-VYSY",
+  "QukmVkwr0xE",
+  "OSEIMkMZAiw",
+  "BpZ0p_t2qRA",
+  "K43KZoQdY5k",
+  "hylg8zUWphw",
+  "8BPWu574m00",
+  "ZnFCYW4hJvE",
+  "uHfWNg16Vs4",
+  "CbRHsm894gg"
+ ],
+ "_hold_jobs": [
+  "raat_short_20261102_1527",
+  "rkk_ep01_s2",
+  "rkk_ep01_s3",
+  "rkk_ep01_s4",
+  "rkk_ep01_s5"
  ]
 }

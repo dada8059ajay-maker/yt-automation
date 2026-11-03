@@ -139,7 +139,7 @@ Explainer Reel Style (सख्त): कथावाचक किताब न�
 {"Short: पहली लाइन में ही ज़बरदस्त हुक; अंत में क्लिफ़हैंगर या चौंकाने वाला मोड़।" if MODE=="short" else "लंबा वीडियो: पहले 20 सेकंड में ठंडा हुक (कहानी का सबसे रोमांचक पल), फिर कहानी; लगभग 35% पर एक हल्की 1 लाइन सब्सक्राइब अपील एक छोटे पेऑफ़ के बाद (पहले 60 सेकंड में नहीं); अंत में मुख्य अपील + अगली कहानी की झलक।"}
 हर लाइन पर असली अभिनय सोचो: डर में काँपती फुसफुसाहट, भागने में हाँफती साँसें, गुस्से में गरज; mood से सीन का संगीत तय होगा (शुरुआत/शांत=peaceful, डरावना=horror, रहस्य=suspense, भागना=chase, अंत की सीख/जीत=victory)।
 लिखने के बाद खुद संपादित करो: फालतू शब्द और दोहराव हटाओ, छोटी लाइनें, स्वाभाविक बोलचाल की हिंदी, हर लाइन कहानी आगे बढ़ाए।
-पहले हर किरदार की पक्की Character Sheet बनाओ (अंग्रेज़ी में: उम्र, चेहरा, आँखें, बाल, कद-काठी, कपड़े और रंग, भारतीय परिवेश)। हर दृश्य के visual में उस दृश्य के किरदार की Character Sheet के शब्द हूबहू दोहराओ ताकि हर तस्वीर में वह एक जैसा दिखे।
+पहले हर किरदार की पक्की Character Sheet बनाओ (अंग्रेज़ी में: उम्र, चेहरा, आँखें, बाल, कद-काठी, कपड़े और रंग, भारतीय परिवेश)। हर दृश्य का visual (अंग्रेज़ी) उस लाइन की असली घटना दिखाए: पहले जगह, वस्तु और एक्शन (जैसे "old man climbing a broken wooden ladder onto a village rooftop placing lit diyas at night"), फिर किरदार का छोटा परिचय। चेहरे का क्लोज़-अप, कैमरे को घूरता चेहरा या पोर्ट्रेट कभी नहीं; हमेशा चौड़ा दृश्य। शराब/बोतल कभी नहीं। text में सिर्फ़ बोले जाने वाले कहानी के हिंदी शब्द हों: कोई अभिनय-निर्देश, कोष्ठक या "धीरे से/रोते हुए" जैसा निर्देश text में कभी नहीं (वह सिर्फ़ style में)। पूरी कहानी एक ही कथावाचक सुनाए (speaker हमेशा N)।
 speaker कोड: N=कथावाचक, M=युवा पुरुष, F=युवा महिला, O=बूढ़ा आदमी, A=बूढ़ी औरत, C=बच्चा, G=रहस्यमयी/भूतिया आवाज़।
 सिर्फ़ यह JSON लौटाओ:
 {{"title": "हिंदी शीर्षक, जिज्ञासा जगाने वाला, 70 अक्षर से कम{' + #shorts' if MODE=='short' else ''}",
@@ -148,7 +148,7 @@ speaker कोड: N=कथावाचक, M=युवा पुरुष, F=�
  "tags": ["8-12 टैग"],
  "hook": "स्क्रीन पर पहले 3 सेकंड दिखने वाला 3-5 शब्द का हुक",
  "thumb_text": "थंबनेल पर सिर्फ 2-4 बड़े चौंकाने वाले शब्द",
- "thumb_visual": "English: extreme close-up of the main character face with clear fear/shock (kids: wonder/surprise), cinematic lighting",
+ "thumb_visual": "English: the most dramatic story moment as a wide 2D illustrated scene with the main character reacting, no portrait",
  "category": "raat: rules|village ; kahani: jungle|magic",
  "characters": {{"नाम": "English character sheet: age, face, eyes, hair, build, exact clothes + colors, Indian look"}},
  "scenes": [{{"speaker": "N", "text": "हिंदी लाइन (1-2 वाक्य); ज़रूरत हो तो '...' से रुकाव", "mood": "horror|suspense|chase|peaceful|victory में से एक (BGM के लिए)", "style": "English voice-acting direction for this exact line, e.g. 'terrified, trembling, shaky low whisper' / 'out of breath, panting heavily as if just ran for life, gasping between words' / 'deep, booming, furious, terrifyingly loud' / 'warm, gentle storyteller'", "visual": "Precise English visual prompt, about 50 words: ONE main character in focus (exact character-sheet wording), action, Indian place, time of day, lighting, camera shot (medium/wide). No text, no hand close-ups."}}]}}"""
@@ -171,7 +171,7 @@ def expand(x):
         if "t" in c:
             v = c.get("v", ""); w = c.get("w")
             c = {"speaker": c.get("s", "N"), "text": c["t"], "mood": c.get("m", "suspense"), "style": c.get("st", "warm storyteller"),
-                 "visual": (chars[w] + ", " if w in chars else "") + v}
+                 "visual": v + (", " + chars[w][:110] if w in chars else "")}
         sc2.append(c)
     x["scenes"] = sc2
     x.setdefault("hook", x["title"][:20]); x.setdefault("thumb_text", x.get("hook", "")); x.setdefault("tags", []); x.setdefault("description", x.get("topic", ""))
@@ -261,6 +261,27 @@ def split_chunk(cw, idx):
         subprocess.run(["ffmpeg", "-y", "-v", "error", "-i", cw, "-ss", f"{edges[j]:.3f}", "-to", f"{edges[j+1]:.3f}", "-af",
             "silenceremove=start_periods=1:start_threshold=-45dB,areverse,silenceremove=start_periods=1:start_threshold=-45dB,areverse,aformat=channel_layouts=stereo:sample_rates=48000",
             wav_of(i)], check=True)
+# ---- Clean-Dialogue rule v3: only the story words are spoken; one narrator voice for the whole video ----
+_DIR = ["धीरे", "साँस", "सांस", "फफक", "रोते हुए", "हाँफ", "हांफ", "काँपती", "कांपती", "फुसफुसा", "आवाज़ भारी", "रुक कर", "रुककर", "गहरी साँस", "चीखते हुए"]
+def clean_line(t):
+    t = re.sub(r"\([^)]*\)|\[[^\]]*\]|\{[^}]*\}|<[^>]*>|\*[^*]*\*", " ", t)
+    t = re.sub(r"^\s*(Narrator|Character|कथावाचक|[A-Z]{1,2})\s*[:：]\s*", "", t)
+    t = re.sub(r"(ज़रूर|जरूर|बिल्कुल)[,!]?\s*(मैं|मै)[^।!?]*?(पढ़|बोल)[^।!?]*[।!?]?", " ", t)
+    parts = re.split(r"(?<=[,।!?])\s+", t)
+    parts = [x for x in parts if not (len(x) < 40 and any(d in x for d in _DIR) and re.search(r"(हुए|कर|रही|रहा)\W*$", x.strip()))]
+    return re.sub(r"\s+", " ", " ".join(parts)).strip(" ,") or t.strip()
+_changed = []
+for i, sc in enumerate(S["scenes"]):
+    c = clean_line(sc["text"])
+    if c != sc["text"]: _changed.append(i); sc["text"] = c
+    sc["speaker"] = "N"   # one storyteller voice from start to end
+if S.get("rules_v", 0) < 3:   # made under old rules: rebuild every picture (2D story-action), re-voice only lines whose words changed
+    for f in os.listdir(OUT):
+        if re.match(r"(i\d{3}\.jpg|r\d{3}|v\d{3}\.mp4|pika_skip)$", f): os.remove(f"{OUT}/{f}")
+    if S.get("voice_engine") == "gemini": _changed = list(range(len(S["scenes"])))
+    for i in _changed:
+        if os.path.exists(f"{OUT}/scene_{i+1:02d}.wav"): os.remove(f"{OUT}/scene_{i+1:02d}.wav")
+    S["character_voice_map"] = None; S["rules_v"] = 3; log("rules v3: pictures rebuilt, re-voiced lines", _changed)
 if S.get("voice_engine") and S["voice_engine"] != ENGINE and not any(os.path.exists(wav_of(i)) for i in range(len(S["scenes"]))):
     log("voice engine relocked", S["voice_engine"], "->", ENGINE, "(no line voiced yet, whole video in one engine)"); S["voice_engine"] = None; S["character_voice_map"] = None
 S["voice_engine"] = S.get("voice_engine") or ENGINE
@@ -360,12 +381,12 @@ for g_i, idx in enumerate(groups):
     if all(os.path.exists(wav_of(i)) for i in idx): continue   # resumed draft
     if out_of_time(): pause(f"voices chunk {g_i}")
     others = [c for c in dict.fromkeys(S["scenes"][i].get("speaker", "N") for i in idx) if c != "N"]
-    spk = ["N"] + others[:1]      # Gemini allows 2 voices per call: narrator + main character of this chunk
+    spk = ["N"]      # one storyteller voice for the whole video
     lines = []
     for i in idx:
         sc = S["scenes"][i]; who = "Narrator" if sc.get("speaker", "N") == "N" or len(spk) == 1 else "Character"
-        lines.append(f"({sc.get('style') or 'natural expressive storyteller'}) {who}: {sc['text']}")
-    prompt = ("You are a top Hindi explainer-reel creator and voice actor, speaking natural conversational Indian Hindi. The Narrator never sounds "
+        lines.append(sc['text'])
+    prompt = ("You are a top Hindi explainer-reel creator and voice actor, speaking natural conversational Indian Hindi. Speak ONLY the Hindi lines given below, word for word: never add any word of your own, never say that you will read, never speak any instruction. The Narrator never sounds "
               "like reading a book: he talks straight to the viewer, eye to eye, building mystery, punchy and slightly fast, rising on questions, "
               "dropping low on reveals. Characters fully act their lines. Read every line in order, fully acting the "
               "direction in brackets: when a character runs or is scared, the panting, breathing, gasps and trembling must be inside the "
@@ -388,7 +409,9 @@ import time, urllib.parse, io
 from PIL import Image, ImageFilter, ImageEnhance, ImageOps
 seed = random.randint(1, 10**6)
 CW, CH2 = int(W * 1.15), int(H * 1.15)
-SUFFIX = "single character focus, accurate anatomy, no extra limbs, no extra fingers, one face, high detail, sharp focus"
+SUFFIX = "wide shot, full scene with setting and objects visible, characters small to medium in frame, nobody looking at camera, no close-up, no portrait, no alcohol, no text, no watermark"
+STYLE2D = ("2D dark horror animated illustration, Indian village setting, wide cinematic storytelling shot showing the exact action:" if CH == "raat"
+           else "2D vibrant Indian cartoon animation style, Panchatantra storybook 2D art, wide scene showing the exact action:")
 def cover(img):
     r = max(CW / img.width, CH2 / img.height)
     img = img.resize((math.ceil(img.width * r), math.ceil(img.height * r)), Image.LANCZOS)
@@ -398,11 +421,11 @@ def _fit(img):
     if img.width < 300: raise ValueError("tiny image")
     return img
 def clean_prompt(visual):
-    """<=120 chars, plain English words only (Pollinations fails on special characters)"""
+    """2D style + the scene's exact action first, then a short look of the character, then no-portrait rules (plain English, <=420 chars)"""
     t = re.sub(r"[^A-Za-z0-9 ,]", " ", visual); t = re.sub(r"\s+", " ", t).strip()
-    tail = ", cinematic HD"; room = 120 - len(tail)
+    room = 420 - len(STYLE2D) - len(SUFFIX) - 4
     if len(t) > room: t = t[:room].rsplit(" ", 1)[0]
-    return (t + tail)[:120]
+    return f"{STYLE2D} {t}, {SUFFIX}"
 def good_img(data):
     if len(data) < 40_000: raise ValueError(f"small file {len(data)}")
     img = Image.open(io.BytesIO(data)).convert("RGB")
@@ -413,12 +436,12 @@ def flux(prompt, sd):
     short = clean_prompt(prompt)
     for k in range(5):
         url = ("https://image.pollinations.ai/prompt/" + urllib.parse.quote(short) +
-               f"?model=flux&width={W}&height={H}&nologo=true&enhance=true&seed={random.randint(1, 2**31 - 1)}")
+               f"?model=flux&width={1344 if W > H else 768}&height={768 if W > H else 1344}&nologo=true&enhance=false&seed={random.randint(1, 2**31 - 1)}")
         hdr = {"User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36"}
         if os.environ.get("POLLINATIONS_TOKEN") and not globals().get("_POLL_ANON"): hdr["Authorization"] = "Bearer " + os.environ["POLLINATIONS_TOKEN"]
         try:
             img = good_img(urllib.request.urlopen(urllib.request.Request(url, headers=hdr), timeout=150).read())
-            if "Authorization" not in hdr: img = img.crop((0, 0, img.width, int(img.height * 0.94)))   # free anonymous tier: trim watermark strip
+            if "Authorization" not in hdr: img = img.crop((int(img.width * 0.04), 0, int(img.width * 0.96), int(img.height * 0.90)))   # free tier: cut the bottom-corner watermark (cover() re-fits without stretching)
             return img, "pollinations-flux" + ("-free" if "Authorization" not in hdr else "")
         except Exception as e:
             if "402" in repr(e) and "Authorization" in hdr: globals()["_POLL_ANON"] = True; log("pollinations key out of credit -> free anonymous FLUX"); continue
