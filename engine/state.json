@@ -112,7 +112,16 @@
   "2026-11-02T10:03:32Z"
  ],
  "_queue": [],
- "_draft": null,
+ "_draft": {
+  "job": "raat_long_20261103_1023",
+  "ch": "raat",
+  "mode": "long",
+  "asset": "draft_raat_long_20261103_1023.tar",
+  "stage": "engine B (openai-audio) failed at scene 3",
+  "tries": 1,
+  "fest": "raat_l_yamdeep01",
+  "engine": "openai"
+ },
  "_library": [
   {
    "asset": "lib_raat_long_20261101_0811.mp4",
@@ -250,11 +259,12 @@
   }
  ],
  "_minutes": {
-  "2026-11": 2576
+  "2026-11": 2584
  },
  "_bank": {
   "kahani_s_patang01": "2026-11-02",
-  "raat_s_dastak01": "2026-11-02"
+  "raat_s_dastak01": "2026-11-02",
+  "raat_l_yamdeep01": "2026-11-03"
  },
  "_gemini_wait": "2026-11-03T08:05:00+00:00"
 }
