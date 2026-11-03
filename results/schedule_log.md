@@ -13,3 +13,4 @@
 - रात के किस्से | long | नरक चतुर्दशी की रात: यम के दीये के 3 नियम | हिंदी हॉरर कहानी | Sat 07 Nov 2026 10:30 PM IST | https://studio.youtube.com/video/O5z-r5akjY8/edit
 - रात के किस्से | short | यम का दीया बुझा, तो दरवाज़ा खुला! #shorts | Sun 08 Nov 2026 07:00 PM IST | https://studio.youtube.com/video/AWO0B1huzOk/edit
 - कहानी पतंग | long | बोलता बरगद और ज़हर की साज़िश | जादुई हिंदी कहानी | Sat 07 Nov 2026 06:00 PM IST | https://studio.youtube.com/video/SmfDZyrHPF0/edit
+- कहानी पतंग | long | शेर की खोई दहाड़ और चालाक बंदर | जंगल की मज़ेदार कहानी | Sun 08 Nov 2026 06:00 PM IST | https://studio.youtube.com/video/z31h1iLKCDU/edit
