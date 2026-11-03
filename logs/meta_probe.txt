@@ -1,5 +1,3 @@
-probe long_lived_user_token: FAIL An unexpected error has occurred. Please retry your request later.
-probe page_token_secret: FAIL (#100) Tried accessing nonexisting field (instagram_business_account)
-probe app_id_secret: OK
-probe user_token_secret: OK
+probe app_id_secret: MISSING
+probe user_token_secret: MISSING (FB_USER_TOKEN not set)
 PROBE_RESULT=FAIL
