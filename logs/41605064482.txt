@@ -1,0 +1,108 @@
+story from story_bank (Hark-written)
+title: बोलता बरगद और ज़हर की साज़िश | जादुई हिंदी कहानी scenes: 17
+voice engine: openai-audio (locked) 17 calls
+img 0 pollinations-flux
+pollinations key out of credit -> free anonymous FLUX
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+pollinations retry 3 <HTTPError 402: 'Payment Required'>
+pollinations retry 4 <HTTPError 503: 'Service Unavailable'>
+hf serverless fail <HTTPError 403: 'Forbidden'>
+hf flux fail AppError('You have exceeded your free ZeroGPU quota (90s requested vs. 0s left). Try again in 0:00:00. Subscribe to Hugging Face PRO to get 
+resume: script loaded
+title: बोलता बरगद और ज़हर की साज़िश | जादुई हिंदी कहानी scenes: 17
+voice engine: openai-audio (locked) 17 calls
+img 1 pollinations-flux
+pollinations key out of credit -> free anonymous FLUX
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+pollinations retry 3 <HTTPError 402: 'Payment Required'>
+img 2 pollinations-flux-free
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+pollinations retry 3 <HTTPError 503: 'Service Unavailable'>
+pollinations retry 4 <HTTPError 402: 'Payment Required'>
+hf serverless fail <HTTPError 403: 'Forbidden'>
+hf flux fail AppError('You have exceeded your free ZeroGPU quota (90s requested vs. 0s left). Try again in 0:00:00. Subscribe to Hugging Face PRO to get 
+resume: script loaded
+title: बोलता बरगद और ज़हर की साज़िश | जादुई हिंदी कहानी scenes: 17
+voice engine: openai-audio (locked) 17 calls
+img 3 pollinations-flux
+pollinations key out of credit -> free anonymous FLUX
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+pollinations retry 3 <HTTPError 402: 'Payment Required'>
+img 4 pollinations-flux-free
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+img 5 pollinations-flux-free
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+img 6 pollinations-flux-free
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+pollinations retry 3 <HTTPError 503: 'Service Unavailable'>
+pollinations retry 4 <HTTPError 402: 'Payment Required'>
+hf serverless fail <HTTPError 403: 'Forbidden'>
+hf flux fail AppError('You have exceeded your free ZeroGPU quota (90s requested vs. 0s left). Try again in 0:00:00. Subscribe to Hugging Face PRO to get 
+resume: script loaded
+title: बोलता बरगद और ज़हर की साज़िश | जादुई हिंदी कहानी scenes: 17
+voice engine: openai-audio (locked) 17 calls
+pollinations retry 0 <HTTPError 503: 'Service Unavailable'>
+pollinations key out of credit -> free anonymous FLUX
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+pollinations retry 3 <HTTPError 402: 'Payment Required'>
+img 7 pollinations-flux-free
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+img 8 pollinations-flux-free
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+img 9 pollinations-flux-free
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+img 10 pollinations-flux-free
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+img 11 pollinations-flux-free
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+img 12 pollinations-flux-free
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+img 13 pollinations-flux-free
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+img 14 pollinations-flux-free
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+pollinations retry 3 <HTTPError 503: 'Service Unavailable'>
+pollinations retry 4 <HTTPError 402: 'Payment Required'>
+hf serverless fail <HTTPError 403: 'Forbidden'>
+hf flux fail AppError('You have exceeded your free ZeroGPU quota (90s requested vs. 0s left). Try again in 0:00:00. Subscribe to Hugging Face PRO to get 
+resume: script loaded
+title: बोलता बरगद और ज़हर की साज़िश | जादुई हिंदी कहानी scenes: 17
+voice engine: openai-audio (locked) 17 calls
+img 15 pollinations-flux
+pollinations key out of credit -> free anonymous FLUX
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+pollinations retry 3 <HTTPError 402: 'Payment Required'>
+img 16 pollinations-flux-free
+pika skipped -> HD photo AppError('Conditioner: You have exceeded your ZeroGPU runs limit. Subscribe to Hugging Face PRO to get 40 min of ZeroGPU quota a day - https://huggingface.co/su
+rendered /home/runner/work/yt-automation/yt-automation/out/kahani_long_20261103_1345/kahani_long_20261103_1345.mp4 164.1 s
+slot 2026-11-07T12:30:00Z Sat 07 Nov 06:00 PM IST
+UPLOADED c10dlzb3Aq0
+preview https://github.com/dada8059ajay-maker/yt-automation/releases/download/ready-queue/kahani_long_20261103_1345.mp4
