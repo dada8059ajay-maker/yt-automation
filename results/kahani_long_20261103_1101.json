@@ -1,0 +1,24 @@
+{
+ "job": "kahani_long_20261103_1101",
+ "videos": [
+  {
+   "id": "SmfDZyrHPF0",
+   "status": {
+    "uploadStatus": "uploaded",
+    "privacyStatus": "private",
+    "publishAt": "2026-11-07T12:30:00Z",
+    "license": "youtube",
+    "embeddable": true,
+    "publicStatsViewable": true,
+    "selfDeclaredMadeForKids": true,
+    "containsSyntheticMedia": false
+   },
+   "thumb": "ok",
+   "playlist_new": "PLFCCAIm3tn_Q",
+   "playlist": {
+    "ERROR": 409,
+    "body": "{\n  \"error\": {\n    \"code\": 409,\n    \"message\": \"The operation was aborted.\",\n    \"errors\": [\n      {\n        \"domain\": \"youtube.CoreErrorDomain\",\n        \"reason\": \"SERVICE_UNAVAILABLE\"\n      }\n    ],\n    \"status\": \"ABORTED\"\n  }\n}\n"
+   }
+  }
+ ]
+}
