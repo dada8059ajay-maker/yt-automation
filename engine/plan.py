@@ -43,12 +43,17 @@ dr = S.get("_draft")
 if dr and dr.get("tries", 0) >= 4: dr = None          # a draft that keeps failing is abandoned
 import os as _os
 GEM_DEAD = (S.get("_gemini_wait") or "") > now.isoformat()
-B_OK = bool(_os.environ.get("POLLINATIONS_TOKEN")) and S.get("_engine_b_dead") != now.date().isoformat()
-engine = "openai" if GEM_DEAD else "gemini"
+_today = now.astimezone(dt.timezone(dt.timedelta(hours=5, minutes=30))).date().isoformat() if hasattr(now, "astimezone") else ""
+B_OK = S.get("_fm_dead") not in (now.date().isoformat(), _today) or (bool(_os.environ.get("POLLINATIONS_TOKEN")) and S.get("_engine_b_dead") != now.date().isoformat())
+engine = "gemini" if not GEM_DEAD else ("openai" if B_OK else "kokoro")   # local Kokoro on GitHub CPU never runs out
+if not dr:   # Zero-Rework: finish a parked unfinished video before starting anything new
+    for _p in S.get("_parked") or []:
+        _e = _p.get("engine") or "gemini"
+        if (_e == "gemini" and not GEM_DEAD) or (_e == "openai" and B_OK) or _e in ("kokoro", "parler"): dr = _p; break
 W = S.get("_waiting_gemini")
 if dr and (dr.get("engine") or "gemini") == "gemini" and GEM_DEAD: dr = None
 if dr and dr.get("engine") == "openai" and not B_OK: dr = None
-if GEM_DEAD and not B_OK and not forced: best = None; MIN_STOP = True; ch = mode = ""   # nothing can speak right now
+# (local Kokoro always can speak, so the engine never stops for voices)
 if not GEM_DEAD and W and not dr and not forced: ch, mode, best = W["ch"], W["mode"], (0, W["ch"], W["mode"], -100)   # Gemini back: finish the waiting video in its own voices
 # festival first: an unused festival long, then its trailer short (gemini-reserved ones wait for Gemini)
 if not forced and not MIN_STOP and not (W and not GEM_DEAD):

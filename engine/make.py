@@ -30,6 +30,15 @@ ENGINE = _d.get("engine") or os.environ.get("VOICE_ENGINE") or "gemini"   # one 
 try:   # a pending festival story beats an ordinary unfinished draft of the same channel+mode
     if MODE == "long" and not _d.get("fest") and _d.get("ch") == CH and any(e["id"] not in STATE.get("_bank", {}) and e.get("engine", ENGINE) == ENGINE for e in json.load(open("engine/story_bank.json")).get(CH, {}).get("festival", [])): _d = {}
 except Exception: pass
+_old = STATE.get("_draft") or {}
+_fest_first = bool(_old) and not _d and _old.get("ch") == CH and _old.get("mode") == MODE
+if not _fest_first and not (_d.get("ch") == CH and _d.get("mode") == MODE):   # nothing in hand for this channel+mode: pick up a parked unfinished video of this channel+mode
+    for _p in list(STATE.get("_parked") or []):
+        if _p.get("ch") == CH and _p.get("mode") == MODE and (_p.get("engine") or "gemini") == (os.environ.get("VOICE_ENGINE") or "gemini"):
+            _d = dict(_p); STATE["_parked"].remove(_p); print("resume parked draft", _d["job"], flush=True); break
+if _old and _old.get("job") != _d.get("job"):   # Zero-Rework: never drop an unfinished video, park it
+    STATE.setdefault("_parked", []); STATE["_parked"] = [x for x in STATE["_parked"] if x.get("job") != _old["job"]] + [_old]
+    STATE["_draft"] = None; print("parked draft", _old["job"], flush=True)
 DRAFT = _d if _d.get("ch") == CH and _d.get("mode") == MODE and _d.get("tries", 0) < 4 else None
 TRIES = (DRAFT or {}).get("tries", 0) + 1
 JOB = DRAFT["job"] if DRAFT else f"{CH}_{MODE}_{STAMP}"
@@ -40,7 +49,7 @@ def checkpoint(stage):
     asset = f"draft_{JOB}.tar"
     with tarfile.open(asset, "w") as t:
         for f in os.listdir(OUT):
-            if f.endswith((".json", ".mp3", ".jpg", ".txt")) and not f.startswith(("clips", "bg")): t.add(os.path.join(OUT, f), arcname=f"{JOB}/{f}")
+            if (f.endswith((".json", ".mp3", ".jpg", ".txt", ".mp4")) or (f.startswith("scene_") and f.endswith(".wav"))) and not f.startswith(("clips", "bg")): t.add(os.path.join(OUT, f), arcname=f"{JOB}/{f}")
     r = subprocess.run(["gh", "release", "upload", "drafts", asset, "--clobber"])
     STATE["_draft"] = {"job": JOB, "ch": CH, "mode": MODE, "asset": asset, "stage": stage,
                        "tries": TRIES, "fest": (FEST or {}).get("id"), "engine": ENGINE}
@@ -257,8 +266,31 @@ OAV = {"raat": {"N": "onyx", "M": "echo", "F": "shimmer", "O": "ash", "A": "sage
        "kahani": {"N": "fable", "M": "echo", "F": "shimmer", "O": "onyx", "A": "sage", "C": "nova", "G": "ash"}}[CH if CH in ("raat", "kahani") else "raat"]
 S["character_voice_map"] = S.get("character_voice_map") or (OAV if S["voice_engine"] == "openai" else GV)
 json.dump(S, open(f"{OUT}/script.json", "w"), ensure_ascii=False, indent=1)
+def fm_tts(text, voice, style):
+    """Engine B, free door: openai.fm (same OpenAI gpt-4o-mini-tts voices, no key, no balance). Same voice name = same voice."""
+    if STATE.get("_fm_dead") == dt.date.today().isoformat(): return None
+    import uuid
+    bd = "----hk" + uuid.uuid4().hex
+    flds = (("input", text), ("voice", voice), ("prompt", f"Speak natural Indian Hindi exactly as written. Acting: {style}. Real human emotion, breathing."), ("vibe", "null"))
+    body = ("".join(f'--{bd}\r\nContent-Disposition: form-data; name="{k}"\r\n\r\n{v}\r\n' for k, v in flds) + f"--{bd}--\r\n").encode()
+    for k in range(3):
+        try:
+            rq = urllib.request.Request("https://www.openai.fm/api/generate", body, {"Content-Type": "multipart/form-data; boundary=" + bd,
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124 Safari/537.36", "Origin": "https://www.openai.fm", "Referer": "https://www.openai.fm/"})
+            r = urllib.request.urlopen(rq, timeout=120); d = r.read()
+            if "audio" in (r.headers.get("content-type") or "") and len(d) > 2000: return d
+            log("openai.fm non-audio", r.headers.get("content-type"))
+        except urllib.error.HTTPError as e:
+            log("openai.fm", e.code)
+            if e.code in (403, 429) and "html" in (e.headers.get("content-type") or ""):   # bot wall
+                STATE["_fm_dead"] = dt.date.today().isoformat(); _save_state(); return None
+        except Exception as e: log("openai.fm", repr(e)[:120])
+        time.sleep(8 * (k + 1))
+    return None
 def oa_tts(text, voice, style):
-    """Engine B: OpenAI gpt-4o-mini-tts through Pollinations (openai-audio). Same voice per character for the whole video."""
+    """Engine B: OpenAI gpt-4o-mini-tts. Free openai.fm first, then Pollinations (openai-audio). Same voice per character for the whole video."""
+    d = fm_tts(text, voice, style)
+    if d: return d
     tok = os.environ.get("POLLINATIONS_TOKEN", "")
     body = {"model": "openai-audio", "modalities": ["text", "audio"], "audio": {"voice": voice, "format": "mp3"},
             "messages": [{"role": "system", "content": f"You are a professional Hindi voice actor. Say the user's Hindi line exactly, word for word, nothing else. Acting direction: {style}. Natural Indian Hindi, real emotion, breathing and whispers inside the voice."},
@@ -294,6 +326,31 @@ if S["voice_engine"] == "openai":
         if i % 4 == 3: checkpoint(f"voices {i+1}/{len(S['scenes'])}")
         time.sleep(3)
     log("voice engine: openai-audio (locked)", len(S["scenes"]), "calls")
+# Engine C/D: local open-source voices on the GitHub CPU (no API, no quota). One engine per video, locked.
+KOKV = {"raat": {"N": "hm_omega", "M": "hm_omega", "F": "hf_alpha", "O": "hm_psi", "A": "hf_beta", "C": "hf_beta", "G": "hm_omega"},
+        "kahani": {"N": "hm_psi", "M": "hm_omega", "F": "hf_alpha", "O": "hm_omega", "A": "hf_beta", "C": "hf_beta", "G": "hm_psi"}}[CH if CH in ("raat", "kahani") else "raat"]
+PARV = {"N": "Rohit", "M": "Rohit", "F": "Divya", "O": "Karan", "A": "Divya", "C": "Divya", "G": "Karan"}
+if S["voice_engine"] in ("kokoro", "parler"):
+    import soundfile as sf, numpy as np
+    if S["voice_engine"] == "kokoro":
+        from kokoro import KPipeline; _kp = KPipeline(lang_code="h")
+    else:
+        from parler_tts import ParlerTTSForConditionalGeneration; from transformers import AutoTokenizer
+        _pm = ParlerTTSForConditionalGeneration.from_pretrained("ai4bharat/indic-parler-tts"); _pt = AutoTokenizer.from_pretrained("ai4bharat/indic-parler-tts")
+        _pd = AutoTokenizer.from_pretrained(_pm.config.text_encoder._name_or_path)
+    for i, sc in enumerate(S["scenes"]):
+        if os.path.exists(wav_of(i)): continue
+        if out_of_time(): pause(f"voices scene {i}")
+        spk = sc.get("speaker", "N")
+        if S["voice_engine"] == "kokoro":
+            a = np.concatenate([x[2] for x in _kp(sc["text"], voice=KOKV.get(spk, KOKV["N"]), speed=0.95)]); sr = 24000
+        else:
+            desc = f"{PARV.get(spk, 'Rohit')} speaks Hindi expressively: {sc.get('style') or 'natural storyteller'}. Very clear audio, close to the microphone, moderate pace."
+            a = _pm.generate(input_ids=_pd(desc, return_tensors="pt").input_ids, prompt_input_ids=_pt(sc["text"], return_tensors="pt").input_ids).cpu().numpy().squeeze(); sr = _pm.config.sampling_rate
+        sf.write(f"{OUT}/o.wav", a, sr)
+        subprocess.run(["ffmpeg", "-y", "-v", "error", "-i", f"{OUT}/o.wav", "-af", "aformat=channel_layouts=stereo:sample_rates=48000", wav_of(i)], check=True)
+        if i % 4 == 3: checkpoint(f"voices {i+1}/{len(S['scenes'])}")
+    log("voice engine:", S["voice_engine"], "(local, locked)", len(S["scenes"]), "scenes")
 n_sc = len(S["scenes"]); per = math.ceil(n_sc / NCHUNK)
 groups = [list(range(k, min(k + per, n_sc))) for k in range(0, n_sc, per)]
 for g_i, idx in enumerate(groups):
@@ -319,7 +376,7 @@ for g_i, idx in enumerate(groups):
     checkpoint(f"voices {g_i+1}/{len(groups)}")
     if g_i + 1 < len(groups): time.sleep(22)   # free tier ~3 req/min
 if S["voice_engine"] == "gemini": log("voice engine: gemini", TTS_MODEL, len(groups), "calls")
-GAP = 0.35
+GAP = 0.6   # natural pause after each line (reading time for subtitles)
 for i, sc in enumerate(S["scenes"]):
     sc["dur"] = dur_of(wav_of(i)) + GAP   # (a) exact scene audio length via ffprobe
     if MODE == "long" and "?" in sc["text"] and CFG["madeForKids"]: sc["dur"] += 2.5  # pause after a question to kids
@@ -425,7 +482,25 @@ RENDER_EST = 3 if MODE == "short" else 9   # minutes the final render needs
 if (_t.time() - T0) / 60 + RENDER_EST > BUDGET_MIN + 12: pause("before render")
 def finish_draft():
     if STATE.get("_draft"):
-        subprocess.run(["gh", "release", "delete-asset", "drafts", STATE["_draft"]["asset"], "-y"]); STATE["_draft"] = None
+        checkpoint("done (audio vault)"); STATE["_draft"] = None; _save_state()   # Zero-Rework: voices are never deleted
+# ---------------- Zero-Rework pre-render gate: 100% check before FFmpeg ----------------
+import hashlib
+_h = {}
+for i, sc in enumerate(S["scenes"]):
+    f = f"{OUT}/i{i:03d}.jpg"
+    if not os.path.exists(f) or os.path.getsize(f) < 20000: pause(f"imgwait: scene {i+1} has no real picture")
+    im = Image.open(f).convert("L").resize((16, 16)); px = list(im.getdata()); av = sum(px) / len(px)
+    ah = "".join("1" if v > av else "0" for v in px); fl = "".join("".join(ah[r*16:(r+1)*16][::-1]) for r in range(16))
+    for j, (h0, f0) in _h.items():
+        if sum(x != y for x, y in zip(ah, h0)) <= 6 or sum(x != y for x, y in zip(fl, h0)) <= 6:
+            log("pre-check: scene", i + 1, "repeats/mirrors scene", j + 1, "-> new picture"); os.remove(f)
+            pause(f"imgwait: scene {i+1} duplicate of {j+1}")
+    _h[i] = (ah, f)
+    w = wav_of(i)
+    if not os.path.exists(w) or dur_of(w) < 0.4 * max(1, len(sc["text"].split())) * 0.25:
+        if os.path.exists(w): os.remove(w)
+        pause(f"voices scene {i}: audio missing/too short")
+log("pre-check OK:", len(S["scenes"]), "unique pictures, full audio for every scene")
 # ---------------- 4. subtitles + render ----------------
 FONT = "Noto Sans Devanagari"
 fs = 100 if MODE == "short" else 74

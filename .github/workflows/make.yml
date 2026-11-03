@@ -61,10 +61,14 @@ jobs:
             ~/.cache/pip
           key: engine-v2-api
           restore-keys: engine-v2
+      - if: steps.plan.outputs.ch != '' && (steps.plan.outputs.engine == 'kokoro' || steps.plan.outputs.engine == 'parler')
+        uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
       - if: steps.plan.outputs.ch != ''
         run: |
           sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg fonts-noto-core >/dev/null
           pip install -q pillow gradio_client   # no CPU image model any more (API pictures only)
+          if [ "${{ steps.plan.outputs.engine }}" = kokoro ] || [ "${{ steps.plan.outputs.engine }}" = parler ]; then sudo apt-get install -y -qq espeak-ng >/dev/null; pip install -q torch --index-url https://download.pytorch.org/whl/cpu; pip install -q "kokoro>=0.9.4" soundfile; pip install -q git+https://github.com/huggingface/parler-tts.git || true; fi
           gh release view drafts >/dev/null 2>&1 || gh release create drafts --title "unfinished drafts" --notes "checkpointed unfinished videos" --prerelease
           gh release view library >/dev/null 2>&1 || gh release create library --title "story library" --notes "finished long videos for weekly compilations" --prerelease
           gh release view queue >/dev/null 2>&1 || gh release create queue --title "render queue" --notes "pre-rendered videos waiting for YouTube quota" --prerelease
