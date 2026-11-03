@@ -42,6 +42,14 @@ if ut and APP_ID and APP_SEC and ut != M.get("seed"):
     if bootstrap(ut): M["seed"] = ut; enc(M)
 elif M.get("user_token") and APP_ID and APP_SEC and (NOW - dt.datetime.fromisoformat(M["user_set"])).days >= 45:
     bootstrap(M["user_token"])   # roll the 60-day user token forward before it lapses
+pt0 = os.environ.get("FB_PAGE_ACCESS_TOKEN", "").strip()
+if pt0 and not M.get("page_token"):
+    me = call("GET", f"{G}/me", access_token=pt0, fields="id,name,instagram_business_account{id,username}")
+    if me.get("id"):
+        ig = me.get("instagram_business_account") or {}
+        M.update(page_id=me["id"], page_name=me.get("name"), page_token=pt0, ig_id=ig.get("id"), ig_user=ig.get("username")); enc(M)
+        say("page_token_secret", "OK (FB_PAGE_ACCESS_TOKEN used)")
+    else: say("page_token_secret", f"FAIL {me.get('error', {}).get('message', me)}"[:300])
 if PROBE:
     say("app_id_secret", "OK" if APP_ID and APP_SEC else "MISSING")
     say("user_token_secret", "OK" if ut or M.get("user_token") else "MISSING (FB_USER_TOKEN not set)")
