@@ -1,0 +1,14 @@
+story from story_bank (Hark-written)
+title: नरक चतुर्दशी की रात: यम के दीये के 3 नियम | हिंदी हॉरर कहानी scenes: 16
+oatts 422 {"success":false,"error":{"message":"400 Bad Request: azure-openai error: The response was filtered due to the prompt triggering Azure OpenAI's content manageme
+oatts 422 {"success":false,"error":{"message":"400 Bad Request: azure-openai error: The response was filtered due to the prompt triggering Azure OpenAI's content manageme
+oatts 422 {"success":false,"error":{"message":"400 Bad Request: azure-openai error: The response was filtered due to the prompt triggering Azure OpenAI's content manageme
+oatts 422 {"success":false,"error":{"message":"400 Bad Request: azure-openai error: The response was filtered due to the prompt triggering Azure OpenAI's content manageme
+oatts 422 {"success":false,"error":{"message":"400 Bad Request: azure-openai error: The response was filtered due to the prompt triggering Azure OpenAI's content manageme
+resume: script loaded
+title: नरक चतुर्दशी की रात: यम के दीये के 3 नियम | हिंदी हॉरर कहानी scenes: 16
+oatts 422 {"success":false,"error":{"message":"400 Bad Request: azure-openai error: The response was filtered due to the prompt triggering Azure OpenAI's content manageme
+oatts 422 {"success":false,"error":{"message":"400 Bad Request: azure-openai error: The response was filtered due to the prompt triggering Azure OpenAI's content manageme
+oatts 422 {"success":false,"error":{"message":"400 Bad Request: azure-openai error: The response was filtered due to the prompt triggering Azure OpenAI's content manageme
+oatts 422 {"success":false,"error":{"message":"400 Bad Request: azure-openai error: The response was filtered due to the prompt triggering Azure OpenAI's content manageme
+oatts 422 {"success":false,"error":{"message":"400 Bad Request: azure-openai error: The response was filtered due to the prompt triggering Azure OpenAI's content manageme
