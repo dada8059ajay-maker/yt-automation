@@ -118,7 +118,7 @@
   "mode": "long",
   "asset": "draft_raat_long_20261103_1023.tar",
   "stage": "engine B (openai-audio) failed at scene 3",
-  "tries": 0,
+  "tries": 3,
   "fest": "raat_l_yamdeep01",
   "engine": "openai"
  },
@@ -259,7 +259,7 @@
   }
  ],
  "_minutes": {
-  "2026-11": 2591
+  "2026-11": 2598
  },
  "_bank": {
   "kahani_s_patang01": "2026-11-02",
