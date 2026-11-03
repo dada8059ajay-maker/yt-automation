@@ -1,4 +1,3 @@
-probe long_lived_user_token: FAIL Error validating client secret.
-probe app_id_secret: OK
-probe user_token_secret: OK
+probe app_id_secret: MISSING
+probe user_token_secret: MISSING (FB_USER_TOKEN not set)
 PROBE_RESULT=FAIL
