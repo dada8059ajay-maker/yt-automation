@@ -1,0 +1,72 @@
+name: jules-autonomous-factory
+on:
+  schedule:
+    - cron: "15 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: jules_engine
+  cancel-in-progress: false
+
+jobs:
+  jules-factory:
+    runs-on: ubuntu-latest
+    timeout-minutes: 80
+    env:
+      GH_TOKEN: ${{ github.token }}
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+      YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+      HF_TOKEN: ${{ secrets.HF_TOKEN }}
+      FB_APP_ID: ${{ secrets.FB_APP_ID }}
+      FB_APP_SECRET: ${{ secrets.FB_APP_SECRET }}
+      FB_USER_TOKEN: ${{ secrets.FB_USER_TOKEN }}
+      FB_PAGE_ACCESS_TOKEN: ${{ secrets.FB_PAGE_ACCESS_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Setup System
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg fonts-noto-core
+          pip install -q requests
+
+      - name: Safe state fetch (avoid conflicts)
+        run: |
+          git fetch origin main
+          git checkout origin/main -- jules_engine/jules_state.json || true
+
+      - name: Run Auto-Story Writer
+        run: python3 jules_engine/story_writer.py
+
+      - name: Render Batch Shorts/Reels
+        run: python3 jules_engine/batch_reels.py
+
+      - name: Render Mega Video
+        run: python3 jules_engine/make_mega_video.py
+
+      - name: Schedule & Drip Publish
+        run: python3 jules_engine/scheduler.py
+
+      - name: Commit State & Queue
+        run: |
+          git config user.name "jules-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git fetch origin main && git reset --hard origin/main
+          git checkout origin/main -- jules_engine/jules_state.json || true
+
+          # Only stage specific Jules files to never conflict with the other engine
+          git add jules_engine/jules_state.json docs/jules_preview.html jules_engine/jules_story_bank.json jules_engine/jules-ready-queue/
+
+          git commit -m "jules_engine: state update [skip ci]" || echo "nothing to commit"
+
+          for try in 1 2 3; do
+            git push origin HEAD:main && break
+            git pull --rebase origin main
+            sleep $((RANDOM % 5 + 2))
+          done
