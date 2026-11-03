@@ -364,6 +364,108 @@
       }
      ]
     }
+   },
+   {
+    "id": "raat_s_kuan01",
+    "script": {
+     "title": "कुएँ से माँ की लोरी किसने गाई? #shorts",
+     "topic": "गाँव का रहस्य",
+     "description": "काल्पनिक कहानी — केवल मनोरंजन के लिए। आधी रात का रहस्यमयी कुआँ।",
+     "tags": [
+      "horror",
+      "हिंदी हॉरर",
+      "रात के किस्से",
+      "shorts"
+     ],
+     "hook": "कुएँ की लोरी",
+     "thumb_text": "कुएँ की आवाज़",
+     "characters": {
+      "Meera": "Indian woman, 25, long black braid, faded cotton saree, brave frightened eyes",
+      "Dadi": "Elderly Indian woman, 70, white saree, silver hair, faint glow"
+     },
+     "scenes": [
+      {
+       "s": "N",
+       "t": "रात के बारह बजे गाँव का पुराना कुआँ अपने आप किसी का नाम पुकारने लगा।",
+       "m": "suspense",
+       "st": "whisper, eerie",
+       "v": "Old Indian village stone well at midnight, fog, moonlight",
+       "w": "Meera"
+      },
+      {
+       "s": "M",
+       "t": "मीरा ने सुना, उस आवाज़ में उसकी मरी हुई माँ की लोरी थी।",
+       "m": "suspense",
+       "st": "trembling",
+       "v": "Meera, young Indian woman in cotton saree, standing frozen near well, lantern",
+       "w": "Meera"
+      },
+      {
+       "s": "N",
+       "t": "गाँव वाले कहते थे, कुआँ उसी को बुलाता है जिसका कोई अपना वहाँ डूबा हो।",
+       "m": "suspense",
+       "st": "slow, ominous",
+       "v": "Elders whispering by a temple courtyard at dusk",
+       "w": "Meera"
+      },
+      {
+       "s": "M",
+       "t": "वह रुकना चाहती थी, पर पैर अपने आप कुएँ की ओर बढ़ने लगे।",
+       "m": "chase",
+       "st": "breathless",
+       "v": "Meera's bare feet walking on dusty path toward well, mist",
+       "w": "Meera"
+      },
+      {
+       "s": "N",
+       "t": "तभी पीछे से किसी ने उसकी कलाई पकड़ ली, हाथ बर्फ़ जैसा ठंडा था।",
+       "m": "chase",
+       "st": "fast, tense",
+       "v": "Cold pale hand gripping Meera's wrist in dark, lantern flicker",
+       "w": "Meera"
+      },
+      {
+       "s": "M",
+       "t": "पलटकर देखा तो उसकी दादी थीं, जो दस साल पहले गुज़र चुकी थीं।",
+       "m": "suspense",
+       "st": "shaky, whisper",
+       "v": "Elderly Indian grandmother in white saree with faint glow, night village",
+       "w": "Meera"
+      },
+      {
+       "s": "F",
+       "t": "दादी बोलीं, बेटी, लोरी मत सुन, वो तेरी माँ नहीं है।",
+       "m": "suspense",
+       "st": "urgent whisper",
+       "v": "Grandmother's worried face, misty night",
+       "w": "Meera"
+      },
+      {
+       "s": "N",
+       "t": "कुएँ के भीतर से एक हँसी गूँजी, और पानी में दो चमकती आँखें उभरीं।",
+       "m": "suspense",
+       "st": "low, menacing",
+       "v": "Well water with two glowing eyes, ripples",
+       "w": "Meera"
+      },
+      {
+       "s": "N",
+       "t": "दादी ने मीरा के गले का ताबीज़ कुएँ की ओर बढ़ाया, और आवाज़ अचानक थम गई।",
+       "m": "suspense",
+       "st": "slow",
+       "v": "Amulet glowing faintly over well, Meera and grandmother",
+       "w": "Meera"
+      },
+      {
+       "s": "N",
+       "t": "आगे क्या हुआ? पूरी कहानी देखने के लिए नीचे दिए गए वीडियो पर क्लिक करें!",
+       "m": "suspense",
+       "st": "slow, ominous",
+       "v": "Dark village well under moon, one lantern glowing",
+       "w": "Meera"
+      }
+     ]
+    }
    }
   ],
   "festival": [
