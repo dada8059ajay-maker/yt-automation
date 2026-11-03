@@ -427,7 +427,7 @@
   }
  ],
  "_minutes": {
-  "2026-11": 2654
+  "2026-11": 2656
  },
  "_bank": {
   "kahani_s_patang01": "2026-11-02",
@@ -435,12 +435,7 @@
  },
  "_gemini_wait": "2026-11-03T08:05:00+00:00",
  "_engine_b_dead": "2026-11-03",
- "_redo_delete": [
-  "O5z-r5akjY8",
-  "AWO0B1huzOk",
-  "SmfDZyrHPF0",
-  "z31h1iLKCDU"
- ],
+ "_redo_delete": [],
  "_redo_jobs": [
   "raat_long_20261103_1023",
   "raat_short_20261103_1054",
