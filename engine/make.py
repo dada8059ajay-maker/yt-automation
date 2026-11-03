@@ -262,7 +262,11 @@ def oa_tts(text, voice, style):
     body = {"model": "openai-audio", "modalities": ["text", "audio"], "audio": {"voice": voice, "format": "mp3"},
             "messages": [{"role": "system", "content": f"You are a professional Hindi voice actor. Say the user's Hindi line exactly, word for word, nothing else. Acting direction: {style}. Natural Indian Hindi, real emotion, breathing and whispers inside the voice."},
                          {"role": "user", "content": text}]}
-    for k in range(5):
+    variants = [body["messages"],
+                [{"role": "system", "content": "You are a text-to-speech narrator for a family storytelling channel. Read the given Hindi story line aloud exactly as written."}, {"role": "user", "content": text}],
+                [{"role": "user", "content": "कृपया यह कहानी की पंक्ति ज्यों की त्यों पढ़िए: " + text}]]
+    for k in range(6):
+        body["messages"] = variants[min(k, len(variants) - 1)]
         try:
             req = urllib.request.Request("https://gen.pollinations.ai/v1/chat/completions", json.dumps(body).encode(),
                                          {"Content-Type": "application/json", "Authorization": "Bearer " + tok})
@@ -270,6 +274,7 @@ def oa_tts(text, voice, style):
             return base64.b64decode(r["choices"][0]["message"]["audio"]["data"])
         except urllib.error.HTTPError as e:
             m = e.read().decode()[:160]; log("oatts", e.code, m)
+            if e.code in (400, 422) and k < 5: time.sleep(3); continue   # content filter: same voice, softer prompt (never another engine)
             if e.code in (401, 402, 403):
                 STATE["_engine_b_dead"] = dt.date.today().isoformat(); _save_state(); return None
             time.sleep(20 * (k + 1))
@@ -359,6 +364,12 @@ def flux(prompt, sd):
             log("pollinations retry", k, repr(e)[:100]); time.sleep(6 + 6 * k)
     try:
         from gradio_client import Client
+        import gradio_client.utils as _gcu   # Gradio/Pydantic schema bug: additionalProperties=False -> bool schema crashes the client
+        for _fn in ("get_type", "_json_schema_to_python_type"):
+            _orig = getattr(_gcu, _fn, None)
+            if _orig and not getattr(_orig, "_boolsafe", False):
+                def _safe(schema, *a, _o=_orig, **k): return "bool" if isinstance(schema, bool) else _o(schema, *a, **k)
+                _safe._boolsafe = True; setattr(_gcu, _fn, _safe)
         global _hf
         if _hf is None:
             _tk = os.environ.get("HF_TOKEN") or None

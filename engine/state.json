@@ -118,7 +118,7 @@
   "mode": "long",
   "asset": "draft_raat_long_20261103_1023.tar",
   "stage": "engine B (openai-audio) failed at scene 3",
-  "tries": 2,
+  "tries": 0,
   "fest": "raat_l_yamdeep01",
   "engine": "openai"
  },
