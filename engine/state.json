@@ -262,7 +262,16 @@
   "2026-11-03T10:05:33Z"
  ],
  "_queue": [],
- "_draft": null,
+ "_draft": {
+  "job": "raat_long_20261103_1127",
+  "ch": "raat",
+  "mode": "long",
+  "asset": "draft_raat_long_20261103_1127.tar",
+  "stage": "imgwait: image servers out of free credit at 6/15",
+  "tries": 0,
+  "fest": null,
+  "engine": "kokoro"
+ },
  "_library": [
   {
    "asset": "lib_raat_long_20261101_0811.mp4",
@@ -442,7 +451,7 @@
   }
  ],
  "_minutes": {
-  "2026-11": 2789
+  "2026-11": 2799
  },
  "_bank": {
   "kahani_s_patang01": "2026-11-02",
@@ -452,10 +461,7 @@
  },
  "_gemini_wait": "2026-11-04T08:05:00+00:00",
  "_engine_b_dead": "2026-11-03",
- "_redo_delete": [
-  "0f21gj4pVes",
-  "c10dlzb3Aq0"
- ],
+ "_redo_delete": [],
  "_redo_jobs": [
   "kahani_long_20261103_1101",
   "kahani_long_20261103_1115",
@@ -476,41 +482,31 @@
   "wait_until": "2026-11-04T08:05:00+00:00"
  },
  "_fm_dead": "2026-11-03",
- "_parked": [
-  {
-   "job": "raat_long_20261103_1127",
-   "ch": "raat",
-   "mode": "long",
-   "asset": "draft_raat_long_20261103_1127.tar",
-   "stage": "imgwait: image servers out of free credit at 3/15",
-   "tries": 0,
-   "fest": null,
-   "engine": "kokoro"
-  }
- ],
- "_unschedule": [
-  "J8hLmymuOO8",
-  "Af0V5FKK59I",
-  "ZgDggM9hQZA",
-  "8rcSlaM0wWc",
-  "POXQlCP9PVM",
-  "XNV3pFTmOv8",
-  "OY0EXp-VYSY",
-  "QukmVkwr0xE",
-  "OSEIMkMZAiw",
-  "BpZ0p_t2qRA",
-  "K43KZoQdY5k",
-  "hylg8zUWphw",
-  "8BPWu574m00",
-  "ZnFCYW4hJvE",
-  "uHfWNg16Vs4",
-  "CbRHsm894gg"
- ],
+ "_parked": [],
+ "_unschedule": [],
  "_hold_jobs": [
   "raat_short_20261102_1527",
   "rkk_ep01_s2",
   "rkk_ep01_s3",
   "rkk_ep01_s4",
   "rkk_ep01_s5"
+ ],
+ "_unscheduled_done": [
+  "8BPWu574m00",
+  "8rcSlaM0wWc",
+  "Af0V5FKK59I",
+  "BpZ0p_t2qRA",
+  "CbRHsm894gg",
+  "J8hLmymuOO8",
+  "K43KZoQdY5k",
+  "OSEIMkMZAiw",
+  "OY0EXp-VYSY",
+  "POXQlCP9PVM",
+  "QukmVkwr0xE",
+  "XNV3pFTmOv8",
+  "ZgDggM9hQZA",
+  "ZnFCYW4hJvE",
+  "hylg8zUWphw",
+  "uHfWNg16Vs4"
  ]
 }
