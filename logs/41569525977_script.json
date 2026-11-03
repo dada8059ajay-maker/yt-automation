@@ -1,0 +1,209 @@
+{
+ "title": "बोलता बरगद और ज़हर की साज़िश | जादुई हिंदी कहानी",
+ "topic": "जादुई और रहस्यमयी कहानियाँ",
+ "category": "kahani: magic",
+ "description": "एक बच्चे और उसके तोते ने कैसे गाँव के सौ साल पुराने बरगद को बचाया। सीख: सच्चाई और हिम्मत।\n#KahaniPatang #HindiKahani #MoralStories",
+ "tags": [
+  "बच्चों की कहानी",
+  "हिंदी कहानी",
+  "कहानी पतंग",
+  "moral stories in hindi",
+  "bedtime stories hindi",
+  "jadui kahani"
+ ],
+ "hook": "पेड़ ने कहा मुझे बचा लो",
+ "thumb_text": "पेड़ बोला!",
+ "characters": {
+  "Veeru": "Indian boy, 9, wavy black hair, green kurta, cloth bag on shoulder, brave eyes",
+  "Moti": "small white cartoon parrot with red beak, very talkative"
+ },
+ "scenes": [
+  {
+   "speaker": "N",
+   "text": "ज़रा सोचिए, आपके गाँव का सबसे पुराना पेड़ एक रात आपसे कहे, मुझे बचा लो!",
+   "mood": "suspense",
+   "style": "direct, warm, mysterious",
+   "visual": "Indian boy, 9, wavy black hair, green kurta, cloth bag on shoulder, brave eyes, Giant ancient banyan tree at night, glowing faint green, Indian village"
+  },
+  {
+   "speaker": "N",
+   "text": "आज की कहानी है वीरू की, और उस बरगद की जो सौ साल से गाँव की रखवाली कर रहा था।",
+   "mood": "peaceful",
+   "style": "friendly storyteller",
+   "visual": "Indian boy, 9, wavy black hair, green kurta, cloth bag on shoulder, brave eyes, Boy standing under huge banyan tree, village kids playing, sunny day"
+  },
+  {
+   "speaker": "N",
+   "text": "वीरू रोज़ स्कूल से लौटकर उसकी जड़ों पर बैठता और अपने तोते मोती से बातें करता।",
+   "mood": "peaceful",
+   "style": "calm",
+   "visual": "Indian boy, 9, wavy black hair, green kurta, cloth bag on shoulder, brave eyes, Boy sitting on banyan roots with white parrot on shoulder"
+  },
+  {
+   "speaker": "O",
+   "text": "मोती बोला, वीरू! आज पेड़ उदास है, उसके पत्ते पीले क्यों हो रहे हैं?",
+   "mood": "suspense",
+   "style": "chirpy, worried",
+   "visual": "small white cartoon parrot with red beak, very talkative, Parrot pointing wing at yellowing banyan leaves"
+  },
+  {
+   "speaker": "N",
+   "text": "उसी रात वीरू को सपने में एक बूढ़ी आवाज़ आई, मेरी जड़ में ज़हर है, तीन दिन बचे हैं।",
+   "mood": "suspense",
+   "style": "slow, deep, mysterious",
+   "visual": "Indian boy, 9, wavy black hair, green kurta, cloth bag on shoulder, brave eyes, Dream scene: glowing roots, old face formed in bark"
+  },
+  {
+   "speaker": "N",
+   "text": "सुबह वीरू ने देखा, पेड़ के पास किसी ने काले तेल के डिब्बे छिपा रखे थे।",
+   "mood": "suspense",
+   "style": "tense",
+   "visual": "Indian boy, 9, wavy black hair, green kurta, cloth bag on shoulder, brave eyes, Black oil cans hidden in bushes near banyan roots"
+  },
+  {
+   "speaker": "M",
+   "text": "यह किसने किया? और क्यों?",
+   "mood": "suspense",
+   "style": "determined",
+   "visual": "Indian boy, 9, wavy black hair, green kurta, cloth bag on shoulder, brave eyes, Close-up of boy's determined face, parrot beside"
+  },
+  {
+   "speaker": "N",
+   "text": "पता चला, शहर का एक ठेकेदार पेड़ सुखाकर वहाँ गोदाम बनाना चाहता था।",
+   "mood": "suspense",
+   "style": "storyteller, serious",
+   "visual": "Indian boy, 9, wavy black hair, green kurta, cloth bag on shoulder, brave eyes, Man in sunglasses with map near the tree, truck behind"
+  },
+  {
+   "speaker": "N",
+   "text": "वीरू ने गाँव वालों को बताया, पर किसी ने बच्चे की बात नहीं मानी।",
+   "mood": "peaceful",
+   "style": "sad, gentle",
+   "visual": "Indian boy, 9, wavy black hair, green kurta, cloth bag on shoulder, brave eyes, Villagers laughing and walking away from the boy"
+  },
+  {
+   "speaker": "O",
+   "text": "मोती बोला, सबूत चाहिए! रात को ठेकेदार फिर आएगा, हम पहरा देंगे।",
+   "mood": "chase",
+   "style": "excited",
+   "visual": "small white cartoon parrot with red beak, very talkative, Parrot flapping wings, boy nodding at dusk"
+  },
+  {
+   "speaker": "N",
+   "text": "आधी रात को टॉर्च की रोशनी चमकी। ठेकेदार का आदमी फिर तेल डालने आया।",
+   "mood": "chase",
+   "style": "fast, tense",
+   "visual": "Indian boy, 9, wavy black hair, green kurta, cloth bag on shoulder, brave eyes, Night, torch light, man pouring black liquid at roots"
+  },
+  {
+   "speaker": "N",
+   "text": "मोती ज़ोर से चिल्लाया, चोर! चोर! और पूरा गाँव जाग गया।",
+   "mood": "chase",
+   "style": "loud, funny, energetic",
+   "visual": "small white cartoon parrot with red beak, very talkative, Parrot screeching, lamps lighting up in village huts"
+  },
+  {
+   "speaker": "N",
+   "text": "गाँव वालों ने आदमी को पकड़ लिया। उसने सब सच बता दिया।",
+   "mood": "peaceful",
+   "style": "relieved",
+   "visual": "Indian boy, 9, wavy black hair, green kurta, cloth bag on shoulder, brave eyes, Villagers holding the man with lanterns, boy in front"
+  },
+  {
+   "speaker": "N",
+   "text": "सबने मिलकर ज़हरीली मिट्टी हटाई और पेड़ की जड़ों में ताज़ा पानी डाला।",
+   "mood": "peaceful",
+   "style": "warm",
+   "visual": "Indian boy, 9, wavy black hair, green kurta, cloth bag on shoulder, brave eyes, Villagers digging and watering the banyan at dawn"
+  },
+  {
+   "speaker": "N",
+   "text": "तीसरे दिन सुबह, पीले पत्तों के बीच एक नई हरी कोंपल फूटी।",
+   "mood": "peaceful",
+   "style": "soft, joyful",
+   "visual": "Indian boy, 9, wavy black hair, green kurta, cloth bag on shoulder, brave eyes, Close-up fresh green leaf sprouting on banyan branch, sunrise"
+  },
+  {
+   "speaker": "N",
+   "text": "और उस रात सपने में वही आवाज़ बोली, धन्यवाद वीरू, अब मैं तुम्हें एक राज़ दूँगा।",
+   "mood": "suspense",
+   "style": "mysterious, deep",
+   "visual": "Indian boy, 9, wavy black hair, green kurta, cloth bag on shoulder, brave eyes, Dream: banyan glowing gold, a small golden seed falling into boy's hand"
+  },
+  {
+   "speaker": "N",
+   "text": "दोस्तों, बड़े काम के लिए बड़ा होना ज़रूरी नहीं, सच्चा होना ज़रूरी है। वह सुनहरा बीज क्या था? अगली कहानी में!",
+   "mood": "peaceful",
+   "style": "warm, direct to viewer",
+   "visual": "Indian boy, 9, wavy black hair, green kurta, cloth bag on shoulder, brave eyes, Boy holding glowing seed under banyan at sunrise, parrot on shoulder"
+  }
+ ],
+ "trailer": {
+  "title": "गाँव के बरगद ने रात में कहा, मुझे बचा लो! #shorts",
+  "topic": "जादुई कहानी",
+  "description": "पूरी कहानी कहानी पतंग पर।",
+  "tags": [
+   "बच्चों की कहानी",
+   "हिंदी कहानी",
+   "कहानी पतंग",
+   "jadui kahani",
+   "shorts"
+  ],
+  "hook": "पेड़ ने पुकारा!",
+  "thumb_text": "पेड़ बोला!",
+  "characters": {
+   "Veeru": "Indian boy, 9, wavy black hair, green kurta, cloth bag on shoulder, brave eyes",
+   "Moti": "small white cartoon parrot with red beak, very talkative"
+  },
+  "scenes": [
+   {
+    "s": "N",
+    "t": "ज़रा सोचिए, आपके गाँव का सबसे पुराना पेड़ एक रात आपसे कहे, मुझे बचा लो!",
+    "m": "suspense",
+    "st": "direct, warm, mysterious",
+    "v": "Giant ancient banyan tree at night, glowing faint green, Indian village",
+    "w": "Veeru"
+   },
+   {
+    "s": "N",
+    "t": "उसी रात वीरू को सपने में एक बूढ़ी आवाज़ आई, मेरी जड़ में ज़हर है, तीन दिन बचे हैं।",
+    "m": "suspense",
+    "st": "slow, deep, mysterious",
+    "v": "Dream scene: glowing roots, old face formed in bark",
+    "w": "Veeru"
+   },
+   {
+    "s": "N",
+    "t": "सुबह वीरू ने देखा, पेड़ के पास किसी ने काले तेल के डिब्बे छिपा रखे थे।",
+    "m": "suspense",
+    "st": "tense",
+    "v": "Black oil cans hidden in bushes near banyan roots",
+    "w": "Veeru"
+   },
+   {
+    "s": "N",
+    "t": "आधी रात को टॉर्च की रोशनी चमकी। ठेकेदार का आदमी फिर तेल डालने आया।",
+    "m": "chase",
+    "st": "fast, tense",
+    "v": "Night, torch light, man pouring black liquid at roots",
+    "w": "Veeru"
+   },
+   {
+    "s": "N",
+    "t": "मोती ज़ोर से चिल्लाया, चोर! चोर! और पूरा गाँव जाग गया।",
+    "m": "chase",
+    "st": "loud, funny, energetic",
+    "v": "Parrot screeching, lamps lighting up in village huts",
+    "w": "Moti"
+   },
+   {
+    "s": "N",
+    "t": "क्या वीरू पेड़ बचा पाया? पूरी कहानी कहानी पतंग पर देखिए!",
+    "m": "suspense",
+    "st": "direct",
+    "v": "Banyan glowing at night, boy and parrot",
+    "w": "Veeru"
+   }
+  ]
+ }
+}
