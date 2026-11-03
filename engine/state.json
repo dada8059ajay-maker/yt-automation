@@ -266,7 +266,7 @@
   "ch": "raat",
   "mode": "long",
   "asset": "draft_raat_long_20261103_1521.tar",
-  "stage": "imgwait: image servers out of free credit at 6/16",
+  "stage": "imgwait: image servers out of free credit at 7/16",
   "tries": 0,
   "fest": "raat_l_yamdeep01",
   "engine": "kokoro"
@@ -443,7 +443,7 @@
   }
  ],
  "_minutes": {
-  "2026-11": 2771
+  "2026-11": 2777
  },
  "_bank": {
   "kahani_s_patang01": "2026-11-02",
