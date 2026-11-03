@@ -16,3 +16,4 @@
 - कहानी पतंग | long | शेर की खोई दहाड़ और चालाक बंदर | जंगल की मज़ेदार कहानी | Sun 08 Nov 2026 06:00 PM IST | https://studio.youtube.com/video/z31h1iLKCDU/edit
 - कहानी पतंग | long | बोलता बरगद और ज़हर की साज़िश | जादुई हिंदी कहानी | Sat 07 Nov 2026 06:00 PM IST | https://studio.youtube.com/video/c10dlzb3Aq0/edit
 - कहानी पतंग | long | छोटू का जादुई दीया | दिवाली की प्यारी कहानी | Fri 06 Nov 2026 06:00 PM IST | https://studio.youtube.com/video/0f21gj4pVes/edit
+- रात के किस्से | long | नरक चतुर्दशी की रात: यम के दीये के 3 नियम | हिंदी हॉरर कहानी | Sat 07 Nov 2026 10:30 PM IST | https://studio.youtube.com/video/Vm-kzRxxkw0/edit
