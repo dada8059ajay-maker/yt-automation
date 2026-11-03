@@ -365,6 +365,232 @@
      ]
     }
    }
+  ],
+  "festival": [
+   {
+    "id": "raat_l_yamdeep01",
+    "at": "2026-11-07T22:30:00+05:30",
+    "trailer_at": "2026-11-08T19:00:00+05:30",
+    "script": {
+     "title": "नरक चतुर्दशी की रात: यम के दीये के 3 नियम | हिंदी हॉरर कहानी",
+     "topic": "नरक चतुर्दशी, यम का दीया और पुश्तैनी हवेली के नियम",
+     "category": "raat: rules",
+     "description": "काल्पनिक कहानी — केवल मनोरंजन के लिए। नरक चतुर्दशी की रात, यम का दीया और तीन नियम।\n#हॉररकहानी #NarakChaturdashi #HindiHorror #रातकेकिस्से",
+     "tags": [
+      "नरक चतुर्दशी",
+      "यम का दीया",
+      "हिंदी हॉरर कहानी",
+      "horror story hindi",
+      "रात के किस्से",
+      "diwali horror"
+     ],
+     "hook": "यम का दीया",
+     "thumb_text": "यम का दीया",
+     "characters": {
+      "Arjun": "Indian man, 30, short black hair, light stubble, maroon sweater over white kurta, holding a brass oil lamp, anxious eyes",
+      "Nani": "old Indian woman, 80, thin white hair, white cotton saree, deep wrinkles, piercing eyes",
+      "Yamdeep": "a tall faceless dark shadow figure with a faint red glow, wrapped in black smoke"
+     },
+     "scenes": [
+      {
+       "s": "N",
+       "t": "नरक चतुर्दशी की रात, घर के दरवाज़े पर एक दीया जलाया जाता है, यम का दीया। पर अगर वह दीया बुझ जाए तो?",
+       "m": "horror",
+       "st": "deep, slow, chilling whisper",
+       "v": "Old Indian haveli doorway at night, a single clay lamp burning, fog, dark street",
+       "w": "Arjun"
+      },
+      {
+       "s": "N",
+       "t": "अर्जुन दस साल बाद दिवाली पर अपने पुश्तैनी गाँव लौटा था, जहाँ बस उसकी नानी रहती थीं।",
+       "m": "suspense",
+       "st": "calm, ominous",
+       "v": "Man with suitcase walking up to an old dusty haveli at dusk, bats in the sky",
+       "w": "Arjun"
+      },
+      {
+       "s": "A",
+       "t": "नानी ने काँपती आवाज़ में कहा, आज रात तीन नियम मानना। पहला, यम का दीया सुबह तक नहीं बुझना चाहिए।",
+       "m": "horror",
+       "st": "old, trembling, serious",
+       "v": "Old woman holding the man's hand tightly in a dim courtyard, lamp light",
+       "w": "Nani"
+      },
+      {
+       "s": "A",
+       "t": "दूसरा, आधी रात के बाद कोई तुम्हारा नाम पुकारे, तो पलटकर मत देखना। और तीसरा, दक्षिण का दरवाज़ा कभी मत खोलना।",
+       "m": "horror",
+       "st": "whisper, warning",
+       "v": "Close medium shot of old woman's piercing eyes in lamp light",
+       "w": "Nani"
+      },
+      {
+       "s": "M",
+       "t": "अर्जुन मुस्कुराया, नानी, ये सब पुरानी बातें हैं।",
+       "m": "peaceful",
+       "st": "casual, light laugh",
+       "v": "Man smiling, sitting on charpai in old courtyard, diyas around",
+       "w": "Arjun"
+      },
+      {
+       "s": "N",
+       "t": "रात के ठीक बारह बजे, बाहर तेज़ हवा चली। दरवाज़े का दीया फड़फड़ाने लगा।",
+       "m": "suspense",
+       "st": "tense, rising",
+       "v": "Lamp flame flickering violently in strong wind at haveli doorway, dust flying",
+       "w": "Arjun"
+      },
+      {
+       "s": "N",
+       "t": "अर्जुन दौड़कर गया और हथेलियों से लौ को बचाया। तभी पीछे से आवाज़ आई।",
+       "m": "horror",
+       "st": "fast, breathless",
+       "v": "Man shielding a lamp flame with his hands at a dark doorway",
+       "w": "Arjun"
+      },
+      {
+       "s": "G",
+       "t": "अर्जुन... अर्जुन... इधर देखो बेटा...",
+       "m": "horror",
+       "st": "ghostly, echoing, sweet but evil whisper",
+       "v": "Dark corridor behind the man, faint shadow shape, fog",
+       "w": "Yamdeep"
+      },
+      {
+       "s": "M",
+       "t": "वह आवाज़ बिल्कुल उसकी माँ जैसी थी, जो पाँच साल पहले गुज़र चुकी थीं। उसका दिल काँप उठा।",
+       "m": "horror",
+       "st": "terrified, trembling whisper",
+       "v": "Man frozen with wide eyes, sweat on forehead, lamp in hands",
+       "w": "Arjun"
+      },
+      {
+       "s": "N",
+       "t": "अर्जुन ने आँखें बंद कीं और पलटा नहीं। आवाज़ धीरे-धीरे गुस्से भरी गुर्राहट में बदल गई।",
+       "m": "horror",
+       "st": "slow, chilling",
+       "v": "Man with eyes shut tightly, black smoke curling behind him",
+       "w": "Arjun"
+      },
+      {
+       "s": "N",
+       "t": "तभी उसने देखा, नानी आँगन में नहीं थीं। और दक्षिण का दरवाज़ा... अपने आप खुल रहा था।",
+       "m": "horror",
+       "st": "shocked, low",
+       "v": "Old wooden south-facing door creaking open by itself, red glow inside",
+       "w": "Arjun"
+      },
+      {
+       "s": "A",
+       "t": "अंदर से नानी की चीख़ आई, अर्जुन, दीया लेकर आओ! सिर्फ़ दीया ही उसे रोक सकता है!",
+       "m": "chase",
+       "st": "old woman screaming, desperate",
+       "v": "Dark room behind the open door, faint silhouette of old woman, red glow",
+       "w": "Nani"
+      },
+      {
+       "s": "N",
+       "t": "अर्जुन दीया लेकर अंदर भागा। सामने खड़ा था एक लंबा, बिना चेहरे का काला साया।",
+       "m": "chase",
+       "st": "panting, fast",
+       "v": "Man running into dark room holding lamp, tall faceless shadow figure ahead",
+       "w": "Yamdeep"
+      },
+      {
+       "s": "N",
+       "t": "उसने दीया साये की ओर बढ़ाया। लौ अचानक नीली होकर ऊँची उठी, और साया चीख़ते हुए धुएँ में बदल गया।",
+       "m": "victory",
+       "st": "intense, rising",
+       "v": "Blue flame rising high from the lamp, shadow dissolving into black smoke",
+       "w": "Arjun"
+      },
+      {
+       "s": "A",
+       "t": "नानी ने उसे गले लगाया, यम का दीया घर के रक्षक के लिए जलता है, बेटा। आज तुमने हमें बचा लिया।",
+       "m": "peaceful",
+       "st": "old, relieved, crying softly",
+       "v": "Old woman hugging the man in the courtyard at dawn, lamp still burning",
+       "w": "Nani"
+      },
+      {
+       "s": "N",
+       "t": "सुबह होते ही दीया अपने आप बुझ गया। पर दक्षिण के दरवाज़े पर राख से लिखा था, अगले साल फिर आऊँगा। यह कहानी काल्पनिक है। शुभ दीपावली, और कमेंट में बताइए, आपके घर में यम का दीया जलता है?",
+       "m": "horror",
+       "st": "slow, chilling, then warm to viewer",
+       "v": "Ash writing on an old wooden door in morning light, extinguished lamp below",
+       "w": "Arjun"
+      }
+     ],
+     "trailer": {
+      "title": "यम का दीया बुझा, तो दरवाज़ा खुला! #shorts",
+      "topic": "नरक चतुर्दशी हॉरर",
+      "description": "काल्पनिक कहानी। पूरी कहानी रात के किस्से पर।",
+      "tags": [
+       "horror",
+       "नरक चतुर्दशी",
+       "रात के किस्से",
+       "shorts"
+      ],
+      "hook": "यम का दीया",
+      "thumb_text": "यम का दीया",
+      "characters": {
+       "Arjun": "Indian man, 30, short black hair, light stubble, maroon sweater over white kurta, holding a brass oil lamp, anxious eyes",
+       "Nani": "old Indian woman, 80, thin white hair, white cotton saree, deep wrinkles, piercing eyes",
+       "Yamdeep": "a tall faceless dark shadow figure with a faint red glow, wrapped in black smoke"
+      },
+      "scenes": [
+       {
+        "s": "N",
+        "t": "नरक चतुर्दशी की रात, यम का दीया सुबह तक नहीं बुझना चाहिए। पर अगर बुझ जाए तो?",
+        "m": "horror",
+        "st": "deep, chilling whisper",
+        "v": "Old Indian haveli doorway at night, a single clay lamp burning, fog",
+        "w": "Arjun"
+       },
+       {
+        "s": "A",
+        "t": "आधी रात के बाद कोई तुम्हारा नाम पुकारे, तो पलटकर मत देखना।",
+        "m": "horror",
+        "st": "old, warning whisper",
+        "v": "Old woman's piercing eyes in lamp light",
+        "w": "Nani"
+       },
+       {
+        "s": "N",
+        "t": "रात के ठीक बारह बजे, दीया फड़फड़ाने लगा।",
+        "m": "suspense",
+        "st": "tense",
+        "v": "Lamp flame flickering violently in strong wind at haveli doorway",
+        "w": "Arjun"
+       },
+       {
+        "s": "G",
+        "t": "अर्जुन... इधर देखो बेटा...",
+        "m": "horror",
+        "st": "ghostly, echoing, evil whisper",
+        "v": "Dark corridor behind the man, faint shadow shape, fog",
+        "w": "Yamdeep"
+       },
+       {
+        "s": "N",
+        "t": "और दक्षिण का दरवाज़ा... अपने आप खुलने लगा।",
+        "m": "horror",
+        "st": "shocked, low",
+        "v": "Old wooden door creaking open by itself, red glow inside",
+        "w": "Arjun"
+       },
+       {
+        "s": "N",
+        "t": "आगे क्या हुआ? पूरी कहानी रात के किस्से पर देखिए, लिंक नीचे है।",
+        "m": "suspense",
+        "st": "low, inviting",
+        "v": "Haveli at night with a single lamp burning, fog",
+        "w": "Arjun"
+       }
+      ]
+     }
+    }
+   }
   ]
  },
  "kahani": {
@@ -1161,6 +1387,233 @@
        "w": "Pinki"
       }
      ]
+    }
+   }
+  ],
+  "festival": [
+   {
+    "id": "kahani_l_diwali01",
+    "at": "2026-11-06T18:00:00+05:30",
+    "trailer_at": "2026-11-07T13:30:00+05:30",
+    "script": {
+     "title": "छोटू का जादुई दीया | दिवाली की प्यारी कहानी",
+     "topic": "दिवाली की जादुई कहानी",
+     "category": "kahani: festival",
+     "description": "दिवाली से पहले अंधेरे गाँव को छोटू और जादुई जुगनू ने कैसे रोशन किया। सीख: असली रोशनी अच्छे कामों में है। शुभ दीपावली!\n#KahaniPatang #DiwaliStory #HindiKahani #MoralStories",
+     "tags": [
+      "दिवाली की कहानी",
+      "diwali story in hindi",
+      "बच्चों की कहानी",
+      "हिंदी कहानी",
+      "कहानी पतंग",
+      "moral stories in hindi",
+      "jadui kahani"
+     ],
+     "hook": "जादुई दीया!",
+     "thumb_text": "जादुई दीया",
+     "characters": {
+      "Chhotu": "Indian boy, 8, short black hair, yellow kurta, small clay diya in hands, bright curious eyes",
+      "Dadi": "Indian grandmother, 70, white hair in bun, light green saree, round glasses, kind smile",
+      "Jugnu": "tiny glowing golden firefly with a happy cartoon face"
+     },
+     "scenes": [
+      {
+       "s": "N",
+       "t": "दिवाली से एक रात पहले, पूरे गाँव में अंधेरा था। और छोटू के हाथ में था एक जादुई दीया!",
+       "m": "suspense",
+       "st": "direct, warm, mysterious",
+       "v": "Indian village at night, all houses dark, a small boy holding a glowing clay diya",
+       "w": "Chhotu"
+      },
+      {
+       "s": "N",
+       "t": "आज की कहानी है छोटू की, जिसने अपनी दादी से दिवाली का सबसे बड़ा राज़ सीखा।",
+       "m": "peaceful",
+       "st": "friendly storyteller",
+       "v": "Boy sitting with grandmother on a village courtyard, clay lamps around, evening",
+       "w": "Chhotu"
+      },
+      {
+       "s": "A",
+       "t": "दादी बोलीं, बेटा, यह दीया तुम्हारे दादाजी का है। यह सिर्फ़ सच्चे दिल वाले के हाथ में जलता है।",
+       "m": "peaceful",
+       "st": "old, gentle, loving",
+       "v": "Grandmother giving an old clay diya to the boy, warm lantern light",
+       "w": "Dadi"
+      },
+      {
+       "s": "N",
+       "t": "उसी शाम गाँव की बिजली चली गई। बाज़ार बंद, मिठाई की दुकानें सूनी, सब उदास हो गए।",
+       "m": "suspense",
+       "st": "sad, gentle",
+       "v": "Village market with closed shops, dark streets, sad villagers holding unlit lamps",
+       "w": "Chhotu"
+      },
+      {
+       "s": "C",
+       "t": "छोटू ने दीये पर हाथ रखा और धीरे से कहा, दीये भाई, क्या तुम मेरी मदद करोगे?",
+       "m": "suspense",
+       "st": "small child, hopeful whisper",
+       "v": "Boy holding the diya close to his face, wondering eyes, dark room",
+       "w": "Chhotu"
+      },
+      {
+       "s": "N",
+       "t": "अचानक दीया अपने आप जल उठा, और उसकी लौ से निकला एक नन्हा सुनहरा जुगनू!",
+       "m": "victory",
+       "st": "amazed, magical",
+       "v": "A tiny golden firefly flying out of the diya flame, sparkles, boy amazed",
+       "w": "Jugnu"
+      },
+      {
+       "s": "C",
+       "t": "जुगनू हँसा, मैं हूँ जुगनू! आज रात हम पूरे गाँव को रोशन करेंगे, पर एक शर्त है।",
+       "m": "peaceful",
+       "st": "tiny, cheerful, squeaky",
+       "v": "Firefly with happy face glowing near the boy's nose, cozy room",
+       "w": "Jugnu"
+      },
+      {
+       "s": "C",
+       "t": "हर घर में रोशनी तभी जलेगी, जब तुम वहाँ किसी की सच्ची मदद करोगे।",
+       "m": "suspense",
+       "st": "tiny, serious",
+       "v": "Firefly floating in front of the boy, golden trail of light",
+       "w": "Jugnu"
+      },
+      {
+       "s": "N",
+       "t": "पहले घर में बूढ़े रामू काका अपनी टूटी सीढ़ी से छत पर दीये रखने की कोशिश कर रहे थे।",
+       "m": "peaceful",
+       "st": "calm storyteller",
+       "v": "Old man struggling on a broken wooden ladder near a mud house roof at night",
+       "w": "Chhotu"
+      },
+      {
+       "s": "N",
+       "t": "छोटू ने सीढ़ी पकड़ी, काका के दीये ऊपर पहुँचाए, और पूरा घर जगमगा उठा!",
+       "m": "victory",
+       "st": "happy, rising",
+       "v": "Boy holding ladder, a mud house suddenly glowing with many diyas",
+       "w": "Chhotu"
+      },
+      {
+       "s": "N",
+       "t": "फिर वह गया मीना के घर, जिसकी रंगोली बारिश ने बिगाड़ दी थी। दोनों ने मिलकर नई रंगोली बनाई।",
+       "m": "peaceful",
+       "st": "warm",
+       "v": "Boy and a girl making a colorful rangoli at a doorway, lamps glowing",
+       "w": "Chhotu"
+      },
+      {
+       "s": "N",
+       "t": "एक-एक करके छोटू ने हर घर में मदद की, और हर घर में रोशनी फैलती गई।",
+       "m": "victory",
+       "st": "joyful, rising",
+       "v": "Wide shot of village houses lighting up one by one, golden lights spreading",
+       "w": "Chhotu"
+      },
+      {
+       "s": "N",
+       "t": "पर आख़िरी घर था मोहन का, जिसने कल ही छोटू की पतंग फाड़ी थी। छोटू रुक गया।",
+       "m": "suspense",
+       "st": "tense, thoughtful",
+       "v": "Boy standing hesitant outside a dark house, firefly beside him",
+       "w": "Chhotu"
+      },
+      {
+       "s": "C",
+       "t": "जुगनू ने पूछा, क्या दोस्ती की रोशनी, गुस्से से बड़ी नहीं होती?",
+       "m": "peaceful",
+       "st": "tiny, wise",
+       "v": "Firefly glowing softly beside the thinking boy",
+       "w": "Jugnu"
+      },
+      {
+       "s": "N",
+       "t": "छोटू ने मोहन को अपनी मिठाई दी। मोहन रो पड़ा, सॉरी कहा, और उसका घर सबसे ज़्यादा चमका!",
+       "m": "victory",
+       "st": "emotional, joyful",
+       "v": "Two boys hugging at a doorway, the house shining brightest, sparkles",
+       "w": "Chhotu"
+      },
+      {
+       "s": "N",
+       "t": "दोस्तों, दिवाली की असली रोशनी दीयों में नहीं, हमारे अच्छे कामों में होती है। आपको शुभ दीपावली! अगली कहानी में फिर मिलेंगे।",
+       "m": "peaceful",
+       "st": "warm, direct to viewer",
+       "v": "Whole village glowing with diyas, fireworks in the sky, boy and grandmother smiling",
+       "w": "Chhotu"
+      }
+     ],
+     "trailer": {
+      "title": "दिवाली की रात जादुई दीया जल उठा! #shorts",
+      "topic": "दिवाली कहानी",
+      "description": "पूरी कहानी कहानी पतंग पर। शुभ दीपावली!",
+      "tags": [
+       "दिवाली",
+       "diwali story",
+       "कहानी पतंग",
+       "shorts"
+      ],
+      "hook": "जादुई दीया!",
+      "thumb_text": "जादुई दीया",
+      "characters": {
+       "Chhotu": "Indian boy, 8, short black hair, yellow kurta, small clay diya in hands, bright curious eyes",
+       "Dadi": "Indian grandmother, 70, white hair in bun, light green saree, round glasses, kind smile",
+       "Jugnu": "tiny glowing golden firefly with a happy cartoon face"
+      },
+      "scenes": [
+       {
+        "s": "N",
+        "t": "दिवाली से एक रात पहले, पूरे गाँव में अंधेरा था। और छोटू के हाथ में था एक जादुई दीया!",
+        "m": "suspense",
+        "st": "direct, warm, mysterious",
+        "v": "Indian village at night, all houses dark, a small boy holding a glowing clay diya",
+        "w": "Chhotu"
+       },
+       {
+        "s": "A",
+        "t": "यह दीया सिर्फ़ सच्चे दिल वाले के हाथ में जलता है।",
+        "m": "peaceful",
+        "st": "old, gentle",
+        "v": "Grandmother giving an old clay diya to the boy, warm lantern light",
+        "w": "Dadi"
+       },
+       {
+        "s": "N",
+        "t": "अचानक दीया अपने आप जल उठा, और उसकी लौ से निकला एक नन्हा सुनहरा जुगनू!",
+        "m": "victory",
+        "st": "amazed, magical",
+        "v": "A tiny golden firefly flying out of the diya flame, sparkles, boy amazed",
+        "w": "Jugnu"
+       },
+       {
+        "s": "C",
+        "t": "हर घर में रोशनी तभी जलेगी, जब तुम किसी की सच्ची मदद करोगे।",
+        "m": "suspense",
+        "st": "tiny, serious",
+        "v": "Firefly floating in front of the boy, golden trail of light",
+        "w": "Jugnu"
+       },
+       {
+        "s": "N",
+        "t": "पर आख़िरी घर था उस लड़के का, जिसने छोटू की पतंग फाड़ी थी। अब छोटू क्या करेगा?",
+        "m": "suspense",
+        "st": "tense",
+        "v": "Boy standing hesitant outside a dark house, firefly beside him",
+        "w": "Chhotu"
+       },
+       {
+        "s": "N",
+        "t": "पूरी कहानी देखिए कहानी पतंग पर, लिंक नीचे है!",
+        "m": "peaceful",
+        "st": "warm, inviting",
+        "v": "Village glowing with diyas at night, boy smiling with firefly",
+        "w": "Chhotu"
+       }
+      ]
+     }
     }
    }
   ]

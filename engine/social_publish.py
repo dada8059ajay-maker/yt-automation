@@ -120,7 +120,7 @@ for x in V:
     at = x.get("pub_iso")
     if not at or dt.datetime.fromisoformat(at.replace("Z", "+00:00")) > NOW: continue
     if posted >= 2: break
-    yid = x.get("yt")
+    yid = (x.get("yt") or "").rstrip("/").split("/")[-1].split("=")[-1] or None
     if not yid:
         try: yid = json.load(open(f"{ROOT}/results/{x['job']}.json"))["videos"][0]["id"]; x["yt"] = yid
         except Exception: yid = None

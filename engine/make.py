@@ -19,6 +19,9 @@ import time as _t, tarfile
 T0 = _t.time()
 BUDGET_MIN = float(os.environ.get("RENDER_BUDGET_MIN", "58"))   # stop & checkpoint before the job's 80-min hard limit
 _d = STATE.get("_draft") or {}
+try:   # a pending festival story beats an ordinary unfinished draft of the same channel+mode
+    if MODE == "long" and not _d.get("fest") and _d.get("ch") == CH and any(e["id"] not in STATE.get("_bank", {}) for e in json.load(open("engine/story_bank.json")).get(CH, {}).get("festival", [])): _d = {}
+except Exception: pass
 DRAFT = _d if _d.get("ch") == CH and _d.get("mode") == MODE and _d.get("tries", 0) < 4 else None
 TRIES = (DRAFT or {}).get("tries", 0) + 1
 JOB = DRAFT["job"] if DRAFT else f"{CH}_{MODE}_{STAMP}"
@@ -32,7 +35,7 @@ def checkpoint(stage):
             if f.endswith((".json", ".mp3", ".jpg", ".txt")) and not f.startswith(("clips", "bg")): t.add(os.path.join(OUT, f), arcname=f"{JOB}/{f}")
     r = subprocess.run(["gh", "release", "upload", "drafts", asset, "--clobber"])
     STATE["_draft"] = {"job": JOB, "ch": CH, "mode": MODE, "asset": asset, "stage": stage,
-                       "tries": TRIES}
+                       "tries": TRIES, "fest": (FEST or {}).get("id")}
     _save_state(); print("checkpoint", stage, "upload rc", r.returncode, flush=True)
 def out_of_time(): return (_t.time() - T0) / 60 > BUDGET_MIN
 def pause(stage):
@@ -131,6 +134,16 @@ speaker कोड: N=कथावाचक, M=युवा पुरुष, F=�
  "scenes": [{{"speaker": "N", "text": "हिंदी लाइन (1-2 वाक्य); ज़रूरत हो तो '...' से रुकाव", "mood": "horror|suspense|chase|peaceful|victory में से एक (BGM के लिए)", "style": "English voice-acting direction for this exact line, e.g. 'terrified, trembling, shaky low whisper' / 'out of breath, panting heavily as if just ran for life, gasping between words' / 'deep, booming, furious, terrifyingly loud' / 'warm, gentle storyteller'", "visual": "Precise English visual prompt, about 50 words: ONE main character in focus (exact character-sheet wording), action, Indian place, time of day, lighting, camera shot (medium/wide). No text, no hand close-ups."}}]}}"""
 # ---- story_bank.json: stories written by Hark; Gemini only when the bank is empty ----
 BANKSER = (SER or {}).get("bank") if RAATLONG else None
+# festival story (fixed publish time) goes before everything else
+FEST = None; FEST_AT = None
+try:
+    _fb = json.load(open("engine/story_bank.json")).get(CH, {}).get("festival", [])
+    if MODE == "long":
+        _fid = (DRAFT or {}).get("fest")
+        FEST = next((e for e in _fb if e["id"] == _fid), None) if DRAFT else next((e for e in _fb if e["id"] not in STATE.get("_bank", {})), None)
+        FEST_AT = FEST and FEST.get("at")
+    elif LL and LL.get("fest_at"): FEST_AT = LL["fest_at"]
+except Exception as _e: print("festival check skipped", _e)
 def expand(x):
     x = json.loads(json.dumps(x)); chars = x.get("characters", {})
     sc2 = []
@@ -145,6 +158,8 @@ def expand(x):
     return x
 def bank_pick():
     global BANKSER
+    if FEST:
+        STATE.setdefault("_bank", {})[FEST["id"]] = dt.date.today().isoformat(); return expand(FEST["script"])
     if MODE == "short" and LL and LL.get("trailer"): return expand(LL["trailer"])
     try: B = json.load(open("engine/story_bank.json"))
     except Exception: return None
@@ -479,9 +494,9 @@ if MODE == "long":
 def after_success(vid=None):
     if MODE == "long":
         STATE[CH]["last_long"] = {"job": JOB, "title": S["title"][:90], "story": (S.get("so_far") or S.get("topic", ""))[:600],
-                                  "characters": S.get("characters", {}), "vid": vid, "short_done": False, "trailer": S.get("trailer")}
+                                  "characters": S.get("characters", {}), "vid": vid, "short_done": False, "trailer": S.get("trailer"), "fest_at": (FEST or {}).get("trailer_at")}
     if MODE == "short" and LL: STATE[CH]["last_long"]["short_done"] = True
-    if RAATLONG:
+    if RAATLONG and not FEST:
         STATE[CH]["series"] = {"name": S.get("series_name") or (SER or {}).get("name") or S["title"][:40], "part": PART,
                                "so_far": S.get("so_far") or S.get("topic", ""), "characters": S.get("characters", {}), "bank": BANKSER}
     if MODE == "long":
@@ -508,6 +523,7 @@ def next_slot(last_iso):
                 return cand.astimezone(dt.timezone.utc)
     raise SystemExit("no slot")
 slot = next_slot(STATE[CH][MODE])
+if FEST_AT and dt.datetime.fromisoformat(FEST_AT) > NOW + dt.timedelta(hours=2): slot = dt.datetime.fromisoformat(FEST_AT).astimezone(dt.timezone.utc)
 pub = slot.strftime("%Y-%m-%dT%H:%M:%SZ")
 log("slot", pub, slot.astimezone(IST).strftime("%a %d %b %I:%M %p IST"))
 desc = (CFG["disclaimer"] + "\n" if CFG["disclaimer"] else "") + S.get("description", "") + "\n\nMusic: Kevin MacLeod (incompetech.com), CC BY 4.0"
@@ -550,7 +566,7 @@ if PRE:
     with tarfile.open(asset, "w") as t: t.add(OUT, arcname=JOB)
     subprocess.run(["gh", "release", "upload", "queue", asset, "--clobber"], check=True)
     finish_draft(); after_success()
-    STATE.setdefault("_queue", []).append({"job": JOB, "ch": CH, "mode": MODE, "asset": asset, "title": title})
+    STATE.setdefault("_queue", []).append({"job": JOB, "ch": CH, "mode": MODE, "asset": asset, "title": title, **({"at": FEST_AT} if FEST_AT else {})})
     STATE[CH]["history"].append(S.get("topic", title))
     json.dump(STATE, open(STATE_P, "w"), ensure_ascii=False, indent=1)
     log("QUEUED", asset); sys.exit(0)
@@ -560,7 +576,7 @@ if UPLOAD:
     vid = (res.get("videos") or [{}])[0].get("id")
     if vid:
         finish_draft(); after_success(vid)
-        STATE[CH][MODE] = pub
+        STATE[CH][MODE] = max(STATE[CH][MODE], pub) if FEST_AT else pub
         STATE.setdefault("_uploads", []).append(NOW.strftime("%Y-%m-%dT%H:%M:%SZ")); STATE["_uploads"] = STATE["_uploads"][-20:]
         STATE[CH]["history"].append(S.get("topic", title))
         json.dump(STATE, open(STATE_P, "w"), ensure_ascii=False, indent=1)

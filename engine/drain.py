@@ -26,14 +26,16 @@ while STATE.get("_queue") and len(recent()) < MAX:
     subprocess.run(["gh", "release", "download", "queue", "-p", it["asset"], "-D", "out", "--clobber"], check=True)
     with tarfile.open(f"out/{it['asset']}") as t: t.extractall("out")
     out = os.path.abspath(f"out/{job}")
-    slot = next_slot(cfg, mode, STATE[ch][mode]); pub = slot.strftime("%Y-%m-%dT%H:%M:%SZ")
+    slot = next_slot(cfg, mode, STATE[ch][mode])
+    if it.get("at") and dt.datetime.fromisoformat(it["at"]) > NOW + dt.timedelta(hours=2): slot = dt.datetime.fromisoformat(it["at"]).astimezone(dt.timezone.utc)   # festival: fixed time
+    pub = slot.strftime("%Y-%m-%dT%H:%M:%SZ")
     j = json.load(open(f"{out}/job.json")); j["videos"][0]["publishAt"] = pub; json.dump(j, open(f"{out}/job.json", "w"), ensure_ascii=False, indent=1)
     env = dict(os.environ, RT=rt(ch))
     subprocess.run([sys.executable, "yt_publish.py", out], check=True, env=env)
     res = json.load(open(f"results/{job}.json")); vid = (res.get("videos") or [{}])[0].get("id")
     if not vid: print("UPLOAD FAILED", json.dumps(res, ensure_ascii=False)[:600]); sys.exit(1)
     if STATE[ch].get("last_long", {}).get("job") == job: STATE[ch]["last_long"]["vid"] = vid
-    STATE[ch][mode] = pub; STATE.setdefault("_uploads", []).append(NOW.strftime("%Y-%m-%dT%H:%M:%SZ"))
+    STATE[ch][mode] = max(STATE[ch][mode], pub) if it.get("at") else pub; STATE.setdefault("_uploads", []).append(NOW.strftime("%Y-%m-%dT%H:%M:%SZ"))
     STATE["_uploads"] = STATE["_uploads"][-20:]; STATE["_queue"].pop(0); save()
     with open("results/schedule_log.md", "a") as f:
         f.write(f"- {cfg['name']} | {mode} | {it['title']} | {slot.astimezone(IST).strftime('%a %d %b %Y %I:%M %p IST')} | https://studio.youtube.com/video/{vid}/edit\n")

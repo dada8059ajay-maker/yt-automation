@@ -44,6 +44,18 @@ if dr and dr.get("tries", 0) >= 4: dr = None          # a draft that keeps faili
 import datetime as _dt
 if dr and dr.get("wait_until") and _dt.datetime.fromisoformat(dr["wait_until"]) > _dt.datetime.now(_dt.timezone.utc) and not forced:
     best = None; dr = None; MIN_STOP = True; ch = mode = ""   # Gemini TTS quota: wait for reset instead of starting new videos
+# festival first: an unused festival long, then its trailer short
+if not forced and not (dr and dr.get("wait_until") and iso(dr["wait_until"]) > now):
+    try:
+        _B = json.load(open("engine/story_bank.json")); _used = S.get("_bank", {})
+        for _c in ("kahani", "raat"):
+            if dr and dr.get("fest"): break
+            if any(e["id"] not in _used for e in _B.get(_c, {}).get("festival", [])):
+                dr = None; ch, mode, best, MIN_STOP = _c, "long", (0, _c, "long", -99), False; break
+            _ll = S.get(_c, {}).get("last_long") or {}
+            if _ll.get("fest_at") and not _ll.get("short_done") and not (dr and dr.get("ch") == _c and dr.get("mode") == "long"):
+                dr = None; ch, mode, best, MIN_STOP = _c, "short", (0, _c, "short", -99), False; break
+    except Exception as _e: print("festival plan skipped", _e, file=sys.stderr)
 if dr and not forced and not MIN_STOP: ch, mode, best = dr["ch"], dr["mode"], best or (0, dr["ch"], dr["mode"])  # unfinished video first
 pre = ""
 if ch and left_avail == 0:
