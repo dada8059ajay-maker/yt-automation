@@ -156,87 +156,89 @@
    "बेडरूम की दीवार पर अचानक चमके जादुई नक्शे का पीछा करते हुए नन्हे चिंटू की अंतरिक्ष जैसी जादुई दुनिया की रोमांचक खोज।",
    "चिंटू की बेडरूम की दीवार पर अचानक बने जादुई नक्शे से एक अंतरिक्ष जैसी रहस्यमयी दुनिया का खुलना।",
    "जादुई और रहस्यमयी कहानियाँ",
-   "चतुर जंगल और पंचतंत्र की कहानियाँ"
+   "चतुर जंगल और पंचतंत्र की कहानियाँ",
+   "दिवाली की जादुई कहानी"
   ],
   "last_long": {
-   "job": "kahani_long_20261103_1345",
-   "title": "बोलता बरगद और ज़हर की साज़िश | जादुई हिंदी कहानी",
-   "story": "जादुई और रहस्यमयी कहानियाँ",
+   "job": "kahani_long_20261103_1415",
+   "title": "छोटू का जादुई दीया | दिवाली की प्यारी कहानी",
+   "story": "दिवाली की जादुई कहानी",
    "characters": {
-    "Veeru": "Indian boy, 9, wavy black hair, green kurta, cloth bag on shoulder, brave eyes",
-    "Moti": "small white cartoon parrot with red beak, very talkative"
+    "Chhotu": "Indian boy, 8, short black hair, yellow kurta, small clay diya in hands, bright curious eyes",
+    "Dadi": "Indian grandmother, 70, white hair in bun, light green saree, round glasses, kind smile",
+    "Jugnu": "tiny glowing golden firefly with a happy cartoon face"
    },
-   "vid": "c10dlzb3Aq0",
+   "vid": "0f21gj4pVes",
    "short_done": false,
    "trailer": {
-    "title": "गाँव के बरगद ने रात में कहा, मुझे बचा लो! #shorts",
-    "topic": "जादुई कहानी",
-    "description": "पूरी कहानी कहानी पतंग पर।",
+    "title": "दिवाली की रात जादुई दीया जल उठा! #shorts",
+    "topic": "दिवाली कहानी",
+    "description": "पूरी कहानी कहानी पतंग पर। शुभ दीपावली!",
     "tags": [
-     "बच्चों की कहानी",
-     "हिंदी कहानी",
+     "दिवाली",
+     "diwali story",
      "कहानी पतंग",
-     "jadui kahani",
      "shorts"
     ],
-    "hook": "पेड़ ने पुकारा!",
-    "thumb_text": "पेड़ बोला!",
+    "hook": "जादुई दीया!",
+    "thumb_text": "जादुई दीया",
     "characters": {
-     "Veeru": "Indian boy, 9, wavy black hair, green kurta, cloth bag on shoulder, brave eyes",
-     "Moti": "small white cartoon parrot with red beak, very talkative"
+     "Chhotu": "Indian boy, 8, short black hair, yellow kurta, small clay diya in hands, bright curious eyes",
+     "Dadi": "Indian grandmother, 70, white hair in bun, light green saree, round glasses, kind smile",
+     "Jugnu": "tiny glowing golden firefly with a happy cartoon face"
     },
     "scenes": [
      {
       "s": "N",
-      "t": "ज़रा सोचिए, आपके गाँव का सबसे पुराना पेड़ एक रात आपसे कहे, मुझे बचा लो!",
+      "t": "दिवाली से एक रात पहले, पूरे गाँव में अंधेरा था। और छोटू के हाथ में था एक जादुई दीया!",
       "m": "suspense",
       "st": "direct, warm, mysterious",
-      "v": "Giant ancient banyan tree at night, glowing faint green, Indian village",
-      "w": "Veeru"
+      "v": "Indian village at night, all houses dark, a small boy holding a glowing clay diya",
+      "w": "Chhotu"
+     },
+     {
+      "s": "A",
+      "t": "यह दीया सिर्फ़ सच्चे दिल वाले के हाथ में जलता है।",
+      "m": "peaceful",
+      "st": "old, gentle",
+      "v": "Grandmother giving an old clay diya to the boy, warm lantern light",
+      "w": "Dadi"
      },
      {
       "s": "N",
-      "t": "उसी रात वीरू को सपने में एक बूढ़ी आवाज़ आई, मेरी जड़ में ज़हर है, तीन दिन बचे हैं।",
+      "t": "अचानक दीया अपने आप जल उठा, और उसकी लौ से निकला एक नन्हा सुनहरा जुगनू!",
+      "m": "victory",
+      "st": "amazed, magical",
+      "v": "A tiny golden firefly flying out of the diya flame, sparkles, boy amazed",
+      "w": "Jugnu"
+     },
+     {
+      "s": "C",
+      "t": "हर घर में रोशनी तभी जलेगी, जब तुम किसी की सच्ची मदद करोगे।",
       "m": "suspense",
-      "st": "slow, deep, mysterious",
-      "v": "Dream scene: glowing roots, old face formed in bark",
-      "w": "Veeru"
+      "st": "tiny, serious",
+      "v": "Firefly floating in front of the boy, golden trail of light",
+      "w": "Jugnu"
      },
      {
       "s": "N",
-      "t": "सुबह वीरू ने देखा, पेड़ के पास किसी ने काले तेल के डिब्बे छिपा रखे थे।",
+      "t": "पर आख़िरी घर था उस लड़के का, जिसने छोटू की पतंग फाड़ी थी। अब छोटू क्या करेगा?",
       "m": "suspense",
       "st": "tense",
-      "v": "Black oil cans hidden in bushes near banyan roots",
-      "w": "Veeru"
+      "v": "Boy standing hesitant outside a dark house, firefly beside him",
+      "w": "Chhotu"
      },
      {
       "s": "N",
-      "t": "आधी रात को टॉर्च की रोशनी चमकी। ठेकेदार का आदमी फिर तेल डालने आया।",
-      "m": "chase",
-      "st": "fast, tense",
-      "v": "Night, torch light, man pouring black liquid at roots",
-      "w": "Veeru"
-     },
-     {
-      "s": "N",
-      "t": "मोती ज़ोर से चिल्लाया, चोर! चोर! और पूरा गाँव जाग गया।",
-      "m": "chase",
-      "st": "loud, funny, energetic",
-      "v": "Parrot screeching, lamps lighting up in village huts",
-      "w": "Moti"
-     },
-     {
-      "s": "N",
-      "t": "क्या वीरू पेड़ बचा पाया? पूरी कहानी कहानी पतंग पर देखिए!",
-      "m": "suspense",
-      "st": "direct",
-      "v": "Banyan glowing at night, boy and parrot",
-      "w": "Veeru"
+      "t": "पूरी कहानी देखिए कहानी पतंग पर, लिंक नीचे है!",
+      "m": "peaceful",
+      "st": "warm, inviting",
+      "v": "Village glowing with diyas at night, boy smiling with firefly",
+      "w": "Chhotu"
      }
     ]
    },
-   "fest_at": null
+   "fest_at": "2026-11-07T13:30:00+05:30"
   }
  },
  "_uploads": [
@@ -255,7 +257,8 @@
   "2026-11-03T05:29:54Z",
   "2026-11-03T05:31:53Z",
   "2026-11-03T05:45:33Z",
-  "2026-11-03T08:41:15Z"
+  "2026-11-03T08:41:15Z",
+  "2026-11-03T08:45:45Z"
  ],
  "_queue": [],
  "_draft": null,
@@ -421,15 +424,23 @@
    "title": "बोलता बरगद और ज़हर की साज़िश | जादुई हिंदी कहानी",
    "dur": 164,
    "used": false
+  },
+  {
+   "asset": "lib_kahani_long_20261103_1415.mp4",
+   "ch": "kahani",
+   "title": "छोटू का जादुई दीया | दिवाली की प्यारी कहानी",
+   "dur": 109,
+   "used": false
   }
  ],
  "_minutes": {
-  "2026-11": 2693
+  "2026-11": 2712
  },
  "_bank": {
   "kahani_s_patang01": "2026-11-02",
   "raat_s_dastak01": "2026-11-02",
-  "kahani_l_bargad01": "2026-11-03"
+  "kahani_l_bargad01": "2026-11-03",
+  "kahani_l_diwali01": "2026-11-03"
  },
  "_gemini_wait": "2026-11-03T08:05:00+00:00",
  "_engine_b_dead": "2026-11-03",
