@@ -1,0 +1,32 @@
+story from story_bank (Hark-written)
+title: यम का दीया बुझा, तो दरवाज़ा खुला! #shorts scenes: 6
+voice engine: openai-audio (locked) 6 calls
+img 0 pollinations-flux
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+hf flux fail AppError('You have exceeded your free ZeroGPU quota (90s requested vs. 0s left). Try again in 0:00:00. Subscribe to Hugging Face PRO to get 
+img 1 reused 0
+img 2 pollinations-flux
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+hf flux fail AppError('You have exceeded your free ZeroGPU quota (90s requested vs. 0s left). Try again in 0:00:00. Subscribe to Hugging Face PRO to get 
+img 3 reused 2
+pollinations retry 0 <HTTPError 503: 'Service Unavailable'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+hf flux fail AppError('You have exceeded your free ZeroGPU quota (90s requested vs. 0s left). Try again in 0:00:00. Subscribe to Hugging Face PRO to get 
+img 4 reused 2
+pollinations retry 0 <HTTPError 503: 'Service Unavailable'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+hf flux fail AppError('You have exceeded your free ZeroGPU quota (90s requested vs. 0s left). Try again in 0:00:00. Subscribe to Hugging Face PRO to get 
+img 5 reused 2
+resume: script loaded
+title: यम का दीया बुझा, तो दरवाज़ा खुला! #shorts scenes: 6
+voice engine: openai-audio (locked) 6 calls
+rendered /home/runner/work/yt-automation/yt-automation/out/raat_short_20261103_1054/raat_short_20261103_1054.mp4 106.5 s
+slot 2026-11-08T13:30:00Z Sun 08 Nov 07:00 PM IST
+UPLOADED AWO0B1huzOk
+preview https://github.com/dada8059ajay-maker/yt-automation/releases/download/ready-queue/raat_short_20261103_1054.mp4

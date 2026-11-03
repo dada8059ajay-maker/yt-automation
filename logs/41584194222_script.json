@@ -1,0 +1,72 @@
+{
+ "title": "यम का दीया बुझा, तो दरवाज़ा खुला! #shorts",
+ "topic": "नरक चतुर्दशी हॉरर",
+ "description": "काल्पनिक कहानी। पूरी कहानी रात के किस्से पर।",
+ "tags": [
+  "horror",
+  "नरक चतुर्दशी",
+  "रात के किस्से",
+  "shorts"
+ ],
+ "hook": "यम का दीया",
+ "thumb_text": "यम का दीया",
+ "characters": {
+  "Arjun": "Indian man, 30, short black hair, light stubble, maroon sweater over white kurta, holding a brass oil lamp, anxious eyes",
+  "Nani": "old Indian woman, 80, thin white hair, white cotton saree, deep wrinkles, piercing eyes",
+  "Yamdeep": "a tall faceless dark shadow figure with a faint red glow, wrapped in black smoke"
+ },
+ "scenes": [
+  {
+   "speaker": "N",
+   "text": "नरक चतुर्दशी की रात, यम का दीया सुबह तक नहीं बुझना चाहिए। पर अगर बुझ जाए तो?",
+   "mood": "horror",
+   "style": "deep, chilling whisper",
+   "visual": "Indian man, 30, short black hair, light stubble, maroon sweater over white kurta, holding a brass oil lamp, anxious eyes, Old Indian haveli doorway at night, a single clay lamp burning, fog"
+  },
+  {
+   "speaker": "A",
+   "text": "आधी रात के बाद कोई तुम्हारा नाम पुकारे, तो पलटकर मत देखना।",
+   "mood": "horror",
+   "style": "old, warning whisper",
+   "visual": "old Indian woman, 80, thin white hair, white cotton saree, deep wrinkles, piercing eyes, Old woman's piercing eyes in lamp light"
+  },
+  {
+   "speaker": "N",
+   "text": "रात के ठीक बारह बजे, दीया फड़फड़ाने लगा।",
+   "mood": "suspense",
+   "style": "tense",
+   "visual": "Indian man, 30, short black hair, light stubble, maroon sweater over white kurta, holding a brass oil lamp, anxious eyes, Lamp flame flickering violently in strong wind at haveli doorway"
+  },
+  {
+   "speaker": "G",
+   "text": "अर्जुन... इधर देखो बेटा...",
+   "mood": "horror",
+   "style": "ghostly, echoing, evil whisper",
+   "visual": "a tall faceless dark shadow figure with a faint red glow, wrapped in black smoke, Dark corridor behind the man, faint shadow shape, fog"
+  },
+  {
+   "speaker": "N",
+   "text": "और दक्षिण का दरवाज़ा... अपने आप खुलने लगा।",
+   "mood": "horror",
+   "style": "shocked, low",
+   "visual": "Indian man, 30, short black hair, light stubble, maroon sweater over white kurta, holding a brass oil lamp, anxious eyes, Old wooden door creaking open by itself, red glow inside"
+  },
+  {
+   "speaker": "N",
+   "text": "आगे क्या हुआ? पूरी कहानी रात के किस्से पर देखिए, लिंक नीचे है।",
+   "mood": "suspense",
+   "style": "low, inviting",
+   "visual": "Indian man, 30, short black hair, light stubble, maroon sweater over white kurta, holding a brass oil lamp, anxious eyes, Haveli at night with a single lamp burning, fog"
+  }
+ ],
+ "voice_engine": "openai",
+ "character_voice_map": {
+  "N": "onyx",
+  "M": "echo",
+  "F": "shimmer",
+  "O": "ash",
+  "A": "sage",
+  "C": "nova",
+  "G": "onyx"
+ }
+}
