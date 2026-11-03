@@ -13,8 +13,11 @@ jobs:
       FB_USER_TOKEN: ${{ secrets.FB_USER_TOKEN }}
     steps:
       - uses: actions/checkout@v4
-      - run: python3 engine/social_publish.py --probe | tee probe.txt
+      - name: secret names only (no values)
+        env: { ALLS: '${{ toJSON(secrets) }}' }
+        run: echo "secret names: $(echo "$ALLS" | jq -r 'keys | join(",")')" | tee probe.txt
+      - run: python3 engine/social_publish.py --probe | tee -a probe.txt
       - run: |
           mkdir -p logs; cp probe.txt logs/meta_probe.txt
           git config user.name bot; git config user.email bot@users.noreply.github.com
-          git add logs/meta_probe.txt secrets/ 2>/dev/null; git commit -qm "meta probe" && git pull -q --rebase && git push -q || true
+          git add logs/meta_probe.txt secrets/ 2>/dev/null; git commit -qm "meta probe [skip ci]" && git pull -q --rebase && git push -q || true
