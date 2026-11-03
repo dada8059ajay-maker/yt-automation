@@ -72,6 +72,7 @@ jobs:
           N: ${{ steps.plan.outputs.ch }}
           MODE: ${{ steps.plan.outputs.mode }}
           PRE: ${{ steps.plan.outputs.pre }}
+          VOICE_ENGINE: ${{ steps.plan.outputs.engine }}
         run: |
           F=secrets/yt_refresh_$N.enc; [ "$N" = kahani ] && F=secrets/yt_refresh.enc
           export RT=$(openssl enc -d -aes-256-cbc -pbkdf2 -in $F -pass env:CSEC)

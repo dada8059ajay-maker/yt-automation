@@ -19,8 +19,16 @@ import time as _t, tarfile
 T0 = _t.time()
 BUDGET_MIN = float(os.environ.get("RENDER_BUDGET_MIN", "58"))   # stop & checkpoint before the job's 80-min hard limit
 _d = STATE.get("_draft") or {}
+_NOWS = dt.datetime.now(dt.timezone.utc).isoformat()
+GEM_DEAD = (STATE.get("_gemini_wait") or "") > _NOWS
+_W = STATE.get("_waiting_gemini")
+if not _d and _W and not GEM_DEAD and _W.get("ch") == CH and _W.get("mode") == MODE and os.environ.get("VOICE_ENGINE", "gemini") != "openai":
+    _d = dict(_W, tries=0); STATE["_waiting_gemini"] = None; STATE["_draft"] = _d; print("resume Gemini-waiting draft", _d["job"], flush=True)
+if _d and os.environ.get("VOICE_ENGINE") == "openai" and (_d.get("engine") or "gemini") == "gemini":
+    STATE["_waiting_gemini"] = STATE.get("_waiting_gemini") or _d; STATE["_draft"] = None; _d = {}   # never mix engines: park it for Gemini
+ENGINE = _d.get("engine") or os.environ.get("VOICE_ENGINE") or "gemini"   # one voice engine per video, locked for its whole life
 try:   # a pending festival story beats an ordinary unfinished draft of the same channel+mode
-    if MODE == "long" and not _d.get("fest") and _d.get("ch") == CH and any(e["id"] not in STATE.get("_bank", {}) for e in json.load(open("engine/story_bank.json")).get(CH, {}).get("festival", [])): _d = {}
+    if MODE == "long" and not _d.get("fest") and _d.get("ch") == CH and any(e["id"] not in STATE.get("_bank", {}) and e.get("engine", ENGINE) == ENGINE for e in json.load(open("engine/story_bank.json")).get(CH, {}).get("festival", [])): _d = {}
 except Exception: pass
 DRAFT = _d if _d.get("ch") == CH and _d.get("mode") == MODE and _d.get("tries", 0) < 4 else None
 TRIES = (DRAFT or {}).get("tries", 0) + 1
@@ -35,7 +43,7 @@ def checkpoint(stage):
             if f.endswith((".json", ".mp3", ".jpg", ".txt")) and not f.startswith(("clips", "bg")): t.add(os.path.join(OUT, f), arcname=f"{JOB}/{f}")
     r = subprocess.run(["gh", "release", "upload", "drafts", asset, "--clobber"])
     STATE["_draft"] = {"job": JOB, "ch": CH, "mode": MODE, "asset": asset, "stage": stage,
-                       "tries": TRIES, "fest": (FEST or {}).get("id")}
+                       "tries": TRIES, "fest": (FEST or {}).get("id"), "engine": ENGINE}
     _save_state(); print("checkpoint", stage, "upload rc", r.returncode, flush=True)
 def out_of_time(): return (_t.time() - T0) / 60 > BUDGET_MIN
 def pause(stage):
@@ -45,7 +53,9 @@ def pause(stage):
         checkpoint(stage)
         pt = dt.timezone(dt.timedelta(hours=-8)); n = NOW.astimezone(pt)
         STATE["_draft"]["wait_until"] = (n.replace(hour=0, minute=5, second=0, microsecond=0) + dt.timedelta(days=1)).astimezone(dt.timezone.utc).isoformat()
-        _save_state(); print("PAUSED (quota) until", STATE["_draft"]["wait_until"], flush=True); sys.exit(0)
+        STATE["_gemini_wait"] = STATE["_draft"]["wait_until"]
+        STATE["_waiting_gemini"] = STATE["_draft"]; STATE["_draft"] = None   # drafts/waiting_gemini: resumes in its own Gemini voices after reset
+        _save_state(); print("PAUSED (quota) until", STATE["_gemini_wait"], flush=True); sys.exit(0)
     checkpoint(stage); print("PAUSED at", stage, "- next run resumes this draft", flush=True); sys.exit(0)
 if DRAFT:
     subprocess.run(["gh", "release", "download", "drafts", "-p", DRAFT["asset"], "-D", ".", "--clobber"], check=False)
@@ -140,7 +150,7 @@ try:
     _fb = json.load(open("engine/story_bank.json")).get(CH, {}).get("festival", [])
     if MODE == "long":
         _fid = (DRAFT or {}).get("fest")
-        FEST = next((e for e in _fb if e["id"] == _fid), None) if DRAFT else next((e for e in _fb if e["id"] not in STATE.get("_bank", {})), None)
+        FEST = next((e for e in _fb if e["id"] == _fid), None) if DRAFT else next((e for e in _fb if e["id"] not in STATE.get("_bank", {}) and e.get("engine", ENGINE) == ENGINE), None)
         FEST_AT = FEST and FEST.get("at")
     elif LL and LL.get("fest_at"): FEST_AT = LL["fest_at"]
 except Exception as _e: print("festival check skipped", _e)
@@ -194,7 +204,7 @@ import base64, time
 TTS_MODELS = ["gemini-2.5-flash-preview-tts", "gemini-2.5-pro-preview-tts", "gemini-2.5-flash-tts"]
 TTS_MODEL = TTS_MODELS[0]; DEAD = set()
 GV = {"N": "Charon", "M": "Puck", "F": "Kore", "O": "Fenrir", "A": "Gacrux", "C": "Leda", "G": "Enceladus"}
-NCHUNK = 6 if MODE == "long" else 2
+NCHUNK = 2 if MODE == "long" else 1   # single-call batching: whole half-video per Gemini call
 def wav_of(i): return f"{OUT}/scene_{i+1:02d}.wav"
 def tts_call(text, spk):
     """one Gemini TTS call; spk = list of speaker codes (max 2 -> multi-speaker)"""
@@ -241,9 +251,47 @@ def split_chunk(cw, idx):
         subprocess.run(["ffmpeg", "-y", "-v", "error", "-i", cw, "-ss", f"{edges[j]:.3f}", "-to", f"{edges[j+1]:.3f}", "-af",
             "silenceremove=start_periods=1:start_threshold=-45dB,areverse,silenceremove=start_periods=1:start_threshold=-45dB,areverse,aformat=channel_layouts=stereo:sample_rates=48000",
             wav_of(i)], check=True)
+S["voice_engine"] = S.get("voice_engine") or ENGINE
+OAV = {"raat": {"N": "onyx", "M": "echo", "F": "shimmer", "O": "ash", "A": "sage", "C": "nova", "G": "onyx"},
+       "kahani": {"N": "fable", "M": "echo", "F": "shimmer", "O": "onyx", "A": "sage", "C": "nova", "G": "ash"}}[CH if CH in ("raat", "kahani") else "raat"]
+S["character_voice_map"] = S.get("character_voice_map") or (OAV if S["voice_engine"] == "openai" else GV)
+json.dump(S, open(f"{OUT}/script.json", "w"), ensure_ascii=False, indent=1)
+def oa_tts(text, voice, style):
+    """Engine B: OpenAI gpt-4o-mini-tts through Pollinations (openai-audio). Same voice per character for the whole video."""
+    tok = os.environ.get("POLLINATIONS_TOKEN", "")
+    body = {"model": "openai-audio", "modalities": ["text", "audio"], "audio": {"voice": voice, "format": "mp3"},
+            "messages": [{"role": "system", "content": f"You are a professional Hindi voice actor. Say the user's Hindi line exactly, word for word, nothing else. Acting direction: {style}. Natural Indian Hindi, real emotion, breathing and whispers inside the voice."},
+                         {"role": "user", "content": text}]}
+    for k in range(5):
+        try:
+            req = urllib.request.Request("https://gen.pollinations.ai/v1/chat/completions", json.dumps(body).encode(),
+                                         {"Content-Type": "application/json", "Authorization": "Bearer " + tok})
+            r = json.load(urllib.request.urlopen(req, timeout=180))
+            return base64.b64decode(r["choices"][0]["message"]["audio"]["data"])
+        except urllib.error.HTTPError as e:
+            m = e.read().decode()[:160]; log("oatts", e.code, m)
+            if e.code in (401, 402, 403):
+                STATE["_engine_b_dead"] = dt.date.today().isoformat(); _save_state(); return None
+            time.sleep(20 * (k + 1))
+        except Exception as e: log("oatts", repr(e)[:160]); time.sleep(15)
+    return None
+if S["voice_engine"] == "openai":
+    for i, sc in enumerate(S["scenes"]):
+        if os.path.exists(wav_of(i)): continue
+        if out_of_time(): pause(f"voices scene {i}")
+        mp3 = oa_tts(sc["text"], S["character_voice_map"].get(sc.get("speaker", "N"), "onyx"), sc.get("style") or "natural expressive storyteller")
+        if not mp3: pause(f"engine B (openai-audio) failed at scene {i+1}")
+        open(f"{OUT}/o.mp3", "wb").write(mp3)
+        subprocess.run(["ffmpeg", "-y", "-v", "error", "-i", f"{OUT}/o.mp3", "-af",
+            "silenceremove=start_periods=1:start_threshold=-45dB,areverse,silenceremove=start_periods=1:start_threshold=-45dB,areverse,aformat=channel_layouts=stereo:sample_rates=48000",
+            wav_of(i)], check=True)
+        if i % 4 == 3: checkpoint(f"voices {i+1}/{len(S['scenes'])}")
+        time.sleep(3)
+    log("voice engine: openai-audio (locked)", len(S["scenes"]), "calls")
 n_sc = len(S["scenes"]); per = math.ceil(n_sc / NCHUNK)
 groups = [list(range(k, min(k + per, n_sc))) for k in range(0, n_sc, per)]
 for g_i, idx in enumerate(groups):
+    if S["voice_engine"] != "gemini": break
     if all(os.path.exists(wav_of(i)) for i in idx): continue   # resumed draft
     if out_of_time(): pause(f"voices chunk {g_i}")
     others = [c for c in dict.fromkeys(S["scenes"][i].get("speaker", "N") for i in idx) if c != "N"]
@@ -264,7 +312,7 @@ for g_i, idx in enumerate(groups):
     split_chunk(f"{OUT}/chunk.wav", idx); log("gtts chunk", g_i + 1, "/", len(groups), "scenes", idx[0], "-", idx[-1])
     checkpoint(f"voices {g_i+1}/{len(groups)}")
     if g_i + 1 < len(groups): time.sleep(22)   # free tier ~3 req/min
-log("voice engine: gemini", TTS_MODEL, len(groups), "calls")
+if S["voice_engine"] == "gemini": log("voice engine: gemini", TTS_MODEL, len(groups), "calls")
 GAP = 0.35
 for i, sc in enumerate(S["scenes"]):
     sc["dur"] = dur_of(wav_of(i)) + GAP   # (a) exact scene audio length via ffprobe
