@@ -261,7 +261,16 @@
   "2026-11-03T08:45:45Z"
  ],
  "_queue": [],
- "_draft": null,
+ "_draft": {
+  "job": "kahani_long_20261103_1433",
+  "ch": "kahani",
+  "mode": "long",
+  "asset": "draft_kahani_long_20261103_1433.tar",
+  "stage": "imgwait: image servers out of free credit at 0/16",
+  "tries": 0,
+  "fest": "kahani_l_dahaad01",
+  "engine": "gemini"
+ },
  "_library": [
   {
    "asset": "lib_raat_long_20261101_0811.mp4",
@@ -434,13 +443,14 @@
   }
  ],
  "_minutes": {
-  "2026-11": 2712
+  "2026-11": 2717
  },
  "_bank": {
   "kahani_s_patang01": "2026-11-02",
   "raat_s_dastak01": "2026-11-02",
   "kahani_l_bargad01": "2026-11-03",
-  "kahani_l_diwali01": "2026-11-03"
+  "kahani_l_diwali01": "2026-11-03",
+  "kahani_l_dahaad01": "2026-11-03"
  },
  "_gemini_wait": "2026-11-03T08:05:00+00:00",
  "_engine_b_dead": "2026-11-03",
