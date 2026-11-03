@@ -43,12 +43,24 @@ if ut and APP_ID and APP_SEC and ut != M.get("seed"):
 elif M.get("user_token") and APP_ID and APP_SEC and (NOW - dt.datetime.fromisoformat(M["user_set"])).days >= 45:
     bootstrap(M["user_token"])   # roll the 60-day user token forward before it lapses
 pt0 = os.environ.get("FB_PAGE_ACCESS_TOKEN", "").strip()
+def tinfo(t):
+    d = call("GET", f"{G}/debug_token", input_token=t, access_token=f"{APP_ID}|{APP_SEC}").get("data", {}) if APP_ID and APP_SEC else {}
+    return f"type={d.get('type')} app_match={str(d.get('app_id')) == APP_ID} valid={d.get('is_valid')} scopes={d.get('scopes')} err={d.get('error', {}).get('message')}"
+if PROBE:
+    if ut: say("FB_USER_TOKEN info", tinfo(ut))
+    if pt0: say("FB_PAGE_ACCESS_TOKEN info", tinfo(pt0))
 if pt0 and not M.get("page_token"):
-    me = call("GET", f"{G}/me", access_token=pt0, fields="id,name,instagram_business_account{id,username}")
-    if me.get("id"):
-        ig = me.get("instagram_business_account") or {}
+    me = call("GET", f"{G}/me", access_token=pt0, fields="id,name")
+    acc = call("GET", f"{G}/me/accounts", access_token=pt0, fields="id,name,access_token,instagram_business_account{id,username}").get("data")
+    if acc:   # it was a user token -> take the page from it
+        pg = next((p for p in acc if p.get("instagram_business_account")), acc[0]); ig = pg.get("instagram_business_account") or {}
+        M.update(page_id=pg["id"], page_name=pg.get("name"), page_token=pg["access_token"], ig_id=ig.get("id"), ig_user=ig.get("username")); enc(M)
+        say("page_token_secret", "OK (user token -> page token)")
+    elif me.get("id"):
+        pr = call("GET", f"{G}/{me['id']}", access_token=pt0, fields="instagram_business_account{id,username}")
+        ig = pr.get("instagram_business_account") or {}
         M.update(page_id=me["id"], page_name=me.get("name"), page_token=pt0, ig_id=ig.get("id"), ig_user=ig.get("username")); enc(M)
-        say("page_token_secret", "OK (FB_PAGE_ACCESS_TOKEN used)")
+        say("page_token_secret", f"OK page={me.get('name')} ig={ig.get('username')} {pr.get('error', '')}"[:300])
     else: say("page_token_secret", f"FAIL {me.get('error', {}).get('message', me)}"[:300])
 if PROBE:
     say("app_id_secret", "OK" if APP_ID and APP_SEC else "MISSING")
