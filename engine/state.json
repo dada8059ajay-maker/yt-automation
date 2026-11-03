@@ -1,7 +1,7 @@
 {
  "raat": {
   "short": "2026-11-08T16:00:00Z",
-  "long": "2026-11-07T15:30:00Z",
+  "long": "2026-11-07T17:00:00Z",
   "history": [
    "नियम वाला ढाबा: राजस्थान हाईवे का ढाबा, चाय के तीन कप, नियम, पिछली सीट पर लाल दुपट्टे वाली औरत",
    "एक सुनसान पहाड़ी पेट्रोल पंप पर रात की शिफ्ट के भयानक नियम और एक रोंगटे खड़े कर देने वाला ट्विस्ट।",
@@ -26,7 +26,8 @@
    "कसौली के 120 साल पुराने घंटाघर में 13वीं घंटी बजते ही कालचक्र उलटा घूमना और मृत केयरटेकर का भयानक रहस्य।",
    "सतपुड़ा के जंगल में बने 100 साल पुराने वीरान डाकघर में रात 1:11 बजे बजने वाले मोर्स कोड टेलीग्राफ का भयानक सच।",
    "कसौली के शापित घंटाघर में उलटे घूमते समय का खौफनाक रहस्य और 13वें घंटे का जानलेवा सच।",
-   "कसौली के शापित घंटाघर में 13वीं घंटी बजते ही खुला 10 साल पुराना खौफनाक राज़।"
+   "कसौली के शापित घंटाघर में 13वीं घंटी बजते ही खुला 10 साल पुराना खौफनाक राज़।",
+   "नरक चतुर्दशी, यम का दीया और पुश्तैनी हवेली के नियम"
   ],
   "series": {
    "name": "काल-घंटी के नियम",
@@ -40,17 +41,85 @@
    "bank": null
   },
   "last_long": {
-   "job": "raat_long_20261102_1502",
-   "title": "काल-घंटी के नियम: भाग 2 | कसौली घंटाघर का जानलेवा सच",
-   "story": "समीर कसौली के 120 साल पुराने घंटाघर में नए तकनीशियन के रूप में ड्यूटी शुरू करता है। पुराना केयरटेकर दीनानाथ उसे रात के 4 सख्त नियम बताता है। आधी रात को 12 के बजाय 13वीं घंटी बजती है और काल-चक्र उलटा घूमने लगता है। समीर को एक पुरानी डायरी से पता चलता है कि दीनानाथ की मौत 10 साल पहले ही हो चुकी थी।",
+   "job": "raat_long_20261103_1023",
+   "title": "नरक चतुर्दशी की रात: यम के दीये के 3 नियम | हिंदी हॉरर कहानी",
+   "story": "नरक चतुर्दशी, यम का दीया और पुश्तैनी हवेली के नियम",
    "characters": {
-    "Sameer": "A 32 year old Indian male clock technician, sharp jawline, short neat black hair, dark intense eyes, wearing a dark navy blue wool sweater over a light gray shirt and dark trousers, slim athletic build.",
-    "Dinanath": "A 65 year old Indian male caretaker, deeply wrinkled face, thick white mustache, sparse gray hair, wearing an old dusty brown tweed jacket over a woolen shawl, frail build.",
-    "Shadow": "A tall ominous translucent dark silhouette of an ancient figure inside a misty tower, glowing faint red eye-spots, uncanny tall posture."
+    "Arjun": "Indian man, 30, short black hair, light stubble, maroon sweater over white kurta, holding a brass oil lamp, anxious eyes",
+    "Nani": "old Indian woman, 80, thin white hair, white cotton saree, deep wrinkles, piercing eyes",
+    "Yamdeep": "a tall faceless dark shadow figure with a faint red glow, wrapped in black smoke"
    },
-   "vid": null,
-   "short_done": true,
-   "trailer": null
+   "vid": "O5z-r5akjY8",
+   "short_done": false,
+   "trailer": {
+    "title": "यम का दीया बुझा, तो दरवाज़ा खुला! #shorts",
+    "topic": "नरक चतुर्दशी हॉरर",
+    "description": "काल्पनिक कहानी। पूरी कहानी रात के किस्से पर।",
+    "tags": [
+     "horror",
+     "नरक चतुर्दशी",
+     "रात के किस्से",
+     "shorts"
+    ],
+    "hook": "यम का दीया",
+    "thumb_text": "यम का दीया",
+    "characters": {
+     "Arjun": "Indian man, 30, short black hair, light stubble, maroon sweater over white kurta, holding a brass oil lamp, anxious eyes",
+     "Nani": "old Indian woman, 80, thin white hair, white cotton saree, deep wrinkles, piercing eyes",
+     "Yamdeep": "a tall faceless dark shadow figure with a faint red glow, wrapped in black smoke"
+    },
+    "scenes": [
+     {
+      "s": "N",
+      "t": "नरक चतुर्दशी की रात, यम का दीया सुबह तक नहीं बुझना चाहिए। पर अगर बुझ जाए तो?",
+      "m": "horror",
+      "st": "deep, chilling whisper",
+      "v": "Old Indian haveli doorway at night, a single clay lamp burning, fog",
+      "w": "Arjun"
+     },
+     {
+      "s": "A",
+      "t": "आधी रात के बाद कोई तुम्हारा नाम पुकारे, तो पलटकर मत देखना।",
+      "m": "horror",
+      "st": "old, warning whisper",
+      "v": "Old woman's piercing eyes in lamp light",
+      "w": "Nani"
+     },
+     {
+      "s": "N",
+      "t": "रात के ठीक बारह बजे, दीया फड़फड़ाने लगा।",
+      "m": "suspense",
+      "st": "tense",
+      "v": "Lamp flame flickering violently in strong wind at haveli doorway",
+      "w": "Arjun"
+     },
+     {
+      "s": "G",
+      "t": "अर्जुन... इधर देखो बेटा...",
+      "m": "horror",
+      "st": "ghostly, echoing, evil whisper",
+      "v": "Dark corridor behind the man, faint shadow shape, fog",
+      "w": "Yamdeep"
+     },
+     {
+      "s": "N",
+      "t": "और दक्षिण का दरवाज़ा... अपने आप खुलने लगा।",
+      "m": "horror",
+      "st": "shocked, low",
+      "v": "Old wooden door creaking open by itself, red glow inside",
+      "w": "Arjun"
+     },
+     {
+      "s": "N",
+      "t": "आगे क्या हुआ? पूरी कहानी रात के किस्से पर देखिए, लिंक नीचे है।",
+      "m": "suspense",
+      "st": "low, inviting",
+      "v": "Haveli at night with a single lamp burning, fog",
+      "w": "Arjun"
+     }
+    ]
+   },
+   "fest_at": "2026-11-08T19:00:00+05:30"
   }
  },
  "kahani": {
@@ -109,19 +178,11 @@
   "2026-11-01T21:49:35Z",
   "2026-11-02T01:01:37Z",
   "2026-11-02T02:21:08Z",
-  "2026-11-02T10:03:32Z"
+  "2026-11-02T10:03:32Z",
+  "2026-11-03T05:11:54Z"
  ],
  "_queue": [],
- "_draft": {
-  "job": "raat_long_20261103_1023",
-  "ch": "raat",
-  "mode": "long",
-  "asset": "draft_raat_long_20261103_1023.tar",
-  "stage": "engine B (openai-audio) failed at scene 3",
-  "tries": 3,
-  "fest": "raat_l_yamdeep01",
-  "engine": "openai"
- },
+ "_draft": null,
  "_library": [
   {
    "asset": "lib_raat_long_20261101_0811.mp4",
@@ -256,10 +317,17 @@
    "dur": 542,
    "used": true,
    "old_engine": true
+  },
+  {
+   "asset": "lib_raat_long_20261103_1023.mp4",
+   "ch": "raat",
+   "title": "नरक चतुर्दशी की रात: यम के दीये के 3 नियम | हिंदी हॉरर कहानी",
+   "dur": 205,
+   "used": false
   }
  ],
  "_minutes": {
-  "2026-11": 2598
+  "2026-11": 2612
  },
  "_bank": {
   "kahani_s_patang01": "2026-11-02",
