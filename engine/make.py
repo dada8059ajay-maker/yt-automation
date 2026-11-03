@@ -48,6 +48,7 @@ def checkpoint(stage):
 def out_of_time(): return (_t.time() - T0) / 60 > BUDGET_MIN
 def pause(stage):
     global TRIES
+    if stage.startswith("imgwait"): TRIES = (DRAFT or {}).get("tries", 0)   # waiting for credit is not a failure
     if "quota" in stage:   # quota waits are not failures: keep the same draft, sleep until Gemini's daily reset (00:00 PT)
         TRIES = (DRAFT or {}).get("tries", 0)
         checkpoint(stage)
@@ -393,7 +394,9 @@ for i, sc in enumerate(S["scenes"]):
     p = sc["visual"]
     img, src = flux(p, seed + i)
     time.sleep(6)   # 6 s between downloads
-    if img is None:   # no CPU model any more: reuse the nearest good picture (mirrored for variety)
+    if img is None and os.environ.get("ALLOW_REUSE") != "1":   # 0% quality compromise: never fill with mirrored repeats, wait for image credit
+        pause(f"imgwait: image servers out of free credit at {i}/{len(S['scenes'])}")
+    if img is None:   # (only with ALLOW_REUSE=1) reuse the nearest good picture (mirrored)
         prev = [k for k in range(i - 1, -1, -1) if os.path.exists(f"{OUT}/i{k:03d}.jpg") and not os.path.exists(f"{OUT}/r{k:03d}")]
         if not prev: log("img", i, "MISSING"); continue
         Image.open(f"{OUT}/i{prev[0]:03d}.jpg").transpose(Image.FLIP_LEFT_RIGHT).save(f"{OUT}/i{i:03d}.jpg", quality=93)
