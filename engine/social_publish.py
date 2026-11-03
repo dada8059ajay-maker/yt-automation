@@ -120,17 +120,27 @@ for x in V:
     at = x.get("pub_iso")
     if not at or dt.datetime.fromisoformat(at.replace("Z", "+00:00")) > NOW: continue
     if posted >= 2: break
-    cap = x["title"].replace("#shorts", "").strip() + "\n\n" + x.get("caption", "") + "\n#horrorstories #hindikahani #reels #kahani #rahasya"
+    yid = x.get("yt")
+    if not yid:
+        try: yid = json.load(open(f"{ROOT}/results/{x['job']}.json"))["videos"][0]["id"]; x["yt"] = yid
+        except Exception: yid = None
+    yl = f"https://youtube.com/shorts/{yid}" if yid else ""
+    cap = x["title"].replace("#shorts", "").strip() + ("\n\n▶ पूरी कहानी YouTube पर: " + yl if yl else "") + "\n\n" + x.get("caption", "") + "\n#horrorstories #hindikahani #reels #kahani #rahasya"
+    cmt = f"▶ यह कहानी YouTube पर देखें और चैनल सब्सक्राइब करें: {yl}" if yl else ""
     if IG and not x.get("ig"):
         i, r = post_ig(x, cap)
-        if i: x["ig"] = i; print("social: IG reel", x["job"], i)
+        if i:
+            x["ig"] = i; print("social: IG reel", x["job"], i)
+            if cmt: print("social: IG comment", call("POST", f"{G}/{i}/comments", access_token=PT, message=cmt).get("id"))
         else: x["ig_err"] = str(r)[:200]; print("social: IG fail", r)
         changed = True
     if not x.get("fb"):
         if fb_already(x["title"].replace("#shorts", "").strip()): x["fb"] = "exists"; print("social: FB already has", x["job"])
         else:
             i, r = post_fb(x, cap)
-            if i: x["fb"] = i; print("social: FB reel", x["job"], i)
+            if i:
+                x["fb"] = i; print("social: FB reel", x["job"], i)
+                if cmt: print("social: FB comment", call("POST", f"{G}/{i}/comments", access_token=PT, message=cmt).get("id"))
             else: x["fb_err"] = str(r)[:200]; print("social: FB fail", r)
         changed = True
     posted += 1

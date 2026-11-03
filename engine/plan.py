@@ -41,6 +41,9 @@ forced = len(sys.argv) > 2 and sys.argv[1] and sys.argv[2]
 ch, mode = (sys.argv[1], sys.argv[2]) if forced else ((best[1], best[2]) if best else ("", ""))
 dr = S.get("_draft")
 if dr and dr.get("tries", 0) >= 4: dr = None          # a draft that keeps failing is abandoned
+import datetime as _dt
+if dr and dr.get("wait_until") and _dt.datetime.fromisoformat(dr["wait_until"]) > _dt.datetime.now(_dt.timezone.utc) and not forced:
+    best = None; dr = None; MIN_STOP = True; ch = mode = ""   # Gemini TTS quota: wait for reset instead of starting new videos
 if dr and not forced and not MIN_STOP: ch, mode, best = dr["ch"], dr["mode"], best or (0, dr["ch"], dr["mode"])  # unfinished video first
 pre = ""
 if ch and left_avail == 0:

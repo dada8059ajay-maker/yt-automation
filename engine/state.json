@@ -118,7 +118,8 @@
   "mode": "long",
   "asset": "draft_kahani_long_20261103_0938.tar",
   "stage": "gemini tts quota (chunk 1/6) - retry next run",
-  "tries": 4
+  "tries": 4,
+  "wait_until": "2026-11-03T08:05:00+00:00"
  },
  "_library": [
   {
@@ -261,8 +262,6 @@
  },
  "_bank": {
   "kahani_s_patang01": "2026-11-02",
-  "raat_s_dastak01": "2026-11-02",
-  "kahani_l_bargad01": "2026-11-03",
-  "kahani_l_dahaad01": "2026-11-03"
+  "raat_s_dastak01": "2026-11-02"
  }
 }

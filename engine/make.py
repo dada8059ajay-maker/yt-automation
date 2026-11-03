@@ -36,6 +36,13 @@ def checkpoint(stage):
     _save_state(); print("checkpoint", stage, "upload rc", r.returncode, flush=True)
 def out_of_time(): return (_t.time() - T0) / 60 > BUDGET_MIN
 def pause(stage):
+    global TRIES
+    if "quota" in stage:   # quota waits are not failures: keep the same draft, sleep until Gemini's daily reset (00:00 PT)
+        TRIES = (DRAFT or {}).get("tries", 0)
+        checkpoint(stage)
+        pt = dt.timezone(dt.timedelta(hours=-8)); n = NOW.astimezone(pt)
+        STATE["_draft"]["wait_until"] = (n.replace(hour=0, minute=5, second=0, microsecond=0) + dt.timedelta(days=1)).astimezone(dt.timezone.utc).isoformat()
+        _save_state(); print("PAUSED (quota) until", STATE["_draft"]["wait_until"], flush=True); sys.exit(0)
     checkpoint(stage); print("PAUSED at", stage, "- next run resumes this draft", flush=True); sys.exit(0)
 if DRAFT:
     subprocess.run(["gh", "release", "download", "drafts", "-p", DRAFT["asset"], "-D", ".", "--clobber"], check=False)
