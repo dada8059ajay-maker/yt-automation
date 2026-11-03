@@ -51,7 +51,7 @@
     "Yamdeep": "a tall faceless dark shadow figure with a faint red glow, wrapped in black smoke"
    },
    "vid": "Vm-kzRxxkw0",
-   "short_done": false,
+   "short_done": true,
    "trailer": {
     "title": "यम का दीया बुझा, तो दरवाज़ा खुला! #shorts",
     "topic": "नरक चतुर्दशी हॉरर",
@@ -456,18 +456,20 @@
  "_bank": {
   "kahani_s_patang01": "2026-11-02",
   "raat_s_dastak01": "2026-11-02",
-  "kahani_l_dahaad01": "2026-11-03",
-  "raat_l_yamdeep01": "2026-11-03"
+  "kahani_l_dahaad01": "2026-11-03"
  },
  "_gemini_wait": "2026-11-04T08:05:00+00:00",
  "_engine_b_dead": "2026-11-03",
- "_redo_delete": [],
+ "_redo_delete": [
+  "Vm-kzRxxkw0"
+ ],
  "_redo_jobs": [
   "kahani_long_20261103_1101",
   "kahani_long_20261103_1115",
   "kahani_long_20261103_1345",
   "kahani_long_20261103_1415",
   "raat_long_20261103_1023",
+  "raat_long_20261103_1521",
   "raat_short_20261103_1054"
  ],
  "_waiting_gemini": {
