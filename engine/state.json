@@ -42,7 +42,7 @@
    "bank": null
   },
   "last_long": {
-   "job": "raat_long_20261103_1521",
+   "job": "raat_long_20261103_1608",
    "title": "नरक चतुर्दशी की रात: यम के दीये के 3 नियम | हिंदी हॉरर कहानी",
    "story": "नरक चतुर्दशी, यम का दीया और पुश्तैनी हवेली के नियम",
    "characters": {
@@ -50,8 +50,8 @@
     "Nani": "old Indian woman, 80, thin white hair, white cotton saree, deep wrinkles, piercing eyes",
     "Yamdeep": "a tall faceless dark shadow figure with a faint red glow, wrapped in black smoke"
    },
-   "vid": "Vm-kzRxxkw0",
-   "short_done": true,
+   "vid": "uCSRHweYFdQ",
+   "short_done": false,
    "trailer": {
     "title": "यम का दीया बुझा, तो दरवाज़ा खुला! #shorts",
     "topic": "नरक चतुर्दशी हॉरर",
@@ -259,19 +259,11 @@
   "2026-11-03T05:45:33Z",
   "2026-11-03T08:41:15Z",
   "2026-11-03T08:45:45Z",
-  "2026-11-03T10:05:33Z"
+  "2026-11-03T10:05:33Z",
+  "2026-11-03T10:38:36Z"
  ],
  "_queue": [],
- "_draft": {
-  "job": "raat_long_20261103_1127",
-  "ch": "raat",
-  "mode": "long",
-  "asset": "draft_raat_long_20261103_1127.tar",
-  "stage": "imgwait: image servers out of free credit at 11/15",
-  "tries": 0,
-  "fest": null,
-  "engine": "kokoro"
- },
+ "_draft": null,
  "_library": [
   {
    "asset": "lib_raat_long_20261101_0811.mp4",
@@ -448,21 +440,27 @@
    "title": "नरक चतुर्दशी की रात: यम के दीये के 3 नियम | हिंदी हॉरर कहानी",
    "dur": 141,
    "used": false
+  },
+  {
+   "asset": "lib_raat_long_20261103_1608.mp4",
+   "ch": "raat",
+   "title": "नरक चतुर्दशी की रात: यम के दीये के 3 नियम | हिंदी हॉरर कहानी",
+   "dur": 146,
+   "used": false
   }
  ],
  "_minutes": {
-  "2026-11": 2815
+  "2026-11": 2833
  },
  "_bank": {
   "kahani_s_patang01": "2026-11-02",
   "raat_s_dastak01": "2026-11-02",
-  "kahani_l_dahaad01": "2026-11-03"
+  "kahani_l_dahaad01": "2026-11-03",
+  "raat_l_yamdeep01": "2026-11-03"
  },
  "_gemini_wait": "2026-11-04T08:05:00+00:00",
  "_engine_b_dead": "2026-11-03",
- "_redo_delete": [
-  "Vm-kzRxxkw0"
- ],
+ "_redo_delete": [],
  "_redo_jobs": [
   "kahani_long_20261103_1101",
   "kahani_long_20261103_1115",
@@ -484,7 +482,18 @@
   "wait_until": "2026-11-04T08:05:00+00:00"
  },
  "_fm_dead": "2026-11-03",
- "_parked": [],
+ "_parked": [
+  {
+   "job": "raat_long_20261103_1127",
+   "ch": "raat",
+   "mode": "long",
+   "asset": "draft_raat_long_20261103_1127.tar",
+   "stage": "imgwait: image servers out of free credit at 11/15",
+   "tries": 0,
+   "fest": null,
+   "engine": "kokoro"
+  }
+ ],
  "_unschedule": [],
  "_hold_jobs": [
   "raat_short_20261102_1527",
