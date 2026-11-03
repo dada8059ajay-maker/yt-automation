@@ -14,7 +14,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: secret names only (no values)
-        env: { ALLS: '${{ toJSON(secrets) }}' }
+        env:
+          ALLS: ${{ toJSON(secrets) }}
         run: echo "secret names: $(echo "$ALLS" | jq -r 'keys | join(",")')" | tee probe.txt
       - run: python3 engine/social_publish.py --probe | tee -a probe.txt
       - run: |
