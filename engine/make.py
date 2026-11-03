@@ -261,6 +261,8 @@ def split_chunk(cw, idx):
         subprocess.run(["ffmpeg", "-y", "-v", "error", "-i", cw, "-ss", f"{edges[j]:.3f}", "-to", f"{edges[j+1]:.3f}", "-af",
             "silenceremove=start_periods=1:start_threshold=-45dB,areverse,silenceremove=start_periods=1:start_threshold=-45dB,areverse,aformat=channel_layouts=stereo:sample_rates=48000",
             wav_of(i)], check=True)
+if S.get("voice_engine") and S["voice_engine"] != ENGINE and not any(os.path.exists(wav_of(i)) for i in range(len(S["scenes"]))):
+    log("voice engine relocked", S["voice_engine"], "->", ENGINE, "(no line voiced yet, whole video in one engine)"); S["voice_engine"] = None; S["character_voice_map"] = None
 S["voice_engine"] = S.get("voice_engine") or ENGINE
 OAV = {"raat": {"N": "onyx", "M": "echo", "F": "shimmer", "O": "ash", "A": "sage", "C": "nova", "G": "onyx"},
        "kahani": {"N": "fable", "M": "echo", "F": "shimmer", "O": "onyx", "A": "sage", "C": "nova", "G": "ash"}}[CH if CH in ("raat", "kahani") else "raat"]

@@ -462,5 +462,18 @@
   "fest": "kahani_l_dahaad01",
   "engine": "gemini",
   "wait_until": "2026-11-04T08:05:00+00:00"
- }
+ },
+ "_fm_dead": "2026-11-03",
+ "_parked": [
+  {
+   "job": "raat_long_20261103_1127",
+   "ch": "raat",
+   "mode": "long",
+   "asset": "draft_raat_long_20261103_1127.tar",
+   "stage": "revoice in kokoro",
+   "tries": 0,
+   "fest": null,
+   "engine": "kokoro"
+  }
+ ]
 }
