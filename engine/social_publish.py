@@ -39,7 +39,7 @@ def bootstrap(user_tok):
     enc(M); return True
 ut = os.environ.get("FB_USER_TOKEN", "").strip()
 if ut and APP_ID and APP_SEC and ut != M.get("seed"):
-    if bootstrap(ut): M["seed"] = ut; enc(M)
+    if bootstrap(ut): M["seed"] = ut; enc(M); print("social=1")
 elif M.get("user_token") and APP_ID and APP_SEC and (NOW - dt.datetime.fromisoformat(M["user_set"])).days >= 45:
     bootstrap(M["user_token"])   # roll the 60-day user token forward before it lapses
 pt0 = os.environ.get("FB_PAGE_ACCESS_TOKEN", "").strip()
@@ -55,7 +55,7 @@ if pt0 and not M.get("page_token"):
     if acc:   # it was a user token -> take the page from it
         pg = next((p for p in acc if p.get("instagram_business_account")), acc[0]); ig = pg.get("instagram_business_account") or {}
         M.update(page_id=pg["id"], page_name=pg.get("name"), page_token=pg["access_token"], ig_id=ig.get("id"), ig_user=ig.get("username")); enc(M)
-        say("page_token_secret", "OK (user token -> page token)")
+        say("page_token_secret", "OK (user token -> page token)"); print("social=1")
     elif me.get("id"):
         pr = call("GET", f"{G}/{me['id']}", access_token=pt0, fields="instagram_business_account{id,username}")
         ig = pr.get("instagram_business_account") or {}
