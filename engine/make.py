@@ -352,16 +352,17 @@ def good_img(data):
 def flux(prompt, sd):
     """100% FLUX: 1) Pollinations model=flux&enhance=true  2) Hugging Face FLUX.1-schnell. None -> reuse nearest FLUX picture."""
     short = clean_prompt(prompt)
-    for k in range(3):
+    for k in range(5):
         url = ("https://image.pollinations.ai/prompt/" + urllib.parse.quote(short) +
                f"?model=flux&width={W}&height={H}&nologo=true&enhance=true&seed={random.randint(1, 2**31 - 1)}")
         hdr = {"User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36"}
-        if os.environ.get("POLLINATIONS_TOKEN"): hdr["Authorization"] = "Bearer " + os.environ["POLLINATIONS_TOKEN"]
+        if os.environ.get("POLLINATIONS_TOKEN") and not globals().get("_POLL_ANON"): hdr["Authorization"] = "Bearer " + os.environ["POLLINATIONS_TOKEN"]
         try:
             img = good_img(urllib.request.urlopen(urllib.request.Request(url, headers=hdr), timeout=150).read())
-            if not os.environ.get("POLLINATIONS_TOKEN"): img = img.crop((0, 0, img.width, int(img.height * 0.94)))
-            return img, "pollinations-flux"
+            if "Authorization" not in hdr: img = img.crop((0, 0, img.width, int(img.height * 0.94)))   # free anonymous tier: trim watermark strip
+            return img, "pollinations-flux" + ("-free" if "Authorization" not in hdr else "")
         except Exception as e:
+            if "402" in repr(e) and "Authorization" in hdr: globals()["_POLL_ANON"] = True; log("pollinations key out of credit -> free anonymous FLUX"); continue
             log("pollinations retry", k, repr(e)[:100]); time.sleep(6 + 6 * k)
     try:
         from gradio_client import Client

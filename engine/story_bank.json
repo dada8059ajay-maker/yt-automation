@@ -696,460 +696,7 @@
   ]
  },
  "kahani": {
-  "long": [
-   {
-    "id": "kahani_l_bargad01",
-    "script": {
-     "title": "बोलता बरगद और ज़हर की साज़िश | जादुई हिंदी कहानी",
-     "topic": "जादुई और रहस्यमयी कहानियाँ",
-     "category": "kahani: magic",
-     "description": "एक बच्चे और उसके तोते ने कैसे गाँव के सौ साल पुराने बरगद को बचाया। सीख: सच्चाई और हिम्मत।\n#KahaniPatang #HindiKahani #MoralStories",
-     "tags": [
-      "बच्चों की कहानी",
-      "हिंदी कहानी",
-      "कहानी पतंग",
-      "moral stories in hindi",
-      "bedtime stories hindi",
-      "jadui kahani"
-     ],
-     "hook": "पेड़ ने कहा मुझे बचा लो",
-     "thumb_text": "पेड़ बोला!",
-     "characters": {
-      "Veeru": "Indian boy, 9, wavy black hair, green kurta, cloth bag on shoulder, brave eyes",
-      "Moti": "small white cartoon parrot with red beak, very talkative"
-     },
-     "scenes": [
-      {
-       "s": "N",
-       "t": "ज़रा सोचिए, आपके गाँव का सबसे पुराना पेड़ एक रात आपसे कहे, मुझे बचा लो!",
-       "m": "suspense",
-       "st": "direct, warm, mysterious",
-       "v": "Giant ancient banyan tree at night, glowing faint green, Indian village",
-       "w": "Veeru"
-      },
-      {
-       "s": "N",
-       "t": "आज की कहानी है वीरू की, और उस बरगद की जो सौ साल से गाँव की रखवाली कर रहा था।",
-       "m": "peaceful",
-       "st": "friendly storyteller",
-       "v": "Boy standing under huge banyan tree, village kids playing, sunny day",
-       "w": "Veeru"
-      },
-      {
-       "s": "N",
-       "t": "वीरू रोज़ स्कूल से लौटकर उसकी जड़ों पर बैठता और अपने तोते मोती से बातें करता।",
-       "m": "peaceful",
-       "st": "calm",
-       "v": "Boy sitting on banyan roots with white parrot on shoulder",
-       "w": "Veeru"
-      },
-      {
-       "s": "O",
-       "t": "मोती बोला, वीरू! आज पेड़ उदास है, उसके पत्ते पीले क्यों हो रहे हैं?",
-       "m": "suspense",
-       "st": "chirpy, worried",
-       "v": "Parrot pointing wing at yellowing banyan leaves",
-       "w": "Moti"
-      },
-      {
-       "s": "N",
-       "t": "उसी रात वीरू को सपने में एक बूढ़ी आवाज़ आई, मेरी जड़ में ज़हर है, तीन दिन बचे हैं।",
-       "m": "suspense",
-       "st": "slow, deep, mysterious",
-       "v": "Dream scene: glowing roots, old face formed in bark",
-       "w": "Veeru"
-      },
-      {
-       "s": "N",
-       "t": "सुबह वीरू ने देखा, पेड़ के पास किसी ने काले तेल के डिब्बे छिपा रखे थे।",
-       "m": "suspense",
-       "st": "tense",
-       "v": "Black oil cans hidden in bushes near banyan roots",
-       "w": "Veeru"
-      },
-      {
-       "s": "M",
-       "t": "यह किसने किया? और क्यों?",
-       "m": "suspense",
-       "st": "determined",
-       "v": "Close-up of boy's determined face, parrot beside",
-       "w": "Veeru"
-      },
-      {
-       "s": "N",
-       "t": "पता चला, शहर का एक ठेकेदार पेड़ सुखाकर वहाँ गोदाम बनाना चाहता था।",
-       "m": "suspense",
-       "st": "storyteller, serious",
-       "v": "Man in sunglasses with map near the tree, truck behind",
-       "w": "Veeru"
-      },
-      {
-       "s": "N",
-       "t": "वीरू ने गाँव वालों को बताया, पर किसी ने बच्चे की बात नहीं मानी।",
-       "m": "peaceful",
-       "st": "sad, gentle",
-       "v": "Villagers laughing and walking away from the boy",
-       "w": "Veeru"
-      },
-      {
-       "s": "O",
-       "t": "मोती बोला, सबूत चाहिए! रात को ठेकेदार फिर आएगा, हम पहरा देंगे।",
-       "m": "chase",
-       "st": "excited",
-       "v": "Parrot flapping wings, boy nodding at dusk",
-       "w": "Moti"
-      },
-      {
-       "s": "N",
-       "t": "आधी रात को टॉर्च की रोशनी चमकी। ठेकेदार का आदमी फिर तेल डालने आया।",
-       "m": "chase",
-       "st": "fast, tense",
-       "v": "Night, torch light, man pouring black liquid at roots",
-       "w": "Veeru"
-      },
-      {
-       "s": "N",
-       "t": "मोती ज़ोर से चिल्लाया, चोर! चोर! और पूरा गाँव जाग गया।",
-       "m": "chase",
-       "st": "loud, funny, energetic",
-       "v": "Parrot screeching, lamps lighting up in village huts",
-       "w": "Moti"
-      },
-      {
-       "s": "N",
-       "t": "गाँव वालों ने आदमी को पकड़ लिया। उसने सब सच बता दिया।",
-       "m": "peaceful",
-       "st": "relieved",
-       "v": "Villagers holding the man with lanterns, boy in front",
-       "w": "Veeru"
-      },
-      {
-       "s": "N",
-       "t": "सबने मिलकर ज़हरीली मिट्टी हटाई और पेड़ की जड़ों में ताज़ा पानी डाला।",
-       "m": "peaceful",
-       "st": "warm",
-       "v": "Villagers digging and watering the banyan at dawn",
-       "w": "Veeru"
-      },
-      {
-       "s": "N",
-       "t": "तीसरे दिन सुबह, पीले पत्तों के बीच एक नई हरी कोंपल फूटी।",
-       "m": "peaceful",
-       "st": "soft, joyful",
-       "v": "Close-up fresh green leaf sprouting on banyan branch, sunrise",
-       "w": "Veeru"
-      },
-      {
-       "s": "N",
-       "t": "और उस रात सपने में वही आवाज़ बोली, धन्यवाद वीरू, अब मैं तुम्हें एक राज़ दूँगा।",
-       "m": "suspense",
-       "st": "mysterious, deep",
-       "v": "Dream: banyan glowing gold, a small golden seed falling into boy's hand",
-       "w": "Veeru"
-      },
-      {
-       "s": "N",
-       "t": "दोस्तों, बड़े काम के लिए बड़ा होना ज़रूरी नहीं, सच्चा होना ज़रूरी है। वह सुनहरा बीज क्या था? अगली कहानी में!",
-       "m": "peaceful",
-       "st": "warm, direct to viewer",
-       "v": "Boy holding glowing seed under banyan at sunrise, parrot on shoulder",
-       "w": "Veeru"
-      }
-     ],
-     "trailer": {
-      "title": "गाँव के बरगद ने रात में कहा, मुझे बचा लो! #shorts",
-      "topic": "जादुई कहानी",
-      "description": "पूरी कहानी कहानी पतंग पर।",
-      "tags": [
-       "बच्चों की कहानी",
-       "हिंदी कहानी",
-       "कहानी पतंग",
-       "jadui kahani",
-       "shorts"
-      ],
-      "hook": "पेड़ ने पुकारा!",
-      "thumb_text": "पेड़ बोला!",
-      "characters": {
-       "Veeru": "Indian boy, 9, wavy black hair, green kurta, cloth bag on shoulder, brave eyes",
-       "Moti": "small white cartoon parrot with red beak, very talkative"
-      },
-      "scenes": [
-       {
-        "s": "N",
-        "t": "ज़रा सोचिए, आपके गाँव का सबसे पुराना पेड़ एक रात आपसे कहे, मुझे बचा लो!",
-        "m": "suspense",
-        "st": "direct, warm, mysterious",
-        "v": "Giant ancient banyan tree at night, glowing faint green, Indian village",
-        "w": "Veeru"
-       },
-       {
-        "s": "N",
-        "t": "उसी रात वीरू को सपने में एक बूढ़ी आवाज़ आई, मेरी जड़ में ज़हर है, तीन दिन बचे हैं।",
-        "m": "suspense",
-        "st": "slow, deep, mysterious",
-        "v": "Dream scene: glowing roots, old face formed in bark",
-        "w": "Veeru"
-       },
-       {
-        "s": "N",
-        "t": "सुबह वीरू ने देखा, पेड़ के पास किसी ने काले तेल के डिब्बे छिपा रखे थे।",
-        "m": "suspense",
-        "st": "tense",
-        "v": "Black oil cans hidden in bushes near banyan roots",
-        "w": "Veeru"
-       },
-       {
-        "s": "N",
-        "t": "आधी रात को टॉर्च की रोशनी चमकी। ठेकेदार का आदमी फिर तेल डालने आया।",
-        "m": "chase",
-        "st": "fast, tense",
-        "v": "Night, torch light, man pouring black liquid at roots",
-        "w": "Veeru"
-       },
-       {
-        "s": "N",
-        "t": "मोती ज़ोर से चिल्लाया, चोर! चोर! और पूरा गाँव जाग गया।",
-        "m": "chase",
-        "st": "loud, funny, energetic",
-        "v": "Parrot screeching, lamps lighting up in village huts",
-        "w": "Moti"
-       },
-       {
-        "s": "N",
-        "t": "क्या वीरू पेड़ बचा पाया? पूरी कहानी कहानी पतंग पर देखिए!",
-        "m": "suspense",
-        "st": "direct",
-        "v": "Banyan glowing at night, boy and parrot",
-        "w": "Veeru"
-       }
-      ]
-     }
-    }
-   },
-   {
-    "id": "kahani_l_dahaad01",
-    "script": {
-     "title": "शेर की खोई दहाड़ और चालाक बंदर | जंगल की मज़ेदार कहानी",
-     "topic": "चतुर जंगल और पंचतंत्र की कहानियाँ",
-     "category": "kahani: jungle",
-     "description": "एक बच्चे ने कैसे जंगल के राजा की चोरी हुई दहाड़ वापस दिलाई। सीख: अच्छा दिल ही असली ताकत।\n#KahaniPatang #JungleStory #PanchatantraStyle",
-     "tags": [
-      "बच्चों की कहानी",
-      "हिंदी कहानी",
-      "कहानी पतंग",
-      "moral stories in hindi",
-      "bedtime stories hindi",
-      "jadui kahani"
-     ],
-     "hook": "शेर की दहाड़ गायब",
-     "thumb_text": "दहाड़ चोरी!",
-     "characters": {
-      "Guddu": "Indian boy, 8, short hair, blue school uniform, red backpack",
-      "Sher": "big friendly cartoon lion with golden mane",
-      "Bandar": "cheeky cartoon monkey with yellow cap"
-     },
-     "scenes": [
-      {
-       "s": "N",
-       "t": "अगर जंगल का राजा शेर एक दिन अपनी दहाड़ ही खो दे, तो क्या होगा?",
-       "m": "suspense",
-       "st": "direct, playful mystery",
-       "v": "Lion opening mouth with no sound, jungle animals surprised, cartoon",
-       "w": "Sher"
-      },
-      {
-       "s": "N",
-       "t": "यह कहानी है गुड्डू की, जो स्कूल की पिकनिक में रास्ता भटककर जादुई जंगल पहुँच गया।",
-       "m": "peaceful",
-       "st": "friendly storyteller",
-       "v": "Boy with red backpack lost in colorful magical jungle",
-       "w": "Guddu"
-      },
-      {
-       "s": "N",
-       "t": "वहाँ सारे जानवर परेशान थे। शेर राजा की दहाड़ गायब हो गई थी।",
-       "m": "suspense",
-       "st": "storyteller",
-       "v": "Worried animals gathered around a sad lion on a rock",
-       "w": "Sher"
-      },
-      {
-       "s": "O",
-       "t": "बंदर हँसा, अब तो मैं राजा बनूँगा! बिना दहाड़ के कैसा राजा?",
-       "m": "chase",
-       "st": "cheeky, mocking",
-       "v": "Cheeky monkey dancing on branch with crown made of leaves",
-       "w": "Bandar"
-      },
-      {
-       "s": "N",
-       "t": "गुड्डू ने ध्यान दिया, बंदर की टोपी के अंदर से हल्की हल्की गुर्राहट आ रही थी।",
-       "m": "suspense",
-       "st": "curious, hushed",
-       "v": "Close-up yellow cap glowing faintly with sound waves",
-       "w": "Guddu"
-      },
-      {
-       "s": "M",
-       "t": "गुड्डू सोचने लगा, क्या दहाड़ चुराई जा सकती है?",
-       "m": "suspense",
-       "st": "thoughtful",
-       "v": "Boy thinking with finger on chin, question marks",
-       "w": "Guddu"
-      },
-      {
-       "s": "N",
-       "t": "उसने बंदर को केले की दावत पर बुलाया, और खेल खेल में टोपी उतरवाने की तरकीब सोची।",
-       "m": "peaceful",
-       "st": "playful",
-       "v": "Pile of bananas on leaf, boy and monkey sitting",
-       "w": "Guddu"
-      },
-      {
-       "s": "N",
-       "t": "खेल था, जो सबसे ऊँचा कूदेगा, उसे सबसे बड़ा केला मिलेगा।",
-       "m": "chase",
-       "st": "fast, fun",
-       "v": "Monkey jumping high, cap flying off in the air",
-       "w": "Bandar"
-      },
-      {
-       "s": "N",
-       "t": "टोपी गिरते ही उसमें से एक सुनहरी गेंद लुढ़की, और पूरा जंगल दहाड़ से गूँज उठा!",
-       "m": "chase",
-       "st": "loud, exciting",
-       "v": "Golden glowing ball rolling, huge roar sound waves, birds flying",
-       "w": "Guddu"
-      },
-      {
-       "s": "N",
-       "t": "शेर ने गेंद उठाई और उसकी दहाड़ वापस आ गई।",
-       "m": "peaceful",
-       "st": "triumphant",
-       "v": "Lion roaring proudly on rock, animals cheering",
-       "w": "Sher"
-      },
-      {
-       "s": "O",
-       "t": "बंदर ने सिर झुका लिया। मुझे बस एक दिन राजा बनना था।",
-       "m": "peaceful",
-       "st": "sad, small voice",
-       "v": "Monkey looking down, ashamed, holding cap",
-       "w": "Bandar"
-      },
-      {
-       "s": "N",
-       "t": "शेर मुस्कुराया, राजा बनने के लिए दहाड़ नहीं, दूसरों की मदद करनी पड़ती है।",
-       "m": "peaceful",
-       "st": "wise, warm",
-       "v": "Lion placing paw on monkey's shoulder kindly",
-       "w": "Sher"
-      },
-      {
-       "s": "N",
-       "t": "शेर ने बंदर को जंगल का संदेशवाहक बना दिया, और बंदर खुशी से उछल पड़ा।",
-       "m": "peaceful",
-       "st": "joyful",
-       "v": "Monkey wearing messenger badge, swinging happily",
-       "w": "Bandar"
-      },
-      {
-       "s": "N",
-       "t": "फिर शेर ने गुड्डू को घर का रास्ता दिखाया, एक चमकते जुगनुओं वाले रास्ते से।",
-       "m": "peaceful",
-       "st": "soft, magical",
-       "v": "Path lit by fireflies through jungle at dusk, boy walking",
-       "w": "Guddu"
-      },
-      {
-       "s": "N",
-       "t": "स्कूल के बच्चों ने पूछा, कहाँ थे? गुड्डू मुस्कुराया, उसके बैग में एक सुनहरा पंख चमक रहा था।",
-       "m": "suspense",
-       "st": "mysterious, gentle",
-       "v": "Boy with friends, a golden feather peeking from backpack",
-       "w": "Guddu"
-      },
-      {
-       "s": "N",
-       "t": "दोस्तों, सच्ची ताकत चालाकी में नहीं, अच्छे दिल में होती है। वह सुनहरा पंख किसका था? अगली बार!",
-       "m": "peaceful",
-       "st": "warm, direct to viewer",
-       "v": "Golden feather glowing in boy's hand, sunset",
-       "w": "Guddu"
-      }
-     ],
-     "trailer": {
-      "title": "शेर की दहाड़ किसने चुराई? #shorts",
-      "topic": "जंगल कहानी",
-      "description": "पूरी कहानी कहानी पतंग पर।",
-      "tags": [
-       "बच्चों की कहानी",
-       "हिंदी कहानी",
-       "कहानी पतंग",
-       "jadui kahani",
-       "shorts"
-      ],
-      "hook": "दहाड़ गायब!",
-      "thumb_text": "दहाड़ चोरी!",
-      "characters": {
-       "Guddu": "Indian boy, 8, short hair, blue school uniform, red backpack",
-       "Sher": "big friendly cartoon lion with golden mane",
-       "Bandar": "cheeky cartoon monkey with yellow cap"
-      },
-      "scenes": [
-       {
-        "s": "N",
-        "t": "अगर जंगल का राजा शेर एक दिन अपनी दहाड़ ही खो दे, तो क्या होगा?",
-        "m": "suspense",
-        "st": "direct, playful mystery",
-        "v": "Lion opening mouth with no sound, jungle animals surprised, cartoon",
-        "w": "Sher"
-       },
-       {
-        "s": "N",
-        "t": "वहाँ सारे जानवर परेशान थे। शेर राजा की दहाड़ गायब हो गई थी।",
-        "m": "suspense",
-        "st": "storyteller",
-        "v": "Worried animals gathered around a sad lion on a rock",
-        "w": "Sher"
-       },
-       {
-        "s": "O",
-        "t": "बंदर हँसा, अब तो मैं राजा बनूँगा! बिना दहाड़ के कैसा राजा?",
-        "m": "chase",
-        "st": "cheeky, mocking",
-        "v": "Cheeky monkey dancing on branch with crown made of leaves",
-        "w": "Bandar"
-       },
-       {
-        "s": "N",
-        "t": "गुड्डू ने ध्यान दिया, बंदर की टोपी के अंदर से हल्की हल्की गुर्राहट आ रही थी।",
-        "m": "suspense",
-        "st": "curious, hushed",
-        "v": "Close-up yellow cap glowing faintly with sound waves",
-        "w": "Guddu"
-       },
-       {
-        "s": "N",
-        "t": "टोपी गिरते ही उसमें से एक सुनहरी गेंद लुढ़की, और पूरा जंगल दहाड़ से गूँज उठा!",
-        "m": "chase",
-        "st": "loud, exciting",
-        "v": "Golden glowing ball rolling, huge roar sound waves, birds flying",
-        "w": "Guddu"
-       },
-       {
-        "s": "N",
-        "t": "दहाड़ किसने चुराई थी? पूरी कहानी कहानी पतंग पर देखिए!",
-        "m": "suspense",
-        "st": "direct",
-        "v": "Lion and boy in jungle, question mark",
-        "w": "Guddu"
-       }
-      ]
-     }
-    }
-   }
-  ],
+  "long": [],
   "short": [
    {
     "id": "kahani_s_patang01",
@@ -1718,6 +1265,460 @@
      }
     },
     "engine": "gemini"
+   },
+   {
+    "id": "kahani_l_bargad01",
+    "script": {
+     "title": "बोलता बरगद और ज़हर की साज़िश | जादुई हिंदी कहानी",
+     "topic": "जादुई और रहस्यमयी कहानियाँ",
+     "category": "kahani: magic",
+     "description": "एक बच्चे और उसके तोते ने कैसे गाँव के सौ साल पुराने बरगद को बचाया। सीख: सच्चाई और हिम्मत।\n#KahaniPatang #HindiKahani #MoralStories",
+     "tags": [
+      "बच्चों की कहानी",
+      "हिंदी कहानी",
+      "कहानी पतंग",
+      "moral stories in hindi",
+      "bedtime stories hindi",
+      "jadui kahani"
+     ],
+     "hook": "पेड़ ने कहा मुझे बचा लो",
+     "thumb_text": "पेड़ बोला!",
+     "characters": {
+      "Veeru": "Indian boy, 9, wavy black hair, green kurta, cloth bag on shoulder, brave eyes",
+      "Moti": "small white cartoon parrot with red beak, very talkative"
+     },
+     "scenes": [
+      {
+       "s": "N",
+       "t": "ज़रा सोचिए, आपके गाँव का सबसे पुराना पेड़ एक रात आपसे कहे, मुझे बचा लो!",
+       "m": "suspense",
+       "st": "direct, warm, mysterious",
+       "v": "Giant ancient banyan tree at night, glowing faint green, Indian village",
+       "w": "Veeru"
+      },
+      {
+       "s": "N",
+       "t": "आज की कहानी है वीरू की, और उस बरगद की जो सौ साल से गाँव की रखवाली कर रहा था।",
+       "m": "peaceful",
+       "st": "friendly storyteller",
+       "v": "Boy standing under huge banyan tree, village kids playing, sunny day",
+       "w": "Veeru"
+      },
+      {
+       "s": "N",
+       "t": "वीरू रोज़ स्कूल से लौटकर उसकी जड़ों पर बैठता और अपने तोते मोती से बातें करता।",
+       "m": "peaceful",
+       "st": "calm",
+       "v": "Boy sitting on banyan roots with white parrot on shoulder",
+       "w": "Veeru"
+      },
+      {
+       "s": "O",
+       "t": "मोती बोला, वीरू! आज पेड़ उदास है, उसके पत्ते पीले क्यों हो रहे हैं?",
+       "m": "suspense",
+       "st": "chirpy, worried",
+       "v": "Parrot pointing wing at yellowing banyan leaves",
+       "w": "Moti"
+      },
+      {
+       "s": "N",
+       "t": "उसी रात वीरू को सपने में एक बूढ़ी आवाज़ आई, मेरी जड़ में ज़हर है, तीन दिन बचे हैं।",
+       "m": "suspense",
+       "st": "slow, deep, mysterious",
+       "v": "Dream scene: glowing roots, old face formed in bark",
+       "w": "Veeru"
+      },
+      {
+       "s": "N",
+       "t": "सुबह वीरू ने देखा, पेड़ के पास किसी ने काले तेल के डिब्बे छिपा रखे थे।",
+       "m": "suspense",
+       "st": "tense",
+       "v": "Black oil cans hidden in bushes near banyan roots",
+       "w": "Veeru"
+      },
+      {
+       "s": "M",
+       "t": "यह किसने किया? और क्यों?",
+       "m": "suspense",
+       "st": "determined",
+       "v": "Close-up of boy's determined face, parrot beside",
+       "w": "Veeru"
+      },
+      {
+       "s": "N",
+       "t": "पता चला, शहर का एक ठेकेदार पेड़ सुखाकर वहाँ गोदाम बनाना चाहता था।",
+       "m": "suspense",
+       "st": "storyteller, serious",
+       "v": "Man in sunglasses with map near the tree, truck behind",
+       "w": "Veeru"
+      },
+      {
+       "s": "N",
+       "t": "वीरू ने गाँव वालों को बताया, पर किसी ने बच्चे की बात नहीं मानी।",
+       "m": "peaceful",
+       "st": "sad, gentle",
+       "v": "Villagers laughing and walking away from the boy",
+       "w": "Veeru"
+      },
+      {
+       "s": "O",
+       "t": "मोती बोला, सबूत चाहिए! रात को ठेकेदार फिर आएगा, हम पहरा देंगे।",
+       "m": "chase",
+       "st": "excited",
+       "v": "Parrot flapping wings, boy nodding at dusk",
+       "w": "Moti"
+      },
+      {
+       "s": "N",
+       "t": "आधी रात को टॉर्च की रोशनी चमकी। ठेकेदार का आदमी फिर तेल डालने आया।",
+       "m": "chase",
+       "st": "fast, tense",
+       "v": "Night, torch light, man pouring black liquid at roots",
+       "w": "Veeru"
+      },
+      {
+       "s": "N",
+       "t": "मोती ज़ोर से चिल्लाया, चोर! चोर! और पूरा गाँव जाग गया।",
+       "m": "chase",
+       "st": "loud, funny, energetic",
+       "v": "Parrot screeching, lamps lighting up in village huts",
+       "w": "Moti"
+      },
+      {
+       "s": "N",
+       "t": "गाँव वालों ने आदमी को पकड़ लिया। उसने सब सच बता दिया।",
+       "m": "peaceful",
+       "st": "relieved",
+       "v": "Villagers holding the man with lanterns, boy in front",
+       "w": "Veeru"
+      },
+      {
+       "s": "N",
+       "t": "सबने मिलकर ज़हरीली मिट्टी हटाई और पेड़ की जड़ों में ताज़ा पानी डाला।",
+       "m": "peaceful",
+       "st": "warm",
+       "v": "Villagers digging and watering the banyan at dawn",
+       "w": "Veeru"
+      },
+      {
+       "s": "N",
+       "t": "तीसरे दिन सुबह, पीले पत्तों के बीच एक नई हरी कोंपल फूटी।",
+       "m": "peaceful",
+       "st": "soft, joyful",
+       "v": "Close-up fresh green leaf sprouting on banyan branch, sunrise",
+       "w": "Veeru"
+      },
+      {
+       "s": "N",
+       "t": "और उस रात सपने में वही आवाज़ बोली, धन्यवाद वीरू, अब मैं तुम्हें एक राज़ दूँगा।",
+       "m": "suspense",
+       "st": "mysterious, deep",
+       "v": "Dream: banyan glowing gold, a small golden seed falling into boy's hand",
+       "w": "Veeru"
+      },
+      {
+       "s": "N",
+       "t": "दोस्तों, बड़े काम के लिए बड़ा होना ज़रूरी नहीं, सच्चा होना ज़रूरी है। वह सुनहरा बीज क्या था? अगली कहानी में!",
+       "m": "peaceful",
+       "st": "warm, direct to viewer",
+       "v": "Boy holding glowing seed under banyan at sunrise, parrot on shoulder",
+       "w": "Veeru"
+      }
+     ],
+     "trailer": {
+      "title": "गाँव के बरगद ने रात में कहा, मुझे बचा लो! #shorts",
+      "topic": "जादुई कहानी",
+      "description": "पूरी कहानी कहानी पतंग पर।",
+      "tags": [
+       "बच्चों की कहानी",
+       "हिंदी कहानी",
+       "कहानी पतंग",
+       "jadui kahani",
+       "shorts"
+      ],
+      "hook": "पेड़ ने पुकारा!",
+      "thumb_text": "पेड़ बोला!",
+      "characters": {
+       "Veeru": "Indian boy, 9, wavy black hair, green kurta, cloth bag on shoulder, brave eyes",
+       "Moti": "small white cartoon parrot with red beak, very talkative"
+      },
+      "scenes": [
+       {
+        "s": "N",
+        "t": "ज़रा सोचिए, आपके गाँव का सबसे पुराना पेड़ एक रात आपसे कहे, मुझे बचा लो!",
+        "m": "suspense",
+        "st": "direct, warm, mysterious",
+        "v": "Giant ancient banyan tree at night, glowing faint green, Indian village",
+        "w": "Veeru"
+       },
+       {
+        "s": "N",
+        "t": "उसी रात वीरू को सपने में एक बूढ़ी आवाज़ आई, मेरी जड़ में ज़हर है, तीन दिन बचे हैं।",
+        "m": "suspense",
+        "st": "slow, deep, mysterious",
+        "v": "Dream scene: glowing roots, old face formed in bark",
+        "w": "Veeru"
+       },
+       {
+        "s": "N",
+        "t": "सुबह वीरू ने देखा, पेड़ के पास किसी ने काले तेल के डिब्बे छिपा रखे थे।",
+        "m": "suspense",
+        "st": "tense",
+        "v": "Black oil cans hidden in bushes near banyan roots",
+        "w": "Veeru"
+       },
+       {
+        "s": "N",
+        "t": "आधी रात को टॉर्च की रोशनी चमकी। ठेकेदार का आदमी फिर तेल डालने आया।",
+        "m": "chase",
+        "st": "fast, tense",
+        "v": "Night, torch light, man pouring black liquid at roots",
+        "w": "Veeru"
+       },
+       {
+        "s": "N",
+        "t": "मोती ज़ोर से चिल्लाया, चोर! चोर! और पूरा गाँव जाग गया।",
+        "m": "chase",
+        "st": "loud, funny, energetic",
+        "v": "Parrot screeching, lamps lighting up in village huts",
+        "w": "Moti"
+       },
+       {
+        "s": "N",
+        "t": "क्या वीरू पेड़ बचा पाया? पूरी कहानी कहानी पतंग पर देखिए!",
+        "m": "suspense",
+        "st": "direct",
+        "v": "Banyan glowing at night, boy and parrot",
+        "w": "Veeru"
+       }
+      ]
+     }
+    },
+    "at": "2026-11-07T18:00:00+05:30"
+   },
+   {
+    "id": "kahani_l_dahaad01",
+    "script": {
+     "title": "शेर की खोई दहाड़ और चालाक बंदर | जंगल की मज़ेदार कहानी",
+     "topic": "चतुर जंगल और पंचतंत्र की कहानियाँ",
+     "category": "kahani: jungle",
+     "description": "एक बच्चे ने कैसे जंगल के राजा की चोरी हुई दहाड़ वापस दिलाई। सीख: अच्छा दिल ही असली ताकत।\n#KahaniPatang #JungleStory #PanchatantraStyle",
+     "tags": [
+      "बच्चों की कहानी",
+      "हिंदी कहानी",
+      "कहानी पतंग",
+      "moral stories in hindi",
+      "bedtime stories hindi",
+      "jadui kahani"
+     ],
+     "hook": "शेर की दहाड़ गायब",
+     "thumb_text": "दहाड़ चोरी!",
+     "characters": {
+      "Guddu": "Indian boy, 8, short hair, blue school uniform, red backpack",
+      "Sher": "big friendly cartoon lion with golden mane",
+      "Bandar": "cheeky cartoon monkey with yellow cap"
+     },
+     "scenes": [
+      {
+       "s": "N",
+       "t": "अगर जंगल का राजा शेर एक दिन अपनी दहाड़ ही खो दे, तो क्या होगा?",
+       "m": "suspense",
+       "st": "direct, playful mystery",
+       "v": "Lion opening mouth with no sound, jungle animals surprised, cartoon",
+       "w": "Sher"
+      },
+      {
+       "s": "N",
+       "t": "यह कहानी है गुड्डू की, जो स्कूल की पिकनिक में रास्ता भटककर जादुई जंगल पहुँच गया।",
+       "m": "peaceful",
+       "st": "friendly storyteller",
+       "v": "Boy with red backpack lost in colorful magical jungle",
+       "w": "Guddu"
+      },
+      {
+       "s": "N",
+       "t": "वहाँ सारे जानवर परेशान थे। शेर राजा की दहाड़ गायब हो गई थी।",
+       "m": "suspense",
+       "st": "storyteller",
+       "v": "Worried animals gathered around a sad lion on a rock",
+       "w": "Sher"
+      },
+      {
+       "s": "O",
+       "t": "बंदर हँसा, अब तो मैं राजा बनूँगा! बिना दहाड़ के कैसा राजा?",
+       "m": "chase",
+       "st": "cheeky, mocking",
+       "v": "Cheeky monkey dancing on branch with crown made of leaves",
+       "w": "Bandar"
+      },
+      {
+       "s": "N",
+       "t": "गुड्डू ने ध्यान दिया, बंदर की टोपी के अंदर से हल्की हल्की गुर्राहट आ रही थी।",
+       "m": "suspense",
+       "st": "curious, hushed",
+       "v": "Close-up yellow cap glowing faintly with sound waves",
+       "w": "Guddu"
+      },
+      {
+       "s": "M",
+       "t": "गुड्डू सोचने लगा, क्या दहाड़ चुराई जा सकती है?",
+       "m": "suspense",
+       "st": "thoughtful",
+       "v": "Boy thinking with finger on chin, question marks",
+       "w": "Guddu"
+      },
+      {
+       "s": "N",
+       "t": "उसने बंदर को केले की दावत पर बुलाया, और खेल खेल में टोपी उतरवाने की तरकीब सोची।",
+       "m": "peaceful",
+       "st": "playful",
+       "v": "Pile of bananas on leaf, boy and monkey sitting",
+       "w": "Guddu"
+      },
+      {
+       "s": "N",
+       "t": "खेल था, जो सबसे ऊँचा कूदेगा, उसे सबसे बड़ा केला मिलेगा।",
+       "m": "chase",
+       "st": "fast, fun",
+       "v": "Monkey jumping high, cap flying off in the air",
+       "w": "Bandar"
+      },
+      {
+       "s": "N",
+       "t": "टोपी गिरते ही उसमें से एक सुनहरी गेंद लुढ़की, और पूरा जंगल दहाड़ से गूँज उठा!",
+       "m": "chase",
+       "st": "loud, exciting",
+       "v": "Golden glowing ball rolling, huge roar sound waves, birds flying",
+       "w": "Guddu"
+      },
+      {
+       "s": "N",
+       "t": "शेर ने गेंद उठाई और उसकी दहाड़ वापस आ गई।",
+       "m": "peaceful",
+       "st": "triumphant",
+       "v": "Lion roaring proudly on rock, animals cheering",
+       "w": "Sher"
+      },
+      {
+       "s": "O",
+       "t": "बंदर ने सिर झुका लिया। मुझे बस एक दिन राजा बनना था।",
+       "m": "peaceful",
+       "st": "sad, small voice",
+       "v": "Monkey looking down, ashamed, holding cap",
+       "w": "Bandar"
+      },
+      {
+       "s": "N",
+       "t": "शेर मुस्कुराया, राजा बनने के लिए दहाड़ नहीं, दूसरों की मदद करनी पड़ती है।",
+       "m": "peaceful",
+       "st": "wise, warm",
+       "v": "Lion placing paw on monkey's shoulder kindly",
+       "w": "Sher"
+      },
+      {
+       "s": "N",
+       "t": "शेर ने बंदर को जंगल का संदेशवाहक बना दिया, और बंदर खुशी से उछल पड़ा।",
+       "m": "peaceful",
+       "st": "joyful",
+       "v": "Monkey wearing messenger badge, swinging happily",
+       "w": "Bandar"
+      },
+      {
+       "s": "N",
+       "t": "फिर शेर ने गुड्डू को घर का रास्ता दिखाया, एक चमकते जुगनुओं वाले रास्ते से।",
+       "m": "peaceful",
+       "st": "soft, magical",
+       "v": "Path lit by fireflies through jungle at dusk, boy walking",
+       "w": "Guddu"
+      },
+      {
+       "s": "N",
+       "t": "स्कूल के बच्चों ने पूछा, कहाँ थे? गुड्डू मुस्कुराया, उसके बैग में एक सुनहरा पंख चमक रहा था।",
+       "m": "suspense",
+       "st": "mysterious, gentle",
+       "v": "Boy with friends, a golden feather peeking from backpack",
+       "w": "Guddu"
+      },
+      {
+       "s": "N",
+       "t": "दोस्तों, सच्ची ताकत चालाकी में नहीं, अच्छे दिल में होती है। वह सुनहरा पंख किसका था? अगली बार!",
+       "m": "peaceful",
+       "st": "warm, direct to viewer",
+       "v": "Golden feather glowing in boy's hand, sunset",
+       "w": "Guddu"
+      }
+     ],
+     "trailer": {
+      "title": "शेर की दहाड़ किसने चुराई? #shorts",
+      "topic": "जंगल कहानी",
+      "description": "पूरी कहानी कहानी पतंग पर।",
+      "tags": [
+       "बच्चों की कहानी",
+       "हिंदी कहानी",
+       "कहानी पतंग",
+       "jadui kahani",
+       "shorts"
+      ],
+      "hook": "दहाड़ गायब!",
+      "thumb_text": "दहाड़ चोरी!",
+      "characters": {
+       "Guddu": "Indian boy, 8, short hair, blue school uniform, red backpack",
+       "Sher": "big friendly cartoon lion with golden mane",
+       "Bandar": "cheeky cartoon monkey with yellow cap"
+      },
+      "scenes": [
+       {
+        "s": "N",
+        "t": "अगर जंगल का राजा शेर एक दिन अपनी दहाड़ ही खो दे, तो क्या होगा?",
+        "m": "suspense",
+        "st": "direct, playful mystery",
+        "v": "Lion opening mouth with no sound, jungle animals surprised, cartoon",
+        "w": "Sher"
+       },
+       {
+        "s": "N",
+        "t": "वहाँ सारे जानवर परेशान थे। शेर राजा की दहाड़ गायब हो गई थी।",
+        "m": "suspense",
+        "st": "storyteller",
+        "v": "Worried animals gathered around a sad lion on a rock",
+        "w": "Sher"
+       },
+       {
+        "s": "O",
+        "t": "बंदर हँसा, अब तो मैं राजा बनूँगा! बिना दहाड़ के कैसा राजा?",
+        "m": "chase",
+        "st": "cheeky, mocking",
+        "v": "Cheeky monkey dancing on branch with crown made of leaves",
+        "w": "Bandar"
+       },
+       {
+        "s": "N",
+        "t": "गुड्डू ने ध्यान दिया, बंदर की टोपी के अंदर से हल्की हल्की गुर्राहट आ रही थी।",
+        "m": "suspense",
+        "st": "curious, hushed",
+        "v": "Close-up yellow cap glowing faintly with sound waves",
+        "w": "Guddu"
+       },
+       {
+        "s": "N",
+        "t": "टोपी गिरते ही उसमें से एक सुनहरी गेंद लुढ़की, और पूरा जंगल दहाड़ से गूँज उठा!",
+        "m": "chase",
+        "st": "loud, exciting",
+        "v": "Golden glowing ball rolling, huge roar sound waves, birds flying",
+        "w": "Guddu"
+       },
+       {
+        "s": "N",
+        "t": "दहाड़ किसने चुराई थी? पूरी कहानी कहानी पतंग पर देखिए!",
+        "m": "suspense",
+        "st": "direct",
+        "v": "Lion and boy in jungle, question mark",
+        "w": "Guddu"
+       }
+      ]
+     }
+    },
+    "at": "2026-11-08T18:00:00+05:30"
    }
   ]
  }

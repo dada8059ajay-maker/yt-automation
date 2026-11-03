@@ -37,6 +37,7 @@ jobs:
           echo "T0=$(date +%s)" >> $GITHUB_ENV
           export REPO_PRIVATE=$(gh api repos/${{ github.repository }} --jq .private 2>/dev/null || echo true)
           cp engine/state.json /tmp/base_state.json
+          python3 engine/redo_delete.py || true
           python3 engine/plan.py "${{ inputs.channel }}" "${{ inputs.mode }}" >> $GITHUB_OUTPUT; cat $GITHUB_OUTPUT
           grep -q '^ch=.\+\|^drain=1\|^comp=.\+' $GITHUB_OUTPUT || echo "::notice::Skipped: $(grep reason $GITHUB_OUTPUT)"
       - id: social   # Instagram Reels (+FB) auto-post when the YouTube Short goes public; skips without IG_TOKEN
@@ -83,7 +84,7 @@ jobs:
           name: video-${{ github.run_id }}
           path: out/
           retention-days: 3
-      - if: always() && (steps.plan.outputs.ch != '' || steps.plan.outputs.drain == '1' || steps.plan.outputs.comp != '' || steps.social.outputs.social == '1')
+      - if: always() && (steps.plan.outputs.ch != '' || steps.plan.outputs.drain == '1' || steps.plan.outputs.comp != '' || steps.social.outputs.social == '1' || steps.plan.outputs.redo == '1')
         run: |
           mkdir -p logs; cp out/*/log.txt logs/${{ github.run_id }}.txt 2>/dev/null || true; cp out/*/script.json logs/${{ github.run_id }}_script.json 2>/dev/null || true
           git config user.name bot; git config user.email bot@users.noreply.github.com

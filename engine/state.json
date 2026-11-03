@@ -431,11 +431,20 @@
  },
  "_bank": {
   "kahani_s_patang01": "2026-11-02",
-  "raat_s_dastak01": "2026-11-02",
-  "raat_l_yamdeep01": "2026-11-03",
-  "kahani_l_bargad01": "2026-11-03",
-  "kahani_l_dahaad01": "2026-11-03"
+  "raat_s_dastak01": "2026-11-02"
  },
  "_gemini_wait": "2026-11-03T08:05:00+00:00",
- "_engine_b_dead": "2026-11-03"
+ "_engine_b_dead": "2026-11-03",
+ "_redo_delete": [
+  "O5z-r5akjY8",
+  "AWO0B1huzOk",
+  "SmfDZyrHPF0",
+  "z31h1iLKCDU"
+ ],
+ "_redo_jobs": [
+  "raat_long_20261103_1023",
+  "raat_short_20261103_1054",
+  "kahani_long_20261103_1101",
+  "kahani_long_20261103_1115"
+ ]
 }
