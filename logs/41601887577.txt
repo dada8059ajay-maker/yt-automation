@@ -1,0 +1,11 @@
+story from story_bank (Hark-written)
+title: बोलता बरगद और ज़हर की साज़िश | जादुई हिंदी कहानी scenes: 17
+voice engine: openai-audio (locked) 17 calls
+img 0 pollinations-flux
+pollinations key out of credit -> free anonymous FLUX
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+pollinations retry 3 <HTTPError 402: 'Payment Required'>
+pollinations retry 4 <HTTPError 503: 'Service Unavailable'>
+hf serverless fail <HTTPError 403: 'Forbidden'>
+hf flux fail AppError('You have exceeded your free ZeroGPU quota (90s requested vs. 0s left). Try again in 0:00:00. Subscribe to Hugging Face PRO to get 

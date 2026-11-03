@@ -260,13 +260,13 @@
  ],
  "_queue": [],
  "_draft": {
-  "job": "raat_long_20261103_1127",
-  "ch": "raat",
+  "job": "kahani_long_20261103_1345",
+  "ch": "kahani",
   "mode": "long",
-  "asset": "draft_raat_long_20261103_1127.tar",
-  "stage": "engine B (openai-audio) failed at scene 15",
-  "tries": 1,
-  "fest": null,
+  "asset": "draft_kahani_long_20261103_1345.tar",
+  "stage": "imgwait: image servers out of free credit at 1/17",
+  "tries": 0,
+  "fest": "kahani_l_bargad01",
   "engine": "openai"
  },
  "_library": [
@@ -427,11 +427,12 @@
   }
  ],
  "_minutes": {
-  "2026-11": 2656
+  "2026-11": 2661
  },
  "_bank": {
   "kahani_s_patang01": "2026-11-02",
-  "raat_s_dastak01": "2026-11-02"
+  "raat_s_dastak01": "2026-11-02",
+  "kahani_l_bargad01": "2026-11-03"
  },
  "_gemini_wait": "2026-11-03T08:05:00+00:00",
  "_engine_b_dead": "2026-11-03",
