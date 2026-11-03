@@ -113,12 +113,12 @@
  ],
  "_queue": [],
  "_draft": {
-  "job": "kahani_long_20261103_0825",
+  "job": "kahani_long_20261103_0828",
   "ch": "kahani",
   "mode": "long",
-  "asset": "draft_kahani_long_20261103_0825.tar",
+  "asset": "draft_kahani_long_20261103_0828.tar",
   "stage": "gemini tts quota (chunk 1/6) - retry next run",
-  "tries": 4
+  "tries": 1
  },
  "_library": [
   {
@@ -257,10 +257,11 @@
   }
  ],
  "_minutes": {
-  "2026-11": 2399
+  "2026-11": 2401
  },
  "_bank": {
   "kahani_s_patang01": "2026-11-02",
-  "raat_s_dastak01": "2026-11-02"
+  "raat_s_dastak01": "2026-11-02",
+  "kahani_l_bargad01": "2026-11-03"
  }
 }
