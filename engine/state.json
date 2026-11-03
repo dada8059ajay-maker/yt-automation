@@ -264,7 +264,7 @@
   "ch": "kahani",
   "mode": "long",
   "asset": "draft_kahani_long_20261103_1345.tar",
-  "stage": "imgwait: image servers out of free credit at 7/17",
+  "stage": "imgwait: image servers out of free credit at 15/17",
   "tries": 0,
   "fest": "kahani_l_bargad01",
   "engine": "openai"
@@ -427,7 +427,7 @@
   }
  ],
  "_minutes": {
-  "2026-11": 2676
+  "2026-11": 2687
  },
  "_bank": {
   "kahani_s_patang01": "2026-11-02",
