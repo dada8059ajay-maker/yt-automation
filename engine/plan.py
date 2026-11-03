@@ -69,6 +69,10 @@ if not forced and not MIN_STOP and not (W and not GEM_DEAD):
                 dr = None; ch, mode, best, MIN_STOP = _c, "short", (0, _c, "short", -99), False; break
     except Exception as _e: print("festival plan skipped", _e, file=sys.stderr)
 if dr and not forced and not MIN_STOP: ch, mode, best = dr["ch"], dr["mode"], best or (0, dr["ch"], dr["mode"])  # unfinished video first
+_PH = S.get("_proof_hold")   # owner 2026-11-03: one perfect proof video first, nothing else until he approves
+if _PH and not forced:
+    if (S.get("_draft") or {}).get("job") == _PH: dr = S["_draft"]; ch, mode, best, MIN_STOP = dr["ch"], dr["mode"], (0, dr["ch"], dr["mode"]), False
+    else: ch = mode = ""; best = None; MIN_STOP = True
 pre = ""
 if ch and left_avail == 0:
     if left_q < MAX_QUEUE: pre = "--prerender"
