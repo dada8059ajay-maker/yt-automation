@@ -31,6 +31,19 @@ def bootstrap(user_tok):
     lt = r["access_token"]; say("long_lived_user_token", f"OK (expires_in={r.get('expires_in', 'never')})")
     a = call("GET", f"{G}/me/accounts", access_token=lt, fields="id,name,access_token,instagram_business_account{id,username}")
     pages = a.get("data") or []
+    if not pages:   # new-Pages / business portfolio: find page ids from granted scopes or businesses
+        d = call("GET", f"{G}/debug_token", input_token=lt, access_token=f"{APP_ID}|{APP_SEC}").get("data", {})
+        ids = set()
+        for g in d.get("granular_scopes", []):
+            if g.get("scope", "").startswith("pages_"): ids.update(g.get("target_ids", []))
+        for b in call("GET", f"{G}/me/businesses", access_token=lt, fields="id").get("data", []):
+            for e in ("owned_pages", "client_pages"):
+                ids.update(x["id"] for x in call("GET", f"{G}/{b['id']}/{e}", access_token=lt, fields="id").get("data", []))
+        say("page_ids_found", sorted(ids))
+        for i in ids:
+            r = call("GET", f"{G}/{i}", access_token=lt, fields="id,name,access_token,instagram_business_account{id,username}")
+            if r.get("access_token"): pages.append(r)
+            else: say("page_lookup", f"{i} {r.get('error', {}).get('message', r)}"[:200])
     if not pages: say("facebook_page", f"FAIL no Page on this login {a.get('error', '')}"[:300]); return False
     pg = next((p for p in pages if p.get("instagram_business_account")), pages[0])
     ig = (pg.get("instagram_business_account") or {})
