@@ -36,26 +36,27 @@
    "पुरानी हवेली का रहस्य",
    "आईने का रहस्य",
    "हिमालय की प्राचीन सोमेश्वर गुफा के अंदर दूसरे नियम का जानलेवा सामना और एक खौफनाक खुलासा",
-   "एक सुनसान समुद्री लाइटहाउस के 3 खौफनाक नियम और रात 2:15 बजे समुद्र से आई वही खौफनाक आवाज़।"
+   "एक सुनसान समुद्री लाइटहाउस के 3 खौफनाक नियम और रात 2:15 बजे समुद्र से आई वही खौफनाक आवाज़।",
+   "हिमालय की बंद गुफा के गर्भगृह में नीली ज्वाला का रहस्य और 1000 साल पुराने शाप का अंत।"
   ],
   "series": {
-   "name": "सोमेश्वर गुफा",
-   "part": 2,
-   "so_far": "राघव ने हिमालय की प्राचीन और सदियों से बंद सोमेश्वर गुफा में कदम रखा था। अंदर प्रवेश करते ही उसे तीन खौफनाक नियमों का एक पत्थर मिला। पहला नियम था कि गुफा के अंदर अपनी परछाई को कभी मत छूना। राघव ने पहला नियम तो बचा लिया लेकिन परछाई का आकार बदलते देख उसकी साँसें अटक गईं। अब वह गुफा के और अंदर दूसरे पड़ाव पर पहुँच चुका है जहाँ नया खतरा उसका इंतजार कर रहा है।",
+   "name": "सोमेश्वर गुफा का रहस्य",
+   "part": 3,
+   "so_far": "राघव ने हिमालय की सदियों से बंद सोमेश्वर गुफा के अंदर कदम रखा था जहाँ उसे तीन खौफनाक नियम मिले थे। पहला नियम था अपनी परछाईं को न छूना और दूसरा नियम था ज़हरीली नीली धुंध के बीच अपनों की भटकती आवाज़ों पर ध्यान न देना। राघव दोनों जानलेवा पड़ाव पार करके अब गुफा के सबसे गुप्त गर्भगृह के मुहाने पर पहुँच चुका है, जहाँ उसका सामना अंतिम खौफनाक सच्चाई से होने वाला है।",
    "characters": {
-    "राघव": "English character sheet: Age 28, sharp angular face, deep brown watchful eyes, short messy black hair, lean and tall athletic build, wearing a dark grey cargo jacket over a black woolen t-shirt with navy blue trousers, typical North Indian modern explorer look."
+    "राघव": "Age 28, sharp angular face, deep brown watchful eyes, short messy black hair, lean and tall athletic build, wearing a dark grey cargo jacket over a black woolen t-shirt with navy blue trousers, typical North Indian modern explorer look."
    },
    "bank": null
   },
   "last_long": {
-   "job": "raat_long_20261104_1219",
-   "title": "सोमेश्वर गुफा का रहस्य भाग 2 | रात के किस्से",
-   "story": "राघव ने हिमालय की प्राचीन और सदियों से बंद सोमेश्वर गुफा में कदम रखा था। अंदर प्रवेश करते ही उसे तीन खौफनाक नियमों का एक पत्थर मिला। पहला नियम था कि गुफा के अंदर अपनी परछाई को कभी मत छूना। राघव ने पहला नियम तो बचा लिया लेकिन परछाई का आकार बदलते देख उसकी साँसें अटक गईं। अब वह गुफा के और अंदर दूसरे पड़ाव पर पहुँच चुका है जहाँ नया खतरा उसका इंतजार कर रहा है।",
+   "job": "raat_long_20261104_1453",
+   "title": "तीसरा नियम: आँखें बंद मत करना! सोमेश्वर गुफा | रात के किस्से",
+   "story": "राघव ने हिमालय की सदियों से बंद सोमेश्वर गुफा के अंदर कदम रखा था जहाँ उसे तीन खौफनाक नियम मिले थे। पहला नियम था अपनी परछाईं को न छूना और दूसरा नियम था ज़हरीली नीली धुंध के बीच अपनों की भटकती आवाज़ों पर ध्यान न देना। राघव दोनों जानलेवा पड़ाव पार करके अब गुफा के सबसे गुप्त गर्भगृह के मुहाने पर पहुँच चुका है, जहाँ उसका सामना अंतिम खौफनाक सच्चाई से होने वाला है।",
    "characters": {
-    "राघव": "English character sheet: Age 28, sharp angular face, deep brown watchful eyes, short messy black hair, lean and tall athletic build, wearing a dark grey cargo jacket over a black woolen t-shirt with navy blue trousers, typical North Indian modern explorer look."
+    "राघव": "Age 28, sharp angular face, deep brown watchful eyes, short messy black hair, lean and tall athletic build, wearing a dark grey cargo jacket over a black woolen t-shirt with navy blue trousers, typical North Indian modern explorer look."
    },
    "vid": null,
-   "short_done": true,
+   "short_done": false,
    "trailer": null,
    "fest_at": null
   }
@@ -310,18 +311,16 @@
    "mode": "short",
    "asset": "raat_short_20261104_1400.tar",
    "title": "समुद्री लाइटहाउस के 3 खौफनाक नियम | रात के किस्से"
+  },
+  {
+   "job": "raat_long_20261104_1453",
+   "ch": "raat",
+   "mode": "long",
+   "asset": "raat_long_20261104_1453.tar",
+   "title": "तीसरा नियम: आँखें बंद मत करना! सोमेश्वर गुफा | रात के किस्से"
   }
  ],
- "_draft": {
-  "job": "raat_long_20261104_1453",
-  "ch": "raat",
-  "mode": "long",
-  "asset": "draft_raat_long_20261104_1453.tar",
-  "stage": "imgwait: shot 63.2 waiting for a real picture",
-  "tries": 2,
-  "fest": null,
-  "engine": "edge"
- },
+ "_draft": null,
  "_library": [
   {
    "asset": "lib_raat_long_20261101_0811.mp4",
@@ -575,10 +574,17 @@
    "title": "जादुई घुंघरू और नाचता जंगल! 🐰 नटखट खरगोश | कहानी पतंग",
    "dur": 212,
    "used": false
+  },
+  {
+   "asset": "lib_raat_long_20261104_1453.mp4",
+   "ch": "raat",
+   "title": "तीसरा नियम: आँखें बंद मत करना! सोमेश्वर गुफा | रात के किस्से",
+   "dur": 542,
+   "used": false
   }
  ],
  "_minutes": {
-  "2026-11": 4593
+  "2026-11": 4606
  },
  "_bank": {
   "kahani_s_patang01": "2026-11-02",
