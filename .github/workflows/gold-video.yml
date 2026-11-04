@@ -3,17 +3,13 @@ on:
   workflow_dispatch:
     inputs:
       publish: { default: 'no' }
-      ch: { default: 'both' }
 permissions: { contents: write }
 jobs:
   render:
     strategy: { matrix: { ch: [kahani, raat] } }
-    if: true
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - if: inputs.ch != 'both' && inputs.ch != matrix.ch
-        run: echo skip && exit 0
       - run: sudo apt-get -qq update && sudo apt-get -qq install -y ffmpeg && pip install -q edge-tts pillow
       - run: python3 engine/gold_video.py ${{ matrix.ch }}
       - if: inputs.publish == 'yes'
