@@ -6,6 +6,8 @@ import urllib.error
 import subprocess
 import re
 import time
+import base64
+import random
 from typing import Dict, Any, List
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
@@ -26,7 +28,6 @@ def save_state(state):
 
 def clean_hindi_text(text: str) -> str:
     """Removes bracketed text, stage directions, and AI prefixes (Rule 3)."""
-    # Remove AI conversational prefixes
     prefixes = [
         "ज़रूर", "बिल्कुल", "यहाँ कहानी है", "मैं इसे बिल्कुल वैसे ही पढ़ता हूँ",
         "Sure,", "Here is", "I can"
@@ -37,40 +38,79 @@ def clean_hindi_text(text: str) -> str:
             if text.startswith(",") or text.startswith("।") or text.startswith("."):
                 text = text[1:].strip()
 
-    # Remove bracketed directions like (धीरे सांस लेते हुए), [रोते हुए]
     text = re.sub(r'\(.*?\)', '', text)
     text = re.sub(r'\[.*?\]', '', text)
     return text.strip()
 
 def generate_audio(text: str, output_path: str, voice: str = "onyx", emotion: str = ""):
-    """Generates TTS using OpenAI or Gemini fallback (Rule 4)."""
+    """Generates TTS using Gemini API (Rule 4)."""
     text = clean_hindi_text(text)
-    # Placeholder for actual API call, using a dummy command for simulation
-    # Real implementation would call OpenAI TTS or Gemini Flash TTS here
-    # Since we can't make actual paid API calls in the sandbox, we mock the audio creation using ffmpeg and a silent track or use echo
+    api_key = os.environ.get("GEMINI_API_KEY")
+    if not api_key:
+        print("Warning: GEMINI_API_KEY not set. Mocking audio.")
+        subprocess.run(["ffmpeg", "-y", "-f", "lavfi", "-i", "anullsrc=r=44100:cl=mono", "-t", "3", output_path], check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        return output_path
 
-    # Create a 3 second silent audio file as a placeholder for the TTS
-    subprocess.run(["ffmpeg", "-y", "-f", "lavfi", "-i", "anullsrc=r=44100:cl=mono", "-t", "3", output_path], check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    voice_name = "Charon" if voice == "onyx" else "Puck"
+    body = {
+        "contents": [{"parts": [{"text": text}]}],
+        "generationConfig": {
+            "responseModalities": ["AUDIO"],
+            "speechConfig": {"voiceConfig": {"prebuiltVoiceConfig": {"voiceName": voice_name}}}
+        }
+    }
+
+    url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent"
+    req = urllib.request.Request(url, json.dumps(body).encode(), {"Content-Type": "application/json", "x-goog-api-key": api_key})
+
+    try:
+        r = json.load(urllib.request.urlopen(req, timeout=30))
+        audio_data = b"".join(base64.b64decode(p["inlineData"]["data"]) for p in r["candidates"][0]["content"]["parts"] if "inlineData" in p)
+        with open(output_path, "wb") as f:
+            f.write(audio_data)
+    except Exception as e:
+        print(f"Gemini TTS failed: {e}. Falling back to mock audio.")
+        subprocess.run(["ffmpeg", "-y", "-f", "lavfi", "-i", "anullsrc=r=44100:cl=mono", "-t", "3", output_path], check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+
     return output_path
 
 def generate_image(prompt: str, output_path: str, is_short: bool = False):
     """Generates image using keyless Pollinations or HF fallback (Rule 2)."""
-    # Aspect Ratio: 16:9 for long (1344x768), 9:16 for short (768x1344)
     width = 768 if is_short else 1344
     height = 1344 if is_short else 768
 
-    # Base URL for keyless pollinations flux
-    # We add nologo=true but also crop later as per instructions
-    encoded_prompt = urllib.parse.quote(prompt)
-    url = f"https://image.pollinations.ai/prompt/{encoded_prompt}?model=flux&nologo=true&width={width}&height={height}&seed={int(time.time())}"
+    clean_prompt = prompt.replace(" ", "%20")
+    seed = random.randint(1, 2**31 - 1)
+    url = f"https://image.pollinations.ai/prompt/{clean_prompt}?model=flux&nologo=true&width={width}&height={height}&seed={seed}"
+    hdr = {"User-Agent": "Mozilla/5.0"}
 
-    # Download image
     try:
-        urllib.request.urlretrieve(url, output_path)
-    except urllib.error.URLError:
-        # Fallback to a dummy image if API fails (for sandbox testing)
-        subprocess.run(["ffmpeg", "-y", "-f", "lavfi", "-i", f"color=c=black:s={width}x{height}", "-vframes", "1", output_path], check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        req = urllib.request.Request(url, headers=hdr)
+        data = urllib.request.urlopen(req, timeout=120).read()
+        if len(data) > 40000:
+            with open(output_path, "wb") as f:
+                f.write(data)
+            return output_path
+    except Exception as e:
+        print(f"Pollinations failed: {e}")
 
+    # Fallback to HuggingFace
+    hf_token = os.environ.get("HF_TOKEN")
+    if hf_token:
+        try:
+            hf_url = "https://router.huggingface.co/hf-inference/models/black-forest-labs/FLUX.1-schnell"
+            req = urllib.request.Request(hf_url, json.dumps({"inputs": prompt}).encode(),
+                                         {"Authorization": f"Bearer {hf_token}", "Content-Type": "application/json"})
+            data = urllib.request.urlopen(req, timeout=120).read()
+            if len(data) > 40000:
+                with open(output_path, "wb") as f:
+                    f.write(data)
+                return output_path
+        except Exception as e:
+            print(f"HF failed: {e}")
+
+    print("All image APIs failed, mocking image.")
+    subprocess.run(["ffmpeg", "-y", "-f", "lavfi", "-i", f"color=c=black:s={width}x{height}", "-vframes", "1", output_path], check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
     return output_path
 
 def get_audio_duration(file_path: str) -> float:
@@ -83,7 +123,6 @@ def build_scene_video(image_path: str, audio_path: str, output_path: str, is_sho
     """Locks image to exact audio duration, adds subtitles for shorts (Rule 1 & 5)."""
     duration = get_audio_duration(audio_path)
 
-    # Ensure correct aspect ratio and apply 4% crop to remove watermark
     w = 768 if is_short else 1344
     h = 1344 if is_short else 768
     crop_w = int(w * 0.96)
@@ -91,10 +130,7 @@ def build_scene_video(image_path: str, audio_path: str, output_path: str, is_sho
 
     vf = f"scale={w}:{h},crop={crop_w}:{crop_h}"
 
-    # If shorts, add center-middle pop-up subtitles
     if is_short and text:
-         # Basic subtitle simulation using drawtext
-         # In a real scenario we'd generate a .ass or .srt file and use subtitles filter
          safe_text = text.replace("'", "").replace(":", "")
          vf += f",drawtext=text='{safe_text}':fontcolor=yellow:fontsize=48:x=(w-text_w)/2:y=(h-text_h)/2:borderw=3:bordercolor=black"
 
@@ -114,7 +150,6 @@ def build_scene_video(image_path: str, audio_path: str, output_path: str, is_sho
 
 def master_audio_with_bgm(video_path: str, bgm_path: str, output_path: str):
     """Mixes BGM at -11dB with auto-ducking, 1.5s fade-out, and mastering (Rule 6)."""
-    # Get exact video duration to calculate fade out start time
     cmd_dur = ["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "default=noprint_wrappers=1:nokey=1", video_path]
     res = subprocess.run(cmd_dur, stdout=subprocess.PIPE, text=True, check=True)
     video_dur = float(res.stdout.strip())

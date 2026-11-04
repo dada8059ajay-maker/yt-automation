@@ -50,6 +50,17 @@ jobs:
       - name: Render Mega Video
         run: python3 jules_engine/make_mega_video.py
 
+      - name: Create or Update GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release view jules-ready-queue >/dev/null 2>&1 || gh release create jules-ready-queue --title "Jules Render Queue" --notes "Pre-rendered videos" --prerelease
+          for file in jules_engine/jules-ready-queue/*.mp4; do
+            if [ -f "$file" ]; then
+              gh release upload jules-ready-queue "$file" --clobber
+            fi
+          done
+
       - name: Schedule & Drip Publish
         run: python3 jules_engine/scheduler.py
 
