@@ -1,0 +1,14 @@
+story from story_bank (Hark-written)
+title: बोलता बरगद और ज़हर की साज़िश | जादुई हिंदी कहानी scenes: 17
+rules v3: pictures rebuilt, re-voiced lines []
+openai.fm 429
+oatts 402 {"success":false,"error":{"message":"Insufficient balance. This request costs ~0.0029 pollen, but your available balance is 0.0000. Top up at https://enter.poll
+resume: script loaded
+title: बोलता बरगद और ज़हर की साज़िश | जादुई हिंदी कहानी scenes: 17
+oatts 402 {"success":false,"error":{"message":"Insufficient balance. This request costs ~0.0029 pollen, but your available balance is 0.0000. Top up at https://enter.poll
+resume: script loaded
+title: बोलता बरगद और ज़हर की साज़िश | जादुई हिंदी कहानी scenes: 17
+oatts 402 {"success":false,"error":{"message":"Insufficient balance. This request costs ~0.0029 pollen, but your available balance is 0.0000. Top up at https://enter.poll
+resume: script loaded
+title: बोलता बरगद और ज़हर की साज़िश | जादुई हिंदी कहानी scenes: 17
+oatts 402 {"success":false,"error":{"message":"Insufficient balance. This request costs ~0.0029 pollen, but your available balance is 0.0000. Top up at https://enter.poll
