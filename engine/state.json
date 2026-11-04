@@ -104,7 +104,7 @@
     "मोती (Moti - Goat)": "A friendly small white Indian baby goat with floppy ears, big expressive dark eyes, and a cute small red velvet ribbon tied around its neck."
    },
    "vid": null,
-   "short_done": false,
+   "short_done": true,
    "trailer": null,
    "fest_at": null
   }
@@ -166,6 +166,13 @@
    "mode": "long",
    "asset": "kahani_long_20261104_0830.tar",
    "title": "उड़ती जादुई गाड़ी का भयानक रहस्य! | कहानी पतंग"
+  },
+  {
+   "job": "kahani_short_20261104_1120",
+   "ch": "kahani",
+   "mode": "short",
+   "asset": "kahani_short_20261104_1120.tar",
+   "title": "बिना तैरे नदी पार! चालाक लोमड़ी की हार? | कहानी पतंग"
   }
  ],
  "_draft": {
@@ -378,7 +385,7 @@
   }
  ],
  "_minutes": {
-  "2026-11": 3444
+  "2026-11": 3462
  },
  "_bank": {
   "kahani_s_patang01": "2026-11-02",
@@ -387,7 +394,8 @@
   "raat_l_yamdeep01": "2026-11-03",
   "kahani_l_bargad01": "2026-11-04",
   "kahani_s_chashma01": "2026-11-04",
-  "raat_s_lift13": "2026-11-04"
+  "raat_s_lift13": "2026-11-04",
+  "kahani_s_kachua01": "2026-11-04"
  },
  "_gemini_wait": "2026-11-04T08:05:00+00:00",
  "_engine_b_dead": "2026-11-04",
