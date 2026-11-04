@@ -104,88 +104,20 @@
    "A magical bamboo flute in a peaceful jungle that teaches a greedy monkey a sweet lesson about sharing.",
    "बरगद के पेड़ से टपकती जादुई चाबियों और सूखे गाँव को बचाने वाले रहस्यमयी बादल की अनोखी सीख भरी कहानी।",
    "लालची बंदर चीकू को जादुई बांसुरी मिली, लेकिन उसके लालच से जंगल मुसीबत में पड़ गया।",
-   "जंगल कहानी"
+   "जंगल कहानी",
+   "एक लालची लकड़हारा और जादुई घड़ा जो सोने के सिक्के देता है लेकिन शर्त पूरी न होने पर सब कुछ वापस ले लेता है।"
   ],
   "last_long": {
-   "job": "kahani_long_20261103_1433",
-   "title": "शेर की दहाड़ किसने चुराई? | Jungle Story | कहानी पतंग",
-   "story": "चतुर जंगल और पंचतंत्र की कहानियाँ",
+   "job": "kahani_long_20261104_1431",
+   "title": "जादुई घड़ा और लालची लकड़हारा | Hindi Kahaniya | कहानी पतंग",
+   "story": "एक लालची लकड़हारा और जादुई घड़ा जो सोने के सिक्के देता है लेकिन शर्त पूरी न होने पर सब कुछ वापस ले लेता है।",
    "characters": {
-    "Guddu": "Indian boy, 8, short hair, blue school uniform, red backpack",
-    "Sher": "big friendly cartoon lion with golden mane",
-    "Bandar": "cheeky cartoon monkey with yellow cap"
+    "Raman": "adult male woodcutter, round cheerful face, messy black hair, wearing a patched brown cotton shirt and dhoti",
+    "Pari": "magical fairy child, glowing face, shimmering golden hair, wearing a sparkling pink and white floral dress with tiny glowing wings"
    },
    "vid": null,
-   "short_done": true,
-   "trailer": {
-    "title": "शेर की दहाड़ किसने चुराई? #shorts",
-    "topic": "जंगल कहानी",
-    "description": "पूरी कहानी कहानी पतंग पर।",
-    "tags": [
-     "बच्चों की कहानी",
-     "हिंदी कहानी",
-     "कहानी पतंग",
-     "jadui kahani",
-     "shorts"
-    ],
-    "hook": "दहाड़ गायब!",
-    "thumb_text": "दहाड़ चोरी!",
-    "characters": {
-     "Guddu": "Indian boy, 8, short hair, blue school uniform, red backpack",
-     "Sher": "big friendly cartoon lion with golden mane",
-     "Bandar": "cheeky cartoon monkey with yellow cap"
-    },
-    "scenes": [
-     {
-      "s": "N",
-      "t": "अगर जंगल का राजा शेर एक दिन अपनी दहाड़ ही खो दे, तो क्या होगा?",
-      "m": "suspense",
-      "st": "direct, playful mystery",
-      "v": "Lion opening mouth with no sound, jungle animals surprised, cartoon",
-      "w": "Sher"
-     },
-     {
-      "s": "N",
-      "t": "वहाँ सारे जानवर परेशान थे। शेर राजा की दहाड़ गायब हो गई थी।",
-      "m": "suspense",
-      "st": "storyteller",
-      "v": "Worried animals gathered around a sad lion on a rock",
-      "w": "Sher"
-     },
-     {
-      "s": "O",
-      "t": "बंदर हँसा, अब तो मैं राजा बनूँगा! बिना दहाड़ के कैसा राजा?",
-      "m": "chase",
-      "st": "cheeky, mocking",
-      "v": "Cheeky monkey dancing on branch with crown made of leaves",
-      "w": "Bandar"
-     },
-     {
-      "s": "N",
-      "t": "गुड्डू ने ध्यान दिया, बंदर की टोपी के अंदर से हल्की हल्की गुर्राहट आ रही थी।",
-      "m": "suspense",
-      "st": "curious, hushed",
-      "v": "Close-up yellow cap glowing faintly with sound waves",
-      "w": "Guddu"
-     },
-     {
-      "s": "N",
-      "t": "टोपी गिरते ही उसमें से एक सुनहरी गेंद लुढ़की, और पूरा जंगल दहाड़ से गूँज उठा!",
-      "m": "chase",
-      "st": "loud, exciting",
-      "v": "Golden glowing ball rolling, huge roar sound waves, birds flying",
-      "w": "Guddu"
-     },
-     {
-      "s": "N",
-      "t": "दहाड़ किसने चुराई थी? पूरी कहानी कहानी पतंग पर देखिए!",
-      "m": "suspense",
-      "st": "direct",
-      "v": "Lion and boy in jungle, question mark",
-      "w": "Guddu"
-     }
-    ]
-   },
+   "short_done": false,
+   "trailer": null,
    "fest_at": null
   }
  },
@@ -344,6 +276,13 @@
    "mode": "long",
    "asset": "raat_long_20261104_1219.tar",
    "title": "सोमेश्वर गुफा का रहस्य भाग 2 | रात के किस्से"
+  },
+  {
+   "job": "kahani_long_20261104_1431",
+   "ch": "kahani",
+   "mode": "long",
+   "asset": "kahani_long_20261104_1431.tar",
+   "title": "जादुई घड़ा और लालची लकड़हारा | Hindi Kahaniya | कहानी पतंग"
   }
  ],
  "_draft": {
@@ -595,10 +534,17 @@
    "title": "सोमेश्वर गुफा का रहस्य भाग 2 | रात के किस्से",
    "dur": 192,
    "used": false
+  },
+  {
+   "asset": "lib_kahani_long_20261104_1431.mp4",
+   "ch": "kahani",
+   "title": "जादुई घड़ा और लालची लकड़हारा | Hindi Kahaniya | कहानी पतंग",
+   "dur": 197,
+   "used": false
   }
  ],
  "_minutes": {
-  "2026-11": 4113
+  "2026-11": 4159
  },
  "_bank": {
   "kahani_s_patang01": "2026-11-02",
@@ -678,16 +624,7 @@
   "fest": null,
   "engine": "kokoro"
  },
- "_draft_kahani-long": {
-  "job": "kahani_long_20261104_1431",
-  "ch": "kahani",
-  "mode": "long",
-  "asset": "draft_kahani_long_20261104_1431.tar",
-  "stage": "imgwait: image servers out of free credit at 3/24",
-  "tries": 0,
-  "fest": null,
-  "engine": "edge"
- },
+ "_draft_kahani-long": null,
  "_draft_kahani-short": {
   "job": "kahani_short_20261104_1446",
   "ch": "kahani",
