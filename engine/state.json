@@ -104,7 +104,7 @@
     "Chintu": "English character sheet: age 7, round cheerful face, big black curious eyes, short messy black hair, average build, wearing a bright yellow cotton t-shirt and blue shorts, Indian look"
    },
    "vid": null,
-   "short_done": false,
+   "short_done": true,
    "trailer": null,
    "fest_at": null
   }
@@ -173,6 +173,13 @@
    "mode": "long",
    "asset": "kahani_long_20261104_1107.tar",
    "title": "ज़मीन पर उतरे काले बादल! नन्हे चिंटू का कमाल | कहानी पतंग"
+  },
+  {
+   "job": "kahani_short_20261104_1144",
+   "ch": "kahani",
+   "mode": "short",
+   "asset": "kahani_short_20261104_1144.tar",
+   "title": "दादी का जादुई बर्तन और खाली हांडी का रहस्य | कहानी पतंग"
   }
  ],
  "_draft": null,
@@ -383,7 +390,7 @@
   }
  ],
  "_minutes": {
-  "2026-11": 3525
+  "2026-11": 3542
  },
  "_bank": {
   "kahani_s_patang01": "2026-11-02",
@@ -393,7 +400,8 @@
   "kahani_l_bargad01": "2026-11-04",
   "kahani_s_chashma01": "2026-11-04",
   "raat_s_lift13": "2026-11-04",
-  "kahani_s_kachua01": "2026-11-04"
+  "kahani_s_kachua01": "2026-11-04",
+  "kahani_s_bartan01": "2026-11-04"
  },
  "_gemini_wait": "2026-11-04T08:05:00+00:00",
  "_engine_b_dead": "2026-11-04",
