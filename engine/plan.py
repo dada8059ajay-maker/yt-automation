@@ -45,7 +45,8 @@ import os as _os
 GEM_DEAD = (S.get("_gemini_wait") or "") > now.isoformat()
 _today = now.astimezone(dt.timezone(dt.timedelta(hours=5, minutes=30))).date().isoformat() if hasattr(now, "astimezone") else ""
 B_OK = S.get("_fm_dead") not in (now.date().isoformat(), _today) or (bool(_os.environ.get("POLLINATIONS_TOKEN")) and S.get("_engine_b_dead") != now.date().isoformat())
-engine = "gemini" if not GEM_DEAD else ("openai" if B_OK else "kokoro")   # local Kokoro on GitHub CPU never runs out
+B_OK = False   # openai.fm is behind a bot wall and Pollinations audio needs paid pollen -> engine B stays off
+engine = "gemini" if not GEM_DEAD else "kokoro"   # local Kokoro on GitHub CPU never runs out
 if not dr:   # Zero-Rework: finish a parked unfinished video before starting anything new
     for _p in S.get("_parked") or []:
         _e = _p.get("engine") or "gemini"

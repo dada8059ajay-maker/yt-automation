@@ -219,10 +219,10 @@
   "ch": "kahani",
   "mode": "long",
   "asset": "draft_kahani_long_20261104_0921.tar",
-  "stage": "engine B (openai-audio) failed at scene 1",
-  "tries": 4,
+  "stage": "switch to kokoro (engine B dead)",
+  "tries": 0,
   "fest": null,
-  "engine": "openai"
+  "engine": "kokoro"
  },
  "_library": [
   {
