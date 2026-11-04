@@ -38,7 +38,8 @@
    "हिमालय की प्राचीन सोमेश्वर गुफा के अंदर दूसरे नियम का जानलेवा सामना और एक खौफनाक खुलासा",
    "एक सुनसान समुद्री लाइटहाउस के 3 खौफनाक नियम और रात 2:15 बजे समुद्र से आई वही खौफनाक आवाज़।",
    "हिमालय की बंद गुफा के गर्भगृह में नीली ज्वाला का रहस्य और 1000 साल पुराने शाप का अंत।",
-   "एक सुनसान पुरातात्विक संग्रहालय के रात के 3 नियम और घंटी का खौफनाक रहस्य"
+   "एक सुनसान पुरातात्विक संग्रहालय के रात के 3 नियम और घंटी का खौफनाक रहस्य",
+   "हिमालय की सोमेश्वर गुफा के सबसे गुप्त गर्भगृह में राघव का तीसरा और सबसे जानलेवा सामना"
   ],
   "series": {
    "name": "सोमेश्वर गुफा का रहस्य",
@@ -57,7 +58,7 @@
     "राघव": "Age 28, sharp angular face, deep brown watchful eyes, short messy black hair, lean and tall athletic build, wearing a dark grey cargo jacket over a black woolen t-shirt with navy blue trousers, typical North Indian modern explorer look."
    },
    "vid": null,
-   "short_done": false,
+   "short_done": true,
    "trailer": null,
    "fest_at": null
   }
@@ -326,6 +327,13 @@
    "mode": "short",
    "asset": "raat_short_20261104_1752.tar",
    "title": "संग्रहालय की 3 खौफनाक शर्तें! अंधेरे की घंटी | रात के किस्से"
+  },
+  {
+   "job": "raat_short_20261104_1818",
+   "ch": "raat",
+   "mode": "short",
+   "asset": "raat_short_20261104_1818.tar",
+   "title": "तीसरा नियम आँखें बंद मत करना! | रात के किस्से"
   }
  ],
  "_draft": null,
@@ -592,7 +600,7 @@
   }
  ],
  "_minutes": {
-  "2026-11": 4633
+  "2026-11": 4652
  },
  "_bank": {
   "kahani_s_patang01": "2026-11-02",
