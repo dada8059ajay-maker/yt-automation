@@ -58,7 +58,7 @@
   }
  },
  "kahani": {
-  "short": "2026-11-06T13:00:00Z",
+  "short": "2026-11-07T08:00:00Z",
   "long": "2026-11-08T12:30:00Z",
   "history": [
    "शेर और चतुर खरगोश",
@@ -93,18 +93,18 @@
    "चतुर जंगल और पंचतंत्र की कहानियाँ",
    "दिवाली की जादुई कहानी",
    "दिवाली कहानी",
-   "एक नन्हे बालक कबीर और उसकी जादुई लकड़ी की गाड़ी का रहस्यमयी और शिक्षाप्रद सफ़र"
+   "एक नन्हे बालक कबीर और उसकी जादुई लकड़ी की गाड़ी का रहस्यमयी और शिक्षाप्रद सफ़र",
+   "आसमान के नीले बादलों का अचानक काला होकर धरती पर उतरना और एक नन्हे बच्चे की समझदारी से उनका रहस्य सुलझना।"
   ],
   "last_long": {
-   "job": "kahani_long_20261104_0830",
-   "title": "उड़ती जादुई गाड़ी का भयानक रहस्य! | कहानी पतंग",
-   "story": "एक नन्हे बालक कबीर और उसकी जादुई लकड़ी की गाड़ी का रहस्यमयी और शिक्षाप्रद सफ़र",
+   "job": "kahani_long_20261104_1107",
+   "title": "ज़मीन पर उतरे काले बादल! नन्हे चिंटू का कमाल | कहानी पतंग",
+   "story": "आसमान के नीले बादलों का अचानक काला होकर धरती पर उतरना और एक नन्हे बच्चे की समझदारी से उनका रहस्य सुलझना।",
    "characters": {
-    "कबीर (Kabir)": "A cheerful 8-year-old Indian village boy with messy black hair, bright big brown eyes, wearing a simple bright orange cotton kurta and blue shorts, thin energetic build.",
-    "मोती (Moti - Goat)": "A friendly small white Indian baby goat with floppy ears, big expressive dark eyes, and a cute small red velvet ribbon tied around its neck."
+    "Chintu": "English character sheet: age 7, round cheerful face, big black curious eyes, short messy black hair, average build, wearing a bright yellow cotton t-shirt and blue shorts, Indian look"
    },
    "vid": null,
-   "short_done": true,
+   "short_done": false,
    "trailer": null,
    "fest_at": null
   }
@@ -128,17 +128,10 @@
   "2026-11-03T08:41:15Z",
   "2026-11-03T08:45:45Z",
   "2026-11-03T10:05:33Z",
-  "2026-11-03T10:38:36Z"
+  "2026-11-03T10:38:36Z",
+  "2026-11-04T05:49:35Z"
  ],
  "_queue": [
-  {
-   "job": "kahani_short_20261104_0830",
-   "ch": "kahani",
-   "mode": "short",
-   "asset": "kahani_short_20261104_0830.tar",
-   "title": "दिवाली की रात जादुई दीया जल उठा! #shorts",
-   "at": "2026-11-07T13:30:00+05:30"
-  },
   {
    "job": "raat_long_20261103_1127",
    "ch": "raat",
@@ -173,18 +166,16 @@
    "mode": "short",
    "asset": "kahani_short_20261104_1120.tar",
    "title": "बिना तैरे नदी पार! चालाक लोमड़ी की हार? | कहानी पतंग"
+  },
+  {
+   "job": "kahani_long_20261104_1107",
+   "ch": "kahani",
+   "mode": "long",
+   "asset": "kahani_long_20261104_1107.tar",
+   "title": "ज़मीन पर उतरे काले बादल! नन्हे चिंटू का कमाल | कहानी पतंग"
   }
  ],
- "_draft": {
-  "job": "kahani_long_20261104_1107",
-  "ch": "kahani",
-  "mode": "long",
-  "asset": "draft_kahani_long_20261104_1107.tar",
-  "stage": "imgwait: image servers out of free credit at 11/18",
-  "tries": 0,
-  "fest": null,
-  "engine": "edge"
- },
+ "_draft": null,
  "_library": [
   {
    "asset": "lib_raat_long_20261101_0811.mp4",
@@ -382,10 +373,17 @@
    "title": "उड़ती जादुई गाड़ी का भयानक रहस्य! | कहानी पतंग",
    "dur": 491,
    "used": false
+  },
+  {
+   "asset": "lib_kahani_long_20261104_1107.mp4",
+   "ch": "kahani",
+   "title": "ज़मीन पर उतरे काले बादल! नन्हे चिंटू का कमाल | कहानी पतंग",
+   "dur": 123,
+   "used": false
   }
  ],
  "_minutes": {
-  "2026-11": 3462
+  "2026-11": 3485
  },
  "_bank": {
   "kahani_s_patang01": "2026-11-02",

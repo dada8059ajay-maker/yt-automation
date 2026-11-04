@@ -18,3 +18,4 @@
 - कहानी पतंग | long | छोटू का जादुई दीया | दिवाली की प्यारी कहानी | Fri 06 Nov 2026 06:00 PM IST | https://studio.youtube.com/video/0f21gj4pVes/edit
 - रात के किस्से | long | नरक चतुर्दशी की रात: यम के दीये के 3 नियम | हिंदी हॉरर कहानी | Sat 07 Nov 2026 10:30 PM IST | https://studio.youtube.com/video/Vm-kzRxxkw0/edit
 - रात के किस्से | long | नरक चतुर्दशी की रात: यम के दीये के 3 नियम | हिंदी हॉरर कहानी | Sat 07 Nov 2026 10:30 PM IST | https://studio.youtube.com/video/uCSRHweYFdQ/edit
+- कहानी पतंग | short | दिवाली की रात जादुई दीया जल उठा! #shorts | Sat 07 Nov 2026 01:30 PM IST | https://studio.youtube.com/video/bXYqHB5qOIM/edit
