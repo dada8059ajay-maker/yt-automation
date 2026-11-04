@@ -46,7 +46,7 @@ GEM_DEAD = (S.get("_gemini_wait") or "") > now.isoformat()
 _today = now.astimezone(dt.timezone(dt.timedelta(hours=5, minutes=30))).date().isoformat() if hasattr(now, "astimezone") else ""
 B_OK = S.get("_fm_dead") not in (now.date().isoformat(), _today) or (bool(_os.environ.get("POLLINATIONS_TOKEN")) and S.get("_engine_b_dead") != now.date().isoformat())
 B_OK = False   # openai.fm is behind a bot wall and Pollinations audio needs paid pollen -> engine B stays off
-engine = "gemini" if not GEM_DEAD else "kokoro"   # local Kokoro on GitHub CPU never runs out
+engine = "edge"   # owner 2026-11-04: Edge neural voice (Madhur / Swara) for every new video; Kokoro only as backup
 if not dr:   # Zero-Rework: finish a parked unfinished video before starting anything new
     for _p in S.get("_parked") or []:
         _e = _p.get("engine") or "gemini"
@@ -80,5 +80,5 @@ if ch and left_avail == 0:
     else: ch = mode = ""
 reason = "minutes_cap" if MIN_STOP and not ch else "fill" if ch and not pre else ("prerender_quota_full" if pre else ("queue_full_wait_quota" if best else "schedule_full_21_days"))
 if dr: engine = dr.get("engine") or "gemini"
-if engine == "openai" and not B_OK: engine = "kokoro"   # engine B is off: never loop on it
+if engine == "openai" and not B_OK: engine = "edge"   # engine B is off: never loop on it
 print(f"engine={engine}\ncomp={comp}\nch={ch}\nmode={mode}\npre={pre}\ndrain={'1' if drain else ''}\nreason={reason}")

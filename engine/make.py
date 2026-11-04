@@ -380,6 +380,25 @@ if S["voice_engine"] == "openai":
 KOKV = {"raat": {"N": "hm_omega", "M": "hm_omega", "F": "hf_alpha", "O": "hm_psi", "A": "hf_beta", "C": "hf_beta", "G": "hm_omega"},
         "kahani": {"N": "hm_psi", "M": "hm_omega", "F": "hf_alpha", "O": "hm_omega", "A": "hf_beta", "C": "hf_beta", "G": "hm_psi"}}[CH if CH in ("raat", "kahani") else "raat"]
 PARV = {"N": "Rohit", "M": "Rohit", "F": "Divya", "O": "Karan", "A": "Divya", "C": "Divya", "G": "Karan"}
+EDGEV = "hi-IN-MadhurNeural" if CH == "raat" else "hi-IN-SwaraNeural"   # ONE storyteller voice for the whole video
+if S["voice_engine"] == "edge":
+    import edge_tts
+    async def _edge(text, out):
+        await edge_tts.Communicate(text, EDGEV, rate="-8%" if CH == "raat" else "-3%", pitch="-4Hz" if CH == "raat" else "+0Hz").save(out)
+    for i, sc in enumerate(S["scenes"]):
+        if os.path.exists(wav_of(i)): continue
+        if out_of_time(): pause(f"voices scene {i}")
+        for t in range(4):
+            try:
+                asyncio.run(_edge(sc["text"], f"{OUT}/e.mp3"))
+                if os.path.getsize(f"{OUT}/e.mp3") > 2000: break
+            except Exception as e: log("edge retry", t, repr(e)[:100]); time.sleep(5 * (t + 1))
+        else:
+            S["voice_engine"] = "kokoro" if not any(os.path.exists(wav_of(k)) for k in range(i)) else pause("edge-tts unreachable - retry next run")
+            log("edge-tts unreachable before any line -> kokoro for the whole video"); break
+        subprocess.run(["ffmpeg", "-y", "-v", "error", "-i", f"{OUT}/e.mp3", "-af", "aformat=channel_layouts=stereo:sample_rates=48000", wav_of(i)], check=True)
+        if i % 6 == 5: checkpoint(f"voices {i+1}/{len(S['scenes'])}")
+    if S["voice_engine"] == "edge": log("voice engine: edge", EDGEV, "(locked)", len(S["scenes"]), "scenes")
 if S["voice_engine"] in ("kokoro", "parler"):
     import soundfile as sf, numpy as np
     if S["voice_engine"] == "kokoro":
@@ -660,7 +679,20 @@ if not os.path.exists(f"{OUT}/v{HERO:03d}.mp4") and not os.path.exists(f"{OUT}/p
         _f = _f.get("video", _f) if isinstance(_f, dict) else _f
         shutil.copy(_f, f"{OUT}/v{HERO:03d}.mp4"); log("pika hero clip OK scene", HERO)
     except Exception as e:
-        open(f"{OUT}/pika_skip", "w").write(repr(e)[:300]); log("pika skipped -> HD photo", repr(e)[:160])
+        log("I2V tier 1 (Pika) failed", repr(e)[:140])
+        try:   # Tier 2: Lightricks LTX-Video distilled, image-to-video from the same verified 2D frame (face-lock)
+            from gradio_client import Client, handle_file
+            _lt = Client("Lightricks/ltx-video-distilled", token=os.environ.get("HF_TOKEN") or None, verbose=False)
+            _r = _lt.predict(prompt=clean_prompt(S["scenes"][HERO]["visual"]) + ", slow cinematic camera motion, characters keep the same face and clothes",
+                             negative_prompt="worst quality, morphing face, inconsistent motion, blurry, jittery, distorted, text",
+                             input_image_filepath=handle_file(f"{OUT}/i{HERO:03d}.jpg"), input_video_filepath=None,
+                             height_ui=512 if MODE == "long" else 896, width_ui=896 if MODE == "long" else 512, mode="image-to-video",
+                             duration_ui=5, ui_frames_to_use=9, seed_ui=seed, randomize_seed=False, ui_guidance_scale=1, improve_texture_flag=True, api_name="/image_to_video")
+            _f = _r[0] if isinstance(_r, (list, tuple)) else _r
+            _f = _f.get("video", _f) if isinstance(_f, dict) else _f
+            shutil.copy(_f, f"{OUT}/v{HERO:03d}.mp4"); log("I2V tier 2 (LTX-Video) hero clip OK scene", HERO)
+        except Exception as e2:
+            open(f"{OUT}/pika_skip", "w").write(repr(e2)[:300]); log("I2V tier 2 (LTX) failed -> tier 3 FFmpeg zoompan motion", repr(e2)[:140])
 clips = []
 for i, sc in enumerate(S["scenes"]):   # (b) scene_XX = its own picture locked to exactly its own audio
     d = sc["dur"] + (END if i == len(S["scenes"]) - 1 else 0)
@@ -676,8 +708,16 @@ for i, sc in enumerate(S["scenes"]):   # (b) scene_XX = its own picture locked t
     for k in range(nsub):   # explainer rule: no framing holds > 3.5 s (pan / tilt / punch-in 1.3x)
         z = 1.3 if k % 2 else 1.0; sw, sh = int(CW * z) // 2 * 2, int(CH2 * z) // 2 * 2
         _ns = len(sc.get("shots") or [1]); _kf = shot_file(i, min(_ns - 1, k * _ns // nsub))
-        ins += ["-loop", "1", "-framerate", str(fps), "-t", f"{dk:.3f}", "-i", _kf if os.path.exists(_kf) else f"{OUT}/i{i:03d}.jpg"]
-        fc += f"[{k}:v]scale={sw}:{sh},crop={W}:{H}:{pans[(i + k) % 4].replace('{D}', f'{dk:.3f}')},setsar=1,fps={fps}[s{k}];"
+        _src = _kf if os.path.exists(_kf) else f"{OUT}/i{i:03d}.jpg"
+        if k % 2 == 0:   # Tier 3 I2V fallback: slow eerie FFmpeg zoompan (push-in or pull-out), never a still frame
+            nf = math.ceil(dk * fps) + 3; zin = (i + k // 2) % 2 == 0
+            zexpr = f"1+0.15*on/{nf}" if zin else f"1.15-0.15*on/{nf}"
+            ins += ["-i", _src]
+            fc += (f"[{k}:v]scale={W*2}:{H*2},zoompan=z='{zexpr}':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':d={nf}:s={W}x{H}:fps={fps},"
+                   f"tpad=stop_mode=clone:stop_duration=1,trim=duration={dk:.3f},setpts=PTS-STARTPTS,setsar=1[s{k}];")
+        else:
+            ins += ["-loop", "1", "-framerate", str(fps), "-t", f"{dk:.3f}", "-i", _src]
+            fc += f"[{k}:v]scale={sw}:{sh},crop={W}:{H}:{pans[(i + k) % 4].replace('{D}', f'{dk:.3f}')},setsar=1,fps={fps}[s{k}];"
     fc += "".join(f"[s{k}]" for k in range(nsub)) + f"concat=n={nsub}:v=1:a=0,fade=t=in:st=0:d=0.2,format=yuv420p[v];[{nsub}:a]apad=whole_dur={d:.3f}[a]"
     subprocess.run(["ffmpeg", "-y", "-v", "error", *ins, "-i", wav_of(i), "-filter_complex", fc,
         "-map", "[v]", "-map", "[a]", "-t", f"{d:.3f}", "-r", str(fps), "-c:v", "libx264", "-preset", "ultrafast", "-crf", "20", "-threads", "4",
