@@ -506,7 +506,7 @@
   }
  ],
  "_minutes": {
-  "2026-11": 3922
+  "2026-11": 3932
  },
  "_bank": {
   "kahani_s_patang01": "2026-11-02",
@@ -575,7 +575,16 @@
   "hylg8zUWphw",
   "uHfWNg16Vs4"
  ],
- "_draft_raat-short": null,
+ "_draft_raat-short": {
+  "job": "raat_short_20261104_1400",
+  "ch": "raat",
+  "mode": "short",
+  "asset": "draft_raat_short_20261104_1400.tar",
+  "stage": "imgwait: image servers out of free credit at 2/10",
+  "tries": 0,
+  "fest": null,
+  "engine": "edge"
+ },
  "_draft_raat-long": {
   "job": "raat_long_20261104_0830",
   "ch": "raat",
