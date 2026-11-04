@@ -1,0 +1,47 @@
+gemini gemini-3.8-flash key 1 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-3.8-flash key 2 429 {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and bi
+gemini gemini-3.8-flash key 3 429 {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and bi
+gemini gemini-3.7-flash key 1 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-3.7-flash key 2 429 {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and bi
+gemini gemini-3.7-flash key 3 429 {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and bi
+gemini gemini-3.6-flash key 1 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-3.6-flash key 2 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-3.6-flash key 3 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini ok gemini-3.5-flash key 1
+story from Gemini (bank empty)
+title: जादुई खड़ाऊँ और छुपे हुए बगीचे का अनोखा राज़ scenes: 61
+rules v3: pictures rebuilt, re-voiced lines []
+oatts 402 {"success":false,"error":{"message":"Insufficient balance. This request costs ~0.0029 pollen, but your available balance is 0.0000. Top up at https://enter.poll
+resume: script loaded
+title: जादुई खड़ाऊँ और छुपे हुए बगीचे का अनोखा राज़ scenes: 61
+oatts 402 {"success":false,"error":{"message":"Insufficient balance. This request costs ~0.0029 pollen, but your available balance is 0.0000. Top up at https://enter.poll
+resume: script loaded
+title: जादुई खड़ाऊँ और छुपे हुए बगीचे का अनोखा राज़ scenes: 61
+oatts 402 {"success":false,"error":{"message":"Insufficient balance. This request costs ~0.0029 pollen, but your available balance is 0.0000. Top up at https://enter.poll
