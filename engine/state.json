@@ -544,7 +544,7 @@
   }
  ],
  "_minutes": {
-  "2026-11": 4159
+  "2026-11": 4165
  },
  "_bank": {
   "kahani_s_patang01": "2026-11-02",
@@ -619,7 +619,7 @@
   "ch": "raat",
   "mode": "long",
   "asset": "draft_raat_long_20261104_0830.tar",
-  "stage": "imgwait: scene 26 duplicate of 17",
+  "stage": "imgwait: scene 29 duplicate of 12",
   "tries": 0,
   "fest": null,
   "engine": "kokoro"
