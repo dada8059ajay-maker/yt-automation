@@ -35,7 +35,8 @@
    "गाँव और पुरानी हवेली के रहस्य",
    "पुरानी हवेली का रहस्य",
    "आईने का रहस्य",
-   "हिमालय की प्राचीन सोमेश्वर गुफा के अंदर दूसरे नियम का जानलेवा सामना और एक खौफनाक खुलासा"
+   "हिमालय की प्राचीन सोमेश्वर गुफा के अंदर दूसरे नियम का जानलेवा सामना और एक खौफनाक खुलासा",
+   "एक सुनसान समुद्री लाइटहाउस के 3 खौफनाक नियम और रात 2:15 बजे समुद्र से आई वही खौफनाक आवाज़।"
   ],
   "series": {
    "name": "सोमेश्वर गुफा",
@@ -54,7 +55,7 @@
     "राघव": "English character sheet: Age 28, sharp angular face, deep brown watchful eyes, short messy black hair, lean and tall athletic build, wearing a dark grey cargo jacket over a black woolen t-shirt with navy blue trousers, typical North Indian modern explorer look."
    },
    "vid": null,
-   "short_done": false,
+   "short_done": true,
    "trailer": null,
    "fest_at": null
   }
@@ -302,6 +303,13 @@
    "mode": "short",
    "asset": "kahani_short_20261104_1714.tar",
    "title": "परछाई का जादुई राज़ और सोने का मोर! | कहानी पतंग"
+  },
+  {
+   "job": "raat_short_20261104_1400",
+   "ch": "raat",
+   "mode": "short",
+   "asset": "raat_short_20261104_1400.tar",
+   "title": "समुद्री लाइटहाउस के 3 खौफनाक नियम | रात के किस्से"
   }
  ],
  "_draft": {
@@ -570,7 +578,7 @@
   }
  ],
  "_minutes": {
-  "2026-11": 4536
+  "2026-11": 4540
  },
  "_bank": {
   "kahani_s_patang01": "2026-11-02",
@@ -632,16 +640,7 @@
   "hylg8zUWphw",
   "uHfWNg16Vs4"
  ],
- "_draft_raat-short": {
-  "job": "raat_short_20261104_1400",
-  "ch": "raat",
-  "mode": "short",
-  "asset": "draft_raat_short_20261104_1400.tar",
-  "stage": "imgwait: shot 10.2 waiting for a real picture",
-  "tries": 0,
-  "fest": null,
-  "engine": "edge"
- },
+ "_draft_raat-short": null,
  "_draft_raat-long": {
   "job": "raat_long_20261104_0830",
   "ch": "raat",
