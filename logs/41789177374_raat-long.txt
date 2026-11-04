@@ -1,0 +1,527 @@
+gemini gemini-3.8-flash key 1 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-3.8-flash key 2 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-3.8-flash key 3 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-3.7-flash key 1 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-3.7-flash key 2 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-3.7-flash key 3 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-3.6-flash key 1 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini ok gemini-3.6-flash key 2
+story from Gemini (bank empty)
+title: कसौली के शापित घंटाघर का खौफनाक अंत | काल-घंटी के नियम (भाग 3) scenes: 64
+rules v3: pictures rebuilt, re-voiced lines []
+voice engine: kokoro (local, locked) 64 scenes
+gemini gemini-3.8-flash key 1 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-3.8-flash key 2 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-3.8-flash key 3 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-3.7-flash key 1 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-3.7-flash key 2 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-3.7-flash key 3 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-3.6-flash key 1 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-3.6-flash key 2 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-3.6-flash key 3 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-3.5-flash key 1 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-3.5-flash key 2 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-3.5-flash key 3 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-flash-latest key 1 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-flash-latest key 2 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-flash-latest key 3 429 {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and bi
+gemini gemini-pro-latest key 1 429 {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and bi
+gemini gemini-pro-latest key 2 429 {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and bi
+gemini gemini-pro-latest key 3 429 {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and bi
+gemini ok gemini-3.5-flash-lite key 1
+shots planned: 147 pictures for 64 scenes
+img 0 pollinations-flux
+pollinations key out of credit -> free anonymous FLUX
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+pollinations retry 3 <HTTPError 402: 'Payment Required'>
+img 1 pollinations-flux-free
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+pollinations retry 3 <HTTPError 503: 'Service Unavailable'>
+pollinations retry 4 <HTTPError 402: 'Payment Required'>
+gemini image key 1 429
+gemini image key 2 429
+gemini image key 3 429
+hf serverless fail <HTTPError 403: 'Forbidden'>
+hf flux fail AppError('You have exceeded your free ZeroGPU quota (90s requested vs. 0s left). Try again in 0:00:00. Subscribe to Hugging Face PRO to get 
+resume: script loaded
+gemini gemini-3.8-flash key 1 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-3.8-flash key 2 429 {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and bi
+gemini gemini-3.8-flash key 3 429 {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and bi
+gemini gemini-3.7-flash key 1 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-3.7-flash key 2 429 {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and bi
+gemini gemini-3.7-flash key 3 429 {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and bi
+gemini ok gemini-3.6-flash key 1
+seo pass OK: 13वीं घंटी बजते ही काल-पिशाच का हमला! | रात के किस्से
+title: 13वीं घंटी बजते ही काल-पिशाच का हमला! | रात के किस्से scenes: 64
+voice engine: kokoro (local, locked) 64 scenes
+img 2 pollinations-flux
+pollinations key out of credit -> free anonymous FLUX
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+pollinations retry 3 <HTTPError 402: 'Payment Required'>
+img 3 pollinations-flux-free
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+img 4 pollinations-flux-free
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+img 5 pollinations-flux-free
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+img 6 pollinations-flux-free
+img 7 pollinations-flux-free
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+img 8 pollinations-flux-free
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+img 9 pollinations-flux-free
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+img 10 pollinations-flux-free
+img 11 pollinations-flux-free
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+img 12 pollinations-flux-free
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+img 13 pollinations-flux-free
+pollinations retry 0 <HTTPError 503: 'Service Unavailable'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+img 14 pollinations-flux-free
+img 15 pollinations-flux-free
+img 16 pollinations-flux-free
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+img 17 pollinations-flux-free
+img 18 pollinations-flux-free
+img 19 pollinations-flux-free
+img 20 pollinations-flux-free
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+img 21 pollinations-flux-free
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+img 22 pollinations-flux-free
+img 23 pollinations-flux-free
+img 24 pollinations-flux-free
+img 25 pollinations-flux-free
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+img 26 pollinations-flux-free
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+img 27 pollinations-flux-free
+img 28 pollinations-flux-free
+img 29 pollinations-flux-free
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+img 30 pollinations-flux-free
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+img 31 pollinations-flux-free
+img 32 pollinations-flux-free
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+img 33 pollinations-flux-free
+img 34 pollinations-flux-free
+img 35 pollinations-flux-free
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+img 36 pollinations-flux-free
+img 37 pollinations-flux-free
+img 38 pollinations-flux-free
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+pollinations retry 3 <HTTPError 503: 'Service Unavailable'>
+pollinations retry 4 <HTTPError 402: 'Payment Required'>
+gemini image key 1 429
+gemini image key 2 429
+gemini image key 3 429
+hf serverless fail <HTTPError 403: 'Forbidden'>
+hf flux fail AppError('You have exceeded your free ZeroGPU quota (90s requested vs. 0s left). Try again in 0:00:00. Subscribe to Hugging Face PRO to get 
+resume: script loaded
+title: 13वीं घंटी बजते ही काल-पिशाच का हमला! | रात के किस्से scenes: 64
+voice engine: kokoro (local, locked) 64 scenes
+pollinations retry 0 ValueError('small file 31127')
+pollinations key out of credit -> free anonymous FLUX
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+pollinations retry 3 <HTTPError 402: 'Payment Required'>
+img 39 pollinations-flux-free
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+img 40 pollinations-flux-free
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+img 41 pollinations-flux-free
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+img 42 pollinations-flux-free
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+img 43 pollinations-flux-free
+pollinations retry 0 ValueError('small file 35161')
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+pollinations retry 3 <HTTPError 402: 'Payment Required'>
+img 44 pollinations-flux-free
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+img 45 pollinations-flux-free
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+img 46 pollinations-flux-free
+img 47 pollinations-flux-free
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+img 48 pollinations-flux-free
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+img 49 pollinations-flux-free
+img 50 pollinations-flux-free
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+img 51 pollinations-flux-free
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+img 52 pollinations-flux-free
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+img 53 pollinations-flux-free
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+img 54 pollinations-flux-free
+img 55 pollinations-flux-free
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+img 56 pollinations-flux-free
+img 57 pollinations-flux-free
+img 58 pollinations-flux-free
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+img 59 pollinations-flux-free
+img 60 pollinations-flux-free
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+img 61 pollinations-flux-free
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+img 62 pollinations-flux-free
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+img 63 pollinations-flux-free
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+img 0.1 pollinations-flux-free
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+img 0.2 pollinations-flux-free
+img 1.1 pollinations-flux-free
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+img 1.2 pollinations-flux-free
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+img 2.1 pollinations-flux-free
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+img 3.1 pollinations-flux-free
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+img 4.1 pollinations-flux-free
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+img 4.2 pollinations-flux-free
+img 5.1 pollinations-flux-free
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+img 5.2 pollinations-flux-free
+img 6.1 pollinations-flux-free
+img 7.1 pollinations-flux-free
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+img 8.1 pollinations-flux-free
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+img 8.2 pollinations-flux-free
+img 9.1 pollinations-flux-free
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+img 9.2 pollinations-flux-free
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+img 10.1 pollinations-flux-free
+img 11.1 pollinations-flux-free
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+img 11.2 pollinations-flux-free
+pollinations retry 0 ValueError('small file 36956')
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+img 12.1 pollinations-flux-free
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+img 12.2 pollinations-flux-free
+pollinations retry 0 ValueError('small file 36956')
+img 13.1 pollinations-flux-free
+pollinations retry 0 ValueError('small file 36956')
+img 14.1 pollinations-flux-free
+img 15.1 pollinations-flux-free
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+img 16.1 pollinations-flux-free
+pollinations retry 0 ValueError('small file 36956')
+img 17.1 pollinations-flux-free
+img 17.2 pollinations-flux-free
+img 18.1 pollinations-flux-free
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+img 18.2 pollinations-flux-free
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+img 19.1 pollinations-flux-free
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+img 19.2 pollinations-flux-free
+img 20.1 pollinations-flux-free
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+img 21.1 pollinations-flux-free
+img 21.2 pollinations-flux-free
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+img 22.1 pollinations-flux-free
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+img 22.2 pollinations-flux-free
+img 23.1 pollinations-flux-free
+img 24.1 pollinations-flux-free
+img 24.2 pollinations-flux-free
+img 25.1 pollinations-flux-free
+pollinations retry 0 ValueError('small file 36956')
+img 26.1 pollinations-flux-free
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+img 27.1 pollinations-flux-free
+img 28.1 pollinations-flux-free
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+img 28.2 pollinations-flux-free
+img 29.1 pollinations-flux-free
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+img 30.1 pollinations-flux-free
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+img 31.1 pollinations-flux-free
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+img 31.2 pollinations-flux-free
+img 32.1 pollinations-flux-free
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+img 33.1 pollinations-flux-free
+img 34.1 pollinations-flux-free
+img 35.1 pollinations-flux-free
+pollinations retry 0 ValueError('small file 36956')
+img 36.1 pollinations-flux-free
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+img 37.1 pollinations-flux-free
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+img 37.2 pollinations-flux-free
+img 38.1 pollinations-flux-free
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+img 39.1 pollinations-flux-free
+pollinations retry 0 ValueError('small file 36956')
+img 40.1 pollinations-flux-free
+img 41.1 pollinations-flux-free
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+img 42.1 pollinations-flux-free
+pollinations retry 0 ValueError('small file 38235')
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+img 44.1 pollinations-flux-free
+img 45.1 pollinations-flux-free
+pollinations retry 0 ValueError('small file 36956')
+img 46.1 pollinations-flux-free
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+img 47.1 pollinations-flux-free
+img 48.1 pollinations-flux-free
+img 49.1 pollinations-flux-free
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+img 49.2 pollinations-flux-free
+img 50.1 pollinations-flux-free
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+img 51.1 pollinations-flux-free
+img 51.2 pollinations-flux-free
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+img 52.1 pollinations-flux-free
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+img 53.1 pollinations-flux-free
+img 54.1 pollinations-flux-free
+img 55.1 pollinations-flux-free
+img 55.2 pollinations-flux-free
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+img 56.1 pollinations-flux-free
+img 57.1 pollinations-flux-free
+img 58.1 pollinations-flux-free
+img 59.1 pollinations-flux-free
+img 60.1 pollinations-flux-free
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+img 61.1 pollinations-flux-free
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+img 62.1 pollinations-flux-free
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+img 63.1 pollinations-flux-free
+pre-check: scene 7 repeats/mirrors scene 6 -> new picture
+resume: script loaded
+title: 13वीं घंटी बजते ही काल-पिशाच का हमला! | रात के किस्से scenes: 64
+voice engine: kokoro (local, locked) 64 scenes
+img 6 pollinations-flux
+pre-check: scene 11 repeats/mirrors scene 9 -> new picture
+resume: script loaded
+title: 13वीं घंटी बजते ही काल-पिशाच का हमला! | रात के किस्से scenes: 64
+voice engine: kokoro (local, locked) 64 scenes
+img 10 pollinations-flux
+pre-check: scene 14 repeats/mirrors scene 13 -> new picture
+resume: script loaded
+title: 13वीं घंटी बजते ही काल-पिशाच का हमला! | रात के किस्से scenes: 64
+voice engine: kokoro (local, locked) 64 scenes
+img 13 pollinations-flux
+pre-check: scene 15 repeats/mirrors scene 13 -> new picture
+resume: script loaded
+title: 13वीं घंटी बजते ही काल-पिशाच का हमला! | रात के किस्से scenes: 64
+voice engine: kokoro (local, locked) 64 scenes
+img 14 pollinations-flux
+pre-check: scene 16 repeats/mirrors scene 12 -> new picture
