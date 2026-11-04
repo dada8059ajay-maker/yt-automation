@@ -92,17 +92,18 @@
    "दिवाली की जादुई कहानी",
    "दिवाली कहानी",
    "एक नन्हे बालक कबीर और उसकी जादुई लकड़ी की गाड़ी का रहस्यमयी और शिक्षाप्रद सफ़र",
-   "आसमान के नीले बादलों का अचानक काला होकर धरती पर उतरना और एक नन्हे बच्चे की समझदारी से उनका रहस्य सुलझना।"
+   "आसमान के नीले बादलों का अचानक काला होकर धरती पर उतरना और एक नन्हे बच्चे की समझदारी से उनका रहस्य सुलझना।",
+   "बेडरूम की दीवार पर टंगे एक पुराने कालीन से निकलती रहस्यमयी आवाज़ों और बच्चों के जादुई सफर की कहानी"
   ],
   "last_long": {
-   "job": "kahani_long_20261104_1107",
-   "title": "ज़मीन पर उतरे काले बादल! नन्हे चिंटू का कमाल | कहानी पतंग",
-   "story": "आसमान के नीले बादलों का अचानक काला होकर धरती पर उतरना और एक नन्हे बच्चे की समझदारी से उनका रहस्य सुलझना।",
+   "job": "kahani_long_20261104_1120",
+   "title": "बेडरूम का जादुई कालीन! रहस्यमयी दुनिया का सफर | कहानी पतंग",
+   "story": "बेडरूम की दीवार पर टंगे एक पुराने कालीन से निकलती रहस्यमयी आवाज़ों और बच्चों के जादुई सफर की कहानी",
    "characters": {
     "Chintu": "English character sheet: age 7, round cheerful face, big black curious eyes, short messy black hair, average build, wearing a bright yellow cotton t-shirt and blue shorts, Indian look"
    },
    "vid": null,
-   "short_done": true,
+   "short_done": false,
    "trailer": null,
    "fest_at": null
   }
@@ -192,6 +193,13 @@
    "mode": "long",
    "asset": "raat_long_20261104_1141.tar",
    "title": "सोमेश्वर की बंद गुफा और 3 खौफनाक नियम | रात के किस्से"
+  },
+  {
+   "job": "kahani_long_20261104_1120",
+   "ch": "kahani",
+   "mode": "long",
+   "asset": "kahani_long_20261104_1120.tar",
+   "title": "बेडरूम का जादुई कालीन! रहस्यमयी दुनिया का सफर | कहानी पतंग"
   }
  ],
  "_draft": null,
@@ -406,10 +414,17 @@
    "title": "सोमेश्वर की बंद गुफा और 3 खौफनाक नियम | रात के किस्से",
    "dur": 148,
    "used": false
+  },
+  {
+   "asset": "lib_kahani_long_20261104_1120.mp4",
+   "ch": "kahani",
+   "title": "बेडरूम का जादुई कालीन! रहस्यमयी दुनिया का सफर | कहानी पतंग",
+   "dur": 243,
+   "used": false
   }
  ],
  "_minutes": {
-  "2026-11": 3617
+  "2026-11": 3634
  },
  "_bank": {
   "kahani_s_patang01": "2026-11-02",
@@ -484,15 +499,6 @@
   "fest": null,
   "engine": "kokoro"
  },
- "_draft_kahani-long": {
-  "job": "kahani_long_20261104_1120",
-  "ch": "kahani",
-  "mode": "long",
-  "asset": "draft_kahani_long_20261104_1120.tar",
-  "stage": "imgwait: shot 16.2 waiting for a real picture",
-  "tries": 0,
-  "fest": null,
-  "engine": "edge"
- },
+ "_draft_kahani-long": null,
  "_draft_kahani-short": null
 }
