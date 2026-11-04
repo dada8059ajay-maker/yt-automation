@@ -30,30 +30,27 @@
    "नरक चतुर्दशी, यम का दीया और पुश्तैनी हवेली के नियम",
    "नरक चतुर्दशी हॉरर",
    "कसौली के 120 साल पुराने घंटाघर के 13वें घंटे का आखिरी और भयानक सच",
-   "नियम वाली खौफनाक कहानी"
+   "नियम वाली खौफनाक कहानी",
+   "हिमालय की एक प्राचीन, सदियों से बंद गुफा और उसके अंदर के 3 खौफनाक नियम"
   ],
   "series": {
-   "name": "काल-घंटी के नियम",
-   "part": 3,
-   "so_far": "समीर कसौली के 120 साल पुराने घंटाघर में नए तकनीशियन के रूप में ड्यूटी शुरू करता है। पुराना केयरटेकर दीनानाथ उसे रात के 4 सख्त नियम बताता है। आधी रात को 12 के बजाय 13वीं घंटी बजती है और काल-चक्र उलटा घूमने लगता है। समीर को एक पुरानी डायरी से पता चलता है कि दीनानाथ की मौत 10 साल पहले ही हो चुकी थी।",
+   "name": "सोमेश्वर गुफा रहस्य",
+   "part": 1,
+   "so_far": "हिमालय की एक प्राचीन, सदियों से बंद गुफा और उसके अंदर के 3 खौफनाक नियम",
    "characters": {
-    "Sameer": "A 32 year old Indian male clock technician, sharp jawline, short neat black hair, dark intense eyes, wearing a dark navy blue wool sweater over a light gray shirt and dark trousers, slim athletic build.",
-    "Dinanath": "A 65 year old Indian male caretaker, deeply wrinkled face, thick white mustache, sparse gray hair, wearing an old dusty brown tweed jacket over a woolen shawl, frail build.",
-    "Shadow": "A tall ominous translucent dark silhouette of an ancient figure inside a misty tower, glowing faint red eye-spots, uncanny tall posture."
+    "राघव": "English character sheet: Age 28, sharp angular face, deep brown watchful eyes, short messy black hair, lean and tall athletic build, wearing a dark grey cargo jacket over a black woolen t-shirt with navy blue trousers, typical North Indian modern explorer look."
    },
    "bank": null
   },
   "last_long": {
-   "job": "raat_long_20261103_1127",
-   "title": "घंटाघर का अंत: भाग 3",
-   "story": "समीर कसौली के 120 साल पुराने घंटाघर में नए तकनीशियन के रूप में ड्यूटी शुरू करता है। पुराना केयरटेकर दीनानाथ उसे रात के 4 सख्त नियम बताता है। आधी रात को 12 के बजाय 13वीं घंटी बजती है और काल-चक्र उलटा घूमने लगता है। समीर को एक पुरानी डायरी से पता चलता है कि दीनानाथ की मौत 10 साल पहले ही हो चुकी थी।",
+   "job": "raat_long_20261104_1141",
+   "title": "सोमेश्वर की बंद गुफा और 3 खौफनाक नियम | रात के किस्से",
+   "story": "हिमालय की एक प्राचीन, सदियों से बंद गुफा और उसके अंदर के 3 खौफनाक नियम",
    "characters": {
-    "Sameer": "A 32 year old Indian male clock technician, sharp jawline, short neat black hair, dark intense eyes, wearing a dark navy blue wool sweater over a light gray shirt and dark trousers, slim athletic build.",
-    "Dinanath": "A 65 year old Indian male caretaker, deeply wrinkled face, thick white mustache, sparse gray hair, wearing an old dusty brown tweed jacket over a woolen shawl, frail build.",
-    "Shadow": "A tall ominous translucent dark silhouette of an ancient figure inside a misty tower, glowing faint red eye-spots, uncanny tall posture."
+    "राघव": "English character sheet: Age 28, sharp angular face, deep brown watchful eyes, short messy black hair, lean and tall athletic build, wearing a dark grey cargo jacket over a black woolen t-shirt with navy blue trousers, typical North Indian modern explorer look."
    },
    "vid": null,
-   "short_done": true,
+   "short_done": false,
    "trailer": null,
    "fest_at": null
   }
@@ -188,6 +185,13 @@
    "mode": "short",
    "asset": "raat_short_20261104_1120.tar",
    "title": "13वीं मंज़िल का खौफनाक सच! लिफ्ट में ये गलती मत करना | रात के किस्से"
+  },
+  {
+   "job": "raat_long_20261104_1141",
+   "ch": "raat",
+   "mode": "long",
+   "asset": "raat_long_20261104_1141.tar",
+   "title": "सोमेश्वर की बंद गुफा और 3 खौफनाक नियम | रात के किस्से"
   }
  ],
  "_draft": null,
@@ -395,10 +399,17 @@
    "title": "ज़मीन पर उतरे काले बादल! नन्हे चिंटू का कमाल | कहानी पतंग",
    "dur": 123,
    "used": false
+  },
+  {
+   "asset": "lib_raat_long_20261104_1141.mp4",
+   "ch": "raat",
+   "title": "सोमेश्वर की बंद गुफा और 3 खौफनाक नियम | रात के किस्से",
+   "dur": 148,
+   "used": false
   }
  ],
  "_minutes": {
-  "2026-11": 3579
+  "2026-11": 3617
  },
  "_bank": {
   "kahani_s_patang01": "2026-11-02",
