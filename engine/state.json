@@ -105,15 +105,17 @@
    "बरगद के पेड़ से टपकती जादुई चाबियों और सूखे गाँव को बचाने वाले रहस्यमयी बादल की अनोखी सीख भरी कहानी।",
    "लालची बंदर चीकू को जादुई बांसुरी मिली, लेकिन उसके लालच से जंगल मुसीबत में पड़ गया।",
    "जंगल कहानी",
-   "एक लालची लकड़हारा और जादुई घड़ा जो सोने के सिक्के देता है लेकिन शर्त पूरी न होने पर सब कुछ वापस ले लेता है।"
+   "एक लालची लकड़हारा और जादुई घड़ा जो सोने के सिक्के देता है लेकिन शर्त पूरी न होने पर सब कुछ वापस ले लेता है।",
+   "An energetic young rabbit finds magical ghungroos that force everyone to dance, teaching him a sweet lesson about timing and consideration."
   ],
   "last_long": {
-   "job": "kahani_long_20261104_1431",
-   "title": "जादुई घड़ा और लालची लकड़हारा | Hindi Kahaniya | कहानी पतंग",
-   "story": "एक लालची लकड़हारा और जादुई घड़ा जो सोने के सिक्के देता है लेकिन शर्त पूरी न होने पर सब कुछ वापस ले लेता है।",
+   "job": "kahani_long_20261104_1531",
+   "title": "जादुई घुंघरू और नाचता जंगल! 🐰 नटखट खरगोश | कहानी पतंग",
+   "story": "An energetic young rabbit finds magical ghungroos that force everyone to dance, teaching him a sweet lesson about timing and consideration.",
    "characters": {
-    "Raman": "adult male woodcutter, round cheerful face, messy black hair, wearing a patched brown cotton shirt and dhoti",
-    "Pari": "magical fairy child, glowing face, shimmering golden hair, wearing a sparkling pink and white floral dress with tiny glowing wings"
+    "Tikku": "Age 6 years equivalent rabbit, round cute face with twitching pink nose, long floppy white ears with pink inside, wearing a small sky-blue waistcoat over white fur",
+    "Bholu": "Age 10 years equivalent bear, chubby round face, gentle black eyes, fluffy brown fur, wearing a yellow checkered scarf around his neck",
+    "Chinki": "Age 5 years equivalent squirrel, bright curious eyes, bushy grey-brown tail, wearing a tiny red bow on her head"
    },
    "vid": null,
    "short_done": false,
@@ -276,6 +278,13 @@
    "mode": "long",
    "asset": "kahani_long_20261104_1431.tar",
    "title": "जादुई घड़ा और लालची लकड़हारा | Hindi Kahaniya | कहानी पतंग"
+  },
+  {
+   "job": "kahani_long_20261104_1531",
+   "ch": "kahani",
+   "mode": "long",
+   "asset": "kahani_long_20261104_1531.tar",
+   "title": "जादुई घुंघरू और नाचता जंगल! 🐰 नटखट खरगोश | कहानी पतंग"
   }
  ],
  "_draft": {
@@ -534,10 +543,17 @@
    "title": "जादुई घड़ा और लालची लकड़हारा | Hindi Kahaniya | कहानी पतंग",
    "dur": 197,
    "used": false
+  },
+  {
+   "asset": "lib_kahani_long_20261104_1531.mp4",
+   "ch": "kahani",
+   "title": "जादुई घुंघरू और नाचता जंगल! 🐰 नटखट खरगोश | कहानी पतंग",
+   "dur": 212,
+   "used": false
   }
  ],
  "_minutes": {
-  "2026-11": 4230
+  "2026-11": 4286
  },
  "_bank": {
   "kahani_s_patang01": "2026-11-02",
@@ -554,7 +570,8 @@
   "raat_s_kuan01": "2026-11-04",
   "raat_s_photo01": "2026-11-04",
   "raat_s_aaina02": "2026-11-04",
-  "kahani_l_bank02_1104": "2026-11-04"
+  "kahani_l_bank02_1104": "2026-11-04",
+  "kahani_l_bank03_1104": "2026-11-04"
  },
  "_gemini_wait": "2026-11-04T08:05:00+00:00",
  "_engine_b_dead": "2026-11-04",
