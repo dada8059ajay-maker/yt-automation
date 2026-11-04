@@ -34,32 +34,33 @@
    "हिमालय की एक प्राचीन, सदियों से बंद गुफा और उसके अंदर के 3 खौफनाक नियम",
    "गाँव और पुरानी हवेली के रहस्य",
    "पुरानी हवेली का रहस्य",
-   "आईने का रहस्य"
+   "आईने का रहस्य",
+   "हिमालय की प्राचीन सोमेश्वर गुफा के अंदर दूसरे नियम का जानलेवा सामना और एक खौफनाक खुलासा"
   ],
   "series": {
-   "name": "सोमेश्वर गुफा रहस्य",
-   "part": 1,
-   "so_far": "हिमालय की एक प्राचीन, सदियों से बंद गुफा और उसके अंदर के 3 खौफनाक नियम",
+   "name": "सोमेश्वर गुफा",
+   "part": 2,
+   "so_far": "राघव ने हिमालय की प्राचीन और सदियों से बंद सोमेश्वर गुफा में कदम रखा था। अंदर प्रवेश करते ही उसे तीन खौफनाक नियमों का एक पत्थर मिला। पहला नियम था कि गुफा के अंदर अपनी परछाई को कभी मत छूना। राघव ने पहला नियम तो बचा लिया लेकिन परछाई का आकार बदलते देख उसकी साँसें अटक गईं। अब वह गुफा के और अंदर दूसरे पड़ाव पर पहुँच चुका है जहाँ नया खतरा उसका इंतजार कर रहा है।",
    "characters": {
     "राघव": "English character sheet: Age 28, sharp angular face, deep brown watchful eyes, short messy black hair, lean and tall athletic build, wearing a dark grey cargo jacket over a black woolen t-shirt with navy blue trousers, typical North Indian modern explorer look."
    },
    "bank": null
   },
   "last_long": {
-   "job": "raat_long_20261104_1141",
-   "title": "सोमेश्वर की बंद गुफा और 3 खौफनाक नियम | रात के किस्से",
-   "story": "हिमालय की एक प्राचीन, सदियों से बंद गुफा और उसके अंदर के 3 खौफनाक नियम",
+   "job": "raat_long_20261104_1219",
+   "title": "सोमेश्वर गुफा का रहस्य भाग 2 | रात के किस्से",
+   "story": "राघव ने हिमालय की प्राचीन और सदियों से बंद सोमेश्वर गुफा में कदम रखा था। अंदर प्रवेश करते ही उसे तीन खौफनाक नियमों का एक पत्थर मिला। पहला नियम था कि गुफा के अंदर अपनी परछाई को कभी मत छूना। राघव ने पहला नियम तो बचा लिया लेकिन परछाई का आकार बदलते देख उसकी साँसें अटक गईं। अब वह गुफा के और अंदर दूसरे पड़ाव पर पहुँच चुका है जहाँ नया खतरा उसका इंतजार कर रहा है।",
    "characters": {
     "राघव": "English character sheet: Age 28, sharp angular face, deep brown watchful eyes, short messy black hair, lean and tall athletic build, wearing a dark grey cargo jacket over a black woolen t-shirt with navy blue trousers, typical North Indian modern explorer look."
    },
    "vid": null,
-   "short_done": true,
+   "short_done": false,
    "trailer": null,
    "fest_at": null
   }
  },
  "kahani": {
-  "short": "2026-11-07T08:00:00Z",
+  "short": "2026-11-07T13:00:00Z",
   "long": "2026-11-08T12:30:00Z",
   "history": [
    "शेर और चतुर खरगोश",
@@ -189,7 +190,6 @@
   }
  },
  "_uploads": [
-  "2026-10-31T15:53:02Z",
   "2026-10-31T19:00:21Z",
   "2026-10-31T21:50:31Z",
   "2026-11-01T01:27:30Z",
@@ -208,16 +208,10 @@
   "2026-11-03T10:05:33Z",
   "2026-11-03T10:38:36Z",
   "2026-11-04T05:49:35Z",
-  "2026-11-04T08:54:58Z"
+  "2026-11-04T08:54:58Z",
+  "2026-11-04T09:19:47Z"
  ],
  "_queue": [
-  {
-   "job": "kahani_short_20261104_1001",
-   "ch": "kahani",
-   "mode": "short",
-   "asset": "kahani_short_20261104_1001.tar",
-   "title": "जादुई चश्मे से सुनी जानवरों की बात! | कहानी पतंग"
-  },
   {
    "job": "kahani_long_20261104_0830",
    "ch": "kahani",
@@ -343,18 +337,16 @@
    "mode": "short",
    "asset": "kahani_short_20261104_1431.tar",
    "title": "शेर की दहाड़ किसने चुराई? | Jungle Kahani | कहानी पतंग"
+  },
+  {
+   "job": "raat_long_20261104_1219",
+   "ch": "raat",
+   "mode": "long",
+   "asset": "raat_long_20261104_1219.tar",
+   "title": "सोमेश्वर गुफा का रहस्य भाग 2 | रात के किस्से"
   }
  ],
- "_draft": {
-  "job": "raat_long_20261104_1219",
-  "ch": "raat",
-  "mode": "long",
-  "asset": "draft_raat_long_20261104_1219.tar",
-  "stage": "imgwait: shot 20.2 waiting for a real picture",
-  "tries": 0,
-  "fest": null,
-  "engine": "edge"
- },
+ "_draft": null,
  "_library": [
   {
    "asset": "lib_raat_long_20261101_0811.mp4",
@@ -587,10 +579,17 @@
    "title": "शेर की दहाड़ किसने चुराई? | Jungle Story | कहानी पतंग",
    "dur": 103,
    "used": false
+  },
+  {
+   "asset": "lib_raat_long_20261104_1219.mp4",
+   "ch": "raat",
+   "title": "सोमेश्वर गुफा का रहस्य भाग 2 | रात के किस्से",
+   "dur": 192,
+   "used": false
   }
  ],
  "_minutes": {
-  "2026-11": 4065
+  "2026-11": 4070
  },
  "_bank": {
   "kahani_s_patang01": "2026-11-02",

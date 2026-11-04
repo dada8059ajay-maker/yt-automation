@@ -21,3 +21,4 @@
 - कहानी पतंग | short | दिवाली की रात जादुई दीया जल उठा! #shorts | Sat 07 Nov 2026 01:30 PM IST | https://studio.youtube.com/video/bXYqHB5qOIM/edit
 - रात के किस्से | long | घंटाघर का अंत: भाग 3 | Sun 08 Nov 2026 09:00 PM IST | https://studio.youtube.com/video/Vn6XMDA2mYA/edit
 - रात के किस्से | short | यम का दीया बुझा तो खुला दरवाजा! Narak Chaturdashi | रात के किस्से | Mon 09 Nov 2026 09:30 PM IST | https://studio.youtube.com/video/80kFqXGd5Oc/edit
+- कहानी पतंग | short | जादुई चश्मे से सुनी जानवरों की बात! | कहानी पतंग | Sat 07 Nov 2026 06:30 PM IST | https://studio.youtube.com/video/y9tyyLjpTUA/edit
