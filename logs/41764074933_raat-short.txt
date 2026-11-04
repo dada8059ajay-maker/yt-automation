@@ -1,0 +1,38 @@
+story from story_bank (Hark-written)
+title: यम का दीया बुझा, तो दरवाज़ा खुला! #shorts scenes: 6
+rules v3: pictures rebuilt, re-voiced lines []
+voice engine: kokoro (local, locked) 6 scenes
+gemini gemini-3.8-flash key 1 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-3.8-flash key 2 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-3.8-flash key 3 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-3.7-flash key 1 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini ok gemini-3.7-flash key 2
+shots planned: 9 pictures for 6 scenes
+img 0 pollinations-flux
+pollinations key out of credit -> free anonymous FLUX
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+pollinations retry 3 <HTTPError 402: 'Payment Required'>
+img 1 pollinations-flux-free
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+pollinations retry 3 ValueError('small file 39298')
+pollinations retry 4 <HTTPError 402: 'Payment Required'>
+gemini image key 1 429
+gemini image key 2 429
+gemini image key 3 429
+hf serverless fail <HTTPError 403: 'Forbidden'>
+hf flux fail AppError('You have exceeded your free ZeroGPU quota (90s requested vs. 0s left). Try again in 0:00:00. Subscribe to Hugging Face PRO to get 

@@ -1,0 +1,101 @@
+{
+ "title": "यम का दीया बुझा, तो दरवाज़ा खुला! #shorts",
+ "topic": "नरक चतुर्दशी हॉरर",
+ "description": "काल्पनिक कहानी। पूरी कहानी रात के किस्से पर।",
+ "tags": [
+  "horror",
+  "नरक चतुर्दशी",
+  "रात के किस्से",
+  "shorts"
+ ],
+ "hook": "यम का दीया",
+ "thumb_text": "यम का दीया",
+ "characters": {
+  "Arjun": "Indian man, 30, short black hair, light stubble, maroon sweater over white kurta, holding a brass oil lamp, anxious eyes",
+  "Nani": "old Indian woman, 80, thin white hair, white cotton saree, deep wrinkles, piercing eyes",
+  "Yamdeep": "a tall faceless dark shadow figure with a faint red glow, wrapped in black smoke"
+ },
+ "scenes": [
+  {
+   "speaker": "N",
+   "text": "नरक चतुर्दशी की रात, यम का दीया सुबह तक नहीं बुझना चाहिए। पर अगर बुझ जाए तो?",
+   "mood": "horror",
+   "style": "deep, chilling whisper",
+   "visual": "Old Indian haveli doorway at night, a single clay lamp burning, fog, Indian man, 30, short black hair, light stubble, maroon sweater over white kurta, holding a brass oil lamp, an",
+   "dur": 8.125,
+   "shots": [
+    "Medium shot of an Indian man in a maroon sweater placing a burning clay lamp on the stone threshold of a foggy haveli doorway at night.",
+    "Wide shot of the man in maroon sweater leaning protectively over the burning diya as ominous fog and wind sweep through the ancient haveli courtyard."
+   ]
+  },
+  {
+   "speaker": "N",
+   "text": "आधी रात के बाद कोई तुम्हारा नाम पुकारे, तो पलटकर मत देखना।",
+   "mood": "horror",
+   "style": "old, warning whisper",
+   "visual": "Old woman's piercing eyes in lamp light, old Indian woman, 80, thin white hair, white cotton saree, deep wrinkles, piercing eyes",
+   "dur": 6.6,
+   "shots": [
+    "Medium shot of an elderly Indian woman in a white cotton saree raising a bony finger in warning inside a dimly lit stone haveli corridor.",
+    "Medium shot of the man in maroon sweater walking cautiously down a dark misty corridor, firmly keeping his eyes ahead and refusing to look behind him."
+   ]
+  },
+  {
+   "speaker": "N",
+   "text": "रात के ठीक बारह बजे, दीया फड़फड़ाने लगा।",
+   "mood": "suspense",
+   "style": "tense",
+   "visual": "Lamp flame flickering violently in strong wind at haveli doorway, Indian man, 30, short black hair, light stubble, maroon sweater over white kurta, holding a brass oil lamp, an",
+   "dur": 5.1499999999999995,
+   "shots": [
+    "Medium shot of the Indian man cupping his hand desperately around the violently flickering diya flame as chilling wind gusts through the haveli doorway at midnight."
+   ]
+  },
+  {
+   "speaker": "N",
+   "text": "अर्जुन... इधर देखो बेटा...",
+   "mood": "horror",
+   "style": "ghostly, echoing, evil whisper",
+   "visual": "Dark corridor behind the man, faint shadow shape, fog, a tall faceless dark shadow figure with a faint red glow, wrapped in black smoke",
+   "dur": 3.525,
+   "shots": [
+    "Wide shot of a tall dark shadow figure shrouded in black smoke emerging from the foggy haveli corridor, reaching a shadowy arm toward the oblivious man."
+   ]
+  },
+  {
+   "speaker": "N",
+   "text": "और दक्षिण का दरवाज़ा... अपने आप खुलने लगा।",
+   "mood": "horror",
+   "style": "shocked, low",
+   "visual": "Old wooden door creaking open by itself, red glow inside, Indian man, 30, short black hair, light stubble, maroon sweater over white kurta, holding a brass oil lamp, an",
+   "dur": 5.05,
+   "shots": [
+    "Wide shot of a massive ancient wooden door creaking open on its own to reveal an eerie crimson glow, as the man steps back in alarm."
+   ]
+  },
+  {
+   "speaker": "N",
+   "text": "आगे क्या हुआ? पूरी कहानी रात के किस्से पर देखिए, लिंक नीचे है।",
+   "mood": "suspense",
+   "style": "low, inviting",
+   "visual": "Haveli at night with a single lamp burning, fog, Indian man, 30, short black hair, light stubble, maroon sweater over white kurta, holding a brass oil lamp, an",
+   "dur": 6.5,
+   "shots": [
+    "Medium shot of the man holding his brass oil lamp high, cautiously stepping across the misty courtyard toward the menacing glow of the open doorway.",
+    "Wide shot of the ancient sprawling haveli shrouded in thick nocturnal fog, silhouette of the man standing by the flickering threshold under a dark moonless sky."
+   ]
+  }
+ ],
+ "character_voice_map": {
+  "N": "Charon",
+  "M": "Puck",
+  "F": "Kore",
+  "O": "Fenrir",
+  "A": "Gacrux",
+  "C": "Leda",
+  "G": "Enceladus"
+ },
+ "rules_v": 3,
+ "voice_engine": "kokoro",
+ "shots_v": 1
+}
