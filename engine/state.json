@@ -92,88 +92,21 @@
    "जादुई और रहस्यमयी कहानियाँ",
    "चतुर जंगल और पंचतंत्र की कहानियाँ",
    "दिवाली की जादुई कहानी",
-   "दिवाली कहानी"
+   "दिवाली कहानी",
+   "एक नन्हे बालक कबीर और उसकी जादुई लकड़ी की गाड़ी का रहस्यमयी और शिक्षाप्रद सफ़र"
   ],
   "last_long": {
-   "job": "kahani_long_20261103_1415",
-   "title": "छोटू का जादुई दीया | दिवाली की प्यारी कहानी",
-   "story": "दिवाली की जादुई कहानी",
+   "job": "kahani_long_20261104_0830",
+   "title": "उड़ती जादुई गाड़ी का भयानक रहस्य! | कहानी पतंग",
+   "story": "एक नन्हे बालक कबीर और उसकी जादुई लकड़ी की गाड़ी का रहस्यमयी और शिक्षाप्रद सफ़र",
    "characters": {
-    "Chhotu": "Indian boy, 8, short black hair, yellow kurta, small clay diya in hands, bright curious eyes",
-    "Dadi": "Indian grandmother, 70, white hair in bun, light green saree, round glasses, kind smile",
-    "Jugnu": "tiny glowing golden firefly with a happy cartoon face"
+    "कबीर (Kabir)": "A cheerful 8-year-old Indian village boy with messy black hair, bright big brown eyes, wearing a simple bright orange cotton kurta and blue shorts, thin energetic build.",
+    "मोती (Moti - Goat)": "A friendly small white Indian baby goat with floppy ears, big expressive dark eyes, and a cute small red velvet ribbon tied around its neck."
    },
-   "vid": "0f21gj4pVes",
-   "short_done": true,
-   "trailer": {
-    "title": "दिवाली की रात जादुई दीया जल उठा! #shorts",
-    "topic": "दिवाली कहानी",
-    "description": "पूरी कहानी कहानी पतंग पर। शुभ दीपावली!",
-    "tags": [
-     "दिवाली",
-     "diwali story",
-     "कहानी पतंग",
-     "shorts"
-    ],
-    "hook": "जादुई दीया!",
-    "thumb_text": "जादुई दीया",
-    "characters": {
-     "Chhotu": "Indian boy, 8, short black hair, yellow kurta, small clay diya in hands, bright curious eyes",
-     "Dadi": "Indian grandmother, 70, white hair in bun, light green saree, round glasses, kind smile",
-     "Jugnu": "tiny glowing golden firefly with a happy cartoon face"
-    },
-    "scenes": [
-     {
-      "s": "N",
-      "t": "दिवाली से एक रात पहले, पूरे गाँव में अंधेरा था। और छोटू के हाथ में था एक जादुई दीया!",
-      "m": "suspense",
-      "st": "direct, warm, mysterious",
-      "v": "Indian village at night, all houses dark, a small boy holding a glowing clay diya",
-      "w": "Chhotu"
-     },
-     {
-      "s": "A",
-      "t": "यह दीया सिर्फ़ सच्चे दिल वाले के हाथ में जलता है।",
-      "m": "peaceful",
-      "st": "old, gentle",
-      "v": "Grandmother giving an old clay diya to the boy, warm lantern light",
-      "w": "Dadi"
-     },
-     {
-      "s": "N",
-      "t": "अचानक दीया अपने आप जल उठा, और उसकी लौ से निकला एक नन्हा सुनहरा जुगनू!",
-      "m": "victory",
-      "st": "amazed, magical",
-      "v": "A tiny golden firefly flying out of the diya flame, sparkles, boy amazed",
-      "w": "Jugnu"
-     },
-     {
-      "s": "C",
-      "t": "हर घर में रोशनी तभी जलेगी, जब तुम किसी की सच्ची मदद करोगे।",
-      "m": "suspense",
-      "st": "tiny, serious",
-      "v": "Firefly floating in front of the boy, golden trail of light",
-      "w": "Jugnu"
-     },
-     {
-      "s": "N",
-      "t": "पर आख़िरी घर था उस लड़के का, जिसने छोटू की पतंग फाड़ी थी। अब छोटू क्या करेगा?",
-      "m": "suspense",
-      "st": "tense",
-      "v": "Boy standing hesitant outside a dark house, firefly beside him",
-      "w": "Chhotu"
-     },
-     {
-      "s": "N",
-      "t": "पूरी कहानी देखिए कहानी पतंग पर, लिंक नीचे है!",
-      "m": "peaceful",
-      "st": "warm, inviting",
-      "v": "Village glowing with diyas at night, boy smiling with firefly",
-      "w": "Chhotu"
-     }
-    ]
-   },
-   "fest_at": "2026-11-07T13:30:00+05:30"
+   "vid": null,
+   "short_done": false,
+   "trailer": null,
+   "fest_at": null
   }
  },
  "_uploads": [
@@ -226,6 +159,13 @@
    "mode": "short",
    "asset": "kahani_short_20261104_1001.tar",
    "title": "जादुई चश्मे से सुनी जानवरों की बात! | कहानी पतंग"
+  },
+  {
+   "job": "kahani_long_20261104_0830",
+   "ch": "kahani",
+   "mode": "long",
+   "asset": "kahani_long_20261104_0830.tar",
+   "title": "उड़ती जादुई गाड़ी का भयानक रहस्य! | कहानी पतंग"
   }
  ],
  "_draft": {
@@ -428,10 +368,17 @@
    "title": "घंटाघर का अंत: भाग 3",
    "dur": 121,
    "used": false
+  },
+  {
+   "asset": "lib_kahani_long_20261104_0830.mp4",
+   "ch": "kahani",
+   "title": "उड़ती जादुई गाड़ी का भयानक रहस्य! | कहानी पतंग",
+   "dur": 491,
+   "used": false
   }
  ],
  "_minutes": {
-  "2026-11": 3353
+  "2026-11": 3409
  },
  "_bank": {
   "kahani_s_patang01": "2026-11-02",
@@ -503,15 +450,6 @@
   "fest": null,
   "engine": "kokoro"
  },
- "_draft_kahani-long": {
-  "job": "kahani_long_20261104_0830",
-  "ch": "kahani",
-  "mode": "long",
-  "asset": "draft_kahani_long_20261104_0830.tar",
-  "stage": "imgwait: shot 8.2 waiting for a real picture",
-  "tries": 1,
-  "fest": null,
-  "engine": "kokoro"
- },
+ "_draft_kahani-long": null,
  "_draft_kahani-short": null
 }
