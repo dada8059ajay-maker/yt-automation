@@ -219,6 +219,13 @@
    "mode": "short",
    "asset": "raat_short_20261104_0829.tar",
    "title": "यम का दीया बुझा तो खुला दरवाजा! Narak Chaturdashi | रात के किस्से"
+  },
+  {
+   "job": "kahani_short_20261104_1001",
+   "ch": "kahani",
+   "mode": "short",
+   "asset": "kahani_short_20261104_1001.tar",
+   "title": "जादुई चश्मे से सुनी जानवरों की बात! | कहानी पतंग"
   }
  ],
  "_draft": {
@@ -424,7 +431,7 @@
   }
  ],
  "_minutes": {
-  "2026-11": 3221
+  "2026-11": 3232
  },
  "_bank": {
   "kahani_s_patang01": "2026-11-02",
@@ -506,14 +513,5 @@
   "fest": null,
   "engine": "kokoro"
  },
- "_draft_kahani-short": {
-  "job": "kahani_short_20261104_1001",
-  "ch": "kahani",
-  "mode": "short",
-  "asset": "draft_kahani_short_20261104_1001.tar",
-  "stage": "imgwait: image servers out of free credit at 6/7",
-  "tries": 0,
-  "fest": null,
-  "engine": "edge"
- }
+ "_draft_kahani-short": null
 }
