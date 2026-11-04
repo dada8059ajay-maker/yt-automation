@@ -600,7 +600,7 @@
   }
  ],
  "_minutes": {
-  "2026-11": 4693
+  "2026-11": 4711
  },
  "_bank": {
   "kahani_s_patang01": "2026-11-02",
@@ -667,8 +667,8 @@
   "ch": "raat",
   "mode": "short",
   "asset": "draft_raat_short_20261104_1835.tar",
-  "stage": "imgwait: image servers out of free credit at 3/9",
-  "tries": 0,
+  "stage": "images 6/9",
+  "tries": 1,
   "fest": null,
   "engine": "edge"
  },
