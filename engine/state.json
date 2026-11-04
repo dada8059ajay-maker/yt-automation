@@ -99,17 +99,20 @@
    "बेडरूम की दीवार पर टंगे एक पुराने कालीन से निकलती रहस्यमयी आवाज़ों और बच्चों के जादुई सफर की कहानी",
    "छोटी कोशिश बड़ी जीत",
    "बेडरूम की दीवार पर टंगे एक पुराने कालीन से निकलती रहस्यमयी आवाज़ों और बच्चों के जादुई सफर की कहानी का रोमांचक ट्रेलर",
-   "आसमान में बिना सहारे तैरते एक प्राचीन बक्से का रहस्य और नन्हे बच्चे की समझदारी"
+   "आसमान में बिना सहारे तैरते एक प्राचीन बक्से का रहस्य और नन्हे बच्चे की समझदारी",
+   "A magical bamboo flute in a peaceful jungle that teaches a greedy monkey a sweet lesson about sharing."
   ],
   "last_long": {
-   "job": "kahani_long_20261104_1120",
-   "title": "बेडरूम का जादुई कालीन! रहस्यमयी दुनिया का सफर | कहानी पतंग",
-   "story": "बेडरूम की दीवार पर टंगे एक पुराने कालीन से निकलती रहस्यमयी आवाज़ों और बच्चों के जादुई सफर की कहानी",
+   "job": "kahani_long_20261104_1232",
+   "title": "लालची बंदर और जादुई बांसुरी की कहानी | कहानी पतंग",
+   "story": "A magical bamboo flute in a peaceful jungle that teaches a greedy monkey a sweet lesson about sharing.",
    "characters": {
-    "Chintu": "English character sheet: age 7, round cheerful face, big black curious eyes, short messy black hair, average build, wearing a bright yellow cotton t-shirt and blue shorts, Indian look"
+    "Chiku": "age 6 years, round chubby face, big brown mischievous eyes, short messy brown hair, wearing a tiny red vest and blue shorts",
+    "Bholu": "age 8 years, gentle round face, kind smiling eyes, neat black fur hair, wearing a green leaf shirt and yellow waist wrap",
+    "Meera": "age 7 years, soft gentle face, warm friendly eyes, fluffy white fur, wearing a pink flower garland around her neck"
    },
    "vid": null,
-   "short_done": true,
+   "short_done": false,
    "trailer": null,
    "fest_at": null
   }
@@ -248,6 +251,13 @@
    "mode": "short",
    "asset": "raat_short_20261104_1330.tar",
    "title": "आईने की मुस्कुराती परछाईं का खौफनाक सच! | रात के किस्से"
+  },
+  {
+   "job": "kahani_long_20261104_1232",
+   "ch": "kahani",
+   "mode": "long",
+   "asset": "kahani_long_20261104_1232.tar",
+   "title": "लालची बंदर और जादुई बांसुरी की कहानी | कहानी पतंग"
   }
  ],
  "_draft": {
@@ -478,10 +488,17 @@
    "title": "बेडरूम का जादुई कालीन! रहस्यमयी दुनिया का सफर | कहानी पतंग",
    "dur": 243,
    "used": false
+  },
+  {
+   "asset": "lib_kahani_long_20261104_1232.mp4",
+   "ch": "kahani",
+   "title": "लालची बंदर और जादुई बांसुरी की कहानी | कहानी पतंग",
+   "dur": 237,
+   "used": false
   }
  ],
  "_minutes": {
-  "2026-11": 3859
+  "2026-11": 3887
  },
  "_bank": {
   "kahani_s_patang01": "2026-11-02",
@@ -561,15 +578,6 @@
   "fest": null,
   "engine": "kokoro"
  },
- "_draft_kahani-long": {
-  "job": "kahani_long_20261104_1232",
-  "ch": "kahani",
-  "mode": "long",
-  "asset": "draft_kahani_long_20261104_1232.tar",
-  "stage": "imgwait: shot 9.3 waiting for a real picture",
-  "tries": 0,
-  "fest": null,
-  "engine": "edge"
- },
+ "_draft_kahani-long": null,
  "_draft_kahani-short": null
 }
