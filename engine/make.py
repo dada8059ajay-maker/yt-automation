@@ -221,6 +221,18 @@ else:
     assert len(S.get("scenes", [])) >= 5, "too few scenes"
     json.dump(S, open(f"{OUT}/script.json", "w"), ensure_ascii=False, indent=1)
     checkpoint("script")
+if not S.get("seo_v"):
+    try:
+        o = gemini("You are a YouTube SEO expert for Hindi story channels. Story title: " + S["title"] + "\nTopic: " + str(S.get("topic", "")) + "\nStory: " +
+                   " ".join(sc.get("text", "") for sc in S["scenes"])[:2500] + "\nChannel: " + CFG["name"] + (" (kids, made for kids)" if CFG["madeForKids"] else " (Hindi horror/thriller)") +
+                   "\nReturn JSON {title (Hindi, max 70 chars, curiosity hook + main keyword, ends with ' | " + CFG["name"] + "'), description (Hindi, 3 short paragraphs: hook, story teaser without spoiler, subscribe call; then 5 Hindi+English hashtags), "
+                   "tags (18 tags, Hindi + Hinglish + English search phrases, most searched first), thumb_text (2-4 punchy Hindi words), "
+                   "thumb_visual (English prompt for a CTR-optimized thumbnail: ONE dramatic moment of this story, main character in mid-action with a strong emotion, high contrast, saturated colors, rim light, "
+                   "bold simple composition with empty space on one side for text, 2D illustration, no text, no alcohol)}")
+        for k in ("title", "description", "tags", "thumb_text", "thumb_visual"):
+            if o.get(k): S[k] = o[k][:100] if k == "title" else o[k]
+        S["seo_v"] = 1; log("seo pass OK:", S["title"])
+    except BaseException as e: log("seo pass failed (keeping original)", repr(e)[:100])
 log("title:", S["title"], "scenes:", len(S["scenes"]))
 
 # ---------------- 2. voices: 100% Gemini acting TTS, 5-6 scene-paragraph chunks (First-Pass Perfection Protocol) ----------------
@@ -415,14 +427,17 @@ for g_i, idx in enumerate(groups):
     if g_i + 1 < len(groups): time.sleep(22)   # free tier ~3 req/min
 if S["voice_engine"] == "gemini": log("voice engine: gemini", TTS_MODEL, len(groups), "calls")
 GAP = 0.6   # natural pause after each line (reading time for subtitles)
+def gap_of(sc):   # cinematic micro-pause: 1.0 s breathing room after heavy / emotional lines, 0.6 s otherwise
+    t = (sc.get("text") or "").strip(); m = (sc.get("mood") or "").lower()
+    return 1.0 if t.endswith(("...", "…", "!", "?", "।।")) or any(x in m for x in ("horror", "suspense", "sad", "emotional")) else GAP
 for i, sc in enumerate(S["scenes"]):
-    sc["dur"] = dur_of(wav_of(i)) + GAP   # (a) exact scene audio length via ffprobe
+    sc["dur"] = dur_of(wav_of(i)) + gap_of(sc)   # (a) exact scene audio length via ffprobe
     if MODE == "long" and "?" in sc["text"] and CFG["madeForKids"]: sc["dur"] += 2.5  # pause after a question to kids
 
 # ---------------- 3. images: 100% FLUX (no SD-Turbo / turbo models) ----------------
 import time, urllib.parse, io
 from PIL import Image, ImageFilter, ImageEnhance, ImageOps
-seed = random.randint(1, 10**6)
+seed = S.setdefault("seed", random.randint(1, 10**6))   # FIXED seed for the whole video (face-lock with the character sheet)
 CW, CH2 = int(W * 1.15), int(H * 1.15)
 SUFFIX = "wide shot, full scene with setting and objects visible, characters small to medium in frame, nobody looking at camera, no close-up, no portrait, no alcohol, no text, no watermark"
 STYLE2D = ("2D dark horror animated illustration, Indian village setting, wide cinematic storytelling shot showing the exact action:" if CH == "raat"
@@ -451,7 +466,7 @@ def flux(prompt, sd):
     short = clean_prompt(prompt)
     for k in range(5):
         url = ("https://image.pollinations.ai/prompt/" + urllib.parse.quote(short) +
-               f"?model=flux&width={1344 if W > H else 768}&height={768 if W > H else 1344}&nologo=true&enhance=false&seed={random.randint(1, 2**31 - 1)}")
+               f"?model=flux&width={1344 if W > H else 768}&height={768 if W > H else 1344}&nologo=true&enhance=false&seed={sd + k}")
         hdr = {"User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36"}
         if os.environ.get("POLLINATIONS_TOKEN") and not globals().get("_POLL_ANON"): hdr["Authorization"] = "Bearer " + os.environ["POLLINATIONS_TOKEN"]
         try:
@@ -493,7 +508,7 @@ def flux(prompt, sd):
             try: _hf = Client("black-forest-labs/FLUX.1-schnell", token=_tk, verbose=False)
             except TypeError: _hf = Client("black-forest-labs/FLUX.1-schnell", hf_token=_tk, verbose=False)
         hw, hh = (576, 1024) if MODE == "short" else (1024, 576)
-        r = _hf.predict(prompt=short, seed=random.randint(1, 2**31 - 1), randomize_seed=False, width=hw, height=hh, num_inference_steps=4, api_name="/infer")
+        r = _hf.predict(prompt=short, seed=sd, randomize_seed=False, width=hw, height=hh, num_inference_steps=4, api_name="/infer")
         f = r[0] if isinstance(r, (list, tuple)) else r
         return good_img(open(f, "rb").read()), "hf-flux"
     except Exception as e:
@@ -524,7 +539,7 @@ for i, sc in enumerate(S["scenes"]):
     if out_of_time(): pause(f"images {i}/{len(S['scenes'])}")
     if i and i % 6 == 0: checkpoint(f"images {i}/{len(S['scenes'])}")
     p = (sc.get("shots") or [sc["visual"]])[0]
-    img, src = flux(p, seed + i)
+    img, src = flux(p, seed)
     time.sleep(6)   # 6 s between downloads
     if img is None and os.environ.get("ALLOW_REUSE") != "1":   # 0% quality compromise: never fill with mirrored repeats, wait for image credit
         pause(f"imgwait: image servers out of free credit at {i}/{len(S['scenes'])}")
@@ -541,7 +556,7 @@ for i, sc in enumerate(S["scenes"]):   # extra shots of the same line (2nd/3rd a
     for k, p in enumerate((sc.get("shots") or [])[1:], 1):
         if os.path.exists(shot_file(i, k)): continue
         if out_of_time(): pause(f"images shot {i}.{k}")
-        img, src = flux(p, seed + i * 7 + k); time.sleep(6)
+        img, src = flux(p, seed + k); time.sleep(6)
         if img is None: pause(f"imgwait: shot {i+1}.{k+1} waiting for a real picture")
         ImageEnhance.Contrast(cover(img).filter(ImageFilter.UnsharpMask(2, 70, 2))).enhance(1.05).save(shot_file(i, k), quality=93); log("img", f"{i}.{k}", src)
 
@@ -701,10 +716,10 @@ def put_whoosh(t0):
 for sc in S["scenes"][1:]: put_whoosh(sc["start"])
 import wave
 with wave.open(f"{OUT}/sfx.wav", "wb") as wf: wf.setnchannels(1); wf.setsampwidth(2); wf.setframerate(SR); wf.writeframes(sfx.tobytes())
-BEDGAIN = "0.28"   # about -11 dB: clearly audible on phone speakers
+BEDGAIN = "0.42"   # louder bed that ducks ~-12 dB under the voice and swells back in every pause   # about -11 dB: clearly audible on phone speakers
 FINAL = f"{OUT}/{JOB}.mp4"
 subprocess.run(["ffmpeg", "-y", "-v", "error", "-i", f"{OUT}/locked.mkv", "-i", f"{OUT}/bed.wav", "-i", f"{OUT}/sfx.wav",
-    "-filter_complex", f"[0:v]ass={OUT}/subs.ass[v];[0:a]loudnorm=I=-15:TP=-1.5,aformat=channel_layouts=stereo:sample_rates=48000[vo];[1:a]volume={BEDGAIN}[bd];[2:a]aformat=channel_layouts=stereo:sample_rates=48000,volume=0.35[sx];[vo][bd][sx]amix=3:duration=first:normalize=0,afade=t=out:st={TOTAL-1.5:.2f}:d=1.5,loudnorm=I=-14:TP=-1.5:LRA=11,aresample=48000[a]",
+    "-filter_complex", f"[0:v]ass={OUT}/subs.ass[v];[0:a]loudnorm=I=-15:TP=-1.5,aformat=channel_layouts=stereo:sample_rates=48000,asplit[vo][vk];[1:a]volume={BEDGAIN}[bd0];[bd0][vk]sidechaincompress=threshold=0.02:ratio=10:attack=15:release=650:makeup=1[bd];[2:a]aformat=channel_layouts=stereo:sample_rates=48000,volume=0.35[sx];[vo][bd][sx]amix=3:duration=first:normalize=0,afade=t=out:st={TOTAL-1.5:.2f}:d=1.5,loudnorm=I=-14:TP=-1.5:LRA=11,aresample=48000[a]",
     "-map", "[v]", "-map", "[a]", "-t", f"{TOTAL:.2f}", "-c:v", "libx264", "-preset", "ultrafast", "-crf", "21", "-threads", "4", "-pix_fmt", "yuv420p",
     "-c:a", "aac", "-b:a", "192k", "-movflags", "+faststart", FINAL], check=True)
 log("rendered", FINAL, round(TOTAL, 1), "s")

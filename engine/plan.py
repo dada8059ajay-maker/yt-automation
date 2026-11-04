@@ -80,4 +80,5 @@ if ch and left_avail == 0:
     else: ch = mode = ""
 reason = "minutes_cap" if MIN_STOP and not ch else "fill" if ch and not pre else ("prerender_quota_full" if pre else ("queue_full_wait_quota" if best else "schedule_full_21_days"))
 if dr: engine = dr.get("engine") or "gemini"
+if engine == "openai" and not B_OK: engine = "kokoro"   # engine B is off: never loop on it
 print(f"engine={engine}\ncomp={comp}\nch={ch}\nmode={mode}\npre={pre}\ndrain={'1' if drain else ''}\nreason={reason}")
