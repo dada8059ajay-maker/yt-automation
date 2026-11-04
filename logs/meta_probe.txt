@@ -1,3 +1,8 @@
-probe app_id_secret: MISSING
-probe user_token_secret: MISSING (FB_USER_TOKEN not set)
+probe FB_USER_TOKEN info: type=None app_match=False valid=None scopes=None err=None
+probe FB_PAGE_ACCESS_TOKEN info: type=None app_match=False valid=None scopes=None err=None
+probe app_id_secret: OK
+probe user_token_secret: OK
+probe page: dada ji id=1438083699388542 token_expires=None
+probe instagram: @dada.8059ajay id=17841466106972533
+probe permissions: MISSING ['instagram_basic', 'instagram_content_publish', 'pages_manage_posts', 'pages_read_engagement', 'pages_show_list']
 PROBE_RESULT=FAIL
