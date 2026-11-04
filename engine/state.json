@@ -107,7 +107,8 @@
    "जंगल कहानी",
    "एक लालची लकड़हारा और जादुई घड़ा जो सोने के सिक्के देता है लेकिन शर्त पूरी न होने पर सब कुछ वापस ले लेता है।",
    "An energetic young rabbit finds magical ghungroos that force everyone to dance, teaching him a sweet lesson about timing and consideration.",
-   "नन्हे चिंटू की अपनी ही परछाई से हुई रहस्यमयी जंग और बुद्धिमानी की जीत"
+   "नन्हे चिंटू की अपनी ही परछाई से हुई रहस्यमयी जंग और बुद्धिमानी की जीत",
+   "नन्हे गोलू द्वारा खेत में मिली जादुई पीतल की घंटी और उसके अनूठे रहस्य की कहानी।"
   ],
   "last_long": {
    "job": "kahani_long_20261104_1531",
@@ -293,6 +294,13 @@
    "mode": "short",
    "asset": "kahani_short_20261104_1446.tar",
    "title": "परछाई ने चुरा ली आवाज! रहस्यमयी जंग | कहानी पतंग"
+  },
+  {
+   "job": "kahani_short_20261104_1651",
+   "ch": "kahani",
+   "mode": "short",
+   "asset": "kahani_short_20261104_1651.tar",
+   "title": "जमीन के नीचे छिपी अजीब घंटी! 🔔 | कहानी पतंग"
   }
  ],
  "_draft": {
@@ -561,7 +569,7 @@
   }
  ],
  "_minutes": {
-  "2026-11": 4381
+  "2026-11": 4394
  },
  "_bank": {
   "kahani_s_patang01": "2026-11-02",
@@ -653,14 +661,5 @@
   "fest": null,
   "engine": "edge"
  },
- "_draft_kahani-short": {
-  "job": "kahani_short_20261104_1651",
-  "ch": "kahani",
-  "mode": "short",
-  "asset": "draft_kahani_short_20261104_1651.tar",
-  "stage": "imgwait: shot 1.2 waiting for a real picture",
-  "tries": 0,
-  "fest": null,
-  "engine": "edge"
- }
+ "_draft_kahani-short": null
 }
