@@ -1,7 +1,1147 @@
 {
  "_format": "Hark-written stories. long: {id, script} (raat long: {id, series, parts:[3 scripts]}); short: {id, script}. scene compact: s speaker, t text, m mood, st style, v visual, w character name. long scripts may carry 'trailer' (short script).",
  "raat": {
-  "long": [],
+  "long": [
+   {
+    "id": "raat_l_bank01_1104",
+    "series": "सुनसान हवेली का खौफनाक पहरेदार | रात के किस्से",
+    "parts": [
+     {
+      "title": "सुनसान हवेली का खौफनाक पहरेदार | रात के किस्से",
+      "topic": "एक सुनसान गाँव की हवेली जहाँ हर रात एक पहरेदार गायब हो जाता है",
+      "category": "horror",
+      "description": "उत्तर प्रदेश के एक दूरदराज गाँव की खामोश हवेली में सदियों पुराना राज दफ़न है। जब एक नया चौकीदार वहाँ रात की ड्यूटी पर पहुँचता है, तो उसे अहसास होता है कि वो अकेला नहीं है। जैसे-जैसे रात गहराती है, दीवारों से अजीबोगरीब आहटें और परछाइयाँ उसका इम्तिहान लेने लगती हैं।\n\nइस रहस्यमयी कहानी में हम देखेंगे कैसे एक साधारण इंसान का सामना ऐसी ताकतों से होता है जो इंसानी समझ से परे हैं। क्या वह अपनी जान बचा पाएगा या उस हवेली का अगला शिकार बनेगा? जानिए इस रोमांचक और डरावनी रात के सफर में।\n\nअगर आपको भूतिया और रहस्यमयी कहानियां पसंद हैं, तो इस वीडियो को अंत तक जरूर देखें। चैनल को सब्सक्राइब करना न भूलें।\n\n#RaatKeKisse #HorrorStory #HaveliMystery #IndianHorror #HindiKahani",
+      "tags": [
+       "रातों के किस्से",
+       "हवेली की कहानी",
+       "हॉरर स्टोरी हिंदी",
+       "भूतिया हवेली",
+       "Indian Horror Stories",
+       "Village Horror",
+       "Ghost Story in Hindi",
+       "Mysterious Haveli",
+       "Scary Stories",
+       "Suspense Thriller",
+       "Raat Ke Kisse",
+       "Hindi Kahani",
+       "Bhootia Kahani",
+       "Dark Secrets",
+       "Supernatural Hindi",
+       "Night Horror",
+       "Creepy Village",
+       "Horror Podcast"
+      ],
+      "hook": "दरवाजा किसने खटखटाया",
+      "thumb_text": "हवेली का राज",
+      "thumb_visual": "2D dark horror animated illustration, Indian setting, wide shot, a middle-aged watchman holding an old lantern with a terrified expression inside a ruined courtyard, extreme contrast, saturated, rim light, empty side for text, no text",
+      "characters": {
+       "रघु": {
+        "age": "45",
+        "face": "weathered face with sharp eyes and a thick grey mustache",
+        "hair": "short messy grey-black hair",
+        "clothes": "dark navy blue security uniform with brass buttons and black shoes"
+       },
+       "ठाकुर": {
+        "age": "60",
+        "face": "stern wrinkled face with deep set dark eyes",
+        "hair": "slicked back white hair",
+        "clothes": "traditional white kurta pajama with a black Nehru jacket"
+       }
+      },
+      "scenes": [
+       {
+        "s": "N",
+        "t": "गाँव के आखिरी छोर पर बनी वह विशाल हवेली दिन में जितनी शांत दिखती थी, रात के अंधेरे में उतनी ही डरावनी हो जाती थी...",
+        "m": "suspense",
+        "st": "Slow and mysterious",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, a massive dilapidated ancestral mansion under a dark moonless sky, weathered walls and broken windows, 45-year-old Raghu with weathered face, short messy grey-black hair, wearing dark navy blue security uniform with brass buttons and black shoes standing near the massive iron gate holding an old lantern, nobody looking at camera, no portrait, no close-up, no text",
+        "w": ""
+       },
+       {
+        "s": "N",
+        "t": "रघु ने पहली बार उस हवेली में कदम रखा था, और उसके कदम रखते ही हवा में एक अजीब सी भारी ठंडक घुल गई थी...",
+        "m": "suspense",
+        "st": "Cautious and eerie",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, 45-year-old Raghu with weathered face, short messy grey-black hair, wearing dark navy blue security uniform with brass buttons and black shoes walking cautiously inside a dusty overgrown courtyard holding a glowing lantern, nobody looking at camera, no portrait, no close-up, no text",
+        "w": "रघु"
+       },
+       {
+        "s": "N",
+        "t": "गाँववालों ने उसे पहले ही चेताया था कि इस हवेली के अंदर रात बारह बजे के बाद कोई भी जिंदा नहीं बचता...",
+        "m": "horror",
+        "st": "Deep warning tone",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, 45-year-old Raghu with weathered face, short messy grey-black hair, wearing dark navy blue security uniform with brass buttons and black shoes looking anxiously at a heavy wooden door with carved serpents, nobody looking at camera, no portrait, no close-up, no text",
+        "w": "रघु"
+       },
+       {
+        "s": "N",
+        "t": "लेकिन रघु को पैसों की सख्त जरूरत थी, इसलिए उसने इस खतरे भरे काम को चुनौती की तरह स्वीकार कर लिया था...",
+        "m": "suspense",
+        "st": "Determined yet fearful",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, 45-year-old Raghu with weathered face, short messy grey-black hair, wearing dark navy blue security uniform with brass buttons and black shoes sitting on an old wooden chair inside a dusty dimly lit foyer, placing his torch on a round table, nobody looking at camera, no portrait, no close-up, no text",
+        "w": "रघु"
+       },
+       {
+        "s": "N",
+        "t": "रात के ठीक दस बजे, हवेली की पुरानी दीवार घड़ी से एक भारी और गूंजती हुई टिक-टिक की आवाज आने लगी...",
+        "m": "suspense",
+        "st": "Steadily rising tension",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, a large antique pendulum clock hanging on a peeling teal wall in a dark corridor, 45-year-old Raghu with weathered face, short messy grey-black hair, wearing dark navy blue security uniform with brass buttons and black shoes looking up at the clock with a tense face, nobody looking at camera, no portrait, no close-up, no text",
+        "w": "रघु"
+       },
+       {
+        "s": "N",
+        "t": "अचानक ऊपर के माले से किसी के भारी कदमों की आवाज गूंजी, जैसे कोई धीरे-धीरे सीढ़ियां उतर रहा हो...",
+        "m": "horror",
+        "st": "Sudden sharp drop in pitch",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, a grand spiral wooden staircase inside a dark hall, dust particles floating in lantern light, 45-year-old Raghu with weathered face, short messy grey-black hair, wearing dark navy blue security uniform with brass buttons and black shoes staring up the stairs with wide eyes, nobody looking at camera, no portrait, no close-up, no text",
+        "w": "रघु"
+       },
+       {
+        "s": "N",
+        "t": "रघु ने अपनी टॉर्च जलाई और कांपते हाथों से ऊपर की ओर रोशनी फेंकी, मगर वहां दूर-दूर तक कोई नहीं था...",
+        "m": "suspense",
+        "st": "Nervous breath",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, 45-year-old Raghu with weathered face, short messy grey-black hair, wearing dark navy blue security uniform with brass buttons and black shoes shining a bright electric torch beam up an empty dark corridor, nobody looking at camera, no portrait, no close-up, no text",
+        "w": "रघु"
+       },
+       {
+        "s": "N",
+        "t": "महसूस हुआ कि हवा का झोंका उसके ठीक कान के पास से गुजरा हो, और किसी ने बहुत धीमी आवाज में उसका नाम पुकारा...",
+        "m": "horror",
+        "st": "Whispering and spine-chilling",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, 45-year-old Raghu with weathered face, short messy grey-black hair, wearing dark navy blue security uniform with brass buttons and black shoes turning around sharply in an empty hallway with a terrified expression, nobody looking at camera, no portrait, no close-up, no text",
+        "w": "रघु"
+       },
+       {
+        "s": "N",
+        "t": "उसने तुरंत पीछे मुड़कर देखा, लेकिन वहां केवल लंबी और डरावनी परछाइयां नाच रही थीं...",
+        "m": "suspense",
+        "st": "Rapid pacing",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, distorted shadows cast by moonlight falling through arched windows onto a stone floor, 45-year-old Raghu with weathered face, short messy grey-black hair, wearing dark navy blue security uniform with brass buttons and black shoes backing away against a wall, nobody looking at camera, no portrait, no close-up, no text",
+        "w": "रघु"
+       },
+       {
+        "s": "N",
+        "t": "घबराकर रघु ने अपनी जेब से पुरानी हनुमान चालीसा निकाली और जोर-जोर से पाठ करने लगा...",
+        "m": "suspense",
+        "st": "Fierce and chanting",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, 45-year-old Raghu with weathered face, short messy grey-black hair, wearing dark navy blue security uniform with brass buttons and black shoes holding a small red book tightly with both hands, eyes closed in deep prayer inside a gloomy room, nobody looking at camera, no portrait, no close-up, no text",
+        "w": "रघु"
+       },
+       {
+        "s": "N",
+        "t": "पाठ की आवाज से हवेली की दीवारें कांप उठीं, और वह अजीब सा साया कुछ पलों के लिए ओझल हो गया...",
+        "m": "peaceful",
+        "st": "Temporary relief",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, 45-year-old Raghu with weathered face, short messy grey-black hair, wearing dark navy blue security uniform with brass buttons and black shoes wiping sweat from his forehead with his sleeve, breathing heavily in a dusty hall, nobody looking at camera, no portrait, no close-up, no text",
+        "w": "रघु"
+       },
+       {
+        "s": "N",
+        "t": "लेकिन यह तो सिर्फ एक शुरुआत थी, क्योंकि असली खौफ अभी सामने आना बाकी था...",
+        "m": "horror",
+        "st": "Ominous tone",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, a heavy wooden door slowly creaking open by itself in a dark hallway, 45-year-old Raghu with weathered face, short messy grey-black hair, wearing dark navy blue security uniform with brass buttons and black shoes watching in horror from behind a pillar, nobody looking at camera, no portrait, no close-up, no text",
+        "w": "रघु"
+       },
+       {
+        "s": "N",
+        "t": "रात के ठीक ढाई बजे, हवेली के मुख्य हॉल का बड़ा झूमर अपने आप जोर-जोर से झूलने लगा...",
+        "m": "chase",
+        "st": "Frantic and fast",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, a massive crystal chandelier swinging violently from a high decorated ceiling in a grand hall, 45-year-old Raghu with weathered face, short messy grey-black hair, wearing dark navy blue security uniform with brass buttons and black shoes ducking low near a marble pillar, nobody looking at camera, no portrait, no close-up, no text",
+        "w": "रघु"
+       },
+       {
+        "s": "N",
+        "t": "और तभी हवा में एक बुजुर्ग व्यक्ति की गूंजती हुई आवाज गूंजी, जो सदियों पहले इस हवेली का मालिक हुआ करता था...",
+        "m": "horror",
+        "st": "Ghostly and powerful",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, a dim ethereal glow forming near an ornate royal chair in a dark hall, 45-year-old Raghu with weathered face, short messy grey-black hair, wearing dark navy blue security uniform with brass buttons and black shoes crouching behind a sofa, nobody looking at camera, no portrait, no close-up, no text",
+        "w": ""
+       },
+       {
+        "s": "N",
+        "t": "उसने कहा, 'यहाँ आने वाले हर पहरेदार की तरह, तुम्हारी भी आज आखिरी रात होगी, चौकीदार...'",
+        "m": "horror",
+        "st": "Chilling echo",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, 45-year-old Raghu with weathered face, short messy grey-black hair, wearing dark navy blue security uniform with brass buttons and black shoes trembling with his hands over his ears against a cracked wall, nobody looking at camera, no portrait, no close-up, no text",
+        "w": "रघु"
+       },
+       {
+        "s": "N",
+        "t": "रघु ने हिम्मत जुटाई, अपनी टॉर्च बुझाई और हवेली के मुख्य दरवाजे की तरफ जान बचाकर भागा...",
+        "m": "chase",
+        "st": "Desperate running",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, 45-year-old Raghu with weathered face, short messy grey-black hair, wearing dark navy blue security uniform with brass buttons and black shoes sprinting down a long dark corridor with shadows chasing him, nobody looking at camera, no portrait, no close-up, no text",
+        "w": "रघु"
+       },
+       {
+        "s": "N",
+        "t": "लेकिन अजीब बात यह थी कि दरवाजा अंदर से पूरी तरह लॉक हो चुका था और टस से मस नहीं हो रहा था...",
+        "m": "horror",
+        "st": "Panic stricken",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, 45-year-old Raghu with weathered face, short messy grey-black hair, wearing dark navy blue security uniform with brass buttons and black shoes furiously pushing and hammering a massive bolted wooden front door, nobody looking at camera, no portrait, no close-up, no text",
+        "w": "रघु"
+       },
+       {
+        "s": "N",
+        "t": "पीछे से ठंडी हवा का एक झोंका आया और किसी ने उसके कंधे पर बहुत भारी हाथ रख दिया...",
+        "m": "horror",
+        "st": "Sudden freezing shock",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, an eerie translucent hand resting on the shoulder of 45-year-old Raghu with weathered face, short messy grey-black hair, wearing dark navy blue security uniform with brass buttons and black shoes who freezes in sheer terror, nobody looking at camera, no portrait, no close-up, no text",
+        "w": "रघु"
+       },
+       {
+        "s": "N",
+        "t": "रघु ने अपनी आँखें बंद कर लीं और मन ही मन भगवान से अपनी आखिरी दुआ मांगने लगा...",
+        "m": "sad",
+        "st": "Melancholic and helpless",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, 45-year-old Raghu with weathered face, short messy grey-black hair, wearing dark navy blue security uniform with brass buttons and black shoes kneeling on the dusty floor with folded hands, tears in his eyes, nobody looking at camera, no portrait, no close-up, no text",
+        "w": "रघु"
+       },
+       {
+        "s": "N",
+        "t": "और तभी अचानक आसमान में सुबह की पहली किरण फूटी, और हवेली का भारी दरवाजा अपने आप खुल गया...",
+        "m": "victory",
+        "st": "Sudden ray of hope",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, bright golden morning sunlight piercing through the open front doors of the dark haveli, 45-year-old Raghu with weathered face, short messy grey-black hair, wearing dark navy blue security uniform with brass buttons and black shoes crawling out towards the light, nobody looking at camera, no portrait, no close-up, no text",
+        "w": "रघु"
+       },
+       {
+        "s": "N",
+        "t": "रघु हांफते हुए बाहर भागा और सीधा गाँव के चौक पर जा गिरा, उसकी जान तो बच गई थी...",
+        "m": "victory",
+        "st": "Relieved yet exhausted",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, 45-year-old Raghu with weathered face, short messy grey-black hair, wearing dark navy blue security uniform with brass buttons and black shoes sitting on a stone bench in a sunny village square, drinking water from a clay pot, nobody looking at camera, no portrait, no close-up, no text",
+        "w": "रघु"
+       },
+       {
+        "s": "N",
+        "t": "मगर जब उसने अपनी जेब में हाथ डाला, तो उसके रोंगटे फिर से खड़े हो गए...",
+        "m": "horror",
+        "st": "Sudden eerie twist",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, 45-year-old Raghu with weathered face, short messy grey-black hair, wearing dark navy blue security uniform with brass buttons and black shoes looking down at his hand with horror under the bright sun, nobody looking at camera, no portrait, no close-up, no text",
+        "w": "रघु"
+       },
+       {
+        "s": "N",
+        "t": "उसकी लाल हनुमान चालीसा की जगह हवेली के पुराने मृत मालिक की एक पुरानी तस्वीर हाथ में थी, जो उसे देखकर मुस्कुरा रही थी...",
+        "m": "horror",
+        "st": "Chilling finale",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, an old black and white vintage portrait of a stern Indian nobleman held in the trembling hands of 45-year-old Raghu with weathered face, short messy grey-black hair, wearing dark navy blue security uniform with brass buttons and black shoes, nobody looking at camera, no portrait, no close-up, no text",
+        "w": "रघु"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "id": "raat_l_bank02_1104",
+    "series": "सुनसान हवेली और खौफनाक परछाई | रात के किस्से",
+    "parts": [
+     {
+      "title": "सुनसान हवेली और खौफनाक परछाई | रात के किस्से",
+      "topic": "एक सुनसान गाँव की हवेली जहाँ हर रात एक रहस्यमयी परछाईं किसी का इंतज़ार करती है।",
+      "category": "horror",
+      "description": "उत्तर प्रदेश के एक दूरदराज गाँव में स्थित खंडहरनुमा हवेली आज भी कई अनसुने रहस्यों को अपने सीने में दफनाए हुए है। जब एक युवा शोधकर्ता उस हवेली के अंदर कदम रखता है, तो उसे अहसास होता है कि वह अकेला नहीं है।\n\nरात के सन्नाटे में गूंजती अजीब आवाजें और दीवारों पर नाचती परछाइयां उसके होश उड़ा देती हैं। क्या वह उस हवेली के काले सच से पर्दा उठा पाएगा या खुद उसी का शिकार बन जाएगा?\n\nजानिए इस खौफनाक रात की पूरी सच्चाई हमारे साथ। वीडियो को लाइक और शेयर करना न भूलें।\n\n#RaatKeKisse #HindiHorror #HauntedHaveli #GhostStory #IndianHorror",
+      "tags": [
+       "राक्षस",
+       "हवेली का रहस्य",
+       "हॉरर कहानी",
+       "रात के किस्से",
+       "डरावनी कहानी",
+       "ghost story hindi",
+       "haunted haveli",
+       "indian village horror",
+       "suspense thriller",
+       "scary stories",
+       "raat ke kisse new",
+       "horror podcast",
+       "bhoot ki kahani",
+       "dark mystery",
+       "supernatural",
+       "paranormal",
+       "khaufnak raat",
+       "creepy tale"
+      ],
+      "hook": "दरवाजा अपने आप खुला",
+      "thumb_text": "खुला हवेली का दरवाजा",
+      "thumb_visual": "2D dark horror animated illustration, Indian setting, wide shot, a young man holding a vintage lantern facing a massive decaying wooden door swinging open by itself at night, dramatic blue and amber lighting, high contrast, empty right side for text, no text",
+      "characters": {
+       "आदित्य": "26 years old, sharp worried face, messy black hair, wearing a dark blue cotton shirt and grey trousers."
+      },
+      "scenes": [
+       {
+        "s": "N",
+        "t": "रात के ठीक बारह बजे उस खंडहर हवेली का मुख्य दरवाजा अपने आप धीरे से चीखते हुए खुल गया...",
+        "m": "horror",
+        "st": "whispered and chilling",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, massive decaying wooden gate opening slowly at night, moonlight casting long eerie shadows, Aditya 26 years old, sharp worried face, messy black hair, wearing a dark blue cotton shirt and grey trousers standing frozen in front, no text",
+        "w": "आदित्य"
+       },
+       {
+        "s": "N",
+        "t": "गाँव वालों ने पहले ही चेतावनी दी थी कि जो भी इस हवेली के अंदर गया, वह कभी लौटकर वापस नहीं आया।",
+        "m": "suspense",
+        "st": "deep and serious",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, a desolate ancient Indian village with dilapidated houses under a dark starry sky, Aditya 26 years old, sharp worried face, messy black hair, wearing a dark blue cotton shirt and grey trousers looking back towards the village, no text",
+        "w": "आदित्य"
+       },
+       {
+        "s": "N",
+        "t": "लेकिन पत्रकारिता के नशे में चूर आदित्य ने इस डरावनी चेतावनी को सिर्फ एक अंधविश्वास मान लिया था।",
+        "m": "suspense",
+        "st": "analytical tone",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, Aditya 26 years old, sharp worried face, messy black hair, wearing a dark blue cotton shirt and grey trousers walking towards the grand arched entrance of a massive dilapidated haveli holding a small flashlight, no text",
+        "w": "आदित्य"
+       },
+       {
+        "s": "N",
+        "t": "जैसे ही उसने दहलीज पार की, अंदर की ठंडी हवा ने उसकी रीढ़ में सिहरन पैदा कर दी।",
+        "m": "horror",
+        "st": "shivering voice",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, Aditya 26 years old, sharp worried face, messy black hair, wearing a dark blue cotton shirt and grey trousers stepping across a cracked marble threshold inside a dark cavernous hall, no text",
+        "w": "आदित्य"
+       },
+       {
+        "s": "N",
+        "t": "उसके हाथ में जलती हुई टॉर्च की रोशनी धुंधले गलियारों में अजीबोगरीब परछाइयां बना रही थी।",
+        "m": "suspense",
+        "st": "slow and cautious",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, long dusty corridor inside an ancient haveli, fading yellow beam of a flashlight cutting through thick darkness, Aditya 26 years old, sharp worried face, messy black hair, wearing a dark blue cotton shirt and grey trousers holding the light, no text",
+        "w": "आदित्य"
+       },
+       {
+        "s": "N",
+        "t": "अचानक ऊपर के माले से किसी के घुंघरुओं की झनकार सन्नाटे को चीरती हुई सुनाई दी...",
+        "m": "horror",
+        "st": "sudden and sharp",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, grand decaying wooden staircase inside an old haveli at night, Aditya 26 years old, sharp worried face, messy black hair, wearing a dark blue cotton shirt and grey trousers looking up with wide eyes in shock, no text",
+        "w": "आदित्य"
+       },
+       {
+        "s": "N",
+        "t": "आदित्य ने कांपते हुए हाथों से टॉर्च ऊपर की सीढ़ियों की तरफ घुमाई, पर वहाँ कोई नहीं था।",
+        "m": "suspense",
+        "st": "nervous breath",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, empty dusty wooden staircase under flickering moonlight, Aditya 26 years old, sharp worried face, messy black hair, wearing a dark blue cotton shirt and grey trousers pointing a trembling flashlight upward, no text",
+        "w": "आदित्य"
+       },
+       {
+        "s": "N",
+        "t": "उसने खुद को दिलासा दिया और बुदबुदाया कि यह सिर्फ हवा का झोंका या उसका वहम होगा।",
+        "m": "suspense",
+        "st": "reassuring yet scared",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, Aditya 26 years old, sharp worried face, messy black hair, wearing a dark blue cotton shirt and grey trousers wiping sweat from his forehead inside a dusty hall surrounded by cobwebs, no text",
+        "w": "आदित्य"
+       },
+       {
+        "s": "N",
+        "t": "लेकिन तभी उसके ठीक पीछे किसी ठंडी सांस का अहसास हुआ और उसकी बोलती बंद हो गई।",
+        "m": "horror",
+        "st": "terrified whisper",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, Aditya 26 years old, sharp worried face, messy black hair, wearing a dark blue cotton shirt and grey trousers freezing in place with horror, faint misty silhouette hovering right behind him, no text",
+        "w": "आदित्य"
+       },
+       {
+        "s": "N",
+        "t": "बिना पीछे मुड़े उसने भागने की कोशिश की, मगर उसके पैर जैसे जमीन से चिपक चुके थे।",
+        "m": "chase",
+        "st": "fast and panicked",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, Aditya 26 years old, sharp worried face, messy black hair, wearing a dark blue cotton shirt and grey trousers desperately trying to lift his feet from a cracked tiled floor, no text",
+        "w": "आदित्य"
+       },
+       {
+        "s": "N",
+        "t": "कमरे की पुरानी दीवारों पर टंगे शीशे में उसे एक भयानक औरत की परछाई दिखाई दी।",
+        "m": "horror",
+        "st": "creepy disclosure",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, a cracked antique wall mirror reflecting a pale woman with long disheveled hair staring with empty eyes, Aditya 26 years old, sharp worried face, messy black hair, wearing a dark blue cotton shirt and grey trousers watching in terror, no text",
+        "w": "आदित्य"
+       },
+       {
+        "s": "N",
+        "t": "उस परछाई ने उसके कान के पास आकर बेहद धीमी और डरावनी आवाज में कुछ कहा...",
+        "m": "horror",
+        "st": "eerie echo",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, dim corridor, a translucent female figure leaning close to Aditya 26 years old, sharp worried face, messy black hair, wearing a dark blue cotton shirt and grey trousers, no text",
+        "w": "आदित्य"
+       },
+       {
+        "s": "N",
+        "t": "तुम बहुत देर से आए हो... मैं सदियों से इसी रास्ते पर तुम्हारा ही इंतज़ार कर रही थी।",
+        "m": "suspense",
+        "st": "haunting voice",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, Aditya 26 years old, sharp worried face, messy black hair, wearing a dark blue cotton shirt and grey trousers closing his eyes in sheer despair as the ghostly presence surrounds him, no text",
+        "w": "आदित्य"
+       },
+       {
+        "s": "N",
+        "t": "आदित्य के मुंह से चीख निकलना चाहती थी, पर उसके गले से कोई आवाज बाहर नहीं आई।",
+        "m": "horror",
+        "st": "choked and breathless",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, Aditya 26 years old, sharp worried face, messy black hair, wearing a dark blue cotton shirt and grey trousers clutching his throat with both hands, mouth open in a silent scream, no text",
+        "w": "आदित्य"
+       },
+       {
+        "s": "N",
+        "t": "अगले ही पल, उसकी टॉर्च की बैटरी पूरी तरह से जवाब दे गई और चारों तरफ अंधेरा छा गया।",
+        "m": "horror",
+        "st": "dark and sudden",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, pitch black room with a tiny dying flicker of light from a flashlight in the hand of Aditya 26 years old, sharp worried face, messy black hair, wearing a dark blue cotton shirt and grey trousers, no text",
+        "w": "आदित्य"
+       },
+       {
+        "s": "N",
+        "t": "जब सुबह की पहली किरण उस हवेली की टूटी खिड़कियों से अंदर आई, तो वहाँ सन्नाटा पसरा हुआ था।",
+        "m": "peaceful",
+        "st": "calm and eerie",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, morning sunlight piercing through dusty broken windows of an empty abandoned room inside a haveli, no people, no text",
+        "w": "आदित्य"
+       },
+       {
+        "s": "N",
+        "t": "गाँव के चौक पर आदित्य का कैमरा और उसका बैग लावारिस हालत में रखा हुआ मिला।",
+        "m": "suspense",
+        "st": "mysterious tone",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, an empty dusty village square at dawn, a modern digital camera and a canvas backpack resting on a stone bench, no people, no text",
+        "w": ""
+       },
+       {
+        "s": "N",
+        "t": "गाँव के बुजुर्ग ने जब उस कैमरे की स्क्रीन को ऑन किया, तो उसके हाथ कांपने लगे।",
+        "m": "suspense",
+        "st": "shaking voice",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, an old Indian villager with white hair holding a digital camera in a dusty courtyard, morning light, no text",
+        "w": ""
+       },
+       {
+        "s": "N",
+        "t": "कैमरे की आखिरी रिकॉर्डिंग में वह हवेली का कमरा साफ दिखाई दे रहा था, जो सालों से बंद था।",
+        "m": "suspense",
+        "st": "curious and tense",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, close-up of a digital camera screen displaying a dark indoor room with old portraits on the wall, no text",
+        "w": ""
+       },
+       {
+        "s": "N",
+        "t": "और उस तस्वीर के कोने में आदित्य मुस्कुराते हुए उस औरत के साथ खड़ा नजर आ रहा था...",
+        "m": "horror",
+        "st": "chilling twist delivery",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, camera screen showing a glowing digital photo of Aditya 26 years old, sharp worried face, messy black hair, wearing a dark blue cotton shirt and grey trousers standing right beside a pale smiling female ghost, no text",
+        "w": "आदित्य"
+       },
+       {
+        "s": "N",
+        "t": "गाँव वाले समझ गए कि अब आदित्य कभी वापस नहीं आएगा, क्योंकि हवेली ने अपना नया पहरेदार चुन लिया था।",
+        "m": "horror",
+        "st": "dark conclusion",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, a group of village elders looking terrified towards the distant haunted haveli silhouetted against the rising sun, no text",
+        "w": ""
+       },
+       {
+        "s": "N",
+        "t": "आज भी उस हवेली के बाहर रात को किसी के कदमों की आहट साफ सुनाई देती है।",
+        "m": "suspense",
+        "st": "whispered ending",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, exterior of the haunted haveli at dusk with a single glowing window in the upper tower, windy and desolate, no text",
+        "w": ""
+       },
+       {
+        "s": "N",
+        "t": "यदि कभी आप उधर से गुजरें, तो भूलकर भी उस हवेली की तरफ मत देखिएगा...",
+        "m": "horror",
+        "st": "direct warning",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, a lonely rural dirt road stretching into a dark foggy forest at night, warning signpost half broken, no text",
+        "w": ""
+       },
+       {
+        "s": "N",
+        "t": "क्योंकि कौन जाने, कौन सी परछाई आपका भी इंतज़ार कर रही हो...",
+        "m": "horror",
+        "st": "fading scary echo",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, massive haunted haveli gate closing shut by itself under a blood red moon, pitch black shadows forming the silhouette of a woman, no text",
+        "w": ""
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "id": "raat_l_bank03_1104",
+    "series": "सुनसान नेशनल हाईवे का खौफनाक लिफ्ट | रात के किस्से",
+    "parts": [
+     {
+      "title": "सुनसान नेशनल हाईवे का खौफनाक लिफ्ट | रात के किस्से",
+      "topic": "A late-night car journey on an isolated Indian highway where offering a lift to a silent woman leads to a chilling realization about the miles already traveled.",
+      "category": "horror",
+      "description": "मध्य प्रदेश के एक सुनसान नेशनल हाईवे पर आधी रात को सफर कर रहे राघव के सामने अचानक एक अकेली महिला लिफ्ट मांगती है। कार में बैठने के बाद से ही गाड़ी का तापमान लगातार गिरने लगता है और रेडियो पर सिर्फ अजीब सी फुसफुसाहट सुनाई देती है। जब राघव उस महिला से बात करने की कोशिश करता है, तो सामने का सच उसके रोंगटे खड़े कर देता है। \n\nयह कहानी है उस सफर की जहाँ मंजिल आने से पहले रास्ते खुद ही अपना हिसाब चुकाने लगते हैं। अगर आप दिल दहला देने वाली कहानियों के शौकीन हैं, तो यह वीडियो आपके होश उड़ा देगा। \n\nवीडियो को अंत तक देखें, लाइक करें और चैनल को सब्सक्राइब करना न भूलें।\n\n#RaatKeKisse #HindiHorrorStory #HighwayHorror #GhostStory #ScaryIndianStories",
+      "tags": [
+       "रात के किस्से",
+       "Hindi horror stories",
+       "highway horror",
+       "ghost story in hindi",
+       "scary indian stories",
+       "haunted highway",
+       "raat ke kisse horror",
+       "dरावनी कहानियां",
+       "bhoot ki kahani",
+       "suspense thriller hindi",
+       "indian village horror",
+       "creepy lift story",
+       "horrific night journey",
+       "ghostly encounter",
+       "dark highway mystery",
+       "scary car ride",
+       "chilling hindi stories",
+       "supernatural thriller"
+      ],
+      "hook": "सड़क पर कौन?",
+      "thumb_text": "खौफनाक लिफ्ट!",
+      "thumb_visual": "2D dark horror animated illustration, Indian setting, wide shot, a red car stopped on a dark foggy highway at night, a pale woman in a white saree standing near the passenger window looking down, male driver inside sweating with wide eyes staring straight ahead, extreme contrast, saturated, rim light, empty side for text, no text",
+      "characters": {
+       "Raghav": "30-year-old Indian man with a stubble face, short messy black hair, wearing a dark blue cotton shirt and grey trousers."
+      },
+      "scenes": [
+       {
+        "s": "N",
+        "t": "रात के दो बज रहे थे और नेशनल हाईवे पर सन्नाटा चीख रहा था... राघव की कार के सिवा दूर-दूर तक कोई नामोनिशान नहीं था।",
+        "m": "horror",
+        "st": "eerie and atmospheric whisper",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, Raghav driving a red car on a dark foggy asphalt highway at night, dim headlights cutting through thick mist, 30-year-old Indian man with stubble, short messy black hair, wearing a dark blue cotton shirt and grey trousers, nobody looking at camera, no portrait, no close-up, no text",
+        "w": "Raghav"
+       },
+       {
+        "s": "N",
+        "t": "ठंडी हवा का झोंका शीशों से टकरा रहा था, तभी हेडलाइट्स की रोशनी में सड़क किनारे एक साया दिखाई दिया।",
+        "m": "suspense",
+        "st": "building tension",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, headlights illuminating a lone figure standing on the roadside of a dark highway, Raghav inside the car watching intently, 30-year-old Indian man with stubble, short messy black hair, wearing a dark blue cotton shirt and grey trousers, nobody looking at camera, no portrait, no close-up, no text",
+        "w": "Raghav"
+       },
+       {
+        "s": "N",
+        "t": "गाड़ी पास आई तो पता चला कि वह एक अकेली महिला थी, जिसने हाथ उठाकर लिफ्ट का इशारा किया था।",
+        "m": "suspense",
+        "st": "mysterious tone",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, Raghav slowing down his car as a woman in a white saree stands near the roadside edge, Raghav inside, 30-year-old Indian man with stubble, short messy black hair, wearing a dark blue cotton shirt and grey trousers, nobody looking at camera, no portrait, no close-up, no text",
+        "w": "Raghav"
+       },
+       {
+        "s": "N",
+        "t": "इस सुनसान बियाबान में रात के वक्त किसी को अकेले देखना अजीब था, पर राघव का दिल पसीज गया।",
+        "m": "suspense",
+        "st": "cautionary",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, Raghav looking through his car window with a hesitant expression at the deserted highway, 30-year-old Indian man with stubble, short messy black hair, wearing a dark blue cotton shirt and grey trousers, nobody looking at camera, no portrait, no close-up, no text",
+        "w": "Raghav"
+       },
+       {
+        "s": "N",
+        "t": "उसने अपनी कार महिला के पास रोक दी और शीशा नीचे सरकाया... हवा में एक अजीब सी भारी ठंडक घुल गई।",
+        "m": "horror",
+        "st": "sudden chill",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, Raghav rolling down his car window with frost forming on the glass, a woman standing outside in mist, 30-year-old Indian man with stubble, short messy black hair, wearing a dark blue cotton shirt and grey trousers, nobody looking at camera, no portrait, no close-up, no text",
+        "w": "Raghav"
+       },
+       {
+        "s": "N",
+        "t": "महिला ने बिना कुछ कहे पिछले दरवाजे को खोला और चुपचाप अंदर आकर बैठ गई।",
+        "m": "suspense",
+        "st": "unsettling calm",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, the rear car door open slightly as a pale woman in a white saree enters, Raghav looking at the rearview mirror with mild anxiety, 30-year-old Indian man with stubble, short messy black hair, wearing a dark blue cotton shirt and grey trousers, nobody looking at camera, no portrait, no close-up, no text",
+        "w": "Raghav"
+       },
+       {
+        "s": "N",
+        "t": "राघव ने रियरव्यू मिरर में देखा, पर महिला का चेहरा अंधेरे में डूबा हुआ था और वह नीचे की तरफ देख रही थी।",
+        "m": "suspense",
+        "st": "observing carefully",
+        "v": "2D dark horror animated illustration, Indiansetting, wide shot, Raghav staring into the rearview mirror of his car, seeing a shadowy figure sitting silently in the back seat, 30-year-old Indian man with stubble, short messy black hair, wearing a dark blue cotton shirt and grey trousers, nobody looking at camera, no portrait, no close-up, no text",
+        "w": "Raghav"
+       },
+       {
+        "s": "N",
+        "t": "गाड़ी आगे बढ़ी, लेकिन एसी बंद होने के बावजूद केबिन का तापमान तेजी से गिरने लगा।",
+        "m": "horror",
+        "st": "chilling realization",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, fog forming inside the running car, Raghav rubbing his arms due to extreme sudden cold while driving, 30-year-old Indian man with stubble, short messy black hair, wearing a dark blue cotton shirt and grey trousers, nobody looking at camera, no portrait, no close-up, no text",
+        "w": "Raghav"
+       },
+       {
+        "s": "N",
+        "t": "राघव ने खामोशी तोड़ने के लिए पूछा, आप कहाँ तक जाएँगी... लेकिन पीछे से कोई जवाब नहीं आया।",
+        "m": "suspense",
+        "st": "anxious questioning",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, Raghav speaking forward while glancing back into the empty-seeming rear seat of the moving car, 30-year-old Indian man with stubble, short messy black hair, wearing a dark blue cotton shirt and grey trousers, nobody looking at camera, no portrait, no close-up, no text",
+        "w": "Raghav"
+       },
+       {
+        "s": "N",
+        "t": "सिवाय इसके कि कार का रेडियो अपने आप चालू हो गया और उसमें से अजीब सी फुसफुसाहट आने लगी।",
+        "m": "horror",
+        "st": "scary audio cue",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, dashboard radio glowing with static light inside the dark car interior, Raghav holding the steering wheel tightly, 30-year-old Indian man with stubble, short messy black hair, wearing a dark blue cotton shirt and grey trousers, nobody looking at camera, no portrait, no close-up, no text",
+        "w": "Raghav"
+       },
+       {
+        "s": "N",
+        "t": "रेडियो पर कोई धीमी आवाज़ में कुछ गिन रहा था... एक... दो... तीन...",
+        "m": "horror",
+        "st": "creepy counting",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, Raghav driving with a tense expression, red car dashboard lights casting eerie shadows on his face, 30-year-old Indian man with stubble, short messy black hair, wearing a dark blue cotton shirt and grey trousers, nobody looking at camera, no portrait, no close-up, no text",
+        "w": "Raghav"
+       },
+       {
+        "s": "N",
+        "t": "राघव का दिल जोर से धड़कने लगा, उसने तुरंत रेडियो बंद करना चाहा पर बटन काम नहीं कर रहा था।",
+        "m": "chase",
+        "st": "panicking",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, Raghav pressing dashboard buttons frantically with one hand while steering with the other on a dark road, 30-year-old Indian man with stubble, short messy black hair, wearing a dark blue cotton shirt and grey trousers, nobody looking at camera, no portrait, no close-up, no text",
+        "w": "Raghav"
+       },
+       {
+        "s": "N",
+        "t": "तभी पीछे बैठे साए ने अपनी ठंडी और भारी उंगलियां आगे बढ़ाकर राघव के कंधे पर रख दीं।",
+        "m": "horror",
+        "st": "jump scare moment",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, a pale hand with long fingers resting on Raghav's shoulder from the back seat, Raghav freezing in terror behind the steering wheel, 30-year-old Indian man with stubble, short messy black hair, wearing a dark blue cotton shirt and grey trousers, nobody looking at camera, no portrait, no close-up, no text",
+        "w": "Raghav"
+       },
+       {
+        "s": "N",
+        "t": "एक बर्फीली सनसनाहट उसके पूरे शरीर में दौड़ गई, उसके मुँह से चीك निकलना चाहती थी पर गले में अटक गई।",
+        "m": "horror",
+        "st": "gasping for breath",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, Raghav gripping the steering wheel with wide terrified eyes, breath visible as white fog in the cold car air, 30-year-old Indian man with stubble, short messy black hair, wearing a dark blue cotton shirt and grey trousers, nobody looking at camera, no portrait, no close-up, no text",
+        "w": "Raghav"
+       },
+       {
+        "s": "N",
+        "t": "महिला के कान के पास झुकने पर एक फुसफुसाहट सुनाई दी... मेरी मंजिल आ गई है, जरा ब्रेक लगाओ।",
+        "m": "suspense",
+        "st": "eerie whisper",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, Raghav looking straight ahead while a shadowy figure leans forward close to his ear inside the dimly lit car, 30-year-old Indian man with stubble, short messy black hair, wearing a dark blue cotton shirt and grey trousers, nobody looking at camera, no portrait, no close-up, no text",
+        "w": "Raghav"
+       },
+       {
+        "s": "N",
+        "t": "राघव ने डरते हुए गाड़ी के ब्रेक पर पैर रखा और कार सड़क के किनारे जाकर रुक गई।",
+        "m": "suspense",
+        "st": "sudden stop",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, red car braking sharply on a lonely highway with brake lights glowing bright against the dark foggy night, 30-year-old Indian man with stubble, short messy black hair, wearing a dark blue cotton shirt and grey trousers, nobody looking at camera, no portrait, no close-up, no text",
+        "w": "Raghav"
+       },
+       {
+        "s": "N",
+        "t": "उसने कांपते हाथों से पीछे देखा, पर पिछली सीट पर कोई नहीं था... दरवाजा अपने आप खुला और बंद हुआ।",
+        "m": "horror",
+        "st": "mysterious disappearance",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, Raghav turning back to look at an empty rear seat, the back car door swinging open slightly into the foggy night, 30-year-old Indian man with stubble, short messy black hair, wearing a dark blue cotton shirt and grey trousers, nobody looking at camera, no portrait, no close-up, no text",
+        "w": "Raghav"
+       },
+       {
+        "s": "N",
+        "t": "राघव ने राहत की सांस ली और गाड़ी आगे बढ़ाने के लिए जैसे ही गियर बदला, उसकी नजर मील के पत्थर पर पड़ी।",
+        "m": "suspense",
+        "st": "turning point",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, Raghav shifting gear inside the car, headlights catching a concrete milestone by the roadside in the distance, 30-year-old Indian man with stubble, short messy black hair, wearing a dark blue cotton shirt and grey trousers, nobody looking at camera, no portrait, no close-up, no text",
+        "w": "Raghav"
+       },
+       {
+        "s": "N",
+        "t": "वह पत्थर वही था जहाँ उसने उस महिला को लिफ्ट दी थी... यानी उसने पिछले आधे घंटे में एक इंच भी सफर नहीं किया था।",
+        "m": "horror",
+        "st": "mind-bending realization",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, Raghav staring in absolute shock through the windshield at the milestone marker on the dark desolate roadside, 30-year-old Indian man with stubble, short messy black hair, wearing a dark blue cotton shirt and grey trousers, nobody looking at camera, no portrait, no close-up, no text",
+        "w": "Raghav"
+       },
+       {
+        "s": "N",
+        "t": "उसका खून सुन्न पड़ गया, क्योंकि रेडियो पर फिर से वही आवाज गूंजी... शुक्रिया भाई, अब तुम्हारी बारी है।",
+        "m": "horror",
+        "st": "chilling final scare",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, Raghav sitting frozen inside the dark car as the dashboard radio glows eerily and mist surrounds the vehicle, 30-year-old Indian man with stubble, short messy black hair, wearing a dark blue cotton shirt and grey trousers, nobody looking at camera, no portrait, no close-up, no text",
+        "w": "Raghav"
+       },
+       {
+        "s": "N",
+        "t": "राघव ने घबराकर गाड़ी का शीशा ऊपर करना चाहा, पर बाहर अंधेरे में उसी महिला की परछਾਈ उसे घूर रही थी।",
+        "m": "horror",
+        "st": "terrifying climax",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, Raghav staring in horror as a pale face appears right outside his side window in the dark foggy night, 30-year-old Indian man with stubble, short messy black hair, wearing a dark blue cotton shirt and grey trousers, nobody looking at camera, no portrait, no close-up, no text",
+        "w": "Raghav"
+       },
+       {
+        "s": "N",
+        "t": "कुछ रास्ते ऐसे होते हैं जहाँ सफर कभी खत्म नहीं होता... बस मुसाफिर बदल जाते हैं।",
+        "m": "horror",
+        "st": "haunting conclusion",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, the red car parked motionless on the endless dark highway swallowed completely by thick fog under the moonlight, 30-year-old Indian man with stubble, short messy black hair, wearing a dark blue cotton shirt and grey trousers, nobody looking at camera, no portrait, no close-up, no text",
+        "w": "Raghav"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "id": "raat_l_bank04_1104",
+    "series": "अंधेरे कमरे का आखिरी ताला | रात के किस्से",
+    "parts": [
+     {
+      "title": "अंधेरे कमरे का आखिरी ताला | रात के किस्से",
+      "topic": "An old heritage hostel in a remote Indian town where a locked room hides a generational secret of a forgotten warden.",
+      "category": "horror",
+      "description": "उत्तर प्रदेश के एक पुराने कॉलेज हॉस्टल में बने उस बंद कमरे का राज क्या था, जहाँ रात बारह बजते ही अजीब सी आहटें सुनाई देती थीं? एक युवा छात्र की उत्सुकता उसे उस खौफनाक दरवाजे तक ले गई, जिसके पीछे छिपा सच जानकर आपकी रूह कांप जाएगी। इस रोमांचक और डरावनी कहानी में देखिए कैसे एक गलती पूरी रात को एक भयानक अंतहीन кош में बदल देती है।\n\nरात के सन्नाटे में गूंजती उन रहस्यमयी आवाज़ों के पीछे कौन सी ताकत थी? क्या वह छात्र इस हॉस्टल के चक्रव्यूह से ज़िंदा बाहर निकल पाया या उस कमरे की दीवारें उसका नया आशियाना बन गईं? जानने के लिए अंत तक सुनिए यह रोंगटे खड़े कर देने वाली कहानी।\n\nहमारे चैनल 'रात के किस्से' पर ऐसे ही अनसुलझे रहस्यों और खौफनाक दास्तानों के लिए चैनल को सब्सक्राइब करना न भूलें।\n\n#RaatKeKisse #HorrorStory #HindiHorror #HostelGhost #Bhootiyakahaani",
+      "tags": [
+       "रात के किस्से",
+       "raat ke kisse",
+       "hindi horror stories",
+       "hostel horror story",
+       "bhootiya haveli",
+       "scary stories in hindi",
+       "horror podcast",
+       "haunted hostel room",
+       "indian horror stories",
+       "ghost story in hindi",
+       "suspense thriller hindi",
+       "dark room mystery",
+       "creepy college stories",
+       "paranormal stories india",
+       "real ghost experience",
+       "night horror stories",
+       "darr ki kahani",
+       "khaufnak raatein"
+      ],
+      "hook": "बंद कमरा, खौफनाक रात",
+      "thumb_text": "आखिरी कमरा मत खोलो!",
+      "thumb_visual": "2D dark horror animated illustration, Indian setting, wide shot, a young male student in blue hoodie standing in front of a heavy wooden door with a glowing iron lock in a dimly lit college corridor, high contrast, eerie blue and amber lighting, empty side for text, no text",
+      "characters": {
+       "raghav": "22 years old male, thin face with sharp jawline, short messy black hair, wearing a navy blue oversized hoodie and grey cotton trousers."
+      },
+      "scenes": [
+       {
+        "s": "N",
+        "t": "रात के ठीक बारह बज चुके थे और हॉस्टल की इस पुरानी गैलरी में सिर्फ मेरी ही सांसों की आवाज़ गूंज रही थी...",
+        "m": "horror",
+        "st": "whispering and tense",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, raghav walking down a long gloomy hostel corridor with flickering tube lights, wearing a navy blue oversized hoodie and grey cotton trousers",
+        "w": "raghav"
+       },
+       {
+        "s": "N",
+        "t": "हमारे कॉलेज का यह ऐतिहासिक भवन अंग्रेजों के ज़माने का था, जिसके सबसे आखिरी कोने वाला कमरा हमेशा बंद रहता था।",
+        "m": "suspense",
+        "st": "deep and mysterious",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, an imposing old colonial era building wing at night, long dark corridor leading to a single heavy wooden door at the very end",
+        "w": ""
+       },
+       {
+        "s": "N",
+        "t": "कहते हैं कि उस कमरे के अंदर कोई ऐसी चीज़ कैद है, जिसे बाहर आने की इजाज़त कभी नहीं दी गई।",
+        "m": "horror",
+        "st": "chilling tone",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, a massive dark wooden door with thick rust-covered iron chains and a heavy padlock, chilling atmosphere",
+        "w": ""
+       },
+       {
+        "s": "N",
+        "t": "लेकिन आज मेरी बेताबी उस चेतावनी पर भारी पड़ रही थी, और मैं धीरे-धीरे उसी मनहूस दरवाजे की तरफ बढ़ रहा था।",
+        "m": "suspense",
+        "st": "slow and careful",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, raghav stepping cautiously forward in the dark corridor towards the locked wooden door, wearing a navy blue oversized hoodie and grey cotton trousers",
+        "w": "raghav"
+       },
+       {
+        "s": "N",
+        "t": "जैसे-जैसे मेरे कदम आगे बढ़ रहे थे, हवा का तापमान अचानक कम होने लगा और साँसें जमने लगीं।",
+        "m": "horror",
+        "st": "shivering voice",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, raghav shivering slightly with visible frosty breath in the cold air near the end of the corridor, wearing a navy blue oversized hoodie and grey cotton trousers",
+        "w": "raghav"
+       },
+       {
+        "s": "N",
+        "t": "दरवाजे के पास पहुँचते ही मुझे अंदर से किसी के हल्के से नाखून खुरचने की आवाज़ सुनाई दी...",
+        "m": "horror",
+        "st": "sudden sharp tone",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, raghav pressing his ear against the heavy wooden door, listening intently, wearing a navy blue oversized hoodie and grey cotton trousers",
+        "w": "raghav"
+       },
+       {
+        "s": "N",
+        "t": "मैंने डरते-डरते अपनी जेब से वो पुरानी चाबी निकाली, जो मुझे वार्डन की मेज की दराज से मिली थी।",
+        "m": "suspense",
+        "st": "nervous and hushed",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, raghav holding a small vintage brass key in his trembling hand in front of the locked door, wearing a navy blue oversized hoodie and grey cotton trousers",
+        "w": "raghav"
+       },
+       {
+        "s": "N",
+        "t": "चाबी ताले में पूरी तरह फिट हो गई थी, मानो कोई अदृश्य हाथ मेरे काम में मदद कर रहा हो।",
+        "m": "suspense",
+        "st": "creepy anticipation",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, raghav inserting the brass key into the massive rusted padlock on the wooden door, wearing a navy blue oversized hoodie and grey cotton trousers",
+        "w": "raghav"
+       },
+       {
+        "s": "N",
+        "t": "एक हल्की सी क्लिक की आवाज़ के साथ ताला खुल गया, और गैलरी में रखा बल्ब तेज झपकाकर बुझ गया।",
+        "m": "horror",
+        "st": "sudden shock",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, complete pitch darkness in the corridor except for a tiny spark of light where raghav stands near the open padlock, wearing a navy blue oversized hoodie and grey cotton trousers",
+        "w": "raghav"
+       },
+       {
+        "s": "N",
+        "t": "चारों तरफ घना अंधेरा छा गया था, और सिर्फ मेरे दिल के धड़कने की आवाज़ ही मेरा एकमात्र सहारा थी।",
+        "m": "horror",
+        "st": "intense silence",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, raghav standing frozen in absolute darkness, holding a small glowing mobile phone torch in his hand, wearing a navy blue oversized hoodie and grey cotton trousers",
+        "w": "raghav"
+       },
+       {
+        "s": "N",
+        "t": "मैंने मोबाइल टॉर्च ऑन की और दरवाजे को धीरे से धकेल दिया, जो एक डरावनी चीख के साथ खुल गया।",
+        "m": "horror",
+        "st": "eerie revelation",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, raghav pushing open the creaking wooden door, a faint beam of light cutting through thick dust inside the room, wearing a navy blue oversized hoodie and grey cotton trousers",
+        "w": "raghav"
+       },
+       {
+        "s": "N",
+        "t": "कमरे के अंदर का नज़ारा देखकर मेरी चीख गले में ही घुट कर रह गई...",
+        "m": "horror",
+        "st": "terrified gasp",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, raghav staring with wide horrified eyes into the dark dusty room illuminated by mobile light, wearing a navy blue oversized hoodie and grey cotton trousers",
+        "w": "raghav"
+       },
+       {
+        "s": "N",
+        "t": "दीवारों पर कोयले से अनगिनत बार एक ही वाक्य लिखा था - 'वह वापस आ गया है'... और तारीख आज की थी।",
+        "m": "horror",
+        "st": "chilling emphasis",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, dilapidated room walls covered in frantic coal writings in Hindi, raghav watching in shock, wearing a navy blue oversized hoodie and grey cotton trousers",
+        "w": "raghav"
+       },
+       {
+        "s": "N",
+        "t": "कमरे के बीचों-बीच एक पुरानी लकड़ी की कुर्सी रखी थी, जिस पर कोई कोट और डायरी पड़ी थी।",
+        "m": "suspense",
+        "st": "mysterious tone",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, an empty vintage wooden chair in the center of the dusty room with a worn-out diary resting on it, raghav looking at it from the doorway, wearing a navy blue oversized hoodie and grey cotton trousers",
+        "w": "raghav"
+       },
+       {
+        "s": "N",
+        "t": "मैंने आगे बढ़कर उस डायरी को उठाया, जिसके पन्ने खून के धब्बों से लाल हो चुके थे।",
+        "m": "suspense",
+        "st": "nervous curiosity",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, raghav stepping inside the dusty room and picking up the old stained diary from the chair, wearing a navy blue oversized hoodie and grey cotton trousers",
+        "w": "raghav"
+       },
+       {
+        "s": "N",
+        "t": "पहला पन्ना पलटते ही मेरी आँखें फटी की फटी रह गईं, उस पर मेरे ही हॉस्टल के पिछले छात्र की तस्वीर थी।",
+        "m": "horror",
+        "st": "shocked whisper",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, raghav holding the open diary showing a black and white photograph inside, glowing phone light reflecting on his terrified face, wearing a navy blue oversized hoodie and grey cotton trousers",
+        "w": "raghav"
+       },
+       {
+        "s": "N",
+        "t": "और नीचे लिखा था - जिसने भी यह कमरा खोला, उसका कमरा हमेशा के लिए लॉक हो जाएगा।",
+        "m": "horror",
+        "st": "sinister warning",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, close eerie view of the diary page with bold text while raghav reads it with horror, wearing a navy blue oversized hoodie and grey cotton trousers",
+        "w": "raghav"
+       },
+       {
+        "s": "N",
+        "t": "इससे पहले कि मैं कुछ समझ पाता, मेरे पीछे वाले दरवाजे के बंद होने की भारी आवाज़ गूंजी।",
+        "m": "chase",
+        "st": "fast and panicked",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, the heavy wooden door slamming shut on its own behind raghav inside the dark room, wearing a navy blue oversized hoodie and grey cotton trousers",
+        "w": "raghav"
+       },
+       {
+        "s": "N",
+        "t": "मैंने घबराकर पीछे मुड़कर देखा और दरवाजे का हत्था जोर-जोर से खींचने लगा, लेकिन वह लॉक हो चुका था।",
+        "m": "chase",
+        "st": "frantic panic",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, raghav desperately pulling the locked wooden door handle from inside the dark room, wearing a navy blue oversized hoodie and grey cotton trousers",
+        "w": "raghav"
+       },
+       {
+        "s": "N",
+        "t": "कमरे की खिड़कियों पर लोहे की सलाखें अपने आप टेढ़ी होने लगीं, और बाहर से कोई साया मुझ पर हंस रहा था।",
+        "m": "horror",
+        "st": "terrified scream",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, iron window bars bending unnaturally in the dark room while a shadowy figure looms outside, raghav backing away in terror, wearing a navy blue oversized hoodie and grey cotton trousers",
+        "w": "raghav"
+       },
+       {
+        "s": "N",
+        "t": "तभी कमरे के कोने में रखे उस आईने में मुझे अपना चेहरा नहीं, बल्कि किसी और की खौफनाक परछਾਈ दिखाई दी।",
+        "m": "horror",
+        "st": "breathless terror",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, an antique dusty mirror reflecting a distorted scary entity instead of raghav, who stands frozen in front of it, wearing a navy blue oversized hoodie and grey cotton trousers",
+        "w": "raghav"
+       },
+       {
+        "s": "N",
+        "t": "उस परछाई ने धीरे से मुस्कुराते हुए कहा - अब इस कमरे का अगला पहरेदार तुम हो...",
+        "m": "horror",
+        "st": "whispering evil voice",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, raghav standing motionless in the center of the dark room as glowing eyes appear in the mirror behind him, wearing a navy blue oversized hoodie and grey cotton trousers",
+        "w": "raghav"
+       },
+       {
+        "s": "N",
+        "t": "बाहर गैलरी में रखे घड़ी ने एक बार फिर रात के बारह बजाए, और ताला अपने आप लग गया।",
+        "m": "suspense",
+        "st": "chilling conclusion",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, the empty dark corridor outside the locked room with the heavy padlock firmly shut and glowing faintly in the dark",
+        "w": ""
+       },
+       {
+        "s": "N",
+        "t": "अब न तो वो कमरा खुला, और न ही हॉस्टल के रजिस्टर में कभी मेरा नाम दोबारा दर्ज हुआ।",
+        "m": "horror",
+        "st": "haunting whisper",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, an old dusty college register lying open on a warden table with names fading away into nothingness, eerie ambient glow",
+        "w": ""
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "id": "raat_l_bank05_1104",
+    "series": "अंधे कुएं से गूंजती आखिरी चीख | रात के किस्से",
+    "parts": [
+     {
+      "title": "अंधे कुएं से गूंजती आखिरी चीख | रात के किस्से",
+      "topic": "एक पुराने गांव के सूखे कुएं का रहस्य",
+      "category": "horror",
+      "description": "उत्तर प्रदेश के एक शांत गांव में जब एक पुराने सूखे कुएं के पास से गुजरते समय अजीब आवाजें आने लगीं, तो सब हैरान रह गए। गांव के एक निडर युवक ने इस राज से पर्दा उठाने की सोची, लेकिन उसे नहीं पता था कि कुएं के अंदर कोई उसका इंतजार कर रहा है।\n\nरात के सन्नाटे में गूंजती वह चीख और परछाइयों का खेल इस कहानी को बेहद डरावना और रोमांचक बनाता है। अंत में सामने आने वाला सच आपके रोंगटे खड़े कर देगा।\n\nदेखिए 'रात के किस्से' की यह खास प्रस्तुति और महसूस करें असली डर।\n\n#RaatKeKisse #HorrorStory #HindiHorror #VillageMystery #ScaryStories",
+      "tags": [
+       "रात्र के किस्से",
+       "hindi horror stories",
+       "bhoot ki kahani",
+       "village horror",
+       "scary stories",
+       "indian horror",
+       "haunted well",
+       "rahasya",
+       "darr",
+       "bhootiya kahani",
+       "suspense thriller",
+       "ghost story in hindi",
+       "village mystery",
+       "creepy stories",
+       "supernatural",
+       "horror podcast",
+       "dark mysteries",
+       "night stories"
+      ],
+      "hook": "कुएं से गूंजी चीख",
+      "thumb_text": "सूखा कुआं और साया",
+      "thumb_visual": "2D dark horror animated illustration, Indian setting, wide shot, a terrified young man holding a flashlight facing a deep ancient stone well at night, dramatic blue and orange lighting, high contrast, saturated, rim light, empty side for text, no text",
+      "characters": {
+       "Raghav": "age 28, sharp angular face, messy black hair, wearing a dark green cotton shirt and brown trousers"
+      },
+      "scenes": [
+       {
+        "s": "N",
+        "t": "अमरावती गांव के इस सूने रास्ते पर रात गहराते ही एक खौफनाक सन्नाटा पसर जाता था... जहां परिंदा भी पर नहीं मारता था।",
+        "m": "horror",
+        "st": "Slow and chilling",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, a desolate village mud path winding through barren fields under a moonless night sky, Raghav age 28, sharp angular face, messy black hair, wearing a dark green cotton shirt and brown trousers walking cautiously with a small torch",
+        "w": ""
+       },
+       {
+        "s": "N",
+        "t": "इसी रास्ते के किनारे बना था वह सदियों पुराना सूखा कुआं, जिसके पास जाने से गांव वाले आज भी कांपते थे।",
+        "m": "suspense",
+        "st": "Mysterious and low",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, an ancient cracked dry stone well standing alone beside a thorny bush at night, Raghav age 28, sharp angular face, messy black hair, wearing a dark green cotton shirt and brown trousers stopping near the well",
+        "w": ""
+       },
+       {
+        "s": "N",
+        "t": "राघव अपनी बाइक खराब हो जाने के कारण इसी रास्ते से पैदल अपने घर लौट रहा था और वक्त आधी रात का था।",
+        "m": "suspense",
+        "st": "Normal narrative tone",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, Raghav age 28, sharp angular face, messy black hair, wearing a dark green cotton shirt and brown trousers wiping sweat from his forehead while looking at his broken down motorcycle on the dirt track",
+        "w": "Raghav"
+       },
+       {
+        "s": "N",
+        "t": "अचानक उसे उस सूखे कुएं के अंदर से किसी के रोने की बहुत ही धीमी और डरावनी आवाज सुनाई दी।",
+        "m": "horror",
+        "st": "Creepy whisper",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, Raghav age 28, sharp angular face, messy black hair, wearing a dark green cotton shirt and brown trousers freezing in place with a shocked expression, ear turned towards the deep stone well",
+        "w": "Raghav"
+       },
+       {
+        "s": "N",
+        "t": "राघव ने रुककर चारों तरफ देखा, लेकिन दूर-दूर तक कोई इंसान नजर नहीं आया... हवा भी बिल्कुल थम चुकी थी।",
+        "m": "suspense",
+        "st": "Tense and watchful",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, Raghav age 28, sharp angular face, messy black hair, wearing a dark green cotton shirt and brown trousers looking around the empty foggy fields under faint moonlight",
+        "w": "Raghav"
+       },
+       {
+        "s": "N",
+        "t": "वह धीरे-धीरे कदमों से बढ़ता हुआ उस कुएं की मुंडेर तक पहुंचा और टॉर्च की रोशनी अंदर की तरफ डाली।",
+        "m": "suspense",
+        "st": "Slow delivery",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, Raghav age 28, sharp angular face, messy black hair, wearing a dark green cotton shirt and brown trousers leaning over the stone rim of the deep well, pointing a flashlight down",
+        "w": "Raghav"
+       },
+       {
+        "s": "N",
+        "t": "कुएं की गहराई में काला अंधेरा भरा था और उस अंधेरे के बीच से दो चमकती हुई आंखें उसे घूर रही थीं।",
+        "m": "horror",
+        "st": "Sudden shock",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, Raghav age 28, sharp angular face, messy black hair, wearing a dark green cotton shirt and brown trousers pulling back sharply in terror from the well edge, two glowing pale eyes visible in the dark abyss below",
+        "w": "Raghav"
+       },
+       {
+        "s": "N",
+        "t": "राघव डर के मारे पीछे हट गया, उसके हाथ से टॉर्च लगभग छूटते-छूटते बची... दिल की धड़कनें बहुत तेज हो गईं।",
+        "m": "chase",
+        "st": "Fast and breathless",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, Raghav age 28, sharp angular face, messy black hair, wearing a dark green cotton shirt and brown trousers stumbling backward onto the dusty ground, gripping his chest in panic",
+        "w": "Raghav"
+       },
+       {
+        "s": "N",
+        "t": "तभी कुएं के अंदर से एक भारी आवाज गूंजी... राघव... मुझे इस कैद से बाहर निकालो... बहुत ठंड है।",
+        "m": "horror",
+        "st": "Eerie echoing voice",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, sound waves effect visual near the mouth of the dark stone well, Raghav age 28, sharp angular face, messy black hair, wearing a dark green cotton shirt and brown trousers covering his ears in horror",
+        "w": ""
+       },
+       {
+        "s": "N",
+        "t": "वह आवाज इतनी अजीब थी कि राघव के रोंगटे खड़े हो गए, लेकिन जाने क्यों उसके कदम वहीं जम से गए थे।",
+        "m": "suspense",
+        "st": "Paralyzed fear",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, Raghav age 28, sharp angular face, messy black hair, wearing a dark green cotton shirt and brown trousers kneeling on the ground, staring blankly at the well with wide eyes",
+        "w": "Raghav"
+       },
+       {
+        "s": "N",
+        "t": "उसने हिम्मत जुटाकर फिर से झांका, तो कुएं की दीवार पर खून से सने हुए हाथों के निशान दिखाई दिए।",
+        "m": "horror",
+        "st": "Dark and gripping",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, Raghav age 28, sharp angular face, messy black hair, wearing a dark green cotton shirt and brown trousers holding the flashlight down, illuminating bloody handprints on the inner brick walls of the well",
+        "w": "Raghav"
+       },
+       {
+        "s": "N",
+        "t": "गांव के बुजुर्गों की वो चेतावनी उसके कानों में गूंजने लगी कि इस कुएं में पचास साल पहले एक भयानक हादसा हुआ था।",
+        "m": "suspense",
+        "st": "Flashback tone",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, Raghav age 28, sharp angular face, messy black hair, wearing a dark green cotton shirt and brown trousers recalling old memories with a grim face near the dark well",
+        "w": "Raghav"
+       },
+       {
+        "s": "N",
+        "t": "लेकिन अब वह साया सिर्फ आवाज नहीं दे रहा था, बल्कि कुएं की दीवार से धीरे-धीरे ऊपर की तरफ चढ़ रहा था।",
+        "m": "chase",
+        "st": "Escalating panic",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, a shadowy humanoid figure with long hair emerging slowly from the dark depths of the stone well, Raghav age 28, sharp angular face, messy black hair, wearing a dark green cotton shirt and brown trousers backing away in absolute horror",
+        "w": "Raghav"
+       },
+       {
+        "s": "N",
+        "t": "राघव ने बिना एक पल गंवाए अपनी बाइक की तरफ भागा और किक मारने लगा... इंजन पहली बार में स्टार्ट नहीं हुआ।",
+        "m": "chase",
+        "st": "Frantic and urgent",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, Raghav age 28, sharp angular face, messy black hair, wearing a dark green cotton shirt and brown trousers frantically kicking the starter pedal of his motorcycle in the dim light",
+        "w": "Raghav"
+       },
+       {
+        "s": "N",
+        "t": "पीछे से कुएं के पास से भारी कदमों के दौड़ने की आवाज आ रही थी... मानो कोई उसका पीछा कर रहा हो।",
+        "m": "chase",
+        "st": "Fast paced",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, a dark distorted silhouette running fast across the dusty field towards the road, Raghav age 28, sharp angular face, messy black hair, wearing a dark green cotton shirt and brown trousers looking back in sheer terror while sitting on his bike",
+        "w": "Raghav"
+       },
+       {
+        "s": "N",
+        "t": "घबराहट में राघव के हाथ कांप रहे थे, उसने फिर से पूरी ताकत लगाकर किक मारी और बाइक का इंजन गरज उठा।",
+        "m": "chase",
+        "st": "High tension",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, Raghav age 28, sharp angular face, messy black hair, wearing a dark green cotton shirt and brown trousers accelerating the motorcycle as exhaust smoke puffs out in the cold night air",
+        "w": "Raghav"
+       },
+       {
+        "s": "N",
+        "t": "उसने बिना पीछे देखे बाइक को पूरी रफ्तार से आगे बढ़ा दिया और धूल का गुबार पीछे छूट गया।",
+        "m": "chase",
+        "st": "Fast action",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, Raghav age 28, sharp angular face, messy black hair, wearing a dark green cotton shirt and brown trousers riding away fast on the motorcycle, leaving a cloud of dust on the dark road",
+        "w": "Raghav"
+       },
+       {
+        "s": "N",
+        "t": "अगले दिन सुबह गांव के सरपंच ने जब उसे बताया कि उस कुएं पर कोई नहीं जाता, तो राघव की सांसें थम गईं।",
+        "m": "suspense",
+        "st": "Calm daylight contrast",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, Raghav age 28, sharp angular face, messy black hair, wearing a dark green cotton shirt and brown trousers talking to an old village elder under a banyan tree during daytime",
+        "w": "Raghav"
+       },
+       {
+        "s": "N",
+        "t": "सरपंच ने कहा कि बेटा, पचास साल पहले जिस शख्स को उस कुएं में दफनाया गया था... उसकी कोई परछाई नहीं होती थी।",
+        "m": "horror",
+        "st": "Mysterious reveal",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, old village elder with white beard speaking seriously to Raghav age 28, sharp angular face, messy black hair, wearing a dark green cotton shirt and brown trousers in a village courtyard",
+        "w": ""
+       },
+       {
+        "s": "N",
+        "t": "यह सुनकर राघव के पैरों तले जमीन खिसक गई क्योंकि कल रात कुएं पर उसने जिस साये को देखा था, उसका कोई अक्स नहीं था।",
+        "m": "horror",
+        "st": "Shocked realization",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, Raghav age 28, sharp angular face, messy black hair, wearing a dark green cotton shirt and brown trousers looking terrified with wide eyes and pale face in daylight",
+        "w": "Raghav"
+       },
+       {
+        "s": "N",
+        "t": "लेकिन असली खौफ तो तब शुरू हुआ जब रात को राघव ने अपने कमरे के शीशे में देखा कि उसकी खुद की भी कोई परछाई नहीं थी।",
+        "m": "horror",
+        "st": "Chilling twist",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, Raghav age 28, sharp angular face, messy black hair, wearing a dark green cotton shirt and brown trousers staring at a rustic mirror in a dark room where his reflection is completely missing",
+        "w": "Raghav"
+       },
+       {
+        "s": "N",
+        "t": "और तभी उसके कमरे के दरवाजे पर किसी ने तीन बार जोर से खटखटाया... वही पुरानी भयानक आवाज में।",
+        "m": "horror",
+        "st": "Terrifying climax",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, Raghav age 28, sharp angular face, messy black hair, wearing a dark green cotton shirt and brown trousers turning his head slowly in extreme dread towards a closed wooden door at night",
+        "w": "Raghav"
+       },
+       {
+        "s": "N",
+        "t": "तो क्या राघव अब उस सूखे कुएं का अगला पहरेदार बन चुका था... जिसका कोई अंत नहीं है।",
+        "m": "horror",
+        "st": "Suspenseful ending",
+        "v": "2D dark horror animated illustration, Indian setting, wide shot, an ancient dry stone well under a dark starry sky with a faint ghostly figure standing right beside it, fading slowly into total darkness",
+        "w": ""
+       }
+      ]
+     }
+    ]
+   }
+  ],
   "short": [
    {
     "id": "raat_s_dastak01",
@@ -797,7 +1937,1122 @@
   ]
  },
  "kahani": {
-  "long": [],
+  "long": [
+   {
+    "id": "kahani_l_bank01_1104",
+    "script": {
+     "title": "जादुई बांसुरी का मीठा राज | Kahani Patang",
+     "topic": "A magical bamboo flute in a peaceful jungle that teaches a greedy monkey a sweet lesson about sharing.",
+     "category": "Panchatantra Style Jungle Moral Stories",
+     "description": "एक सुंदर जंगल में एक जादुई बांसुरी मिलती है जो केवल बांटकर खाने वालों के लिए बजती है। एक लालची बंदर चीकू जब इसे चुराता है, तो उसे एक अनोखा सबक मिलता है। जानिए क्या है उस मीठे राज का रहस्य जो सबको हैरान कर देता है।\n\nयह कहानी बच्चों को बांटने की भावना और लालच न करने का एक प्यारा संदेश देती है। हर पल रोमांच और जादू से भरी यह कहानी आपके बच्चों को बहुत पसंद आएगी।\n\n#HindiStories #KidsMoralStories #Panchatantra #KahaniPatang #MagicalFlute",
+     "tags": [
+      "Kahani Patang",
+      "Hindi Stories",
+      "Kids Moral Stories",
+      "Panchatantra",
+      "Magical Flute Story",
+      "Jungle Stories in Hindi",
+      "Bedtime Stories Hindi",
+      "Animated Moral Stories",
+      "Hindi Kahaniya",
+      "Panchatantra Tales",
+      "Greedy Monkey Story",
+      "Magic Stories for Kids",
+      "Indian Animation",
+      "Fairytales in Hindi",
+      "Bachon ki Kahani",
+      "Cute Jungle Animals",
+      "Sharing is Caring Story",
+      "Moral Stories for Kids"
+     ],
+     "hook": "जादुई बांसुरी का जादू",
+     "thumb_text": "बांसुरी का जादू!",
+     "thumb_visual": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, a golden magical bamboo flute glowing on a green mossy rock in a sunny jungle clearing, Chiku the monkey looking at it with wide greedy eyes from behind a tree, extreme contrast, saturated, rim light, empty side for text, no text",
+     "characters": {
+      "Chiku": "age 6 years, round chubby face, big brown mischievous eyes, short messy brown hair, wearing a tiny red vest and blue shorts",
+      "Bholu": "age 8 years, gentle round face, kind smiling eyes, neat black fur hair, wearing a green leaf shirt and yellow waist wrap",
+      "Meera": "age 7 years, soft gentle face, warm friendly eyes, fluffy white fur, wearing a pink flower garland around her neck"
+     },
+     "scenes": [
+      {
+       "s": "N",
+       "t": "हरे-भरे सुंदर जंगल में एक अनोखी जादुई बांसुरी थी... जिसकी मीठी धुन पूरे जंगल को खुश कर देती थी।",
+       "m": "peaceful",
+       "st": "Gentle, magical, and inviting tone.",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, a lush green jungle with golden sunlight filtering through trees, a glowing bamboo flute resting on a rock, nobody looking at camera, no portrait, no close-up, no text",
+       "w": ""
+      },
+      {
+       "s": "N",
+       "t": "इस जादुई बांसुरी की एक खास बात थी... कि यह तभी बजती थी जब कोई इसे दूसरों के साथ मिलकर बजाता था।",
+       "m": "peaceful",
+       "st": "Explaining the mystery with a smile.",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, a golden glowing bamboo flute resting on a rock with musical notes floating in the air, lush green jungle background, nobody looking at camera, no portrait, no close-up, no text",
+       "w": ""
+      },
+      {
+       "s": "N",
+       "t": "जंगल में चीकू नाम का एक बहुत लालची बंदर रहता था... जिसे हर मीठी चीज अकेले ही खाने की आदत थी।",
+       "m": "suspense",
+       "st": "Slightly mischievous and warning tone.",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, Chiku age 6 years, round chubby face, big brown mischievous eyes, short messy brown hair, wearing a tiny red vest and blue shorts, holding a big sweet mango greedily hiding behind a bush, nobody looking at camera, no portrait, no close-up, no text",
+       "w": "Chiku"
+      },
+      {
+       "s": "N",
+       "t": "एक दिन चीकू घूमते-घूमते उस जादुई बांसुरी के पास पहुंच गया... और उसे चमकते देख उसकी आंखें लालच से भर गईं।",
+       "m": "suspense",
+       "st": "Building curiosity and tension.",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, Chiku age 6 years, round chubby face, big brown mischievous eyes, short messy brown hair, wearing a tiny red vest and blue shorts, staring greedily at the glowing golden bamboo flute on a rock, nobody looking at camera, no portrait, no close-up, no text",
+       "w": "Chiku"
+      },
+      {
+       "s": "N",
+       "t": "वाह! यह चमकीली बांसुरी तो बहुत कीमती लगती है... इसे तो मैं अपने पास ही छुपा कर रखूंगा।",
+       "m": "suspense",
+       "st": "Greedy and whispering voice for Chiku's thought.",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, Chiku age 6 years, round chubby face, big brown mischievous eyes, short messy brown hair, wearing a tiny red vest and blue shorts, grabbing the glowing golden flute quickly with both hands, nobody looking at camera, no portrait, no close-up, no text",
+       "w": "Chiku"
+      },
+      {
+       "s": "N",
+       "t": "चीकू ने चुपके से बांसुरी उठाई और अपने घर के पेड़ की डाल पर ले जाकर छुपा दी... किसी को भनक तक न लगने दी।",
+       "m": "suspense",
+       "st": "Sneaky narration style.",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, Chiku age 6 years, round chubby face, big brown mischievous eyes, short messy brown hair, wearing a tiny red vest and blue shorts, hiding the golden flute inside a hollow tree branch, nobody looking at camera, no portrait, no close-up, no text",
+       "w": "Chiku"
+      },
+      {
+       "s": "N",
+       "t": "शाम हुई तो चीकू ने बांसुरी निकाली और उसे खुद बजाने की कोशिश की... पर बांसुरी से एक भी सुर नहीं निकला।",
+       "m": "suspense",
+       "st": "Confused and questioning tone.",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, Chiku age 6 years, round chubby face, big brown mischievous eyes, short messy brown hair, wearing a tiny red vest and blue shorts, blowing hard into the golden flute with a frustrated puffed cheek, nobody looking at camera, no portrait, no close-up, no text",
+       "w": "Chiku"
+      },
+      {
+       "s": "N",
+       "t": "अरे यह क्या! यह बांसुरी तो बज ही नहीं रही है... क्या यह कोई साधारण सी लकड़ी है?",
+       "m": "suspense",
+       "st": "Disappointed and puzzled.",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, Chiku age 6 years, round chubby face, big brown mischievous eyes, short messy brown hair, wearing a tiny red vest and blue shorts, sitting sadly on a branch holding the silent flute, nobody looking at camera, no portrait, no close-up, no text",
+       "w": "Chiku"
+      },
+      {
+       "s": "N",
+       "t": "तभी वहां भोलू भालू और मीरी खरगोश आ पहुंचे... उनके हाथ में बहुत सारे रसीले मीठे जामुन थे।",
+       "m": "peaceful",
+       "st": "Friendly arrival introduction.",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, Bholu age 8 years, gentle round face, kind smiling eyes, neat black fur hair, wearing a green leaf shirt and yellow waist wrap, carrying a basket of purple berries with Meera age 7 years, soft gentle face, warm friendly eyes, fluffy white fur, wearing a pink flower garland, walking under trees, nobody looking at camera, no portrait, no close-up, no text",
+       "w": "Bholu"
+      },
+      {
+       "s": "N",
+       "t": "अरे चीकू भाई! अकेले-अकेले क्या छुपा रहे हो... चलो हम सब मिलकर मीठे जामुन खाते हैं।",
+       "m": "peaceful",
+       "st": "Warm and inviting tone.",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, Bholu age 8 years, gentle round face, kind smiling eyes, neat black fur hair, wearing a green leaf shirt and yellow waist wrap, offering purple berries towards Chiku on the branch, nobody looking at camera, no portrait, no close-up, no text",
+       "w": "Bholu"
+      },
+      {
+       "s": "N",
+       "t": "चीकू ने जामुन देखे तो उसके मुंह में पानी आ गया... पर उसका लालची मन बोला कि सारे जामुन खुद ही खा लूं।",
+       "m": "suspense",
+       "st": "Tempted and mischievous.",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, Chiku age 6 years, round chubby face, big brown mischievous eyes, short messy brown hair, wearing a tiny red vest and blue shorts, looking down greedily at the basket of berries, nobody looking at camera, no portrait, no close-up, no text",
+       "w": "Chiku"
+      },
+      {
+       "s": "N",
+       "t": "नहीं... मैं ये जामुन किसी के साथ नहीं बांटूंगा... ये सब मेरे अकेले के हैं।",
+       "m": "suspense",
+       "st": "Greedy and selfish voice.",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, Chiku age 6 years, round chubby face, big brown mischievous eyes, short messy brown hair, wearing a tiny red vest and blue shorts, hugging the basket of berries tightly away from others, nobody looking at camera, no portrait, no close-up, no text",
+       "w": "Chiku"
+      },
+      {
+       "s": "N",
+       "t": "तभी अचानक वह जादुई बांसुरी हवा में खुद-ब-खुद उठ गई... और एक तेज सुनहरी रोशनी से चमक उठी।",
+       "m": "suspense",
+       "st": "Magical and thrilling turn of events.",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, the golden bamboo flute floating in mid-air glowing brightly with magical sparkles in the jungle, nobody looking at camera, no portrait, no close-up, no text",
+       "w": ""
+      },
+      {
+       "s": "N",
+       "t": "बांसुरी से एक जादुई आवाज गूंजी... जो लालच और स्वार्थ के खिलाफ सबको चेता रही थी।",
+       "m": "suspense",
+       "st": "Deep and mystical voice.",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, golden magical light rays spreading across the jungle canopy from the floating flute, animals watching in wonder, nobody looking at camera, no portrait, no close-up, no text",
+       "w": ""
+      },
+      {
+       "s": "N",
+       "t": "जो बांटे बिना सब कुछ अकेले पाना चाहेगा... उसकी झोली में कभी संगीत नहीं समाएगा।",
+       "m": "suspense",
+       "st": "Wise and echoing magical voice.",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, floating golden flute surrounded by magical musical notes, animals looking up surprised, nobody looking at camera, no portrait, no close-up, no text",
+       "w": ""
+      },
+      {
+       "s": "N",
+       "t": "यह सुनकर चीकू डर गया... उसे अपनी गलती का अहसास होने लगा कि अकेले खाने से खुशी नहीं मिलती।",
+       "m": "sad",
+       "st": "Regretful and realization tone.",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, Chiku age 6 years, round chubby face, big brown mischievous eyes, short messy brown hair, wearing a tiny red vest and blue shorts, looking down with a sad and guilty expression, nobody looking at camera, no portrait, no close-up, no text",
+       "w": "Chiku"
+      },
+      {
+       "s": "N",
+       "t": "चीकू ने तुरंत अपने सारे जामुन भोलू और मीरी के आगे कर दिए... और प्यार से बोला... माफ कर दो दोस्तों।",
+       "m": "peaceful",
+       "st": "Kind and apologetic tone.",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, Chiku age 6 years, round chubby face, big brown mischievous eyes, short messy brown hair, wearing a tiny red vest and blue shorts, happily sharing berries with Bholu age 8 years and Meera age 7 years, nobody looking at camera, no portrait, no close-up, no text",
+       "w": "Chiku"
+      },
+      {
+       "s": "N",
+       "t": "जैस ही चीकू ने मिलजुलकर खाने का फैसला किया... जादुई बांसुरी ने अपनी सबसे मीठी धुन बजानी शुरू कर दी।",
+       "m": "victory",
+       "st": "Joyful and uplifting narration.",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, the golden flute playing by itself with colorful vibrant musical notes and sparkles filling the happy jungle, nobody looking at camera, no portrait, no close-up, no text",
+       "w": ""
+      },
+      {
+       "s": "N",
+       "t": "टर्र-टर्र... चूं-चूं... सारे पक्षी और जानवर उस जादुई धुन पर खुशी से झूम उठे और नाचने लगे।",
+       "m": "victory",
+       "st": "Cheerful and celebratory.",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, Chiku age 6 years, Bholu age 8 years, and Meera age 7 years dancing happily together under a shower of golden flower petals and musical notes, nobody looking at camera, no portrait, no close-up, no text",
+       "w": ""
+      },
+      {
+       "s": "N",
+       "t": "चीकू समझ गया कि चीजें बांटने से प्यार और खुशियां कई गुना बढ़ जाती हैं... अकेले रहने से नहीं।",
+       "m": "peaceful",
+       "st": "Warm and smiling realization.",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, Chiku age 6 years, round chubby face, big brown mischievous eyes, short messy brown hair, wearing a tiny red vest and blue shorts, smiling happily while sharing fruits with friends, nobody looking at camera, no portrait, no close-up, no text",
+       "w": "Chiku"
+      },
+      {
+       "s": "N",
+       "t": "तो प्यारे बच्चों... शिक्षा यही मिलती है कि मिलजुलकर बांटने में ही असली आनंद और जादू छिपा है।",
+       "m": "peaceful",
+       "st": "Loving moral delivery.",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, jungle animals sitting together happily sharing food under the golden sunlight, nobody looking at camera, no portrait, no close-up, no text",
+       "w": ""
+      },
+      {
+       "s": "N",
+       "t": "अगर आपको यह जादुई कहानी अच्छी लगी... तो हमारे चैनल 'कहानी पतंग' को लाइक और सब्सक्राइब जरूर करें।",
+       "m": "victory",
+       "st": "Upbeat and inviting outro.",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, Chiku waving goodbye happily with his animal friends near a glowing tree with a bright smiling sun above, nobody looking at camera, no portrait, no close-up, no text",
+       "w": ""
+      }
+     ]
+    }
+   },
+   {
+    "id": "kahani_l_bank02_1104",
+    "script": {
+     "title": "जादुई घड़े का अनोखा लालच | Kahani Patang",
+     "topic": "एक लालची लकड़हारा और जादुई घड़ा जो सोने के सिक्के देता है लेकिन शर्त पूरी न होने पर सब कुछ वापस ले लेता है।",
+     "category": "Panchatantra & Magic",
+     "description": "एक बार की बात है, जंगल में एक गरीब लकड़हारे को एक जादुई घड़ा मिला जो उसकी हर इच्छा पूरी करता था। लेकिन क्या उसका लालच उसके लिए मुसीबत बन जाएगा? जानिए इस जादुई कहानी में। बच्चों के लिए सीख से भरी एक बेहद दिलचस्प और सुंदर कहानी।\n\nKahani Patang प्रस्तुत करता है जादुई कहानियों का अनूठा संसार, जहाँ हर कहानी देती है एक नई सीख। इस मज़ेदार वीडियो को अंत तक जरूर देखें और अपने दोस्तों के साथ शेयर करें।\n\n#JaaduiGhada #MoralStoriesHindi #KahaniPatang #KidsStories #MagicPotStory",
+     "tags": [
+      "जादुई घड़ा",
+      "Jaadui Ghada",
+      "Moral Stories Hindi",
+      "Kahani Patang",
+      "Panchatantra stories",
+      "Hindi kahaniya",
+      "Magic pot story",
+      "Kids animated stories",
+      "Jungle stories",
+      "Pari katha",
+      "Hindi bedtime stories",
+      "Greed moral story",
+      "Indian folktales",
+      "Animated moral stories",
+      "Kids learning stories",
+      "Magic stories in Hindi",
+      "Bacchon ki kahani",
+      "New Hindi stories"
+     ],
+     "hook": "जादुई घड़े का रहस्य",
+     "thumb_text": "जादुई घड़ा और लालच",
+     "thumb_visual": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, a poor woodcutter staring wide-eyed at a magical glowing earthen pot overflowing with gold coins in a dense green forest, extreme contrast, saturated, rim light, empty side for text, no text",
+     "characters": {
+      "Raman": "adult male woodcutter, round cheerful face, messy black hair, wearing a patched brown cotton shirt and dhoti",
+      "Pari": "magical fairy child, glowing face, shimmering golden hair, wearing a sparkling pink and white floral dress with tiny glowing wings"
+     },
+     "scenes": [
+      {
+       "s": "N",
+       "t": "घने जंगल के बीचों-बीच एक गरीब लकड़हारा रहता था... जिसका नाम रमन था।",
+       "m": "peaceful",
+       "st": "Calm and introductory tone",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, adult male woodcutter Raman with round cheerful face, messy black hair, wearing a patched brown cotton shirt and dhoti walking in a dense green forest with an axe on his shoulder, nobody looking at camera, no portrait, no close-up, no text",
+       "w": "Raman"
+      },
+      {
+       "s": "N",
+       "t": "रमन रोज़ लकड़ियाँ काटता और बाज़ार में बेचकर अपना छोटा सा पेट भरता था।",
+       "m": "peaceful",
+       "st": "Warm narration",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, adult male woodcutter Raman with round cheerful face, messy black hair, wearing a patched brown cotton shirt and dhoti chopping dry wood branches near a small bush, nobody looking at camera, no portrait, no close-up, no text",
+       "w": "Raman"
+      },
+      {
+       "s": "N",
+       "t": "एक दिन जब वह बहुत थक गया... तो एक पुराने बरगद के पेड़ के नीचे आराम करने बैठ गया।",
+       "m": "peaceful",
+       "st": "Soft and resting tone",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, adult male woodcutter Raman with round cheerful face, messy black hair, wearing a patched brown cotton shirt and dhoti wiping sweat under a huge ancient banyan tree, nobody looking at camera, no portrait, no close-up, no text",
+       "w": "Raman"
+      },
+      {
+       "s": "N",
+       "t": "तभी अचानक उसे ज़मीन के अंदर से एक अजीब सी चमकती हुई चीज़ दिखाई दी।",
+       "m": "suspense",
+       "st": "Curious and mysterious tone",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, adult male woodcutter Raman with round cheerful face, messy black hair, wearing a patched brown cotton shirt and dhoti digging soft soil with a small stick, looking surprised at a glowing object, nobody looking at camera, no portrait, no close-up, no text",
+       "w": "Raman"
+      },
+      {
+       "s": "N",
+       "t": "रमन ने जल्दी से मिट्टी हटाई और वहाँ से एक पुराना सा मिट्टी का घड़ा बाहर निकाला।",
+       "m": "suspense",
+       "st": "Excited tone",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, adult male woodcutter Raman with round cheerful face, messy black hair, wearing a patched brown cotton shirt and dhoti pulling out an old glowing earthen pot from the ground, nobody looking at camera, no portrait, no close-up, no text",
+       "w": "Raman"
+      },
+      {
+       "s": "N",
+       "t": "वह घड़ा साधारण नहीं था... बल्कि उससे सुनहरी रोशनी निकल रही थी।",
+       "m": "peaceful",
+       "st": "Magical tone",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, adult male woodcutter Raman with round cheerful face, messy black hair, wearing a patched brown cotton shirt and dhoti holding a glowing earthen pot emitting bright golden rays in the forest, nobody looking at camera, no portrait, no close-up, no text",
+       "w": "Raman"
+      },
+      {
+       "s": "N",
+       "t": "जैसे ही रमन ने घड़े को छुआ... उसमें से एक जादुई परी प्रकट हो गई।",
+       "m": "peaceful",
+       "st": "Awe-inspiring tone",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, magical fairy child Pari with glowing face, shimmering golden hair, wearing a sparkling pink and white floral dress with tiny glowing wings appearing from the pot in front of adult male woodcutter Raman with round cheerful face, messy black hair, wearing a patched brown cotton shirt and dhoti, nobody looking at camera, no portrait, no close-up, no text",
+       "w": "Raman"
+      },
+      {
+       "s": "N",
+       "t": "परी मुस्कुराई और बोली... हे रमन, मैं इस जादुई घड़े की रखवाली करती हूँ।",
+       "m": "peaceful",
+       "st": "Gentle fairy voice",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, magical fairy child Pari with glowing face, shimmering golden hair, wearing a sparkling pink and white floral dress with tiny glowing wings talking gracefully to adult male woodcutter Raman with round cheerful face, messy black hair, wearing a patched brown cotton shirt and dhoti, nobody looking at camera, no portrait, no close-up, no text",
+       "w": "Pari"
+      },
+      {
+       "s": "N",
+       "t": "यह घड़ा तुम्हारी हर एक इच्छा पूरी कर सकता है... लेकिन तुम्हें एक नियम मानना होगा।",
+       "m": "suspense",
+       "st": "Warning tone",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, magical fairy child Pari with glowing face, shimmering golden hair, wearing a sparkling pink and white floral dress with tiny glowing wings pointing a finger towards adult male woodcutter Raman with round cheerful face, messy black hair, wearing a patched brown cotton shirt and dhoti, nobody looking at camera, no portrait, no close-up, no text",
+       "w": "Pari"
+      },
+      {
+       "s": "N",
+       "t": "परी ने समझाया कि तुम इसमें से जो भी माँगोगे... वह दोगुना होकर मिलेगा।",
+       "m": "peaceful",
+       "st": "Excited tone",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, magical fairy child Pari with glowing face, shimmering golden hair, sparkling pink and white dress explaining things to adult male woodcutter Raman with round cheerful face, messy black hair, patched brown cotton shirt and dhoti, nobody looking at camera, no portrait, no close-up, no text",
+       "w": "Pari"
+      },
+      {
+       "s": "N",
+       "t": "लेकिन याद रखना... लालच मत करना, वरना यह घड़ा हमेशा के लिए गायब हो जाएगा।",
+       "m": "suspense",
+       "st": "Cautious tone",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, magical fairy child Pari with glowing face, shimmering golden hair, sparkling pink and white dress giving a warning gesture to adult male woodcutter Raman with round cheerful face, messy black hair, patched brown cotton shirt and dhoti, nobody looking at camera, no portrait, no close-up, no text",
+       "w": "Pari"
+      },
+      {
+       "s": "N",
+       "t": "इतना कहकर परी हवा में गायब हो गई... और पीछे छोड़ गई वह जादुई घड़ा।",
+       "m": "peaceful",
+       "st": "Magical transition",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, adult male woodcutter Raman with round cheerful face, messy black hair, wearing a patched brown cotton shirt and dhoti holding the magical glowing pot alone under the banyan tree as glowing sparkles fade, nobody looking at camera, no portrait, no close-up, no text",
+       "w": "Raman"
+      },
+      {
+       "s": "N",
+       "t": "रमन खुशी से झूम उठा... और उसने घड़े में अपनी एक पुरानी रोटी डाली।",
+       "m": "victory",
+       "st": "Happy tone",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, adult male woodcutter Raman with round cheerful face, messy black hair, wearing a patched brown cotton shirt and dhoti dropping a piece of dry flatbread into the magical glowing earthen pot, nobody looking at camera, no portrait, no close-up, no text",
+       "w": "Raman"
+      },
+      {
+       "s": "N",
+       "t": "अरे वाह! एक पल में ही वहाँ दो ताज़ा और स्वादिष्ट रोटियाँ बाहर आ गईं।",
+       "m": "victory",
+       "st": "Amazed tone",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, adult male woodcutter Raman with round cheerful face, messy black hair, wearing a patched brown cotton shirt and dhoti looking joyfully at two fresh warm flatbreads coming out of the magical glowing earthen pot, nobody looking at camera, no portrait, no close-up, no text",
+       "w": "Raman"
+      },
+      {
+       "s": "N",
+       "t": "खुश होकर रमन ने एक सोने का सिक्का घड़े में डाला... और तुरंत दो सिक्के बन गए।",
+       "m": "victory",
+       "st": "Excited tone",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, adult male woodcutter Raman with round cheerful face, messy black hair, wearing a patched brown cotton shirt and dhoti dropping a gold coin and seeing two gold coins pop out of the magical glowing earthen pot, nobody looking at camera, no portrait, no close-up, no text",
+       "w": "Raman"
+      },
+      {
+       "s": "N",
+       "t": "देखते ही देखते रमन के पास बहुत सारा सोना इकट्ठा हो गया।",
+       "m": "victory",
+       "st": "Upbeat tone",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, adult male woodcutter Raman with round cheerful face, messy black hair, wearing a patched brown cotton shirt and dhoti surrounded by shining piles of gold coins near the magical glowing earthen pot, nobody looking at camera, no portrait, no close-up, no text",
+       "w": "Raman"
+      },
+      {
+       "s": "N",
+       "t": "लेकिन कहते हैं न... इंसान का लालच कभी खत्म नहीं होता।",
+       "m": "suspense",
+       "st": "Serious warning tone",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, adult male woodcutter Raman with round cheerful face, messy black hair, wearing a patched brown cotton shirt and dhoti looking greedily with wide eyes at the magical glowing earthen pot, nobody looking at camera, no portrait, no close-up, no text",
+       "w": "Raman"
+      },
+      {
+       "s": "N",
+       "t": "रमन ने सोचा... क्यों न मैं इस घड़े में अपना पूरा का पूरा घर ही डाल दूँ?",
+       "m": "suspense",
+       "st": "Greedy and foolish tone",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, adult male woodcutter Raman with round cheerful face, messy black hair, wearing a patched brown cotton shirt and dhoti trying to push a wooden stool into the magical glowing earthen pot, nobody looking at camera, no portrait, no close-up, no text",
+       "w": "Raman"
+      },
+      {
+       "s": "N",
+       "t": "जैसे ही रमन ने लालच में आकर बड़ी चीज़ घड़े में डालने की कोशिश की...",
+       "m": "suspense",
+       "st": "Tense tone",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, adult male woodcutter Raman with round cheerful face, messy black hair, wearing a patched brown cotton shirt and dhoti struggling as the magical glowing earthen pot starts shaking violently with red sparks, nobody looking at camera, no portrait, no close-up, no text",
+       "w": "Raman"
+      },
+      {
+       "s": "N",
+       "t": "घड़ा तेज़ी से हिलने लगा... और एक तेज़ रोशनी के साथ चकनाचूर हो गया।",
+       "m": "chase",
+       "st": "Dramatic tone",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, adult male woodcutter Raman with round cheerful face, messy black hair, wearing a patched brown cotton shirt and dhoti stepping back in shock as the magical glowing earthen pot breaks into pieces with a flash of light, nobody looking at camera, no portrait, no close-up, no text",
+       "w": "Raman"
+      },
+      {
+       "s": "N",
+       "t": "सारा सोना और जादुई घड़ा हवा में विलीन हो गया... और रमन देखता रह गया।",
+       "m": "sad",
+       "st": "Regretful tone",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, adult male woodcutter Raman with round cheerful face, messy black hair, wearing a patched brown cotton shirt and dhoti sitting sadly on the ground with empty hands near broken pieces of clay, nobody looking at camera, no portrait, no close-up, no text",
+       "w": "Raman"
+      },
+      {
+       "s": "N",
+       "t": "रमन को अपनी गलती का अहसास हुआ... कि लालच का फल हमेशा बुरा होता है।",
+       "m": "sad",
+       "st": "Reflective tone",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, adult male woodcutter Raman with round cheerful face, messy black hair, wearing a patched brown cotton shirt and dhoti looking down with a sad and regretful expression in the forest, nobody looking at camera, no portrait, no close-up, no text",
+       "w": "Raman"
+      },
+      {
+       "s": "N",
+       "t": "बच्चों, इस कहानी से हमें यह सीख मिलती है कि हमें कभी भी लालच नहीं करना चाहिए।",
+       "m": "peaceful",
+       "st": "Warm moral tone",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, adult male woodcutter Raman with round cheerful face, messy black hair, wearing a patched brown cotton shirt and dhoti smiling softly and walking back with his axe in the green forest, nobody looking at camera, no portrait, no close-up, no text",
+       "w": "Raman"
+      },
+      {
+       "s": "N",
+       "t": "जितना हमारे पास है... हमें उसी में खुश रहना चाहिए।",
+       "m": "peaceful",
+       "st": "Happy concluding tone",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, adult male woodcutter Raman with round cheerful face, messy black hair, wearing a patched brown cotton shirt and dhoti walking home happily under the golden sunset light, nobody looking at camera, no portrait, no close-up, no text",
+       "w": "Raman"
+      }
+     ]
+    }
+   },
+   {
+    "id": "kahani_l_bank03_1104",
+    "script": {
+     "title": "जादुई घुंघरू और नटखट खरगोश का राज | Kahani Patang",
+     "topic": "An energetic young rabbit finds magical ghungroos that force everyone to dance, teaching him a sweet lesson about timing and consideration.",
+     "category": "Jungle Moral Story",
+     "description": "एक सुंदर जंगल में नटखट खरगोश टिक्कू को मिलते हैं कुछ जादुई घुंघरू। जब भी वह उन्हें बजाता है, पूरा जंगल झूमने लगता है। क्या टिक्कू समझ पाएगा सबका सुख?\n\nयह कहानी बच्चों को सिखाती है कि हमारी हर खूबी दूसरों के लिए खुशी होनी चाहिए, परेशानी नहीं।\n\n#KahaniPatang #HindiMoralStories #JungleStories #KidsAnimation #MagicalGhungroo",
+     "tags": [
+      "Kahani Patang",
+      "hindi moral stories",
+      "jungle stories for kids",
+      "magical ghungroo story",
+      "panchatantra inspired",
+      "rabbit story in hindi",
+      "kids animated stories",
+      "bedtime stories hindi",
+      "naughty rabbit hindi",
+      "indian fairy tales",
+      "moral stories for children",
+      "jaadui kahani",
+      "kahaniya",
+      "bacho ki kahani",
+      "cartoon stories hindi",
+      "forest animals story",
+      "cute rabbit cartoon",
+      "hindi stories with moral"
+     ],
+     "hook": "जादुई नाच और मज़ा!",
+     "thumb_text": "नाचो सारे जंगल!",
+     "thumb_visual": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, a fluffy cute rabbit jumping in joy while golden magical ghungroos glow on his feet, animals in the background dancing with funny expressions, extreme contrast, saturated, rim light, empty side for text, no text",
+     "characters": {
+      "Tikku": "Age 6 years equivalent rabbit, round cute face with twitching pink nose, long floppy white ears with pink inside, wearing a small sky-blue waistcoat over white fur",
+      "Bholu": "Age 10 years equivalent bear, chubby round face, gentle black eyes, fluffy brown fur, wearing a yellow checkered scarf around his neck",
+      "Chinki": "Age 5 years equivalent squirrel, bright curious eyes, bushy grey-brown tail, wearing a tiny red bow on her head"
+     },
+     "scenes": [
+      {
+       "s": "N",
+       "t": "एक सुहाना जंगल था जहाँ नटखट खरगोश टिक्कू हमेशा कोई न कोई शरारत करने की फिराक में रहता था...",
+       "m": "peaceful",
+       "st": "cheerful and engaging",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, Age 6 years equivalent rabbit, round cute face with twitching pink nose, long floppy white ears with pink inside, wearing a small sky-blue waistcoat over white fur, hopping near colourful bushes in a sunny green jungle, nobody looking at camera, no portrait, no close-up, no text",
+       "w": "Tikku"
+      },
+      {
+       "s": "N",
+       "t": "एक दिन टिक्कू को जादुई पेड़ के नीचे चमकीले सुनहरे घुंघरू मिले जो खुद-ब-खुद बज रहे थे...",
+       "m": "suspense",
+       "st": "mysterious tone",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, Age 6 years equivalent rabbit, round cute face with twitching pink nose, long floppy white ears with pink inside, wearing a small sky-blue waistcoat over white fur, discovering sparkling golden ghungroos under a glowing magical tree, nobody looking at camera, no portrait, no close-up, no text",
+       "w": "Tikku"
+      },
+      {
+       "s": "N",
+       "t": "बिना सोचे-समझे टिक्कू ने वे घुंघरू अपने पैरों में बांध लिए और खुशी से कूदने लगा...",
+       "m": "peaceful",
+       "st": "excited and playful",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, Age 6 years equivalent rabbit, round cute face with twitching pink nose, long floppy white ears with pink inside, wearing a small sky-blue waistcoat over white fur, happily tying bright golden ghungroos onto his paws, nobody looking at camera, no portrait, no close-up, no text",
+       "w": "Tikku"
+      },
+      {
+       "s": "N",
+       "t": "छनन-छनन की आवाज़ होते ही एक कमाल हुआ और टिक्कू हवा में झूमता हुआ ऊपर उठ गया...",
+       "m": "victory",
+       "st": "magical and uplifting",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, Age 6 years equivalent rabbit, round cute face with twitching pink nose, long floppy white ears with pink inside, wearing a small sky-blue waistcoat over white fur, floating slightly in the air while shiny golden ghungroos emit sparkling musical notes, nobody looking at camera, no portrait, no close-up, no text",
+       "w": "Tikku"
+      },
+      {
+       "s": "N",
+       "t": "अरे वाह! इन घुंघरूओं में तो सचमुच जादुई मस्ती है... टिक्कू खुशी से चीख उठा।",
+       "m": "victory",
+       "st": "joyful exclamation",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, Age 6 years equivalent rabbit, round cute face with twitching pink nose, long floppy white ears with pink inside, wearing a small sky-blue waistcoat over white fur, laughing happily with paws in the air beside glowing musical waves, nobody looking at camera, no portrait, no close-up, no text",
+       "w": "Tikku"
+      },
+      {
+       "s": "N",
+       "t": "जैसे ही वह रास्ते से गुजरा, भोलू भालू शहद खाते-खाते अचानक अजीब से नाचने लगा...",
+       "m": "chase",
+       "st": "funny and fast",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, Age 10 years equivalent bear, chubby round face, gentle black eyes, fluffy brown fur, wearing a yellow checkered scarf around his neck, clumsily dancing while holding a honey pot as tiny rabbit Tikku runs past, nobody looking at camera, no portrait, no close-up, no text",
+       "w": "Bholu"
+      },
+      {
+       "s": "N",
+       "t": "अरे अरे मेरा शहद गिर रहा है... भोलू नाचते-नाचते चिल्लाया लेकिन उसके पैर नहीं रुक रहे थे।",
+       "m": "chase",
+       "st": "panicky and funny",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, Age 10 years equivalent bear, chubby round face, gentle black eyes, fluffy brown fur, wearing a yellow checkered scarf around his neck, balancing a tilted honey pot with a funny worried expression while his feet tap dance involuntarily, nobody looking at camera, no portrait, no close-up, no text",
+       "w": "Bholu"
+      },
+      {
+       "s": "N",
+       "t": "यह देखकर टिक्कू जोर से हंसा और आगे की ओर कूद पड़ा...",
+       "m": "peaceful",
+       "st": "michevious chuckle",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, Age 6 years equivalent rabbit, round cute face with twitching pink nose, long floppy white ears with pink inside, wearing a small sky-blue waistcoat over white fur, giggling mischievously while hopping away down a forest trail, nobody looking at camera, no portrait, no close-up, no text",
+       "w": "Tikku"
+      },
+      {
+       "s": "N",
+       "t": "अब जो भी जानवर टिक्कू के पास आता, वह बिना अपनी मर्जी के नाचने पर मजबूर हो जाता...",
+       "m": "chase",
+       "st": "busy and chaotic",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, Age 5 years equivalent squirrel, bright curious eyes, bushy grey-brown tail, wearing a tiny red bow on her head, spinning around a tree trunk in a funny dance while carrying nuts, nobody looking at camera, no portrait, no close-up, no text",
+       "w": "Chinki"
+      },
+      {
+       "s": "N",
+       "t": "चिंकी गिलहरी नट्स इकट्ठा कर रही थी पर घुंघरू की आवाज़ से वह भी गोल-गोल घूमने लगी...",
+       "m": "chase",
+       "st": "playful annoyance",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, Age 5 years equivalent squirrel, bright curious eyes, bushy grey-brown tail, wearing a tiny red bow on her head, dropping scattered nuts on the ground while twirling in a dizzy dance, nobody looking at camera, no portrait, no close-up, no text",
+       "w": "Chinki"
+      },
+      {
+       "s": "N",
+       "t": "पूरा जंगल एक बड़े डांस फ्लोर की तरह हिलने लगा, और सब जानवर थककर परेशान हो गए...",
+       "m": "sad",
+       "st": "tired and weary",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, Age 10 years equivalent bear, chubby round face, gentle black eyes, fluffy brown fur, wearing a yellow checkered scarf around his neck, sitting down and wiping sweat from his forehead with a tired expression, nobody looking at camera, no portrait, no close-up, no text",
+       "w": "Bholu"
+      },
+      {
+       "s": "N",
+       "t": "टिक्कू भैया... कृपया थोड़ा धीरे चलो, हमें आराम करना है... चिंकी ने थककर विनती की।",
+       "m": "sad",
+       "st": "pleading and soft",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, Age 5 years equivalent squirrel, bright curious eyes, bushy grey-brown tail, wearing a tiny red bow on her head, looking up with pleading eyes and folded paws, nobody looking at camera, no portrait, no close-up, no text",
+       "w": "Chinki"
+      },
+      {
+       "s": "N",
+       "t": "लेकिन टिक्कू को तो दूसरों को नचाने में बहुत मज़ा आ रहा था, उसने किसी की बात नहीं सुनी...",
+       "m": "suspense",
+       "st": "stubborn and playful",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, Age 6 years equivalent rabbit, round cute face with twitching pink nose, long floppy white ears with pink inside, wearing a small sky-blue waistcoat over white fur, playfully covering his ears with a grin and hopping faster, nobody looking at camera, no portrait, no close-up, no text",
+       "w": "Tikku"
+      },
+      {
+       "s": "N",
+       "t": "अचानक घुंघरूओं की चमक धीमी पड़ने लगी और एक अजीब सी खामोशी छा गई...",
+       "m": "suspense",
+       "st": "mysterious warning",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, Age 6 years equivalent rabbit, round cute face with twitching pink nose, long floppy white ears with pink inside, wearing a small sky-blue waistcoat over white fur, stopping abruptly as the golden glow on his feet starts fading into a dull grey, nobody looking at camera, no portrait, no close-up, no text",
+       "w": "Tikku"
+      },
+      {
+       "s": "N",
+       "t": "घुंघरूओं की आवाज़ अचानक भारी हो गई और टिक्कू के पैर ज़मीन से चिपकने लगे...",
+       "m": "suspense",
+       "st": "tense tone",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, Age 6 years equivalent rabbit, round cute face with twitching pink nose, long floppy white ears with pink inside, wearing a small sky-blue waistcoat over white fur, struggling to lift his heavy paws off the grass, nobody looking at camera, no portrait, no close-up, no text",
+       "w": "Tikku"
+      },
+      {
+       "s": "N",
+       "t": "अरे बाप रे! मेरे पैर हिल क्यों नहीं रहे हैं... टिक्कू डरकर कांपने लगा।",
+       "m": "sad",
+       "st": "fearful and worried",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, Age 6 years equivalent rabbit, round cute face with twitching pink nose, long floppy white ears with pink inside, wearing a small sky-blue waistcoat over white fur, looking down at his stuck feet with wide frightened eyes, nobody looking at camera, no portrait, no close-up, no text",
+       "w": "Tikku"
+      },
+      {
+       "s": "N",
+       "t": "जादुई घुंघरूओं की आवाज़ गूंजी— जो दूसरों की परेशानी पर हंसेगा, उसका जादू उसी पर भारी पड़ेगा!",
+       "m": "suspense",
+       "st": "magical echoing voice",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, glowing magical letters floating in the air above the forest floor, casting a soft golden light on surrounding trees, nobody looking at camera, no portrait, no close-up, no text",
+       "w": ""
+      },
+      {
+       "s": "N",
+       "t": "यह सुनकर टिक्कू को अपनी गलती का अहसास हुआ और उसकी आँखें भर आईं...",
+       "m": "sad",
+       "st": "regretful and emotional",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, Age 6 years equivalent rabbit, round cute face with twitching pink nose, long floppy white ears with pink inside, wearing a small sky-blue waistcoat over white fur, standing with drooping ears and tearful eyes filled with regret, nobody looking at camera, no portrait, no close-up, no text",
+       "w": "Tikku"
+      },
+      {
+       "s": "N",
+       "t": "मुझे माफ कर दो दोस्तों... मैंने अपनी मस्ती के चक्कर में आप सबको बहुत परेशान किया...",
+       "m": "sad",
+       "st": "apologetic and soft",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, Age 6 years equivalent rabbit, round cute face with twitching pink nose, long floppy white ears with pink inside, wearing a small sky-blue waistcoat over white fur, bowing his head apologetically towards other animals, nobody looking at camera, no portrait, no close-up, no text",
+       "w": "Tikku"
+      },
+      {
+       "s": "N",
+       "t": "भोलू और चिंकी तुरंत टिक्कू के पास आए और प्यार से उसकी पीठ थपथपाई...",
+       "m": "peaceful",
+       "st": "warm and comforting",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, Age 10 years equivalent bear, chubby round face, gentle black eyes, fluffy brown fur, wearing a yellow checkered scarf around his neck, patting the sad rabbit gently on the shoulder with a forgiving smile, nobody looking at camera, no portrait, no close-up, no text",
+       "w": "Bholu"
+      },
+      {
+       "s": "N",
+       "t": "कोई बात नहीं टिक्कू, गलती का अहसास होना ही सबसे बड़ी समझदारी है...",
+       "m": "peaceful",
+       "st": "kind and reassuring",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, Age 5 years equivalent squirrel, bright curious eyes, bushy grey-brown tail, wearing a tiny red bow on her head, smiling warmly while handing a fresh acorn to Tikku, nobody looking at camera, no portrait, no close-up, no text",
+       "w": "Chinki"
+      },
+      {
+       "s": "N",
+       "t": "जैसे ही टिक्कू ने सच्चे दिल से माफी मांगी, घुंघरू अपने आप उसके पैरों से उतरकर चमकते हुए गायब हो गए...",
+       "m": "victory",
+       "st": "magical release",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, Age 6 years equivalent rabbit, round cute face with twitching pink nose, long floppy white ears with pink inside, wearing a small sky-blue waistcoat over white fur, watching the golden ghungroos float up and vanish into sparkling dust, nobody looking at camera, no portrait, no close-up, no text",
+       "w": "Tikku"
+      },
+      {
+       "s": "N",
+       "t": "टिक्कू के पैर फिर से हल्के हो गए और वह खुशी से कूद पड़ा पर इस बार बिना किसी शरारत के।",
+       "m": "victory",
+       "st": "happy conclusion",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, Age 6 years equivalent rabbit, round cute face with twitching pink nose, long floppy white ears with pink inside, wearing a small sky-blue waistcoat over white fur, leaping joyfully in a peaceful meadow surrounded by smiling animal friends, nobody looking at camera, no portrait, no close-up, no text",
+       "w": "Tikku"
+      },
+      {
+       "s": "N",
+       "t": "शिक्षा— असली मज़ा तब है जब हमारी खुशी से सबको आनंद मिले, किसी को परेशानी नहीं।",
+       "m": "peaceful",
+       "st": "wise moral delivery",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, all jungle animals including Tikku, Bholu and Chinki sitting together happily under a blooming tree as golden sunset light shines on them, nobody looking at camera, no portrait, no close-up, no text",
+       "w": ""
+      }
+     ]
+    }
+   },
+   {
+    "id": "kahani_l_bank04_1104",
+    "script": {
+     "title": "जादुई कछुआ और सोने का तालाब | Kahani Patang",
+     "topic": "लोभ का फल और संतुष्टि का पाठ",
+     "category": "Panchatantra-like Moral Story",
+     "description": "एक सुंदर जंगल में चमकीले पानी का एक जादुई तालाब था, जहाँ एक बूढ़ा और समझदार कछुआ रहता था। उस तालाब के पास एक लालची लोमड़ी आई, जिसे देखते ही सब कुछ सोने का बना देने की इच्छा हुई। लोभ के चक्कर में उसकी सारी इच्छाएं उल्टी पड़ गईं और उसे एक बहुत ही महत्वपूर्ण सीख मिली।\n\nयह कहानी बच्चों को सिखाती है कि लालच बुरी बला है और संतोष ही सबसे बड़ा धन है। हमें भगवान द्वारा दी गई चीजों में खुश रहना चाहिए और कभी भी दूसरों की देखा-देखी अधिक पाने की लालसा नहीं करनी चाहिए।\n\nकहानी पसंद आए तो 'Kahani Patang' को लाइक और सब्सक्राइब जरूर करें!\n\n#KahaniPatang #HindiMoralStories #PanchatantraTales #KidsAnimation #MagicPond",
+     "tags": [
+      "Kahani Patang",
+      "hindi moral stories",
+      "Panchatantra stories",
+      "magic stories for kids",
+      "जादुई कहानी",
+      "children moral stories",
+      "jungle ki kahani",
+      "moral stories in hindi",
+      "lochi lomdi aur kachhua",
+      "hindi fairy tales",
+      "bedtime stories hindi",
+      "kids cartoon hindi",
+      "panchatantra in hindi",
+      "desi kahani kids",
+      "animal stories hindi",
+      "hindi kahaniyan",
+      "magic pond story",
+      "santosham supreme wealth"
+     ],
+     "hook": "सोने का तालाब!",
+     "thumb_text": "सोने का तालाब!",
+     "thumb_visual": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, a cunning fox staring wide-eyed at a glowing golden water pond with shimmering ripples, vibrant green jungle background, bright sunny day, high contrast, rim light, empty side for text, no text",
+     "characters": {
+      "kachhua": "Age 70, wise and gentle face, smooth wrinkled green shell, tiny friendly eyes, no hair, wearing a tiny red cotton scarf tied around his neck",
+      "lomdi": "Age 5, sly and sharp face, pointy ears, bushy bright orange tail, wearing a small blue vest with yellow flower prints"
+     },
+     "scenes": [
+      {
+       "s": "N",
+       "t": "एक घने और सुंदर जंगल के बीचों-बीच, एक ऐसा जादुई तालाब था जिसका पानी किसी शीशे की तरह चमकता था...",
+       "m": "peaceful",
+       "st": "soothing voice, setting the magical atmosphere",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, a serene glowing magical water pond in the middle of a lush green jungle, tall vibrant trees, soft morning sunlight, no characters, no text",
+       "w": ""
+      },
+      {
+       "s": "N",
+       "t": "इस जादुई तालाब की रखवाली कोई और नहीं, बल्कि बहुत ही समझदार और बूढ़ा कछुआ करता था...",
+       "m": "peaceful",
+       "st": "introducing the wise turtle warmly",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, kachhua (Age 70, wise and gentle face, smooth wrinkled green shell, tiny friendly eyes, no hair, wearing a tiny red cotton scarf tied around his neck) sitting calmly near the glowing pond, gentle ripples in water, no text",
+       "w": "kachhua"
+      },
+      {
+       "s": "N",
+       "t": "तालाब की यह विशेषता थी कि इसमें जो भी चीज गिरती, वह तुरंत सोने की बन जाती थी...",
+       "m": "suspense",
+       "st": "mysterious tone, building curiosity",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, a glowing magical water pond with a shiny golden pebble lying at the bottom, sparkling golden light reflections on the water surface, lush green ferns around, no text",
+       "w": ""
+      },
+      {
+       "s": "N",
+       "t": "लेकिन कछुआ इस बात को अच्छी तरह जानता था कि यह जादू केवल तालाब की रक्षा के लिए है, लालच के लिए नहीं...",
+       "m": "peaceful",
+       "st": "wise and cautionary tone",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, kachhua (Age 70, wise and gentle face, smooth wrinkled green shell, tiny friendly eyes, no hair, wearing a tiny red cotton scarf tied around his neck) looking thoughtfully at the sparkling golden water, peaceful jungle background, no text",
+       "w": "kachhua"
+      },
+      {
+       "s": "N",
+       "t": "एक दिन उस चालाक और लालची लोमड़ी की नजर उस जादुई तालाब पर पड़ गई...",
+       "m": "suspense",
+       "st": "sneaky tone",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, lomdi (Age 5, sly and sharp face, pointy ears, bushy bright orange tail, wearing a small blue vest with yellow flower prints) peeking from behind a thick green bush, staring greedily at the distant glowing pond, no text",
+       "w": "lomdi"
+      },
+      {
+       "s": "N",
+       "t": "लोमड़ी ने जब पानी में एक सूखे पत्ते को सोने का बनते देखा, तो उसकी आंखें खुशी से चौंक गईं...",
+       "m": "suspense",
+       "st": "excited and greedy tone",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, lomdi (Age 5, sly and sharp face, pointy ears, bushy bright orange tail, wearing a small blue vest with yellow flower prints) with wide greedy eyes, watching a golden leaf float on the glowing pond, no text",
+       "w": "lomdi"
+      },
+      {
+       "s": "N",
+       "t": "अरे वाह! यह तालाब तो किसी जादुई खजाने से भी बढ़कर है...",
+       "m": "suspense",
+       "st": "whispering greedily",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, lomdi (Age 5, sly and sharp face, pointy ears, bushy bright orange tail, wearing a small blue vest with yellow flower prints) rubbing her paws together excitedly near the sparkling pond edge, no text",
+       "w": "lomdi"
+      },
+      {
+       "s": "N",
+       "t": "लोमड़ी दौड़ती हुई तालाब के पास पहुँची और कछुए से बोली कि मुझे भी इस तालाब से बहुत सारा सोना चाहिए...",
+       "m": "suspense",
+       "st": "demanding tone",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, lomdi (Age 5, sly and sharp face, pointy ears, bushy bright orange tail, wearing a small blue vest with yellow flower prints) standing aggressively in front of kachhua (Age 70, wise and gentle face, smooth wrinkled green shell, tiny friendly eyes, no hair, wearing a tiny red cotton scarf tied around his neck), glowing pond in background, no text",
+       "w": "lomdi"
+      },
+      {
+       "s": "N",
+       "t": "बुद्धिमानी से कछुए ने उसे समझाया कि बेटी... लालच बुरी बला है, जो मिलता है उसी में खुश रहो...",
+       "m": "peaceful",
+       "st": "calm and advisory tone",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, kachhua (Age 70, wise and gentle face, smooth wrinkled green shell, tiny friendly eyes, no hair, wearing a tiny red cotton scarf tied around his neck) speaking gently with a raised flipper towards lomdi (Age 5, sly and sharp face, pointy ears, bushy bright orange tail, wearing a small blue vest with yellow flower prints), no text",
+       "w": "kachhua"
+      },
+      {
+       "s": "N",
+       "t": "लेकिन लालच में अंधी हो चुकी लोमड़ी ने कछुए की एक बात नहीं सुनी और अपना पैर सीधे पानी में डाल दिया...",
+       "m": "suspense",
+       "st": "fast-paced warning tone",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, lomdi (Age 5, sly and sharp face, pointy ears, bushy bright orange tail, wearing a small blue vest with yellow flower prints) dipping her front paw directly into the glowing magical water of the pond, kachhua (Age 70, wise and gentle face, smooth wrinkled green shell, tiny friendly eyes, no hair, wearing a tiny red cotton scarf tied around his neck) watching in shock, no text",
+       "w": "lomdi"
+      },
+      {
+       "s": "N",
+       "t": "अगले ही पल, जादू का असर हुआ और लोमड़ी का पूरा पैर सोने का बन गया...",
+       "m": "suspense",
+       "st": "dramatic tone",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, lomdi (Age 5, sly and sharp face, pointy ears, bushy bright orange tail, wearing a small blue vest with yellow flower prints) staring in absolute shock at her front leg turned into shining solid gold, bright magical spark particles around, no text",
+       "w": "lomdi"
+      },
+      {
+       "s": "N",
+       "t": "अरे बाप रे! मेरा पैर तो भारी और पत्थर जैसा सख्त हो गया है...",
+       "m": "sad",
+       "st": "panicked and scared voice",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, lomdi (Age 5, sly and sharp face, pointy ears, bushy bright orange tail, wearing a small blue vest with yellow flower prints) holding her golden front leg with her other paw, panic expression on face, pond glowing in background, no text",
+       "w": "lomdi"
+      },
+      {
+       "s": "N",
+       "t": "लोमड़ी डर के मारे कांपने लगी और कछुए से मदद की गुहार लगाने लगी...",
+       "m": "sad",
+       "st": "pleading tone",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, lomdi (Age 5, sly and sharp face, pointy ears, bushy bright orange tail, wearing a small blue vest with yellow flower prints) sitting on the ground with folded paws pleading to kachhua (Age 70, wise and gentle face, smooth wrinkled green shell, tiny friendly eyes, no hair, wearing a tiny red cotton scarf tied around his neck), no text",
+       "w": "lomdi"
+      },
+      {
+       "s": "N",
+       "t": "कछुए का दिल दयालु था, उसने कहा कि अपनी गलती स्वीकार करो और तालाब से माफी मांगो...",
+       "m": "peaceful",
+       "st": "kind and forgiving tone",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, kachhua (Age 70, wise and gentle face, smooth wrinkled green shell, tiny friendly eyes, no hair, wearing a tiny red cotton scarf tied around his neck) looking compassionately at lomdi (Age 5, sly and sharp face, pointy ears, bushy bright orange tail, wearing a small blue vest with yellow flower prints), gentle lighting, no text",
+       "w": "kachhua"
+      },
+      {
+       "s": "N",
+       "t": "लोमड़ी ने झट से अपनी गलती मानी और तालाब के सामने हाथ जोड़कर माफी मांगने लगी...",
+       "m": "peaceful",
+       "st": "regretful tone",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, lomdi (Age 5, sly and sharp face, pointy ears, bushy bright orange tail, wearing a small blue vest with yellow flower prints) bowing down apologetically with joined paws near the sparkling edge of the magical pond, no text",
+       "w": "lomdi"
+      },
+      {
+       "s": "N",
+       "t": "लोमड़ी का सच्चा पश्चाताप देखकर जादुई तालाब ने अपना असर वापस ले लिया...",
+       "m": "victory",
+       "st": "magical uplifting tone",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, the magical pond emitting a warm soothing blue and white glow, soft sparkling fairy dust rising from the water, no characters, no text",
+       "w": ""
+      },
+      {
+       "s": "N",
+       "t": "चमत्कार हुआ! लोमड़ी का सोने का पैर वापस पहले जैसा सामान्य और हल्का हो गया...",
+       "m": "victory",
+       "st": "relieved and happy tone",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, lomdi (Age 5, sly and sharp face, pointy ears, bushy bright orange tail, wearing a small blue vest with yellow flower prints) jumping with joy as her golden leg turns back to normal, kachhua smiling in background, no text",
+       "w": "lomdi"
+      },
+      {
+       "s": "N",
+       "t": "लोमड़ी खुशी से नाच उठी और उसने कछुए को धन्यवाद दिया...",
+       "m": "victory",
+       "st": "joyful tone",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, lomdi (Age 5, sly and sharp face, pointy ears, bushy bright orange tail, wearing a small blue vest with yellow flower prints) happily dancing around kachhua (Age 70, wise and gentle face, smooth wrinkled green shell, tiny friendly eyes, no hair, wearing a tiny red cotton scarf tied around his neck), bright jungle background, no text",
+       "w": "lomdi"
+      },
+      {
+       "s": "N",
+       "t": "कछुए ने मुस्कुराते हुए कहा कि लालच का फल हमेशा बुरा होता है, मेहनत से कमाया हुआ ही सच्चा धन है...",
+       "m": "peaceful",
+       "st": "wise teaching tone",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, kachhua (Age 70, wise and gentle face, smooth wrinkled green shell, tiny friendly eyes, no hair, wearing a tiny red cotton scarf tied around his neck) smiling wisely while lomdi (Age 5, sly and sharp face, pointy ears, bushy bright orange tail, wearing a small blue vest with yellow flower prints) nods her head in agreement, no text",
+       "w": "kachhua"
+      },
+      {
+       "s": "N",
+       "t": "लोमड़ी ने उस दिन के बाद कभी भी लालच न करने की कसम खाई और खुशी-खुशी जंगल में रहने लगी...",
+       "m": "peaceful",
+       "st": "happy ending tone",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, lomdi (Age 5, sly and sharp face, pointy ears, bushy bright orange tail, wearing a small blue vest with yellow flower prints) walking happily and peacefully down a sunny jungle path, green trees and flowers all around, no text",
+       "w": "lomdi"
+      },
+      {
+       "s": "N",
+       "t": "तो प्यारे बच्चों... इस कहानी से हमें यह शिक्षा मिलती है कि हमें कभी भी लालच नहीं करना चाहिए...",
+       "m": "peaceful",
+       "st": "moral delivery tone",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, a group of cute little forest animals sitting together happily under a large shady tree, peaceful and warm atmosphere, no text",
+       "w": ""
+      },
+      {
+       "s": "N",
+       "t": "जो हमारे पास है, उसी में संतुष्ट रहना चाहिए क्योंकि संतोष ही सबसे बड़ा धन है...",
+       "m": "peaceful",
+       "st": "warm and loving closing tone",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, the wise kachhua and happy jungle animals smiling together near the glowing pond under a golden sunset sky, storybook aesthetic, no text",
+       "w": ""
+      }
+     ]
+    }
+   },
+   {
+    "id": "kahani_l_bank05_1104",
+    "script": {
+     "title": "जादुई जामुन का मीठा रहस्य | Kahani Patang",
+     "topic": "एक जादुई जामुन का पेड़ जो दूसरों की मदद करने पर मीठे फल देता था",
+     "category": "Magic Jungle Story",
+     "description": "एक सुंदर जंगल में एक जादुई जामुन का पेड़ था, जिसके फल खाने वाले की हर अच्छी इच्छा पूरी होती थी। लेकिन क्या हो जब एक लालची बंदर सारे फल अकेले ही खाना चाहे? जानिए इस जादुई कहानी में!\n\nयह कहानी बच्चों को बांटने की भावना और दूसरों की मदद करने का अनमोल पाठ पढ़ाती है। बच्चों को यह जादुई और रंगीन सफर बहुत पसंद आएगा।\n\n#KahaniPatang #HindiStories #JaduiKahani #MoralStories #KidsAnimation",
+     "tags": [
+      "Kahani Patang",
+      "Hindi Stories for Kids",
+      "Jadui Kahani",
+      "Moral Stories in Hindi",
+      "Panchatantra Style",
+      "Magic Tree Story",
+      "Jungle Tales",
+      "Bedtime Stories Hindi",
+      "Animated Hindi Stories",
+      "Kids Moral Stories",
+      "Jaamun Tree Story",
+      "Greed is Bad Story",
+      "Kindness Story Hindi",
+      "Magical Jungle",
+      "Cute Animal Stories",
+      "Hindi Kahaniyan",
+      "Indian Animation",
+      "Kids Learning"
+     ],
+     "hook": "मीठे जादुई फल",
+     "thumb_text": "जादुई जामुन का पेड़!",
+     "thumb_visual": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, a giant glowing purple jamun tree in a magical jungle, a cute squirrel looking up in amazement with wide eyes, extreme contrast, saturated, rim light, empty side for text, no text",
+     "characters": {
+      "Chiku": {
+       "age": "young",
+       "face": "round cheerful face with big curious black eyes",
+       "hair": "short brown fur with a playful tuft on top",
+       "clothes": "a small red leaf vest tied with a vine"
+      },
+      "Bholu": {
+       "age": "young",
+       "face": "chubby round face with a mischievous smile",
+       "hair": "thick golden-brown fur with floppy ears",
+       "clothes": "a green leaf cap on his head"
+      }
+     },
+     "scenes": [
+      {
+       "s": "N",
+       "t": "हरे-भरे सुंदर जंगल के बीचों-बीच एक अनोखा जामुन का पेड़ था, जिसके फल चमकते मोतियों जैसे दिखते थे।",
+       "m": "peaceful",
+       "st": "gentle and magical",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, a giant glowing purple jamun tree standing in the center of a lush green jungle under a soft sun, Chiku young round face with big curious black eyes, short brown fur with a playful tuft on top, a small red leaf vest tied with a vine, looking at the tree in awe, nobody looking at camera, no portrait, no close-up, no text",
+       "w": "Chiku"
+      },
+      {
+       "s": "N",
+       "t": "इस जादुई पेड़ की यह खासियत थी कि इसका मीठा फल खाने वाले की मीठी इच्छा तुरंत पूरी हो जाती थी।",
+       "m": "peaceful",
+       "st": "wonder and excitement",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, glowing purple jamun fruits hanging from tree branches sparkling with tiny golden stars, Chiku young round face with big curious black eyes, short brown fur with a playful tuft on top, a small red leaf vest tied with a vine, reaching a paw toward a sparkling fruit, nobody looking at camera, no portrait, no close-up, no text",
+       "w": "Chiku"
+      },
+      {
+       "s": "N",
+       "t": "नटखट गिलहरीन चीकू रोज़ सुबह इस पेड़ के पास आती और प्यार से इसके नीचे की सफाई करती थी।",
+       "m": "peaceful",
+       "st": "warm and friendly",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, Chiku young round face with big curious black eyes, short brown fur with a playful tuft on top, a small red leaf vest tied with a vine, sweeping dry leaves under the glowing purple jamun tree with a tiny twig broom, nobody looking at camera, no portrait, no close-up, no text",
+       "w": "Chiku"
+      },
+      {
+       "s": "N",
+       "t": "चीकू की इस सेवा भाव से खुश होकर पेड़ उसे रोज़ एक सबसे मीठा जामुन उपहार में देता था।",
+       "m": "peaceful",
+       "st": "happy and rewarding",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, a single glowing purple jamun floating down gently from the tree branch into the paws of Chiku young round face with big curious black eyes, short brown fur with a playful tuft on top, a small red leaf vest tied with a vine, smiling happily, nobody looking at camera, no portrait, no close-up, no text",
+       "w": "Chiku"
+      },
+      {
+       "s": "N",
+       "t": "लेकिन जंगल का एक लालची बंदर भोलू भी इस जादुई पेड़ के बारे में सब कुछ जानता था।",
+       "m": "suspense",
+       "st": "sneaky and plotting",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, Bholu young chubby round face with a mischievous smile, thick golden-brown fur with floppy ears, a green leaf cap on his head, peeking slyly from behind a dense green bush and staring at the glowing jamun tree, nobody looking at camera, no portrait, no close-up, no text",
+       "w": "Bholu"
+      },
+      {
+       "s": "N",
+       "t": "भोलू रोज़ सोचता कि अगर सारे जामुन उसे मिल जाएं, तो वह जंगल का सबसे ताकतवर राजा बन जाएगा।",
+       "m": "suspense",
+       "st": "greedy and scheming",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, Bholu young chubby round face with a mischievous smile, thick golden-brown fur with floppy ears, a green leaf cap on his head, rubbing his hands together with a greedy grin while looking up at the glowing purple jamun tree, nobody looking at camera, no portrait, no close-up, no text",
+       "w": "Bholu"
+      },
+      {
+       "s": "N",
+       "t": "एक दिन जब चीकू वहां नहीं थी, तो भोलू चुपके से दौड़कर जादुई पेड़ पर चढ़ गया।",
+       "m": "chase",
+       "st": "quick and sneaky",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, Bholu young chubby round face with a mischievous smile, thick golden-brown fur with floppy ears, a green leaf cap on his head, climbing up the trunk of the glowing purple jamun tree in a hurry, nobody looking at camera, no portrait, no close-up, no text",
+       "w": "Bholu"
+      },
+      {
+       "s": "N",
+       "t": "लालच में आकर भोलू ने पेड़ के सारे चमकते जामुन एक ही बार में तोड़कर अपने मुंह में ठूंस लिए।",
+       "m": "suspense",
+       "st": "greedy and fast",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, Bholu young chubby round face with a mischievous smile, thick golden-brown fur with floppy ears, a green leaf cap on his head, sitting on a thick branch and stuffing his mouth with glowing purple jamuns greedily, nobody looking at camera, no portrait, no close-up, no text",
+       "w": "Bholu"
+      },
+      {
+       "s": "N",
+       "t": "अरे यह क्या... सारे जामुन खाते ही भोलू का मुंह अजीब तरह से कड़वा हो गया और उसकी आवाज ही गायब हो गई।",
+       "m": "suspense",
+       "st": "shocked and funny",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, Bholu young chubby round face with a mischievous smile, thick golden-brown fur with floppy ears, a green leaf cap on his head, holding his cheeks with both hands and making a funny sour face on the tree branch, nobody looking at camera, no portrait, no close-up, no text",
+       "w": "Bholu"
+      },
+      {
+       "s": "N",
+       "t": "पेड़ का जादू गुस्से में आ गया था क्योंकि लालच करने वालों के लिए जादुई फल कड़वे पत्थर बन जाते हैं।",
+       "m": "suspense",
+       "st": "mysterious and cautionary",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, the glowing purple jamun tree turning into a dim grey color with sparkling dust fading away, Bholu young chubby round face with a mischievous smile, thick golden-brown fur with floppy ears, a green leaf cap on his head, looking down sadly at the tree, nobody looking at camera, no portrait, no close-up, no text",
+       "w": "Bholu"
+      },
+      {
+       "s": "N",
+       "t": "भोलू दर्द और पछतावे से रोने लगा और उसने पेड़ से अपनी गलती की माफी मांगनी चाही।",
+       "m": "sad",
+       "st": "regretful and emotional",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, Bholu young chubby round face with a mischievous smile, thick golden-brown fur with floppy ears, a green leaf cap on his head, sitting on the ground near the grey tree with drooping ears and tearful eyes, nobody looking at camera, no portrait, no close-up, no text",
+       "w": "Bholu"
+      },
+      {
+       "s": "N",
+       "t": "तभी वहां नटखट गिलहरीन चीकू अपने कुछ नन्हे दोस्तों के साथ फल बांटने के लिए आई।",
+       "m": "peaceful",
+       "st": "caring and sweet",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, Chiku young round face with big curious black eyes, short brown fur with a playful tuft on top, a small red leaf vest tied with a vine, walking towards the tree accompanied by two tiny animal friends, nobody looking at camera, no portrait, no close-up, no text",
+       "w": "Chiku"
+      },
+      {
+       "s": "N",
+       "t": "चीकू ने जब रोते हुए भोलू को देखा, तो उसका दिल पसीज गया और उसने भोलू को अपने पास बुलाया।",
+       "m": "peaceful",
+       "st": "kind and forgiving",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, Chiku young round face with big curious black eyes, short brown fur with a playful tuft on top, a small red leaf vest tied with a vine, gesturing warmly toward Bholu who is sitting sadly on the grass, nobody looking at camera, no portrait, no close-up, no text",
+       "w": "Chiku"
+      },
+      {
+       "s": "N",
+       "t": "भोलू ने रोते हुए चीकू को अपनी गलती बताई और कहा कि उसने लालच में आकर सब खराब कर दिया।",
+       "m": "sad",
+       "st": "apologetic and soft",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, Bholu young chubby round face with a mischievous smile, thick golden-brown fur with floppy ears, a green leaf cap on his head, sitting on the grass with folded hands while Chiku listens with a sympathetic look, nobody looking at camera, no portrait, no close-up, no text",
+       "w": "Bholu"
+      },
+      {
+       "s": "N",
+       "t": "चीकू ने मुस्कुराकर कहा, भोलू भाई... जादू कभी लालच से नहीं, बल्कि सबके साथ बांटने की भावना से काम करता है।",
+       "m": "peaceful",
+       "st": "wise and gentle",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, Chiku young round face with big curious black eyes, short brown fur with a playful tuft on top, a small red leaf vest tied with a vine, pointing a paw gently toward her heart while talking to Bholu, nobody looking at camera, no portrait, no close-up, no text",
+       "w": "Chiku"
+      },
+      {
+       "s": "N",
+       "t": "चीकू ने आगे बढ़कर अपना एकमात्र जादुई जामुन भोलू को खाने के लिए दे दिया।",
+       "m": "peaceful",
+       "st": "generous and heartwarming",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, Chiku young round face with big curious black eyes, short brown fur with a playful tuft on top, a small red leaf vest tied with a vine, handing over a single glowing purple fruit to Bholu, nobody looking at camera, no portrait, no close-up, no text",
+       "w": "Chiku"
+      },
+      {
+       "s": "N",
+       "t": "जैसे ही भोलू ने वह जामुन खाया, उसका कड़वापन गायब हो गया और पेड़ फिर से चमक उठा।",
+       "m": "victory",
+       "st": "magical and joyous",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, Bholu young chubby round face with a mischievous smile, thick golden-brown fur with floppy ears, a green leaf cap on his head, smiling brightly as golden sparkles burst around him and the jamun tree glows purple again, nobody looking at camera, no portrait, no close-up, no text",
+       "w": "Bholu"
+      },
+      {
+       "s": "N",
+       "t": "पेड़ की डालियों पर एक बार फिर से मीठे और चमकीले फल लहलहाने लगे।",
+       "m": "victory",
+       "st": "lively and cheerful",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, a magnificent view of the glowing purple jamun tree fully laden with shining fruits, Chiku and Bholu standing happily underneath looking up together, nobody looking at camera, no portrait, no close-up, no text",
+       "w": "Chiku"
+      },
+      {
+       "s": "N",
+       "t": "भोलू को समझ आ गया था कि चीजें अकेले खाने से नहीं, बल्कि बांटने से खुशी कई गुना बढ़ जाती है।",
+       "m": "peaceful",
+       "st": "happy and understanding",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, Bholu young chubby round face with a mischievous smile, thick golden-brown fur with floppy ears, a green leaf cap on his head, sharing a glowing purple jamun fruit happily with Chiku and other jungle animals, nobody looking at camera, no portrait, no close-up, no text",
+       "w": "Bholu"
+      },
+      {
+       "s": "N",
+       "t": "इसके बाद से भोलू ने कभी लालच नहीं किया और वह भी चीकू की तरह सबकी मदद करने लगा।",
+       "m": "peaceful",
+       "st": "warm and friendly",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, Bholu young chubby round face with a mischievous smile, thick golden-brown fur with floppy ears, a green leaf cap on his head, helping Chiku sweep fallen leaves under the bright glowing tree, nobody looking at camera, no portrait, no close-up, no text",
+       "w": "Bholu"
+      },
+      {
+       "s": "N",
+       "t": "जंगल के सभी जानवर मिलजुलकर रहने लगे और जादुई पेड़ हमेशा उनके लिए मीठे फल देता रहा।",
+       "m": "victory",
+       "st": "celebratory and joyful",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, a group of happy jungle animals including Chiku and Bholu dancing joyfully under the glowing purple jamun tree bathed in warm sunlight, nobody looking at camera, no portrait, no close-up, no text",
+       "w": "Chiku"
+      },
+      {
+       "s": "N",
+       "t": "तो प्यारे बच्चों... शिक्षा यही मिलती है कि लालच बुरी बला है और बांटने से ही सच्ची खुशी मिलती है।",
+       "m": "victory",
+       "st": "warm, loving, and instructional",
+       "v": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, Chiku and Bholu sitting together smiling warmly under the glowing purple jamun tree, waving happily toward the viewer, nobody looking at camera, no portrait, no close-up, no text",
+       "w": "Chiku"
+      }
+     ]
+    }
+   }
+  ],
   "short": [
    {
     "id": "kahani_s_patang01",
