@@ -210,7 +210,16 @@
    "title": "नन्ही चिड़िया ने कैसे बचाया जंगल? | कहानी पतंग"
   }
  ],
- "_draft": null,
+ "_draft": {
+  "job": "raat_long_20261104_1219",
+  "ch": "raat",
+  "mode": "long",
+  "asset": "draft_raat_long_20261104_1219.tar",
+  "stage": "imgwait: shot 2.3 waiting for a real picture",
+  "tries": 0,
+  "fest": null,
+  "engine": "edge"
+ },
  "_library": [
   {
    "asset": "lib_raat_long_20261101_0811.mp4",
@@ -432,7 +441,7 @@
   }
  ],
  "_minutes": {
-  "2026-11": 3677
+  "2026-11": 3702
  },
  "_bank": {
   "kahani_s_patang01": "2026-11-02",
