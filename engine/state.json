@@ -101,7 +101,8 @@
    "बेडरूम की दीवार पर टंगे एक पुराने कालीन से निकलती रहस्यमयी आवाज़ों और बच्चों के जादुई सफर की कहानी का रोमांचक ट्रेलर",
    "आसमान में बिना सहारे तैरते एक प्राचीन बक्से का रहस्य और नन्हे बच्चे की समझदारी",
    "A magical bamboo flute in a peaceful jungle that teaches a greedy monkey a sweet lesson about sharing.",
-   "बरगद के पेड़ से टपकती जादुई चाबियों और सूखे गाँव को बचाने वाले रहस्यमयी बादल की अनोखी सीख भरी कहानी।"
+   "बरगद के पेड़ से टपकती जादुई चाबियों और सूखे गाँव को बचाने वाले रहस्यमयी बादल की अनोखी सीख भरी कहानी।",
+   "लालची बंदर चीकू को जादुई बांसुरी मिली, लेकिन उसके लालच से जंगल मुसीबत में पड़ गया।"
   ],
   "last_long": {
    "job": "kahani_long_20261104_1232",
@@ -113,7 +114,7 @@
     "Meera": "age 7 years, soft gentle face, warm friendly eyes, fluffy white fur, wearing a pink flower garland around her neck"
    },
    "vid": null,
-   "short_done": false,
+   "short_done": true,
    "trailer": null,
    "fest_at": null
   }
@@ -266,6 +267,13 @@
    "mode": "short",
    "asset": "kahani_short_20261104_1330.tar",
    "title": "रात 12 बजे पेड़ से टपकी जादुई चाबी! | कहानी पतंग"
+  },
+  {
+   "job": "kahani_short_20261104_1400",
+   "ch": "kahani",
+   "mode": "short",
+   "asset": "kahani_short_20261104_1400.tar",
+   "title": "जादुई बांसुरी और लालची बंदर का भयंकर सच! | कहानी पतंग"
   }
  ],
  "_draft": {
@@ -506,7 +514,7 @@
   }
  ],
  "_minutes": {
-  "2026-11": 3932
+  "2026-11": 3960
  },
  "_bank": {
   "kahani_s_patang01": "2026-11-02",
