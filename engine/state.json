@@ -222,12 +222,12 @@
   }
  ],
  "_draft": {
-  "job": "kahani_long_20261104_1019",
+  "job": "kahani_long_20261104_1031",
   "ch": "kahani",
   "mode": "long",
-  "asset": "draft_kahani_long_20261104_1019.tar",
+  "asset": "draft_kahani_long_20261104_1031.tar",
   "stage": "engine B (openai-audio) failed at scene 1",
-  "tries": 4,
+  "tries": 1,
   "fest": null,
   "engine": "openai"
  },
@@ -424,7 +424,7 @@
   }
  ],
  "_minutes": {
-  "2026-11": 3218
+  "2026-11": 3221
  },
  "_bank": {
   "kahani_s_patang01": "2026-11-02",
