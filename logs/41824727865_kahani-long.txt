@@ -1,0 +1,259 @@
+story from story_bank (Hark-written)
+gemini gemini-3.8-flash key 1 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-3.8-flash key 2 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-3.8-flash key 3 429 {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and bi
+gemini gemini-3.7-flash key 1 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-3.7-flash key 2 429 {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and bi
+gemini gemini-3.7-flash key 3 429 {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and bi
+gemini gemini-3.6-flash key 1 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-3.6-flash key 2 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-3.6-flash key 3 429 {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and bi
+gemini gemini-3.5-flash key 1 429 {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and bi
+gemini gemini-3.5-flash key 2 429 {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and bi
+gemini gemini-3.5-flash key 3 429 {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and bi
+gemini gemini-flash-latest key 1 429 {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and bi
+gemini gemini-flash-latest key 2 429 {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and bi
+gemini gemini-flash-latest key 3 429 {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and bi
+gemini gemini-pro-latest key 1 429 {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and bi
+gemini gemini-pro-latest key 2 429 {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and bi
+gemini gemini-pro-latest key 3 429 {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and bi
+gemini ok gemini-3.5-flash-lite key 1
+seo pass OK: लालची लोमड़ी और जादुई कछुआ | जादुई तालाब | कहानी पतंग
+title: लालची लोमड़ी और जादुई कछुआ | जादुई तालाब | कहानी पतंग scenes: 22
+rules v3: pictures rebuilt, re-voiced lines []
+voice engine: edge hi-IN-SwaraNeural (locked) 22 scenes
+gemini gemini-3.8-flash key 1 429 {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and bi
+gemini gemini-3.8-flash key 2 429 {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and bi
+gemini gemini-3.8-flash key 3 429 {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and bi
+gemini gemini-3.7-flash key 1 429 {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and bi
+gemini gemini-3.7-flash key 2 429 {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and bi
+gemini gemini-3.7-flash key 3 429 {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and bi
+gemini gemini-3.6-flash key 1 429 {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and bi
+gemini gemini-3.6-flash key 2 429 {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and bi
+gemini gemini-3.6-flash key 3 429 {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and bi
+gemini gemini-3.5-flash key 1 429 {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and bi
+gemini gemini-3.5-flash key 2 429 {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and bi
+gemini gemini-3.5-flash key 3 429 {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and bi
+gemini gemini-flash-latest key 1 429 {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and bi
+gemini gemini-flash-latest key 2 429 {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and bi
+gemini gemini-flash-latest key 3 429 {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and bi
+gemini gemini-pro-latest key 1 429 {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and bi
+gemini gemini-pro-latest key 2 429 {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and bi
+gemini gemini-pro-latest key 3 429 {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and bi
+gemini ok gemini-3.5-flash-lite key 1
+shots planned: 57 pictures for 22 scenes
+img 0 pollinations-flux
+pollinations key out of credit -> free anonymous FLUX
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+pollinations retry 3 <HTTPError 402: 'Payment Required'>
+img 1 pollinations-flux-free
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+img 2 pollinations-flux-free
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+img 3 pollinations-flux-free
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+img 4 pollinations-flux-free
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+img 5 pollinations-flux-free
+img 6 pollinations-flux-free
+img 7 pollinations-flux-free
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+img 8 pollinations-flux-free
+img 9 pollinations-flux-free
+img 10 pollinations-flux-free
+img 11 pollinations-flux-free
+img 12 pollinations-flux-free
+img 13 pollinations-flux-free
+img 14 pollinations-flux-free
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+img 15 pollinations-flux-free
+img 16 pollinations-flux-free
+img 17 pollinations-flux-free
+resume: script loaded
+title: लालची लोमड़ी और जादुई कछुआ | जादुई तालाब | कहानी पतंग scenes: 22
+voice engine: edge hi-IN-SwaraNeural (locked) 22 scenes
+img 18 pollinations-flux
+img 19 pollinations-flux
+img 20 pollinations-flux
+pollinations key out of credit -> free anonymous FLUX
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+img 21 pollinations-flux-free
+img 0.1 pollinations-flux-free
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+img 0.2 pollinations-flux-free
+img 1.1 pollinations-flux-free
+img 1.2 pollinations-flux-free
+img 2.1 pollinations-flux-free
+img 2.2 pollinations-flux-free
+img 3.1 pollinations-flux-free
+img 3.2 pollinations-flux-free
+img 4.1 pollinations-flux-free
+img 5.1 pollinations-flux-free
+img 5.2 pollinations-flux-free
+img 6.1 pollinations-flux-free
+img 7.1 pollinations-flux-free
+img 7.2 pollinations-flux-free
+img 8.1 pollinations-flux-free
+img 8.2 pollinations-flux-free
+img 9.1 pollinations-flux-free
+img 9.2 pollinations-flux-free
+img 10.1 pollinations-flux-free
+img 11.1 pollinations-flux-free
+img 12.1 pollinations-flux-free
+img 13.1 pollinations-flux-free
+img 13.2 pollinations-flux-free
+img 14.1 pollinations-flux-free
+img 15.1 pollinations-flux-free
+img 16.1 pollinations-flux-free
+img 16.2 pollinations-flux-free
+img 17.1 pollinations-flux-free
+img 18.1 pollinations-flux-free
+img 18.2 pollinations-flux-free
+img 19.1 pollinations-flux-free
+img 19.2 pollinations-flux-free
+img 20.1 pollinations-flux-free
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+img 20.2 pollinations-flux-free
+img 21.1 pollinations-flux-free
+pre-check: scene 6 repeats/mirrors scene 5 -> new picture
+resume: script loaded
+title: लालची लोमड़ी और जादुई कछुआ | जादुई तालाब | कहानी पतंग scenes: 22
+voice engine: edge hi-IN-SwaraNeural (locked) 22 scenes
+img 5 pollinations-flux
+pre-check: scene 8 repeats/mirrors scene 7 -> new picture
+resume: script loaded
+title: लालची लोमड़ी और जादुई कछुआ | जादुई तालाब | कहानी पतंग scenes: 22
+voice engine: edge hi-IN-SwaraNeural (locked) 22 scenes
+img 7 pollinations-flux
+pre-check: scene 8 repeats/mirrors scene 6 -> new picture
+resume: script loaded
+title: लालची लोमड़ी और जादुई कछुआ | जादुई तालाब | कहानी पतंग scenes: 22
+voice engine: edge hi-IN-SwaraNeural (locked) 22 scenes
+img 7 pollinations-flux
+pre-check: scene 8 repeats/mirrors scene 6 -> new picture
