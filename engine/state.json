@@ -169,14 +169,14 @@
   }
  ],
  "_draft": {
-  "job": "kahani_long_20261104_1103",
+  "job": "kahani_long_20261104_1107",
   "ch": "kahani",
   "mode": "long",
-  "asset": "draft_kahani_long_20261104_1103.tar",
-  "stage": "engine B (openai-audio) failed at scene 1",
-  "tries": 4,
+  "asset": "draft_kahani_long_20261104_1107.tar",
+  "stage": "imgwait: image servers out of free credit at 11/18",
+  "tries": 0,
   "fest": null,
-  "engine": "openai"
+  "engine": "edge"
  },
  "_library": [
   {
@@ -378,7 +378,7 @@
   }
  ],
  "_minutes": {
-  "2026-11": 3409
+  "2026-11": 3422
  },
  "_bank": {
   "kahani_s_patang01": "2026-11-02",
