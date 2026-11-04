@@ -466,6 +466,107 @@
       }
      ]
     }
+   },
+   {
+    "id": "raat_s_aaina02",
+    "script": {
+     "title": "आईने की परछाईं मुस्कुराई… #shorts",
+     "topic": "आईने का रहस्य",
+     "description": "काल्पनिक कहानी — केवल मनोरंजन के लिए। एक शापित आईने की डरावनी कहानी।",
+     "tags": [
+      "horror",
+      "हिंदी हॉरर",
+      "रात के किस्से",
+      "shorts"
+     ],
+     "hook": "आईना झूठ बोलता है",
+     "thumb_text": "मेरी बारी",
+     "characters": {
+      "Meera": "Indian woman, 30, long black hair, green saree, anxious eyes"
+     },
+     "scenes": [
+      {
+       "s": "N",
+       "t": "क्या आईना सच में वही दिखाता है जो सामने होता है? मीरा को उस रात पता चला, नहीं।",
+       "m": "suspense",
+       "st": "whisper, tense",
+       "v": "Indian woman Meera in old haveli bedroom at night, large antique mirror, oil lamp",
+       "w": "Meera"
+      },
+      {
+       "s": "M",
+       "t": "पुरानी हवेली से खरीदा आईना उसने अपने कमरे में टाँगा था।",
+       "m": "suspense",
+       "st": "low, curious",
+       "v": "Antique carved mirror being hung on a wall in Indian home",
+       "w": "Meera"
+      },
+      {
+       "s": "N",
+       "t": "पहली रात आईने में उसकी परछाईं आधा सेकंड देर से हिली।",
+       "m": "suspense",
+       "st": "hushed",
+       "v": "Meera raising hand, reflection lagging slightly, dim light",
+       "w": "Meera"
+      },
+      {
+       "s": "M",
+       "t": "उसने सोचा, थकान होगी। पर दूसरी रात परछाईं मुस्कुरा रही थी, और मीरा नहीं।",
+       "m": "chase",
+       "st": "uneasy, trembling",
+       "v": "Reflection smiling while Meera stares in fear, lamp flicker",
+       "w": "Meera"
+      },
+      {
+       "s": "N",
+       "t": "उसने आईने पर कपड़ा डाल दिया और सो गई।",
+       "m": "suspense",
+       "st": "slow",
+       "v": "Cloth draped over mirror, Meera in bed, moonlight through window",
+       "w": "Meera"
+      },
+      {
+       "s": "N",
+       "t": "सुबह कपड़ा फ़र्श पर पड़ा था, और आईने के अंदर से किसी ने उँगली से लिखा था, मेरी बारी।",
+       "m": "chase",
+       "st": "breathless",
+       "v": "Fogged mirror with finger-written words, cloth on floor",
+       "w": "Meera"
+      },
+      {
+       "s": "M",
+       "t": "मीरा भागकर पुराने नौकर के पास गई। उसने काँपकर कहा, यह आईना हर सौ साल में एक नई परछाईं माँगता है।",
+       "m": "suspense",
+       "st": "shaky, old man",
+       "v": "Old servant in courtyard at dawn, frightened, Meera listening",
+       "w": "Meera"
+      },
+      {
+       "s": "N",
+       "t": "तब तक मीरा की अपनी परछाईं ज़मीन पर कहीं दिखाई नहीं दे रही थी।",
+       "m": "suspense",
+       "st": "whisper",
+       "v": "Meera standing in sunlight with no shadow on ground",
+       "w": "Meera"
+      },
+      {
+       "s": "M",
+       "t": "और दूर कमरे में, आईने के भीतर, एक दूसरी मीरा हाथ हिला रही थी।",
+       "m": "suspense",
+       "st": "ominous",
+       "v": "Mirror in dark room showing a second Meera waving",
+       "w": "Meera"
+      },
+      {
+       "s": "N",
+       "t": "आगे क्या हुआ? पूरी कहानी देखने के लिए नीचे दिए गए वीडियो पर क्लिक करें!",
+       "m": "suspense",
+       "st": "slow, ominous",
+       "v": "Dark haveli at night with one lit window",
+       "w": "Meera"
+      }
+     ]
+    }
    }
   ],
   "festival": [
@@ -1034,6 +1135,107 @@
        "st": "mysterious",
        "v": "Clay pot glowing in dark kitchen at night",
        "w": "Pinki"
+      }
+     ]
+    }
+   },
+   {
+    "id": "kahani_s_chidiya02",
+    "script": {
+     "title": "नन्ही चिड़िया ने जंगल बचाया #shorts",
+     "topic": "छोटी कोशिश बड़ी जीत",
+     "description": "नन्ही चुनमुन चिड़िया की हिम्मत भरी कहानी।",
+     "tags": [
+      "kids stories",
+      "हिंदी कहानी",
+      "कहानी पतंग",
+      "shorts"
+     ],
+     "hook": "चिड़िया ने जंगल बचाया",
+     "thumb_text": "नन्ही चुनमुन",
+     "characters": {
+      "Chunmun": "tiny colorful Indian bird, cartoon style, big kind eyes"
+     },
+     "scenes": [
+      {
+       "s": "N",
+       "t": "क्या तुम जानते हो, एक नन्ही चिड़िया ने पूरे जंगल को सूखे से कैसे बचाया?",
+       "m": "peaceful",
+       "st": "warm, cheerful",
+       "v": "Small colorful bird flying over dry Indian forest, golden light",
+       "w": "Chunmun"
+      },
+      {
+       "s": "N",
+       "t": "जंगल में कई महीनों से बारिश नहीं हुई थी, नदी सूख गई थी।",
+       "m": "peaceful",
+       "st": "gentle",
+       "v": "Dry riverbed with sad animals, deer and rabbit",
+       "w": "Chunmun"
+      },
+      {
+       "s": "C",
+       "t": "चुनमुन चिड़िया बोली, मैं पहाड़ के पीछे का झरना ढूँढूँगी!",
+       "m": "victory",
+       "st": "bright, brave",
+       "v": "Tiny bird Chunmun flying toward distant mountains",
+       "w": "Chunmun"
+      },
+      {
+       "s": "N",
+       "t": "सब हँसे, इतनी छोटी चिड़िया इतनी दूर कैसे जाएगी?",
+       "m": "peaceful",
+       "st": "soft",
+       "v": "Animals smiling kindly at tiny bird under banyan tree",
+       "w": "Chunmun"
+      },
+      {
+       "s": "N",
+       "t": "पर चुनमुन रोज़ उड़ती रही, थकती, रुकती, फिर उड़ती।",
+       "m": "peaceful",
+       "st": "warm",
+       "v": "Bird resting on a branch then flying again, sunrise",
+       "w": "Chunmun"
+      },
+      {
+       "s": "C",
+       "t": "तीसरे दिन उसे पहाड़ के पीछे चमकता हुआ झरना दिखा। वह खुशी से चहक उठी!",
+       "m": "victory",
+       "st": "joyful",
+       "v": "Sparkling waterfall behind a green hill, bird delighted",
+       "w": "Chunmun"
+      },
+      {
+       "s": "N",
+       "t": "उसने अपनी चोंच में पानी की बूँदें भरीं और जंगल की ओर लौटी।",
+       "m": "peaceful",
+       "st": "gentle",
+       "v": "Bird carrying a water drop in beak over forest",
+       "w": "Chunmun"
+      },
+      {
+       "s": "N",
+       "t": "हाथी दादा ने देखा और बोले, चलो सब मिलकर झरने तक रास्ता बनाएँ!",
+       "m": "victory",
+       "st": "cheerful",
+       "v": "Friendly elephant leading animals along a path in forest",
+       "w": "Chunmun"
+      },
+      {
+       "s": "N",
+       "t": "जल्दी ही नदी फिर बहने लगी, और पूरा जंगल हरा हो गया।",
+       "m": "victory",
+       "st": "happy",
+       "v": "Green forest with flowing river, animals celebrating",
+       "w": "Chunmun"
+      },
+      {
+       "s": "N",
+       "t": "सीख: छोटी कोशिश भी बड़ा बदलाव ला सकती है। तो आगे क्या हुआ? पूरी कहानी देखने के लिए नीचे दिए गए वीडियो पर क्लिक करें!",
+       "m": "peaceful",
+       "st": "warm",
+       "v": "Bird perched on elephant's head in bright forest",
+       "w": "Chunmun"
       }
      ]
     }
