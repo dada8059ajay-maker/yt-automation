@@ -23,3 +23,4 @@
 - रात के किस्से | short | यम का दीया बुझा तो खुला दरवाजा! Narak Chaturdashi | रात के किस्से | Mon 09 Nov 2026 09:30 PM IST | https://studio.youtube.com/video/80kFqXGd5Oc/edit
 - कहानी पतंग | short | जादुई चश्मे से सुनी जानवरों की बात! | कहानी पतंग | Sat 07 Nov 2026 06:30 PM IST | https://studio.youtube.com/video/y9tyyLjpTUA/edit
 - कहानी पतंग | long | उड़ती जादुई गाड़ी का भयानक रहस्य! | कहानी पतंग | Mon 09 Nov 2026 06:00 PM IST | https://studio.youtube.com/video/gWMLlGgOvCQ/edit
+- कहानी पतंग | short | बिना तैरे नदी पार! चालाक लोमड़ी की हार? | कहानी पतंग | Sun 08 Nov 2026 06:30 PM IST | https://studio.youtube.com/video/qEfNR21ikWA/edit
