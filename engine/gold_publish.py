@@ -11,9 +11,11 @@ META = {
    "description": "रात के ढाई बजे, पहाड़ी रास्ते पर विक्रम की बाइक का पेट्रोल खत्म हो गया। एक पुराने पेट्रोल पंप की दीवार पर लिखा था... नियम एक: पीछे से कोई नाम पुकारे, तो मुड़ना मत।\n\nनियम दो जानने के लिए रात के किस्से देखते रहिए।\n\nकाल्पनिक कहानी — केवल मनोरंजन के लिए।\n\n#HindiHorrorStory #RaatKeKisse #हॉररकहानी",
    "tags": ["hindi horror story", "हॉरर कहानी", "डरावनी कहानी", "rules horror", "petrol pump horror", "रात के किस्से", "horror story in hindi"],
    "publishAt": "2026-11-06T15:30:00Z", "thumb": "assets/gold/r8.jpg", "playlist": "रात के किस्से - सभी कहानियाँ"}}[CH]
+if os.path.exists("assets/gold/meta.json"): META = json.load(open("assets/gold/meta.json"))[CH]   # daily run writes this
+JID = META.get("job_id", f"gold_{CH}_20261104")
 D = f"out/pub_{CH}"; os.makedirs(D, exist_ok=True)
 shutil.copy(f"docs/test/gold_{CH}_full.mp4", f"{D}/video.mp4"); shutil.copy(META["thumb"], f"{D}/thumb.jpg")
-job = {"id": f"gold_{CH}_20261104", "channel": CH, "videos": [{"title": META["title"], "description": META["description"], "tags": META["tags"],
+job = {"id": JID, "channel": CH, "videos": [{"title": META["title"], "description": META["description"], "tags": META["tags"],
        "categoryId": "1" if CH == "kahani" else "24", "publishAt": META["publishAt"], "madeForKids": CH == "kahani", "file": "video.mp4", "thumb": "thumb.jpg", "playlist": META["playlist"]}]}
 json.dump(job, open(f"{D}/job.json", "w"), ensure_ascii=False, indent=1)
 f = "secrets/yt_refresh.enc" if CH == "kahani" else f"secrets/yt_refresh_{CH}.enc"
