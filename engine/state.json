@@ -417,14 +417,15 @@
   }
  ],
  "_minutes": {
-  "2026-11": 3127
+  "2026-11": 3138
  },
  "_bank": {
   "kahani_s_patang01": "2026-11-02",
   "raat_s_dastak01": "2026-11-02",
   "kahani_l_dahaad01": "2026-11-03",
   "raat_l_yamdeep01": "2026-11-03",
-  "kahani_l_bargad01": "2026-11-04"
+  "kahani_l_bargad01": "2026-11-04",
+  "kahani_s_chashma01": "2026-11-04"
  },
  "_gemini_wait": "2026-11-04T08:05:00+00:00",
  "_engine_b_dead": "2026-11-04",
@@ -506,5 +507,15 @@
   "tries": 1,
   "fest": null,
   "engine": "kokoro"
+ },
+ "_draft_kahani-short": {
+  "job": "kahani_short_20261104_1001",
+  "ch": "kahani",
+  "mode": "short",
+  "asset": "draft_kahani_short_20261104_1001.tar",
+  "stage": "imgwait: image servers out of free credit at 6/7",
+  "tries": 0,
+  "fest": null,
+  "engine": "edge"
  }
 }
