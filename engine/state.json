@@ -220,7 +220,7 @@
   "mode": "long",
   "asset": "draft_kahani_long_20261104_0853.tar",
   "stage": "engine B (openai-audio) failed at scene 4",
-  "tries": 1,
+  "tries": 2,
   "fest": "kahani_l_bargad01",
   "engine": "openai"
  },
@@ -417,7 +417,7 @@
   }
  ],
  "_minutes": {
-  "2026-11": 2951
+  "2026-11": 2955
  },
  "_bank": {
   "kahani_s_patang01": "2026-11-02",
