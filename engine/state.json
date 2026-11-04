@@ -102,7 +102,8 @@
    "आसमान में बिना सहारे तैरते एक प्राचीन बक्से का रहस्य और नन्हे बच्चे की समझदारी",
    "A magical bamboo flute in a peaceful jungle that teaches a greedy monkey a sweet lesson about sharing.",
    "बरगद के पेड़ से टपकती जादुई चाबियों और सूखे गाँव को बचाने वाले रहस्यमयी बादल की अनोखी सीख भरी कहानी।",
-   "लालची बंदर चीकू को जादुई बांसुरी मिली, लेकिन उसके लालच से जंगल मुसीबत में पड़ गया।"
+   "लालची बंदर चीकू को जादुई बांसुरी मिली, लेकिन उसके लालच से जंगल मुसीबत में पड़ गया।",
+   "जंगल कहानी"
   ],
   "last_long": {
    "job": "kahani_long_20261103_1433",
@@ -114,7 +115,7 @@
     "Bandar": "cheeky cartoon monkey with yellow cap"
    },
    "vid": null,
-   "short_done": false,
+   "short_done": true,
    "trailer": {
     "title": "शेर की दहाड़ किसने चुराई? #shorts",
     "topic": "जंगल कहानी",
@@ -349,6 +350,13 @@
    "mode": "long",
    "asset": "kahani_long_20261103_1433.tar",
    "title": "शेर की दहाड़ किसने चुराई? | Jungle Story | कहानी पतंग"
+  },
+  {
+   "job": "kahani_short_20261104_1431",
+   "ch": "kahani",
+   "mode": "short",
+   "asset": "kahani_short_20261104_1431.tar",
+   "title": "शेर की दहाड़ किसने चुराई? | Jungle Kahani | कहानी पतंग"
   }
  ],
  "_draft": {
@@ -596,7 +604,7 @@
   }
  ],
  "_minutes": {
-  "2026-11": 4013
+  "2026-11": 4030
  },
  "_bank": {
   "kahani_s_patang01": "2026-11-02",
