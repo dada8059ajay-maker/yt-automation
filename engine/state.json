@@ -214,7 +214,16 @@
    "title": "घंटाघर का अंत: भाग 3"
   }
  ],
- "_draft": null,
+ "_draft": {
+  "job": "kahani_long_20261104_0853",
+  "ch": "kahani",
+  "mode": "long",
+  "asset": "draft_kahani_long_20261104_0853.tar",
+  "stage": "engine B (openai-audio) failed at scene 4",
+  "tries": 1,
+  "fest": "kahani_l_bargad01",
+  "engine": "openai"
+ },
  "_library": [
   {
    "asset": "lib_raat_long_20261101_0811.mp4",
@@ -408,16 +417,17 @@
   }
  ],
  "_minutes": {
-  "2026-11": 2949
+  "2026-11": 2951
  },
  "_bank": {
   "kahani_s_patang01": "2026-11-02",
   "raat_s_dastak01": "2026-11-02",
   "kahani_l_dahaad01": "2026-11-03",
-  "raat_l_yamdeep01": "2026-11-03"
+  "raat_l_yamdeep01": "2026-11-03",
+  "kahani_l_bargad01": "2026-11-04"
  },
  "_gemini_wait": "2026-11-04T08:05:00+00:00",
- "_engine_b_dead": "2026-11-03",
+ "_engine_b_dead": "2026-11-04",
  "_redo_delete": [],
  "_redo_jobs": [
   "kahani_long_20261103_1101",
@@ -439,7 +449,7 @@
   "engine": "gemini",
   "wait_until": "2026-11-04T08:05:00+00:00"
  },
- "_fm_dead": "2026-11-03",
+ "_fm_dead": "2026-11-04",
  "_parked": [],
  "_unschedule": [],
  "_hold_jobs": [
