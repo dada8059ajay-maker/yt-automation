@@ -1,5 +1,8 @@
 name: gold-video
-on: workflow_dispatch
+on:
+  workflow_dispatch:
+    inputs:
+      publish: { default: 'no' }
 permissions: { contents: write }
 jobs:
   render:
@@ -9,6 +12,11 @@ jobs:
       - uses: actions/checkout@v4
       - run: sudo apt-get -qq update && sudo apt-get -qq install -y ffmpeg && pip install -q edge-tts
       - run: python3 engine/gold_video.py ${{ matrix.ch }}
+      - if: inputs.publish == 'yes'
+        run: python3 engine/gold_publish.py ${{ matrix.ch }}
+        env:
+          CID: ${{ secrets.YT_CLIENT_ID }}
+          CSEC: ${{ secrets.YT_CLIENT_SECRET }}
       - uses: actions/upload-artifact@v4
         with:
           name: gold-${{ matrix.ch }}
