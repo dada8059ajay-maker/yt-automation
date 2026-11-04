@@ -52,7 +52,7 @@
     "Shadow": "A tall ominous translucent dark silhouette of an ancient figure inside a misty tower, glowing faint red eye-spots, uncanny tall posture."
    },
    "vid": null,
-   "short_done": false,
+   "short_done": true,
    "trailer": null,
    "fest_at": null
   }
@@ -212,6 +212,13 @@
    "mode": "long",
    "asset": "raat_long_20261103_1127.tar",
    "title": "घंटाघर का अंत: भाग 3"
+  },
+  {
+   "job": "raat_short_20261104_0829",
+   "ch": "raat",
+   "mode": "short",
+   "asset": "raat_short_20261104_0829.tar",
+   "title": "यम का दीया बुझा तो खुला दरवाजा! Narak Chaturdashi | रात के किस्से"
   }
  ],
  "_draft": {
@@ -417,7 +424,7 @@
   }
  ],
  "_minutes": {
-  "2026-11": 3196
+  "2026-11": 3201
  },
  "_bank": {
   "kahani_s_patang01": "2026-11-02",
@@ -478,16 +485,7 @@
   "hylg8zUWphw",
   "uHfWNg16Vs4"
  ],
- "_draft_raat-short": {
-  "job": "raat_short_20261104_0829",
-  "ch": "raat",
-  "mode": "short",
-  "asset": "draft_raat_short_20261104_0829.tar",
-  "stage": "imgwait: shot 6.2 waiting for a real picture",
-  "tries": 0,
-  "fest": null,
-  "engine": "kokoro"
- },
+ "_draft_raat-short": null,
  "_draft_raat-long": {
   "job": "raat_long_20261104_0830",
   "ch": "raat",
