@@ -19,6 +19,8 @@ jobs:
     env:
       GH_TOKEN: ${{ github.token }}
       GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      GEMINI_API_KEY_2: ${{ secrets.GEMINI_API_KEY_2 }}
+      GEMINI_API_KEY_3: ${{ secrets.GEMINI_API_KEY_3 }}
       CID: ${{ secrets.YT_CLIENT_ID }}
       CSEC: ${{ secrets.YT_CLIENT_SECRET }}
       HF_TOKEN: ${{ secrets.HF_TOKEN }}

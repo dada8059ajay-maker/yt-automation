@@ -85,25 +85,32 @@ def log(*a):
     s = " ".join(str(x) for x in a); print(s, flush=True); LOG.write(s + "\n"); LOG.flush()
 
 # ---------------- 1. script ----------------
+# Round-robin over every Gemini key in the repo secrets; a rate-limited key is skipped instantly, work never stops
+GKEYS = [k for k in dict.fromkeys(os.environ.get(n, "") for n in ("GEMINI_API_KEY", "GEMINI_API_KEY_2", "GEMINI_API_KEY_3", "GEMINI_API_KEY_4")) if k]
+_GK = {"i": random.randrange(max(1, len(GKEYS))), "dead": set()}
+def gkey(rotate=False):
+    live = [k for k in GKEYS if k not in _GK["dead"]] or GKEYS
+    if rotate: _GK["i"] += 1
+    return live[_GK["i"] % len(live)]
 MODELS = ["gemini-3.8-flash", "gemini-3.7-flash", "gemini-3.6-flash", "gemini-3.5-flash", "gemini-flash-latest", "gemini-pro-latest", "gemini-3.5-flash-lite", "gemini-flash-lite-latest"]
 def gemini(prompt, want_json=True):
     body = {"contents": [{"parts": [{"text": prompt}]}], "generationConfig": {"temperature": 1.0}}
     if want_json: body["generationConfig"]["responseMimeType"] = "application/json"
     for attempt in range(3):
-        for m in MODELS:
+        for m, key in [(m, k) for m in MODELS for k in (GKEYS or [""])]:
             req = urllib.request.Request(f"https://generativelanguage.googleapis.com/v1beta/models/{m}:generateContent",
-                json.dumps(body).encode(), {"Content-Type": "application/json", "x-goog-api-key": os.environ["GEMINI_API_KEY"]})
+                json.dumps(body).encode(), {"Content-Type": "application/json", "x-goog-api-key": key})
             try:
                 r = json.load(urllib.request.urlopen(req, timeout=180))
                 t = "".join(p.get("text", "") for p in r["candidates"][0]["content"]["parts"])
-                log("gemini ok", m)
+                log("gemini ok", m, "key", GKEYS.index(key) + 1 if key in GKEYS else 0)
                 if not want_json: return t
                 t = t.strip(); t = re.sub(r"^```(json)?|```$", "", t, flags=re.M).strip()
                 o = json.loads(t)
                 if isinstance(o, list): o = o[0]
                 return o
             except urllib.error.HTTPError as e:
-                log("gemini", m, e.code, e.read().decode()[:150])
+                log("gemini", m, "key", GKEYS.index(key) + 1 if key in GKEYS else 0, e.code, e.read().decode()[:110])
             except Exception as e:
                 log("gemini", m, repr(e)[:150])
         import time; time.sleep(20)
@@ -231,17 +238,18 @@ def tts_call(text, spk):
     body = {"contents": [{"parts": [{"text": text}]}], "generationConfig": {"responseModalities": ["AUDIO"], "speechConfig": sc_}}
     global TTS_MODEL
     for k in range(6):
-        live = [m for m in TTS_MODELS if m not in DEAD]
+        live = [(m, kk) for m in TTS_MODELS for kk in (GKEYS or [""]) if (m, kk) not in DEAD]
         if not live: return None
-        TTS_MODEL = live[0]
+        TTS_MODEL, _tk = live[0]
         req = urllib.request.Request(f"https://generativelanguage.googleapis.com/v1beta/models/{TTS_MODEL}:generateContent", json.dumps(body).encode(),
-            {"Content-Type": "application/json", "x-goog-api-key": os.environ["GEMINI_API_KEY"]})
+            {"Content-Type": "application/json", "x-goog-api-key": _tk})
         try:
             r = json.load(urllib.request.urlopen(req, timeout=300))
             return b"".join(base64.b64decode(p["inlineData"]["data"]) for p in r["candidates"][0]["content"]["parts"] if "inlineData" in p)
         except urllib.error.HTTPError as e:
             msg = e.read().decode(); log("gtts", TTS_MODEL, e.code, msg[:120])
-            if e.code in (404, 400) or (e.code == 429 and ("PerDay" in msg or "per day" in msg.lower() or "exceeded your current quota" in msg)): DEAD.add(TTS_MODEL); continue
+            if e.code in (404, 400, 403) or e.code == 429:   # this key/model is limited -> instantly next key
+                DEAD.add((TTS_MODEL, _tk)); continue
             time.sleep(30 * (k + 1))
         except Exception as e:
             log("gtts", repr(e)[:160]); time.sleep(15)
@@ -453,7 +461,19 @@ def flux(prompt, sd):
         except Exception as e:
             if "402" in repr(e) and "Authorization" in hdr: globals()["_POLL_ANON"] = True; log("pollinations key out of credit -> free anonymous FLUX"); continue
             log("pollinations retry", k, repr(e)[:100]); time.sleep(6 + 6 * k)
-    if os.environ.get("HF_TOKEN"):   # backup 2: HF serverless FLUX.1-schnell (Inference Providers)
+    for kk in GKEYS:   # backup 2: Gemini image generation, round-robin over all keys
+        if (("img", kk)) in DEAD: continue
+        try:
+            body = {"contents": [{"parts": [{"text": short + (", 16:9 landscape" if W > H else ", 9:16 vertical")}]}], "generationConfig": {"responseModalities": ["IMAGE", "TEXT"]}}
+            rq = urllib.request.Request("https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-image:generateContent", json.dumps(body).encode(),
+                {"Content-Type": "application/json", "x-goog-api-key": kk})
+            r = json.load(urllib.request.urlopen(rq, timeout=150))
+            d = next(base64.b64decode(p["inlineData"]["data"]) for p in r["candidates"][0]["content"]["parts"] if "inlineData" in p)
+            img = Image.open(io.BytesIO(d)).convert("RGB")
+            if min(img.size) >= 512: return img, f"gemini-image-k{GKEYS.index(kk)+1}"
+        except urllib.error.HTTPError as e: log("gemini image key", GKEYS.index(kk) + 1, e.code); DEAD.add(("img", kk))
+        except Exception as e: log("gemini image", repr(e)[:100]); DEAD.add(("img", kk))
+    if os.environ.get("HF_TOKEN"):   # backup 3: HF serverless FLUX.1-schnell (Inference Providers)
         try:
             rq = urllib.request.Request("https://router.huggingface.co/hf-inference/models/black-forest-labs/FLUX.1-schnell",
                 json.dumps({"inputs": short}).encode(), {"Authorization": "Bearer " + os.environ["HF_TOKEN"], "Content-Type": "application/json"})
@@ -480,6 +500,22 @@ def flux(prompt, sd):
         log("hf flux fail", repr(e)[:140])
     return None, None
 _hf = None
+# ---- 1-to-1 contextual shots: one exact-action picture for every ~3.5 s of speech ----
+if not S.get("shots_v"):
+    req = [{"i": i, "hindi": sc["text"], "context": sc["visual"][:160], "n": max(1, min(3, round(sc["dur"] / 3.5)))} for i, sc in enumerate(S["scenes"])]
+    try:
+        o = gemini("You storyboard a Hindi story video. For EVERY item below write exactly n English image prompts, one per ~3.5 seconds of that Hindi line, in the "
+                   "order the line says things. Each prompt (15-30 words) must show the precise PHYSICAL ACTION, objects and place named in that part of the line "
+                   "(e.g. line 'the boy dropped the lamp in fear' -> 'a scared village boy dropping a burning clay lamp, oil splashing on a mud floor, night'). "
+                   "Wide or medium shot, characters doing the action, never a portrait, never a face staring at the camera, no alcohol, no text. Keep each "
+                   "character's look consistent with the context. Return JSON {\"shots\": [{\"i\": 0, \"p\": [\"...\"]}, ...]}\n" + json.dumps(req, ensure_ascii=False))
+        mp = {int(x["i"]): [str(t) for t in x["p"]][:3] for x in o.get("shots", []) if x.get("p")}
+    except BaseException as e: log("shot planner failed", repr(e)[:120]); mp = {}
+    for i, sc in enumerate(S["scenes"]):
+        sc["shots"] = mp.get(i) or [sc["visual"]]
+    S["shots_v"] = 1; json.dump(S, open(f"{OUT}/script.json", "w"), ensure_ascii=False, indent=1)
+    log("shots planned:", sum(len(sc["shots"]) for sc in S["scenes"]), "pictures for", len(S["scenes"]), "scenes")
+def shot_file(i, k): return f"{OUT}/i{i:03d}.jpg" if k == 0 else f"{OUT}/i{i:03d}_{k}.jpg"
 STEP = 1   # atomic scene-lock: every scene gets its own picture of exactly its own line
 for i, sc in enumerate(S["scenes"]):
     if os.path.exists(f"{OUT}/i{i:03d}.jpg"): continue   # resumed draft
@@ -487,7 +523,7 @@ for i, sc in enumerate(S["scenes"]):
         if os.path.exists(f"{OUT}/i{i-1:03d}.jpg"): shutil.copy(f"{OUT}/i{i-1:03d}.jpg", f"{OUT}/i{i:03d}.jpg"); continue
     if out_of_time(): pause(f"images {i}/{len(S['scenes'])}")
     if i and i % 6 == 0: checkpoint(f"images {i}/{len(S['scenes'])}")
-    p = sc["visual"]
+    p = (sc.get("shots") or [sc["visual"]])[0]
     img, src = flux(p, seed + i)
     time.sleep(6)   # 6 s between downloads
     if img is None and os.environ.get("ALLOW_REUSE") != "1":   # 0% quality compromise: never fill with mirrored repeats, wait for image credit
@@ -501,6 +537,13 @@ for i, sc in enumerate(S["scenes"]):
     img = ImageEnhance.Contrast(img).enhance(1.05)
     img.save(f"{OUT}/i{i:03d}.jpg", quality=93)
     log("img", i, src)
+for i, sc in enumerate(S["scenes"]):   # extra shots of the same line (2nd/3rd action of that line)
+    for k, p in enumerate((sc.get("shots") or [])[1:], 1):
+        if os.path.exists(shot_file(i, k)): continue
+        if out_of_time(): pause(f"images shot {i}.{k}")
+        img, src = flux(p, seed + i * 7 + k); time.sleep(6)
+        if img is None: pause(f"imgwait: shot {i+1}.{k+1} waiting for a real picture")
+        ImageEnhance.Contrast(cover(img).filter(ImageFilter.UnsharpMask(2, 70, 2))).enhance(1.05).save(shot_file(i, k), quality=93); log("img", f"{i}.{k}", src)
 
 for i in range(len(S["scenes"])):   # pictures still missing at the start -> borrow the first good one after them
     if not os.path.exists(f"{OUT}/i{i:03d}.jpg"):
@@ -617,7 +660,8 @@ for i, sc in enumerate(S["scenes"]):   # (b) scene_XX = its own picture locked t
     nsub = max(1, math.ceil(d / 3.5)); dk = d / nsub; ins, fc = [], ""
     for k in range(nsub):   # explainer rule: no framing holds > 3.5 s (pan / tilt / punch-in 1.3x)
         z = 1.3 if k % 2 else 1.0; sw, sh = int(CW * z) // 2 * 2, int(CH2 * z) // 2 * 2
-        ins += ["-loop", "1", "-framerate", str(fps), "-t", f"{dk:.3f}", "-i", f"{OUT}/i{i:03d}.jpg"]
+        _ns = len(sc.get("shots") or [1]); _kf = shot_file(i, min(_ns - 1, k * _ns // nsub))
+        ins += ["-loop", "1", "-framerate", str(fps), "-t", f"{dk:.3f}", "-i", _kf if os.path.exists(_kf) else f"{OUT}/i{i:03d}.jpg"]
         fc += f"[{k}:v]scale={sw}:{sh},crop={W}:{H}:{pans[(i + k) % 4].replace('{D}', f'{dk:.3f}')},setsar=1,fps={fps}[s{k}];"
     fc += "".join(f"[s{k}]" for k in range(nsub)) + f"concat=n={nsub}:v=1:a=0,fade=t=in:st=0:d=0.2,format=yuv420p[v];[{nsub}:a]apad=whole_dur={d:.3f}[a]"
     subprocess.run(["ffmpeg", "-y", "-v", "error", *ins, "-i", wav_of(i), "-filter_complex", fc,

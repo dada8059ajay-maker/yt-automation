@@ -1,0 +1,102 @@
+name: buffer-matrix
+# 14-day buffer: up to 4 parallel runners (one per channel+mode), each renders one video into the queue; the hourly engine publishes it (YouTube max 5 uploads/24h)
+on:
+  schedule:
+    - cron: "37 */2 * * *"
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: write
+concurrency:
+  group: buffer
+  cancel-in-progress: false
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+    outputs:
+      need: ${{ steps.g.outputs.need }}
+    steps:
+      - uses: actions/checkout@v4
+        with: {ref: main}
+      - id: g
+        run: echo "need=$(python3 engine/buffer_gate.py)" >> $GITHUB_OUTPUT; cat $GITHUB_OUTPUT
+  build:
+    needs: gate
+    if: needs.gate.outputs.need != '[]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 80
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix:
+        slot: ${{ fromJSON(needs.gate.outputs.need) }}
+    env:
+      GH_TOKEN: ${{ github.token }}
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      GEMINI_API_KEY_2: ${{ secrets.GEMINI_API_KEY_2 }}
+      GEMINI_API_KEY_3: ${{ secrets.GEMINI_API_KEY_3 }}
+      CID: ${{ secrets.YT_CLIENT_ID }}
+      CSEC: ${{ secrets.YT_CLIENT_SECRET }}
+      HF_TOKEN: ${{ secrets.HF_TOKEN }}
+      POLLINATIONS_TOKEN: ${{ secrets.POLLINATIONS_TOKEN }}
+      FB_APP_ID: ${{ secrets.FB_APP_ID }}
+      FB_APP_SECRET: ${{ secrets.FB_APP_SECRET }}
+      META_APP_ID: ${{ secrets.META_APP_ID }}
+      META_APP_SECRET: ${{ secrets.META_APP_SECRET }}
+      FB_USER_TOKEN: ${{ secrets.FB_USER_TOKEN }}
+      FB_PAGE_ACCESS_TOKEN: ${{ secrets.FB_PAGE_ACCESS_TOKEN }}
+      SLOT: ${{ matrix.slot }}
+      VOICE_ENGINE: kokoro
+      RENDER_BUDGET_MIN: "62"
+    steps:
+      - uses: actions/checkout@v4
+        with: {ref: main}
+      - run: echo "T0=$(date +%s)" >> $GITHUB_ENV; cp engine/state.json /tmp/base_state.json
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cache/huggingface
+            ~/.cache/pip
+          key: buffer-kokoro-v1
+      - run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg fonts-noto-core espeak-ng >/dev/null
+          pip install -q pillow gradio_client soundfile "kokoro>=0.9.4"
+          gh release view queue >/dev/null 2>&1 || gh release create queue --title "render queue" --notes "pre-rendered videos waiting for YouTube quota" --prerelease
+      - run: |
+          N=${SLOT%-*}; MODE=${SLOT#*-}
+          python3 engine/make.py $N $MODE --prerender
+      - if: always()
+        run: |
+          mkdir -p logs; cp out/*/log.txt logs/${{ github.run_id }}_${{ matrix.slot }}.txt 2>/dev/null || true; cp out/*/script.json logs/${{ github.run_id }}_${{ matrix.slot }}_script.json 2>/dev/null || true
+          git config user.name bot; git config user.email bot@users.noreply.github.com
+          # conflict-free save: never rebase state.json; merge our changes into the freshest copy
+          python3 - <<'PY'
+          import json, os, time, datetime as dt
+          p = "engine/state.json"; s = json.load(open(p)); m = dt.datetime.utcnow().strftime("%Y-%m")
+          s.setdefault("_minutes", {})[m] = s["_minutes"].get(m, 0) + int((time.time() - int(os.environ["T0"])) / 60) + 2
+          json.dump(s, open(p, "w"), ensure_ascii=False, indent=1)
+          PY
+          cp engine/state.json /tmp/new_state_update.json
+          mkdir -p /tmp/keep && cp -r results logs docs /tmp/keep/; cp secrets/ig_token.enc /tmp/ig_token.enc 2>/dev/null 2>/dev/null || true
+          for try in 1 2 3 4 5; do
+            git fetch -q origin main && git reset -q --hard origin/main
+            git checkout origin/main -- engine/state.json
+            python3 engine/merge_state.py /tmp/base_state.json /tmp/new_state_update.json engine/state.json
+            mkdir -p results logs docs
+            for f in /tmp/keep/results/* /tmp/keep/logs/* /tmp/keep/docs/*; do [ -f "$f" ] || continue; d=${f#/tmp/keep/}
+              if [ "$d" = results/schedule_log.md ] && [ -f "$d" ]; then cat "$d" "$f" | awk '!seen[$0]++' > /tmp/sl && mv /tmp/sl "$d"; else cp "$f" "$d"; fi; done
+            [ -f /tmp/ig_token.enc ] && cp /tmp/ig_token.enc secrets/ig_token.enc
+            git add engine/state.json results logs docs secrets
+            git commit -q -m "buffer ${{ matrix.slot }} ${{ github.run_id }} [skip ci]" || { echo nothing to commit; break; }
+            git push -q origin HEAD:main && break
+            sleep $((RANDOM % 10 + 5))
+          done
+  chain:
+    needs: build
+    if: always() && needs.build.result != 'skipped'
+    runs-on: ubuntu-latest
+    env: { GH_TOKEN: "${{ github.token }}" }
+    steps:
+      - run: gh workflow run buffer-matrix.yml -R ${{ github.repository }} --ref main || true
