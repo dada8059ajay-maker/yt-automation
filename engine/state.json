@@ -95,7 +95,8 @@
    "एक नन्हे बालक कबीर और उसकी जादुई लकड़ी की गाड़ी का रहस्यमयी और शिक्षाप्रद सफ़र",
    "आसमान के नीले बादलों का अचानक काला होकर धरती पर उतरना और एक नन्हे बच्चे की समझदारी से उनका रहस्य सुलझना।",
    "बेडरूम की दीवार पर टंगे एक पुराने कालीन से निकलती रहस्यमयी आवाज़ों और बच्चों के जादुई सफर की कहानी",
-   "छोटी कोशिश बड़ी जीत"
+   "छोटी कोशिश बड़ी जीत",
+   "बेडरूम की दीवार पर टंगे एक पुराने कालीन से निकलती रहस्यमयी आवाज़ों और बच्चों के जादुई सफर की कहानी का रोमांचक ट्रेलर"
   ],
   "last_long": {
    "job": "kahani_long_20261104_1120",
@@ -105,7 +106,7 @@
     "Chintu": "English character sheet: age 7, round cheerful face, big black curious eyes, short messy black hair, average build, wearing a bright yellow cotton t-shirt and blue shorts, Indian look"
    },
    "vid": null,
-   "short_done": false,
+   "short_done": true,
    "trailer": null,
    "fest_at": null
   }
@@ -216,6 +217,13 @@
    "mode": "short",
    "asset": "raat_short_20261104_1232.tar",
    "title": "गाँव का सूखा कुआँ क्यों पुकारता है नाम? | रात के किस्से"
+  },
+  {
+   "job": "kahani_short_20261104_1232",
+   "ch": "kahani",
+   "mode": "short",
+   "asset": "kahani_short_20261104_1232.tar",
+   "title": "बेडरूम का जादुई कालीन! 🪄 हैरान करने वाला सच | कहानी पतंग"
   }
  ],
  "_draft": {
@@ -449,7 +457,7 @@
   }
  ],
  "_minutes": {
-  "2026-11": 3741
+  "2026-11": 3753
  },
  "_bank": {
   "kahani_s_patang01": "2026-11-02",
@@ -547,14 +555,5 @@
   "fest": null,
   "engine": "edge"
  },
- "_draft_kahani-short": {
-  "job": "kahani_short_20261104_1232",
-  "ch": "kahani",
-  "mode": "short",
-  "asset": "draft_kahani_short_20261104_1232.tar",
-  "stage": "imgwait: image servers out of free credit at 4/7",
-  "tries": 0,
-  "fest": null,
-  "engine": "edge"
- }
+ "_draft_kahani-short": null
 }
