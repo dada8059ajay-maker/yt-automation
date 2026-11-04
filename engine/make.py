@@ -18,6 +18,9 @@ STAMP = NOW.astimezone(IST).strftime("%Y%m%d_%H%M")
 import time as _t, tarfile
 T0 = _t.time()
 BUDGET_MIN = float(os.environ.get("RENDER_BUDGET_MIN", "58"))   # stop & checkpoint before the job's 80-min hard limit
+SLOT = os.environ.get("SLOT")   # matrix buffer runner: its own draft slot, never touches the main engine's draft
+if SLOT:
+    _MAIN_DRAFT = STATE.get("_draft"); STATE["_draft"] = STATE.get(f"_draft_{SLOT}")
 _d = STATE.get("_draft") or {}
 _NOWS = dt.datetime.now(dt.timezone.utc).isoformat()
 GEM_DEAD = (STATE.get("_gemini_wait") or "") > _NOWS
@@ -31,19 +34,23 @@ try:   # a pending festival story beats an ordinary unfinished draft of the same
     if MODE == "long" and not _d.get("fest") and _d.get("ch") == CH and any(e["id"] not in STATE.get("_bank", {}) and e.get("engine", ENGINE) == ENGINE for e in json.load(open("engine/story_bank.json")).get(CH, {}).get("festival", [])): _d = {}
 except Exception: pass
 _old = STATE.get("_draft") or {}
-_fest_first = bool(_old) and not _d and _old.get("ch") == CH and _old.get("mode") == MODE
+_fest_first = bool(SLOT) or (bool(_old) and not _d) and _old.get("ch") == CH and _old.get("mode") == MODE
 if not _fest_first and not (_d.get("ch") == CH and _d.get("mode") == MODE):   # nothing in hand for this channel+mode: pick up a parked unfinished video of this channel+mode
     for _p in list(STATE.get("_parked") or []):
         if _p.get("ch") == CH and _p.get("mode") == MODE and (_p.get("engine") or "gemini") == (os.environ.get("VOICE_ENGINE") or "gemini"):
             _d = dict(_p); STATE["_parked"].remove(_p); print("resume parked draft", _d["job"], flush=True); break
-if _old and _old.get("job") != _d.get("job"):   # Zero-Rework: never drop an unfinished video, park it
+if not SLOT and _old and _old.get("job") != _d.get("job"):   # Zero-Rework: never drop an unfinished video, park it
     STATE.setdefault("_parked", []); STATE["_parked"] = [x for x in STATE["_parked"] if x.get("job") != _old["job"]] + [_old]
     STATE["_draft"] = None; print("parked draft", _old["job"], flush=True)
 DRAFT = _d if _d.get("ch") == CH and _d.get("mode") == MODE and _d.get("tries", 0) < 4 else None
 TRIES = (DRAFT or {}).get("tries", 0) + 1
 JOB = DRAFT["job"] if DRAFT else f"{CH}_{MODE}_{STAMP}"
 OUT = os.path.abspath(f"out/{JOB}"); os.makedirs(OUT, exist_ok=True)
-def _save_state(): json.dump(STATE, open(STATE_P, "w"), ensure_ascii=False, indent=1)
+def _save_state():
+    if os.environ.get("SLOT"):
+        out = dict(STATE); out[f"_draft_{SLOT}"] = STATE.get("_draft"); out["_draft"] = _MAIN_DRAFT
+        json.dump(out, open(STATE_P, "w"), ensure_ascii=False, indent=1); return
+    json.dump(STATE, open(STATE_P, "w"), ensure_ascii=False, indent=1)
 def checkpoint(stage):
     """Save the unfinished video (script, voices, images done so far) to release 'drafts' so the next run resumes it."""
     asset = f"draft_{JOB}.tar"
@@ -160,7 +167,7 @@ try:
     _fb = json.load(open("engine/story_bank.json")).get(CH, {}).get("festival", [])
     if MODE == "long":
         _fid = (DRAFT or {}).get("fest")
-        FEST = next((e for e in _fb if e["id"] == _fid), None) if DRAFT else next((e for e in _fb if e["id"] not in STATE.get("_bank", {}) and e.get("engine", ENGINE) == ENGINE), None)
+        FEST = None if SLOT else next((e for e in _fb if e["id"] == _fid), None) if DRAFT else next((e for e in _fb if e["id"] not in STATE.get("_bank", {}) and e.get("engine", ENGINE) == ENGINE), None)
         FEST_AT = FEST and FEST.get("at")
     elif LL and LL.get("fest_at"): FEST_AT = LL["fest_at"]
 except Exception as _e: print("festival check skipped", _e)
@@ -760,7 +767,7 @@ if PRE:
     finish_draft(); after_success()
     STATE.setdefault("_queue", []).append({"job": JOB, "ch": CH, "mode": MODE, "asset": asset, "title": title, **({"at": FEST_AT} if FEST_AT else {})})
     STATE[CH]["history"].append(S.get("topic", title))
-    json.dump(STATE, open(STATE_P, "w"), ensure_ascii=False, indent=1)
+    _save_state()
     log("QUEUED", asset); sys.exit(0)
 if UPLOAD:
     subprocess.run([sys.executable, os.path.join(os.path.dirname(ROOT), "yt_publish.py"), OUT], check=True)
@@ -771,7 +778,7 @@ if UPLOAD:
         STATE[CH][MODE] = max(STATE[CH][MODE], pub) if FEST_AT else pub
         STATE.setdefault("_uploads", []).append(NOW.strftime("%Y-%m-%dT%H:%M:%SZ")); STATE["_uploads"] = STATE["_uploads"][-20:]
         STATE[CH]["history"].append(S.get("topic", title))
-        json.dump(STATE, open(STATE_P, "w"), ensure_ascii=False, indent=1)
+        _save_state()
         os.makedirs("results", exist_ok=True)
         with open("results/schedule_log.md", "a") as f:
             f.write(f"- {CFG['name']} | {MODE} | {title} | {slot.astimezone(IST).strftime('%a %d %b %Y %I:%M %p IST')} | https://studio.youtube.com/video/{vid}/edit\n")

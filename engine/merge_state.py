@@ -21,8 +21,8 @@ for k, v in ours.items():
     elif k == "_minutes":
         f = fresh.setdefault(k, {})
         for kk, vv in v.items(): f[kk] = f.get(kk, 0) + vv - base.get(k, {}).get(kk, 0)
-    elif k == "_draft":
-        fresh[k] = v
+    elif k.startswith("_draft"):
+        if v != base.get(k): fresh[k] = v
     elif isinstance(v, dict):
         f = fresh.setdefault(k, {})
         for kk, vv in v.items():
