@@ -569,7 +569,7 @@
   }
  ],
  "_minutes": {
-  "2026-11": 4407
+  "2026-11": 4420
  },
  "_bank": {
   "kahani_s_patang01": "2026-11-02",
@@ -661,5 +661,14 @@
   "fest": null,
   "engine": "edge"
  },
- "_draft_kahani-short": null
+ "_draft_kahani-short": {
+  "job": "kahani_short_20261104_1714",
+  "ch": "kahani",
+  "mode": "short",
+  "asset": "draft_kahani_short_20261104_1714.tar",
+  "stage": "imgwait: image servers out of free credit at 8/10",
+  "tries": 0,
+  "fest": null,
+  "engine": "edge"
+ }
 }
