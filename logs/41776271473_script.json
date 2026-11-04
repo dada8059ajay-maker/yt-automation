@@ -1,0 +1,510 @@
+{
+ "title": "जादुई पहिये से खुला गुफा का बड़ा राज़! | कहानी पतंग",
+ "topic": "नन्हा देव एक प्राचीन जादुई पहिये की मदद से गाँव की सूखी नदी में पानी लौटाने के लिए रहस्यमयी गुफा का सफर तय करता है।",
+ "description": "क्या होगा जब एक छोटे से बच्चे के हाथ लगेगा सौ साल पुराना जादुई पहिया? क्या नन्हा देव अपनी समझदारी और हिम्मत से सूखे गाँव में फिर से खुशहाली ला पाएगा?\n\nराजस्थान के सुंदरनगर गाँव में भीषण सूखा पड़ा हुआ था। सात साल का नन्हा देव गाँव को बचाने के लिए एक पुराने राजमहल के अँधेरे गोदाम में जाता है, जहाँ उसे एक चमकता हुआ पीतल का पहिया मिलता है। पहिये की रोशनी देव और उसके बंदर दोस्त गोलू को एक फुसफुसाती पहाड़ी की रहस्यमयी गुफा की तरफ ले जाती है।\n\nजानिए देव और गोलू की इस रोमांचक और जादुई यात्रा का अनोखा सच! ऐसी ही और मज़ेदार जादुई बाल कहानियों को देखने के लिए 'कहानी पतंग' चैनल को अभी सब्सक्राइब करें!",
+ "tags": [
+  "hindi stories",
+  "jadui kahani",
+  "kahani patang",
+  "jadui pahia",
+  "nanhe dev ki kahani",
+  "hindi moral stories",
+  "bed time stories in hindi",
+  "kids hindi stories",
+  "magical story in hindi",
+  "hindi stories for kids",
+  "hindi kahaniya",
+  "जादुई कहानी",
+  "हिंदी कहानियां",
+  "gufa ka rahasya",
+  "stories in hindi",
+  "hindi cartoon story",
+  "short stories for kids",
+  "kahani in hindi"
+ ],
+ "hook": "गुफा के अंदर नीली रोशनी का राज़!",
+ "thumb_text": "जादुई पहिये का राज़!",
+ "thumb_visual": "Vibrant 2D digital illustration of a brave 7-year-old Indian boy holding a glowing golden magical brass wheel with glowing blue energy rays, placing it into a slot inside a giant glowing blue rock cavern. His face shows intense wonder and astonishment. A cute little monkey sits on his shoulder looking shocked and excited. Strong rim lighting, dynamic glowing neon blues and warm gold colors, dark atmospheric mysterious background. Simple clean composition with ample negative space on the left side for text.",
+ "category": "raat: rules|village ; kahani: jungle|magic",
+ "characters": {
+  "Dev": "Dev, a curious 7-year-old Indian boy, bright brown eyes, short messy black hair, slim build, wearing a traditional yellow cotton kurta, white pyjamas, and a small red fabric wristband.",
+  "Grandmother": "Grandmother, an 65-year-old Indian woman, kind face with light wrinkles, silver hair in a bun, wearing a simple light blue cotton saree and round spectacles.",
+  "Golu": "Golu, a small cute brown Indian macaque monkey, expressive dark eyes, long bushy tail, wearing a small red fabric collar around its neck."
+ },
+ "scenes": [
+  {
+   "speaker": "N",
+   "text": "सोचिए, क्या होगा अगर एक बंजर पहाड़ी के नीचे बंद दरवाज़ा अचानक नीली रोशनी से चमकने लगे?",
+   "mood": "suspense",
+   "style": "thrilled, intense whisper, fast paced, full of mystery",
+   "visual": "A ancient carved stone door set into a rocky hillside glowing with vibrant blue magical light, night time, wide outdoor shot of dry desert hills in Rajasthan."
+  },
+  {
+   "speaker": "N",
+   "text": "क्या नन्हा देव उस गुप्त गुफा के अंदर छिपे बड़े राज़ को खोल पाएगा?",
+   "mood": "suspense",
+   "style": "curious, urgent, engaging audience directly",
+   "visual": "Dev, a curious 7-year-old Indian boy, bright brown eyes, short messy black hair, slim build, wearing a traditional yellow cotton kurta, standing outside a glowing stone cave entrance, looking in awe, wide cinematic shot."
+  },
+  {
+   "speaker": "N",
+   "text": "ध्यान से देखिए! क्योंकि आज की यह जादुई यात्रा आपकी सोच बदल देगी।",
+   "mood": "suspense",
+   "style": "dramatic tone, inviting narrator, clear voice",
+   "visual": "A wide sweeping view of a dry Rajasthani village with cracked earth riverbeds under a bright orange sunset sky."
+  },
+  {
+   "speaker": "N",
+   "text": "राजस्थान के सुंदरनगर गाँव में महीनों से एक बूंद भी बारिश नहीं हुई थी।",
+   "mood": "peaceful",
+   "style": "calm, slightly sad narrative tone",
+   "visual": "Traditional mud houses in a quiet Indian village, dry trees under a blazing sun, wide shot."
+  },
+  {
+   "speaker": "N",
+   "text": "गाँव की पुरानी नदी अब सिर्फ धूल और पत्थरों का बंजर मैदान बन चुकी थी।",
+   "mood": "peaceful",
+   "style": "somber, slow paced, clear explanation",
+   "visual": "A dry, cracked riverbed stretching across the landscape, empty clay pots resting on dry soil, wide shot."
+  },
+  {
+   "speaker": "N",
+   "text": "सात साल का नन्हा देव रोज़ अपनी दादी के साथ नदी के किनारे उदास बैठता था।",
+   "mood": "peaceful",
+   "style": "gentle, warm storytelling voice",
+   "visual": "Dev, a curious 7-year-old Indian boy, bright brown eyes, short messy black hair, slim build, wearing a traditional yellow cotton kurta, sitting on a stone bench beside Grandmother, an 65-year-old Indian woman in light blue saree, looking at the dry river, medium wide shot."
+  },
+  {
+   "speaker": "N",
+   "text": "दादी कहती थीं कि राजमहल के पुराने गोदाम में एक ऐसा राज़ छिपा है जो गाँव को बचा सकता है।",
+   "mood": "peaceful",
+   "style": "mysterious, quiet whisper of ancient secrets",
+   "visual": "Grandmother pointing towards an ancient ruined palace fort on a distant hilltop, warm afternoon sunlight, wide shot."
+  },
+  {
+   "speaker": "N",
+   "text": "एक दोपहर, देव छुपके से उस सौ साल पुराने महल के अँधेरे गोदाम में चला गया।",
+   "mood": "suspense",
+   "style": "tiptoeing voice, quiet excitement, mysterious",
+   "visual": "Dev walking cautiously inside a dusty ancient royal storehouse filled with wooden chests and brass pots, sunbeams coming through high lattice windows, wide interior shot."
+  },
+  {
+   "speaker": "N",
+   "text": "चारों तरफ पुरानी धूल, टूटी हुई संदूकें और जाले फैले हुए थे।",
+   "mood": "suspense",
+   "style": "low whisper, tense and atmospheric",
+   "visual": "Old carved wooden trunks covered in cobwebs inside an ancient stone attic, shadowy corners, medium wide shot."
+  },
+  {
+   "speaker": "N",
+   "text": "अचानक, कोने में रखी एक लकड़ी की अलमारी से धीमी सुनहरी रोशनी छनकर आने लगी!",
+   "mood": "suspense",
+   "style": "surprised, sudden rise in tone, gasping",
+   "visual": "A glowing golden light leaking through the cracks of a dark carved wooden cabinet in the attic corner, wide shot."
+  },
+  {
+   "speaker": "N",
+   "text": "क्या आप अंदाज़ा लगा सकते हैं कि उस कपड़े के पीछे क्या छिपा था?",
+   "mood": "suspense",
+   "style": "engaging, curious prompt to the viewer",
+   "visual": "Dev reaching out his hand toward an old red cloth draped inside the wooden cabinet, medium wide shot."
+  },
+  {
+   "speaker": "N",
+   "text": "देव ने जैसे ही पुराना लाल कपड़ा हटाया, उसकी आँखें फटी की फटी रह गईं!",
+   "mood": "suspense",
+   "style": "shocked, excited, high pitched burst",
+   "visual": "Dev pulling away a dusty red fabric, revealing a sparkling golden brass wheel with ancient symbols, wide shot."
+  },
+  {
+   "speaker": "N",
+   "text": "वहाँ एक पीतल का छोटा सा जादुई पहिया चमक रहा था, जिस पर बारीक नक्काशी बनी थी।",
+   "mood": "peaceful",
+   "style": "wonderous, soft filled with awe",
+   "visual": "A ornate 10-inch golden brass wheel glowing with soft yellow magic sparkles, resting on a pedestal, wide shot."
+  },
+  {
+   "speaker": "N",
+   "text": "जैसे ही देव ने उस पहिये को हाथ लगाया, वह खुद-ब-खुद हवा में धीरे-धीरे घूमने लगा!",
+   "mood": "suspense",
+   "style": "amazed, breathless commentary",
+   "visual": "The golden brass wheel floating spinning gently in mid-air right in front of Dev, casting magical light circles, wide shot."
+  },
+  {
+   "speaker": "N",
+   "text": "और देखिए कमाल! पहिये के घूमते ही सूखी ज़मीन से छोटे-छोटे हरे पौधे उगने लगे!",
+   "mood": "victory",
+   "style": "joyful shock, fast energetic delivery",
+   "visual": "Tiny green sprouts instantly breaking through the dusty stone floor beneath the floating wheel, golden light particles everywhere, wide shot."
+  },
+  {
+   "speaker": "N",
+   "text": "देव की खुशी का ठिकाना नहीं रहा, उसे अपनी आँखों पर यकीन नहीं हो रहा था।",
+   "mood": "victory",
+   "style": "happy, beaming tone",
+   "visual": "Dev smiling brightly with big open eyes, clapping happily inside the glowing ancient room, medium wide shot."
+  },
+  {
+   "speaker": "N",
+   "text": "तभी उसका नटखट दोस्त, गोलू बंदर कूदकर अलमारी के ऊपर आ बैठा।",
+   "mood": "peaceful",
+   "style": "playful, funny, lively voice",
+   "visual": "Golu, a small cute brown Indian macaque monkey with red neck collar, landing playfully on top of the wooden cabinet, wide shot."
+  },
+  {
+   "speaker": "N",
+   "text": "गोलू ने पहिये की तरफ इशारा किया, जैसे वह कोई बड़ा इशारा समझ गया हो।",
+   "mood": "suspense",
+   "style": "intriguing, fast paced",
+   "visual": "Golu pointing his little paw toward the floating golden wheel and then out the palace window, wide shot."
+  },
+  {
+   "speaker": "N",
+   "text": "अचानक, उस जादुई पहिये से धूप की एक चमकती हुई किरण बाहर की तरफ निकली।",
+   "mood": "suspense",
+   "style": "energetic, mysterious turn",
+   "visual": "A beam of bright golden sunlight shooting out from the brass wheel towards the distant hill outside the palace window, wide shot."
+  },
+  {
+   "speaker": "N",
+   "text": "किरण का पीछा करते हुए देव और गोलू गाँव के पीछे बनी फुसफुसाती पहाड़ी की तरफ भागे।",
+   "mood": "chase",
+   "style": "fast, out of breath, thrilling tempo",
+   "visual": "Dev running along a dusty village trail holding the glowing golden wheel, with Golu monkey jumping beside him, wide shot."
+  },
+  {
+   "speaker": "N",
+   "text": "तेज़ हवा चल रही थी और रास्ते में धूल के गुबार उठ रहे थे।",
+   "mood": "chase",
+   "style": "windy action feel, urgent",
+   "visual": "Whirling dust clouds on a rocky hill pathway leading up towards a misty peak, late afternoon light, wide shot."
+  },
+  {
+   "speaker": "N",
+   "text": "लेकिन देव रुका नहीं, वह जानता था कि पूरे गाँव की उम्मीद अब उसी पर है।",
+   "mood": "chase",
+   "style": "determined, courageous tone",
+   "visual": "Dev climbing a steep rocky mountain trail bravely, golden wheel shining brightly in his arms, wide shot."
+  },
+  {
+   "speaker": "N",
+   "text": "पहाड़ी के ऊपर पहुँचते ही जादुई रोशनी एक विशाल बरगद के पेड़ पर जाकर ठहर गई।",
+   "mood": "suspense",
+   "style": "focused, dramatic arrival",
+   "visual": "A giant centuries-old banyan tree on top of the hilltop, illuminated by a beam of golden light, wide shot."
+  },
+  {
+   "speaker": "N",
+   "text": "बरगद की पुरानी जड़ों के पीछे एक गुप्त पत्थर का दरवाज़ा छिपा हुआ था!",
+   "mood": "suspense",
+   "style": "whisper of revelation, thrilling",
+   "visual": "Massive aerial banyan roots parting to reveal a carved ancient stone entrance sealed in the cliff side, wide shot."
+  },
+  {
+   "speaker": "N",
+   "text": "पहिया दरवाज़े के पास जाते ही ज़ोर-ज़ोर से चमकने लगा और दरवाज़ा खुल गया।",
+   "mood": "victory",
+   "style": "triumphant, grand impact tone",
+   "visual": "The heavy stone door sliding open automatically with blue light bursting out into the sunset dusk, wide shot."
+  },
+  {
+   "speaker": "N",
+   "text": "अगर आपको देव की यह जादुई खोज पसंद आ रही है, तो कहानी पतंग को अभी सब्सक्राइब करें!",
+   "mood": "peaceful",
+   "style": "warm, friendly, clear direct message to viewer",
+   "visual": "Dev standing at the illuminated doorway looking back happily, surrounded by soft glowing magic sparks, medium wide shot."
+  },
+  {
+   "speaker": "N",
+   "text": "अब ध्यान से सुनिए! गुफा के अंदर घुसते ही ठंडा अँधेरा छा गया।",
+   "mood": "suspense",
+   "style": "hushed tone, mysterious drop in pitch",
+   "visual": "Dev stepping inside a vast cool stone cavern filled with glowing blue crystals on wall carvings, wide shot."
+  },
+  {
+   "speaker": "N",
+   "text": "चारों तरफ अजीब सी फुसफुसाहट की आवाज़ें गूँज रही थीं।",
+   "mood": "suspense",
+   "style": "eerie curiosity, slow whisper",
+   "visual": "Ancient carved relief statues on cave walls glowing dimly, mysterious atmosphere, wide shot."
+  },
+  {
+   "speaker": "N",
+   "text": "गोलू डरकर देव के कंधे से चिपक गया और धीमी आवाज़ में चूँ-चूँ करने लगा।",
+   "mood": "suspense",
+   "style": "tender, playful suspense voice",
+   "visual": "Golu sitting tightly on Dev's shoulder looking around with big wide eyes inside the glowing cave, medium wide shot."
+  },
+  {
+   "speaker": "N",
+   "text": "रास्ते के आगे तीन अलग-अलग गुप्त सुरंगें बनी हुई थीं!",
+   "mood": "suspense",
+   "style": "puzzling prompt, deliberate pacing",
+   "visual": "Three distinct arched stone tunnels branching off inside the cave: one golden, one dark, one shimmering blue water mist, wide shot."
+  },
+  {
+   "speaker": "N",
+   "text": "बच्चों, आप होते तो क्या करते? क्या आप सोने से चमकती सुरंग में जाते या पानी की आवाज़ वाली सुरंग में?",
+   "mood": "suspense",
+   "style": "engaging directly with audience, questioning",
+   "visual": "Dev standing at the crossroads of three glowing rock tunnels, thinking carefully, wide shot."
+  },
+  {
+   "speaker": "N",
+   "text": "देव ने अपनी समझदारी दिखाई और पानी की हल्की कल-कल आवाज़ वाली सुरंग को चुना।",
+   "mood": "peaceful",
+   "style": "smart, approving tone",
+   "visual": "Dev walking bravely into the misty blue tunnel carrying the golden brass wheel, wide shot."
+  },
+  {
+   "speaker": "N",
+   "text": "सुरंग में आगे बढ़ते ही एक विशाल नीले रंग की चट्टान सामने आ खड़ी हुई।",
+   "mood": "suspense",
+   "style": "dramatic reveal, deep voice",
+   "visual": "A massive smooth blue rock blocking the tunnel path, carved with intricate swirl patterns, wide shot."
+  },
+  {
+   "speaker": "N",
+   "text": "उस चट्टान के बीचों-बीच एक छोटा सा गोल खाँचा बना हुआ था।",
+   "mood": "suspense",
+   "style": "keen observation, sharp tone",
+   "visual": "A circular socket in the center of the giant blue rock matching the exact size of the golden wheel, medium shot."
+  },
+  {
+   "speaker": "N",
+   "text": "देव ने तुरंत अपने हाथ में पकड़े जादुई पहिये को उस खाँचे में बिठा दिया।",
+   "mood": "chase",
+   "style": "action oriented, decisive voice",
+   "visual": "Dev slotting the glowing golden wheel into the circular slot on the giant blue rock face, wide shot."
+  },
+  {
+   "speaker": "N",
+   "text": "धड़ाम! पूरी गुफा हिलने लगी और पत्थरों की धूल नीचे गिरने लगी!",
+   "mood": "suspense",
+   "style": "rumbling, tense, dramatic excitement",
+   "visual": "Dust shaking off the cave ceiling as the giant blue stone wall vibrates with bright golden energy lines, wide shot."
+  },
+  {
+   "speaker": "N",
+   "text": "क्या कोई डरावना प्राणी बाहर आने वाला था? बिल्कुल नहीं!",
+   "mood": "suspense",
+   "style": "reassuring, playful mystery twist",
+   "visual": "Golden light flashing bright from the cracks in the stone, wide shot."
+  },
+  {
+   "speaker": "N",
+   "text": "वह नीली चट्टान दरअसल एक विशाल जादुई कछुए का प्राचीन पत्थर रूप थी!",
+   "mood": "suspense",
+   "style": "awe-inspiring revelation tone",
+   "visual": "The blue rock opening two big gentle eyes and glowing carved shell patterns—a ancient magical stone tortoise, wide shot."
+  },
+  {
+   "speaker": "N",
+   "text": "कछुए ने अपनी बड़ी-बड़ी आँखें खोलीं और देव को ध्यान से देखने लगा।",
+   "mood": "peaceful",
+   "style": "gentle majesty, slow pace",
+   "visual": "The giant friendly ancient stone tortoise looking down kindly at little Dev and Golu monkey, wide shot."
+  },
+  {
+   "speaker": "N",
+   "text": "कछुए की आवाज़ गूँजी, 'नन्हे बालक, तुम यहाँ क्या ढूँढने आए हो?'",
+   "mood": "suspense",
+   "style": "deep, resonant sound, wise mythical voice",
+   "visual": "The giant stone tortoise opening its ancient mouth slowly in a brightly glowing cavern, wide shot."
+  },
+  {
+   "speaker": "N",
+   "text": "देव ने बिना डरे कहा, 'हमारे गाँव की नदी सूख गई है, मुझे पानी का राज़ चाहिए!'",
+   "mood": "peaceful",
+   "style": "brave, clear child voice representation",
+   "visual": "Dev standing tall and courageous before the giant friendly tortoise, pointing toward his village outside, wide shot."
+  },
+  {
+   "speaker": "N",
+   "text": "कछुए ने मुस्कुराते हुए अपनी पीठ पर बनी दो गुप्त पेटियों की तरफ इशारा किया।",
+   "mood": "suspense",
+   "style": "intriguing, mysterious prompt",
+   "visual": "Two glowing stone chests appearing on top of the tortoise shell: one gold, one clear crystal water chest, wide shot."
+  },
+  {
+   "speaker": "N",
+   "text": "एक पेटी हीरे-जवाहरात से भरी थी, और दूसरी में साफ़ पानी की जादुई चाबी थी।",
+   "mood": "suspense",
+   "style": "explaining the test clearly",
+   "visual": "Close wide shot of the two opened chests: shiny golden coins in one, a clear crystal glowing key in the other."
+  },
+  {
+   "speaker": "N",
+   "text": "कछुए ने कहा, 'तुम केवल एक ही पेटी चुन सकते हो!'",
+   "mood": "suspense",
+   "style": "stern testing voice, quiet dramatic pause",
+   "visual": "The giant tortoise watching Dev closely as Dev steps towards the two glowing chests, wide shot."
+  },
+  {
+   "speaker": "N",
+   "text": "क्या देव धन-दौलत चुनता या पूरे गाँव का भला?",
+   "mood": "suspense",
+   "style": "tense question to audience",
+   "visual": "Dev looking back and forth between the gold chest and the water key chest, medium wide shot."
+  },
+  {
+   "speaker": "N",
+   "text": "देव ने एक पल भी नहीं गँवाया और तुरंत पानी की चाबी वाली पेटी उठाई।",
+   "mood": "victory",
+   "style": "proud, swift, cheerful exclamation",
+   "visual": "Dev picking up the glowing crystal water key happily, turning away from the gold, wide shot."
+  },
+  {
+   "speaker": "N",
+   "text": "जादुई कछुआ देव की ईमानदारी और दयालुता देखकर बेहद खुश हुआ!",
+   "mood": "victory",
+   "style": "warm, glowing praise tone",
+   "visual": "The giant ancient tortoise smiling gently, emitting blue light of joy throughout the cavern, wide shot."
+  },
+  {
+   "speaker": "N",
+   "text": "उसने कहा, 'सच्ची समझदारी दूसरों की मदद करने में ही होती है!'",
+   "mood": "peaceful",
+   "style": "wise, soulful moral quote tone",
+   "visual": "The tortoise touching its stone head near Dev in a friendly gesture of blessing, wide shot."
+  },
+  {
+   "speaker": "N",
+   "text": "कछुए ने अपनी भारी पूँछ से सामने की मुख्य दीवार पर ज़ोर से प्रहार किया।",
+   "mood": "chase",
+   "style": "action thunderous impact voice",
+   "visual": "The giant stone tortoise tail striking the cavern back wall, creating glowing cracks in the rock, wide shot."
+  },
+  {
+   "speaker": "N",
+   "text": "चट्टान टूटते ही उसके पीछे से ठंडे, मीठे पानी का एक विशाल फव्वारा फूट पड़ा!",
+   "mood": "victory",
+   "style": "burst of joy, excited rushing tempo",
+   "visual": "Crystal blue fresh spring water gushing out from the broken rock wall with tremendous power, wide shot."
+  },
+  {
+   "speaker": "N",
+   "text": "नीला जादुई पानी तेज़ी से सुरंग से बाहर की ओर बहने लगा!",
+   "mood": "chase",
+   "style": "rushing, fast, energetic tone",
+   "visual": "A sparkling blue river stream flowing swiftly through the stone cave floor towards the entrance, wide shot."
+  },
+  {
+   "speaker": "N",
+   "text": "देव और गोलू पानी की धारा के साथ तेज़ी से पहाड़ी से नीचे की तरफ भागे।",
+   "mood": "chase",
+   "style": "thrilled, running fast, cheerful rush",
+   "visual": "Dev and Golu monkey running down the hillside trail next to a cascading blue water stream in dusk light, wide shot."
+  },
+  {
+   "speaker": "N",
+   "text": "गाँव वाले हैरान होकर देखने लगे कि बंजर नदी में फिर से नीला पानी हिलकोरे ले रहा था!",
+   "mood": "victory",
+   "style": "amazed, grand community celebration tone",
+   "visual": "Indian villagers standing along the riverbank cheering as sparkling fresh blue water fills the dry riverbed, wide shot."
+  },
+  {
+   "speaker": "N",
+   "text": "सूखे खेत फिर से हरे-भरे होने लगे और बच्चों के चेहरे पर मुस्कान लौट आई।",
+   "mood": "victory",
+   "style": "happy, heartwarming tone",
+   "visual": "Green crops instantly blooming along the river edge under bright moonlight, village children dancing, wide shot."
+  },
+  {
+   "speaker": "N",
+   "text": "पूरे सुंदरनगर गाँव में ढोल-नगाड़े बजने लगे और उत्सव का माहौल बन गया।",
+   "mood": "victory",
+   "style": "festive, lively voice",
+   "visual": "Villagers celebrating with oil lamps and colorful decorations by the flowing river at night, wide shot."
+  },
+  {
+   "speaker": "N",
+   "text": "दादी ने देव को गले से लगा लिया और उसकी समझदारी की तारीफ की।",
+   "mood": "peaceful",
+   "style": "loving, emotional warmth",
+   "visual": "Grandmother hugging Dev tightly near the riverbank with tears of joy, Golu sitting on a rock nearby, medium wide shot."
+  },
+  {
+   "speaker": "N",
+   "text": "जादुई पहिया अब शांत होकर नदी के बीच बने प्राचीन स्तम्भ पर स्थापित हो चुका था।",
+   "mood": "peaceful",
+   "style": "calm, magical closure",
+   "visual": "The golden brass wheel resting safely atop a stone pillar in the middle of the river, emitting a soft guard light, wide shot."
+  },
+  {
+   "speaker": "N",
+   "text": "वह पहिया हमेशा गाँव को मीठे पानी और खुशहाली से भरता रहा।",
+   "mood": "peaceful",
+   "style": "content, serene storytelling",
+   "visual": "The lush green village thriving under a starry night sky with a shimmering river flowing peacefully, wide shot."
+  },
+  {
+   "speaker": "N",
+   "text": "तो दोस्तों, इस मजेदार कहानी से हमें क्या सीख मिलती है?",
+   "mood": "peaceful",
+   "style": "reflective, conversational direct ask",
+   "visual": "Dev sitting by the peaceful riverbank under moonlight, looking out with a warm smile, wide shot."
+  },
+  {
+   "speaker": "N",
+   "text": "यही कि लालच छोड़कर समझदारी और ईमानदारी से काम लेने पर हर मुश्किल आसान हो जाती है।",
+   "mood": "peaceful",
+   "style": "inspiring, clear educational statement",
+   "visual": "Dev holding a clay lamp near the quiet water, warm golden glow on his face, wide shot."
+  },
+  {
+   "speaker": "N",
+   "text": "सच्ची हिम्मत वही है जो दूसरों के काम आए।",
+   "mood": "peaceful",
+   "style": "strong, uplifting moral message",
+   "visual": "A beautiful view of the lush green Rajasthani village bathed in gentle morning sunlight, wide shot."
+  },
+  {
+   "speaker": "N",
+   "text": "अगर आपको नन्हे देव और उसके जादुई पहिये की यह कहानी पसंद आई...",
+   "mood": "peaceful",
+   "style": "warm engagement voice",
+   "visual": "Dev waving happily to the screen from the green riverbank with Golu monkey, wide shot."
+  },
+  {
+   "speaker": "N",
+   "text": "...तो इस वीडियो को अपने दोस्तों के साथ ज़रूर शेयर करें!",
+   "mood": "peaceful",
+   "style": "enthusiastic sharing appeal",
+   "visual": "Bright animated scene of children playing together near the flowing river in the sunny village, wide shot."
+  },
+  {
+   "speaker": "N",
+   "text": "कहानी पतंग चैनल को सब्सक्राइब करना न भूलें ताकि कोई नई जादुई कहानी न छूटे।",
+   "mood": "peaceful",
+   "style": "clear channel call to action tone",
+   "visual": "A colorful kite flying high in the blue sky above the peaceful river village, wide shot."
+  },
+  {
+   "speaker": "N",
+   "text": "अगली बार देखिए: नन्हे चिंटू और बादलों के जादुई झूले का अनसुना रहस्य!",
+   "mood": "suspense",
+   "style": "exciting preview hook voice",
+   "visual": "A mysterious sneak peek scene: a glowing swing hanging from soft white clouds in a starry sky, wide shot."
+  },
+  {
+   "speaker": "N",
+   "text": "तब तक के लिए हंसते रहिए, मुस्कुराते रहिए और देखते रहिए कहानी पतंग!",
+   "mood": "victory",
+   "style": "joyful final sign-off, energetic wave",
+   "visual": "A warm sunrise over the blooming village with a bright colorful kite fluttering high in the air, wide shot."
+  }
+ ],
+ "seo_v": 1,
+ "character_voice_map": {
+  "N": "fable",
+  "M": "echo",
+  "F": "shimmer",
+  "O": "onyx",
+  "A": "sage",
+  "C": "nova",
+  "G": "ash"
+ },
+ "rules_v": 3,
+ "voice_engine": "openai"
+}
