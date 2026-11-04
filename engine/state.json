@@ -449,7 +449,7 @@
   }
  ],
  "_minutes": {
-  "2026-11": 3733
+  "2026-11": 3741
  },
  "_bank": {
   "kahani_s_patang01": "2026-11-02",
@@ -463,7 +463,8 @@
   "kahani_s_bartan01": "2026-11-04",
   "kahani_s_chidiya02": "2026-11-04",
   "kahani_l_bank01_1104": "2026-11-04",
-  "raat_s_kuan01": "2026-11-04"
+  "raat_s_kuan01": "2026-11-04",
+  "raat_s_photo01": "2026-11-04"
  },
  "_gemini_wait": "2026-11-04T08:05:00+00:00",
  "_engine_b_dead": "2026-11-04",
@@ -516,7 +517,16 @@
   "hylg8zUWphw",
   "uHfWNg16Vs4"
  ],
- "_draft_raat-short": null,
+ "_draft_raat-short": {
+  "job": "raat_short_20261104_1253",
+  "ch": "raat",
+  "mode": "short",
+  "asset": "draft_raat_short_20261104_1253.tar",
+  "stage": "imgwait: image servers out of free credit at 3/7",
+  "tries": 0,
+  "fest": null,
+  "engine": "edge"
+ },
  "_draft_raat-long": {
   "job": "raat_long_20261104_0830",
   "ch": "raat",
