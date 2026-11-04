@@ -1,0 +1,13 @@
+name: gold-video
+on: workflow_dispatch
+permissions: { contents: write }
+jobs:
+  render:
+    strategy: { matrix: { ch: [kahani, raat] } }
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: sudo apt-get -qq update && sudo apt-get -qq install -y ffmpeg && pip install -q edge-tts
+      - run: python3 engine/gold_video.py ${{ matrix.ch }}
+      - uses: actions/upload-artifact@v4
+        with: { name: gold-${{ matrix.ch }}, path: docs/test/*.mp4 }

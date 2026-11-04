@@ -12,7 +12,7 @@ def edge_tts_line(text, out_wav, channel="raat", retries=4):
     """A) Speak ONE clean story line with the channel's locked Edge voice. Returns out_wav or raises."""
     import edge_tts
     voice = VOICES.get(channel, VOICES["raat"])
-    rate, pitch = ("-8%", "-4Hz") if channel == "raat" else ("-3%", "+0Hz")
+    rate, pitch = ("-8%", "-6Hz") if channel == "raat" else ("-3%", "+0Hz")
     mp3 = out_wav + ".mp3"
     for k in range(retries):
         try:

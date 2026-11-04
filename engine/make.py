@@ -29,8 +29,8 @@ if not _d and _W and not GEM_DEAD and _W.get("ch") == CH and _W.get("mode") == M
     _d = dict(_W, tries=0); STATE["_waiting_gemini"] = None; STATE["_draft"] = _d; print("resume Gemini-waiting draft", _d["job"], flush=True)
 if _d and os.environ.get("VOICE_ENGINE") == "openai" and (_d.get("engine") or "gemini") == "gemini":
     STATE["_waiting_gemini"] = STATE.get("_waiting_gemini") or _d; STATE["_draft"] = None; _d = {}   # never mix engines: park it for Gemini
-ENGINE = _d.get("engine") or os.environ.get("VOICE_ENGINE") or "gemini"
-if ENGINE == "openai" and os.environ.get("VOICE_ENGINE", "") not in ("", "openai"): ENGINE = os.environ["VOICE_ENGINE"]   # engine B is off (no pollen): never loop on it   # one voice engine per video, locked for its whole life
+ENGINE = "edge"   # OWNER LOCK 2026-11-04: Edge only (kahani hi-IN-SwaraNeural -3%, raat hi-IN-MadhurNeural -8% -6Hz), one voice per video
+if _d: _d["engine"] = "edge"
 try:   # a pending festival story beats an ordinary unfinished draft of the same channel+mode
     if MODE == "long" and not _d.get("fest") and _d.get("ch") == CH and any(e["id"] not in STATE.get("_bank", {}) and e.get("engine", ENGINE) == ENGINE for e in json.load(open("engine/story_bank.json")).get(CH, {}).get("festival", [])): _d = {}
 except Exception: pass
@@ -312,7 +312,11 @@ if S.get("rules_v", 0) < 3:   # made under old rules: rebuild every picture (2D 
     S["character_voice_map"] = None; S["rules_v"] = 3; log("rules v3: pictures rebuilt, re-voiced lines", _changed)
 if S.get("voice_engine") and S["voice_engine"] != ENGINE and not any(os.path.exists(wav_of(i)) for i in range(len(S["scenes"]))):
     log("voice engine relocked", S["voice_engine"], "->", ENGINE, "(no line voiced yet, whole video in one engine)"); S["voice_engine"] = None; S["character_voice_map"] = None
-S["voice_engine"] = S.get("voice_engine") or ENGINE
+if S.get("voice_engine") not in (None, "edge"):   # owner lock: any old non-Edge draft is fully re-voiced in Edge
+    for f in os.listdir(OUT):
+        if re.match(r"scene_\d+\.wav$", f): os.remove(f"{OUT}/{f}")
+    log("voice engine forced", S["voice_engine"], "-> edge (owner lock)"); S["character_voice_map"] = None
+S["voice_engine"] = "edge"
 OAV = {"raat": {"N": "onyx", "M": "echo", "F": "shimmer", "O": "ash", "A": "sage", "C": "nova", "G": "onyx"},
        "kahani": {"N": "fable", "M": "echo", "F": "shimmer", "O": "onyx", "A": "sage", "C": "nova", "G": "ash"}}[CH if CH in ("raat", "kahani") else "raat"]
 S["character_voice_map"] = S.get("character_voice_map") or (OAV if S["voice_engine"] == "openai" else GV)
@@ -385,7 +389,7 @@ EDGEV = "hi-IN-MadhurNeural" if CH == "raat" else "hi-IN-SwaraNeural"   # ONE st
 if S["voice_engine"] == "edge":
     import edge_tts
     async def _edge(text, out):
-        await edge_tts.Communicate(text, EDGEV, rate="-8%" if CH == "raat" else "-3%", pitch="-4Hz" if CH == "raat" else "+0Hz").save(out)
+        await edge_tts.Communicate(text, EDGEV, rate="-8%" if CH == "raat" else "-3%", pitch="-6Hz" if CH == "raat" else "+0Hz").save(out)
     for i, sc in enumerate(S["scenes"]):
         if os.path.exists(wav_of(i)): continue
         if out_of_time(): pause(f"voices scene {i}")
@@ -395,7 +399,7 @@ if S["voice_engine"] == "edge":
                 if os.path.getsize(f"{OUT}/e.mp3") > 2000: break
             except Exception as e: log("edge retry", t, repr(e)[:100]); time.sleep(5 * (t + 1))
         else:
-            S["voice_engine"] = "kokoro" if not any(os.path.exists(wav_of(k)) for k in range(i)) else pause("edge-tts unreachable - retry next run")
+            pause("edge-tts unreachable - retry next run (voice locked to Edge, no fallback)")
             log("edge-tts unreachable before any line -> kokoro for the whole video"); break
         subprocess.run(["ffmpeg", "-y", "-v", "error", "-i", f"{OUT}/e.mp3", "-af", "aformat=channel_layouts=stereo:sample_rates=48000", wav_of(i)], check=True)
         if i % 6 == 5: checkpoint(f"voices {i+1}/{len(S['scenes'])}")
