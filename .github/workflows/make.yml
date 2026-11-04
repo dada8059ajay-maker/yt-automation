@@ -88,7 +88,8 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: video-${{ github.run_id }}
-          path: out/
+          path: out/**/*.mp4
+          if-no-files-found: ignore
           retention-days: 3
       - if: always() && (steps.plan.outputs.ch != '' || steps.plan.outputs.drain == '1' || steps.plan.outputs.comp != '' || steps.social.outputs.social == '1' || steps.plan.outputs.redo == '1')
         run: |
@@ -117,7 +118,10 @@ jobs:
             sleep $((RANDOM % 10 + 5))
           done
       - name: zero-rest chain (start the next video right away)
-        if: success() && steps.plan.outputs.ch != ''
+        if: always() && steps.plan.outputs.ch != '' && !cancelled()
         env:
           GH_TOKEN: ${{ github.token }}
-        run: gh workflow run make.yml --ref main || true
+        run: |
+          # red + fast (< 4 min) = same wall again: let the hourly cron retry instead of looping every minute
+          if [ "${{ job.status }}" != success ] && [ $(( $(date +%s) - T0 )) -lt 240 ]; then echo "fast failure: no chain"; exit 0; fi
+          gh workflow run make.yml --ref main || true

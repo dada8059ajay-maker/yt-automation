@@ -29,7 +29,8 @@ if not _d and _W and not GEM_DEAD and _W.get("ch") == CH and _W.get("mode") == M
     _d = dict(_W, tries=0); STATE["_waiting_gemini"] = None; STATE["_draft"] = _d; print("resume Gemini-waiting draft", _d["job"], flush=True)
 if _d and os.environ.get("VOICE_ENGINE") == "openai" and (_d.get("engine") or "gemini") == "gemini":
     STATE["_waiting_gemini"] = STATE.get("_waiting_gemini") or _d; STATE["_draft"] = None; _d = {}   # never mix engines: park it for Gemini
-ENGINE = _d.get("engine") or os.environ.get("VOICE_ENGINE") or "gemini"   # one voice engine per video, locked for its whole life
+ENGINE = _d.get("engine") or os.environ.get("VOICE_ENGINE") or "gemini"
+if ENGINE == "openai" and os.environ.get("VOICE_ENGINE", "") not in ("", "openai"): ENGINE = os.environ["VOICE_ENGINE"]   # engine B is off (no pollen): never loop on it   # one voice engine per video, locked for its whole life
 try:   # a pending festival story beats an ordinary unfinished draft of the same channel+mode
     if MODE == "long" and not _d.get("fest") and _d.get("ch") == CH and any(e["id"] not in STATE.get("_bank", {}) and e.get("engine", ENGINE) == ENGINE for e in json.load(open("engine/story_bank.json")).get(CH, {}).get("festival", [])): _d = {}
 except Exception: pass
@@ -72,8 +73,8 @@ def pause(stage):
         STATE["_draft"]["wait_until"] = (n.replace(hour=0, minute=5, second=0, microsecond=0) + dt.timedelta(days=1)).astimezone(dt.timezone.utc).isoformat()
         STATE["_gemini_wait"] = STATE["_draft"]["wait_until"]
         STATE["_waiting_gemini"] = STATE["_draft"]; STATE["_draft"] = None   # drafts/waiting_gemini: resumes in its own Gemini voices after reset
-        _save_state(); print("PAUSED (quota) until", STATE["_gemini_wait"], flush=True); sys.exit(0)
-    checkpoint(stage); print("PAUSED at", stage, "- next run resumes this draft", flush=True); sys.exit(0)
+        _save_state(); print("::error::PAUSED (Gemini quota) until", STATE["_gemini_wait"], flush=True); sys.exit(1)
+    checkpoint(stage); print(f"::error::FAILED at {stage} - work is saved, next run resumes this draft", flush=True); sys.exit(1)   # owner: any API failure turns the run RED
 if DRAFT:
     subprocess.run(["gh", "release", "download", "drafts", "-p", DRAFT["asset"], "-D", ".", "--clobber"], check=False)
     if os.path.exists(DRAFT["asset"]):
@@ -763,6 +764,9 @@ subprocess.run(["ffmpeg", "-y", "-v", "error", "-i", f"{OUT}/locked.mkv", "-i", 
     "-map", "[v]", "-map", "[a]", "-t", f"{TOTAL:.2f}", "-c:v", "libx264", "-preset", "ultrafast", "-crf", "21", "-threads", "4", "-pix_fmt", "yuv420p",
     "-c:a", "aac", "-b:a", "192k", "-movflags", "+faststart", FINAL], check=True)
 log("rendered", FINAL, round(TOTAL, 1), "s")
+_mb = os.path.getsize(FINAL) / 1e6 if os.path.exists(FINAL) else 0
+if _mb < 1.0 or TOTAL < 20: print(f"::error::FATAL render check: {FINAL} is {_mb:.2f} MB, {TOTAL:.0f} s (need > 1 MB)", flush=True); sys.exit(1)
+log("render check OK:", round(_mb, 1), "MB")
 
 # thumbnail (long only)
 thumb = None

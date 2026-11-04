@@ -21,11 +21,16 @@ def rt(ch):
     return subprocess.check_output(["openssl", "enc", "-d", "-aes-256-cbc", "-pbkdf2", "-in", f, "-pass", "env:CSEC"]).decode().strip()
 def save(): json.dump(STATE, open(STATE_P, "w"), ensure_ascii=False, indent=1)
 os.makedirs("out", exist_ok=True); os.makedirs("results", exist_ok=True)
+BAD = False
 while STATE.get("_queue") and len(recent()) < MAX:
     it = STATE["_queue"][0]; ch, mode, job = it["ch"], it["mode"], it["job"]; cfg = CHS[ch]
     subprocess.run(["gh", "release", "download", "queue", "-p", it["asset"], "-D", "out", "--clobber"], check=True)
     with tarfile.open(f"out/{it['asset']}") as t: t.extractall("out")
     out = os.path.abspath(f"out/{job}")
+    _mp4 = [f for f in os.listdir(out) if f.endswith(".mp4") and not f.startswith("v")] if os.path.isdir(out) else []
+    if not _mp4 or max(os.path.getsize(f"{out}/{f}") for f in _mp4) < 1_000_000:
+        print(f"::error::FATAL queue item {job} has no real mp4 (> 1 MB) - removed from queue", flush=True)
+        STATE["_queue"].pop(0); STATE.setdefault("_bad_queue", []).append(job); save(); BAD = True; continue
     slot = next_slot(cfg, mode, STATE[ch][mode])
     if it.get("at") and dt.datetime.fromisoformat(it["at"]) > NOW + dt.timedelta(hours=2): slot = dt.datetime.fromisoformat(it["at"]).astimezone(dt.timezone.utc)   # festival: fixed time
     pub = slot.strftime("%Y-%m-%dT%H:%M:%SZ")
@@ -56,3 +61,5 @@ while STATE.get("_queue") and len(recent()) < MAX:
         json.dump(V, open(dp, "w"), ensure_ascii=False, indent=1)
     except Exception as e: print("preview update skipped", e)
     print("PUBLISHED from queue", job, vid, pub)
+
+if BAD: sys.exit(1)
