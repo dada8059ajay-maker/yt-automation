@@ -1,0 +1,105 @@
+{
+ "title": "दिवाली की रात जादुई दीया जल उठा! #shorts",
+ "topic": "दिवाली कहानी",
+ "description": "पूरी कहानी कहानी पतंग पर। शुभ दीपावली!",
+ "tags": [
+  "दिवाली",
+  "diwali story",
+  "कहानी पतंग",
+  "shorts"
+ ],
+ "hook": "जादुई दीया!",
+ "thumb_text": "जादुई दीया",
+ "characters": {
+  "Chhotu": "Indian boy, 8, short black hair, yellow kurta, small clay diya in hands, bright curious eyes",
+  "Dadi": "Indian grandmother, 70, white hair in bun, light green saree, round glasses, kind smile",
+  "Jugnu": "tiny glowing golden firefly with a happy cartoon face"
+ },
+ "scenes": [
+  {
+   "speaker": "N",
+   "text": "दिवाली से एक रात पहले, पूरे गाँव में अंधेरा था। और छोटू के हाथ में था एक जादुई दीया!",
+   "mood": "suspense",
+   "style": "direct, warm, mysterious",
+   "visual": "Indian village at night, all houses dark, a small boy holding a glowing clay diya, Indian boy, 8, short black hair, yellow kurta, small clay diya in hands, bright curious eyes",
+   "dur": 8.875,
+   "shots": [
+    "Wide shot of a quiet Indian village at night, dark mud houses with silent pathways, no lights burning under a starry night sky.",
+    "Medium shot of an eight-year-old Indian boy in a yellow kurta walking along a pitch-black village lane at night.",
+    "Medium shot of the Indian boy in yellow kurta holding a tiny glowing clay diya in his palms, soft golden light illuminating his face."
+   ]
+  },
+  {
+   "speaker": "N",
+   "text": "यह दीया सिर्फ़ सच्चे दिल वाले के हाथ में जलता है।",
+   "mood": "peaceful",
+   "style": "old, gentle",
+   "visual": "Grandmother giving an old clay diya to the boy, warm lantern light, Indian grandmother, 70, white hair in bun, light green saree, round glasses, kind smile",
+   "dur": 5.475,
+   "shots": [
+    "Medium shot of an elderly Indian grandmother in a light green saree passing an old clay diya to an eight-year-old boy inside a cozy hut.",
+    "Medium shot of the small clay diya beginning to glow brightly in the young boy's cupped hands while the grandmother smiles warmly beside him."
+   ]
+  },
+  {
+   "speaker": "N",
+   "text": "अचानक दीया अपने आप जल उठा, और उसकी लौ से निकला एक नन्हा सुनहरा जुगनू!",
+   "mood": "victory",
+   "style": "amazed, magical",
+   "visual": "A tiny golden firefly flying out of the diya flame, sparkles, boy amazed, tiny glowing golden firefly with a happy cartoon face",
+   "dur": 7.8,
+   "shots": [
+    "Medium shot of the clay diya bursting into a vibrant golden flame in the hands of the surprised boy wearing a yellow kurta.",
+    "Wide shot of a tiny glowing golden firefly emerging from the flame, spiraling into the air with shimmering sparkles around the amazed boy."
+   ]
+  },
+  {
+   "speaker": "N",
+   "text": "हर घर में रोशनी तभी जलेगी, जब तुम किसी की सच्ची मदद करोगे।",
+   "mood": "suspense",
+   "style": "tiny, serious",
+   "visual": "Firefly floating in front of the boy, golden trail of light, tiny glowing golden firefly with a happy cartoon face",
+   "dur": 6.6,
+   "shots": [
+    "Medium shot of the magical golden firefly hovering at eye level in front of the young boy in a yellow kurta, leaving a glowing trail.",
+    "Wide shot of the firefly floating near the boy, gesturing towards dark village huts across the dirt path under the night sky."
+   ]
+  },
+  {
+   "speaker": "N",
+   "text": "पर आख़िरी घर था उस लड़के का, जिसने छोटू की पतंग फाड़ी थी। अब छोटू क्या करेगा?",
+   "mood": "suspense",
+   "style": "tense",
+   "visual": "Boy standing hesitant outside a dark house, firefly beside him, Indian boy, 8, short black hair, yellow kurta, small clay diya in hands, bright curious eyes",
+   "dur": 8.025,
+   "shots": [
+    "Wide shot of the young Indian boy in yellow kurta stopping hesitantly before a dark, silent wooden door of a village house.",
+    "Medium shot of the boy holding the glowing clay diya, looking down in deep thought while the golden firefly hovers near his shoulder."
+   ]
+  },
+  {
+   "speaker": "N",
+   "text": "पूरी कहानी देखिए कहानी पतंग पर, लिंक नीचे है!",
+   "mood": "peaceful",
+   "style": "warm, inviting",
+   "visual": "Village glowing with diyas at night, boy smiling with firefly, Indian boy, 8, short black hair, yellow kurta, small clay diya in hands, bright curious eyes",
+   "dur": 5.574999999999999,
+   "shots": [
+    "Wide shot of the entire Indian village illuminated with hundreds of sparkling clay diyas lining rooftops, mud walls, and courtyards at night.",
+    "Medium shot of the smiling boy in yellow kurta raising his glowing clay diya triumphantly as the magical golden firefly dances above him."
+   ]
+  }
+ ],
+ "character_voice_map": {
+  "N": "Charon",
+  "M": "Puck",
+  "F": "Kore",
+  "O": "Fenrir",
+  "A": "Gacrux",
+  "C": "Leda",
+  "G": "Enceladus"
+ },
+ "rules_v": 3,
+ "voice_engine": "kokoro",
+ "shots_v": 1
+}
