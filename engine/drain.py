@@ -35,7 +35,7 @@ while STATE.get("_queue") and len(recent()) < MAX:
     if it.get("at") and dt.datetime.fromisoformat(it["at"]) > NOW + dt.timedelta(hours=2): slot = dt.datetime.fromisoformat(it["at"]).astimezone(dt.timezone.utc)   # festival: fixed time
     pub = slot.strftime("%Y-%m-%dT%H:%M:%SZ")
     j = json.load(open(f"{out}/job.json")); j["videos"][0]["publishAt"] = pub; json.dump(j, open(f"{out}/job.json", "w"), ensure_ascii=False, indent=1)
-    env = dict(os.environ, RT=rt(ch))
+    env = dict(os.environ, RT=rt(ch), YT_CH=ch)
     subprocess.run([sys.executable, "yt_publish.py", out], check=True, env=env)
     res = json.load(open(f"results/{job}.json")); vid = (res.get("videos") or [{}])[0].get("id")
     if not vid: print("UPLOAD FAILED", json.dumps(res, ensure_ascii=False)[:600]); sys.exit(1)

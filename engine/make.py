@@ -857,7 +857,7 @@ def preview_publish(status):
     except Exception as e: log("preview failed", repr(e)[:150])
 job = {"id": JOB, "videos": [{"file": os.path.basename(FINAL), "title": title, "description": desc, "tags": tags,
        "publishAt": pub, "madeForKids": CFG["madeForKids"], "playlist": PLAYLIST, "pl_top": bool(thumb), **({"thumb": "thumb.jpg"} if thumb else {})}]}
-json.dump(job, open(f"{OUT}/job.json", "w"), ensure_ascii=False, indent=1)
+job["channel"] = CH; json.dump(job, open(f"{OUT}/job.json", "w"), ensure_ascii=False, indent=1)
 if PRE:
     import tarfile
     preview_publish("तैयार (YouTube quota का इंतज़ार)")
@@ -873,7 +873,7 @@ if PRE:
     _save_state()
     log("QUEUED", asset); sys.exit(0)
 if UPLOAD:
-    subprocess.run([sys.executable, os.path.join(os.path.dirname(ROOT), "yt_publish.py"), OUT], check=True)
+    subprocess.run([sys.executable, os.path.join(os.path.dirname(ROOT), "yt_publish.py"), OUT], check=True, env=dict(os.environ, YT_CH=CH))
     res = json.load(open(f"results/{JOB}.json"))
     vid = (res.get("videos") or [{}])[0].get("id")
     if vid:

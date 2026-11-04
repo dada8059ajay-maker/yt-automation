@@ -28,6 +28,13 @@ for ch in ("kahani", "raat"):
             try: urllib.request.urlopen(urllib.request.Request(f"{Y}/videos?id={v['id']}", method="DELETE", headers={"Authorization": "Bearer " + t})); deleted.append(v["id"]); print("    deleted", v["id"])
             except urllib.error.HTTPError as e: print("    DELETE FAILED", e.code, e.read().decode()[:200])
 print("YOUTUBE DELETED", len(deleted), deleted)
+for ch, v in [x.split(":") for x in os.environ.get("UNSCHED", "").split(",") if ":" in x]:
+    t = tok(ch); it = get(t, "/videos?part=status&id=" + v)["items"]
+    if not it: print("unsched gone", v); continue
+    st = it[0]["status"]; body = {"id": v, "status": {"privacyStatus": "private", "selfDeclaredMadeForKids": ch == "kahani", "embeddable": st.get("embeddable", True), "license": st.get("license", "youtube"), "publicStatsViewable": st.get("publicStatsViewable", True)}}
+    r = urllib.request.Request(Y + "/videos?part=status", json.dumps(body).encode(), method="PUT", headers={"Authorization": "Bearer " + t, "Content-Type": "application/json"})
+    try: o = json.load(urllib.request.urlopen(r)); print("UNSCHEDULED", v, o["status"]["privacyStatus"], o["status"].get("publishAt", "no publishAt"))
+    except urllib.error.HTTPError as e: print("unsched FAILED", v, e.code, e.read().decode()[:200])
 # ---- Instagram / Facebook ----
 try:
     M = json.loads(subprocess.check_output(["openssl", "enc", "-d", "-aes-256-cbc", "-pbkdf2", "-in", "secrets/meta.enc", "-pass", "env:CSEC"]))
@@ -39,6 +46,7 @@ try:
         try: urllib.request.urlopen(urllib.request.Request(f"{G}/{i}?access_token={PT}", method="DELETE"), timeout=60); return "deleted"
         except urllib.error.HTTPError as e: return "DELETE FAILED " + e.read().decode()[:160]
     cutfb = CUT.replace("Z", "+0000")
+    print('IG raw', str(g(f"{G}/{M['ig_id']}/media?fields=id,timestamp&limit=3&access_token={PT}"))[:200])
     for m in g(f"{G}/{M['ig_id']}/media?fields=id,caption,timestamp&limit=25&access_token={PT}").get("data", []):
         bad = m["timestamp"] >= cutfb; print(f"  IG {'DELETE' if bad else 'keep  '} {m['id']} {m['timestamp']} | {(m.get('caption') or '')[:60]}")
         if bad: print("    ", rm(m["id"]))

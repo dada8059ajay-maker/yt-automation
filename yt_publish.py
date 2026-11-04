@@ -7,6 +7,22 @@ def tok():
         "client_secret": os.environ["CSEC"], "grant_type": "refresh_token"}).encode()
     return json.load(urllib.request.urlopen("https://oauth2.googleapis.com/token", d))["access_token"]
 AT = tok()
+# --- HARD CHANNEL LOCK (owner 2026-11-04): wrong channel or wrong audience -> exit 1, nothing uploaded ---
+import re as _re
+_EXPECT = {"kahani": "UCVInuqkmHrW9Duz8EzGrPVA", "raat": "UCzjDhB_W7HV3ACCoGhb3yVQ"}
+_CH = (os.environ.get("YT_CH") or job.get("channel") or "").strip()
+def _die(m): print("::error::CHANNEL LOCK: " + m, flush=True); sys.exit(1)
+if _CH not in _EXPECT: _die(f"target channel unknown ({_CH!r}); refusing to upload")
+_me = json.load(urllib.request.urlopen(urllib.request.Request("https://www.googleapis.com/youtube/v3/channels?part=id&mine=true", headers={"Authorization": "Bearer " + AT})))
+_mid = (_me.get("items") or [{}])[0].get("id")
+if _mid != _EXPECT[_CH]: _die(f"token belongs to {_mid}, job is for {_CH} ({_EXPECT[_CH]})")
+_HORROR = _re.compile(r"भयानक|खौफ|ख़ौफ़|हॉरर|डरावन|रात के किस्से|यम का|यम के|भूत|चुड़ैल|आत्मा|horror", _re.I)
+for _v in job.get("videos", []):
+    _v["madeForKids"] = (_CH == "kahani")            # kids channel = True, horror channel = False, always
+    _txt = _v.get("title", "") + " " + _v.get("description", "")[:400]
+    if _CH == "kahani" and _HORROR.search(_txt): _die(f"horror words in a Kahani Patang video: {_v.get('title')!r}")
+    if _CH == "raat" and _re.search(r"कहानी पतंग|Kahani Patang|#KahaniPatang", _txt): _die(f"Kahani Patang video routed to Raat: {_v.get('title')!r}")
+print(f"channel lock OK: {_CH} -> {_mid}, madeForKids={_CH == 'kahani'}", flush=True)
 def call(method, url, body=None, ctype="application/json", raw=None, hdr=None):
     h = {"Authorization": "Bearer " + AT}
     if hdr: h.update(hdr)
@@ -65,7 +81,7 @@ def upload(v):
     meta = {"snippet": {"title": v["title"], "description": v["description"], "tags": v.get("tags", []),
             "categoryId": v.get("categoryId", "24"), "defaultLanguage": "hi", "defaultAudioLanguage": "hi"},
             "status": {"privacyStatus": "private", "publishAt": v["publishAt"],
-            "selfDeclaredMadeForKids": v.get("madeForKids", False), "containsSyntheticMedia": False}}
+            "selfDeclaredMadeForKids": bool(v["madeForKids"]), "containsSyntheticMedia": False}}
     path = os.path.join(D, v["file"]); size = os.path.getsize(path)
     init, hd = call("POST", UP + "videos?uploadType=resumable&part=snippet,status", meta,
                     hdr={"X-Upload-Content-Type": "video/mp4", "X-Upload-Content-Length": str(size)})

@@ -1,0 +1,14 @@
+name: gold-test
+on: workflow_dispatch
+permissions: { contents: write }
+jobs:
+  scene:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: sudo apt-get -qq update && sudo apt-get -qq install -y ffmpeg && pip install -q edge-tts
+      - run: python3 engine/gold_test.py
+      - run: |
+          git config user.name bot; git config user.email bot@users.noreply.github.com
+          git add docs/test/gold_scene_kahani.mp4; git commit -qm "gold test scene [skip ci]"
+          for i in 1 2 3; do git pull -q --rebase && git push -q && break; sleep 4; done

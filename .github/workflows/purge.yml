@@ -1,5 +1,9 @@
 name: purge
-on: workflow_dispatch
+on:
+  workflow_dispatch:
+    inputs:
+      cutoff: { default: '2026-11-03T18:30:00Z' }
+      unsched: { default: '' }
 jobs:
   purge:
     runs-on: ubuntu-latest
@@ -7,5 +11,7 @@ jobs:
       - uses: actions/checkout@v4
       - run: python3 engine/purge.py
         env:
+          CUTOFF: ${{ inputs.cutoff }}
+          UNSCHED: ${{ inputs.unsched }}
           CID: ${{ secrets.YT_CLIENT_ID }}
           CSEC: ${{ secrets.YT_CLIENT_SECRET }}

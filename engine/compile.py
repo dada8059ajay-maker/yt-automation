@@ -63,7 +63,7 @@ os.chdir("../..")
 f = "secrets/yt_refresh.enc" if CH == "kahani" else f"secrets/yt_refresh_{CH}.enc"
 rt = subprocess.check_output(["openssl", "enc", "-d", "-aes-256-cbc", "-pbkdf2", "-in", f, "-pass", "env:CSEC"]).decode().strip()
 os.makedirs("results", exist_ok=True)
-subprocess.run([sys.executable, "yt_publish.py", "out/comp"], check=True, env=dict(os.environ, RT=rt))
+subprocess.run([sys.executable, "yt_publish.py", "out/comp"], check=True, env=dict(os.environ, RT=rt, YT_CH=CH))
 res = json.load(open(f"results/{job['id']}.json")); vid = (res.get("videos") or [{}])[0].get("id")
 if not vid: sys.exit(print("UPLOAD FAILED", json.dumps(res, ensure_ascii=False)[:600]) or 1)
 used = {x["asset"] for x, _ in pick}
