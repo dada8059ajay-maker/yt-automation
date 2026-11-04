@@ -1,0 +1,69 @@
+gemini gemini-3.8-flash key 1 429 {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and bi
+gemini gemini-3.8-flash key 2 429 {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and bi
+gemini gemini-3.8-flash key 3 429 {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and bi
+gemini gemini-3.7-flash key 1 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-3.7-flash key 2 429 {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and bi
+gemini gemini-3.7-flash key 3 429 {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and bi
+gemini gemini-3.6-flash key 1 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-3.6-flash key 2 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini ok gemini-3.6-flash key 3
+story from Gemini (bank empty)
+gemini gemini-3.8-flash key 1 429 {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and bi
+gemini gemini-3.8-flash key 2 429 {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and bi
+gemini gemini-3.8-flash key 3 429 {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and bi
+gemini gemini-3.7-flash key 1 429 {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and bi
+gemini gemini-3.7-flash key 2 429 {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and bi
+gemini gemini-3.7-flash key 3 429 {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and bi
+gemini ok gemini-3.6-flash key 1
+seo pass OK: तीसरा नियम: आँखें बंद मत करना! सोमेश्वर गुफा | रात के किस्से
+title: तीसरा नियम: आँखें बंद मत करना! सोमेश्वर गुफा | रात के किस्से scenes: 68
+rules v3: pictures rebuilt, re-voiced lines []
+edge retry 0 NoAudioReceived('No audio was received. Please verify that your parameters are correct.')
+edge retry 0 NoAudioReceived('No audio was received. Please verify that your parameters are correct.')
+edge retry 0 NoAudioReceived('No audio was received. Please verify that your parameters are correct.')
+edge retry 0 NoAudioReceived('No audio was received. Please verify that your parameters are correct.')
+edge retry 1 NoAudioReceived('No audio was received. Please verify that your parameters are correct.')
+edge retry 2 NoAudioReceived('No audio was received. Please verify that your parameters are correct.')
+edge retry 3 NoAudioReceived('No audio was received. Please verify that your parameters are correct.')

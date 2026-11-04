@@ -346,7 +346,16 @@
    "title": "सोमेश्वर गुफा का रहस्य भाग 2 | रात के किस्से"
   }
  ],
- "_draft": null,
+ "_draft": {
+  "job": "raat_long_20261104_1453",
+  "ch": "raat",
+  "mode": "long",
+  "asset": "draft_raat_long_20261104_1453.tar",
+  "stage": "edge-tts unreachable - retry next run",
+  "tries": 1,
+  "fest": null,
+  "engine": "edge"
+ },
  "_library": [
   {
    "asset": "lib_raat_long_20261101_0811.mp4",
@@ -589,7 +598,7 @@
   }
  ],
  "_minutes": {
-  "2026-11": 4085
+  "2026-11": 4095
  },
  "_bank": {
   "kahani_s_patang01": "2026-11-02",
