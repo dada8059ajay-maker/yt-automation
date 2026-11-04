@@ -215,7 +215,7 @@
   "ch": "raat",
   "mode": "long",
   "asset": "draft_raat_long_20261104_1219.tar",
-  "stage": "imgwait: shot 2.3 waiting for a real picture",
+  "stage": "imgwait: shot 3.2 waiting for a real picture",
   "tries": 0,
   "fest": null,
   "engine": "edge"
@@ -441,7 +441,7 @@
   }
  ],
  "_minutes": {
-  "2026-11": 3702
+  "2026-11": 3707
  },
  "_bank": {
   "kahani_s_patang01": "2026-11-02",
