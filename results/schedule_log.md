@@ -36,3 +36,4 @@
 - रात के किस्से | gold | अस्पताल का आख़िरी बिस्तर | नाइट ड्यूटी का नियम | हिंदी हॉरर | Sat 07 Nov 2026 09:00 PM IST | https://studio.youtube.com/video/E_WU4nDM5V4/edit
 - कहानी पतंग | gold | चीकू गिलहरी और कालू कोयल | मेहनत की प्यारी कहानी | Sat 07 Nov 2026 04:00 PM IST | https://studio.youtube.com/video/O84KMgm-pSE/edit
 - रात के किस्से | gold | हवेली की आधी रात वाली बारात | नियम मत तोड़ना | हिंदी हॉरर | Sat 07 Nov 2026 11:30 PM IST | https://studio.youtube.com/video/sD2wiB7vB98/edit
+- कहानी पतंग | gold | सतरंगी पतंग और तीन दोस्त | झुमरी जिराफ़, चुन्नू खरगोश | Sat 07 Nov 2026 07:00 PM IST | https://studio.youtube.com/video/gl41HfkCYio/edit
