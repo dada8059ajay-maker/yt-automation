@@ -26,3 +26,4 @@
 - कहानी पतंग | short | बिना तैरे नदी पार! चालाक लोमड़ी की हार? | कहानी पतंग | Sun 08 Nov 2026 06:30 PM IST | https://studio.youtube.com/video/qEfNR21ikWA/edit
 - कहानी पतंग | gold | फुदकू खरगोश और धीरू दादा कछुआ | दोस्ती की प्यारी कहानी | कहानी पतंग | Thu 05 Nov 2026 06:00 PM IST | https://studio.youtube.com/video/EVKwy1Y1CIU/edit
 - रात के किस्से | gold | पेट्रोल पंप का पहला नियम: पीछे से नाम पुकारे तो मुड़ना मत | हिंदी हॉरर कहानी | Fri 06 Nov 2026 09:00 PM IST | https://studio.youtube.com/video/RXjynEVx7E0/edit
+- कहानी पतंग | gold | मोती हाथी और चिड़िया का घोंसला | दोस्ती की प्यारी कहानी | Thu 05 Nov 2026 04:00 PM IST | https://studio.youtube.com/video/cuerpXPkcAo/edit
