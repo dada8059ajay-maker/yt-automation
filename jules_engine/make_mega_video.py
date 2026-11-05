@@ -28,6 +28,9 @@ def process_mega_video(channel="raat_long"):
         kids_flag = False
         voice_type = "onyx"
     elif "kahani" in channel:
+        horror_kw = ["डर", "खौफ", "खून", "चुड़ैल", "भूत"]
+        if any(kw in story.get("title", "") for kw in horror_kw):
+            raise ValueError(f"CRITICAL ERROR: Horror keywords found in kids channel '{channel}'. Aborting.")
         bgm = os.path.join(ROOT, "assets", "bgm", "moral_bgm.mp3")
         kids_flag = True
         voice_type = "fable"

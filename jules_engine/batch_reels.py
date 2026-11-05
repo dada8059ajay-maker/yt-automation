@@ -35,6 +35,10 @@ def process_reels(batch_size=14):
              kids_flag = False
              voice_type = "onyx"
         elif channel == "kahani":
+             # Strict check: no horror keywords in kahani
+             horror_kw = ["डर", "खौफ", "खून", "चुड़ैल", "भूत"]
+             if any(kw in reel.get("title", "") for kw in horror_kw):
+                  raise ValueError(f"CRITICAL ERROR: Horror keywords found in kids channel '{channel}'. Aborting.")
              bgm = os.path.join(ROOT, "assets", "bgm", "moral_bgm.mp3")
              kids_flag = True
              voice_type = "fable"
@@ -75,5 +79,4 @@ def process_reels(batch_size=14):
     save_bank(bank)
 
 if __name__ == "__main__":
-    # Test run with batch_size=2 for quick validation
-    process_reels(batch_size=2)
+    process_reels(batch_size=14)

@@ -43,41 +43,37 @@ def clean_hindi_text(text: str) -> str:
     return text.strip()
 
 def generate_audio(text: str, output_path: str, voice: str = "onyx", emotion: str = ""):
-    """Generates TTS using Gemini API (Rule 4)."""
+    """Generates TTS using unlimited edge-tts. Includes 1s pause addition."""
     text = clean_hindi_text(text)
-    api_key = os.environ.get("GEMINI_API_KEY")
-    if not api_key:
-        print("Warning: GEMINI_API_KEY not set. Mocking audio.")
-        subprocess.run(["ffmpeg", "-y", "-f", "lavfi", "-i", "anullsrc=r=44100:cl=mono", "-t", "3", output_path], check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-        return output_path
 
-    voice_name = "Charon" if voice == "onyx" else "Puck"
-    body = {
-        "contents": [{"parts": [{"text": text}]}],
-        "generationConfig": {
-            "responseModalities": ["AUDIO"],
-            "speechConfig": {"voiceConfig": {"prebuiltVoiceConfig": {"voiceName": voice_name}}}
-        }
-    }
+    if voice == "onyx":
+        edge_voice = "hi-IN-MadhurNeural"
+        rate = "-8%"
+        pitch = "-6Hz"
+    else:
+        edge_voice = "hi-IN-SwaraNeural"
+        rate = "+0%"
+        pitch = "+0Hz"
 
-    url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent"
-    req = urllib.request.Request(url, json.dumps(body).encode(), {"Content-Type": "application/json", "x-goog-api-key": api_key})
-
+    # Generate audio with edge-tts
+    raw_audio = output_path.replace(".wav", "_raw.mp3")
+    cmd = ["edge-tts", "--voice", edge_voice, "--text", text, "--rate", rate, "--pitch", pitch, "--write-media", raw_audio]
     try:
-        r = json.load(urllib.request.urlopen(req, timeout=30))
-        audio_data = b"".join(base64.b64decode(p["inlineData"]["data"]) for p in r["candidates"][0]["content"]["parts"] if "inlineData" in p)
-        with open(output_path, "wb") as f:
-            f.write(audio_data)
+        subprocess.run(cmd, check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        # Add 1s pause (apad) and convert to required wav format
+        subprocess.run(["ffmpeg", "-y", "-i", raw_audio, "-af", "apad=pad_dur=1", output_path], check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        if os.path.exists(raw_audio):
+            os.remove(raw_audio)
     except Exception as e:
-        print(f"Gemini TTS failed: {e}. Falling back to mock audio.")
+        print(f"edge-tts failed: {e}. Falling back to mock audio.")
         subprocess.run(["ffmpeg", "-y", "-f", "lavfi", "-i", "anullsrc=r=44100:cl=mono", "-t", "3", output_path], check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
     return output_path
 
 def generate_image(prompt: str, output_path: str, is_short: bool = False):
-    """Generates image using keyless Pollinations or HF fallback (Rule 2)."""
-    width = 768 if is_short else 1344
-    height = 1344 if is_short else 768
+    """Generates image using keyless Pollinations or HF fallback (Rule 2). 1080p target."""
+    width = 1080 if is_short else 1920
+    height = 1920 if is_short else 1080
 
     clean_prompt = prompt.replace(" ", "%20")
     seed = random.randint(1, 2**31 - 1)
@@ -120,25 +116,28 @@ def get_audio_duration(file_path: str) -> float:
     return float(result.stdout.strip())
 
 def build_scene_video(image_path: str, audio_path: str, output_path: str, is_short: bool = False, text: str = None):
-    """Locks image to exact audio duration, adds subtitles for shorts (Rule 1 & 5)."""
+    """Locks image to exact audio duration, adds motion/subtitles (Rule 1 & 5)."""
     duration = get_audio_duration(audio_path)
+    fps = 30
+    frames = int(duration * fps)
 
-    w = 768 if is_short else 1344
-    h = 1344 if is_short else 768
+    w = 1080 if is_short else 1920
+    h = 1920 if is_short else 1080
     crop_w = int(w * 0.96)
     crop_h = int(h * 0.96)
 
-    vf = f"scale={w}:{h},crop={crop_w}:{crop_h}"
+    # Scale, crop watermark, add slow zoompan motion for 2D animation feel
+    vf = f"scale={w*1.2}:{h*1.2},crop={crop_w}:{crop_h},zoompan=z='min(zoom+0.0005,1.1)':d={frames}:s={w}x{h}:fps={fps}"
 
     if is_short and text:
          safe_text = text.replace("'", "").replace(":", "")
-         vf += f",drawtext=text='{safe_text}':fontcolor=yellow:fontsize=48:x=(w-text_w)/2:y=(h-text_h)/2:borderw=3:bordercolor=black"
+         vf += f",drawtext=text='{safe_text}':fontcolor=yellow:fontsize=72:x=(w-text_w)/2:y=(h-text_h)/2:borderw=4:bordercolor=black"
 
     cmd = [
         "ffmpeg", "-y",
         "-loop", "1", "-i", image_path,
         "-i", audio_path,
-        "-c:v", "libx264", "-tune", "stillimage",
+        "-c:v", "libx264", "-preset", "ultrafast",
         "-c:a", "aac", "-b:a", "192k",
         "-pix_fmt", "yuv420p",
         "-shortest",
