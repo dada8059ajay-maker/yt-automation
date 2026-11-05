@@ -28,3 +28,4 @@
 - रात के किस्से | gold | पेट्रोल पंप का पहला नियम: पीछे से नाम पुकारे तो मुड़ना मत | हिंदी हॉरर कहानी | Fri 06 Nov 2026 09:00 PM IST | https://studio.youtube.com/video/RXjynEVx7E0/edit
 - कहानी पतंग | gold | मोती हाथी और चिड़िया का घोंसला | दोस्ती की प्यारी कहानी | Thu 05 Nov 2026 04:00 PM IST | https://studio.youtube.com/video/cuerpXPkcAo/edit
 - रात के किस्से | gold | हॉस्टल का पहला नियम | रात 2 बजे की दस्तक | हिंदी हॉरर कहानी | Thu 05 Nov 2026 09:00 PM IST | https://studio.youtube.com/video/zDuy1B4nrTQ/edit
+- कहानी पतंग | gold | पिंकू भालू और सोने का मुकुट | ईमानदारी की प्यारी कहानी | Thu 05 Nov 2026 07:00 PM IST | https://studio.youtube.com/video/NAGElN2zUEc/edit
