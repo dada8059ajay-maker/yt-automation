@@ -1,0 +1,20 @@
+{
+ "job": "gold_kahani_20261105_1219_4",
+ "videos": [
+  {
+   "id": "Cl-Ae2ynEyQ",
+   "status": {
+    "uploadStatus": "uploaded",
+    "privacyStatus": "private",
+    "publishAt": "2026-11-08T13:30:00Z",
+    "license": "youtube",
+    "embeddable": true,
+    "publicStatsViewable": true,
+    "selfDeclaredMadeForKids": true,
+    "containsSyntheticMedia": false
+   },
+   "thumb": "ok",
+   "playlist": "ok"
+  }
+ ]
+}
