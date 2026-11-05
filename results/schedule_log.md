@@ -30,3 +30,4 @@
 - रात के किस्से | gold | हॉस्टल का पहला नियम | रात 2 बजे की दस्तक | हिंदी हॉरर कहानी | Thu 05 Nov 2026 09:00 PM IST | https://studio.youtube.com/video/zDuy1B4nrTQ/edit
 - कहानी पतंग | gold | पिंकू भालू और सोने का मुकुट | ईमानदारी की प्यारी कहानी | Thu 05 Nov 2026 07:00 PM IST | https://studio.youtube.com/video/NAGElN2zUEc/edit
 - रात के किस्से | gold | आख़िरी ट्रेन का नियम | रात 3 बजे का टीटी | हिंदी हॉरर कहानी | Thu 05 Nov 2026 11:30 PM IST | https://studio.youtube.com/video/yd7aR8w37h8/edit
+- कहानी पतंग | gold | राजकुमारी मीरा और हरा तोता | दया की जादुई कहानी | Fri 06 Nov 2026 04:00 PM IST | https://studio.youtube.com/video/gW5UA8-EtJU/edit
