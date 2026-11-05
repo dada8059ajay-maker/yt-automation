@@ -31,3 +31,4 @@
 - कहानी पतंग | gold | पिंकू भालू और सोने का मुकुट | ईमानदारी की प्यारी कहानी | Thu 05 Nov 2026 07:00 PM IST | https://studio.youtube.com/video/NAGElN2zUEc/edit
 - रात के किस्से | gold | आख़िरी ट्रेन का नियम | रात 3 बजे का टीटी | हिंदी हॉरर कहानी | Thu 05 Nov 2026 11:30 PM IST | https://studio.youtube.com/video/yd7aR8w37h8/edit
 - कहानी पतंग | gold | राजकुमारी मीरा और हरा तोता | दया की जादुई कहानी | Fri 06 Nov 2026 04:00 PM IST | https://studio.youtube.com/video/gW5UA8-EtJU/edit
+- रात के किस्से | gold | टोल नाके का नियम | बिना हेडलाइट वाली गाड़ी | हिंदी हॉरर कहानी | Fri 06 Nov 2026 11:30 PM IST | https://studio.youtube.com/video/lSG_i5_X9U4/edit
