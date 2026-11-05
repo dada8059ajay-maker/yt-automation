@@ -41,3 +41,4 @@
 - कहानी पतंग | gold | चतुर मैना और जादुई बाँसुरी | दोस्ती की प्यारी कहानी | Sun 08 Nov 2026 04:00 PM IST | https://studio.youtube.com/video/NBo9uG0SMsg/edit
 - रात के किस्से | gold | घाट की आख़िरी नाव | मत गिनना सवारियाँ | हिंदी हॉरर | Sun 08 Nov 2026 11:30 PM IST | https://studio.youtube.com/video/7WoZT8HFKug/edit
 - कहानी पतंग | gold | राजा, नन्हा कछुआ और सोने का कुआँ | ईमानदारी की कहानी | Sun 08 Nov 2026 07:00 PM IST | https://studio.youtube.com/video/Cl-Ae2ynEyQ/edit
+- रात के किस्से | gold | पेट्रोल पंप का नियम | रात 1 बजे की हरी बत्ती | हिंदी हॉरर | Mon 09 Nov 2026 09:00 PM IST | https://studio.youtube.com/video/2fM132nqC6U/edit
