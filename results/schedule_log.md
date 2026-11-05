@@ -34,3 +34,4 @@
 - रात के किस्से | gold | टोल नाके का नियम | बिना हेडलाइट वाली गाड़ी | हिंदी हॉरर कहानी | Fri 06 Nov 2026 11:30 PM IST | https://studio.youtube.com/video/lSG_i5_X9U4/edit
 - कहानी पतंग | gold | नन्हा ऊँट गोलू और चमकता तारा | रेगिस्तान की प्यारी कहानी | Fri 06 Nov 2026 07:00 PM IST | https://studio.youtube.com/video/Gg9lSBfd0Hc/edit
 - रात के किस्से | gold | अस्पताल का आख़िरी बिस्तर | नाइट ड्यूटी का नियम | हिंदी हॉरर | Sat 07 Nov 2026 09:00 PM IST | https://studio.youtube.com/video/E_WU4nDM5V4/edit
+- कहानी पतंग | gold | चीकू गिलहरी और कालू कोयल | मेहनत की प्यारी कहानी | Sat 07 Nov 2026 04:00 PM IST | https://studio.youtube.com/video/O84KMgm-pSE/edit
