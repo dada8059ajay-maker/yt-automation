@@ -21,9 +21,20 @@ def process_mega_video(channel="raat_long"):
     # Take one full multi-chapter story for a mega video
     story = stories.pop(0)
     story_id = story["id"]
-    bgm = os.path.join(ROOT, "assets", "bgm", "horror_bgm.mp3" if "raat" in channel else "moral_bgm.mp3")
 
-    print(f"Building Mega Video for {story['title']}")
+    # STRICT CHANNEL SEGREGATION (Gold Standard)
+    if "raat" in channel:
+        bgm = os.path.join(ROOT, "assets", "bgm", "horror_bgm.mp3")
+        kids_flag = False
+        voice_type = "onyx"
+    elif "kahani" in channel:
+        bgm = os.path.join(ROOT, "assets", "bgm", "moral_bgm.mp3")
+        kids_flag = True
+        voice_type = "fable"
+    else:
+        raise ValueError(f"CRITICAL ERROR: Unknown channel type '{channel}'. Failing to prevent garbage upload.")
+
+    print(f"Building Mega Video for {story['title']} on channel {channel} (Kids: {kids_flag})")
 
     chapter_videos = []
     for c_idx, chapter in enumerate(story["chapters"]):
@@ -34,7 +45,8 @@ def process_mega_video(channel="raat_long"):
             image_path = os.path.join(TMP_DIR, f"{story_id}_c{c_idx}_s{s_idx}.png")
             video_path = os.path.join(TMP_DIR, f"{story_id}_c{c_idx}_s{s_idx}.mp4")
 
-            generate_audio(scene["t"], audio_path, voice="onyx" if "raat" in channel else "fable")
+            # Gold Standard: strict voice and strict 2D image action lock
+            generate_audio(scene["t"], audio_path, voice=voice_type)
             generate_image(scene["a"], image_path, is_short=False)
             build_scene_video(image_path, audio_path, video_path, is_short=False)
             scene_videos.append(video_path)

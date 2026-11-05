@@ -28,16 +28,28 @@ def process_reels(batch_size=14):
     for reel in to_process:
         reel_id = reel["id"]
         channel = reel.get("channel", "raat")
-        bgm = os.path.join(ROOT, "assets", "bgm", "horror_bgm.mp3" if channel == "raat" else "moral_bgm.mp3")
 
-        print(f"Building reel: {reel_id}")
+        # STRICT CHANNEL SEGREGATION (Gold Standard)
+        if channel == "raat":
+             bgm = os.path.join(ROOT, "assets", "bgm", "horror_bgm.mp3")
+             kids_flag = False
+             voice_type = "onyx"
+        elif channel == "kahani":
+             bgm = os.path.join(ROOT, "assets", "bgm", "moral_bgm.mp3")
+             kids_flag = True
+             voice_type = "fable"
+        else:
+             raise ValueError(f"CRITICAL ERROR: Unknown channel type '{channel}'. Failing to prevent garbage upload.")
+
+        print(f"Building reel: {reel_id} for channel {channel} (Kids: {kids_flag})")
         scene_videos = []
         for i, scene in enumerate(reel["scenes"]):
             audio_path = os.path.join(TMP_DIR, f"{reel_id}_scene_{i}.wav")
             image_path = os.path.join(TMP_DIR, f"{reel_id}_scene_{i}.png")
             video_path = os.path.join(TMP_DIR, f"{reel_id}_scene_{i}.mp4")
 
-            generate_audio(scene["t"], audio_path, voice="onyx" if channel == "raat" else "fable")
+            # Gold Standard: strict voice and strict 2D image action lock
+            generate_audio(scene["t"], audio_path, voice=voice_type)
             generate_image(scene["a"], image_path, is_short=True)
             build_scene_video(image_path, audio_path, video_path, is_short=True, text=scene["t"])
             scene_videos.append(video_path)
