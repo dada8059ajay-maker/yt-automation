@@ -1,0 +1,20 @@
+{
+ "job": "gold_raat_20261105_0809_2",
+ "videos": [
+  {
+   "id": "yd7aR8w37h8",
+   "status": {
+    "uploadStatus": "uploaded",
+    "privacyStatus": "private",
+    "publishAt": "2026-11-05T18:00:00Z",
+    "license": "youtube",
+    "embeddable": true,
+    "publicStatsViewable": true,
+    "selfDeclaredMadeForKids": false,
+    "containsSyntheticMedia": false
+   },
+   "thumb": "ok",
+   "playlist": "ok"
+  }
+ ]
+}
