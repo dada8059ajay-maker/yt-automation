@@ -11,7 +11,7 @@ for i, (img, text) in enumerate(SC):
     v = f"/tmp/g/{i}.mp4"; zoompan_clip(img, v, d, max_zoom=1.08)
     p = f"/tmp/g/p{i}.mp4"
     subprocess.run(["ffmpeg", "-y", "-v", "error", "-i", v, "-i", w, "-filter_complex", "[1:a]adelay=350|350,apad[a]", "-map", "0:v", "-map", "[a]",
-                    "-c:v", "libx264", "-preset", "medium", "-crf", "20", "-pix_fmt", "yuv420p", "-r", "30", "-c:a", "aac", "-ar", "48000", "-ac", "2", "-b:a", "192k", "-shortest", p], check=True)
+                    "-c:v", "libx264", "-preset", "medium", "-crf", "18", "-pix_fmt", "yuv420p", "-r", "30", "-c:a", "aac", "-ar", "48000", "-ac", "2", "-b:a", "192k", "-shortest", p], check=True)
     parts.append(p); print(f"scene {i+1}/{len(SC)} {d:.1f}s voice {VOICES[CH]}", flush=True)
 open("/tmp/g/list.txt", "w").write("".join(f"file '{p}'\n" for p in parts))
 out = f"docs/test/gold_{CH}_full.mp4"
