@@ -1,0 +1,21 @@
+name: gold-drain
+on:
+  schedule: [ { cron: '35 8 * * *' } ]   # 14:05 IST, after YouTube quota reset
+  workflow_dispatch:
+    inputs:
+      max: { default: '6' }
+permissions: { contents: write }
+concurrency: { group: gold-drain, cancel-in-progress: false }
+jobs:
+  drain:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - run: sudo apt-get -qq update && sudo apt-get -qq install -y ffmpeg && pip install -q edge-tts pillow
+      - run: python3 engine/gold_drain.py
+        env:
+          MAX: ${{ inputs.max || '6' }}
+          CID: ${{ secrets.YT_CLIENT_ID }}
+          CSEC: ${{ secrets.YT_CLIENT_SECRET }}
+      - run: python3 engine/gold_drain.py --status
