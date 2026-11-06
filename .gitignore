@@ -3,3 +3,23 @@ out/
 auth_url*
 *.token
 .env
+
+# --- security: never commit credentials (owner directive 2026-11-06) ---
+.env
+.env.*
+*.env
+token.json
+token*.json
+client_secret*.json
+client_secrets.json
+credentials*.json
+service_account*.json
+*.pem
+*.key
+*.p12
+secrets/*.json
+secrets/*.txt
+rt.txt
+at.txt
+__pycache__/
+*.pyc

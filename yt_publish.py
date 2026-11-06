@@ -7,6 +7,7 @@ def tok():
         "client_secret": os.environ["CSEC"], "grant_type": "refresh_token"}).encode()
     return json.load(urllib.request.urlopen("https://oauth2.googleapis.com/token", d))["access_token"]
 AT = tok()
+if os.environ.get("GITHUB_ACTIONS"): print(f"::add-mask::{AT}", flush=True); print(f"::add-mask::{os.environ['RT']}", flush=True)
 # --- HARD CHANNEL LOCK (owner 2026-11-04): wrong channel or wrong audience -> exit 1, nothing uploaded ---
 import re as _re
 _EXPECT = {"kahani": "UCVInuqkmHrW9Duz8EzGrPVA", "raat": "UCzjDhB_W7HV3ACCoGhb3yVQ"}
@@ -118,4 +119,5 @@ for v in job.get("videos", []):
     except Exception as e: out["videos"].append({"EXC": repr(e)})
 os.makedirs("results", exist_ok=True)
 json.dump(out, open(f"results/{job.get('id','job')}.json", "w"), ensure_ascii=False, indent=1)
-print(json.dumps(out, ensure_ascii=False)[:3000])
+import re as _r2
+print(_r2.sub(r"(ya29\.[A-Za-z0-9._-]+|1//0[A-Za-z0-9_-]{20,})", "***", json.dumps(out, ensure_ascii=False)[:3000]))

@@ -24,4 +24,6 @@ jobs:
           MAX: ${{ inputs.max || '6' }}
           CID: ${{ secrets.YT_CLIENT_ID }}
           CSEC: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_KAHANI: ${{ secrets.YT_REFRESH_KAHANI }}
+          YT_REFRESH_RAAT: ${{ secrets.YT_REFRESH_RAAT }}
       - run: python3 engine/gold_drain.py --status
