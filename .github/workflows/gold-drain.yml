@@ -9,10 +9,16 @@ concurrency: { group: gold-drain, cancel-in-progress: false }
 jobs:
   drain:
     runs-on: ubuntu-latest
-    timeout-minutes: 120
+    timeout-minutes: 340
     steps:
       - uses: actions/checkout@v4
-      - run: sudo apt-get -qq update && sudo apt-get -qq install -y ffmpeg && pip install -q edge-tts pillow
+      - uses: actions/cache@v4
+        with:
+          path: |
+            ~/.rembg
+            ~/.u2net
+          key: rembg-u2net-v1
+      - run: sudo apt-get -qq update && sudo apt-get -qq install -y ffmpeg && pip install -q edge-tts pillow numpy opencv-python-headless "rembg[cpu]" onnxruntime
       - run: python3 engine/gold_drain.py
         env:
           MAX: ${{ inputs.max || '6' }}
