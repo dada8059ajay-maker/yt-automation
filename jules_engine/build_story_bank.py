@@ -56,10 +56,11 @@ stories = {
             "title": "ज़रा सोचिए... एक ऐसा गाँव जहाँ कोई नहीं सोता!",
             "channel": "raat",
             "scenes": [
+                {"t": "अचानक, पानी से एक विशालकाय राक्षस बाहर निकला!", "a": "2D dark horror animated illustration, giant monster emerging from water, extreme action, danger", "m": "action"},
                 {"t": "ज़रा सोचिए... एक ऐसा गाँव है जहाँ रात होते ही सब जाग जाते हैं!", "a": "2D dark horror animated illustration, Indian village at night, people awake in the dark, scary eyes", "m": "suspense"},
                 {"t": "जो सो जाता है, वो कभी वापस नहीं लौटता।", "a": "2D dark horror animated illustration, empty bed in a dark room, moonlight shining on it", "m": "scary"},
                 {"t": "क्या आप ऐसे गाँव में एक रात गुज़ार पाएंगे?", "a": "2D dark horror animated illustration, creepy looking village street, fog, empty", "m": "suspense"},
-                {"t": "पूरी कहानी देखने के लिए चैनल को सब्सक्राइब करें!", "a": "2D dark horror animated illustration, spooky old mansion on a hill, text 'Subscribe'", "m": "suspense"}
+                {"t": "पूरी कहानी देखने के लिए चैनल को सब्सक्राइब करें!", "a": "2D dark horror animated illustration, spooky old mansion on a hill", "m": "suspense"}
             ]
         } for i in range(15)
     ]

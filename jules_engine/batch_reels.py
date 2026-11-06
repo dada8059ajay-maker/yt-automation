@@ -47,6 +47,9 @@ def process_reels(batch_size=14):
 
         print(f"Building reel: {reel_id} for channel {channel} (Kids: {kids_flag})")
         scene_videos = []
+        # Use a consistent seed per story to keep character features identical
+        story_seed = hash(reel_id) % (2**31 - 1)
+
         for i, scene in enumerate(reel["scenes"]):
             audio_path = os.path.join(TMP_DIR, f"{reel_id}_scene_{i}.wav")
             image_path = os.path.join(TMP_DIR, f"{reel_id}_scene_{i}.png")
@@ -54,8 +57,8 @@ def process_reels(batch_size=14):
 
             # Gold Standard: strict voice and strict 2D image action lock
             generate_audio(scene["t"], audio_path, voice=voice_type)
-            generate_image(scene["a"], image_path, is_short=True)
-            build_scene_video(image_path, audio_path, video_path, is_short=True, text=scene["t"])
+            generate_image(scene["a"], image_path, is_short=True, seed=story_seed)
+            build_scene_video(image_path, audio_path, video_path, is_short=True, text=scene["t"], mood=scene.get("m", "normal"))
             scene_videos.append(video_path)
 
         # Concatenate scenes

@@ -70,13 +70,14 @@ def generate_audio(text: str, output_path: str, voice: str = "onyx", emotion: st
 
     return output_path
 
-def generate_image(prompt: str, output_path: str, is_short: bool = False):
-    """Generates image using keyless Pollinations or HF fallback (Rule 2). 1080p target."""
+def generate_image(prompt: str, output_path: str, is_short: bool = False, seed: int = None):
+    """Generates image using keyless Pollinations or HF fallback. 1080p target. Fixed seed for character consistency."""
     width = 1080 if is_short else 1920
     height = 1920 if is_short else 1080
 
     clean_prompt = prompt.replace(" ", "%20")
-    seed = random.randint(1, 2**31 - 1)
+    if seed is None:
+        seed = random.randint(1, 2**31 - 1)
     url = f"https://image.pollinations.ai/prompt/{clean_prompt}?model=flux&nologo=true&width={width}&height={height}&seed={seed}"
     hdr = {"User-Agent": "Mozilla/5.0"}
 
@@ -115,9 +116,49 @@ def get_audio_duration(file_path: str) -> float:
     result = subprocess.run(cmd, stdout=subprocess.PIPE, text=True, check=True)
     return float(result.stdout.strip())
 
-def build_scene_video(image_path: str, audio_path: str, output_path: str, is_short: bool = False, text: str = None):
-    """Locks image to exact audio duration, adds motion/subtitles (Rule 1 & 5)."""
-    duration = get_audio_duration(audio_path)
+def add_layered_sfx(audio_path: str, text: str, mood: str, output_path: str):
+    """Mixes specific SFX based on text keywords or mood."""
+    sfx_map = {
+        "डर": "gasp.mp3", "खौफ": "gasp.mp3", "भाग": "footsteps.mp3", "दौड़": "footsteps.mp3",
+        "साँप": "hiss.mp3", "बिजली": "thunder.mp3", "राक्षस": "riser.mp3", "खतरा": "siren.mp3"
+    }
+
+    sfx_file = None
+    for kw, f in sfx_map.items():
+        if kw in text:
+            sfx_file = f
+            break
+
+    if not sfx_file and mood in ["scary", "horror"]:
+        sfx_file = "riser.mp3"
+    elif not sfx_file and mood == "suspense":
+        sfx_file = "footsteps.mp3"
+
+    sfx_path = os.path.join(ROOT, "assets", "sfx", sfx_file) if sfx_file else None
+
+    if not sfx_path or not os.path.exists(sfx_path) or os.path.getsize(sfx_path) == 0:
+        subprocess.run(["cp", audio_path, output_path], check=True)
+        return output_path
+    # Mix TTS audio with SFX at 0.5 volume
+    cmd = [
+        "ffmpeg", "-y",
+        "-i", audio_path,
+        "-i", sfx_path,
+        "-filter_complex", "[1:a]volume=0.5[sfx];[0:a][sfx]amix=inputs=2:duration=first:dropout_transition=2[aout]",
+        "-map", "[aout]",
+        "-c:a", "pcm_s16le",
+        output_path
+    ]
+    subprocess.run(cmd, check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    return output_path
+
+def build_scene_video(image_path: str, audio_path: str, output_path: str, is_short: bool = False, text: str = None, mood: str = "normal"):
+    """Locks image to exact audio duration, adds dynamic motion/subtitles/SFX."""
+    # Apply SFX first
+    sfx_audio_path = audio_path.replace(".wav", "_sfx.wav")
+    add_layered_sfx(audio_path, text or "", mood, sfx_audio_path)
+
+    duration = get_audio_duration(sfx_audio_path)
     fps = 30
     frames = int(duration * fps)
 
@@ -126,17 +167,36 @@ def build_scene_video(image_path: str, audio_path: str, output_path: str, is_sho
     crop_w = int(w * 0.96)
     crop_h = int(h * 0.96)
 
-    # Scale, crop watermark, add slow zoompan motion for 2D animation feel
-    vf = f"scale={w*1.2}:{h*1.2},crop={crop_w}:{crop_h},zoompan=z='min(zoom+0.0005,1.1)':d={frames}:s={w}x{h}:fps={fps}"
+    # Dynamic camera motion based on mood
+    if mood in ["scary", "horror", "action"]:
+        # Fast shake/zoom for danger
+        motion = f"zoompan=z='min(zoom+0.0015,1.5)':d={frames}:x='iw/2-(iw/zoom/2)+sin(time*10)*10':y='ih/2-(ih/zoom/2)+cos(time*10)*10':s={w}x{h}:fps={fps}"
+    else:
+        # Smooth tracking pan/zoom for normal
+        motion = f"zoompan=z='min(zoom+0.0005,1.1)':d={frames}:s={w}x{h}:fps={fps}"
+
+    vf = f"scale={w*1.2}:{h*1.2},crop={crop_w}:{crop_h},{motion}"
 
     if is_short and text:
-         safe_text = text.replace("'", "").replace(":", "")
-         vf += f",drawtext=text='{safe_text}':fontcolor=yellow:fontsize=72:x=(w-text_w)/2:y=(h-text_h)/2:borderw=4:bordercolor=black"
+         # Fix subtitle rendering: Use 2-3 words per line, add Noto Sans Devanagari font, center correctly
+         safe_text = text.replace("'", "").replace(":", "").replace("\n", " ")
+         words = safe_text.split()
+         chunks = [" ".join(words[i:i+3]) for i in range(0, len(words), 3)]
+
+         # In a real environment, you'd map chunks to timestamps. For sandbox FFmpeg text burn,
+         # we wrap the text into newlines if it's too long, or create a basic .ass subtitle file.
+         # For simplicity in this `drawtext` filter, we insert literal newlines to simulate chunking.
+         wrapped_text = "\\\n".join(chunks)
+
+         font_path = "/usr/share/fonts/truetype/noto/NotoSansDevanagari-Regular.ttf"
+         font_opt = f"fontfile='{font_path}':" if os.path.exists(font_path) else ""
+
+         vf += f",drawtext={font_opt}text='{wrapped_text}':fontcolor=yellow:fontsize=80:x=(w-text_w)/2:y=(h-text_h)/2:borderw=4:bordercolor=black:shadowcolor=black:shadowx=2:shadowy=2:text_align=M"
 
     cmd = [
         "ffmpeg", "-y",
         "-loop", "1", "-i", image_path,
-        "-i", audio_path,
+        "-i", sfx_audio_path,
         "-c:v", "libx264", "-preset", "ultrafast",
         "-c:a", "aac", "-b:a", "192k",
         "-pix_fmt", "yuv420p",
@@ -145,6 +205,8 @@ def build_scene_video(image_path: str, audio_path: str, output_path: str, is_sho
         output_path
     ]
     subprocess.run(cmd, check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    if os.path.exists(sfx_audio_path):
+        os.remove(sfx_audio_path)
     return output_path
 
 def master_audio_with_bgm(video_path: str, bgm_path: str, output_path: str):

@@ -63,6 +63,7 @@ def refill_bank():
              "title": "ज़रा सोचिए...",
              "channel": "kahani",
              "scenes": [
+                 {"t": "शेर ने अचानक दहाड़ते हुए हमला कर दिया!", "a": "2D vibrant Indian cartoon animation, lion attacking, action scene", "m": "action"},
                  {"t": "ज़रा सोचिए, क्या हो अगर पेड़ बोलने लगें?", "a": "2D vibrant Indian cartoon animation, talking tree", "m": "happy"}
              ]
         })
