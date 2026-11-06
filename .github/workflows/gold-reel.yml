@@ -1,0 +1,36 @@
+name: gold-reel
+# Renders 9:16 Instagram/Facebook Reels for gold sets (from git history), with motion + SFX + hook. Output = artifact "reels".
+on:
+  workflow_dispatch:
+    inputs:
+      sids: { description: "comma separated set ids", required: true }
+permissions: { contents: read }
+jobs:
+  reel:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+      - uses: actions/cache@v4
+        with:
+          path: |
+            ~/.rembg
+            ~/.u2net
+          key: rembg-u2net-v1
+      - run: sudo apt-get -qq update && sudo apt-get -qq install -y ffmpeg && pip install -q edge-tts pillow numpy opencv-python-headless "rembg[cpu]" onnxruntime
+      - run: |
+          mkdir -p reels
+          for SID in $(echo "${{ inputs.sids }}" | tr ',' ' '); do
+            P=assets/gold/pending/$SID
+            C=$(git log --all --format=%H -- $P/set.json | sed -n 2p); [ -z "$C" ] && C=$(git log --all --format=%H -- $P/set.json | head -1)
+            git checkout $C -- $P || { echo "::warning::$SID not in history"; continue; }
+            CH=$(python3 -c "import json;print(json.load(open('$P/set.json'))['ch'])")
+            python3 -c "import json,os;s=json.load(open('$P/set.json'));json.dump({s['ch']:[[os.path.join('$P',i),t] for i,t in s['lines']]},open('assets/gold/scripts.json','w'),ensure_ascii=False)"
+            python3 engine/gold_video.py $CH
+            python3 engine/reel.py docs/test/gold_${CH}_full.mp4 reels/$SID.mp4
+            python3 -c "import json;m=json.load(open('$P/set.json'))['meta'];open('reels/$SID.txt','w').write(m['title']+'\n\n'+m['description'])"
+          done
+          ls -la reels
+      - uses: actions/upload-artifact@v4
+        with: { name: reels, path: reels, retention-days: 3 }
