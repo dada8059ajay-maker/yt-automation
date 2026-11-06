@@ -46,3 +46,4 @@
 - कहानी पतंग | gold | चतुर तोता तीतू और जादुई आम | सच्चाई की कहानी | Mon 09 Nov 2026 04:00 PM IST | https://studio.youtube.com/video/vDhuHFx8T8U/edit
 - रात के किस्से | gold | रेलवे फाटक का नियम | रात 1 बजे की सीटी | हिंदी हॉरर | Tue 10 Nov 2026 09:00 PM IST | https://studio.youtube.com/video/cDPMF0OcE2g/edit
 - कहानी पतंग | gold | छोटी चींटी चीनी और बारिश का पुल | मेहनत की कहानी | Mon 09 Nov 2026 07:00 PM IST | https://studio.youtube.com/video/NHWctWavZdw/edit
+- रात के किस्से | gold | हवेली की ग्यारहवीं सीढ़ी | रात का नियम | हिंदी हॉरर | Tue 10 Nov 2026 11:30 PM IST | https://studio.youtube.com/video/48zZUz8EgtI/edit
