@@ -43,3 +43,4 @@
 - कहानी पतंग | gold | राजा, नन्हा कछुआ और सोने का कुआँ | ईमानदारी की कहानी | Sun 08 Nov 2026 07:00 PM IST | https://studio.youtube.com/video/Cl-Ae2ynEyQ/edit
 - रात के किस्से | gold | पेट्रोल पंप का नियम | रात 1 बजे की हरी बत्ती | हिंदी हॉरर | Mon 09 Nov 2026 09:00 PM IST | https://studio.youtube.com/video/2fM132nqC6U/edit
 - रात के किस्से | gold | रात की आख़िरी बस | कंडक्टर का नियम | हिंदी हॉरर कहानी | Mon 09 Nov 2026 11:30 PM IST | https://studio.youtube.com/video/QBfJYd31PKw/edit
+- कहानी पतंग | gold | चतुर तोता तीतू और जादुई आम | सच्चाई की कहानी | Mon 09 Nov 2026 04:00 PM IST | https://studio.youtube.com/video/vDhuHFx8T8U/edit
