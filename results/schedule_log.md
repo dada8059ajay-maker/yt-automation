@@ -51,3 +51,4 @@
 - कहानी पतंग | gold | नन्हा मेंढक टिंकू और जादुई कमल | मदद की प्यारी कहानी | Tue 10 Nov 2026 04:00 PM IST | https://studio.youtube.com/video/m_3thYl7djA/edit
 - रात के किस्से | gold | पुराने स्कूल का नियम | रात की आख़िरी घंटी | हिंदी हॉरर | Wed 11 Nov 2026 11:30 PM IST | https://studio.youtube.com/video/vCR5QZjw--g/edit
 - कहानी पतंग | gold | बंदर मिंटू और सुनहरी चाबी | बाँटने की प्यारी कहानी | Tue 10 Nov 2026 07:00 PM IST | https://studio.youtube.com/video/5ZCKAhH73s8/edit
+- रात के किस्से | gold | ढाबे की तीसरी चारपाई | रात का नियम | हिंदी हॉरर कहानी | Thu 12 Nov 2026 09:00 PM IST | https://studio.youtube.com/video/YR9rRPK3WIM/edit
