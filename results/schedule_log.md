@@ -48,3 +48,4 @@
 - कहानी पतंग | gold | छोटी चींटी चीनी और बारिश का पुल | मेहनत की कहानी | Mon 09 Nov 2026 07:00 PM IST | https://studio.youtube.com/video/NHWctWavZdw/edit
 - रात के किस्से | gold | हवेली की ग्यारहवीं सीढ़ी | रात का नियम | हिंदी हॉरर | Tue 10 Nov 2026 11:30 PM IST | https://studio.youtube.com/video/48zZUz8EgtI/edit
 - रात के किस्से | gold | हाईवे का मील पत्थर | रात का नियम | हिंदी हॉरर | Wed 11 Nov 2026 09:00 PM IST | https://studio.youtube.com/video/r6i9W2G7aWo/edit
+- कहानी पतंग | gold | नन्हा मेंढक टिंकू और जादुई कमल | मदद की प्यारी कहानी | Tue 10 Nov 2026 04:00 PM IST | https://studio.youtube.com/video/m_3thYl7djA/edit
