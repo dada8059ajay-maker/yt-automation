@@ -1,0 +1,20 @@
+{
+ "job": "gold_raat_20261107_1230_5",
+ "videos": [
+  {
+   "id": "Vkz4o42ok3k",
+   "status": {
+    "uploadStatus": "uploaded",
+    "privacyStatus": "private",
+    "publishAt": "2026-11-12T18:00:00Z",
+    "license": "youtube",
+    "embeddable": true,
+    "publicStatsViewable": true,
+    "selfDeclaredMadeForKids": false,
+    "containsSyntheticMedia": false
+   },
+   "thumb": "ok",
+   "playlist": "ok"
+  }
+ ]
+}
