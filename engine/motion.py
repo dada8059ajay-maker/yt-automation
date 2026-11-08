@@ -32,9 +32,16 @@ def _layers(img):
 def _aff(scale, dx, dy, rot=0.0):
     M = cv2.getRotationMatrix2D((W / 2, H / 2), rot, scale); M[0, 2] += dx; M[1, 2] += dy; return M
 
-def animate(image, out_mp4, seconds, ch="kahani", idx=0):
+def animate(image, out_mp4, seconds, ch="kahani", idx=0, fx=None, fps=None, crf="18", preset="medium"):
+    """fx: list of living-picture effects (engine/fx.py) applied to the background every frame (water flows, fire, wind...)."""
+    FPS = int(fps or globals()["FPS"])
     img = cv2.resize(cv2.imread(image), (W, H), interpolation=cv2.INTER_AREA)
     bg, alpha = _layers(img)
+    live = None
+    if fx:
+        from fx import FX
+        live = FX(img if alpha is None else bg, fx, idx)
+        if not live.active: live = None
     fg = img.astype(np.float32)
     n = max(2, int(math.ceil(seconds * FPS)))
     sgn = 1 if idx % 2 == 0 else -1                            # alternate direction scene to scene
@@ -42,7 +49,7 @@ def animate(image, out_mp4, seconds, ch="kahani", idx=0):
     shake_amp = 5.0 if ch == "raat" else 1.5
     ph = rng.uniform(0, 6.28, 4)
     p = subprocess.Popen(["ffmpeg", "-y", "-v", "error", "-f", "rawvideo", "-pix_fmt", "bgr24", "-s", f"{W}x{H}", "-r", str(FPS), "-i", "-",
-                          "-c:v", "libx264", "-preset", "medium", "-crf", "18", "-pix_fmt", "yuv420p", out_mp4], stdin=subprocess.PIPE)
+                          "-c:v", "libx264", "-preset", preset, "-crf", crf, "-pix_fmt", "yuv420p", out_mp4], stdin=subprocess.PIPE)
     for f in range(n):
         t = f / (n - 1); e = t * t * (3 - 2 * t); sec = f / FPS
         cam = 1.06 + 0.07 * e                                  # slow push-in on the whole scene
@@ -51,10 +58,11 @@ def animate(image, out_mp4, seconds, ch="kahani", idx=0):
         sy = shake_amp * (math.sin(sec * 6.3 + ph[2]) + 0.5 * math.sin(sec * 11.7 + ph[3]))
         if idx == 0 and sec < 0.5: sx += 18 * math.sin(sec * 60) * (1 - sec / 0.5)   # impact jolt
         cdx = sgn * 40 * (e - 0.5) + sx
+        src = live.frame(sec) if live is not None else None
         if alpha is None:
-            frame = cv2.warpAffine(img, _aff(cam, cdx, sy), (W, H), flags=cv2.INTER_LINEAR, borderMode=cv2.BORDER_REFLECT)
+            frame = cv2.warpAffine(img if src is None else src, _aff(cam, cdx, sy), (W, H), flags=cv2.INTER_LINEAR, borderMode=cv2.BORDER_REFLECT)
         else:
-            b = cv2.warpAffine(bg, _aff(cam, cdx * 0.6, sy * 0.6), (W, H), flags=cv2.INTER_LINEAR, borderMode=cv2.BORDER_REFLECT)
+            b = cv2.warpAffine(bg if src is None else src, _aff(cam, cdx * 0.6, sy * 0.6), (W, H), flags=cv2.INTER_LINEAR, borderMode=cv2.BORDER_REFLECT)
             bob = 7 * abs(math.sin(sec * math.pi * 1.8))           # walk / breathing bob
             fdx = cdx + sgn * 70 * (e - 0.5)                       # character travels across the frame (parallax)
             M = _aff(cam * (1.0 + 0.03 * e), fdx, sy - bob, rot=0.6 * math.sin(sec * 2.2))

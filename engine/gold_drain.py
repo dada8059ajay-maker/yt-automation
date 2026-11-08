@@ -5,7 +5,8 @@ Channel lock stays in yt_publish.py. Voices locked in core_logic (Edge only)."""
 import os, sys, json, glob, shutil, subprocess, datetime as dt
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 IST = dt.timezone(dt.timedelta(hours=5, minutes=30))
-SLOTS = {"kahani": ["16:00", "19:00"], "raat": ["21:00", "23:30"]}   # IST, 2 per channel per day
+SLOTS = {"kahani": ["16:00", "19:00"], "raat": ["21:00", "23:30"]}   # IST, 2 per channel per day (old short sets)
+LONG_SLOTS = {"kahani": ["18:00"], "raat": ["21:00"]}                 # IST, long-form (10+ min): 1 per channel per day max
 PL = {"kahani": "दादी की कहानियाँ", "raat": "रात के किस्से - सभी कहानियाँ"}
 BAD_KIDS = ["भूत", "डर", "डरावन", "भयानक", "खौफ", "चुड़ैल", "आत्मा", "हॉरर", "horror", "ghost", "मौत", "खून"]
 SF = "engine/gold_slots.json"
@@ -22,10 +23,10 @@ if "--status" in sys.argv:
     for ch in ("kahani", "raat"):
         fu = future(ch); print(f"{ch}: scheduled_future={len(fu)} pending={len(pending(ch))} target=28 (14 days x 2) last={fu[-1] if fu else None}")
     sys.exit(0)
-def next_slot(ch):
+def next_slot(ch, long=False):
     taken = set(slots[ch]); day = now.astimezone(IST).date()
     for k in range(0, 40):
-        for hm in SLOTS[ch]:
+        for hm in (LONG_SLOTS if long else SLOTS)[ch]:
             h, m = map(int, hm.split(":")); t = dt.datetime(day.year, day.month, day.day, h, m, tzinfo=IST) + dt.timedelta(days=k)
             u = t.astimezone(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
             if t > now + dt.timedelta(hours=6) and u not in taken:
@@ -46,14 +47,19 @@ while q["kahani"] or q["raat"]:
 for f in order:
     if done >= MAX: break
     d = os.path.dirname(f); s = json.load(open(f)); ch = s["ch"]; m = s["meta"]; sid = os.path.basename(d)
-    txt = m["title"] + " " + m["description"] + " " + " ".join(t for _, t in s["lines"])
+    LONG = bool(s.get("long"))
+    body = [l for sc in s["scenes"] for l in sc["lines"]] if LONG else [t for _, t in s["lines"]]
+    txt = m["title"] + " " + m["description"] + " " + " ".join(body)
     if ch == "kahani" and any(b in txt for b in BAD_KIDS): print("::warning::BLOCKED kids-unsafe words", sid); shutil.move(d, f"assets/gold/rejected/{sid}") if os.makedirs("assets/gold/rejected", exist_ok=True) is None else 0; continue
     if ch == "raat" and "कहानी पतंग" in txt: print("::warning::BLOCKED kahani brand on raat", sid); continue
-    if len(s["lines"]) < 6: print("::warning::too few lines", sid); continue
-    u, t = next_slot(ch)
+    if (not LONG and len(s["lines"]) < 6) or (LONG and len(body) < 60): print("::warning::too few lines", sid); continue
+    u, t = next_slot(ch, LONG)
     if not u: print(f"buffer full for {ch} (14 days)"); continue
-    json.dump({ch: [[os.path.join(d, i), x] for i, x in s["lines"]]}, open("assets/gold/scripts.json", "w"), ensure_ascii=False)
-    sh(sys.executable, "engine/gold_video.py", ch)
+    if LONG:
+        sh(sys.executable, "engine/long_video.py", d)
+    else:
+        json.dump({ch: [[os.path.join(d, i), x] for i, x in s["lines"]]}, open("assets/gold/scripts.json", "w"), ensure_ascii=False)
+        sh(sys.executable, "engine/gold_video.py", ch)
     meta = {"job_id": f"gold_{sid}", "title": m["title"], "description": m["description"], "tags": m.get("tags", []), "publishAt": u,
             "thumb": os.path.join(d, m.get("thumb", "1.jpg")), "playlist": PL[ch]}
     json.dump({ch: meta}, open("assets/gold/meta.json", "w"), ensure_ascii=False)

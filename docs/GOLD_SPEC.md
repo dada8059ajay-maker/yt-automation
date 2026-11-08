@@ -11,3 +11,12 @@ f) RULE BOOK 2026-11-06 (मालिक, स्थायी) — Motion + SFX +
 - SFX: engine/sfx.py हर लाइन के शब्दों से असली-जैसे sound effect चुनकर उसी सीन के पहले फ्रेम पर मिलाता है (धड़कन, बारिश, पानी, हवा, बिजली, सायरन, घंटी, ट्रेन, गाड़ी, दस्तक, कदम, चरमराहट, जादू, चिड़िया, हँसी, टक्कर) + चैनल का माहौल (रात: झींगुर+हवा, कहानी: चिड़िया)। आवाज़ आने पर SFX अपने आप धीमा (ducking)। सारे SFX numpy से बने हैं, कोई download/licence नहीं। कहानी पतंग में सायरन/बिजली/धड़कन/चरमराहट नहीं।
 - इसलिए कहानी लिखते समय हर लाइन में एक साफ़ आवाज़ वाला एक्शन शब्द रखो (जैसे दस्तक, पानी, घंटी, कदम, चमक, अचानक)।
 - पहले 2 सेकंड का Hook: लाइन 1 = कहानी का सबसे बड़ा एक्शन या सवाल (धीमी शुरुआत, परिचय, "एक बार की बात है" मना)। तस्वीर 1 = सबसे ज़्यादा एक्शन वाला फ्रेम। render में सीन 1 पर सफ़ेद flash + punch-in zoom + impact/whoosh SFX, और आवाज़ 0.12 सेकंड पर शुरू।
+
+## LONG-FORM (मालिक का नियम 2026-11-08, अब से यही मुख्य उत्पादन)
+- रोज़ 1 लंबा वीडियो (10-14 मिनट), चैनल बारी-बारी: पिछला लंबा सेट (assets/gold/done या pending में "long": true) जिस चैनल का था, आज दूसरा चैनल। छोटे 5 सेट अब नहीं बनते।
+- कहानी: ऊपर के mythology/history/twist नियम; 36-40 सीन, हर सीन 2-3 लाइन (कुल 95-110 लाइन, ~1500-1700 शब्द); पहला सीन सबसे बड़ा action hook; बीच-बीच में 3-4 छोटे मोड़; अंत अनपेक्षित twist। एक ही नैरेटर-आवाज़ (Edge लॉक)।
+- तस्वीरें: हर सीन की 1 तस्वीर Hark generate_image से (realism शब्द अनिवार्य, ban शब्द कभी नहीं), 1920x1072 JPG q90, नाम 01.jpg..40.jpg। जहाँ कहानी में पानी/आग/हवा/धुंध हो, वह तस्वीर में साफ़ दिखाओ ताकि flow effect लगे।
+- हर सीन का "fx" (engine/fx.py, मुफ़्त CPU, असली texture advection): water (नदी/झरना/तालाब/बावड़ी बहता है), fire (दीया/मशाल/चिता लहराती है), sway (पेड़/घास/कपड़ा हवा में), clouds, fog, rain, fireflies, embers, dust। तस्वीर देखकर चुनो; ज़रूरत हो तो "box":[x0,y0,x1,y1] (0..1) और "dir" (डिग्री) दो।
+- set.json: {"ch":"raat"|"kahani","long":true,"scenes":[{"img":"01.jpg","lines":["..",".."],"fx":[{"type":"water"}]},...],"meta":{"title","description","tags","thumb"}}। फ़ोल्डर assets/gold/pending/<ch>_long_<YYYYMMDD>/ ; तस्वीरें बनते-बनते push करो, set.json सबसे आख़िर में (drain सिर्फ़ set.json वाले फ़ोल्डर उठाता है)।
+- Render: gold-drain.yml -> engine/long_video.py (24fps, 2.5D layers + fx, SFX ducking, loudnorm, जाँच >20 MB और >8 मिनट)। Publish slot: कहानी 18:00 IST, रात 21:00 IST।
+- YouTube टोकन सिर्फ़ GitHub Repository Secrets (YT_REFRESH_KAHANI / YT_REFRESH_RAAT) से os.environ.get द्वारा। repo में कोई key/token/.env कभी नहीं।
