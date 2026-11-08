@@ -60,8 +60,7 @@ job = {"id": f"comp_{CH}_{KEY}", "videos": [{"file": F, "title": title[:99], "de
 json.dump(job, open("job.json", "w"), ensure_ascii=False, indent=1)
 for x, _ in pick: os.remove(x["asset"])
 os.chdir("../..")
-f = "secrets/yt_refresh.enc" if CH == "kahani" else f"secrets/yt_refresh_{CH}.enc"
-rt = subprocess.check_output(["openssl", "enc", "-d", "-aes-256-cbc", "-pbkdf2", "-in", f, "-pass", "env:CSEC"]).decode().strip()
+rt = os.environ.get(f"YT_REFRESH_{CH.upper()}", "").strip()  # GitHub Secret only
 os.makedirs("results", exist_ok=True)
 subprocess.run([sys.executable, "yt_publish.py", "out/comp"], check=True, env=dict(os.environ, RT=rt, YT_CH=CH))
 res = json.load(open(f"results/{job['id']}.json")); vid = (res.get("videos") or [{}])[0].get("id")

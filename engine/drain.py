@@ -17,8 +17,7 @@ def next_slot(cfg, mode, last_iso):
             h, m = map(int, hm.split(":")); c = dt.datetime(day.year, day.month, day.day, h, m, tzinfo=IST)
             if c.astimezone(dt.timezone.utc) > base: return c.astimezone(dt.timezone.utc)
 def rt(ch):
-    f = "secrets/yt_refresh.enc" if ch == "kahani" else f"secrets/yt_refresh_{ch}.enc"
-    return subprocess.check_output(["openssl", "enc", "-d", "-aes-256-cbc", "-pbkdf2", "-in", f, "-pass", "env:CSEC"]).decode().strip()
+    return os.environ.get(f"YT_REFRESH_{ch.upper()}", "").strip()  # GitHub Secret only (legacy, workflow disabled)
 def save(): json.dump(STATE, open(STATE_P, "w"), ensure_ascii=False, indent=1)
 os.makedirs("out", exist_ok=True); os.makedirs("results", exist_ok=True)
 BAD = False

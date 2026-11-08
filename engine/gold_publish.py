@@ -11,10 +11,9 @@ job = {"id": JID, "channel": CH, "videos": [{"title": META["title"], "descriptio
        "categoryId": "1" if CH == "kahani" else "24", "publishAt": META["publishAt"], "madeForKids": CH == "kahani", "file": "video.mp4", "thumb": "thumb.jpg", "playlist": META["playlist"]}]}
 json.dump(job, open(f"{D}/job.json", "w"), ensure_ascii=False, indent=1)
 from safe_log import mask, redact
-rt = os.environ.get(f"YT_REFRESH_{CH.upper()}", "")          # GitHub Secret (preferred)
-if not rt:                                                     # legacy encrypted file, removed once secrets are migrated
-    f = "secrets/yt_refresh.enc" if CH == "kahani" else f"secrets/yt_refresh_{CH}.enc"
-    rt = subprocess.check_output(["openssl", "enc", "-d", "-aes-256-cbc", "-pbkdf2", "-in", f, "-pass", "env:CSEC"]).decode().strip()
+rt = os.environ.get(f"YT_REFRESH_{CH.upper()}", "").strip()   # GitHub Repository Secret ONLY (no files, no .env)
+if not rt:
+    print(f"::error::BLOCKED missing GitHub Secret YT_REFRESH_{CH.upper()}"); sys.exit(2)
 mask(rt)
 subprocess.run([sys.executable, "yt_publish.py", D], check=True, env=dict(os.environ, RT=rt, YT_CH=CH))
 r = json.load(open(f"results/{job['id']}.json")); vid = (r.get("videos") or [{}])[0].get("id")

@@ -1,4 +1,6 @@
 name: youtube-auth
+# Writes the YouTube refresh token straight into GitHub Repository Secrets (YT_REFRESH_KAHANI / YT_REFRESH_RAAT).
+# Nothing is ever written to a file or committed. Needs repo secret GH_PAT (fine-grained PAT, this repo, "Secrets: Read and write").
 on:
   workflow_dispatch:
     inputs:
@@ -6,50 +8,49 @@ on:
         description: "OAuth code (empty = print consent URL)"
         required: false
         default: ""
-      name:
-        description: "token file suffix"
-        required: false
+      channel:
+        description: "kahani or raat"
+        required: true
         default: "raat"
 permissions:
-  contents: write
+  contents: read
 jobs:
   auth:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
       - name: Consent URL
         if: ${{ inputs.code == '' }}
         env:
           CID: ${{ secrets.YT_CLIENT_ID }}
         run: |
-          python3 - <<'PY'
-          import os,urllib.parse,base64
+          python3 - <<'PY' >> "$GITHUB_STEP_SUMMARY"
+          import os,urllib.parse
           q=urllib.parse.urlencode({"client_id":os.environ["CID"],"redirect_uri":"http://localhost","response_type":"code","scope":"https://www.googleapis.com/auth/youtube.upload https://www.googleapis.com/auth/youtube","access_type":"offline","prompt":"consent"})
-          open("auth_url.b64","w").write(base64.b64encode(("https://accounts.google.com/o/oauth2/v2/auth?"+q).encode()).decode())
+          print("Open, sign in with the channel's Google account, copy `code=` from the localhost URL:\n\nhttps://accounts.google.com/o/oauth2/v2/auth?"+q)
           PY
-          git config user.name bot; git config user.email bot@users.noreply.github.com
-          git add auth_url.b64; git commit -m "auth url"; git push
-      - name: Exchange code
+      - name: Exchange code -> GitHub Secret
         if: ${{ inputs.code != '' }}
         env:
           CID: ${{ secrets.YT_CLIENT_ID }}
           CSEC: ${{ secrets.YT_CLIENT_SECRET }}
           CODE: ${{ inputs.code }}
+          GH_TOKEN: ${{ secrets.GH_PAT }}
+          CH: ${{ inputs.channel }}
         run: |
-          python3 - <<'PY'
-          import os,json,urllib.request,urllib.parse
+          case "$CH" in kahani|raat) ;; *) echo "::error::channel must be kahani or raat"; exit 1;; esac
+          [ -n "$GH_TOKEN" ] || { echo "::error::BLOCKED add repo secret GH_PAT first"; exit 1; }
+          RT=$(python3 - <<'PY'
+          import os,json,urllib.request,urllib.parse,sys
           d=urllib.parse.urlencode({"code":os.environ["CODE"],"client_id":os.environ["CID"],"client_secret":os.environ["CSEC"],"redirect_uri":"http://localhost","grant_type":"authorization_code"}).encode()
-          try:
-            r=json.load(urllib.request.urlopen("https://oauth2.googleapis.com/token",d))
-          except urllib.error.HTTPError as e:
-            print("ERR",e.read().decode()); raise SystemExit(1)
-          rt=r.get("refresh_token")
-          if not rt: print("NO_REFRESH_TOKEN",list(r)); raise SystemExit(1)
-          open("rt.txt","w").write(rt)
+          try: r=json.load(urllib.request.urlopen("https://oauth2.googleapis.com/token",d))
+          except urllib.error.HTTPError as e: print("ERR",e.code,file=sys.stderr); sys.exit(1)
+          rt=r.get("refresh_token") or ""
+          if not rt: print("NO_REFRESH_TOKEN",file=sys.stderr); sys.exit(1)
+          print(rt)
           PY
-          mkdir -p secrets
-          openssl enc -aes-256-cbc -pbkdf2 -salt -in rt.txt -out secrets/yt_refresh_${{ inputs.name }}.enc -pass env:CSEC
-          rm rt.txt
-          git config user.name bot; git config user.email bot@users.noreply.github.com
-          git add secrets/; git commit -m "store encrypted yt token"; git push
-          echo AUTH_OK
+          )
+          echo "::add-mask::$RT"
+          NAME="YT_REFRESH_$(echo "$CH" | tr a-z A-Z)"
+          printf '%s' "$RT" | gh secret set "$NAME" --repo "$GITHUB_REPOSITORY"
+          unset RT
+          echo "AUTH_OK secret $NAME set"

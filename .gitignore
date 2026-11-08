@@ -23,3 +23,7 @@ rt.txt
 at.txt
 __pycache__/
 *.pyc
+
+# never commit keys/tokens
+secrets/
+*.enc
