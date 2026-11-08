@@ -44,6 +44,7 @@ q = {c: pending(c) for c in ("kahani", "raat")}; order = []
 while q["kahani"] or q["raat"]:
     for c in ("kahani", "raat"):
         if q[c]: order.append(q[c].pop(0))
+order.sort(key=lambda f: not json.load(open(f)).get("long"))     # long-form sets first (main product since 2026-11-08)
 for f in order:
     if done >= MAX: break
     d = os.path.dirname(f); s = json.load(open(f)); ch = s["ch"]; m = s["meta"]; sid = os.path.basename(d)
