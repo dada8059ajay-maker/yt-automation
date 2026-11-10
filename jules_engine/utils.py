@@ -71,44 +71,49 @@ def generate_audio(text: str, output_path: str, voice: str = "onyx", emotion: st
     return output_path
 
 def generate_image(prompt: str, output_path: str, is_short: bool = False, seed: int = None):
-    """Generates image using keyless Pollinations or HF fallback. 1080p target. Fixed seed for character consistency."""
+    """Generates image using keyless Pollinations or HF fallback. Bans black screens."""
     width = 1080 if is_short else 1920
     height = 1920 if is_short else 1080
 
     clean_prompt = prompt.replace(" ", "%20")
     if seed is None:
         seed = random.randint(1, 2**31 - 1)
-    url = f"https://image.pollinations.ai/prompt/{clean_prompt}?model=flux&nologo=true&width={width}&height={height}&seed={seed}"
+
     hdr = {"User-Agent": "Mozilla/5.0"}
 
-    try:
-        req = urllib.request.Request(url, headers=hdr)
-        data = urllib.request.urlopen(req, timeout=120).read()
-        if len(data) > 40000:
-            with open(output_path, "wb") as f:
-                f.write(data)
-            return output_path
-    except Exception as e:
-        print(f"Pollinations failed: {e}")
-
-    # Fallback to HuggingFace
-    hf_token = os.environ.get("HF_TOKEN")
-    if hf_token:
+    # 5 Strict retries to guarantee image generation and ban black screens
+    for attempt in range(5):
+        url = f"https://image.pollinations.ai/prompt/{clean_prompt}?model=flux&nologo=true&width={width}&height={height}&seed={seed + attempt}"
         try:
-            hf_url = "https://router.huggingface.co/hf-inference/models/black-forest-labs/FLUX.1-schnell"
-            req = urllib.request.Request(hf_url, json.dumps({"inputs": prompt}).encode(),
-                                         {"Authorization": f"Bearer {hf_token}", "Content-Type": "application/json"})
+            req = urllib.request.Request(url, headers=hdr)
             data = urllib.request.urlopen(req, timeout=120).read()
             if len(data) > 40000:
                 with open(output_path, "wb") as f:
                     f.write(data)
                 return output_path
         except Exception as e:
-            print(f"HF failed: {e}")
+            print(f"Pollinations attempt {attempt+1} failed: {e}")
+            time.sleep(2)
 
-    print("All image APIs failed, mocking image.")
-    subprocess.run(["ffmpeg", "-y", "-f", "lavfi", "-i", f"color=c=black:s={width}x{height}", "-vframes", "1", output_path], check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-    return output_path
+    # Fallback to HuggingFace
+    hf_token = os.environ.get("HF_TOKEN")
+    if hf_token:
+        for attempt in range(3):
+            try:
+                hf_url = "https://router.huggingface.co/hf-inference/models/black-forest-labs/FLUX.1-schnell"
+                req = urllib.request.Request(hf_url, json.dumps({"inputs": prompt}).encode(),
+                                             {"Authorization": f"Bearer {hf_token}", "Content-Type": "application/json"})
+                data = urllib.request.urlopen(req, timeout=120).read()
+                if len(data) > 40000:
+                    with open(output_path, "wb") as f:
+                        f.write(data)
+                    return output_path
+            except Exception as e:
+                print(f"HF attempt {attempt+1} failed: {e}")
+                time.sleep(2)
+
+    # If all APIs fail, intentionally crash rather than returning a black screen
+    raise RuntimeError(f"CRITICAL ERROR: Failed to generate image after multiple retries. Banning black screens. Crashing pipeline for prompt: {prompt[:50]}")
 
 def get_audio_duration(file_path: str) -> float:
     """Gets exact audio duration using ffprobe (Rule 1)."""
@@ -193,11 +198,13 @@ def build_scene_video(image_path: str, audio_path: str, output_path: str, is_sho
 
          vf += f",drawtext={font_opt}text='{wrapped_text}':fontcolor=yellow:fontsize=80:x=(w-text_w)/2:y=(h-text_h)/2:borderw=4:bordercolor=black:shadowcolor=black:shadowx=2:shadowy=2:text_align=M"
 
+    # Upgraded FFmpeg encoding: -preset fast, high bitrate mapping (-b:v 5M, -maxrate 5M)
     cmd = [
         "ffmpeg", "-y",
         "-loop", "1", "-i", image_path,
         "-i", sfx_audio_path,
-        "-c:v", "libx264", "-preset", "ultrafast",
+        "-c:v", "libx264", "-preset", "fast",
+        "-b:v", "5M", "-maxrate", "5M", "-bufsize", "10M",
         "-c:a", "aac", "-b:a", "192k",
         "-pix_fmt", "yuv420p",
         "-shortest",

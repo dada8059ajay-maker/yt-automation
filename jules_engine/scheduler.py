@@ -67,8 +67,10 @@ def run_scheduler():
 
         if os.path.exists(target_path):
             file_size_mb = os.path.getsize(target_path) / (1024 * 1024)
-            if file_size_mb < 1.0:
-                print(f"CRITICAL ERROR: Generated video {target} is too small ({file_size_mb:.2f}MB). Likely a failed render. Aborting publish.")
+            if file_size_mb < 15.0:
+                print(f"CRITICAL ERROR: Generated video {target} is too small ({file_size_mb:.2f}MB, limit >15MB). Likely a failed render. Deleting file and aborting publish.")
+                os.remove(target_path)
+                # Remove from queue so it can be re-attempted or dropped entirely
                 queue.pop(0)
             else:
                 if publish_video(target_path):

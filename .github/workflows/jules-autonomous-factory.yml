@@ -36,10 +36,16 @@ jobs:
           sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg fonts-noto-core
           pip install -q requests edge-tts
 
-      - name: Safe state fetch (avoid conflicts)
+      - name: Safe state fetch & Garbage Wipe
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
           git fetch origin main
           git checkout origin/main -- jules_engine/jules_state.json || true
+
+          # Delete the existing GitHub release to force a complete re-render of queue
+          gh release delete jules-ready-queue --yes || true
+          git push --delete origin jules-ready-queue || true
 
       - name: Run Auto-Story Writer
         run: python3 jules_engine/story_writer.py
