@@ -1,9 +1,14 @@
 #!/usr/bin/env python3
 """Instagram Reels auto-publish via Instagram Graph API (GitHub Actions).
 
+PAUSED by director order 2026-11-13: Meta restricted the 2nd Instagram
+account (Graph API flagged as potential bot activity). DO NOT RUN this
+script until the director gives the explicit INSTA-CLEAR command. The
+workflow step that calls this script is disabled.
+
 Reads from the environment (GitHub Secrets — 2nd Instagram account):
   INSTA_TOKEN_SECOND — long-lived user access token
-  IG_USER_ID         — Instagram Business/Creator account user id (numeric)
+  IG_USER_ID_SECOND  — Instagram Business/Creator account user id (numeric)
 
 Usage:
   python3 insta_uploader.py --video-url https://<public-url>/reel.mp4 --caption "..."
@@ -54,10 +59,10 @@ def main():
     ap.add_argument("--caption", default="", help="Reel caption")
     args = ap.parse_args()
     token = os.environ.get("INSTA_TOKEN_SECOND")
-    user_id = os.environ.get("IG_USER_ID")
+    user_id = os.environ.get("IG_USER_ID_SECOND")
     missing = [
         name
-        for name, val in (("INSTA_TOKEN_SECOND", token), ("IG_USER_ID", user_id))
+        for name, val in (("INSTA_TOKEN_SECOND", token), ("IG_USER_ID_SECOND", user_id))
         if not val
     ]
     if missing:
