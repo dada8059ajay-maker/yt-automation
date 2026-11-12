@@ -19,20 +19,16 @@ This directory adds only the isolated upload layer:
 - `yt_uploader.py` — copy of the HSSC uploader, run with the story
   channels' own YouTube secrets (see `hssc_engine/README.md`).
 - `insta_uploader.py` — copy of the Instagram uploader, run with the 2nd
-  Instagram account's secrets (Graph API, Reels).
-  **PAUSED by director order 2026-11-13 — do not run until INSTA-CLEAR.**
+  Instagram account's secrets (Graph API, Reels; @dada.8059ajay; INSTA-CLEAR given 2026-11-13).
 
 ## Workflow
 
 - `.github/workflows/story-engine.yml` — story render/upload only. Never
   shares a job with `hssc-engine.yml`.
 
-## Instagram — PAUSED (director order 2026-11-13)
+## Instagram
 
-Meta restricted the 2nd Instagram account (Graph API flagged as potential
-bot activity). The Instagram upload step in `story-engine.yml` is disabled
-and `insta_uploader.py` must NOT be run until the director gives the
-explicit INSTA-CLEAR command. YouTube uploads are unaffected.
+Reels publish only to the 2nd Instagram account @dada.8059ajay (INSTA_TOKEN_SECOND + IG_USER_ID_SECOND; INSTA-CLEAR given 2026-11-13). Never push videos to the HSSC Haryana Instagram account (@hssc_haryanagk). The Instagram step in `story-engine.yml` runs only when a reel_url is given.
 
 ## Rules
 
