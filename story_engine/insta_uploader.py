@@ -1,11 +1,6 @@
 #!/usr/bin/env python3
 """Instagram Reels auto-publish via Instagram Graph API (GitHub Actions).
 
-PAUSED by director order 2026-11-13: Meta restricted the 2nd Instagram
-account (Graph API flagged as potential bot activity). DO NOT RUN this
-script until the director gives the explicit INSTA-CLEAR command. The
-workflow step that calls this script is disabled.
-
 Reads from the environment (GitHub Secrets — 2nd Instagram account):
   INSTA_TOKEN_SECOND — long-lived user access token
   IG_USER_ID_SECOND  — Instagram Business/Creator account user id (numeric)
