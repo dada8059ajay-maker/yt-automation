@@ -8,6 +8,7 @@ read, or write the other engine's files, scripts, or workflows.
 - `hssc_engine/` — Education channel @haryanagkji (Haryana GK / HSSC).
   - `yt_uploader.py` — direct YouTube upload (google-api-python-client).
   - `insta_uploader.py` — Instagram Reels publish (Graph API, 2nd account).
+    **PAUSED by director order 2026-11-13 — do not run until INSTA-CLEAR.**
   - `out/` — rendered mp4 + meta.json per video (produced by the render job).
 - `story_engine/` — Story channels: Raat Ke Kisse (Horror) & Kahani Patang (Kids).
   - Same two uploader scripts, with the story channels' own secrets.
@@ -23,16 +24,24 @@ read, or write the other engine's files, scripts, or workflows.
 
 | Purpose | Env var / Secret name | Notes |
 |---|---|---|
-| YouTube OAuth client | `YT_CLIENT_ID`, `YT_CLIENT_SECRET` | OAuth client — these two secrets still need to be saved (names not yet given) |
+| YouTube OAuth client | `YT_CLIENT_ID`, `YT_CLIENT_SECRET` | OAuth client — saved in GitHub Secrets (confirmed 2026-11-13) |
 | YouTube refresh (HSSC) | `YT_REFRESH_HSSC` | @haryanagkji |
 | YouTube refresh (Story) | `YT_REFRESH_STORY` | Raat Ke Kisse / Kahani Patang |
-| Instagram 2nd account | `INSTA_TOKEN_SECOND` (+ `IG_USER_ID`) | Long-lived token + Business/Creator user id |
+| Instagram 2nd account | `INSTA_TOKEN_SECOND` (+ `IG_USER_ID_SECOND`) | Long-lived token + Business/Creator user id |
+
+## Instagram — PAUSED (director order 2026-11-13)
+
+Meta restricted the 2nd Instagram account (Graph API flagged as potential
+bot activity). The Instagram upload step in `story-engine.yml` is disabled
+and `insta_uploader.py` must NOT be run until the director gives the
+explicit INSTA-CLEAR command. YouTube uploads are unaffected.
 
 ## Known gaps (honest, not hidden)
 
 1. **Push access (2026-11-13):** the user has given the App install allow.
-   This file is the write-access test — if it lands in the repo, write access
-   works and the remaining engine files follow in the same push.
+   Write access works via the Contents API (single-file writes). The
+   multi-file push_files (git/trees) route returns 403 and is NOT used.
+   All 10 engine files are in the repo.
 2. **Instagram needs a public video URL.** The Graph API cannot take a file
    from the runner. Publish the reel as a GitHub Release asset first, then
    pass that URL to `insta_uploader.py --video-url`.
