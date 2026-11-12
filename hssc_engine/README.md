@@ -7,8 +7,7 @@ read, or write the other engine's files, scripts, or workflows.
 
 - `hssc_engine/` — Education channel @haryanagkji (Haryana GK / HSSC).
   - `yt_uploader.py` — direct YouTube upload (google-api-python-client).
-  - `insta_uploader.py` — Instagram Reels publish (Graph API, 2nd account).
-    **PAUSED by director order 2026-11-13 — do not run until INSTA-CLEAR.**
+  - `insta_uploader.py` — Instagram Reels publish (Graph API, 2nd account @dada.8059ajay; INSTA-CLEAR given 2026-11-13).
   - `out/` — rendered mp4 + meta.json per video (produced by the render job).
 - `story_engine/` — Story channels: Raat Ke Kisse (Horror) & Kahani Patang (Kids).
   - Same two uploader scripts, with the story channels' own secrets.
@@ -29,12 +28,9 @@ read, or write the other engine's files, scripts, or workflows.
 | YouTube refresh (Story) | `YT_REFRESH_STORY` | Raat Ke Kisse / Kahani Patang |
 | Instagram 2nd account | `INSTA_TOKEN_SECOND` (+ `IG_USER_ID_SECOND`) | Long-lived token + Business/Creator user id |
 
-## Instagram — PAUSED (director order 2026-11-13)
+## Instagram
 
-Meta restricted the 2nd Instagram account (Graph API flagged as potential
-bot activity). The Instagram upload step in `story-engine.yml` is disabled
-and `insta_uploader.py` must NOT be run until the director gives the
-explicit INSTA-CLEAR command. YouTube uploads are unaffected.
+Reels publish only to the 2nd Instagram account @dada.8059ajay (INSTA_TOKEN_SECOND + IG_USER_ID_SECOND; INSTA-CLEAR given 2026-11-13). Never push videos to the HSSC Haryana Instagram account (@hssc_haryanagk). The Instagram step in `story-engine.yml` runs only when a reel_url is given. YouTube uploads are unaffected.
 
 ## Known gaps (honest, not hidden)
 
