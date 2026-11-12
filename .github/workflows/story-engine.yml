@@ -1,0 +1,61 @@
+# Story Engine — direct YouTube upload (no Drive). Instagram PAUSED.
+# Isolated from the HSSC engine: this workflow only touches story_engine/.
+# Trigger: manual dispatch. The render job (or a previous run) must place the
+# mp4 + meta.json at the paths below before this runs.
+#
+# INSTAGRAM PAUSED by director order 2026-11-13: Meta restricted the 2nd
+# Instagram account (Graph API flagged as potential bot activity). The
+# Instagram upload step below is DISABLED. Do NOT re-enable it and do NOT
+# publish any Reel until the director gives the explicit INSTA-CLEAR command.
+# The reel_url/caption inputs are kept but ignored while paused.
+name: Story Engine — Upload
+
+on:
+  workflow_dispatch:
+    inputs:
+      video:
+        description: "Path to the rendered mp4 (in repo or downloaded artifact)"
+        required: true
+        default: "story_engine/out/story1.mp4"
+      meta:
+        description: "Path to meta.json (title, description, tags)"
+        required: true
+        default: "story_engine/out/story1-meta.json"
+      reel_url:
+        description: "Public URL of the Reel mp4 (Release asset) — empty skips Instagram"
+        required: false
+        default: ""
+      caption:
+        description: "Instagram Reel caption"
+        required: false
+        default: ""
+
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install google-api-python-client
+      - name: Upload to YouTube (story channel)
+        env:
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_STORY: ${{ secrets.YT_REFRESH_STORY }}
+        run: >
+          python3 story_engine/yt_uploader.py
+          --video "${{ inputs.video }}"
+          --meta "${{ inputs.meta }}"
+          --refresh-env YT_REFRESH_STORY
+      # PAUSED (director order 2026-11-13, awaiting INSTA-CLEAR):
+      # - name: Publish Reel to 2nd Instagram account
+      #   if: inputs.reel_url != ''
+      #   env:
+      #     INSTA_TOKEN_SECOND: ${{ secrets.INSTA_TOKEN_SECOND }}
+      #     IG_USER_ID_SECOND: ${{ secrets.IG_USER_ID_SECOND }}
+      #   run: >
+      #     python3 story_engine/insta_uploader.py
+      #     --video-url "${{ inputs.reel_url }}"
+      #     --caption "${{ inputs.caption }}"
