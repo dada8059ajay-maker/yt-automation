@@ -1,0 +1,37 @@
+# HSSC Engine — direct YouTube upload (no Drive).
+# Isolated from the story engine: this workflow only touches hssc_engine/.
+# Trigger: manual dispatch. The render job (or a previous run) must place the
+# mp4 + meta.json at the paths below before this runs.
+name: HSSC Engine — Upload
+
+on:
+  workflow_dispatch:
+    inputs:
+      video:
+        description: "Path to the rendered mp4 (in repo or downloaded artifact)"
+        required: true
+        default: "hssc_engine/out/chunk1.mp4"
+      meta:
+        description: "Path to meta.json (title, description, tags)"
+        required: true
+        default: "hssc_engine/out/chunk1-meta.json"
+
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install google-api-python-client
+      - name: Upload to YouTube (@haryanagkji)
+        env:
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_HSSC: ${{ secrets.YT_REFRESH_HSSC }}
+        run: >
+          python3 hssc_engine/yt_uploader.py
+          --video "${{ inputs.video }}"
+          --meta "${{ inputs.meta }}"
+          --refresh-env YT_REFRESH_HSSC
