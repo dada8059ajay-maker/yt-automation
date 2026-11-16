@@ -3,6 +3,7 @@
 # Trigger: manual dispatch. The render job (or a previous run) must place the
 # mp4 + meta.json at the paths below before this runs.
 name: HSSC Engine — Upload
+
 on:
   workflow_dispatch:
     inputs:
@@ -14,6 +15,7 @@ on:
         description: "Path to meta.json (title, description, tags)"
         required: true
         default: "hssc_engine/out/chunk1-meta.json"
+
 jobs:
   upload:
     runs-on: ubuntu-latest
