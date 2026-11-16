@@ -9,7 +9,7 @@ on:
         required: false
         default: ""
       channel:
-        description: "kahani or raat"
+        description: "kahani, raat or hssc"
         required: true
         default: "raat"
 permissions:
@@ -37,7 +37,7 @@ jobs:
           GH_TOKEN: ${{ secrets.GH_PAT }}
           CH: ${{ inputs.channel }}
         run: |
-          case "$CH" in kahani|raat) ;; *) echo "::error::channel must be kahani or raat"; exit 1;; esac
+          case "$CH" in kahani|raat|hssc) ;; *) echo "::error::channel must be kahani or raat"; exit 1;; esac
           [ -n "$GH_TOKEN" ] || { echo "::error::BLOCKED add repo secret GH_PAT first"; exit 1; }
           RT=$(python3 - <<'PY'
           import os,json,urllib.request,urllib.parse,sys
