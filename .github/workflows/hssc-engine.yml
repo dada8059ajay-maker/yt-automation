@@ -3,7 +3,6 @@
 # Trigger: manual dispatch. The render job (or a previous run) must place the
 # mp4 + meta.json at the paths below before this runs.
 name: HSSC Engine — Upload
-
 on:
   workflow_dispatch:
     inputs:
@@ -15,7 +14,6 @@ on:
         description: "Path to meta.json (title, description, tags)"
         required: true
         default: "hssc_engine/out/chunk1-meta.json"
-
 jobs:
   upload:
     runs-on: ubuntu-latest
@@ -25,6 +23,11 @@ jobs:
         with:
           python-version: "3.12"
       - run: pip install google-api-python-client
+      - name: Reassemble video packets
+        run: |
+          cat hssc_engine/out/haryana-marathon-02-full-v03-maya.mp4.part* > hssc_engine/out/haryana-marathon-02-full-v03-maya.mp4
+          ls -la hssc_engine/out/
+          [ $(stat -c%s hssc_engine/out/haryana-marathon-02-full-v03-maya.mp4) -eq 34563038 ] || { echo "size mismatch"; exit 1; }
       - name: Upload to YouTube (@haryanagkji)
         env:
           YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
