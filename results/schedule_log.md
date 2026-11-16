@@ -54,3 +54,4 @@
 - रात के किस्से | gold | ढाबे की तीसरी चारपाई | रात का नियम | हिंदी हॉरर कहानी | Thu 12 Nov 2026 09:00 PM IST | https://studio.youtube.com/video/YR9rRPK3WIM/edit
 - रात के किस्से | gold | पुरानी बावड़ी का नियम | पानी में गिनती | हिंदी हॉरर कहानी | Thu 12 Nov 2026 11:30 PM IST | https://studio.youtube.com/video/Vkz4o42ok3k/edit
 - कहानी पतंग | gold | नन्हा हाथी गोलू और जादुई फव्वारा | बाँटने की कहानी | Tue 17 Nov 2026 04:00 PM IST | https://studio.youtube.com/video/r3czogbGVFk/edit
+- कहानी पतंग | gold | राजकुमारी मीरा और उड़ने वाला घोड़ा | एकता की कहानी | Tue 17 Nov 2026 07:00 PM IST | https://studio.youtube.com/video/3N9PZX958H8/edit
