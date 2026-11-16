@@ -25,7 +25,7 @@ jobs:
         run: |
           python3 - <<'PY' >> "$GITHUB_STEP_SUMMARY"
           import os,urllib.parse
-          q=urllib.parse.urlencode({"client_id":os.environ["CID"],"redirect_uri":"http://localhost","response_type":"code","scope":"https://www.googleapis.com/auth/youtube.upload https://www.googleapis.com/auth/youtube","access_type":"offline","prompt":"consent"})
+          q=urllib.parse.urlencode({"client_id":os.environ["CID"],"redirect_uri":"http://localhost:8080/oauth2callback","response_type":"code","scope":"https://www.googleapis.com/auth/youtube.upload https://www.googleapis.com/auth/youtube","access_type":"offline","prompt":"consent"})
           print("Open, sign in with the channel's Google account, copy `code=` from the localhost URL:\n\nhttps://accounts.google.com/o/oauth2/v2/auth?"+q)
           PY
       - name: Exchange code -> GitHub Secret
@@ -41,7 +41,7 @@ jobs:
           [ -n "$GH_TOKEN" ] || { echo "::error::BLOCKED add repo secret GH_PAT first"; exit 1; }
           RT=$(python3 - <<'PY'
           import os,json,urllib.request,urllib.parse,sys
-          d=urllib.parse.urlencode({"code":os.environ["CODE"],"client_id":os.environ["CID"],"client_secret":os.environ["CSEC"],"redirect_uri":"http://localhost","grant_type":"authorization_code"}).encode()
+          d=urllib.parse.urlencode({"code":os.environ["CODE"],"client_id":os.environ["CID"],"client_secret":os.environ["CSEC"],"redirect_uri":"http://localhost:8080/oauth2callback","grant_type":"authorization_code"}).encode()
           try: r=json.load(urllib.request.urlopen("https://oauth2.googleapis.com/token",d))
           except urllib.error.HTTPError as e: print("ERR",e.code,file=sys.stderr); sys.exit(1)
           rt=r.get("refresh_token") or ""
