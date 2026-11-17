@@ -1,0 +1,196 @@
+# Cinematic Kahani — 6-min POC (Golu) and later long-form Kahani films.
+# GitHub-only: Maya audio (Stage A, separate repo) + Skia render here.
+# First run is dry_run=true (render + inspect, no upload slot spent).
+# Serialised against the daily gold drain via the gold-drain concurrency group.
+name: cinematic-kahani
+
+on:
+  workflow_dispatch:
+    inputs:
+      project:
+        description: "Project folder under story_engine/cinematic/projects/"
+        required: true
+        default: "golu-6min"
+      size:
+        description: "Render size"
+        required: true
+        default: "1920x1080"
+      publish_at:
+        description: "ISO publish time, or 'auto' = next 18:00 IST long slot"
+        required: true
+        default: "auto"
+      dry_run:
+        description: "true = render only, no YouTube upload"
+        type: boolean
+        required: true
+        default: true
+
+concurrency:
+  group: gold-drain
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    env:
+      SKILL_COMMIT: bf435561c6203f90f971300efe952b68b5ec3417
+      SKILL_DIR: /tmp/cinematic-skill/skills/cinematic-film
+      PROJ: ${{ github.workspace }}/story_engine/cinematic/projects/${{ inputs.project }}
+    steps:
+      - name: Checkout yt-automation
+        uses: actions/checkout@v4
+
+      - name: Stage story photos
+        # The 8 story stills live in the Kahani picture bank (assets/gold/k1..k8.jpg);
+        # copy them into the project so prep_assets finds them next to the cards.
+        run: |
+          mkdir -p "$PROJ/assets/photos"
+          for i in 1 2 3 4 5 6 7 8; do cp "assets/gold/k${i}.jpg" "$PROJ/assets/photos/k${i}.jpg"; done
+          ls "$PROJ/assets/photos"
+
+      - name: Clone cinematic-skill (pinned commit)
+        run: |
+          git clone -q https://github.com/Moh4696/cinematic-skill.git /tmp/cinematic-skill
+          git -C /tmp/cinematic-skill checkout -q "$SKILL_COMMIT"
+          git -C /tmp/cinematic-skill rev-parse --short HEAD
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install ffmpeg + Devanagari fonts
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg fonts-noto-core
+          echo "--- Devanagari fonts (must be non-empty) ---"
+          fc-list :lang=hi | head -5
+          test -n "$(fc-list :lang=hi)" || { echo "::error::no Devanagari font found"; exit 1; }
+
+      - name: Install Skia deps
+        run: pip install -q skia-python numpy pillow
+
+      - name: check_setup + get_fonts
+        run: |
+          export PYTHONPATH="$SKILL_DIR/scripts"
+          python3 "$SKILL_DIR/scripts/check_setup.py" --project "$PROJ"
+          python3 "$SKILL_DIR/scripts/get_fonts.py" --project "$PROJ"
+
+      - name: Beat table gate (make_beats.py)
+        run: |
+          export PYTHONPATH="$SKILL_DIR/scripts"
+          python3 "$SKILL_DIR/scripts/make_beats.py" --project "$PROJ"
+          echo "--- beats.md (review the artifact) ---"
+          cat "$PROJ/beats.md"
+
+      - name: Maya timing adapter
+        # Reads $PROJ/maya-lines.json (commit the Stage 0 file under this
+        # name) + $PROJ/audio/maya/gNN.wav (Maya artifact, committed in
+        # Stage A->B); writes audio/segments.json + audio/lines/segNN.wav.
+        run: |
+          python3 story_engine/cinematic/maya_timing.py \
+            --lines "$PROJ/maya-lines.json" \
+            --wavs "$PROJ/audio/maya" \
+            --project "$PROJ"
+
+      - name: Build narration (target 360 s)
+        # Fails if the tempo needed is outside 0.90-1.15x: rewrite the script.
+        run: |
+          export PYTHONPATH="$SKILL_DIR/scripts"
+          python3 "$SKILL_DIR/scripts/build_narration.py" --project "$PROJ" --target 360
+
+      - name: Prep assets (grade stills)
+        run: |
+          export PYTHONPATH="$SKILL_DIR/scripts"
+          python3 "$SKILL_DIR/scripts/prep_assets.py" --project "$PROJ" --grade natural
+
+      - name: Probe stills (one per take)
+        run: |
+          export PYTHONPATH="$SKILL_DIR/scripts"
+          TIMES=$(python3 -c "
+          import json
+          t = json.load(open('$PROJ/audio/timing.json'))
+          picks = [s for s in t['segments'] if s['id'] in (1, 5, 9, 13, 17, 20, 23, 26)]
+          print(','.join(f\"{s['start'] + 1.0:.2f}\" for s in picks))")
+          echo "probe times: $TIMES"
+          python3 "$SKILL_DIR/scripts/render.py" --project "$PROJ" --probe "$TIMES" --size 1280x720
+
+      - name: Full render (1080p)
+        run: |
+          export PYTHONPATH="$SKILL_DIR/scripts"
+          python3 "$SKILL_DIR/scripts/render.py" --project "$PROJ" \
+            --size "${{ inputs.size }}" --out "$PROJ/out/final.mp4" \
+            --audio "$PROJ/audio/narration.m4a"
+
+      - name: Sound (cues + SFX + mix)
+        run: |
+          export PYTHONPATH="$SKILL_DIR/scripts"
+          python3 "$SKILL_DIR/scripts/render.py" --project "$PROJ" --cues
+          python3 "$SKILL_DIR/scripts/build_sfx.py" --project "$PROJ"
+          python3 "$SKILL_DIR/scripts/mix_soundtrack.py" --project "$PROJ"
+
+      - name: Captions (clean style) + SRT
+        run: |
+          export PYTHONPATH="$SKILL_DIR/scripts"
+          python3 "$SKILL_DIR/scripts/burn_captions.py" --project "$PROJ" \
+            --video "$PROJ/out/final.mp4" --audio "$PROJ/audio/mix.m4a" \
+            --style clean --out "$PROJ/out/final_captions.mp4"
+          python3 "$SKILL_DIR/scripts/burn_captions.py" --project "$PROJ" \
+            --srt-only --out "$PROJ/out/captions.srt"
+
+      - name: Publish candidate (clean video + mixed audio)
+        # YouTube gets the caption-free render; the SRT is uploaded by hand.
+        run: |
+          ffmpeg -y -v error -i "$PROJ/out/final.mp4" -i "$PROJ/audio/mix.m4a" \
+            -map 0:v -map 1:a -c:v copy -c:a aac -b:a 192k \
+            -movflags +faststart "$PROJ/out/final_mix.mp4"
+          DUR=$(ffprobe -v error -show_entries format=duration -of csv=p=0 "$PROJ/out/final_mix.mp4")
+          echo "final duration: ${DUR}s"
+          python3 -c "import sys; sys.exit(0 if float('$DUR') >= 360 else 1)" \
+            || { echo "::error::final video ${DUR}s is under 360 s"; exit 1; }
+
+      - name: Upload artifacts (for review)
+        uses: actions/upload-artifact@v4
+        with:
+          name: golu-6min-${{ github.run_number }}
+          path: |
+            ${{ env.PROJ }}/out/final_mix.mp4
+            ${{ env.PROJ }}/out/final_captions.mp4
+            ${{ env.PROJ }}/out/captions.srt
+            ${{ env.PROJ }}/audio/timing.json
+            ${{ env.PROJ }}/beats.md
+            ${{ env.PROJ }}/out/probe
+          if-no-files-found: warn
+
+      - name: Publish to YouTube (only when dry_run is false)
+        if: ${{ !inputs.dry_run }}
+        env:
+          YT_REFRESH_KAHANI: ${{ secrets.YT_REFRESH_KAHANI }}
+        run: |
+          cp "$PROJ/out/final_mix.mp4" docs/test/gold_kahani_full.mp4
+          python3 - "$PROJ" "${{ inputs.publish_at }}" << 'EOF'
+          import datetime as dt, json, pathlib, sys
+          proj, publish_at = pathlib.Path(sys.argv[1]), sys.argv[2]
+          ist = dt.timezone(dt.timedelta(hours=5, minutes=30))
+          if publish_at == "auto":
+              now = dt.datetime.now(ist)
+              slot = now.replace(hour=18, minute=0, second=0, microsecond=0)
+              if slot <= now + dt.timedelta(hours=6):
+                  slot += dt.timedelta(days=1)
+              publish_at = slot.astimezone(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+          meta = {"job_id": "gold_golu_6min_poc",
+                  "title": "नन्हा हाथी गोलू और जादुई फव्वारा | बाँटने की कहानी",
+                  "description": "नन्हे हाथी गोलू की प्यारी कहानी: बाँटने से खुशी बढ़ती है।\nबच्चों की नैतिक कहानी। 6 मिनट का लंबा संस्करण।\n#कहानीपतंग #बच्चोंकीकहानी #हिंदीकहानी",
+                  "tags": ["कहानी पतंग", "बच्चों की कहानी", "हाथी की कहानी", "हिंदी कहानी", "moral story", "kids story hindi"],
+                  "publishAt": publish_at,
+                  "thumb": "assets/gold/k6.jpg",
+                  "playlist": "दादी की कहानियाँ"}
+          pathlib.Path("assets/gold/meta.json").write_text(
+              json.dumps({"kahani": meta}, ensure_ascii=False), encoding="utf-8")
+          print("publishing at", publish_at)
+          EOF
+          python3 engine/gold_publish.py kahani
