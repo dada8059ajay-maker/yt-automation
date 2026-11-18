@@ -31,7 +31,7 @@ on:
 
 env:
   # Path of this project inside the repo ("." if it is its own repo).
-  PROJECT_DIR: poc-ashwatthama-2d
+  PROJECT_DIR: story_engine/remotion/owl-lesson
 
 jobs:
   render:
