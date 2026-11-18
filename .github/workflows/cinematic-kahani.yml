@@ -58,6 +58,22 @@ jobs:
           git -C /tmp/cinematic-skill checkout -q "$SKILL_COMMIT"
           git -C /tmp/cinematic-skill rev-parse --short HEAD
 
+      - name: Patch skill bug (burn_captions rel returns str)
+        # Upstream bug in the pinned skill: rel() returns the raw str for
+        # absolute paths, then main() calls .parent on it -> AttributeError.
+        # The workflow passes absolute --out paths, so captions always crash.
+        run: |
+          python3 - "$SKILL_DIR/scripts/burn_captions.py" << 'EOF'
+          import pathlib, sys
+          p = pathlib.Path(sys.argv[1])
+          s = p.read_text()
+          old = "    rel = lambda p: p if pathlib.Path(p).is_absolute() else proj / p"
+          new = "    rel = lambda p: pathlib.Path(p) if pathlib.Path(p).is_absolute() else proj / p"
+          assert old in s, "burn_captions.py rel() line not found - skill may have changed"
+          p.write_text(s.replace(old, new))
+          print("patched burn_captions.py rel() -> Path")
+          EOF
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
