@@ -72,7 +72,13 @@ jobs:
           test -n "$(fc-list :lang=hi)" || { echo "::error::no Devanagari font found"; exit 1; }
 
       - name: Install Skia deps
-        run: pip install -q skia-python numpy pillow
+        # skia-python's wheel links libEGL/libGLESv2/libGL: pip installs fine
+        # but `import skia` fails without these system libs (run #1 failed
+        # exactly here). Install them, then prove the import works now.
+        run: |
+          sudo apt-get install -y -qq libegl1 libgles2 libgl1
+          pip install -q skia-python numpy pillow
+          python3 -c "import skia; print('skia', skia.__version__)"
 
       - name: check_setup + get_fonts
         run: |
