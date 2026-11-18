@@ -102,6 +102,25 @@ jobs:
           python3 "$SKILL_DIR/scripts/check_setup.py" --project "$PROJ"
           python3 "$SKILL_DIR/scripts/get_fonts.py" --project "$PROJ"
 
+      - name: Devanagari caption font (labelm override)
+        # Root cause: the clean caption style uses font role "labelm"
+        # (captions.py _clean). resolve_typeface() in engine.py tries the
+        # role candidates in order (Avenir Next, Montserrat, Helvetica
+        # Neue, Arial, DejaVu Sans); on the Ubuntu runner only DejaVu Sans
+        # exists, and it has NO Devanagari glyphs, so every caption draws
+        # as tofu boxes. A file <project>/fonts/<role>.ttf wins over the
+        # candidates, so drop Noto Sans Devanagari in as labelm.ttf.
+        # fonts-noto-core is installed by the "Install ffmpeg + Devanagari
+        # fonts" step above. Verified locally: control (DejaVu) = tofu,
+        # fixed (labelm.ttf) = correct Devanagari at t=30s.
+        # NOTE (optional): the highlighter/redbar styles use role "cond"
+        # (Bebas Neue, also Latin-only) and would tofu the same way; if a
+        # future run switches style, copy the same file to cond.ttf too.
+        run: |
+          test -f /usr/share/fonts/truetype/noto/NotoSansDevanagari-Regular.ttf || { echo "::error::Noto Sans Devanagari not found"; exit 1; }
+          cp /usr/share/fonts/truetype/noto/NotoSansDevanagari-Regular.ttf "$PROJ/fonts/labelm.ttf"
+          python3 -c "import sys; sys.path.insert(0, '$SKILL_DIR/scripts'); from engine import resolve_typeface; tf, desc = resolve_typeface('labelm', '$PROJ/fonts'); print('labelm ->', desc); assert 'labelm.ttf' in desc, 'labelm did not resolve to project font'"
+
       - name: Beat table gate (make_beats.py)
         run: |
           export PYTHONPATH="$SKILL_DIR/scripts"
