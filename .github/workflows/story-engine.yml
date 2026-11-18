@@ -4,6 +4,11 @@
 # mp4 + meta.json at the paths below before this runs.
 # Instagram: publishes ONLY to the 2nd account @dada.8059ajay (INSTA-CLEAR
 # given 2026-11-13). Never push to the HSSC Haryana Instagram account.
+# YouTube channel is chosen by the `channel` input (raat/kahani) — the
+# workflow uses the matching per-channel refresh token (YT_REFRESH_RAAT /
+# YT_REFRESH_KAHANI). There is no YT_REFRESH_STORY secret: auth.yml can only
+# mint per-channel secrets, so the old YT_REFRESH_STORY reference (which
+# failed every run) was removed on 2026-11-18.
 name: Story Engine — Upload
 
 on:
@@ -25,6 +30,10 @@ on:
         description: "Instagram Reel caption"
         required: false
         default: ""
+      channel:
+        description: "raat or kahani — which story channel to upload to"
+        required: true
+        default: "raat"
 
 jobs:
   upload:
@@ -39,12 +48,13 @@ jobs:
         env:
           YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
           YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
-          YT_REFRESH_STORY: ${{ secrets.YT_REFRESH_STORY }}
+          YT_REFRESH_RAAT: ${{ secrets.YT_REFRESH_RAAT }}
+          YT_REFRESH_KAHANI: ${{ secrets.YT_REFRESH_KAHANI }}
         run: >
           python3 story_engine/yt_uploader.py
           --video "${{ inputs.video }}"
           --meta "${{ inputs.meta }}"
-          --refresh-env YT_REFRESH_STORY
+          --refresh-env ${{ inputs.channel == 'kahani' && 'YT_REFRESH_KAHANI' || 'YT_REFRESH_RAAT' }}
       - name: Publish Reel to 2nd Instagram account (@dada.8059ajay)
         if: inputs.reel_url != ''
         env:
