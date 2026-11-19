@@ -1,0 +1,2 @@
+# Drop Maya narration audio here. See README.md ("Narration audio drop-in").
+# Expected files: a06.wav + a07.wav (combined to a06-a07.wav at render time).
