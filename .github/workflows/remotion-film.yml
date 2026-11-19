@@ -1,0 +1,58 @@
+name: Remotion Ashwatthama Film
+
+on:
+  workflow_dispatch:
+
+env:
+  PROJECT_DIR: story_engine/remotion/ashwatthama-film
+
+jobs:
+  render:
+    name: Render AshwatthamaFilm (Remotion)
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    defaults:
+      run:
+        working-directory: ${{ env.PROJECT_DIR }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: ${{ env.PROJECT_DIR }}/package-lock.json
+
+      - name: Cache Chrome Headless Shell
+        uses: actions/cache@v4
+        with:
+          path: ${{ env.PROJECT_DIR }}/node_modules/.remotion
+          key: remotion-browser-${{ runner.os }}-4.0.545
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Validate compositions (no render yet)
+        run: npx remotion compositions src/index.ts
+
+      - name: Check narration audio is present
+        run: |
+          ls public/audio/a*.wav | wc -l
+          test -f public/audio/a01.wav && test -f public/audio/a22.wav \
+            && echo "all 22 line WAVs present" \
+            || (echo "MISSING narration WAVs in public/audio/" && exit 1)
+          test -f public/photos/title.jpg && test -f public/photos/end.jpg \
+            && echo "title + end cards present" \
+            || (echo "MISSING title/end cards in public/photos/" && exit 1)
+
+      - name: Render AshwatthamaFilm
+        run: npx remotion render src/index.ts AshwatthamaFilm out/ashwatthama-film.mp4 --concurrency=2
+
+      - name: Upload video artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ashwatthama-film
+          path: ${{ env.PROJECT_DIR }}/out/ashwatthama-film.mp4
+          retention-days: 7
