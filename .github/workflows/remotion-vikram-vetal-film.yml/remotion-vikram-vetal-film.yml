@@ -1,0 +1,91 @@
+# Vikram-Vetal — full film render (Remotion)
+#
+# IMPORTANT — WHERE THIS FILE MUST LIVE:
+# GitHub Actions only discovers workflows in the REPO-ROOT .github/workflows/.
+# This file is kept next to the project for review; to actually run it, copy
+# it to <repo>/.github/workflows/remotion-vikram-vetal-film.yml and set
+# PROJECT_DIR below to the path where this project is committed in that repo.
+# (If this project becomes its own repo, PROJECT_DIR is "." and the copy
+# step is unnecessary.)
+#
+# What it renders: the VikramVetalFilm composition — all 6 takes back to
+# back, 5957 frames @ 30fps, 1920x1080, ~3 min 19 s, with Maya 2 narration
+# (12 line WAVs in public/audio/, wired per line — no ffmpeg step needed).
+# 100% code-drawn scenes; no photos.
+#
+# What it does:
+#   1. npm ci (pinned deps + lockfile — Remotion version and the Chrome
+#      Headless Shell it downloads are both locked by the lockfile).
+#   2. Validates the compositions register: `remotion compositions`.
+#   3. Renders VikramVetalFilm (1920x1080, 30fps, 5957 frames) to
+#      out/vikram-vetal-film.mp4.
+#   4. Uploads the mp4 as artifact "vikram-vetal-film".
+#
+# Chrome: Remotion downloads its own Chrome Headless Shell (~100 MB) on the
+# first render; no apt Chrome install is needed on `ubuntu-latest`. The
+# download is cached in node_modules/.remotion between runs.
+# CPU only, no GPU. --concurrency=2 keeps Chrome memory use safe on the
+# stock 4-vCPU / 7 GB runner.
+# Time estimate: 5957 frames is ~6.6x the 900-frame Owl POC. Allow up to
+# ~45 min; the job timeout is set to 120 min. If it times out, render the
+# 6 takes separately (VikramVetalT01 … VikramVetalT06) and concat with
+# ffmpeg — the per-take compositions exist for exactly that reason.
+name: Remotion Vikram-Vetal Film
+
+on:
+  workflow_dispatch:
+
+env:
+  # Path of this project inside the repo ("." if it is its own repo).
+  PROJECT_DIR: story_engine/remotion/vikram-vetal-film
+
+jobs:
+  render:
+    name: Render VikramVetalFilm (Remotion)
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    defaults:
+      run:
+        working-directory: ${{ env.PROJECT_DIR }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: ${{ env.PROJECT_DIR }}/package-lock.json
+
+      - name: Cache Chrome Headless Shell
+        uses: actions/cache@v4
+        with:
+          path: ${{ env.PROJECT_DIR }}/node_modules/.remotion
+          key: remotion-browser-${{ runner.os }}-4.0.545
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Validate compositions (no render yet)
+        run: npx remotion compositions src/index.ts
+
+      - name: Check narration audio is present
+        run: |
+          ls public/audio/a*.wav | wc -l
+          test -f public/audio/a01.wav && test -f public/audio/a12.wav \
+            && echo "all 12 line WAVs present" \
+            || (echo "MISSING narration WAVs in public/audio/" && exit 1)
+          test -f public/photos/title.jpg && test -f public/photos/end.jpg \
+            && echo "title + end cards present" \
+            || (echo "MISSING title/end cards in public/photos/" && exit 1)
+
+      - name: Render VikramVetalFilm
+        run: npx remotion render src/index.ts VikramVetalFilm out/vikram-vetal-film.mp4 --concurrency=2
+
+      - name: Upload video artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: vikram-vetal-film
+          path: ${{ env.PROJECT_DIR }}/out/vikram-vetal-film.mp4
+          retention-days: 7
