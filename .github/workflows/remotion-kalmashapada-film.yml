@@ -37,7 +37,7 @@ on:
 
 env:
   # Path of this project inside the repo ("." if it is its own repo).
-  PROJECT_DIR: poc-kalmashapada-2d
+  PROJECT_DIR: story_engine/remotion/kalmashapada-film
 
 jobs:
   render:
