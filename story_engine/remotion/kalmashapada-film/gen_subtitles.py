@@ -1,11 +1,13 @@
-"""Generate subtitles/kalmashapada.ass from the film timeline.
+"""Generate subtitles/kalmashapada-10min.ass from the film timeline.
 
 Timing is derived from the SAME numbers as src/data/takes.ts:
-  - lead 3.5 s title card (T01), then lines in order a01..a19
+  - lead 3.5 s title card (T01), then lines in order b01..b55
   - each line starts at its shot start; ends at start + audioSec
     (the gapAfterSec silence after a line is NOT subtitled)
   - end card 5 s (T05 tail) has no subtitle
-Dialogue text comes from ../poc-kalmashapada-6min/maya-lines.json.
+Dialogue text comes from ../poc-kalmashapada-10min/maya-lines.json;
+durations come from ../poc-kalmashapada-10min/durations.json.
+(The script file's header wrongly says "40 lines"; the real count is 55.)
 
 The .ass file is READY (timings verified against the compositions list),
 but it is NOT yet muxed into any video — muxing happens after the GitHub
@@ -17,33 +19,21 @@ import os
 
 FPS = 30
 LEAD_S = 3.5
-# (id, audioSec, gapAfterSec) — must match src/data/takes.ts exactly
-LINES = [
-    ("a01", 2.64, 0.45),
-    ("a02", 4.24, 0.45),
-    ("a03", 2.32, 0.45),
-    ("a04", 4.96, 0.45),
-    ("a05", 2.56, 0.45),
-    ("a06", 4.00, 0.45),
-    ("a07", 3.36, 1.00),
-    ("a08", 3.76, 0.45),
-    ("a09", 2.88, 0.45),
-    ("a10", 1.36, 0.45),
-    ("a11", 4.08, 0.45),
-    ("a12", 5.60, 1.00),
-    ("a13", 2.00, 0.45),
-    ("a14", 2.40, 0.45),
-    ("a15", 3.60, 0.45),
-    ("a16", 2.32, 1.00),
-    ("a17", 3.20, 0.45),
-    ("a18", 3.60, 0.45),
-    ("a19", 4.00, 0.45),
-]
+# 1.0 s gap after a major-beat line, 0.45 s elsewhere — must match
+# src/data/takes.ts exactly
+BIG_GAP = {"b03", "b17", "b23", "b30", "b42", "b46", "b52"}
 
 BASE = os.path.dirname(os.path.abspath(__file__))
-with open(os.path.join(BASE, "..", "poc-kalmashapada-6min", "maya-lines.json"), encoding="utf-8") as f:
+with open(os.path.join(BASE, "..", "poc-kalmashapada-10min", "durations.json"), encoding="utf-8") as f:
+    durations = {row["id"]: row["seconds"] for row in json.load(f)["lines"]}
+with open(os.path.join(BASE, "..", "poc-kalmashapada-10min", "maya-lines.json"), encoding="utf-8") as f:
     maya = {row["id"]: row["text"] for row in json.load(f)}
-assert set(maya) == {lid for lid, _, _ in LINES}, "maya-lines ids != takes.ts ids"
+assert set(maya) == set(durations), "maya-lines ids != durations ids"
+assert len(maya) == 55, f"expected 55 lines, got {len(maya)}"
+LINES = [
+    (lid, durations[lid], 1.0 if lid in BIG_GAP else 0.45)
+    for lid in sorted(durations)
+]
 
 
 def ass_time(t: float) -> str:
@@ -76,7 +66,7 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
 """
 out_dir = os.path.join(BASE, "subtitles")
 os.makedirs(out_dir, exist_ok=True)
-out = os.path.join(out_dir, "kalmashapada.ass")
+out = os.path.join(out_dir, "kalmashapada-10min.ass")
 with open(out, "w", encoding="utf-8") as f:
     f.write(header)
     for start, end, text in events:

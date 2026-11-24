@@ -1,5 +1,5 @@
 """Code-drawn title + end cards for the Kalmashapada horror video (Raat Ke Kisse). Dark theme.
-Adapted from poc-vikram-vetal-2d/make_cards.py — same PIL/RAQM pattern.
+Adapted from poc-kalmashapada-2d/make_cards.py — same PIL/RAQM pattern, same cards (10-minute film reuses the short film2019s title/end cards).
 
 Zero Spoiler Rule: the title card shows only the premise (a king cursed
 into a man-eating demon), NOT the twist (the curser became the liberator).
@@ -8,7 +8,7 @@ The end card names the source only — Mahabharata, Adi Parva ch. 176-177.
 from PIL import Image, ImageDraw, ImageFont
 import os
 
-OUT = "/home/hatch/workspace/poc-kalmashapada-2d/public/photos"
+OUT = "/home/hatch/workspace/poc-kalmashapada-10min-2d/public/photos"
 BOLD = "/usr/share/fonts/truetype/noto/NotoSansDevanagari-Bold.ttf"
 REG = "/usr/share/fonts/truetype/noto/NotoSansDevanagari-Regular.ttf"
 

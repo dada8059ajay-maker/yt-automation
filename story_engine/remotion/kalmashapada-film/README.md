@@ -1,28 +1,45 @@
-# Kalmashapada — 2D Animation Film (Raat Ke Kisse)
+# Kalmashapada — 10-Minute 2D Animation Film (Raat Ke Kisse)
 
 Real 2D animation for the Raat Ke Kisse horror channel — topic #3 after
 Ashwatthama (#1) and Vikram-Vetal (#2). 100% code-drawn scenes (SVG shapes
 in Remotion): the king actually WALKS through the forest, the curse-energy
-bursts, the hundred sons dim out one by one, the chains break.
+bursts, the hundred sons dim out one by one, the chains break, Kamadhenu
+glows, the demon kneels in tears.
+
+This is the 10-MINUTE version, built by adapting the 1 min 22 s short film
+(`poc-kalmashapada-2d`, rendered + uploaded 23 Nov 2026, video pending).
+The short version (K03iqfoak-I) was DELETED from Studio 23 Nov — it never
+went live. The script here is the 55-line version
+(`story-kalmashapada-10min-script.md` — its header wrongly says "40 lines";
+the real count is 55, b01–b55).
 
 ## Story
 
 King Saudasa (Mitrasaha) of the Ikshvaku line refuses the way to sage
 Shakti on a narrow path; Shakti curses him to become a man-eating demon.
-Vishwamitra sends a rakshasa into him; he serves human flesh to a Brahmin;
-twelve years a forest demon, black spots on his feet — hence Kalmashapada.
-He eats Shakti, then Vashishtha's hundred sons. And in the end, freedom
-comes from the one who cursed him: Vashishtha himself frees him.
+Behind the day lies the old Vishwamitra–Vashishtha enmity — Kamadhenu
+refused, an army defeated, penance, a planned conspiracy. Vishwamitra
+sends a rakshasa into him; he serves human flesh to a Brahmin and is
+cursed again; twelve years a forest demon, black spots on his feet —
+hence Kalmashapada. He eats Shakti, then Vashishtha's hundred sons.
+Vashishtha sits in samadhi instead of cursing back, comes to the forest
+himself, and frees the king with water and mantras. The curser became
+the liberator; the same sage gives the line its heir, Ashmaka.
 Sources: [शास्त्रीय] Mahabharata Adi Parva ch. 176–177; dialogues [कल्पना].
 
 ## Film
 
-- 5 takes, 19 lines, all Maya 2 (Ritvik), 24 kHz mono.
-- Narration 62.88 s (measured) + gaps + 3.5 s title + 5 s end = **2451 frames,
-  81.7 s (~1 min 22 s)**. The script is 209 words — short, no padding added.
+- 5 takes, 55 lines, all Maya 2 (Ritvik), 24 kHz mono.
+- Narration 637.36 s (measured, durations.json) + gaps + 3.5 s title +
+  5 s end = **20233 frames, 674.43 s (~11 min 14 s)** — above the
+  10-minute floor set 23 Nov 2026.
 - `src/data/takes.ts` is the single source of truth (durations, gaps,
   frame math). Per-line WAVs, one line = one shot, no ffmpeg anywhere
   in the film workflow.
+- 38 scenes: 19 reused from the short film + 19 new (lineage, court,
+  kamadhenu, army, penance, conspiracy, chariot, palace, cook,
+  brahmincurse, kingdom, village, queen, samadhi, arrival, tears,
+  purify, celebration, ashmaka).
 - Title card: "कल्माषपाद / राजा जो नरभक्षी राक्षस बन गया". End card:
   "महाभारत / आदि पर्व — अध्याय 176-177". Zero Spoiler Rule: neither card
   shows the twist (the curser became the liberator).
@@ -31,25 +48,16 @@ Sources: [शास्त्रीय] Mahabharata Adi Parva ch. 176–177; dial
 
 | Composition | Frames | Seconds |
 |-------------|--------|---------|
-| KalmashapadaFilm | 2451 | 81.70 |
-| KalmashapadaT01 | 584 | 19.47 |
-| KalmashapadaT02 | 481 | 16.03 |
-| KalmashapadaT03 | 488 | 16.27 |
-| KalmashapadaT04 | 382 | 12.73 |
-| KalmashapadaT05 | 516 | 17.20 |
+| KalmashapadaFilm | 20233 | 674.43 (~11 min 14 s) |
+| KalmashapadaT01 | 4012 | 133.73 |
+| KalmashapadaT02 | 4188 | 139.60 |
+| KalmashapadaT03 | 4118 | 137.27 |
+| KalmashapadaT04 | 4112 | 137.07 |
+| KalmashapadaT05 | 3803 | 126.77 |
 
-| Line | WAV (s) | Gap (s) | Line | WAV (s) | Gap (s) |
-|------|---------|---------|------|---------|---------|
-| a01 | 2.64 | 0.45 | a11 | 4.08 | 0.45 |
-| a02 | 4.24 | 0.45 | a12 | 5.60 | 1.00 |
-| a03 | 2.32 | 0.45 | a13 | 2.00 | 0.45 |
-| a04 | 4.96 | 0.45 | a14 | 2.40 | 0.45 |
-| a05 | 2.56 | 0.45 | a15 | 3.60 | 0.45 |
-| a06 | 4.00 | 0.45 | a16 | 2.32 | 1.00 |
-| a07 | 3.36 | 1.00 | a17 | 3.20 | 0.45 |
-| a08 | 3.76 | 0.45 | a18 | 3.60 | 0.45 |
-| a09 | 2.88 | 0.45 | a19 | 4.00 | 0.45 |
-| a10 | 1.36 | 0.45 | | | |
+Gap rule: 0.45 s after every line, 1.0 s after major beats
+(b03, b17, b23, b30, b42, b46, b52). Full per-line table in
+FILM-BUILD-NOTES-10MIN.md.
 
 ## Verify locally
 
@@ -58,19 +66,25 @@ npm run typecheck            # must be CLEAN
 npx remotion compositions src/index.ts   # 6 compositions, durations above
 ```
 
+Stills: one per new scene (19) + 4 reused-scene spot-checks + both cards,
+in `out/stills-10min/`, all eye-checked — see FILM-BUILD-NOTES-10MIN.md.
+
 ## Render (GitHub)
 
 `.github/workflows/remotion-film.yml` — copy to the repo-root
 `.github/workflows/` as `remotion-kalmashapada-film.yml` with `PROJECT_DIR`
 set to the committed path, then dispatch. Renders `KalmashapadaFilm` and
-uploads artifact `kalmashapada-film` (7-day retention).
+uploads artifact `kalmashapada-film` (7-day retention). Estimate ~25–60 min
+for 20233 frames; job timeout 120 min. If it times out, render the 5 takes
+separately (KalmashapadaT01…T05) and concat with ffmpeg.
 
 ## Subtitles
 
-`subtitles/kalmashapada.ass` — 19 events, generated by `gen_subtitles.py`
-from the same timeline numbers as `takes.ts`. Mux into the rendered mp4
-with ffmpeg + a Devanagari font AFTER the GitHub render. ffmpeg drawtext
-is never used (Devanagari conjuncts break).
+`subtitles/kalmashapada-10min.ass` — 55 events, generated by
+`gen_subtitles.py` from the same timeline numbers as `takes.ts`
+(last subtitle ends 0:11:09.01, film ends 0:11:14.43). Mux into the
+rendered mp4 with ffmpeg + a Devanagari font AFTER the GitHub render.
+ffmpeg drawtext is never used (Devanagari conjuncts break).
 
 ## Known limits
 
@@ -79,3 +93,5 @@ is never used (Devanagari conjuncts break).
 - No lip-sync (silhouette only).
 - Full film NOT rendered locally end-to-end (VM too small) — the GitHub
   render is the first full render.
+- The short film's `transform` scene (close-up eyes) is kept in
+  CodeScenes.tsx but unused in this film — no line maps to it.
