@@ -9,15 +9,15 @@
 # step is unnecessary.)
 #
 # What it renders: the KalmashapadaFilm composition — all 5 takes back to
-# back, 2451 frames @ 30fps, 1920x1080, ~1 min 22 s, with Maya 2 narration
-# (19 line WAVs in public/audio/, wired per line — no ffmpeg step needed).
+# back, 20233 frames @ 30fps, 1920x1080, ~11 min 14 s, with Maya 2 narration
+# (55 line WAVs in public/audio/, wired per line — no ffmpeg step needed).
 # 100% code-drawn scenes; no photos.
 #
 # What it does:
 #   1. npm ci (pinned deps + lockfile — Remotion version and the Chrome
 #      Headless Shell it downloads are both locked by the lockfile).
 #   2. Validates the compositions register: `remotion compositions`.
-#   3. Renders KalmashapadaFilm (1920x1080, 30fps, 2451 frames) to
+#   3. Renders KalmashapadaFilm (1920x1080, 30fps, 20233 frames) to
 #      out/kalmashapada-film.mp4.
 #   4. Uploads the mp4 as artifact "kalmashapada-film".
 #
@@ -26,8 +26,8 @@
 # download is cached in node_modules/.remotion between runs.
 # CPU only, no GPU. --concurrency=2 keeps Chrome memory use safe on the
 # stock 4-vCPU / 7 GB runner.
-# Time estimate: 2451 frames is ~2.7x the 900-frame Owl POC. Allow up to
-# ~25 min; the job timeout is set to 120 min. If it times out, render the
+# Time estimate: 20233 frames is ~2.7x the 900-frame Owl POC. Allow up to
+# ~25-60 min; the job timeout is set to 120 min. If it times out, render the
 # 5 takes separately (KalmashapadaT01 … KalmashapadaT05) and concat with
 # ffmpeg — the per-take compositions exist for exactly that reason.
 name: Remotion Kalmashapada Film
@@ -72,9 +72,9 @@ jobs:
 
       - name: Check narration audio is present
         run: |
-          ls public/audio/a*.wav | wc -l
-          test -f public/audio/a01.wav && test -f public/audio/a19.wav \
-            && echo "all 19 line WAVs present" \
+          ls public/audio/b*.wav | wc -l
+          test -f public/audio/b01.wav && test -f public/audio/b55.wav \
+            && echo "all 55 line WAVs present" \
             || (echo "MISSING narration WAVs in public/audio/" && exit 1)
           test -f public/photos/title.jpg && test -f public/photos/end.jpg \
             && echo "title + end cards present" \
