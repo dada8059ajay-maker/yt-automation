@@ -58,3 +58,8 @@
 - रात के किस्से | gold | पुरानी लाइब्रेरी का नियम | रात की आख़िरी किताब | हिंदी हॉरर | Wed 18 Nov 2026 11:30 PM IST | https://studio.youtube.com/video/qgOYyH4RamM/edit
 - रात के किस्से | gold | हॉस्टल का तीसरा कमरा | रात दो बजे का नियम | हिंदी हॉरर | Thu 19 Nov 2026 09:00 PM IST | https://studio.youtube.com/video/9LQ2Q_SMzOs/edit
 - रात के किस्से | gold | हाईवे की आख़िरी सवारी | लिफ़्ट मत देना | हिंदी हॉरर | Thu 19 Nov 2026 11:30 PM IST | https://studio.youtube.com/video/u8bi5iwrf30/edit
+- कहानी पतंग | long | ज़मीन पर उतरे काले बादल! नन्हे चिंटू का कमाल | कहानी पतंग | Wed 25 Nov 2026 06:00 PM IST | https://studio.youtube.com/video/juf29o-SdFk/edit
+- कहानी पतंग | short | दादी का जादुई बर्तन और खाली हांडी का रहस्य | कहानी पतंग | Wed 25 Nov 2026 06:30 PM IST | https://studio.youtube.com/video/18e3Jm3F3Ao/edit
+- रात के किस्से | short | 13वीं मंज़िल का खौफनाक सच! लिफ्ट में ये गलती मत करना | रात के किस्से | Wed 25 Nov 2026 09:30 PM IST | https://studio.youtube.com/video/6ANIw5lm9LQ/edit
+- रात के किस्से | long | सोमेश्वर की बंद गुफा और 3 खौफनाक नियम | रात के किस्से | Wed 25 Nov 2026 09:00 PM IST | https://studio.youtube.com/video/3UHIMs54W84/edit
+- कहानी पतंग | long | बेडरूम का जादुई कालीन! रहस्यमयी दुनिया का सफर | कहानी पतंग | Thu 26 Nov 2026 06:00 PM IST | https://studio.youtube.com/video/5oJ9n25xlrE/edit
