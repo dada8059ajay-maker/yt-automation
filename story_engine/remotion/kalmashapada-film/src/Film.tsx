@@ -8,8 +8,8 @@ import {T04} from './takes/T04';
 import {T05} from './takes/T05';
 
 /**
- * KalmashapadaFilm — the whole film in one composition (2451 frames,
- * 81.7 s ≈ 1 min 22 s): T01 -> T02 -> ... -> T05, back to back.
+ * KalmashapadaFilm — the whole film in one composition (20233 frames,
+ * 674.43 s ≈ 11 min 14 s): T01 -> T02 -> ... -> T05, back to back.
  * Each take is a <Sequence>, so each take's internal frame starts at 0
  * and its narration starts exactly at the take boundary.
  *

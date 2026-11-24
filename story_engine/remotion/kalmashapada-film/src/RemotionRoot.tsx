@@ -10,7 +10,7 @@ import {FILM_FRAMES, FPS, HEIGHT, TAKES, WIDTH, takeFrames} from './data/takes';
 
 /**
  * Compositions:
- *   KalmashapadaFilm  — the whole film, 2451 frames (~1 min 22 s).
+ *   KalmashapadaFilm  — the whole film, 20233 frames (~11 min 14 s).
  *   KalmashapadaT01..T05 — one take each, for debugging / re-rendering.
  *
  * All durations come from src/data/takes.ts (measured WAV durations +
