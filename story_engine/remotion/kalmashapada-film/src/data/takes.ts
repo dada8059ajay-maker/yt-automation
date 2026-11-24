@@ -1,26 +1,22 @@
 /**
- * Kalmashapada — the full film, take data.
+ * Kalmashapada — the 10-minute film, take data.
  *
- * Source of truth: ../poc-kalmashapada-6min/maya-lines.json (19 lines
- * a01–a19, all Ritvik) + audio-maya/result.json + story-kalmashapada-script.md.
- * Adapted from poc-vikram-vetal-2d/src/data/takes.ts — same frame math,
+ * Source of truth: ../poc-kalmashapada-10min/durations.json (55 lines
+ * b01–b55, all Ritvik, total narration 637.36 s) + maya-lines.json +
+ * story-kalmashapada-10min-script.md (its header wrongly says "40 lines";
+ * the real count is 55 — b01..b55).
+ * Adapted from poc-kalmashapada-2d/src/data/takes.ts — same frame math,
  * same gap rule, no photos (this film is 100% code-drawn).
  *
- * Durations are MEASURED, not guessed:
- *   - every WAV was ffprobe'd — total narration 62.88 s, matching
- *     result.json exactly (a01 2.64, a02 4.24, a03 2.32, a04 4.96,
- *     a05 2.56, a06 4.00, a07 3.36, a08 3.76, a09 2.88, a10 1.36,
- *     a11 4.08, a12 5.60, a13 2.00, a14 2.40, a15 3.60, a16 2.32,
- *     a17 3.20, a18 3.60, a19 4.00).
+ * Durations are MEASURED (durations.json), not guessed.
  *   - gapAfterSec: 0.45 s between lines, 1.0 s after a major-beat line
- *     (a07 the curse, a12 the name, a16 the liberation) — the
- *     Ashwatthama / Vikram-Vetal rule.
+ *     (b03 the twist stated, b17 the rakshasa enters, b23 the curse,
+ *     b30 the name, b42 liberation not revenge, b46 the twist,
+ *     b52 the warning) — the Ashwatthama / Vikram-Vetal rule.
  *   - frames = round((audioSec + gapAfterSec) * 30) @ 30 fps.
  *   - T01 opens with a 3.5 s title card; T05 closes with a 5 s end card.
  *
- * Film total: 2451 frames = 81.7 s (~1 min 22 s). The narration is short
- * (62.88 s — the script is 209 words); no padding added, same as
- * Vikram-Vetal (181.92 s narration, 198.57 s film).
+ * Film total: 20233 frames = 674.43 s (~11 min 14 s).
  */
 
 export const FPS = 30;
@@ -29,29 +25,48 @@ export const HEIGHT = 1080;
 
 /** One narration line = one shot. `scene` picks the visual for the line. */
 export type SceneKind =
-  | 'throne' // a01 — King Saudasa on his golden throne
-  | 'friends' // a02 — Mitrasaha: the king among friends/ministers
-  | 'hunt' // a03 — the king hunting in the forest
-  | 'narrowpath' // a04 — narrow path: king and sage Shakti face to face
-  | 'standoff' // a05 — neither yields the way
-  | 'sagespeaks' // a06 — Shakti speaks: a king who yields no way is a demon
-  | 'curse' // a07 — the curse: "you will become a man-eating demon"
-  | 'rakshasa' // a08 — Vishwamitra sends a rakshasa into the king
-  | 'feast' // a09 — the king serves human flesh to a Brahmin
-  | 'transform' // a10 — the curse is fulfilled: the king's eyes change
-  | 'forestdemon' // a11 — 12 years wandering the forest as a demon
-  | 'spottedfeet' // a12 — black spots on his feet: hence Kalmashapada
-  | 'eatshakti' // a13 — first he eats Shakti himself
-  | 'hundredsons' // a14 — then Vashishtha's hundred sons, one by one
-  | 'liberator' // a15 — freedom comes from the one who cursed him
-  | 'freedom' // a16 — Vashishtha frees him; chains break
-  | 'twist' // a17 — the curser became the liberator
-  | 'mirror' // a18 — one moment of ego, and a king became a demon
-  | 'handslight'; // a19 — liberation lay in the hands of the one hurt most
+  | 'throne' // b48 — the king back on his throne, changed
+  | 'friends' // b05 — Mitrasaha: the king among friends
+  | 'hunt' // b18 — the king hunting in the forest
+  | 'narrowpath' // b07, b54 — the narrow path: king and sage face to face
+  | 'standoff' // b10, b20 — neither yields the way
+  | 'sagespeaks' // b08, b21, b22 — Shakti speaks
+  | 'curse' // b15, b23 — the curse is spoken
+  | 'rakshasa' // b14, b17, b24 — Vishwamitra sends a rakshasa into the king
+  | 'feast' // b26, b27 — the king serves human flesh to a Brahmin
+  | 'transform' // (short film only — kept in CodeScenes, unused here)
+  | 'forestdemon' // b34, b35 — 12 years wandering the forest as a demon
+  | 'spottedfeet' // b30 — black spots on his feet: hence Kalmashapada
+  | 'eatshakti' // b36 — first he eats Shakti himself
+  | 'hundredsons' // b37 — then Vashishtha's hundred sons, one by one
+  | 'liberator' // b42 — freedom comes from the one who cursed him
+  | 'freedom' // b43 — Vashishtha frees him; chains break
+  | 'twist' // b02, b03, b46 — the curser became the liberator
+  | 'mirror' // b01, b47, b52 — one moment of ego, and a king became a demon
+  | 'handslight' // b53, b55 — liberation lay in the hands of the one hurt most
+  | 'lineage' // b04, b51 — the Ikshvaku line: Harishchandra, Ram, Ashmaka
+  | 'court' // b06, b49 — the king in his court, honouring the sages
+  | 'kamadhenu' // b11 — the sacred cow Nandini in Vashishtha's ashram
+  | 'army' // b12 — Vishwamitra's army defeated by Nandini's power
+  | 'penance' // b13 — Vishwamitra's harsh penance
+  | 'conspiracy' // b09, b16 — the old enmity, the planned conspiracy
+  | 'chariot' // b19 — the king's chariot and soldiers on the narrow path
+  | 'palace' // b25 — the changed king returns to the palace
+  | 'cook' // b28 — the cook serves, not knowing what he serves
+  | 'brahmincurse' // b29 — the Brahmin's curse on the server
+  | 'kingdom' // b31 — the empty throne: a kingdom without its king
+  | 'village' // b32 — fear in the villages: doors shut at night
+  | 'queen' // b33 — Queen Madayanti waiting in the palace
+  | 'samadhi' // b38, b39 — Vashishtha in samadhi, burning his anger
+  | 'arrival' // b40 — Vashishtha himself comes into the forest
+  | 'tears' // b41 — tears in the demon's eyes for the first time
+  | 'purify' // b44 — holy water and mantras wash the curse away
+  | 'celebration' // b45 — lamps and bells: the king returns
+  | 'ashmaka'; // b50 — the child Ashmaka, heir of the line
 
 export type LineDef = {
-  id: string; // 'a01' .. 'a19'
-  audioSec: number; // ffprobe-measured WAV duration
+  id: string; // 'b01' .. 'b55'
+  audioSec: number; // measured WAV duration (durations.json)
   gapAfterSec: number; // silence after the line
   scene: SceneKind;
   /** Short note for the render log / README. */
@@ -71,166 +86,418 @@ export type TakeDef = {
 export const TAKES: TakeDef[] = [
   {
     id: 'T01',
-    title: 'खुलना — इक्ष्वाकु वंश के राजा सौदास',
+    title: 'हुक — राजा जो राक्षस बन गया',
     leadSec: 3.5,
     lines: [
       {
-        id: 'a01',
-        audioSec: 2.64,
+        id: 'b01',
+        audioSec: 7.12,
         gapAfterSec: 0.45,
-        scene: 'throne',
-        note: 'King Saudasa of the Ikshvaku line, on his golden throne.',
+        scene: 'mirror',
+        note: 'The hook: a king who lived to protect his people became the demon they needed protection from.',
       },
       {
-        id: 'a02',
-        audioSec: 4.24,
+        id: 'b02',
+        audioSec: 6.88,
+        gapAfterSec: 0.45,
+        scene: 'twist',
+        note: 'The question is not how the king became a demon — who made him one, and who freed him.',
+      },
+      {
+        id: 'b03',
+        audioSec: 8.4,
+        gapAfterSec: 1.0,
+        scene: 'twist',
+        note: 'The one who cursed him became the one who liberated him. Mahabharata, Adi Parva — King Saudasa.',
+      },
+      {
+        id: 'b04',
+        audioSec: 12.56,
+        gapAfterSec: 0.45,
+        scene: 'lineage',
+        note: 'Saudasa of the Ikshvaku line — the line of Harishchandra and later Shri Ram.',
+      },
+      {
+        id: 'b05',
+        audioSec: 10.72,
         gapAfterSec: 0.45,
         scene: 'friends',
-        note: 'Mitrasaha — the king who lives among friends.',
+        note: 'The people called him Mitrasaha — one who lives among friends.',
       },
       {
-        id: 'a03',
-        audioSec: 2.32,
+        id: 'b06',
+        audioSec: 15.44,
         gapAfterSec: 0.45,
-        scene: 'hunt',
-        note: 'One day the king is hunting in the forest.',
+        scene: 'court',
+        note: 'In his court the king himself touched the feet of sages and gave to their ashrams.',
       },
       {
-        id: 'a04',
-        audioSec: 4.96,
+        id: 'b07',
+        audioSec: 10.8,
         gapAfterSec: 0.45,
         scene: 'narrowpath',
-        note: 'On a narrow path: sage Shakti, eldest son of Vashishtha.',
+        note: 'A king’s greatest test is his ego — and Saudasa’s came on a narrow path, facing sage Shakti.',
+      },
+      {
+        id: 'b08',
+        audioSec: 14.32,
+        gapAfterSec: 0.45,
+        scene: 'sagespeaks',
+        note: 'Shakti — eldest son of Vashishtha, knower of the Vedas; the king’s guru’s son.',
+      },
+      {
+        id: 'b09',
+        audioSec: 10.88,
+        gapAfterSec: 0.45,
+        scene: 'conspiracy',
+        note: 'Behind that day lay an old enmity neither knew: Vishwamitra vs Vashishtha.',
+      },
+      {
+        id: 'b10',
+        audioSec: 14.48,
+        gapAfterSec: 0.45,
+        scene: 'standoff',
+        note: 'Guru’s son and disciple-king — a family bond — and one small question: who gets the way.',
+      },
+      {
+        id: 'b11',
+        audioSec: 13.12,
+        gapAfterSec: 0.45,
+        scene: 'kamadhenu',
+        note: 'Vishwamitra, once a king turned sage, asked for Kamadhenu Nandini — Vashishtha refused.',
       },
     ],
   },
   {
     id: 'T02',
-    title: 'टकराव — रास्ता, श्राप, राक्षस',
+    title: 'बैर — विश्वामित्र-वशिष्ठ, पगडंडी',
     lines: [
       {
-        id: 'a05',
-        audioSec: 2.56,
+        id: 'b12',
+        audioSec: 13.68,
         gapAfterSec: 0.45,
-        scene: 'standoff',
-        note: 'Neither the king nor the sage yields the way.',
+        scene: 'army',
+        note: 'Vishwamitra tried to take Nandini by force — her power defeated his army.',
       },
       {
-        id: 'a06',
-        audioSec: 4.0,
+        id: 'b13',
+        audioSec: 11.04,
         gapAfterSec: 0.45,
-        scene: 'sagespeaks',
-        note: 'Shakti speaks: a king who yields no way is no king — he is a demon.',
+        scene: 'penance',
+        note: 'After defeat, Vishwamitra did harsh penance and became a Brahmarshi — but his anger stayed.',
       },
       {
-        id: 'a07',
-        audioSec: 3.36,
-        gapAfterSec: 1.0,
-        scene: 'curse',
-        note: 'The curse is spoken: "You will become a man-eating demon."',
-      },
-      {
-        id: 'a08',
-        audioSec: 3.76,
+        id: 'b14',
+        audioSec: 12.56,
         gapAfterSec: 0.45,
         scene: 'rakshasa',
-        note: 'Vishwamitra sends a rakshasa into the king’s body.',
+        note: 'For years Vishwamitra waited for his chance — it came while the king hunted in the forest.',
+      },
+      {
+        id: 'b15',
+        audioSec: 9.84,
+        gapAfterSec: 0.45,
+        scene: 'curse',
+        note: 'Two separate events on one day: Shakti’s curse and Vishwamitra’s rakshasa.',
+      },
+      {
+        id: 'b16',
+        audioSec: 12.0,
+        gapAfterSec: 0.45,
+        scene: 'conspiracy',
+        note: 'Not just a curse story — a planned conspiracy: one sage’s anger, another’s old enmity.',
+      },
+      {
+        id: 'b17',
+        audioSec: 13.52,
+        gapAfterSec: 1.0,
+        scene: 'rakshasa',
+        note: 'The rakshasa waited for the right moment — the curse opened the way, and it entered the king.',
+      },
+      {
+        id: 'b18',
+        audioSec: 11.92,
+        gapAfterSec: 0.45,
+        scene: 'hunt',
+        note: 'The king hunting in the forest; on the way back, on a narrow path — sage Shakti coming.',
+      },
+      {
+        id: 'b19',
+        audioSec: 14.72,
+        gapAfterSec: 0.45,
+        scene: 'chariot',
+        note: 'The king with his soldiers and chariot; the sage alone, only his staff and his radiance.',
+      },
+      {
+        id: 'b20',
+        audioSec: 9.44,
+        gapAfterSec: 0.45,
+        scene: 'standoff',
+        note: 'Neither the king nor the sage yielded the way.',
+      },
+      {
+        id: 'b21',
+        audioSec: 13.76,
+        gapAfterSec: 0.45,
+        scene: 'sagespeaks',
+        note: 'The king: I am king, my way first. Shakti: I am Vashishtha’s son, dharma’s way first.',
+      },
+      {
+        id: 'b22',
+        audioSec: 11.6,
+        gapAfterSec: 0.45,
+        scene: 'sagespeaks',
+        note: 'Shakti: a king who yields no way to a sage is no king — he is a demon.',
       },
     ],
   },
   {
     id: 'T03',
-    title: 'पतन — मांस, बारह साल, नाम',
+    title: 'श्राप — मांस, धब्बे, खाली राज्य',
     lines: [
       {
-        id: 'a09',
-        audioSec: 2.88,
+        id: 'b23',
+        audioSec: 6.88,
+        gapAfterSec: 1.0,
+        scene: 'curse',
+        note: 'The curse is spoken: "You will become a man-eating demon."',
+      },
+      {
+        id: 'b24',
+        audioSec: 13.52,
+        gapAfterSec: 0.45,
+        scene: 'rakshasa',
+        note: 'At the same moment Vishwamitra sent a rakshasa into the king’s body.',
+      },
+      {
+        id: 'b25',
+        audioSec: 12.88,
+        gapAfterSec: 0.45,
+        scene: 'palace',
+        note: 'Back in the palace the ministers saw it — his walk changed, a strange shine in his eyes.',
+      },
+      {
+        id: 'b26',
+        audioSec: 12.8,
         gapAfterSec: 0.45,
         scene: 'feast',
-        note: 'The king serves human flesh to a Brahmin.',
+        note: 'A strange hunger woke in him — hunger for human flesh; the rakshasa made him serve it.',
       },
       {
-        id: 'a10',
-        audioSec: 1.36,
+        id: 'b27',
+        audioSec: 14.0,
         gapAfterSec: 0.45,
-        scene: 'transform',
-        note: 'The curse is fulfilled — the king’s eyes change.',
+        scene: 'feast',
+        note: 'Food was cooked for a Brahmin guest — human flesh served in it by the rakshasa’s hand.',
       },
       {
-        id: 'a11',
-        audioSec: 4.08,
+        id: 'b28',
+        audioSec: 12.48,
         gapAfterSec: 0.45,
-        scene: 'forestdemon',
-        note: 'Twelve years wandering the forest as a man-eating demon.',
+        scene: 'cook',
+        note: 'The cook himself did not know what he served — the rakshasa worked through his hands.',
       },
       {
-        id: 'a12',
-        audioSec: 5.6,
+        id: 'b29',
+        audioSec: 13.12,
+        gapAfterSec: 0.45,
+        scene: 'brahmincurse',
+        note: 'The Brahmin cursed: he who served me this shall wander as a man-eating demon.',
+      },
+      {
+        id: 'b30',
+        audioSec: 13.12,
         gapAfterSec: 1.0,
         scene: 'spottedfeet',
-        note: 'Black spots on his feet — hence the name Kalmashapada.',
+        note: 'The curse fulfilled — black spots on his feet. Hence the name Kalmashapada.',
+      },
+      {
+        id: 'b31',
+        audioSec: 10.56,
+        gapAfterSec: 0.45,
+        scene: 'kingdom',
+        note: 'The palace king was now a forest demon; the protector had become the people’s fear.',
+      },
+      {
+        id: 'b32',
+        audioSec: 11.2,
+        gapAfterSec: 0.45,
+        scene: 'village',
+        note: 'Fear spread — none went toward the forest, doors shut at night in the villages.',
+      },
+      {
+        id: 'b33',
+        audioSec: 10.64,
+        gapAfterSec: 0.45,
+        scene: 'queen',
+        note: 'The kingdom without a king — ministers ruled, Queen Madayanti waited in the palace.',
       },
     ],
   },
   {
     id: 'T04',
-    title: 'विनाश और मुक्ति — शक्ति, सौ बेटे, वशिष्ठ',
+    title: 'बारह साल — जंगल, समाधि, आँसू',
     lines: [
       {
-        id: 'a13',
-        audioSec: 2.0,
+        id: 'b34',
+        audioSec: 11.2,
         gapAfterSec: 0.45,
-        scene: 'eatshakti',
-        note: 'First he eats Shakti himself.',
+        scene: 'forestdemon',
+        note: 'Twelve years the king wandered the forest as a man-eating demon.',
       },
       {
-        id: 'a14',
-        audioSec: 2.4,
+        id: 'b35',
+        audioSec: 13.52,
+        gapAfterSec: 0.45,
+        scene: 'forestdemon',
+        note: 'The demon’s day began and ended with hunger; even the forest animals kept away.',
+      },
+      {
+        id: 'b36',
+        audioSec: 8.88,
+        gapAfterSec: 0.45,
+        scene: 'eatshakti',
+        note: 'First he ate Shakti himself — the very sage who had cursed him.',
+      },
+      {
+        id: 'b37',
+        audioSec: 13.12,
         gapAfterSec: 0.45,
         scene: 'hundredsons',
         note: 'Then Vashishtha’s hundred sons — one by one.',
       },
       {
-        id: 'a15',
-        audioSec: 3.6,
+        id: 'b38',
+        audioSec: 12.0,
         gapAfterSec: 0.45,
-        scene: 'liberator',
-        note: 'And in the end, freedom came from the one who cursed him.',
+        scene: 'samadhi',
+        note: 'Vashishtha neither wept nor cursed — he sat in samadhi, burning his own anger.',
       },
       {
-        id: 'a16',
-        audioSec: 2.32,
+        id: 'b39',
+        audioSec: 12.72,
+        gapAfterSec: 0.45,
+        scene: 'samadhi',
+        note: 'He saw his sons die and still did not curse — anger only breeds anger, he knew.',
+      },
+      {
+        id: 'b40',
+        audioSec: 13.04,
+        gapAfterSec: 0.45,
+        scene: 'arrival',
+        note: 'Twelve years passed. Then one day Vashishtha himself came into the forest.',
+      },
+      {
+        id: 'b41',
+        audioSec: 13.68,
+        gapAfterSec: 0.45,
+        scene: 'tears',
+        note: 'The demon saw Vashishtha — the king inside him woke; tears came to his eyes for the first time.',
+      },
+      {
+        id: 'b42',
+        audioSec: 10.88,
         gapAfterSec: 1.0,
+        scene: 'liberator',
+        note: 'They think Vashishtha came for revenge — he came to liberate, not to avenge.',
+      },
+      {
+        id: 'b43',
+        audioSec: 8.96,
+        gapAfterSec: 0.45,
         scene: 'freedom',
-        note: 'Vashishtha himself freed him from the curse.',
+        note: 'In the end the one who cursed him freed him — by his tapas and his forgiveness.',
+      },
+      {
+        id: 'b44',
+        audioSec: 13.6,
+        gapAfterSec: 0.45,
+        scene: 'purify',
+        note: 'Vashishtha purified the king with holy water and mantras — the spots washed away.',
       },
     ],
   },
   {
     id: 'T05',
-    title: 'अंत — ट्विस्ट और सीख',
+    title: 'मुक्ति — शुद्धि, वंश, सीख',
     tailSec: 5,
     lines: [
       {
-        id: 'a17',
-        audioSec: 3.2,
+        id: 'b45',
+        audioSec: 10.88,
         gapAfterSec: 0.45,
-        scene: 'twist',
-        note: 'The one who cursed became the one who liberated.',
+        scene: 'celebration',
+        note: 'News of the king’s return — lamps lit in the villages, temple bells rang.',
       },
       {
-        id: 'a18',
-        audioSec: 3.6,
+        id: 'b46',
+        audioSec: 9.68,
+        gapAfterSec: 1.0,
+        scene: 'twist',
+        note: 'The one who cursed became the one who liberated — the story’s greatest turn.',
+      },
+      {
+        id: 'b47',
+        audioSec: 9.52,
         gapAfterSec: 0.45,
         scene: 'mirror',
-        note: 'One moment of ego — and a king became a demon.',
+        note: 'Saudasa became a man again, a king again — but not the same king.',
       },
       {
-        id: 'a19',
-        audioSec: 4.0,
+        id: 'b48',
+        audioSec: 11.28,
+        gapAfterSec: 0.45,
+        scene: 'throne',
+        note: 'Back on the throne he asked before every decision: is my ego speaking here?',
+      },
+      {
+        id: 'b49',
+        audioSec: 12.08,
+        gapAfterSec: 0.45,
+        scene: 'court',
+        note: 'One sorrow remained — he had no son; the kingdom had no heir.',
+      },
+      {
+        id: 'b50',
+        audioSec: 12.56,
+        gapAfterSec: 0.45,
+        scene: 'ashmaka',
+        note: 'Through Vashishtha, a son was born to Queen Madayanti — Ashmaka, who became king.',
+      },
+      {
+        id: 'b51',
+        audioSec: 13.76,
+        gapAfterSec: 0.45,
+        scene: 'lineage',
+        note: 'Ashmaka grew and ruled; great kings came in his line. Kalmashapada’s name stayed a warning.',
+      },
+      {
+        id: 'b52',
+        audioSec: 13.68,
+        gapAfterSec: 1.0,
+        scene: 'mirror',
+        note: 'This is not only a horror story — it is a warning: ego makes a king a demon, forgiveness frees him.',
+      },
+      {
+        id: 'b53',
+        audioSec: 7.36,
         gapAfterSec: 0.45,
         scene: 'handslight',
-        note: 'Liberation lay in the hands of the one hurt the most.',
+        note: 'One moment of ego — and a king became a demon; liberation lay in the hands of the one hurt most.',
+      },
+      {
+        id: 'b54',
+        audioSec: 5.28,
+        gapAfterSec: 0.45,
+        scene: 'narrowpath',
+        note: 'So tell me — if a small ego is punished so greatly, when will you learn to yield the way?',
+      },
+      {
+        id: 'b55',
+        audioSec: 9.68,
+        gapAfterSec: 0.45,
+        scene: 'handslight',
+        note: 'If your anger ever feels right — remember Saudasa. The curser can become the liberator — but the price is twelve years.',
       },
     ],
   },
