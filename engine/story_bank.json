@@ -35,18 +35,8 @@
       "thumb_text": "हवेली का राज",
       "thumb_visual": "2D dark horror animated illustration, Indian setting, wide shot, a middle-aged watchman holding an old lantern with a terrified expression inside a ruined courtyard, extreme contrast, saturated, rim light, empty side for text, no text",
       "characters": {
-       "रघु": {
-        "age": "45",
-        "face": "weathered face with sharp eyes and a thick grey mustache",
-        "hair": "short messy grey-black hair",
-        "clothes": "dark navy blue security uniform with brass buttons and black shoes"
-       },
-       "ठाकुर": {
-        "age": "60",
-        "face": "stern wrinkled face with deep set dark eyes",
-        "hair": "slicked back white hair",
-        "clothes": "traditional white kurta pajama with a black Nehru jacket"
-       }
+       "रघु": "45-year-old man, weathered face with sharp eyes and a thick grey mustache, short messy grey-black hair, dark navy blue security uniform with brass buttons and black shoes",
+       "ठाकुर": "60-year-old man, stern wrinkled face with deep set dark eyes, slicked back white hair, traditional white kurta pajama with a black Nehru jacket"
       },
       "scenes": [
        {
@@ -2859,18 +2849,8 @@
      "thumb_text": "जादुई जामुन का पेड़!",
      "thumb_visual": "2D vibrant Indian cartoon animation, Panchatantra storybook style, wide shot, a giant glowing purple jamun tree in a magical jungle, a cute squirrel looking up in amazement with wide eyes, extreme contrast, saturated, rim light, empty side for text, no text",
      "characters": {
-      "Chiku": {
-       "age": "young",
-       "face": "round cheerful face with big curious black eyes",
-       "hair": "short brown fur with a playful tuft on top",
-       "clothes": "a small red leaf vest tied with a vine"
-      },
-      "Bholu": {
-       "age": "young",
-       "face": "chubby round face with a mischievous smile",
-       "hair": "thick golden-brown fur with floppy ears",
-       "clothes": "a green leaf cap on his head"
-      }
+      "Chiku": "young, round cheerful face with big curious black eyes, short brown fur with a playful tuft on top, a small red leaf vest tied with a vine",
+      "Bholu": "young, chubby round face with a mischievous smile, thick golden-brown fur with floppy ears, a green leaf cap on his head"
      },
      "scenes": [
       {

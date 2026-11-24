@@ -186,7 +186,7 @@ def expand(x):
         if "t" in c:
             v = c.get("v", ""); w = c.get("w")
             c = {"speaker": c.get("s", "N"), "text": c["t"], "mood": c.get("m", "suspense"), "style": c.get("st", "warm storyteller"),
-                 "visual": v + (", " + chars[w][:110] if w in chars else "")}
+                 "visual": v + (", " + (chars[w] if isinstance(chars[w], str) else ", ".join(str(x) for x in chars[w].values()))[:110] if w in chars else "")}
         sc2.append(c)
     x["scenes"] = sc2
     x.setdefault("hook", x["title"][:20]); x.setdefault("thumb_text", x.get("hook", "")); x.setdefault("tags", []); x.setdefault("description", x.get("topic", ""))

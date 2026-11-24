@@ -35,12 +35,20 @@ Avoid these titles: {seen}.
 Return JSON with keys: title (Hindi, <=70 chars, curiosity hook, ends with ' | {name}'), topic, category, description (Hindi, 3 short paragraphs + 5 hashtags),
 tags (18 Hindi/Hinglish/English search tags), hook (2-4 words), thumb_text (2-4 punchy Hindi words),
 thumb_visual (English CTR thumbnail prompt: one dramatic moment, main character mid-action with strong emotion, extreme contrast, saturated, rim light, empty side for text, no text),
-characters (object: name -> fixed English look lock: age, face, hair, exact clothes and colours; reuse verbatim),
+characters (object: name -> ONE English sentence look lock, e.g. "45-year-old man, weathered face, grey mustache, navy security uniform"; a single string, NEVER an object),
 scenes (22-28 items). Each scene: s ("N" always, one narrator), t (Hindi spoken line ONLY: 1-2 sentences, 10-28 words, pure story words, NO stage directions,
 NO brackets, NO speaker labels; use "..." inside or at the end of heavy emotional lines for breathing pauses), m (one of horror|suspense|chase|peaceful|victory|sad),
 st (delivery hint, not spoken), w (main character name in the scene or ""), v (English base-image prompt: "{style}, wide shot, " + the exact physical action,
 objects and place of THIS line + the full look lock of each character in it; nobody looking at camera, no portrait, no close-up, no text).
 Story arc: hook in the first line, rising tension, twist, satisfying ending{', clear moral at the end' if ch == 'kahani' else ', eerie final twist'}.""")
+    # characters must be plain strings - flatten any dict Gemini returned
+    _chars = o.get("characters", {})
+    for _k, _v in list(_chars.items()):
+        if isinstance(_v, dict):
+            _chars[_k] = ", ".join(str(x) for x in _v.values())
+        elif not isinstance(_v, str):
+            _chars[_k] = str(_v)
+    o["characters"] = _chars
     sc = []
     for x in o.get("scenes", []):
         t = clean(x.get("t", "")); v = x.get("v", "")
