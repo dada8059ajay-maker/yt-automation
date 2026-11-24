@@ -31,6 +31,8 @@ jobs:
       META_APP_SECRET: ${{ secrets.META_APP_SECRET }}
       FB_USER_TOKEN: ${{ secrets.FB_USER_TOKEN }}
       FB_PAGE_ACCESS_TOKEN: ${{ secrets.FB_PAGE_ACCESS_TOKEN }}
+      YT_REFRESH_KAHANI: ${{ secrets.YT_REFRESH_KAHANI }}
+      YT_REFRESH_RAAT: ${{ secrets.YT_REFRESH_RAAT }}
     steps:
       - uses: actions/checkout@v4
         with: {ref: main}   # always latest state.json (dispatch would pin an old commit)
@@ -81,8 +83,7 @@ jobs:
           PRE: ${{ steps.plan.outputs.pre }}
           VOICE_ENGINE: ${{ steps.plan.outputs.engine }}
         run: |
-          F=secrets/yt_refresh_$N.enc; [ "$N" = kahani ] && F=secrets/yt_refresh.enc
-          export RT=$(openssl enc -d -aes-256-cbc -pbkdf2 -in $F -pass env:CSEC)
+          if [ "$N" = kahani ]; then export RT="$YT_REFRESH_KAHANI"; else export RT="$YT_REFRESH_RAAT"; fi
           python3 engine/make.py $N $MODE $PRE
       - if: always() && steps.plan.outputs.ch != ''
         uses: actions/upload-artifact@v4
@@ -112,7 +113,7 @@ jobs:
             for f in /tmp/keep/results/* /tmp/keep/logs/* /tmp/keep/docs/*; do [ -f "$f" ] || continue; d=${f#/tmp/keep/}
               if [ "$d" = results/schedule_log.md ] && [ -f "$d" ]; then cat "$d" "$f" | awk '!seen[$0]++' > /tmp/sl && mv /tmp/sl "$d"; else cp "$f" "$d"; fi; done
             [ -f /tmp/ig_token.enc ] && cp /tmp/ig_token.enc secrets/ig_token.enc
-            git add engine/state.json results logs docs secrets
+            git add engine/state.json results logs docs
             git commit -q -m "update state ${{ github.run_id }} [skip ci]" || { echo nothing to commit; break; }
             git push -q origin HEAD:main && break
             sleep $((RANDOM % 10 + 5))
