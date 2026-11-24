@@ -1,0 +1,22 @@
+{
+ "job": "kahani_short_20261104_1211",
+ "videos": [
+  {
+   "id": "GHaaI3gEA7c",
+   "status": {
+    "uploadStatus": "uploaded",
+    "privacyStatus": "private",
+    "publishAt": "2026-11-26T13:00:00Z",
+    "license": "youtube",
+    "embeddable": true,
+    "publicStatsViewable": true,
+    "selfDeclaredMadeForKids": true,
+    "containsSyntheticMedia": false
+   },
+   "playlist": {
+    "ERROR": 404,
+    "body": "{\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"Video not found.\",\n    \"errors\": [\n      {\n        \"message\": \"Video not found.\",\n        \"domain\": \"youtube.playlistItem\",\n        \"reason\": \"videoNotFound\"\n      }\n    ]\n  }\n}\n"
+   }
+  }
+ ]
+}
