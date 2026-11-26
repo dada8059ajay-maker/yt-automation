@@ -563,7 +563,7 @@ for i, sc in enumerate(S["scenes"]):
     if out_of_time(): pause(f"images {i}/{len(S['scenes'])}")
     if i and i % 6 == 0: checkpoint(f"images {i}/{len(S['scenes'])}")
     p = (sc.get("shots") or [sc["visual"]])[0]
-    img, src = flux(p, seed)
+    img, src = flux(p, S.get("reseed", {}).get(str(i), seed))
     time.sleep(6)   # 6 s between downloads
     if img is None and os.environ.get("ALLOW_REUSE") != "1":   # 0% quality compromise: never fill with mirrored repeats, wait for image credit
         pause(f"imgwait: image servers out of free credit at {i}/{len(S['scenes'])}")
@@ -580,7 +580,7 @@ for i, sc in enumerate(S["scenes"]):   # extra shots of the same line (2nd/3rd a
     for k, p in enumerate((sc.get("shots") or [])[1:], 1):
         if os.path.exists(shot_file(i, k)): continue
         if out_of_time(): pause(f"images shot {i}.{k}")
-        img, src = flux(p, seed + k); time.sleep(6)
+        img, src = flux(p, S.get("reseed", {}).get(str(i), seed) + k); time.sleep(6)
         if img is None: pause(f"imgwait: shot {i+1}.{k+1} waiting for a real picture")
         ImageEnhance.Contrast(cover(img).filter(ImageFilter.UnsharpMask(2, 70, 2))).enhance(1.05).save(shot_file(i, k), quality=93); log("img", f"{i}.{k}", src)
 
@@ -608,7 +608,9 @@ for i, sc in enumerate(S["scenes"]):
     for j, (h0, f0) in _h.items():
         if sum(x != y for x, y in zip(ah, h0)) <= 6 or sum(x != y for x, y in zip(fl, h0)) <= 6:
             log("pre-check: scene", i + 1, "repeats/mirrors scene", j + 1, "-> new picture"); os.remove(f)
-            pause(f"imgwait: scene {i+1} duplicate of {j+1}")
+            S.setdefault("reseed", {})[str(i)] = random.randint(1, 10**6)
+            json.dump(S, open(f"{OUT}/script.json", "w"), ensure_ascii=False, indent=1)
+            pause(f"imgwait: scene {i+1} duplicate of {j+1} (reseeded)")
     _h[i] = (ah, f)
     w = wav_of(i)
     if not os.path.exists(w) or dur_of(w) < 0.4 * max(1, len(sc["text"].split())) * 0.25:
