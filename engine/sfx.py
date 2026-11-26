@@ -56,7 +56,8 @@ def birds(d):
     tt = _t(d); y = np.zeros(len(tt))
     for b in np.arange(0.3, d - 0.3, 1.1):
         c = _t(0.18); ch = np.sin(2 * np.pi * (3200 + 1800 * np.sin(2 * np.pi * 14 * c)) * c) * np.sin(np.pi * c / 0.18)
-        i = int((b + R.uniform(0, 0.4)) * SR); y[i:i + len(ch)] += ch[:len(y) - i]
+        i = int((b + R.uniform(0, 0.4)) * SR)
+        if i < len(y): y[i:i + len(ch)] += ch[:len(y) - i]
     return _norm(y, 0.25)
 def crickets(d):
     tt = _t(d); y = np.sin(2 * np.pi * 4500 * tt) * (np.sin(2 * np.pi * 30 * tt) > 0.3) * (np.sin(2 * np.pi * 0.7 * tt) > 0); return _norm(y, 0.08)
