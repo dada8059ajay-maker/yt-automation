@@ -64,3 +64,8 @@
 - रात के किस्से | long | सोमेश्वर की बंद गुफा और 3 खौफनाक नियम | रात के किस्से | Wed 25 Nov 2026 09:00 PM IST | https://studio.youtube.com/video/3UHIMs54W84/edit
 - कहानी पतंग | long | बेडरूम का जादुई कालीन! रहस्यमयी दुनिया का सफर | कहानी पतंग | Thu 26 Nov 2026 06:00 PM IST | https://studio.youtube.com/video/5oJ9n25xlrE/edit
 - कहानी पतंग | short | नन्ही चिड़िया ने कैसे बचाया जंगल? | कहानी पतंग | Thu 26 Nov 2026 06:30 PM IST | https://studio.youtube.com/video/GHaaI3gEA7c/edit
+- रात के किस्से | short | गाँव का सूखा कुआँ क्यों पुकारता है नाम? | रात के किस्से | Sat 28 Nov 2026 09:30 PM IST | https://studio.youtube.com/video/B8FTErQWOcI/edit
+- कहानी पतंग | short | बेडरूम का जादुई कालीन! 🪄 हैरान करने वाला सच | कहानी पतंग | Sat 28 Nov 2026 06:30 PM IST | https://studio.youtube.com/video/3Njv6U_DmiY/edit
+- रात के किस्से | short | हर दिन फोटो में बढ़ता है एक इंसान! पुरानी हवेली का रहस्य | रात के किस्से | Sun 29 Nov 2026 09:30 PM IST | https://studio.youtube.com/video/JLsq_Lx9Kmo/edit
+- कहानी पतंग | short | आसमान में तैरता रहस्यमयी बक्सा! 📦 | कहानी पतंग | Sun 29 Nov 2026 06:30 PM IST | https://studio.youtube.com/video/CDKd66Z6P2M/edit
+- रात के किस्से | short | आईने की मुस्कुराती परछाईं का खौफनाक सच! | रात के किस्से | Mon 30 Nov 2026 09:30 PM IST | https://studio.youtube.com/video/98ksoplGVoc/edit

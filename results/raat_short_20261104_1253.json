@@ -1,0 +1,19 @@
+{
+ "job": "raat_short_20261104_1253",
+ "videos": [
+  {
+   "id": "JLsq_Lx9Kmo",
+   "status": {
+    "uploadStatus": "uploaded",
+    "privacyStatus": "private",
+    "publishAt": "2026-11-29T16:00:00Z",
+    "license": "youtube",
+    "embeddable": true,
+    "publicStatsViewable": true,
+    "selfDeclaredMadeForKids": false,
+    "containsSyntheticMedia": false
+   },
+   "playlist": "ok"
+  }
+ ]
+}
