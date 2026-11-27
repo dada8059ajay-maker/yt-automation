@@ -1,0 +1,424 @@
+story from story_bank (Hark-written)
+gemini gemini-3.8-flash key 1 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-3.8-flash key 2 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-3.8-flash key 3 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-3.7-flash key 1 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-3.7-flash key 2 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-3.7-flash key 3 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-3.6-flash key 1 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-3.6-flash key 2 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-3.6-flash key 3 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-3.5-flash key 1 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini ok gemini-3.5-flash key 2
+seo pass OK: जादुई जामुन का अनोखा सच! | Jadui Jamun Story | कहानी पतंग
+title: जादुई जामुन का अनोखा सच! | Jadui Jamun Story | कहानी पतंग scenes: 22
+rules v3: pictures rebuilt, re-voiced lines []
+voice engine: edge hi-IN-SwaraNeural (locked) 22 scenes
+gemini gemini-3.8-flash key 1 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-3.8-flash key 2 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-3.8-flash key 3 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-3.7-flash key 1 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-3.7-flash key 2 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-3.7-flash key 3 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-3.6-flash key 1 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-3.6-flash key 2 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-3.6-flash key 3 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-3.5-flash key 1 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-3.5-flash key 2 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-3.5-flash key 3 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-flash-latest key 1 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-flash-latest key 2 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-flash-latest key 3 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-pro-latest key 1 429 {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and bi
+gemini gemini-pro-latest key 2 429 {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and bi
+gemini gemini-pro-latest key 3 429 {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and bi
+gemini gemini-3.5-flash-lite key 1 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-3.5-flash-lite key 2 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-3.5-flash-lite key 3 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-flash-lite-latest key 1 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-flash-lite-latest key 2 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-flash-lite-latest key 3 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-3.8-flash key 1 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-3.8-flash key 2 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-3.8-flash key 3 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-3.7-flash key 1 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-3.7-flash key 2 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-3.7-flash key 3 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-3.6-flash key 1 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-3.6-flash key 2 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-3.6-flash key 3 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-3.5-flash key 1 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-3.5-flash key 2 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-3.5-flash key 3 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-flash-latest key 1 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-flash-latest key 2 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-flash-latest key 3 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-pro-latest key 1 429 {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and bi
+gemini gemini-pro-latest key 2 429 {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and bi
+gemini gemini-pro-latest key 3 429 {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and bi
+gemini gemini-3.5-flash-lite key 1 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-3.5-flash-lite key 2 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-3.5-flash-lite key 3 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-flash-lite-latest key 1 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-flash-lite-latest key 2 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-flash-lite-latest key 3 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-3.8-flash key 1 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-3.8-flash key 2 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-3.8-flash key 3 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-3.7-flash key 1 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-3.7-flash key 2 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-3.7-flash key 3 429 {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and bi
+gemini gemini-3.6-flash key 1 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-3.6-flash key 2 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-3.6-flash key 3 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-3.5-flash key 1 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-3.5-flash key 2 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-3.5-flash key 3 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-flash-latest key 1 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-flash-latest key 2 429 {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and bi
+gemini gemini-flash-latest key 3 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-pro-latest key 1 429 {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and bi
+gemini gemini-pro-latest key 2 429 {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and bi
+gemini gemini-pro-latest key 3 429 {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and bi
+gemini gemini-3.5-flash-lite key 1 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-3.5-flash-lite key 2 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-3.5-flash-lite key 3 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-flash-lite-latest key 1 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-flash-lite-latest key 2 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-flash-lite-latest key 3 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+shot planner failed SystemExit('Gemini failed')
+shots planned: 22 pictures for 22 scenes
+img 0 pollinations-flux
+pollinations key out of credit -> free anonymous FLUX
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+pollinations retry 3 <HTTPError 402: 'Payment Required'>
+img 1 pollinations-flux-free
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+img 2 pollinations-flux-free
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+img 3 pollinations-flux-free
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+pollinations retry 3 <HTTPError 503: 'Service Unavailable'>
+pollinations retry 4 <HTTPError 402: 'Payment Required'>
+gemini image key 1 429
+gemini image key 2 429
+gemini image key 3 429
+hf serverless fail <HTTPError 403: 'Forbidden'>
+img 4 hf-flux
+img 5 pollinations-flux-free
+img 6 pollinations-flux-free
+img 7 pollinations-flux-free
+img 8 pollinations-flux-free
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 503: 'Service Unavailable'>
+pollinations retry 3 <HTTPError 402: 'Payment Required'>
+pollinations retry 4 <HTTPError 402: 'Payment Required'>
+hf serverless fail <HTTPError 403: 'Forbidden'>
+img 9 hf-flux
+img 10 pollinations-flux-free
+pollinations retry 0 <HTTPError 503: 'Service Unavailable'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+img 11 pollinations-flux-free
+img 12 pollinations-flux-free
+img 13 pollinations-flux-free
+img 14 pollinations-flux-free
+img 15 pollinations-flux-free
+img 16 pollinations-flux-free
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+img 17 pollinations-flux-free
+img 18 pollinations-flux-free
+img 19 pollinations-flux-free
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+img 20 pollinations-flux-free
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+img 21 pollinations-flux-free
+pre-check: scene 7 repeats/mirrors scene 6 -> new picture
+resume: script loaded
+title: जादुई जामुन का अनोखा सच! | Jadui Jamun Story | कहानी पतंग scenes: 22
+voice engine: edge hi-IN-SwaraNeural (locked) 22 scenes
+img 6 pollinations-flux
+pre-check: scene 8 repeats/mirrors scene 6 -> new picture
+resume: script loaded
+title: जादुई जामुन का अनोखा सच! | Jadui Jamun Story | कहानी पतंग scenes: 22
+voice engine: edge hi-IN-SwaraNeural (locked) 22 scenes
+img 7 pollinations-flux
+pre-check: scene 9 repeats/mirrors scene 6 -> new picture
+resume: script loaded
+title: जादुई जामुन का अनोखा सच! | Jadui Jamun Story | कहानी पतंग scenes: 22
+voice engine: edge hi-IN-SwaraNeural (locked) 22 scenes
+img 8 pollinations-flux
+pre-check: scene 11 repeats/mirrors scene 6 -> new picture
+resume: script loaded
+title: जादुई जामुन का अनोखा सच! | Jadui Jamun Story | कहानी पतंग scenes: 22
+voice engine: edge hi-IN-SwaraNeural (locked) 22 scenes
+img 10 pollinations-flux
+pre-check: scene 12 repeats/mirrors scene 3 -> new picture
+resume: script loaded
+title: जादुई जामुन का अनोखा सच! | Jadui Jamun Story | कहानी पतंग scenes: 22
+voice engine: edge hi-IN-SwaraNeural (locked) 22 scenes
+img 11 pollinations-flux
+pre-check: scene 14 repeats/mirrors scene 6 -> new picture
+resume: script loaded
+title: जादुई जामुन का अनोखा सच! | Jadui Jamun Story | कहानी पतंग scenes: 22
+voice engine: edge hi-IN-SwaraNeural (locked) 22 scenes
+img 13 pollinations-flux
+pre-check: scene 15 repeats/mirrors scene 13 -> new picture
