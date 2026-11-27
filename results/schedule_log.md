@@ -76,3 +76,5 @@
 - कहानी पतंग | short | शेर की दहाड़ किसने चुराई? | Jungle Kahani | कहानी पतंग | Wed 02 Dec 2026 06:30 PM IST | https://studio.youtube.com/video/UNkcWcMjk6M/edit
 - रात के किस्से | long | सोमेश्वर गुफा का रहस्य भाग 2 | रात के किस्से | Sat 28 Nov 2026 09:00 PM IST | https://studio.youtube.com/video/2foCAEB0qWU/edit
 - कहानी पतंग | long | जादुई घड़ा और लालची लकड़हारा | Hindi Kahaniya | कहानी पतंग | Mon 30 Nov 2026 06:00 PM IST | https://studio.youtube.com/video/uPLFilBcBOA/edit
+- कहानी पतंग | long | जादुई घुंघरू और नाचता जंगल! 🐰 नटखट खरगोश | कहानी पतंग | Tue 01 Dec 2026 06:00 PM IST | https://studio.youtube.com/video/2H6B6Ir_Wno/edit
+- कहानी पतंग | short | परछाई ने चुरा ली आवाज! रहस्यमयी जंग | कहानी पतंग | Thu 03 Dec 2026 06:30 PM IST | https://studio.youtube.com/video/g7AHCE6bPhU/edit

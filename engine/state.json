@@ -64,8 +64,8 @@
   }
  },
  "kahani": {
-  "short": "2026-12-02T13:00:00Z",
-  "long": "2026-11-30T12:30:00Z",
+  "short": "2026-12-03T13:00:00Z",
+  "long": "2026-12-01T12:30:00Z",
   "history": [
    "शेर और चतुर खरगोश",
    "एक नटखट गिलहरी और उसके दोस्त की जादुई अखरोट को ढूँढने की सीख भरी यात्रा।",
@@ -124,14 +124,13 @@
     "Bholu": "Age 10 years equivalent bear, chubby round face, gentle black eyes, fluffy brown fur, wearing a yellow checkered scarf around his neck",
     "Chinki": "Age 5 years equivalent squirrel, bright curious eyes, bushy grey-brown tail, wearing a tiny red bow on her head"
    },
-   "vid": null,
+   "vid": "2H6B6Ir_Wno",
    "short_done": true,
    "trailer": null,
    "fest_at": null
   }
  },
  "_uploads": [
-  "2026-11-02T02:21:08Z",
   "2026-11-02T10:03:32Z",
   "2026-11-03T05:11:54Z",
   "2026-11-03T05:29:54Z",
@@ -150,23 +149,10 @@
   "2026-11-24T15:20:07Z",
   "2026-11-27T14:56:45Z",
   "2026-11-27T16:07:55Z",
-  "2026-11-27T17:09:18Z"
+  "2026-11-27T17:09:18Z",
+  "2026-11-27T18:58:22Z"
  ],
  "_queue": [
-  {
-   "job": "kahani_long_20261104_1531",
-   "ch": "kahani",
-   "mode": "long",
-   "asset": "kahani_long_20261104_1531.tar",
-   "title": "जादुई घुंघरू और नाचता जंगल! 🐰 नटखट खरगोश | कहानी पतंग"
-  },
-  {
-   "job": "kahani_short_20261104_1446",
-   "ch": "kahani",
-   "mode": "short",
-   "asset": "kahani_short_20261104_1446.tar",
-   "title": "परछाई ने चुरा ली आवाज! रहस्यमयी जंग | कहानी पतंग"
-  },
   {
    "job": "kahani_short_20261104_1651",
    "ch": "kahani",
@@ -215,7 +201,7 @@
   "ch": "kahani",
   "mode": "long",
   "asset": "draft_kahani_long_20261124_2028.tar",
-  "stage": "imgwait: scene 11 duplicate of 6 (reseeded)",
+  "stage": "imgwait: scene 12 duplicate of 3 (reseeded)",
   "tries": 0,
   "fest": null,
   "engine": "edge"
@@ -483,7 +469,7 @@
   }
  ],
  "_minutes": {
-  "2026-11": 4851
+  "2026-11": 4854
  },
  "_bank": {
   "kahani_s_patang01": "2026-11-02",
