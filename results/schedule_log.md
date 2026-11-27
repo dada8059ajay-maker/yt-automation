@@ -73,3 +73,6 @@
 - कहानी पतंग | short | रात 12 बजे पेड़ से टपकी जादुई चाबी! | कहानी पतंग | Mon 30 Nov 2026 06:30 PM IST | https://studio.youtube.com/video/h_DLT4CrzJw/edit
 - कहानी पतंग | short | जादुई बांसुरी और लालची बंदर का भयंकर सच! | कहानी पतंग | Tue 01 Dec 2026 06:30 PM IST | https://studio.youtube.com/video/1oML5A-2dB8/edit
 - कहानी पतंग | long | शेर की दहाड़ किसने चुराई? | Jungle Story | कहानी पतंग | Sun 29 Nov 2026 06:00 PM IST | https://studio.youtube.com/video/9Vt8naHy4I8/edit
+- कहानी पतंग | short | शेर की दहाड़ किसने चुराई? | Jungle Kahani | कहानी पतंग | Wed 02 Dec 2026 06:30 PM IST | https://studio.youtube.com/video/UNkcWcMjk6M/edit
+- रात के किस्से | long | सोमेश्वर गुफा का रहस्य भाग 2 | रात के किस्से | Sat 28 Nov 2026 09:00 PM IST | https://studio.youtube.com/video/2foCAEB0qWU/edit
+- कहानी पतंग | long | जादुई घड़ा और लालची लकड़हारा | Hindi Kahaniya | कहानी पतंग | Mon 30 Nov 2026 06:00 PM IST | https://studio.youtube.com/video/uPLFilBcBOA/edit
