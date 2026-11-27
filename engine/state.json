@@ -64,8 +64,8 @@
   }
  },
  "kahani": {
-  "short": "2026-11-29T13:00:00Z",
-  "long": "2026-11-26T12:30:00Z",
+  "short": "2026-12-01T13:00:00Z",
+  "long": "2026-11-29T12:30:00Z",
   "history": [
    "शेर और चतुर खरगोश",
    "एक नटखट गिलहरी और उसके दोस्त की जादुई अखरोट को ढूँढने की सीख भरी यात्रा।",
@@ -131,7 +131,6 @@
   }
  },
  "_uploads": [
-  "2026-11-01T21:49:35Z",
   "2026-11-02T01:01:37Z",
   "2026-11-02T02:21:08Z",
   "2026-11-02T10:03:32Z",
@@ -150,37 +149,10 @@
   "2026-11-04T11:10:07Z",
   "2026-11-24T14:57:00Z",
   "2026-11-24T15:20:07Z",
-  "2026-11-27T14:56:45Z"
+  "2026-11-27T14:56:45Z",
+  "2026-11-27T16:07:55Z"
  ],
  "_queue": [
-  {
-   "job": "kahani_long_20261104_1232",
-   "ch": "kahani",
-   "mode": "long",
-   "asset": "kahani_long_20261104_1232.tar",
-   "title": "लालची बंदर और जादुई बांसुरी की कहानी | कहानी पतंग"
-  },
-  {
-   "job": "kahani_short_20261104_1330",
-   "ch": "kahani",
-   "mode": "short",
-   "asset": "kahani_short_20261104_1330.tar",
-   "title": "रात 12 बजे पेड़ से टपकी जादुई चाबी! | कहानी पतंग"
-  },
-  {
-   "job": "kahani_short_20261104_1400",
-   "ch": "kahani",
-   "mode": "short",
-   "asset": "kahani_short_20261104_1400.tar",
-   "title": "जादुई बांसुरी और लालची बंदर का भयंकर सच! | कहानी पतंग"
-  },
-  {
-   "job": "kahani_long_20261103_1433",
-   "ch": "kahani",
-   "mode": "long",
-   "asset": "kahani_long_20261103_1433.tar",
-   "title": "शेर की दहाड़ किसने चुराई? | Jungle Story | कहानी पतंग"
-  },
   {
    "job": "kahani_short_20261104_1431",
    "ch": "kahani",
@@ -264,7 +236,7 @@
   "ch": "kahani",
   "mode": "long",
   "asset": "draft_kahani_long_20261124_2028.tar",
-  "stage": "imgwait: scene 8 duplicate of 6 (reseeded)",
+  "stage": "imgwait: scene 9 duplicate of 6 (reseeded)",
   "tries": 0,
   "fest": null,
   "engine": "edge"
@@ -532,7 +504,7 @@
   }
  ],
  "_minutes": {
-  "2026-11": 4845
+  "2026-11": 4848
  },
  "_bank": {
   "kahani_s_patang01": "2026-11-02",

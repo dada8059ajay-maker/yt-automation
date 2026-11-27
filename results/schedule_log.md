@@ -69,3 +69,7 @@
 - रात के किस्से | short | हर दिन फोटो में बढ़ता है एक इंसान! पुरानी हवेली का रहस्य | रात के किस्से | Sun 29 Nov 2026 09:30 PM IST | https://studio.youtube.com/video/JLsq_Lx9Kmo/edit
 - कहानी पतंग | short | आसमान में तैरता रहस्यमयी बक्सा! 📦 | कहानी पतंग | Sun 29 Nov 2026 06:30 PM IST | https://studio.youtube.com/video/CDKd66Z6P2M/edit
 - रात के किस्से | short | आईने की मुस्कुराती परछाईं का खौफनाक सच! | रात के किस्से | Mon 30 Nov 2026 09:30 PM IST | https://studio.youtube.com/video/98ksoplGVoc/edit
+- कहानी पतंग | long | लालची बंदर और जादुई बांसुरी की कहानी | कहानी पतंग | Sat 28 Nov 2026 06:00 PM IST | https://studio.youtube.com/video/L93oe1F-QUk/edit
+- कहानी पतंग | short | रात 12 बजे पेड़ से टपकी जादुई चाबी! | कहानी पतंग | Mon 30 Nov 2026 06:30 PM IST | https://studio.youtube.com/video/h_DLT4CrzJw/edit
+- कहानी पतंग | short | जादुई बांसुरी और लालची बंदर का भयंकर सच! | कहानी पतंग | Tue 01 Dec 2026 06:30 PM IST | https://studio.youtube.com/video/1oML5A-2dB8/edit
+- कहानी पतंग | long | शेर की दहाड़ किसने चुराई? | Jungle Story | कहानी पतंग | Sun 29 Nov 2026 06:00 PM IST | https://studio.youtube.com/video/9Vt8naHy4I8/edit
