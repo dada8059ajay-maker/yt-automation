@@ -64,7 +64,7 @@
   }
  },
  "kahani": {
-  "short": "2026-12-03T13:00:00Z",
+  "short": "2026-12-04T13:00:00Z",
   "long": "2026-12-01T12:30:00Z",
   "history": [
    "शेर और चतुर खरगोश",
@@ -131,7 +131,6 @@
   }
  },
  "_uploads": [
-  "2026-11-02T10:03:32Z",
   "2026-11-03T05:11:54Z",
   "2026-11-03T05:29:54Z",
   "2026-11-03T05:31:53Z",
@@ -150,16 +149,10 @@
   "2026-11-27T14:56:45Z",
   "2026-11-27T16:07:55Z",
   "2026-11-27T17:09:18Z",
-  "2026-11-27T18:58:22Z"
+  "2026-11-27T18:58:22Z",
+  "2026-11-27T19:59:46Z"
  ],
  "_queue": [
-  {
-   "job": "kahani_short_20261104_1651",
-   "ch": "kahani",
-   "mode": "short",
-   "asset": "kahani_short_20261104_1651.tar",
-   "title": "जमीन के नीचे छिपी अजीब घंटी! 🔔 | कहानी पतंग"
-  },
   {
    "job": "kahani_short_20261104_1714",
    "ch": "kahani",
@@ -201,7 +194,7 @@
   "ch": "kahani",
   "mode": "long",
   "asset": "draft_kahani_long_20261124_2028.tar",
-  "stage": "imgwait: scene 12 duplicate of 3 (reseeded)",
+  "stage": "imgwait: scene 14 duplicate of 6 (reseeded)",
   "tries": 0,
   "fest": null,
   "engine": "edge"
@@ -469,7 +462,7 @@
   }
  ],
  "_minutes": {
-  "2026-11": 4854
+  "2026-11": 4856
  },
  "_bank": {
   "kahani_s_patang01": "2026-11-02",

@@ -78,3 +78,4 @@
 - कहानी पतंग | long | जादुई घड़ा और लालची लकड़हारा | Hindi Kahaniya | कहानी पतंग | Mon 30 Nov 2026 06:00 PM IST | https://studio.youtube.com/video/uPLFilBcBOA/edit
 - कहानी पतंग | long | जादुई घुंघरू और नाचता जंगल! 🐰 नटखट खरगोश | कहानी पतंग | Tue 01 Dec 2026 06:00 PM IST | https://studio.youtube.com/video/2H6B6Ir_Wno/edit
 - कहानी पतंग | short | परछाई ने चुरा ली आवाज! रहस्यमयी जंग | कहानी पतंग | Thu 03 Dec 2026 06:30 PM IST | https://studio.youtube.com/video/g7AHCE6bPhU/edit
+- कहानी पतंग | short | जमीन के नीचे छिपी अजीब घंटी! 🔔 | कहानी पतंग | Fri 04 Dec 2026 06:30 PM IST | https://studio.youtube.com/video/fpth3tf77og/edit
