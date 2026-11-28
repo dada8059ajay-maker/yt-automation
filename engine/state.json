@@ -39,26 +39,29 @@
    "एक सुनसान समुद्री लाइटहाउस के 3 खौफनाक नियम और रात 2:15 बजे समुद्र से आई वही खौफनाक आवाज़।",
    "हिमालय की बंद गुफा के गर्भगृह में नीली ज्वाला का रहस्य और 1000 साल पुराने शाप का अंत।",
    "एक सुनसान पुरातात्विक संग्रहालय के रात के 3 नियम और घंटी का खौफनाक रहस्य",
-   "हिमालय की सोमेश्वर गुफा के सबसे गुप्त गर्भगृह में राघव का तीसरा और सबसे जानलेवा सामना"
+   "हिमालय की सोमेश्वर गुफा के सबसे गुप्त गर्भगृह में राघव का तीसरा और सबसे जानलेवा सामना",
+   "एक सुनसान गाँव की हवेली जहाँ हर रात एक पहरेदार गायब हो जाता है"
   ],
   "series": {
-   "name": "सोमेश्वर गुफा का रहस्य",
-   "part": 3,
-   "so_far": "राघव ने हिमालय की सदियों से बंद सोमेश्वर गुफा के अंदर कदम रखा था जहाँ उसे तीन खौफनाक नियम मिले थे। पहला नियम था अपनी परछाईं को न छूना और दूसरा नियम था ज़हरीली नीली धुंध के बीच अपनों की भटकती आवाज़ों पर ध्यान न देना। राघव दोनों जानलेवा पड़ाव पार करके अब गुफा के सबसे गुप्त गर्भगृह के मुहाने पर पहुँच चुका है, जहाँ उसका सामना अंतिम खौफनाक सच्चाई से होने वाला है।",
+   "name": "सुनसान हवेली का खौफनाक साया | रात के किस",
+   "part": 1,
+   "so_far": "एक सुनसान गाँव की हवेली जहाँ हर रात एक पहरेदार गायब हो जाता है",
    "characters": {
-    "राघव": "Age 28, sharp angular face, deep brown watchful eyes, short messy black hair, lean and tall athletic build, wearing a dark grey cargo jacket over a black woolen t-shirt with navy blue trousers, typical North Indian modern explorer look."
+    "रघु": "45-year-old man, weathered face with sharp eyes and a thick grey mustache, short messy grey-black hair, dark navy blue security uniform with brass buttons and black shoes",
+    "ठाकुर": "60-year-old man, stern wrinkled face with deep set dark eyes, slicked back white hair, traditional white kurta pajama with a black Nehru jacket"
    },
    "bank": null
   },
   "last_long": {
-   "job": "raat_long_20261104_1453",
-   "title": "तीसरा नियम: आँखें बंद मत करना! सोमेश्वर गुफा | रात के किस्से",
-   "story": "राघव ने हिमालय की सदियों से बंद सोमेश्वर गुफा के अंदर कदम रखा था जहाँ उसे तीन खौफनाक नियम मिले थे। पहला नियम था अपनी परछाईं को न छूना और दूसरा नियम था ज़हरीली नीली धुंध के बीच अपनों की भटकती आवाज़ों पर ध्यान न देना। राघव दोनों जानलेवा पड़ाव पार करके अब गुफा के सबसे गुप्त गर्भगृह के मुहाने पर पहुँच चुका है, जहाँ उसका सामना अंतिम खौफनाक सच्चाई से होने वाला है।",
+   "job": "raat_long_20261128_0828",
+   "title": "सुनसान हवेली का खौफनाक साया | रात के किस्से",
+   "story": "एक सुनसान गाँव की हवेली जहाँ हर रात एक पहरेदार गायब हो जाता है",
    "characters": {
-    "राघव": "Age 28, sharp angular face, deep brown watchful eyes, short messy black hair, lean and tall athletic build, wearing a dark grey cargo jacket over a black woolen t-shirt with navy blue trousers, typical North Indian modern explorer look."
+    "रघु": "45-year-old man, weathered face with sharp eyes and a thick grey mustache, short messy grey-black hair, dark navy blue security uniform with brass buttons and black shoes",
+    "ठाकुर": "60-year-old man, stern wrinkled face with deep set dark eyes, slicked back white hair, traditional white kurta pajama with a black Nehru jacket"
    },
    "vid": null,
-   "short_done": true,
+   "short_done": false,
    "trailer": null,
    "fest_at": null
   }
@@ -194,18 +197,16 @@
    "mode": "long",
    "asset": "kahani_long_20261124_2028.tar",
    "title": "जादुई जामुन का अनोखा सच! | Jadui Jamun Story | कहानी पतंग"
+  },
+  {
+   "job": "raat_long_20261128_0828",
+   "ch": "raat",
+   "mode": "long",
+   "asset": "raat_long_20261128_0828.tar",
+   "title": "सुनसान हवेली का खौफनाक साया | रात के किस्से"
   }
  ],
- "_draft": {
-  "job": "raat_long_20261128_0828",
-  "ch": "raat",
-  "mode": "long",
-  "asset": "draft_raat_long_20261128_0828.tar",
-  "stage": "imgwait: shot 20.3 waiting for a real picture",
-  "tries": 0,
-  "fest": null,
-  "engine": "edge"
- },
+ "_draft": null,
  "_library": [
   {
    "asset": "lib_raat_long_20261101_0811.mp4",
@@ -473,10 +474,17 @@
    "title": "जादुई जामुन का अनोखा सच! | Jadui Jamun Story | कहानी पतंग",
    "dur": 201,
    "used": false
+  },
+  {
+   "asset": "lib_raat_long_20261128_0828.mp4",
+   "ch": "raat",
+   "title": "सुनसान हवेली का खौफनाक साया | रात के किस्से",
+   "dur": 234,
+   "used": false
   }
  ],
  "_minutes": {
-  "2026-11": 5009
+  "2026-11": 5017
  },
  "_bank": {
   "kahani_s_patang01": "2026-11-02",
