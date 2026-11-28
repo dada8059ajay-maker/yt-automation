@@ -196,7 +196,16 @@
    "title": "जादुई जामुन का अनोखा सच! | Jadui Jamun Story | कहानी पतंग"
   }
  ],
- "_draft": null,
+ "_draft": {
+  "job": "raat_long_20261128_0828",
+  "ch": "raat",
+  "mode": "long",
+  "asset": "draft_raat_long_20261128_0828.tar",
+  "stage": "imgwait: image servers out of free credit at 5/23",
+  "tries": 0,
+  "fest": null,
+  "engine": "edge"
+ },
  "_library": [
   {
    "asset": "lib_raat_long_20261101_0811.mp4",
@@ -467,7 +476,7 @@
   }
  ],
  "_minutes": {
-  "2026-11": 4871
+  "2026-11": 4890
  },
  "_bank": {
   "kahani_s_patang01": "2026-11-02",
@@ -487,7 +496,8 @@
   "kahani_l_bank02_1104": "2026-11-04",
   "kahani_l_bank03_1104": "2026-11-04",
   "kahani_l_bank04_1104": "2026-11-04",
-  "kahani_l_bank05_1104": "2026-11-24"
+  "kahani_l_bank05_1104": "2026-11-24",
+  "raat_l_bank01_1104": "2026-11-28"
  },
  "_gemini_wait": "2026-11-04T08:05:00+00:00",
  "_engine_b_dead": "2026-11-04",
