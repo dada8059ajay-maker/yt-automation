@@ -1,0 +1,163 @@
+gemini gemini-3.8-flash key 1 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-3.8-flash TimeoutError('The read operation timed out')
+gemini gemini-3.8-flash key 3 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-3.7-flash key 1 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-3.7-flash TimeoutError('The read operation timed out')
+gemini gemini-3.7-flash key 3 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini ok gemini-3.6-flash key 1
+story from Gemini (bank empty)
+gemini gemini-3.8-flash key 1 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-3.8-flash key 2 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-3.8-flash TimeoutError('The read operation timed out')
+gemini gemini-3.7-flash key 1 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-3.7-flash key 2 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-3.7-flash key 3 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini ok gemini-3.6-flash key 1
+seo pass OK: हवेली का 100 साल पुराना खौफनाक सच | रात के किस्से
+title: हवेली का 100 साल पुराना खौफनाक सच | रात के किस्से scenes: 69
+rules v3: pictures rebuilt, re-voiced lines []
+voice engine: edge hi-IN-MadhurNeural (locked) 69 scenes
+gemini gemini-3.8-flash TimeoutError('The read operation timed out')
+gemini gemini-3.8-flash key 2 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-3.8-flash key 3 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-3.7-flash key 1 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-3.7-flash key 2 503 {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in de
+gemini gemini-3.7-flash TimeoutError('The read operation timed out')
+gemini ok gemini-3.6-flash key 1
+shots planned: 172 pictures for 69 scenes
+img 0 pollinations-flux
+pollinations key out of credit -> free anonymous FLUX
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+pollinations retry 3 <HTTPError 402: 'Payment Required'>
+img 1 pollinations-flux-free
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+pollinations retry 3 <HTTPError 503: 'Service Unavailable'>
+pollinations retry 4 <HTTPError 402: 'Payment Required'>
+gemini image key 1 429
+gemini image key 2 429
+gemini image key 3 429
+hf serverless fail <HTTPError 403: 'Forbidden'>
+hf flux fail AppError('You have exceeded your ZeroGPU runs limit. Subscribe to Hugging Face PRO to get 40 min of ZeroGPU quota a day - https://huggingfac
+resume: script loaded
+title: हवेली का 100 साल पुराना खौफनाक सच | रात के किस्से scenes: 69
+voice engine: edge hi-IN-MadhurNeural (locked) 69 scenes
+pollinations retry 0 <HTTPError 503: 'Service Unavailable'>
+pollinations key out of credit -> free anonymous FLUX
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+pollinations retry 3 <HTTPError 402: 'Payment Required'>
+img 2 pollinations-flux-free
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+pollinations retry 3 ValueError('small file 38374')
+pollinations retry 4 <HTTPError 402: 'Payment Required'>
+gemini image key 1 429
+gemini image key 2 429
+gemini image key 3 429
+hf serverless fail <HTTPError 403: 'Forbidden'>
+hf flux fail AppError('You have exceeded your ZeroGPU runs limit. Subscribe to Hugging Face PRO to get 40 min of ZeroGPU quota a day - https://huggingfac
+resume: script loaded
+title: हवेली का 100 साल पुराना खौफनाक सच | रात के किस्से scenes: 69
+voice engine: edge hi-IN-MadhurNeural (locked) 69 scenes
+pollinations retry 0 <HTTPError 503: 'Service Unavailable'>
+pollinations key out of credit -> free anonymous FLUX
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+pollinations retry 3 ValueError('small file 38374')
+pollinations retry 4 <HTTPError 503: 'Service Unavailable'>
+gemini image key 1 429
+gemini image key 2 429
+gemini image key 3 429
+hf serverless fail <HTTPError 403: 'Forbidden'>
+hf flux fail AppError('You have exceeded your ZeroGPU runs limit. Subscribe to Hugging Face PRO to get 40 min of ZeroGPU quota a day - https://huggingfac
+resume: script loaded
+title: हवेली का 100 साल पुराना खौफनाक सच | रात के किस्से scenes: 69
+voice engine: edge hi-IN-MadhurNeural (locked) 69 scenes
+img 3 pollinations-flux
+pollinations key out of credit -> free anonymous FLUX
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+pollinations retry 3 <HTTPError 402: 'Payment Required'>
+img 4 pollinations-flux-free
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+img 5 pollinations-flux-free
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+img 6 pollinations-flux-free
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+pollinations retry 3 <HTTPError 503: 'Service Unavailable'>
+pollinations retry 4 <HTTPError 402: 'Payment Required'>
+gemini image key 1 429
+gemini image key 2 429
+gemini image key 3 429
+hf serverless fail <HTTPError 403: 'Forbidden'>
+hf flux fail AppError('You have exceeded your ZeroGPU runs limit. Subscribe to Hugging Face PRO to get 40 min of ZeroGPU quota a day - https://huggingfac
+resume: script loaded
+title: हवेली का 100 साल पुराना खौफनाक सच | रात के किस्से scenes: 69
+voice engine: edge hi-IN-MadhurNeural (locked) 69 scenes
+img 7 pollinations-flux
+pollinations key out of credit -> free anonymous FLUX
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+pollinations retry 3 <HTTPError 402: 'Payment Required'>
+img 8 pollinations-flux-free
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+img 9 pollinations-flux-free
+pollinations retry 0 <HTTPError 402: 'Payment Required'>
+pollinations retry 1 <HTTPError 402: 'Payment Required'>
+pollinations retry 2 <HTTPError 402: 'Payment Required'>
+pollinations retry 3 <HTTPError 503: 'Service Unavailable'>
+pollinations retry 4 <HTTPError 402: 'Payment Required'>
+gemini image key 1 429
+gemini image key 2 429
+gemini image key 3 429
+hf serverless fail <HTTPError 403: 'Forbidden'>
+hf flux fail AppError('You have exceeded your ZeroGPU runs limit. Subscribe to Hugging Face PRO to get 40 min of ZeroGPU quota a day - https://huggingfac
