@@ -113,19 +113,19 @@
    "An energetic young rabbit finds magical ghungroos that force everyone to dance, teaching him a sweet lesson about timing and consideration.",
    "नन्हे चिंटू की अपनी ही परछाई से हुई रहस्यमयी जंग और बुद्धिमानी की जीत",
    "नन्हे गोलू द्वारा खेत में मिली जादुई पीतल की घंटी और उसके अनूठे रहस्य की कहानी।",
-   "नन्हे तिल्लू की बोलती परछाई और प्राचीन राजमहल में छुपे सोने के मोर का जादुई सच।"
+   "नन्हे तिल्लू की बोलती परछाई और प्राचीन राजमहल में छुपे सोने के मोर का जादुई सच।",
+   "एक जादुई जामुन का पेड़ जो दूसरों की मदद करने पर मीठे फल देता था"
   ],
   "last_long": {
-   "job": "kahani_long_20261104_1531",
-   "title": "जादुई घुंघरू और नाचता जंगल! 🐰 नटखट खरगोश | कहानी पतंग",
-   "story": "An energetic young rabbit finds magical ghungroos that force everyone to dance, teaching him a sweet lesson about timing and consideration.",
+   "job": "kahani_long_20261124_2028",
+   "title": "जादुई जामुन का अनोखा सच! | Jadui Jamun Story | कहानी पतंग",
+   "story": "एक जादुई जामुन का पेड़ जो दूसरों की मदद करने पर मीठे फल देता था",
    "characters": {
-    "Tikku": "Age 6 years equivalent rabbit, round cute face with twitching pink nose, long floppy white ears with pink inside, wearing a small sky-blue waistcoat over white fur",
-    "Bholu": "Age 10 years equivalent bear, chubby round face, gentle black eyes, fluffy brown fur, wearing a yellow checkered scarf around his neck",
-    "Chinki": "Age 5 years equivalent squirrel, bright curious eyes, bushy grey-brown tail, wearing a tiny red bow on her head"
+    "Chiku": "young, round cheerful face with big curious black eyes, short brown fur with a playful tuft on top, a small red leaf vest tied with a vine",
+    "Bholu": "young, chubby round face with a mischievous smile, thick golden-brown fur with floppy ears, a green leaf cap on his head"
    },
-   "vid": "2H6B6Ir_Wno",
-   "short_done": true,
+   "vid": null,
+   "short_done": false,
    "trailer": null,
    "fest_at": null
   }
@@ -187,18 +187,16 @@
    "mode": "short",
    "asset": "raat_short_20261104_1818.tar",
    "title": "तीसरा नियम आँखें बंद मत करना! | रात के किस्से"
+  },
+  {
+   "job": "kahani_long_20261124_2028",
+   "ch": "kahani",
+   "mode": "long",
+   "asset": "kahani_long_20261124_2028.tar",
+   "title": "जादुई जामुन का अनोखा सच! | Jadui Jamun Story | कहानी पतंग"
   }
  ],
- "_draft": {
-  "job": "kahani_long_20261124_2028",
-  "ch": "kahani",
-  "mode": "long",
-  "asset": "draft_kahani_long_20261124_2028.tar",
-  "stage": "imgwait: scene 20 duplicate of 6 (reseeded)",
-  "tries": 0,
-  "fest": null,
-  "engine": "edge"
- },
+ "_draft": null,
  "_library": [
   {
    "asset": "lib_raat_long_20261101_0811.mp4",
@@ -459,10 +457,17 @@
    "title": "तीसरा नियम: आँखें बंद मत करना! सोमेश्वर गुफा | रात के किस्से",
    "dur": 542,
    "used": false
+  },
+  {
+   "asset": "lib_kahani_long_20261124_2028.mp4",
+   "ch": "kahani",
+   "title": "जादुई जामुन का अनोखा सच! | Jadui Jamun Story | कहानी पतंग",
+   "dur": 201,
+   "used": false
   }
  ],
  "_minutes": {
-  "2026-11": 4866
+  "2026-11": 4871
  },
  "_bank": {
   "kahani_s_patang01": "2026-11-02",
