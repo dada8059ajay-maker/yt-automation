@@ -67,7 +67,7 @@
   }
  },
  "kahani": {
-  "short": "2026-12-04T13:00:00Z",
+  "short": "2026-12-05T13:00:00Z",
   "long": "2026-12-01T12:30:00Z",
   "history": [
    "शेर और चतुर खरगोश",
@@ -134,7 +134,6 @@
   }
  },
  "_uploads": [
-  "2026-11-03T05:11:54Z",
   "2026-11-03T05:29:54Z",
   "2026-11-03T05:31:53Z",
   "2026-11-03T05:45:33Z",
@@ -153,16 +152,10 @@
   "2026-11-27T16:07:55Z",
   "2026-11-27T17:09:18Z",
   "2026-11-27T18:58:22Z",
-  "2026-11-27T19:59:46Z"
+  "2026-11-27T19:59:46Z",
+  "2026-11-28T15:48:14Z"
  ],
  "_queue": [
-  {
-   "job": "kahani_short_20261104_1714",
-   "ch": "kahani",
-   "mode": "short",
-   "asset": "kahani_short_20261104_1714.tar",
-   "title": "परछाई का जादुई राज़ और सोने का मोर! | कहानी पतंग"
-  },
   {
    "job": "raat_short_20261104_1400",
    "ch": "raat",
@@ -211,7 +204,7 @@
   "ch": "raat",
   "mode": "long",
   "asset": "draft_raat_long_20261128_1942.tar",
-  "stage": "imgwait: image servers out of free credit at 3/69",
+  "stage": "imgwait: image servers out of free credit at 7/69",
   "tries": 0,
   "fest": null,
   "engine": "edge"
@@ -493,7 +486,7 @@
   }
  ],
  "_minutes": {
-  "2026-11": 5055
+  "2026-11": 5062
  },
  "_bank": {
   "kahani_s_patang01": "2026-11-02",
