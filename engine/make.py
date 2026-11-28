@@ -600,22 +600,29 @@ def finish_draft():
 # ---------------- Zero-Rework pre-render gate: 100% check before FFmpeg ----------------
 import hashlib
 _h = {}
+_dupes = []   # ALL duplicates are reseeded in ONE pass (was: pause at the first -> one duplicate per run)
 for i, sc in enumerate(S["scenes"]):
     f = f"{OUT}/i{i:03d}.jpg"
     if not os.path.exists(f) or os.path.getsize(f) < 20000: pause(f"imgwait: scene {i+1} has no real picture")
     im = Image.open(f).convert("L").resize((16, 16)); px = list(im.getdata()); av = sum(px) / len(px)
     ah = "".join("1" if v > av else "0" for v in px); fl = "".join("".join(ah[r*16:(r+1)*16][::-1]) for r in range(16))
+    _dup = None
     for j, (h0, f0) in _h.items():
         if sum(x != y for x, y in zip(ah, h0)) <= 6 or sum(x != y for x, y in zip(fl, h0)) <= 6:
-            log("pre-check: scene", i + 1, "repeats/mirrors scene", j + 1, "-> new picture"); os.remove(f)
-            S.setdefault("reseed", {})[str(i)] = random.randint(1, 10**6)
-            json.dump(S, open(f"{OUT}/script.json", "w"), ensure_ascii=False, indent=1)
-            pause(f"imgwait: scene {i+1} duplicate of {j+1} (reseeded)")
-    _h[i] = (ah, f)
+                        _dup = j; break
+    if _dup is not None:
+        log("pre-check: scene", i + 1, "repeats/mirrors scene", _dup + 1, "-> new picture"); os.remove(f)
+        S.setdefault("reseed", {})[str(i)] = random.randint(1, 10**6)
+        json.dump(S, open(f"{OUT}/script.json", "w"), ensure_ascii=False, indent=1)
+        _dupes.append((i + 1, _dup + 1))
+    else:
+        _h[i] = (ah, f)
     w = wav_of(i)
     if not os.path.exists(w) or dur_of(w) < 0.4 * max(1, len(sc["text"].split())) * 0.25:
         if os.path.exists(w): os.remove(w)
         pause(f"voices scene {i}: audio missing/too short")
+if _dupes:
+    pause(f"imgwait: {len(_dupes)} duplicate scenes reseeded: " + ", ".join(f"{a} of {b}" for a, b in _dupes))
 log("pre-check OK:", len(S["scenes"]), "unique pictures, full audio for every scene")
 # ---------------- 4. subtitles + render ----------------
 FONT = "Noto Sans Devanagari"
